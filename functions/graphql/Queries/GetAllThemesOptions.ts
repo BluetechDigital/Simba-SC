@@ -15,7 +15,6 @@ export const getThemesOptionsContent = async () => {
 								email
 								address
 								emailTwo
-								textarea
 								phoneNumber
 								copyrightText
 								phoneNumberTwo
@@ -41,17 +40,15 @@ export const getThemesOptionsContent = async () => {
 									title
 									target
 								}
-								menuColumnThree {
+								tiktokLink {
+									url
 									title
-									paragraph
-									buttonLink {
-										url
-										title
-										target
-									}
-									backgroundImage {
-										sourceUrl
-									}
+									target
+								}
+								youtubeLink {
+									url
+									title
+									target
 								}
 								newsletter {
 									title
