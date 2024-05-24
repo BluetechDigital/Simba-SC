@@ -1,0 +1,27 @@
+/*===== FONTS =====*/
+@font-face {
+	font-family: Inter;
+	src: url("../fonts/Inter.woff");
+}
+
+@font-face {
+	font-family: PlusJakartaSans;
+	src: url("../fonts/PlusJakartaSans.woff");
+}
+
+@font-face {
+	font-family: Kanit;
+	src: url("../fonts/Kanit-Regular.woff");
+}
+
+// Font Stack Properties
+$main: "Kanit";
+$body: "PlusJakartaSans", "Inter";
+
+.font-Kanit {
+	font-family: $main;
+}
+
+.font-PlusJakartaSans {
+	font-family: $body;
+}
