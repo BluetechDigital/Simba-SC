@@ -26,7 +26,7 @@ const NewsLatestArticles: FC<INewsLatestArticles> = ({
 				aria-label={`${articleType ? articleType : "Insights"}: ${title}`}
 				className="group block py-0 px-4 lg:px-0"
 			>
-				<div className="block lg:hidden relative px-0 h-[300px] border-r-[5px] lg:border-r-[10px] border-t-[5px] border-b-0 border-lightGrey">
+				<div className="block lg:hidden relative px-0 h-[300px] border-r-[5px] lg:border-r-[10px] border-t-[5px] border-b-0 border-twoGrey">
 					<Image
 						alt={`${featuredImage?.node?.altText}`}
 						src={featuredImage?.node?.sourceUrl}
@@ -52,7 +52,7 @@ const NewsLatestArticles: FC<INewsLatestArticles> = ({
 						initial={initial}
 						whileInView={fadeInUp}
 						viewport={{once: true}}
-						className="inline-flex items-center h-7 px-3 text-xs text-white font-medium bg-green-three bg-opacity-60 rounded-full"
+						className="inline-flex items-center h-7 px-3 text-xs text-white font-medium bg-primary-two bg-opacity-60 rounded-full"
 					>
 						Insights
 					</motion.span>
@@ -92,7 +92,7 @@ const NewsLatestArticles: FC<INewsLatestArticles> = ({
 					initial={initial}
 					whileInView={fadeInUp}
 					viewport={{once: true}}
-					className="mb-2 text-lg font-semibold text-black transition-all ease-in-out duration-200 hover:text-green-two"
+					className="mb-2 text-lg font-semibold text-black transition-all ease-in-out duration-200 hover:text-primary-two"
 				>
 					{title}
 				</motion.h4>

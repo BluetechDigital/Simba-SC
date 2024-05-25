@@ -103,7 +103,7 @@ const NewsletterElement: FC = () => {
 				<Form
 					action="#"
 					id="NewsletterElement"
-					className="w-full bg-green-flatDark py-6 px-8"
+					className="w-full bg-primary-dark py-6 px-8"
 				>
 					<div className="mb-4">
 						{loading ? (
@@ -111,7 +111,7 @@ const NewsletterElement: FC = () => {
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="my-2 text-xl font-bold text-center lg:text-left text-green-two"
+								className="my-2 text-xl font-bold text-center lg:text-left text-primary-two"
 							>
 								Sending Message...
 							</motion.h3>
@@ -120,7 +120,7 @@ const NewsletterElement: FC = () => {
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="my-2 text-xl font-bold text-center lg:text-left text-green-two"
+								className="my-2 text-xl font-bold text-center lg:text-left text-primary-two"
 							>
 								Message Sent!
 							</motion.h3>
@@ -129,7 +129,7 @@ const NewsletterElement: FC = () => {
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="my-2 text-xl font-bold text-center lg:text-left text-green-two"
+								className="my-2 text-xl font-bold text-center lg:text-left text-primary-two"
 							>
 								Error Message: Something went wrong with sending your message.
 								Please try again.
@@ -159,7 +159,7 @@ const NewsletterElement: FC = () => {
 					>
 						{formik?.touched?.email && formik?.errors?.email ? (
 							<div>
-								<p className="py-1 mb-1 text-left text-tiny text-green-two">
+								<p className="py-1 mb-1 text-left text-tiny text-primary-two">
 									{formik?.errors?.email}
 								</p>
 							</div>
@@ -172,7 +172,7 @@ const NewsletterElement: FC = () => {
 							onBlur={formik?.handleBlur}
 							onChange={formik?.handleChange}
 							value={formik?.values?.email}
-							className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-green-darker focus:border-green-darker focus:ring-[1px] focus:ring-green-darker"
+							className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-primary-dark focus:border-primary-dark focus:ring-[1px] focus:ring-primary-dark"
 						/>
 					</motion.div>
 					<motion.div
@@ -203,7 +203,7 @@ const NewsletterElement: FC = () => {
 								: "hidden"
 						}
 					>
-						<span className="w-full flex items-center justify-center gap-3 py-4 px-6 lg:px-10 bg-green-default hover:bg-green-two transition-all duration-200 ease-in-out">
+						<span className="w-full flex items-center justify-center gap-3 py-4 px-6 lg:px-10 bg-primary-default hover:bg-primary-two transition-all duration-200 ease-in-out">
 							<motion.h3
 								initial={initialTwo}
 								whileInView={fadeIn}

@@ -51,7 +51,7 @@ const Maintenance: FC<IMaintenance> = ({title, paragraph, backgroundImage}) => {
 							src={backgroundImage?.sourceUrl}
 							alt={backgroundImage?.altText}
 						/>
-						<div className="absolute top-0 h-screen bottom-0 left-0 w-full opacity-90 bg-gradient-to-b from-blue--green-darkerTwo from-5% via-blue--green-darkerTwo via-10% to-transparent to-100%" />
+						<div className="absolute top-0 h-screen bottom-0 left-0 w-full opacity-90 bg-gradient-to-b from-blue--primary-dark from-5% via-blue--primary-dark via-10% to-transparent to-100%" />
 					</motion.div>
 					<motion.div
 						initial={initial}

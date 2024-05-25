@@ -73,7 +73,7 @@ const NewsSingle: FC<INewsSingle> = ({
 												initial={initial}
 												whileInView={fadeInUp}
 												viewport={{once: true}}
-												className="inline-flex items-center h-7 px-3 text-xs text-white font-medium bg-green-three bg-opacity-60 rounded-full"
+												className="inline-flex items-center h-7 px-3 text-xs text-white font-medium bg-primary-two bg-opacity-60 rounded-full"
 											>
 												{articleType}
 											</motion.span>
@@ -309,7 +309,7 @@ const NewsSingle: FC<INewsSingle> = ({
 					</div>
 				</motion.div>
 				<div className="flex flex-col gap-4 container px-4 lg:px-0 mx-auto">
-					<div className="px-6 py-4 flex items-center flex-wrap gap-2 bg-darker border border-grey mb-12">
+					<div className="px-6 py-4 flex items-center flex-wrap gap-2 bg-dark border border-grey mb-12">
 						<span className="text-darkGrey text-base">
 							Interested in more topics like this?
 						</span>
@@ -317,7 +317,7 @@ const NewsSingle: FC<INewsSingle> = ({
 							target="_self"
 							href="#NewsletterElement"
 							aria-label={`Newsletter Subscribe Button`}
-							className="flex items-center flex-wrap gap-2 text-green-two hover:text-green-dark transition duration-200 font-bold"
+							className="flex items-center flex-wrap gap-2 text-primary-two hover:text-primary-dark transition duration-200 font-bold"
 						>
 							<span>Subscribe to our newsletter</span>
 							<svg

@@ -10,7 +10,6 @@ import {getAllExecutiveLeadershipsPostsSlugs} from "@/functions/graphql/Queries/
 
 // Components
 import Layout from "@/components/Layout/Layout";
-import BackHoverButton from "@/components/Elements/BackHoverButton";
 import BackToTopButton from "@/components/Elements/BackToTopButton";
 import PageContextProvider from "@/components/Context/PageContextProvider";
 import RenderFlexibleContent from "@/components/FlexibleContent/RenderFlexibleContent";
@@ -28,7 +27,6 @@ const dynamicSinglePosts: NextPage<IPageContext> = ({
 		>
 			<Layout>
 				<BackToTopButton link={`#`} />
-				<BackHoverButton link={`/our-leadership`} />
 				<RenderFlexibleContent />
 			</Layout>
 		</PageContextProvider>

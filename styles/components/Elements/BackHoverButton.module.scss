@@ -5,7 +5,7 @@
 .backToTopButton {
 	font-family: $body;
 
-	@apply bg-green-three py-2 px-3 hover:bg-green-default transition-all ease-in-out duration-500;
+	@apply bg-primary-two py-2 px-3 hover:bg-primary-default transition-all ease-in-out duration-500;
 
 	&:focus {
 		outline: none;
@@ -22,11 +22,11 @@
 	padding: 10px 20px;
 	font-family: $body;
 	align-items: center;
-	background: $greenDark;
 	text-decoration: none;
 	justify-content: center;
 	transform: skewX(-15deg);
-	box-shadow: -3px 6px 0 $greenDarker;
+	background: $primary-dark;
+	box-shadow: -3px 6px 0 $primary-dark;
 
 	&:focus {
 		outline: none;
@@ -34,7 +34,7 @@
 
 	&:hover {
 		transition: 0.5s;
-		box-shadow: -10px 10px 0 $green;
+		box-shadow: -10px 10px 0 $primary-default;
 
 		.span:nth-child(2) {
 			transition: 0.5s;
@@ -89,7 +89,7 @@
 			fill: $white;
 		}
 		50% {
-			fill: $green;
+			fill: $primary-default;
 		}
 		100% {
 			fill: $white;

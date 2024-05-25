@@ -10,7 +10,6 @@ import {getAllFlexibleContentComponents} from "@/functions/graphql/Queries/GetAl
 // Components
 import Layout from "@/components/Layout/Layout";
 import BackToTopButton from "@/components/Elements/BackToTopButton";
-import BackHoverButton from "@/components/Elements/BackHoverButton";
 import PageContextProvider from "@/components/Context/PageContextProvider";
 import RenderFlexibleContent from "@/components/FlexibleContent/RenderFlexibleContent";
 import {getAllBoardOfDirectorsPostsSlugs} from "@/functions/graphql/Queries/GetAllBoardOfDirectors";
@@ -28,7 +27,6 @@ const dynamicSinglePosts: NextPage<IPageContext> = ({
 		>
 			<Layout>
 				<BackToTopButton link={`#`} />
-				<BackHoverButton link={`/our-leadership`} />
 				<RenderFlexibleContent />
 			</Layout>
 		</PageContextProvider>
@@ -49,12 +47,12 @@ export const getStaticProps: GetStaticProps = async ({params}: any) => {
 	// Fetch priority content
 	const seoContent: any = await getAllSeoContent(
 		params?.slug,
-		postType?.boardofDirectors
+		postType?.boardOfDirectors
 	);
 
 	const flexibleContentComponents: any = await getAllFlexibleContentComponents(
 		params?.slug,
-		postType?.boardofDirectors,
+		postType?.boardOfDirectors,
 		flexibleContentType?.pages
 	);
 

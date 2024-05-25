@@ -23,11 +23,11 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-	@apply bg-primary-darker;
+	@apply bg-primary-dark;
 }
 
 body::-webkit-scrollbar-thumb {
-	@apply rounded-[2px] bg-primary-three transition-all duration-500 hover:bg-tertiary-default;
+	@apply rounded-[2px] bg-primary-two transition-all duration-500 hover:bg-tertiary-default;
 }
 
 a {
@@ -71,7 +71,7 @@ h5 {
 
 .swiper-button-prev,
 .swiper-button-next {
-	@apply mt-64 lg:mt-0 w-16 h-16 p-8 border-2 border-primary-darker hover:border-primary-darker text-primary-darker hover:text-primary-darker;
+	@apply mt-64 lg:mt-0 w-16 h-16 p-8 border-2 border-primary-dark hover:border-primary-dark text-primary-dark hover:text-primary-dark;
 
 	top: 85% !important;
 
@@ -86,7 +86,7 @@ h5 {
 	height: 15px !important;
 	font-size: 15px !important;
 	font-weight: 900 !important;
-	color: $greenDark !important;
+	color: $primary-dark !important;
 }
 
 .swiper-button-next::after {
@@ -95,7 +95,7 @@ h5 {
 	height: 15px !important;
 	font-size: 15px !important;
 	font-weight: 900 !important;
-	color: $greenDark !important;
+	color: $primary-dark !important;
 }
 
 /* SQUARE BOX CUBES
@@ -110,12 +110,12 @@ PAGE LOADING ANIMATION */
 	position: fixed;
 	align-items: center;
 	justify-content: center;
-	background-color: rgba(0, 15, 0, 0.95);
+	background-color: rgba(13, 23, 42, 0.95);
 
 	.loader {
 		--duration: 3s;
-		--primary: #43b02a;
-		--primary-light: #00ab00;
+		--primary: rgba(39, 94, 254, 1);
+		--primary-two: #2f71ff;
 		--primary-rgba: rgba(39, 94, 254, 0);
 		width: 200px;
 		height: 320px;
@@ -163,8 +163,8 @@ PAGE LOADING ANIMATION */
 			45deg,
 			var(--primary) 0%,
 			var(--primary) 50%,
-			var(--primary-light) 50%,
-			var(--primary-light) 100%
+			var(--primary-two) 50%,
+			var(--primary-two) 100%
 		);
 		transform-style: preserve-3d;
 		-webkit-animation: ground var(--duration) linear forwards infinite;
