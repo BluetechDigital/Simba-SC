@@ -61,111 +61,12 @@ export const getMobileLinks = async () => {
 	}
 };
 
-// Navbar About Us Sublinks
-export const getAboutUsSublinks = async () => {
-	try {
-		const content: any = gql`
-			{
-				aboutUsSublinks: menuItems(where: {location: ABOUT_SUBLINKS}) {
-					edges {
-						node {
-							id
-							url
-							label
-						}
-					}
-				}
-			}
-		`;
-
-		const response: any = await client.query({
-			query: content,
-		});
-
-		return response?.data?.aboutUsSublinks?.edges;
-	} catch (error: unknown) {
-		console.log(error);
-		throw new Error(
-			"Something went wrong trying to fetch main menu links content"
-		);
-	}
-};
-
-// Navbar Our Programs Sublinks
-export const getOurProgramsSublinks = async () => {
-	try {
-		const content: any = gql`
-			{
-				ourServicesSublinks: menuItems(
-					where: {location: OUR_PROGRAMS}
-					first: 10
-				) {
-					edges {
-						node {
-							id
-							url
-							label
-						}
-					}
-				}
-			}
-		`;
-
-		const response: any = await client.query({
-			query: content,
-		});
-
-		return response?.data?.ourServicesSublinks?.edges;
-	} catch (error: unknown) {
-		console.log(error);
-		throw new Error(
-			"Something went wrong trying to fetch our Programs Sublinks content"
-		);
-	}
-};
-
-// Media Center Sublinks
-export const getMediaCenterSublinks = async () => {
-	try {
-		const content: any = gql`
-			{
-				mediaCenterSublinks: menuItems(
-					where: {location: MEDIA_CENTER_SUBLINKS}
-					first: 10
-				) {
-					edges {
-						node {
-							id
-							url
-							label
-						}
-					}
-				}
-			}
-		`;
-
-		const response: any = await client.query({
-			query: content,
-		});
-
-		return response?.data?.mediaCenterSublinks?.edges;
-	} catch (error: unknown) {
-		console.log(error);
-		throw new Error(
-			"Something went wrong trying to fetch news insight sublinks content"
-		);
-	}
-};
-
 // Career Sublinks
 export const getCareerSublinks = async () => {
 	try {
 		const content: any = gql`
 			{
-				careerSublinks: menuItems(
-					where: {location: CAREER_SUBLINKS}
-					first: 10
-				) {
+				careerSublinks: menuItems(where: {location: CAREER_LINKS}, first: 10) {
 					edges {
 						node {
 							id

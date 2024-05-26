@@ -10,7 +10,7 @@ const MetaTag = () => {
 			{/* <!-- Website Title --> */}
 			<title key="title">{`${pageContext?.seo?.title} | Official Website`}</title>
 			<meta name="description" content={pageContext?.seo?.metaDesc} />
-			<link rel="icon" href="/img/logos/CRDB-Bank-Website-Fav-Icon.png" />
+			<link rel="icon" href="/img/logos/simba-sc-logo.png" />
 			<meta
 				name="robots"
 				content={`${pageContext?.seo?.metaRobotsNoindex} , ${pageContext?.seo?.metaRobotsNofollow}`}

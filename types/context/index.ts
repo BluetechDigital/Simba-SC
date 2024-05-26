@@ -183,15 +183,6 @@ export type ICopyrightLinks = [
 		};
 	}
 ];
-export type IAboutUsSublinks = [
-	{
-		node: {
-			id: string;
-			url: string;
-			label: string;
-		};
-	}
-];
 export type IFooterMenuLinks = [
 	{
 		node: {
@@ -201,68 +192,12 @@ export type IFooterMenuLinks = [
 		};
 	}
 ];
-export type IManagementsJobs = [
-	{
-		node: {
-			slug: string;
-			title: string;
-			excerpt: string;
-			featuredImage: {
-				node: {
-					altText: string;
-					sourceUrl: string;
-					mediaDetails: {
-						width: number;
-						height: number;
-					};
-				};
-			};
-		};
-	}
-];
 export type INavbarMenuLinks = [
 	{
 		node: {
 			id: string;
 			url: string;
 			label: string;
-		};
-	}
-];
-export type IOurProgramsLinks = [
-	{
-		node: {
-			id: string;
-			url: string;
-			label: string;
-		};
-	}
-];
-export type IMediaCentersSublinks = [
-	{
-		node: {
-			id: string;
-			url: string;
-			label: string;
-		};
-	}
-];
-export type IOperationsTeamsJobs = [
-	{
-		node: {
-			slug: string;
-			title: string;
-			excerpt: string;
-			featuredImage: {
-				node: {
-					altText: string;
-					sourceUrl: string;
-					mediaDetails: {
-						width: number;
-						height: number;
-					};
-				};
-			};
 		};
 	}
 ];
@@ -352,15 +287,11 @@ export type IGlobalProps = {
 	mobileLinks: IMobileLinks;
 	caseStudies: ICaseStudies;
 	testimonials: ITestimonials;
-	instagramFeed: IInstagramFeed;
 	jobsPositions: IJobsPositions;
 	careerSublinks: ICareerSublinks;
 	copyrightLinks: ICopyrightLinks;
-	aboutUsSublinks: IAboutUsSublinks;
 	navbarMenuLinks: INavbarMenuLinks;
-	managementsJobs: IManagementsJobs;
 	footerMenuLinks: IFooterMenuLinks;
-	operationsTeamsJobs: IOperationsTeamsJobs;
 	themesOptionsContent: IThemesOptionsContent;
 	boardOfDirectorsGrid: IBoardOfDirectorsGrid;
 	executiveLeadershipsGrid: IExecutiveLeadershipsGrid;
@@ -371,15 +302,11 @@ export type IGlobalContext = {
 	mobileLinks: IMobileLinks;
 	caseStudies: ICaseStudies;
 	testimonials: ITestimonials;
-	instagramFeed: IInstagramFeed;
 	jobsPositions: IJobsPositions;
 	careerSublinks: ICareerSublinks;
 	copyrightLinks: ICopyrightLinks;
-	aboutUsSublinks: IAboutUsSublinks;
-	managementsJobs: IManagementsJobs;
 	navbarMenuLinks: INavbarMenuLinks;
 	footerMenuLinks: IFooterMenuLinks;
-	operationsTeamsJobs: IOperationsTeamsJobs;
 	themesOptionsContent: IThemesOptionsContent;
 	boardOfDirectorsGrid: IBoardOfDirectorsGrid;
 	executiveLeadershipsGrid: IExecutiveLeadershipsGrid;

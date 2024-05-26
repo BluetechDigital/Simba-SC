@@ -20,19 +20,14 @@ import {
 	getCareerSublinks,
 	getNavbarMenuLinks,
 	getFooterMenuLinks,
-	getAboutUsSublinks,
 } from "@/functions/graphql/Queries/GetAllMenuLinks";
-import {
-	getAllJobsPositionsContent,
-	getAllManagementsTaxonomyJobs,
-	getAllOperationsTeamsTaxonomyJobs,
-} from "@/functions/graphql/Queries/GetAllJobsPositions";
 import {getAllNewsContent} from "@/functions/graphql/Queries/GetAllNews";
 import {getAllBlogsContent} from "@/functions/graphql/Queries/GetAllBlogs";
 import {getAllInstagramFeedContent} from "@/functions/socialMedia/InstagramFeed";
 import {getAllCaseStudiesContent} from "@/functions/graphql/Queries/GetAllCaseStudies";
 import {getThemesOptionsContent} from "@/functions/graphql/Queries/GetAllThemesOptions";
 import {getAllTestimonialsContent} from "@/functions/graphql/Queries/GetAllTestimonials";
+import {getAllJobsPositionsContent} from "@/functions/graphql/Queries/GetAllJobsPositions";
 
 // Components
 import PageLoadingSquares from "@/components/Global/PageLoadingSquares";
@@ -88,16 +83,12 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 		getCopyrightLinks(),
 		getNavbarMenuLinks(),
 		getFooterMenuLinks(),
-		getAboutUsSublinks(),
 		getThemesOptionsContent(),
 		getAllNewsContent(),
 		getAllBlogsContent(),
 		getAllCaseStudiesContent(),
 		getAllTestimonialsContent(),
-		getAllInstagramFeedContent(),
 		getAllJobsPositionsContent(),
-		getAllManagementsTaxonomyJobs(),
-		getAllOperationsTeamsTaxonomyJobs(),
 		getAllBoardOfDirectorsContent(),
 		getAllExecutiveLeadershipsContent(),
 	];
@@ -108,16 +99,12 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 		copyrightLinks,
 		navbarMenuLinks,
 		footerMenuLinks,
-		aboutUsSublinks,
 		themesOptionsContent,
 		news,
 		blogs,
 		caseStudies,
 		testimonials,
-		instagramFeed,
 		jobsPositions,
-		managementsJobs,
-		operationsTeamsJobs,
 		boardOfDirectorsGrid,
 		executiveLeadershipsGrid,
 	] = await Promise.all(promises);
@@ -128,15 +115,11 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 		mobileLinks: mobileLinks,
 		caseStudies: caseStudies,
 		testimonials: testimonials,
-		instagramFeed: instagramFeed,
 		jobsPositions: jobsPositions,
 		careerSublinks: careerSublinks,
 		copyrightLinks: copyrightLinks,
-		managementsJobs: managementsJobs,
-		aboutUsSublinks: aboutUsSublinks,
 		navbarMenuLinks: navbarMenuLinks,
 		footerMenuLinks: footerMenuLinks,
-		operationsTeamsJobs: operationsTeamsJobs,
 		boardOfDirectorsGrid: boardOfDirectorsGrid,
 		themesOptionsContent: themesOptionsContent,
 		executiveLeadershipsGrid: executiveLeadershipsGrid,
