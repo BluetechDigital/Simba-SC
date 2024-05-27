@@ -306,7 +306,7 @@ const Navbar: FC = () => {
 													stroke="none"
 													stroke-width="1"
 													fill="none"
-													fillRulee="evenodd"
+													fillRule="evenodd"
 												>
 													<g
 														id="Color-"
