@@ -1,7 +1,7 @@
 /*===== FONTS =====*/
 @font-face {
-	font-family: Inter;
-	src: url("../fonts/Inter.woff");
+	font-family: TeachersExtraBold;
+	src: url("../fonts/Teachers-ExtraBold.woff");
 }
 
 @font-face {
@@ -16,10 +16,15 @@
 
 // Font Stack Properties
 $main: "Kanit";
+$secondary: "TeachersExtraBold";
 $body: "PlusJakartaSans", "Inter";
 
 .font-Kanit {
 	font-family: $main;
+}
+
+.font-TeachersExtraBold {
+	font-family: $secondary;
 }
 
 .font-PlusJakartaSans {

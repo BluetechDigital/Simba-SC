@@ -236,21 +236,50 @@ export type IThemesOptionsContent = {
 		title: string;
 		target: string;
 	};
+	tiktokLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
+	youtubeLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
 	copyrightText: string;
 	phoneNumberTwo: string;
 	displayNoticeBanner: boolean;
 	noticeBannerTextarea: string;
-	menuColumnThree: {
+	newsletter: {
 		title: string;
 		paragraph: string;
-		buttonLink: {
+		mainTitle: string;
+		bottomTextarea: string;
+		icon: {
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
+		};
+	};
+	topNavigation: {
+		foundationPageLink: {
 			url: string;
 			title: string;
 			target: string;
 		};
-		backgroundImage: {
-			sourceUrl: string;
-		};
+		sponsorsIcons: [
+			{
+				altText: string;
+				sourceUrl: string;
+				mediaDetails: {
+					width: number;
+					height: number;
+				};
+			}
+		];
 	};
 };
 export type IExecutiveLeadershipsGrid = [

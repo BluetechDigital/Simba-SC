@@ -9,10 +9,10 @@
 
 html,
 body {
-	padding: 0;
-	margin: 0;
+	padding: 0px;
+	margin: 0px;
+	height: 0px;
 	overflow-x: hidden;
-	// background: $pureBlack;
 	scroll-behavior: smooth;
 	font-family: -apple-system, $body, BlinkMacSystemFont, Segoe UI, Roboto,
 		Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -28,6 +28,11 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
 	@apply rounded-[2px] bg-primary-two transition-all duration-500 hover:bg-tertiary-default;
+}
+
+body {
+	@apply bg-cover bg-no-repeat bg-center;
+	background-image: url("../public/svg/background/red-background-dots.png");
 }
 
 a {

@@ -15,7 +15,7 @@ const EmailHeader: React.FC<IEmailHeader.IEmailHeader> = ({imagesDirUrl}) => {
 					alt="Simba SC Banner"
 				/>
 			</Section>
-			<Section style={{border: "5px solid", borderColor: "#00ab00"}}></Section>
+			<Section style={{border: "5px solid", borderColor: "#ea1d25"}}></Section>
 		</>
 	);
 };

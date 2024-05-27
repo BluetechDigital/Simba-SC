@@ -64,6 +64,21 @@ export const getThemesOptionsContent = async () => {
 										}
 									}
 								}
+								topNavigation {
+									foundationPageLink {
+										url
+										title
+										target
+									}
+									sponsorsIcons {
+										altText
+										sourceUrl
+										mediaDetails {
+											height
+											width
+										}
+									}
+								}
 							}
 						}
 					}

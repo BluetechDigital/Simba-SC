@@ -9,7 +9,7 @@ const EmailFooter: React.FC<IEmailFooter.IEmailFooter> = ({
 }) => {
 	return (
 		<>
-			<Section style={{border: "5px solid", borderColor: "#00ab00"}}></Section>
+			<Section style={{border: "5px solid", borderColor: "#ea1d25"}}></Section>
 			<Section style={footer}>
 				<Section style={footerLogoSection}>
 					<Link href={`https://simbasc.co.tz`}>

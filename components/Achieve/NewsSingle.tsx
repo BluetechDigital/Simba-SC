@@ -119,7 +119,7 @@ const NewsSingle: FC<INewsSingle> = ({
 									className="flex items-center gap-4 flex-wrap lg:gap-8"
 								>
 									<Link
-										className="inline-block text-green"
+										className="inline-block text-primary"
 										href={`${globalContext?.themesOptionsContent?.facebookLink?.url}`}
 										aria-label={`Facebook Social Media Link ${globalContext?.themesOptionsContent?.facebookLink?.title}`}
 										target={
@@ -130,7 +130,7 @@ const NewsSingle: FC<INewsSingle> = ({
 											height="100%"
 											className="w-5 h-5"
 											style={{
-												fill: "#00ab00",
+												fill: "#ea1d25",
 												fillRule: "evenodd",
 												clipRule: "evenodd",
 												strokeLinejoin: "round",
@@ -147,7 +147,7 @@ const NewsSingle: FC<INewsSingle> = ({
 										</svg>
 									</Link>
 									<Link
-										className="inline-block text-green"
+										className="inline-block text-primary"
 										href={`${globalContext?.themesOptionsContent?.twitterLink?.url}`}
 										aria-label={`Twitter Social Media Link ${globalContext?.themesOptionsContent?.twitterLink?.title}`}
 										target={
@@ -158,7 +158,7 @@ const NewsSingle: FC<INewsSingle> = ({
 											height="100%"
 											className="w-5 h-5"
 											style={{
-												fill: "#00ab00",
+												fill: "#ea1d25",
 												fillRule: "evenodd",
 												clipRule: "evenodd",
 												strokeLinejoin: "round",
@@ -175,7 +175,7 @@ const NewsSingle: FC<INewsSingle> = ({
 										</svg>
 									</Link>
 									<Link
-										className="inline-block text-green"
+										className="inline-block text-primary"
 										href={`${globalContext?.themesOptionsContent?.linkedinLink?.url}`}
 										aria-label={`Linkedin Social Media Link ${globalContext?.themesOptionsContent?.linkedinLink?.title}`}
 										target={
@@ -185,7 +185,7 @@ const NewsSingle: FC<INewsSingle> = ({
 										<svg
 											height="100%"
 											style={{
-												fill: "#00ab00",
+												fill: "#ea1d25",
 												fillRule: "evenodd",
 												clipRule: "evenodd",
 												strokeLinejoin: "round",
@@ -203,7 +203,7 @@ const NewsSingle: FC<INewsSingle> = ({
 										</svg>
 									</Link>
 									<Link
-										className="inline-block text-green"
+										className="inline-block text-primary"
 										href={`${globalContext?.themesOptionsContent?.instagramLink?.url}`}
 										aria-label={`Instagram Social Media Link ${globalContext?.themesOptionsContent?.instagramLink?.title}`}
 										target={
@@ -211,7 +211,7 @@ const NewsSingle: FC<INewsSingle> = ({
 										}
 									>
 										<svg
-											fill="#00ab00"
+											fill="#ea1d25"
 											height="800px"
 											width="800px"
 											version="1.1"
