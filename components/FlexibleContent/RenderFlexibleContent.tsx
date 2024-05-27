@@ -3,7 +3,9 @@ import React, {FC, Fragment} from "react";
 import {usePageContext} from "@/context/pages";
 
 // Components
-// import Example from "../Example";
+import ErrorPage from "../Global/ErrorPage";
+import TitleParagraph from "../TitleParagraph";
+import Maintenance from "../Global/Maintenance";
 
 const RenderFlexibleContent: FC = () => {
 	const content = usePageContext();
@@ -11,26 +13,29 @@ const RenderFlexibleContent: FC = () => {
 
 	// Components Key Value Pairs
 	const componentMapping: any = {
-		// [`${FlexibleContent}_Example`]: Example,
+		[`${FlexibleContent}_Maintenance`]: Maintenance,
+		[`${FlexibleContent}_ErrorPageContent`]: ErrorPage,
+		[`${FlexibleContent}_TitleParagraph`]: TitleParagraph,
 	};
 
 	return (
 		<>
 			{content?.content?.length > 0 ? (
-				content?.content?.map((item: any, index: number) => (
-					<section
-						key={index}
-						className={item?.displaySection ? "block" : "hidden"}
-					>
-						{componentMapping[item?.fieldGroupName] && (
-							<Fragment>
-								{React.createElement(componentMapping[item?.fieldGroupName], {
-									...item,
-								})}
-							</Fragment>
-						)}
-					</section>
-				))
+				content?.content?.map((item: any, index: number) =>
+					item?.displaySection ? (
+						<section key={index}>
+							{componentMapping[item?.fieldGroupName] && (
+								<Fragment>
+									{React.createElement(componentMapping[item?.fieldGroupName], {
+										...item,
+									})}
+								</Fragment>
+							)}
+						</section>
+					) : (
+						<></>
+					)
+				)
 			) : (
 				<></>
 			)}

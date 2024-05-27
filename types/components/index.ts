@@ -6,6 +6,11 @@ export type INewsSingle = {
 	articleType: string;
 	boldParagraph: string;
 };
+export type ITitleParagraph = {
+	title: string;
+	paragraph: string;
+	displayParagraph: boolean;
+};
 
 // Global
 export type ILayout = {

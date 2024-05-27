@@ -327,7 +327,7 @@ const Navbar: FC = () => {
 						</div>
 					</div>
 				</div>
-				<div className="flex items-center justify-between py-2 px-4">
+				<div className="flex items-center justify-between py-2 px-4 bg-primary-dark">
 					<motion.div
 						initial={initialTwo}
 						whileInView={fadeIn}
@@ -341,27 +341,52 @@ const Navbar: FC = () => {
 								height={1000}
 								alt="Simba SC Logo"
 								src="/img/logos/simba-sc-logo.png"
-								className="object-contain object-center w-[105px] h-[50px] lg:w-full lg:h-[100px]"
+								className="object-contain object-center w-[105px] h-[50px] lg:w-full lg:h-[75px]"
 							/>
 						</Link>
 					</motion.div>
 					<div className="w-auto">
 						<div className="flex flex-wrap items-center">
 							<div className="w-auto hidden lg:block">
-								<ul className="flex items-center mr-12">
-									<li className="mr-12 text-white font-medium hover:text-opacity-90 tracking-tighter">
-										<a href="#">Home</a>
-									</li>
-									<li className="mr-12 text-white font-medium hover:text-opacity-90 tracking-tighter">
-										<a href="#">About us</a>
-									</li>
-									<li className="mr-12 text-white font-medium hover:text-opacity-90 tracking-tighter">
-										<a href="#">Wallet</a>
-									</li>
-									<li className="text-white font-medium hover:text-opacity-90 tracking-tighter">
-										<a href="#">Blog</a>
-									</li>
-								</ul>
+								<motion.ul
+									initial={initial}
+									variants={stagger}
+									whileInView="animate"
+									viewport={{once: true}}
+									className="flex items-center mr-12"
+								>
+									{globalContext?.navbarMenuLinks?.length > 0 ? (
+										globalContext?.navbarMenuLinks?.map(
+											(item: any, index: number) => (
+												<Fragment key={index}>
+													<motion.li
+														custom={index}
+														initial={initial}
+														whileInView="animate"
+														viewport={{once: true}}
+														variants={arrayLoopStaggerChildren}
+														className="hidden xl:block"
+													>
+														<Link
+															href={`${item?.node?.url}`}
+															target={`${
+																item?.node?.target
+																	? item?.node?.target
+																	: "_self"
+															}`}
+															aria-label={`${item?.node?.label}`}
+															className="font-OverusedGroteskExtraBold text-white hover:text-primary-default text-medium text-center uppercase transition-all ease-in-out duration-500"
+														>
+															{item?.node?.label}
+														</Link>
+													</motion.li>
+												</Fragment>
+											)
+										)
+									) : (
+										<></>
+									)}
+								</motion.ul>
 							</div>
 							<div className="w-auto lg:hidden">
 								<a className="relative z-10 inline-block" href="#">

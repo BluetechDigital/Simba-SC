@@ -11,7 +11,7 @@ import {motion} from "framer-motion";
 import {IMaintenance} from "@/types/components/index";
 
 // Styling
-import styles from "../styles/components/Maintenance.module.scss";
+import styles from "../../styles/components/Maintenance.module.scss";
 
 // Components
 import Paragraph from "./../Elements/Paragraph";

@@ -1,32 +1,32 @@
 /*===== FONTS =====*/
 @font-face {
-	font-family: TeachersExtraBold;
-	src: url("../fonts/Teachers-ExtraBold.woff");
+	font-family: OverusedGroteskExtraBold;
+	src: url("../fonts/OverusedGrotesk-ExtraBold.woff");
 }
 
 @font-face {
-	font-family: PlusJakartaSans;
-	src: url("../fonts/PlusJakartaSans.woff");
+	font-family: OverusedGroteskBold;
+	src: url("../fonts/OverusedGrotesk-Bold.woff");
 }
 
 @font-face {
-	font-family: Kanit;
-	src: url("../fonts/Kanit-Regular.woff");
+	font-family: OverusedGroteskLight;
+	src: url("../fonts/OverusedGrotesk-Light.woff");
 }
 
 // Font Stack Properties
-$main: "Kanit";
-$secondary: "TeachersExtraBold";
-$body: "PlusJakartaSans", "Inter";
+$main: "OverusedGroteskExtraBold";
+$secondary: "OverusedGroteskBold";
+$body: "OverusedGroteskLight", "Inter";
 
-.font-Kanit {
+.font-OverusedGroteskExtraBold {
 	font-family: $main;
 }
 
-.font-TeachersExtraBold {
+.font-OverusedGroteskBold {
 	font-family: $secondary;
 }
 
-.font-PlusJakartaSans {
+.font-OverusedGroteskLight {
 	font-family: $body;
 }

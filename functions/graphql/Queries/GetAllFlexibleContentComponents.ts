@@ -19,6 +19,13 @@ export const getAllFlexibleContentComponents = async (
 								... on DefaultTemplate {
 									flexibleContent {
 										flexibleContent {
+											... on ${postTypeFlexibleContent}_TitleParagraph {
+												fieldGroupName
+												displaySection
+												title
+												paragraph
+												displayParagraph
+											}
 											... on ${postTypeFlexibleContent}_Maintenance {
 												fieldGroupName
 												displaySection

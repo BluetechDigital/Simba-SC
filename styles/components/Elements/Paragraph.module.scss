@@ -8,12 +8,12 @@
 	h4,
 	h5 {
 		font-family: $body;
-		@apply text-xl font-extrabold py-4;
+		@apply text-xl py-4 font-OverusedGroteskExtraBold uppercase;
 	}
 
 	h2 {
 		strong {
-			@apply tracking-tight font-extrabold;
+			@apply tracking-tight font-OverusedGroteskExtraBold;
 		}
 	}
 
@@ -29,14 +29,14 @@
 			}
 
 			a {
-				@apply font-semibold underline text-primary-two hover:text-primary-two transition-all ease-in-out duration-500;
+				@apply font-semibold underline text-primary-two hover:text-primary-dark transition-all ease-in-out duration-500;
 			}
 		}
 	}
 
 	p {
 		a {
-			@apply font-semibold underline text-primary-two hover:text-primary-two transition-all ease-in-out duration-500;
+			@apply font-semibold underline text-primary-two hover:text-primary-dark transition-all ease-in-out duration-500;
 		}
 
 		img {
