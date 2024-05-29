@@ -18,12 +18,18 @@ import styles from "./../../styles/components/Navbar.module.scss";
 const Navbar: FC = () => {
 	const globalContext = useGlobalContext();
 
+	const [isActive, setIsActive] = useState(false);
+
+	const handleClick = () => {
+		setIsActive(!isActive);
+	};
+
 	return (
 		<>
 			<div
 				className={styles.navbar + ` z-[999] w-full fixed group bg-transparent`}
 			>
-				<div className="py-[1px] px-0 bg-white">
+				<div className="py-0 px-0 bg-white">
 					<div className="flex items-center justify-between gap-4 px-4">
 						<div className="flex items-center justify-between gap-4">
 							{globalContext?.themesOptionsContent?.topNavigation?.sponsorsIcons
@@ -64,7 +70,7 @@ const Navbar: FC = () => {
 										: "_self"
 								}`}
 								aria-label={`Chelsea Foundation`}
-								className="text-black hover:hover:text-primary-two text-tiny text-center transition-all ease-in-out duration-500"
+								className="font-XenonNueRegular text-black hover:hover:text-primary-two text-base text-center transition-all ease-in-out duration-500"
 							>
 								{
 									globalContext?.themesOptionsContent?.topNavigation
@@ -219,11 +225,11 @@ const Navbar: FC = () => {
 											xmlns="http://www.w3.org/2000/svg"
 											className="w-[30px] h-[30px] fill-primary-default hover:fill-primary-dark transition-all duration-500 ease-in-out"
 										>
-											<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+											<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
 											<g
 												id="SVGRepo_tracerCarrier"
-												stroke-linecap="round"
-												stroke-linejoin="round"
+												strokeLinecap="round"
+												strokeLinejoin="round"
 											></g>
 											<g id="SVGRepo_iconCarrier">
 												<path d="M20.445 5h-8.891A6.559 6.559 0 0 0 5 11.554v8.891A6.559 6.559 0 0 0 11.554 27h8.891a6.56 6.56 0 0 0 6.554-6.555v-8.891A6.557 6.557 0 0 0 20.445 5zm4.342 15.445a4.343 4.343 0 0 1-4.342 4.342h-8.891a4.341 4.341 0 0 1-4.341-4.342v-8.891a4.34 4.34 0 0 1 4.341-4.341h8.891a4.342 4.342 0 0 1 4.341 4.341l.001 8.891z"></path>
@@ -257,11 +263,11 @@ const Navbar: FC = () => {
 											className="w-[22.5px] h-[22.5px] fill-primary-default hover:fill-primary-dark transition-all duration-500 ease-in-out"
 											xmlns="http://www.w3.org/2000/svg"
 										>
-											<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+											<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
 											<g
 												id="SVGRepo_tracerCarrier"
-												stroke-linecap="round"
-												stroke-linejoin="round"
+												strokeLinecap="round"
+												strokeLinejoin="round"
 											></g>
 											<g id="SVGRepo_iconCarrier">
 												<path d="M412.19,118.66a109.27,109.27,0,0,1-9.45-5.5,132.87,132.87,0,0,1-24.27-20.62c-18.1-20.71-24.86-41.72-27.35-56.43h.1C349.14,23.9,350,16,350.13,16H267.69V334.78c0,4.28,0,8.51-.18,12.69,0,.52-.05,1-.08,1.56,0,.23,0,.47-.05.71,0,.06,0,.12,0,.18a70,70,0,0,1-35.22,55.56,68.8,68.8,0,0,1-34.11,9c-38.41,0-69.54-31.32-69.54-70s31.13-70,69.54-70a68.9,68.9,0,0,1,21.41,3.39l.1-83.94a153.14,153.14,0,0,0-118,34.52,161.79,161.79,0,0,0-35.3,43.53c-3.48,6-16.61,30.11-18.2,69.24-1,22.21,5.67,45.22,8.85,54.73v.2c2,5.6,9.75,24.71,22.38,40.82A167.53,167.53,0,0,0,115,470.66v-.2l.2.2C155.11,497.78,199.36,496,199.36,496c7.66-.31,33.32,0,62.46-13.81,32.32-15.31,50.72-38.12,50.72-38.12a158.46,158.46,0,0,0,27.64-45.93c7.46-19.61,9.95-43.13,9.95-52.53V176.49c1,.6,14.32,9.41,14.32,9.41s19.19,12.3,49.13,20.31c21.48,5.7,50.42,6.9,50.42,6.9V131.27C453.86,132.37,433.27,129.17,412.19,118.66Z"></path>
@@ -294,17 +300,17 @@ const Navbar: FC = () => {
 											className="w-[28px] h-[28px]"
 											xmlns="http://www.w3.org/2000/svg"
 										>
-											<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+											<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
 											<g
 												id="SVGRepo_tracerCarrier"
-												stroke-linecap="round"
-												stroke-linejoin="round"
+												strokeLinecap="round"
+												strokeLinejoin="round"
 											></g>
 											<g id="SVGRepo_iconCarrier">
 												<g
 													id="Icons"
 													stroke="none"
-													stroke-width="1"
+													strokeWidth="1"
 													fill="none"
 													fillRule="evenodd"
 												>
@@ -327,7 +333,7 @@ const Navbar: FC = () => {
 						</div>
 					</div>
 				</div>
-				<div className="flex items-center justify-between py-2 px-4 bg-primary-dark">
+				<div className="flex items-center justify-between bg-lightGreyTwo">
 					<motion.div
 						initial={initialTwo}
 						whileInView={fadeIn}
@@ -353,7 +359,7 @@ const Navbar: FC = () => {
 									variants={stagger}
 									whileInView="animate"
 									viewport={{once: true}}
-									className="flex items-center mr-12"
+									className="flex items-center gap-8"
 								>
 									{globalContext?.navbarMenuLinks?.length > 0 ? (
 										globalContext?.navbarMenuLinks?.map(
@@ -375,7 +381,7 @@ const Navbar: FC = () => {
 																	: "_self"
 															}`}
 															aria-label={`${item?.node?.label}`}
-															className="font-OverusedGroteskExtraBold text-white hover:text-primary-default text-medium text-center uppercase transition-all ease-in-out duration-500"
+															className="font-XenonNueBold tracking-[0.05rem] text-black hover:text-primary-default text-paragraph text-center uppercase transition-all ease-in-out duration-500"
 														>
 															{item?.node?.label}
 														</Link>
@@ -391,55 +397,58 @@ const Navbar: FC = () => {
 							<div className="w-auto lg:hidden">
 								<a className="relative z-10 inline-block" href="#">
 									<svg
-										className="navbar-burger text-primary-500"
+										className="navbar-burger text-primary-dark"
 										width="51"
 										height="51"
+										fill="#c90a12"
 										viewBox="0 0 56 56"
-										fill="none"
 										xmlns="http://www.w3.org/2000/svg"
 									>
-										<rect
-											width="56"
-											height="56"
-											rx="28"
-											fill="currentColor"
-										></rect>
+										<rect width="56" height="56" rx="28" fill="#c90a12"></rect>
 										<path
 											d="M37 32H19M37 24H19"
-											stroke="black"
-											stroke-width="1.5"
-											stroke-linecap="round"
-											stroke-linejoin="round"
+											stroke="#c90a12"
+											strokeWidth="1.5"
+											strokeLinecap="round"
+											strokeLinejoin="round"
 										></path>
 									</svg>
 								</a>
 							</div>
 						</div>
 					</div>
-					<div className="w-auto hidden lg:block p-2">
-						<button>
-							<svg
-								className="navbar-burger"
-								width="18"
-								height="17"
-								viewBox="0 0 18 17"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<rect width="5" height="5" rx="2.5" fill="white"></rect>
-								<rect x="13" width="5" height="5" rx="2.5" fill="white"></rect>
-								<rect
-									x="13"
-									y="12"
-									width="5"
-									height="5"
-									rx="2.5"
-									fill="white"
-								></rect>
-								<rect y="12" width="5" height="5" rx="2.5" fill="white"></rect>
-							</svg>
+					<div className="relative w-auto lg:w-1/12 h-full hidden lg:flex flex-col items-center justify-center cursor-pointer p-4 bg-primary-default hover:bg-primary-dark transition-all ease-in-out duration-500">
+						<button
+							className="flex flex-col items-center justify-center"
+							onClick={handleClick}
+						>
+							<span className="hamburger-icon" id="icon">
+								<span className={isActive ? "iconOne-active" : "iconOne"} />
+								<span className={isActive ? "iconTwo-active" : "iconTwo"} />
+								<span className={isActive ? "iconThree-active" : "iconThree"} />
+								<span className="clear" />
+							</span>
+							<span className="text-white uppercase font-XenonNueBold tracking-[0.05rem]">
+								Menu
+							</span>
 						</button>
 					</div>
+				</div>
+				<div>
+					{/* Hidden Side Menu */}
+					<nav id="nav" className={isActive ? "navbar-active" : "hidden"}>
+						<ul>
+							<li>HOme</li>
+							<li>About</li>
+							<li>Contact</li>
+							<li onClick={handleClick}>Help</li>
+						</ul>
+					</nav>
+
+					<div
+						id="blue"
+						className={isActive ? "dark-blue-slide-active" : "dark-blue"}
+					></div>
 				</div>
 			</div>
 		</>

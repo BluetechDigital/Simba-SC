@@ -46,7 +46,7 @@ const CookiePolicyCard: FC = () => {
 							initial={initial}
 							whileInView={fadeInUp}
 							viewport={{once: true}}
-							className="lg:min-w-[10rem] font-bold font-OverusedGroteskExtraBold text-5xl uppercase tracking-tight text-black leading-none text-center lg:text-left"
+							className="lg:min-w-[10rem] font-bold font-XenonNueBold text-5xl uppercase tracking-tight text-black leading-none text-center lg:text-left"
 						>
 							Our Cookie Policies
 						</motion.h3>
@@ -67,7 +67,7 @@ const CookiePolicyCard: FC = () => {
 									initial={initial}
 									whileInView={fadeInUp}
 									viewport={{once: true}}
-									className="inline-block px-6 py-3 font-OverusedGroteskExtraBold uppercase text-tiny leading-tight text-white transition-all duration-200 ease-in-out bg-primary-default hover:bg-primary-two"
+									className="inline-block px-6 py-3 font-XenonNueBold uppercase text-tiny leading-tight text-white transition-all duration-200 ease-in-out bg-primary-default hover:bg-primary-two"
 								>
 									Accept Cookies
 								</motion.button>
@@ -76,7 +76,7 @@ const CookiePolicyCard: FC = () => {
 									initial={initial}
 									whileInView={fadeInUp}
 									viewport={{once: true}}
-									className="inline-block px-6 py-3 font-OverusedGroteskExtraBold uppercase text-tiny leading-tight text-white bg-primary-two hover:bg-primary-dark"
+									className="inline-block px-6 py-3 font-XenonNueBold uppercase text-tiny leading-tight text-white bg-primary-two hover:bg-primary-dark"
 								>
 									Refuse Cookies
 								</motion.button>
@@ -89,7 +89,7 @@ const CookiePolicyCard: FC = () => {
 								initial={initial}
 								whileInView={fadeInUp}
 								viewport={{once: true}}
-								className="font-bold font-OverusedGroteskExtraBold text-4xl sm:text-5xl uppercase tracking-tight text-black leading-tight text-center lg:text-left leading-none"
+								className="font-bold font-XenonNueBold text-4xl sm:text-5xl uppercase tracking-tight text-black leading-tight text-center lg:text-left leading-none"
 							>
 								Discover Highlights & More
 							</motion.h3>
@@ -105,7 +105,7 @@ const CookiePolicyCard: FC = () => {
 									"linear-gradient(0deg,rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0.85)),url(/svg/background/grid-background-12-white.svg)",
 							}}
 						>
-							<span className="font-bold font-OverusedGroteskExtraBold uppercase text-xl text-white">
+							<span className="font-bold font-XenonNueBold uppercase text-xl text-white">
 								Sponsored By
 							</span>
 							<div className="flex items-center justify-center gap-4">

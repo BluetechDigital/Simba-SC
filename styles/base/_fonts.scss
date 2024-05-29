@@ -1,12 +1,12 @@
 /*===== FONTS =====*/
 @font-face {
-	font-family: OverusedGroteskExtraBold;
-	src: url("../fonts/OverusedGrotesk-ExtraBold.woff");
+	font-family: XenonNueBold;
+	src: url("../fonts/XenonNue-Bold.woff");
 }
 
 @font-face {
-	font-family: OverusedGroteskBold;
-	src: url("../fonts/OverusedGrotesk-Bold.woff");
+	font-family: XenonNueRegular;
+	src: url("../fonts/XenonNue-Regular.woff");
 }
 
 @font-face {
@@ -15,15 +15,15 @@
 }
 
 // Font Stack Properties
-$main: "OverusedGroteskExtraBold";
-$secondary: "OverusedGroteskBold";
+$main: "XenonNueBold";
+$secondary: "XenonNueRegular";
 $body: "OverusedGroteskLight", "Inter";
 
-.font-OverusedGroteskExtraBold {
+.font-XenonNueBold {
 	font-family: $main;
 }
 
-.font-OverusedGroteskBold {
+.font-XenonNueRegular {
 	font-family: $secondary;
 }
 
