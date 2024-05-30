@@ -19,7 +19,16 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 				<div
 					className="bg-cover bg-no-repeat bg-center h-full w-full p-10 pt-20 flex flex-col"
 					style={{
-						backgroundImage: `url("/svg/background/red-background-dots.png")`,
+						backgroundImage: `linear-gradient(
+						0deg,
+						rgba(234, 29, 37, 0),
+						rgba(234, 29, 37, 0),
+						rgba(234, 29, 37, 0),
+						rgba(234, 29, 37, 0.10),
+						rgba(234, 29, 37, 0.10),
+						rgba(234, 29, 37, 0.45),
+						rgba(234, 29, 37, 0.50)),
+						url("/svg/background/red-background-dots.png")`,
 					}}
 				>
 					<div className="max-w-9xl mx-auto h-full w-full px-6 lg:px-10 pt-20 pb-0 flex flex-col justify-between gap-20 lg:gap-10">
@@ -43,7 +52,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 													custom={index}
 													initial={initial}
 													whileInView="animate"
-													viewport={{once: true}}
+													// viewport={{once: false}}
 													variants={navigationMenuStaggerChildren}
 													className="self-start"
 												>
@@ -98,7 +107,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 														custom={index}
 														initial={initial}
 														whileInView="animate"
-														viewport={{once: true}}
+														// viewport={{once: true}}
 														variants={navigationMenuStaggerChildren}
 														className="self-end"
 													>

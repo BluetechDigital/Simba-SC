@@ -87,8 +87,8 @@ export const navigationMenuStaggerChildren: ArrayLoopStaggerChildren = {
 		opacity: 1,
 		y: 0,
 		transition: {
-			delay: 0.2 * keys,
-			duration: 2,
+			delay: 0.25 * keys,
+			duration: 0.5,
 			ease: "easeInOut",
 		},
 	}),
