@@ -17,12 +17,12 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 		<>
 			<div className={menuActive ? "sideMenu-active" : "sideMenu hidden"}>
 				<div
-					className="bg-cover bg-no-repeat bg-center h-full w-full p-10 pt-20"
+					className="bg-cover bg-no-repeat bg-center h-full w-full p-10 pt-20 flex flex-col"
 					style={{
 						backgroundImage: `url("/svg/background/red-background-dots.png")`,
 					}}
 				>
-					<div className="max-w-9xl mx-auto h-full w-full px-10 py-20">
+					<div className="max-w-9xl mx-auto h-full w-full px-10 pt-20 pb-0 flex flex-col  justify-between gap-10">
 						<div className="flex flex-col lg:flex-row lg:gap-10 xl:gap-24">
 							<motion.ul
 								initial={initial}
@@ -65,11 +65,64 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 									<></>
 								)}
 							</motion.ul>
-							<div className="w-full lg:w-1/2">Hello</div>
+							<div className="w-full lg:w-1/2"></div>
 						</div>
-						<div className="flex items-center justify-center gap-10">
-							<div />
-							<div className="w-full lg:w-1/4">Useful Links</div>
+						<div className="flex items-center justify-between gap-10">
+							<div className="w-full lg:w-1/4" />
+							<div
+								className={
+									menuActive
+										? "w-full flex flex-col items-end justify-center gap-6"
+										: "hidden"
+								}
+							>
+								<span className="font-OverusedGroteskLight font-semibold text-paragraph tracking-[0.02rem] text-white text-center ">
+									Useful Links
+								</span>
+								<motion.ul
+									initial={initial}
+									variants={stagger}
+									whileInView="animate"
+									viewport={{once: true}}
+									className={
+										menuActive
+											? "w-full lg:w-1/2 flex flex-col items-center justify-end gap-0"
+											: "hidden"
+									}
+								>
+									{globalContext?.megaNavigationUsefulSublinks?.length > 0 ? (
+										globalContext?.megaNavigationUsefulSublinks?.map(
+											(item: any, index: number) => (
+												<Fragment key={index}>
+													<motion.li
+														custom={index}
+														initial={initial}
+														whileInView="animate"
+														viewport={{once: true}}
+														variants={navigationMenuStaggerChildren}
+														className="self-end"
+													>
+														<Link
+															href={`${item?.node?.url}`}
+															target={`${
+																item?.node?.target
+																	? item?.node?.target
+																	: "_self"
+															}`}
+															aria-label={`${item?.node?.label}`}
+															className="font-XenonNueBold leading-none text-white hover:text-black lg:text-xl text-center"
+														>
+															{item?.node?.label}
+														</Link>
+													</motion.li>
+												</Fragment>
+											)
+										)
+									) : (
+										<></>
+									)}
+								</motion.ul>
+							</div>
 						</div>
 					</div>
 				</div>

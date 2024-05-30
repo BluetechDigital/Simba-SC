@@ -89,7 +89,40 @@ export const getMegaNavigationLinks = async () => {
 	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(
-			"Something went wrong trying to fetch mobile links content"
+			"Something went wrong trying to fetch mega navigation content"
+		);
+	}
+};
+
+// Mega Navigation Useful Sublinks
+export const getMegaNavigationUsefulSublinks = async () => {
+	try {
+		const content: any = gql`
+			{
+				megaNavigationUsefulSublinks: menuItems(
+					where: {location: MEGA_NAVIGATION_USEFUL_SUBLINKS}
+					first: 10
+				) {
+					edges {
+						node {
+							id
+							url
+							label
+						}
+					}
+				}
+			}
+		`;
+
+		const response: any = await client.query({
+			query: content,
+		});
+
+		return response?.data?.megaNavigationUsefulSublinks?.edges;
+	} catch (error: unknown) {
+		console.log(error);
+		throw new Error(
+			"Something went wrong trying to fetch mega navigation useful sublinks content"
 		);
 	}
 };

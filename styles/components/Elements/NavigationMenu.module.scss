@@ -14,15 +14,15 @@
 }
 
 .hamburger-icon {
-	@apply relative py-4 h-full w-full;
+	@apply relative py-4 h-full w-full mx-auto;
 }
 
 .iconOne-active {
-	@apply opacity-100 rotate-[40deg];
+	@apply absolute left-0 top-1/2 w-[40px] h-[4px] ml-[0.40rem] bg-white opacity-100 rotate-[40deg];
 }
 
 .iconThree-active {
-	@apply opacity-100 rotate-[-40deg];
+	@apply absolute left-0 top-1/2 w-[40px] h-[4px] ml-[0.40rem] bg-white opacity-100 rotate-[-40deg];
 }
 
 .iconTwo-active {

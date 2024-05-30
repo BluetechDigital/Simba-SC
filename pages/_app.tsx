@@ -21,6 +21,7 @@ import {
 	getNavbarMenuLinks,
 	getFooterMenuLinks,
 	getMegaNavigationLinks,
+	getMegaNavigationUsefulSublinks,
 } from "@/functions/graphql/Queries/GetAllMenuLinks";
 import {getAllNewsContent} from "@/functions/graphql/Queries/GetAllNews";
 import {getAllBlogsContent} from "@/functions/graphql/Queries/GetAllBlogs";
@@ -85,6 +86,7 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 		getNavbarMenuLinks(),
 		getFooterMenuLinks(),
 		getMegaNavigationLinks(),
+		getMegaNavigationUsefulSublinks(),
 		getThemesOptionsContent(),
 		getAllNewsContent(),
 		getAllBlogsContent(),
@@ -102,6 +104,7 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 		navbarMenuLinks,
 		footerMenuLinks,
 		megaNavigationLinks,
+		megaNavigationUsefulSublinks,
 		themesOptionsContent,
 		news,
 		blogs,
@@ -127,6 +130,7 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 		boardOfDirectorsGrid: boardOfDirectorsGrid,
 		themesOptionsContent: themesOptionsContent,
 		executiveLeadershipsGrid: executiveLeadershipsGrid,
+		megaNavigationUsefulSublinks: megaNavigationUsefulSublinks,
 	};
 
 	return {

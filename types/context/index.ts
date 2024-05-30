@@ -74,15 +74,6 @@ export type IContent = [
 		content: any;
 	}
 ];
-export type IMobileLinks = [
-	{
-		node: {
-			id: string;
-			url: string;
-			label: string;
-		};
-	}
-];
 export type ICaseStudies = [
 	{
 		node: {
@@ -165,51 +156,7 @@ export type IInstagramFeed = [
 		};
 	}
 ];
-export type ICareerSublinks = [
-	{
-		node: {
-			id: string;
-			url: string;
-			label: string;
-		};
-	}
-];
-export type ICopyrightLinks = [
-	{
-		node: {
-			id: string;
-			url: string;
-			label: string;
-		};
-	}
-];
-export type IFooterMenuLinks = [
-	{
-		node: {
-			id: string;
-			url: string;
-			label: string;
-		};
-	}
-];
-export type INavbarMenuLinks = [
-	{
-		node: {
-			id: string;
-			url: string;
-			label: string;
-		};
-	}
-];
-export type IMegaNavigationLinks = [
-	{
-		node: {
-			id: string;
-			url: string;
-			label: string;
-		};
-	}
-];
+
 export type IBoardOfDirectorsGrid = [
 	{
 		node: {
@@ -301,6 +248,71 @@ export type IExecutiveLeadershipsGrid = [
 	}
 ];
 
+// WEBSITE LINKS AND SUBLINKS
+export type IMobileLinks = [
+	{
+		node: {
+			id: string;
+			url: string;
+			label: string;
+		};
+	}
+];
+export type ICareerSublinks = [
+	{
+		node: {
+			id: string;
+			url: string;
+			label: string;
+		};
+	}
+];
+export type ICopyrightLinks = [
+	{
+		node: {
+			id: string;
+			url: string;
+			label: string;
+		};
+	}
+];
+export type IFooterMenuLinks = [
+	{
+		node: {
+			id: string;
+			url: string;
+			label: string;
+		};
+	}
+];
+export type INavbarMenuLinks = [
+	{
+		node: {
+			id: string;
+			url: string;
+			label: string;
+		};
+	}
+];
+export type IMegaNavigationLinks = [
+	{
+		node: {
+			id: string;
+			url: string;
+			label: string;
+		};
+	}
+];
+export type IMegaNavigationUsefulSublinks = [
+	{
+		node: {
+			id: string;
+			url: string;
+			label: string;
+		};
+	}
+];
+
 /* CONTEXT PROVIDERS  */
 export type IPostTypes = {
 	news: string;
@@ -334,6 +346,7 @@ export type IGlobalProps = {
 	themesOptionsContent: IThemesOptionsContent;
 	boardOfDirectorsGrid: IBoardOfDirectorsGrid;
 	executiveLeadershipsGrid: IExecutiveLeadershipsGrid;
+	megaNavigationUsefulSublinks: IMegaNavigationUsefulSublinks;
 };
 export type IGlobalContext = {
 	news: INews;
@@ -350,6 +363,7 @@ export type IGlobalContext = {
 	themesOptionsContent: IThemesOptionsContent;
 	boardOfDirectorsGrid: IBoardOfDirectorsGrid;
 	executiveLeadershipsGrid: IExecutiveLeadershipsGrid;
+	megaNavigationUsefulSublinks: IMegaNavigationUsefulSublinks;
 };
 export type IPageContextProvider = {
 	seo: ISeo;

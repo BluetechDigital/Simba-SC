@@ -24,6 +24,7 @@ const GlobalContextProvider: FC<IGlobalContextProvider> = ({
 				themesOptionsContent: globalProps?.themesOptionsContent,
 				boardOfDirectorsGrid: globalProps?.boardOfDirectorsGrid,
 				executiveLeadershipsGrid: globalProps?.executiveLeadershipsGrid,
+				megaNavigationUsefulSublinks: globalProps?.megaNavigationUsefulSublinks,
 			}}
 		>
 			{children}

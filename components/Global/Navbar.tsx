@@ -4,7 +4,7 @@ import {
 	initial,
 	stagger,
 	initialTwo,
-	navigationMenuStaggerChildren,
+	arrayLoopStaggerChildren,
 } from "@/animations/animations";
 import Link from "next/link";
 import Image from "next/image";
@@ -373,7 +373,7 @@ const Navbar: FC = () => {
 														initial={initial}
 														whileInView="animate"
 														viewport={{once: true}}
-														variants={navigationMenuStaggerChildren}
+														variants={arrayLoopStaggerChildren}
 														className="hidden xl:block"
 													>
 														<Link
@@ -428,7 +428,7 @@ const Navbar: FC = () => {
 						}}
 					>
 						<button className="relative z-50 flex flex-col items-center justify-center">
-							<span className="hamburger-icon" id="icon">
+							<span className="hamburger-icon">
 								<span className={menuActive ? "iconOne-active" : "iconOne"} />
 								<span className={menuActive ? "iconTwo-active" : "iconTwo"} />
 								<span
@@ -436,9 +436,14 @@ const Navbar: FC = () => {
 								/>
 								<span className="clear" />
 							</span>
-							<span className="text-white uppercase font-XenonNueBold tracking-[0.05rem]">
-								Menu
-							</span>
+							<motion.span
+								initial={initialTwo}
+								whileInView={fadeIn}
+								viewport={{once: true}}
+								className="text-white uppercase font-XenonNueBold tracking-[0.05rem]"
+							>
+								{menuActive ? "Close" : "Menu"}
+							</motion.span>
 						</button>
 					</div>
 				</div>
