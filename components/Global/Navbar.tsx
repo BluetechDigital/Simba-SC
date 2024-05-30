@@ -53,7 +53,7 @@ const Navbar: FC = () => {
 														? item?.mediaDetails?.height
 														: 1000
 												}
-												className="object-contain object-center w-full lg:h-[50px]"
+												className="object-contain object-center w-full h-[50px]"
 											/>
 										</Fragment>
 									)
@@ -73,14 +73,14 @@ const Navbar: FC = () => {
 										: "_self"
 								}`}
 								aria-label={`Chelsea Foundation`}
-								className="font-XenonNueRegular text-black hover:hover:text-primary-two text-base text-center transition-all ease-in-out duration-500"
+								className="hidden lg:block font-XenonNueRegular text-black hover:hover:text-primary-two text-base text-center transition-all ease-in-out duration-500"
 							>
 								{
 									globalContext?.themesOptionsContent?.topNavigation
 										?.foundationPageLink?.title
 								}
 							</Link>
-							<div className="mx-6 h-[25px] w-[1px] bg-grey"></div>
+							<div className="hidden sm:flex mx-6 h-[25px] w-[1px] bg-grey"></div>
 							<motion.div
 								initial={initial}
 								variants={stagger}
@@ -88,7 +88,7 @@ const Navbar: FC = () => {
 								viewport={{once: true}}
 								className={
 									styles.socialLinks +
-									" flex items-center justify-center gap-6 text-center"
+									" hidden sm:flex items-center justify-center gap-6 text-center"
 								}
 							>
 								<motion.div
@@ -398,25 +398,38 @@ const Navbar: FC = () => {
 								</motion.ul>
 							</div>
 							<div className="w-auto lg:hidden">
-								<a className="relative z-10 inline-block" href="#">
-									<svg
-										className="navbar-burger text-primary-dark"
-										width="51"
-										height="51"
-										fill="#c90a12"
-										viewBox="0 0 56 56"
-										xmlns="http://www.w3.org/2000/svg"
+								<button
+									onClick={handleClick}
+									className="relative z-50 w-auto lg:w-1/12 h-full py-2 px-12 flex flex-col items-center justify-center bg-primary-default hover:bg-primary-dark bg-fill bg-no-repeat bg-center transition-all ease-in-out duration-500"
+									style={{
+										backgroundImage: `url("${
+											menuActive
+												? "none"
+												: "/svg/background/red-background-dots.png"
+										}")`,
+									}}
+								>
+									<span className="hamburger-icon">
+										<span
+											className={menuActive ? "iconOne-active" : "iconOne"}
+										/>
+										<span
+											className={menuActive ? "iconTwo-active" : "iconTwo"}
+										/>
+										<span
+											className={menuActive ? "iconThree-active" : "iconThree"}
+										/>
+										<span className="clear" />
+									</span>
+									<motion.span
+										initial={initialTwo}
+										whileInView={fadeIn}
+										viewport={{once: true}}
+										className="text-white uppercase font-XenonNueBold tracking-[0.05rem]"
 									>
-										<rect width="56" height="56" rx="28" fill="#c90a12"></rect>
-										<path
-											d="M37 32H19M37 24H19"
-											stroke="#c90a12"
-											strokeWidth="1.5"
-											strokeLinecap="round"
-											strokeLinejoin="round"
-										></path>
-									</svg>
-								</a>
+										{menuActive ? "Close" : "Menu"}
+									</motion.span>
+								</button>
 							</div>
 						</div>
 					</div>

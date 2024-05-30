@@ -22,7 +22,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 						backgroundImage: `url("/svg/background/red-background-dots.png")`,
 					}}
 				>
-					<div className="max-w-9xl mx-auto h-full w-full px-10 pt-20 pb-0 flex flex-col  justify-between gap-10">
+					<div className="max-w-9xl mx-auto h-full w-full px-6 lg:px-10 pt-20 pb-0 flex flex-col justify-between gap-20 lg:gap-10">
 						<div className="flex flex-col lg:flex-row lg:gap-10 xl:gap-24">
 							<motion.ul
 								initial={initial}
@@ -53,7 +53,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 															item?.node?.target ? item?.node?.target : "_self"
 														}`}
 														aria-label={`${item?.node?.label}`}
-														className="font-XenonNueExtraBold font-extrabold tracking-[-0.05rem] leading-none text-white hover:text-black lg:text-7xl xl:text-9xl text-center uppercase"
+														className="font-XenonNueExtraBold font-extrabold tracking-[-0.05rem] leading-none text-white hover:text-black text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-center uppercase"
 													>
 														{item?.node?.label}
 													</Link>
@@ -76,7 +76,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 										: "hidden"
 								}
 							>
-								<span className="font-OverusedGroteskLight font-semibold text-paragraph tracking-[0.02rem] text-white text-center ">
+								<span className="font-OverusedGroteskLight font-semibold text-paragraph tracking-[0.02rem] text-white text-center">
 									Useful Links
 								</span>
 								<motion.ul
@@ -110,7 +110,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																	: "_self"
 															}`}
 															aria-label={`${item?.node?.label}`}
-															className="font-XenonNueBold leading-none text-white hover:text-black lg:text-xl text-center"
+															className="font-XenonNueBold leading-none text-white hover:text-black text-xl lg:text-xl text-center"
 														>
 															{item?.node?.label}
 														</Link>

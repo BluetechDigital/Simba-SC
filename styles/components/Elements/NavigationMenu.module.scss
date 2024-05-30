@@ -18,11 +18,11 @@
 }
 
 .iconOne-active {
-	@apply absolute left-0 top-1/2 w-[40px] h-[4px] ml-[0.40rem] bg-white opacity-100 rotate-[40deg];
+	@apply absolute left-0 top-1/2 w-[40px] h-[4px] ml-[0.40rem] bg-white opacity-100 rotate-[40deg] transition-all ease-in-out duration-500;
 }
 
 .iconThree-active {
-	@apply absolute left-0 top-1/2 w-[40px] h-[4px] ml-[0.40rem] bg-white opacity-100 rotate-[-40deg];
+	@apply absolute left-0 top-1/2 w-[40px] h-[4px] ml-[0.40rem] bg-white opacity-100 rotate-[-40deg] transition-all ease-in-out duration-500;
 }
 
 .iconTwo-active {
