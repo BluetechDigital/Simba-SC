@@ -201,6 +201,15 @@ export type INavbarMenuLinks = [
 		};
 	}
 ];
+export type IMegaNavigationLinks = [
+	{
+		node: {
+			id: string;
+			url: string;
+			label: string;
+		};
+	}
+];
 export type IBoardOfDirectorsGrid = [
 	{
 		node: {
@@ -321,6 +330,7 @@ export type IGlobalProps = {
 	copyrightLinks: ICopyrightLinks;
 	navbarMenuLinks: INavbarMenuLinks;
 	footerMenuLinks: IFooterMenuLinks;
+	megaNavigationLinks: IMegaNavigationLinks;
 	themesOptionsContent: IThemesOptionsContent;
 	boardOfDirectorsGrid: IBoardOfDirectorsGrid;
 	executiveLeadershipsGrid: IExecutiveLeadershipsGrid;
@@ -336,6 +346,7 @@ export type IGlobalContext = {
 	copyrightLinks: ICopyrightLinks;
 	navbarMenuLinks: INavbarMenuLinks;
 	footerMenuLinks: IFooterMenuLinks;
+	megaNavigationLinks: IMegaNavigationLinks;
 	themesOptionsContent: IThemesOptionsContent;
 	boardOfDirectorsGrid: IBoardOfDirectorsGrid;
 	executiveLeadershipsGrid: IExecutiveLeadershipsGrid;

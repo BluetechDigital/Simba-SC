@@ -48,7 +48,7 @@ const config: Config = {
 				accent: {
 					default: "#ffb000",
 					two: "#fb8c00",
-					dark: "#a70107",
+					dark: "#91744c",
 				},
 				tertiary: {
 					default: "#d7d3d3",

@@ -4,24 +4,27 @@ import {
 	initial,
 	stagger,
 	initialTwo,
-	arrayLoopStaggerChildren,
+	navigationMenuStaggerChildren,
 } from "@/animations/animations";
 import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";
 import {useGlobalContext} from "@/context/global";
-import {useState, FC, Fragment, useEffect} from "react";
+import {useState, FC, Fragment} from "react";
 
 // Styling
 import styles from "./../../styles/components/Navbar.module.scss";
 
+// Components
+import MegaNavigation from "./MegaNavigation";
+
 const Navbar: FC = () => {
 	const globalContext = useGlobalContext();
 
-	const [isActive, setIsActive] = useState(false);
+	const [menuActive, setMenuActive] = useState(false);
 
 	const handleClick = () => {
-		setIsActive(!isActive);
+		setMenuActive(!menuActive);
 	};
 
 	return (
@@ -333,7 +336,7 @@ const Navbar: FC = () => {
 						</div>
 					</div>
 				</div>
-				<div className="flex items-center justify-between bg-lightGreyTwo">
+				<div className="flex items-center justify-between bg-lightGreyTwo pl-4">
 					<motion.div
 						initial={initialTwo}
 						whileInView={fadeIn}
@@ -370,7 +373,7 @@ const Navbar: FC = () => {
 														initial={initial}
 														whileInView="animate"
 														viewport={{once: true}}
-														variants={arrayLoopStaggerChildren}
+														variants={navigationMenuStaggerChildren}
 														className="hidden xl:block"
 													>
 														<Link
@@ -417,15 +420,20 @@ const Navbar: FC = () => {
 							</div>
 						</div>
 					</div>
-					<div className="relative w-auto lg:w-1/12 h-full hidden lg:flex flex-col items-center justify-center cursor-pointer p-4 bg-primary-default hover:bg-primary-dark transition-all ease-in-out duration-500">
-						<button
-							className="flex flex-col items-center justify-center"
-							onClick={handleClick}
-						>
+					<div
+						onClick={handleClick}
+						className="w-auto lg:w-1/12 h-full hidden lg:flex flex-col items-center justify-center cursor-pointer p-4 bg-primary-default hover:bg-primary-dark bg-cover bg-no-repeat bg-center transition-all ease-in-out duration-500"
+						style={{
+							backgroundImage: `url("/svg/background/red-background-dots.png")`,
+						}}
+					>
+						<button className="relative z-50 flex flex-col items-center justify-center">
 							<span className="hamburger-icon" id="icon">
-								<span className={isActive ? "iconOne-active" : "iconOne"} />
-								<span className={isActive ? "iconTwo-active" : "iconTwo"} />
-								<span className={isActive ? "iconThree-active" : "iconThree"} />
+								<span className={menuActive ? "iconOne-active" : "iconOne"} />
+								<span className={menuActive ? "iconTwo-active" : "iconTwo"} />
+								<span
+									className={menuActive ? "iconThree-active" : "iconThree"}
+								/>
 								<span className="clear" />
 							</span>
 							<span className="text-white uppercase font-XenonNueBold tracking-[0.05rem]">
@@ -434,22 +442,8 @@ const Navbar: FC = () => {
 						</button>
 					</div>
 				</div>
-				<div>
-					{/* Hidden Side Menu */}
-					<nav id="nav" className={isActive ? "navbar-active" : "hidden"}>
-						<ul>
-							<li>HOme</li>
-							<li>About</li>
-							<li>Contact</li>
-							<li onClick={handleClick}>Help</li>
-						</ul>
-					</nav>
-
-					<div
-						id="blue"
-						className={isActive ? "dark-blue-slide-active" : "dark-blue"}
-					></div>
-				</div>
+				{/* Hidden Mega Navigation Menu */}
+				<MegaNavigation menuActive={menuActive} setMenuActive={setMenuActive} />
 			</div>
 		</>
 	);

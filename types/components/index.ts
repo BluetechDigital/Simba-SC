@@ -51,6 +51,10 @@ export type IMaintenance = {
 		};
 	};
 };
+export type IMegaNavigation = {
+	menuActive: boolean;
+	setMenuActive: any;
+};
 
 // Cards
 

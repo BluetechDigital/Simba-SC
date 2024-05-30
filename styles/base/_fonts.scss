@@ -1,5 +1,10 @@
 /*===== FONTS =====*/
 @font-face {
+	font-family: XenonNueExtraBold;
+	src: url("../fonts/XenonNue-ExtraBold.woff");
+}
+
+@font-face {
 	font-family: XenonNueBold;
 	src: url("../fonts/XenonNue-Bold.woff");
 }
@@ -17,7 +22,12 @@
 // Font Stack Properties
 $main: "XenonNueBold";
 $secondary: "XenonNueRegular";
+$tertiary: "XenonNueExtraBold";
 $body: "OverusedGroteskLight", "Inter";
+
+.font-XenonNueExtraBold {
+	font-family: $tertiary;
+}
 
 .font-XenonNueBold {
 	font-family: $main;

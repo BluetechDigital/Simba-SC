@@ -31,7 +31,7 @@ export const getNavbarMenuLinks = async () => {
 	}
 };
 
-// Mobile Navbar links
+// Mobile Navbar Links
 export const getMobileLinks = async () => {
 	try {
 		const content: any = gql`
@@ -53,6 +53,39 @@ export const getMobileLinks = async () => {
 		});
 
 		return response?.data?.mobileLinks?.edges;
+	} catch (error: unknown) {
+		console.log(error);
+		throw new Error(
+			"Something went wrong trying to fetch mobile links content"
+		);
+	}
+};
+
+// Mega Navigation Links
+export const getMegaNavigationLinks = async () => {
+	try {
+		const content: any = gql`
+			{
+				megaNavigationLinks: menuItems(
+					where: {location: MEGA_NAVIGATION_LINKS}
+					first: 10
+				) {
+					edges {
+						node {
+							id
+							url
+							label
+						}
+					}
+				}
+			}
+		`;
+
+		const response: any = await client.query({
+			query: content,
+		});
+
+		return response?.data?.megaNavigationLinks?.edges;
 	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(
