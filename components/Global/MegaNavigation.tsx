@@ -18,34 +18,127 @@ import MegaNavVideoWrapper from "../Elements/MegaNavVideoWrapper";
 const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 	const globalContext = useGlobalContext();
 
-	const [fansMenuVideo, setFansMenuVideo] = useState(false);
+	const [aboutTheClubSublinksOpen, setAboutTheClubSublinksOpen]: any =
+		useState(false);
+	const [newsSublinksOpen, setNewsSublinksOpen]: any = useState(false);
+	const [fansSublinksOpen, setFansSublinksOpen] = useState(false);
 	const [communitySublinksOpen, setCommunitySublinksOpen]: any =
 		useState(false);
+	const [ourHistorySublinksOpen, setOurHistorySublinksOpen]: any =
+		useState(false);
+	const [
+		benjaminMkapaStadiumSublinksOpen,
+		setBenjaminMkapaStadiumSublinksOpen,
+	]: any = useState(false);
+	const [
+		partnershipsAdvertisingSublinksOpen,
+		setPartnershipsAdvertisingSublinksOpen,
+	]: any = useState(false);
 
-	const revealFansMenuVideo = () => {
-		setFansMenuVideo(!fansMenuVideo);
+	// Hides or Display About The Club Sublinks
+	const displayAboutTheClubSublinks = () => {
+		setNewsSublinksOpen(false);
+		setFansSublinksOpen(false);
 		setCommunitySublinksOpen(false);
+		setOurHistorySublinksOpen(false);
+		setAboutTheClubSublinksOpen(!aboutTheClubSublinksOpen);
+		setBenjaminMkapaStadiumSublinksOpen(false);
+		setPartnershipsAdvertisingSublinksOpen(false);
+	};
+
+	// Hides or Display News Sublinks
+	const displayNewsSublinks = () => {
+		setNewsSublinksOpen(!newsSublinksOpen);
+		setFansSublinksOpen(false);
+		setCommunitySublinksOpen(false);
+		setOurHistorySublinksOpen(false);
+		setAboutTheClubSublinksOpen(false);
+		setBenjaminMkapaStadiumSublinksOpen(false);
+		setPartnershipsAdvertisingSublinksOpen(false);
+	};
+
+	// Hides or Display Fans Sublinks
+	const displayFansSublinks = () => {
+		setNewsSublinksOpen(false);
+		setFansSublinksOpen(!fansSublinksOpen);
+		setCommunitySublinksOpen(false);
+		setOurHistorySublinksOpen(false);
+		setAboutTheClubSublinksOpen(false);
+		setBenjaminMkapaStadiumSublinksOpen(false);
+		setPartnershipsAdvertisingSublinksOpen(false);
 	};
 
 	// Hides or Display Community Sublinks
 	const displayCommunitySublinks = () => {
-		setFansMenuVideo(false);
+		setNewsSublinksOpen(false);
+		setFansSublinksOpen(false);
 		setCommunitySublinksOpen(!communitySublinksOpen);
+		setOurHistorySublinksOpen(false);
+		setAboutTheClubSublinksOpen(false);
+		setBenjaminMkapaStadiumSublinksOpen(false);
+		setPartnershipsAdvertisingSublinksOpen(false);
 	};
 
-	const removeFansMenuVideo = () => {
-		setFansMenuVideo(false);
+	// Hides or Display Our History Sublinks
+	const displayOurHistorySublinks = () => {
+		setNewsSublinksOpen(false);
+		setFansSublinksOpen(false);
+		setCommunitySublinksOpen(false);
+		setOurHistorySublinksOpen(!ourHistorySublinksOpen);
+		setAboutTheClubSublinksOpen(false);
+		setBenjaminMkapaStadiumSublinksOpen(false);
+		setPartnershipsAdvertisingSublinksOpen(false);
+	};
+
+	// Hides or Display Benjamin Mkapa Stadium Sublinks
+	const displayBenjaminMkapaStadiumSublinks = () => {
+		setNewsSublinksOpen(false);
+		setFansSublinksOpen(false);
+		setCommunitySublinksOpen(false);
+		setOurHistorySublinksOpen(false);
+		setAboutTheClubSublinksOpen(false);
+		setBenjaminMkapaStadiumSublinksOpen(!benjaminMkapaStadiumSublinksOpen);
+		setPartnershipsAdvertisingSublinksOpen(false);
+	};
+
+	// Hides or Display Partnerships Advertising Sublinks
+	const displayPartnershipsAdvertisingSublinks = () => {
+		setNewsSublinksOpen(false);
+		setFansSublinksOpen(false);
+		setCommunitySublinksOpen(false);
+		setOurHistorySublinksOpen(false);
+		setAboutTheClubSublinksOpen(false);
+		setBenjaminMkapaStadiumSublinksOpen(false);
+		setPartnershipsAdvertisingSublinksOpen(
+			!partnershipsAdvertisingSublinksOpen
+		);
+	};
+
+	const removeFansSublinksOpen = () => {
+		setNewsSublinksOpen(false);
+		setFansSublinksOpen(false);
+		setCommunitySublinksOpen(false);
+		setOurHistorySublinksOpen(false);
+		setAboutTheClubSublinksOpen(false);
+		setBenjaminMkapaStadiumSublinksOpen(false);
+		setPartnershipsAdvertisingSublinksOpen(false);
 	};
 
 	const toggleMenu = () => {
 		setMenuActive(!menuActive);
-		setFansMenuVideo(!fansMenuVideo);
+		setNewsSublinksOpen(false);
+		setFansSublinksOpen(false);
+		setCommunitySublinksOpen(false);
+		setOurHistorySublinksOpen(false);
+		setAboutTheClubSublinksOpen(false);
+		setBenjaminMkapaStadiumSublinksOpen(false);
+		setPartnershipsAdvertisingSublinksOpen(false);
 	};
 
 	return (
 		<>
 			<div
-				// onMouseLeave={removeFansMenuVideo}
+				// onMouseLeave={removeFansSublinksOpen}
 				className={menuActive ? "megaMenu-active" : "megaMenu hidden"}
 			>
 				<div
@@ -80,32 +173,34 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 									globalContext?.megaNavigationLinks?.map(
 										(item: any, index: number) => (
 											<Fragment key={index}>
-												{item?.node?.url === "/community" ? (
+												{item?.node?.url === "/about-the-club" ? (
 													<>
 														<motion.span
 															initial={initialTwo}
 															whileInView={fadeIn}
-															// viewport={{once: true}}
-															onClick={displayCommunitySublinks}
+															onClick={displayAboutTheClubSublinks}
 															aria-label={`${item?.node?.label}`}
-															className="font-XenonNueExtraBold cursor-pointer font-extrabold tracking-[-0.05rem] leading-none text-white hover:text-black text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-center uppercase"
+															className={`${
+																aboutTheClubSublinksOpen
+																	? "text-accent-two"
+																	: "text-white"
+															} font-XenonNueExtraBold cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-black text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase`}
 														>
 															{item?.node?.label}
 														</motion.span>
 														<div
 															className={
-																communitySublinksOpen
+																aboutTheClubSublinksOpen
 																	? "w-full flex lg:hidden"
 																	: "hidden"
 															}
 														>
-															{communitySublinksOpen ? (
+															{aboutTheClubSublinksOpen ? (
 																<>
 																	<motion.ul
 																		initial={initial}
 																		variants={stagger}
 																		whileInView="animate"
-																		// viewport={{once: true}}
 																		className={
 																			menuActive
 																				? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1 my-6 p-4 border-l-2 border-accent-two"
@@ -115,6 +210,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																		<li>
 																			<Link
 																				target="_self"
+																				onClick={toggleMenu}
 																				href={item?.node?.url}
 																				aria-label={`${item?.node?.label}`}
 																				className="font-XenonNueRegular font-normal tracking-[0.05rem] leading-none text-white hover:text-black text-lg text-center"
@@ -137,6 +233,93 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																							}
 																						>
 																							<Link
+																								onClick={toggleMenu}
+																								href={`${item?.node?.url}`}
+																								target={`${
+																									item?.node?.target
+																										? item?.node?.target
+																										: "_self"
+																								}`}
+																								aria-label={`${item?.node?.label}`}
+																								className="font-XenonNueRegular font-normal tracking-[0.05rem] leading-none text-white hover:text-black text-lg text-center"
+																							>
+																								{item?.node?.label}
+																							</Link>
+																						</motion.li>
+																					</Fragment>
+																				)
+																			)
+																		) : (
+																			<></>
+																		)}
+																	</motion.ul>
+																</>
+															) : (
+																<></>
+															)}
+														</div>
+													</>
+												) : item?.node?.url === "/news" ? (
+													<>
+														<motion.span
+															initial={initialTwo}
+															whileInView={fadeIn}
+															onClick={displayNewsSublinks}
+															aria-label={`${item?.node?.label}`}
+															className={`${
+																newsSublinksOpen
+																	? "text-accent-two"
+																	: "text-white"
+															} font-XenonNueExtraBold cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-black text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase`}
+														>
+															{item?.node?.label}
+														</motion.span>
+														<div
+															className={
+																newsSublinksOpen
+																	? "w-full flex lg:hidden"
+																	: "hidden"
+															}
+														>
+															{newsSublinksOpen ? (
+																<>
+																	<motion.ul
+																		initial={initial}
+																		variants={stagger}
+																		whileInView="animate"
+																		className={
+																			menuActive
+																				? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1 my-6 p-4 border-l-2 border-accent-two"
+																				: "hidden"
+																		}
+																	>
+																		<li>
+																			<Link
+																				target="_self"
+																				onClick={toggleMenu}
+																				href={item?.node?.url}
+																				aria-label={`${item?.node?.label}`}
+																				className="font-XenonNueRegular font-normal tracking-[0.05rem] leading-none text-white hover:text-black text-lg text-center"
+																			>
+																				{item?.node?.label}
+																			</Link>
+																		</li>
+																		{globalContext?.megaNavigationLinks
+																			?.length > 0 ? (
+																			globalContext?.megaNavigationLinks?.map(
+																				(item: any, index: number) => (
+																					<Fragment key={index}>
+																						<motion.li
+																							custom={index}
+																							initial={initial}
+																							whileInView="animate"
+																							// viewport={{once: false}}
+																							variants={
+																								navigationMenuStaggerChildren
+																							}
+																						>
+																							<Link
+																								onClick={toggleMenu}
 																								href={`${item?.node?.url}`}
 																								target={`${
 																									item?.node?.target
@@ -167,27 +350,29 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 														<motion.span
 															initial={initialTwo}
 															whileInView={fadeIn}
-															// viewport={{once: true}}
-															onClick={revealFansMenuVideo}
+															onClick={displayFansSublinks}
 															aria-label={`${item?.node?.label}`}
-															className="font-XenonNueExtraBold cursor-pointer font-extrabold tracking-[-0.05rem] leading-none text-white hover:text-black text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-center uppercase"
+															className={`${
+																fansSublinksOpen
+																	? "text-accent-two"
+																	: "text-white"
+															} font-XenonNueExtraBold cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-black text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase`}
 														>
 															{item?.node?.label}
 														</motion.span>
 														<div
 															className={
-																fansMenuVideo
+																fansSublinksOpen
 																	? "w-full flex lg:hidden"
 																	: "hidden"
 															}
 														>
-															{fansMenuVideo ? (
+															{fansSublinksOpen ? (
 																<>
 																	<motion.ul
 																		initial={initial}
 																		variants={stagger}
 																		whileInView="animate"
-																		// viewport={{once: true}}
 																		className={
 																			menuActive
 																				? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1 my-6 p-4 border-l-2 border-accent-two"
@@ -197,6 +382,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																		<li>
 																			<Link
 																				target="_self"
+																				onClick={toggleMenu}
 																				href={item?.node?.url}
 																				aria-label={`${item?.node?.label}`}
 																				className="font-XenonNueRegular font-normal tracking-[0.05rem] leading-none text-white hover:text-black text-lg text-center"
@@ -219,6 +405,351 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																							}
 																						>
 																							<Link
+																								onClick={toggleMenu}
+																								href={`${item?.node?.url}`}
+																								target={`${
+																									item?.node?.target
+																										? item?.node?.target
+																										: "_self"
+																								}`}
+																								aria-label={`${item?.node?.label}`}
+																								className="font-XenonNueRegular font-normal tracking-[0.05rem] leading-none text-white hover:text-black text-lg text-center"
+																							>
+																								{item?.node?.label}
+																							</Link>
+																						</motion.li>
+																					</Fragment>
+																				)
+																			)
+																		) : (
+																			<></>
+																		)}
+																	</motion.ul>
+																</>
+															) : (
+																<></>
+															)}
+														</div>
+													</>
+												) : item?.node?.url === "/community" ? (
+													<>
+														<motion.span
+															initial={initialTwo}
+															whileInView={fadeIn}
+															onClick={displayCommunitySublinks}
+															aria-label={`${item?.node?.label}`}
+															className={`${
+																communitySublinksOpen
+																	? "text-accent-two"
+																	: "text-white"
+															} font-XenonNueExtraBold cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-black text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase`}
+														>
+															{item?.node?.label}
+														</motion.span>
+														<div
+															className={
+																communitySublinksOpen
+																	? "w-full flex lg:hidden"
+																	: "hidden"
+															}
+														>
+															{communitySublinksOpen ? (
+																<>
+																	<motion.ul
+																		initial={initial}
+																		variants={stagger}
+																		whileInView="animate"
+																		className={
+																			menuActive
+																				? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1 my-6 p-4 border-l-2 border-accent-two"
+																				: "hidden"
+																		}
+																	>
+																		<li>
+																			<Link
+																				target="_self"
+																				onClick={toggleMenu}
+																				href={item?.node?.url}
+																				aria-label={`${item?.node?.label}`}
+																				className="font-XenonNueRegular font-normal tracking-[0.05rem] leading-none text-white hover:text-black text-lg text-center"
+																			>
+																				{item?.node?.label}
+																			</Link>
+																		</li>
+																		{globalContext?.megaNavigationLinks
+																			?.length > 0 ? (
+																			globalContext?.megaNavigationLinks?.map(
+																				(item: any, index: number) => (
+																					<Fragment key={index}>
+																						<motion.li
+																							custom={index}
+																							initial={initial}
+																							whileInView="animate"
+																							// viewport={{once: false}}
+																							variants={
+																								navigationMenuStaggerChildren
+																							}
+																						>
+																							<Link
+																								onClick={toggleMenu}
+																								href={`${item?.node?.url}`}
+																								target={`${
+																									item?.node?.target
+																										? item?.node?.target
+																										: "_self"
+																								}`}
+																								aria-label={`${item?.node?.label}`}
+																								className="font-XenonNueRegular font-normal tracking-[0.05rem] leading-none text-white hover:text-black text-lg text-center"
+																							>
+																								{item?.node?.label}
+																							</Link>
+																						</motion.li>
+																					</Fragment>
+																				)
+																			)
+																		) : (
+																			<></>
+																		)}
+																	</motion.ul>
+																</>
+															) : (
+																<></>
+															)}
+														</div>
+													</>
+												) : item?.node?.url === "/our-history" ? (
+													<>
+														<motion.span
+															initial={initialTwo}
+															whileInView={fadeIn}
+															onClick={displayOurHistorySublinks}
+															aria-label={`${item?.node?.label}`}
+															className={`${
+																ourHistorySublinksOpen
+																	? "text-accent-two"
+																	: "text-white"
+															} font-XenonNueExtraBold cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-black text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase`}
+														>
+															{item?.node?.label}
+														</motion.span>
+														<div
+															className={
+																ourHistorySublinksOpen
+																	? "w-full flex lg:hidden"
+																	: "hidden"
+															}
+														>
+															{ourHistorySublinksOpen ? (
+																<>
+																	<motion.ul
+																		initial={initial}
+																		variants={stagger}
+																		whileInView="animate"
+																		className={
+																			menuActive
+																				? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1 my-6 p-4 border-l-2 border-accent-two"
+																				: "hidden"
+																		}
+																	>
+																		<li>
+																			<Link
+																				target="_self"
+																				onClick={toggleMenu}
+																				href={item?.node?.url}
+																				aria-label={`${item?.node?.label}`}
+																				className="font-XenonNueRegular font-normal tracking-[0.05rem] leading-none text-white hover:text-black text-lg text-center"
+																			>
+																				{item?.node?.label}
+																			</Link>
+																		</li>
+																		{globalContext?.megaNavigationLinks
+																			?.length > 0 ? (
+																			globalContext?.megaNavigationLinks?.map(
+																				(item: any, index: number) => (
+																					<Fragment key={index}>
+																						<motion.li
+																							custom={index}
+																							initial={initial}
+																							whileInView="animate"
+																							// viewport={{once: false}}
+																							variants={
+																								navigationMenuStaggerChildren
+																							}
+																						>
+																							<Link
+																								onClick={toggleMenu}
+																								href={`${item?.node?.url}`}
+																								target={`${
+																									item?.node?.target
+																										? item?.node?.target
+																										: "_self"
+																								}`}
+																								aria-label={`${item?.node?.label}`}
+																								className="font-XenonNueRegular font-normal tracking-[0.05rem] leading-none text-white hover:text-black text-lg text-center"
+																							>
+																								{item?.node?.label}
+																							</Link>
+																						</motion.li>
+																					</Fragment>
+																				)
+																			)
+																		) : (
+																			<></>
+																		)}
+																	</motion.ul>
+																</>
+															) : (
+																<></>
+															)}
+														</div>
+													</>
+												) : item?.node?.url === "/benjamin-mkapa-stadium" ? (
+													<>
+														<motion.span
+															initial={initialTwo}
+															whileInView={fadeIn}
+															onClick={displayBenjaminMkapaStadiumSublinks}
+															aria-label={`${item?.node?.label}`}
+															className={`${
+																benjaminMkapaStadiumSublinksOpen
+																	? "text-accent-two"
+																	: "text-white"
+															} font-XenonNueExtraBold cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-black text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase`}
+														>
+															{item?.node?.label}
+														</motion.span>
+														<div
+															className={
+																benjaminMkapaStadiumSublinksOpen
+																	? "w-full flex lg:hidden"
+																	: "hidden"
+															}
+														>
+															{benjaminMkapaStadiumSublinksOpen ? (
+																<>
+																	<motion.ul
+																		initial={initial}
+																		variants={stagger}
+																		whileInView="animate"
+																		className={
+																			menuActive
+																				? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1 my-6 p-4 border-l-2 border-accent-two"
+																				: "hidden"
+																		}
+																	>
+																		<li>
+																			<Link
+																				target="_self"
+																				onClick={toggleMenu}
+																				href={item?.node?.url}
+																				aria-label={`${item?.node?.label}`}
+																				className="font-XenonNueRegular font-normal tracking-[0.05rem] leading-none text-white hover:text-black text-lg text-center"
+																			>
+																				{item?.node?.label}
+																			</Link>
+																		</li>
+																		{globalContext?.megaNavigationLinks
+																			?.length > 0 ? (
+																			globalContext?.megaNavigationLinks?.map(
+																				(item: any, index: number) => (
+																					<Fragment key={index}>
+																						<motion.li
+																							custom={index}
+																							initial={initial}
+																							whileInView="animate"
+																							// viewport={{once: false}}
+																							variants={
+																								navigationMenuStaggerChildren
+																							}
+																						>
+																							<Link
+																								onClick={toggleMenu}
+																								href={`${item?.node?.url}`}
+																								target={`${
+																									item?.node?.target
+																										? item?.node?.target
+																										: "_self"
+																								}`}
+																								aria-label={`${item?.node?.label}`}
+																								className="font-XenonNueRegular font-normal tracking-[0.05rem] leading-none text-white hover:text-black text-lg text-center"
+																							>
+																								{item?.node?.label}
+																							</Link>
+																						</motion.li>
+																					</Fragment>
+																				)
+																			)
+																		) : (
+																			<></>
+																		)}
+																	</motion.ul>
+																</>
+															) : (
+																<></>
+															)}
+														</div>
+													</>
+												) : item?.node?.url === "/partnerships-advertising" ? (
+													<>
+														<motion.span
+															initial={initialTwo}
+															whileInView={fadeIn}
+															onClick={displayPartnershipsAdvertisingSublinks}
+															aria-label={`${item?.node?.label}`}
+															className={`${
+																partnershipsAdvertisingSublinksOpen
+																	? "text-accent-two"
+																	: "text-white"
+															} font-XenonNueExtraBold cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-black text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase`}
+														>
+															{item?.node?.label}
+														</motion.span>
+														<div
+															className={
+																partnershipsAdvertisingSublinksOpen
+																	? "w-full flex lg:hidden"
+																	: "hidden"
+															}
+														>
+															{partnershipsAdvertisingSublinksOpen ? (
+																<>
+																	<motion.ul
+																		initial={initial}
+																		variants={stagger}
+																		whileInView="animate"
+																		className={
+																			menuActive
+																				? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1 my-6 p-4 border-l-2 border-accent-two"
+																				: "hidden"
+																		}
+																	>
+																		<li>
+																			<Link
+																				target="_self"
+																				onClick={toggleMenu}
+																				href={item?.node?.url}
+																				aria-label={`${item?.node?.label}`}
+																				className="font-XenonNueRegular font-normal tracking-[0.05rem] leading-none text-white hover:text-black text-lg text-center"
+																			>
+																				{item?.node?.label}
+																			</Link>
+																		</li>
+																		{globalContext?.megaNavigationLinks
+																			?.length > 0 ? (
+																			globalContext?.megaNavigationLinks?.map(
+																				(item: any, index: number) => (
+																					<Fragment key={index}>
+																						<motion.li
+																							custom={index}
+																							initial={initial}
+																							whileInView="animate"
+																							// viewport={{once: false}}
+																							variants={
+																								navigationMenuStaggerChildren
+																							}
+																						>
+																							<Link
+																								onClick={toggleMenu}
 																								href={`${item?.node?.url}`}
 																								target={`${
 																									item?.node?.target
@@ -245,28 +776,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 														</div>
 													</>
 												) : (
-													<motion.li
-														custom={index}
-														initial={initial}
-														whileInView="animate"
-														// viewport={{once: false}}
-														variants={navigationMenuStaggerChildren}
-														className="self-start"
-													>
-														<Link
-															onClick={toggleMenu}
-															href={`${item?.node?.url}`}
-															target={`${
-																item?.node?.target
-																	? item?.node?.target
-																	: "_self"
-															}`}
-															aria-label={`${item?.node?.label}`}
-															className="font-XenonNueExtraBold font-extrabold tracking-[-0.05rem] leading-none text-white hover:text-black text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-center uppercase"
-														>
-															{item?.node?.label}
-														</Link>
-													</motion.li>
+													<></>
 												)}
 											</Fragment>
 										)
@@ -276,29 +786,18 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 								)}
 							</motion.ul>
 							<div className="hidden lg:flex w-full lg:w-1/2 flex-col gap-12">
-								{communitySublinksOpen ? (
+								{aboutTheClubSublinksOpen ? (
 									<>
 										<motion.ul
 											initial={initial}
 											variants={stagger}
 											whileInView="animate"
-											// viewport={{once: true}}
 											className={
 												menuActive
 													? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1 my-6 p-4 border-l-2 border-accent-two"
 													: "hidden"
 											}
 										>
-											<li>
-												<Link
-													href="/community"
-													target="_self"
-													aria-label="Community page link"
-													className="font-XenonNueRegular font-normal tracking-[0.05rem] leading-none text-white hover:text-black text-lg text-center"
-												>
-													Community
-												</Link>
-											</li>
 											{globalContext?.megaNavigationLinks?.length > 0 ? (
 												globalContext?.megaNavigationLinks?.map(
 													(item: any, index: number) => (
@@ -331,7 +830,51 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 											)}
 										</motion.ul>
 									</>
-								) : fansMenuVideo ? (
+								) : newsSublinksOpen ? (
+									<>
+										<motion.ul
+											initial={initial}
+											variants={stagger}
+											whileInView="animate"
+											className={
+												menuActive
+													? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1 my-6 p-4 border-l-2 border-accent-two"
+													: "hidden"
+											}
+										>
+											{globalContext?.megaNavigationLinks?.length > 0 ? (
+												globalContext?.megaNavigationLinks?.map(
+													(item: any, index: number) => (
+														<Fragment key={index}>
+															<motion.li
+																custom={index}
+																initial={initial}
+																whileInView="animate"
+																// viewport={{once: false}}
+																variants={navigationMenuStaggerChildren}
+															>
+																<Link
+																	href={`${item?.node?.url}`}
+																	target={`${
+																		item?.node?.target
+																			? item?.node?.target
+																			: "_self"
+																	}`}
+																	aria-label={`${item?.node?.label}`}
+																	className="font-XenonNueRegular font-normal tracking-[0.05rem] leading-none text-white hover:text-black text-lg text-center"
+																>
+																	{item?.node?.label}
+																</Link>
+															</motion.li>
+														</Fragment>
+													)
+												)
+											) : (
+												<></>
+											)}
+										</motion.ul>
+									</>
+								) : fansSublinksOpen ? (
 									<>
 										<motion.ul
 											initial={initial}
@@ -340,20 +883,10 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 											viewport={{once: true}}
 											className={
 												menuActive
-													? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1"
+													? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1 my-6 p-4 border-l-2 border-accent-two"
 													: "hidden"
 											}
 										>
-											<li>
-												<Link
-													href="/fans"
-													target="_self"
-													aria-label="fans page link"
-													className="font-XenonNueRegular font-normal tracking-[0.05rem] leading-none text-white hover:text-black text-lg text-center"
-												>
-													Fans
-												</Link>
-											</li>
 											{globalContext?.megaNavigationLinks?.length > 0 ? (
 												globalContext?.megaNavigationLinks?.map(
 													(item: any, index: number) => (
@@ -407,6 +940,182 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 												<></>
 											)}
 										</motion.div>
+									</>
+								) : communitySublinksOpen ? (
+									<>
+										<motion.ul
+											initial={initial}
+											variants={stagger}
+											whileInView="animate"
+											className={
+												menuActive
+													? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1 my-6 p-4 border-l-2 border-accent-two"
+													: "hidden"
+											}
+										>
+											{globalContext?.megaNavigationLinks?.length > 0 ? (
+												globalContext?.megaNavigationLinks?.map(
+													(item: any, index: number) => (
+														<Fragment key={index}>
+															<motion.li
+																custom={index}
+																initial={initial}
+																whileInView="animate"
+																// viewport={{once: false}}
+																variants={navigationMenuStaggerChildren}
+															>
+																<Link
+																	href={`${item?.node?.url}`}
+																	target={`${
+																		item?.node?.target
+																			? item?.node?.target
+																			: "_self"
+																	}`}
+																	aria-label={`${item?.node?.label}`}
+																	className="font-XenonNueRegular font-normal tracking-[0.05rem] leading-none text-white hover:text-black text-lg text-center"
+																>
+																	{item?.node?.label}
+																</Link>
+															</motion.li>
+														</Fragment>
+													)
+												)
+											) : (
+												<></>
+											)}
+										</motion.ul>
+									</>
+								) : ourHistorySublinksOpen ? (
+									<>
+										<motion.ul
+											initial={initial}
+											variants={stagger}
+											whileInView="animate"
+											className={
+												menuActive
+													? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1 my-6 p-4 border-l-2 border-accent-two"
+													: "hidden"
+											}
+										>
+											{globalContext?.megaNavigationLinks?.length > 0 ? (
+												globalContext?.megaNavigationLinks?.map(
+													(item: any, index: number) => (
+														<Fragment key={index}>
+															<motion.li
+																custom={index}
+																initial={initial}
+																whileInView="animate"
+																// viewport={{once: false}}
+																variants={navigationMenuStaggerChildren}
+															>
+																<Link
+																	href={`${item?.node?.url}`}
+																	target={`${
+																		item?.node?.target
+																			? item?.node?.target
+																			: "_self"
+																	}`}
+																	aria-label={`${item?.node?.label}`}
+																	className="font-XenonNueRegular font-normal tracking-[0.05rem] leading-none text-white hover:text-black text-lg text-center"
+																>
+																	{item?.node?.label}
+																</Link>
+															</motion.li>
+														</Fragment>
+													)
+												)
+											) : (
+												<></>
+											)}
+										</motion.ul>
+									</>
+								) : benjaminMkapaStadiumSublinksOpen ? (
+									<>
+										<motion.ul
+											initial={initial}
+											variants={stagger}
+											whileInView="animate"
+											className={
+												menuActive
+													? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1 my-6 p-4 border-l-2 border-accent-two"
+													: "hidden"
+											}
+										>
+											{globalContext?.megaNavigationLinks?.length > 0 ? (
+												globalContext?.megaNavigationLinks?.map(
+													(item: any, index: number) => (
+														<Fragment key={index}>
+															<motion.li
+																custom={index}
+																initial={initial}
+																whileInView="animate"
+																// viewport={{once: false}}
+																variants={navigationMenuStaggerChildren}
+															>
+																<Link
+																	href={`${item?.node?.url}`}
+																	target={`${
+																		item?.node?.target
+																			? item?.node?.target
+																			: "_self"
+																	}`}
+																	aria-label={`${item?.node?.label}`}
+																	className="font-XenonNueRegular font-normal tracking-[0.05rem] leading-none text-white hover:text-black text-lg text-center"
+																>
+																	{item?.node?.label}
+																</Link>
+															</motion.li>
+														</Fragment>
+													)
+												)
+											) : (
+												<></>
+											)}
+										</motion.ul>
+									</>
+								) : partnershipsAdvertisingSublinksOpen ? (
+									<>
+										<motion.ul
+											initial={initial}
+											variants={stagger}
+											whileInView="animate"
+											className={
+												menuActive
+													? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1 my-6 p-4 border-l-2 border-accent-two"
+													: "hidden"
+											}
+										>
+											{globalContext?.megaNavigationLinks?.length > 0 ? (
+												globalContext?.megaNavigationLinks?.map(
+													(item: any, index: number) => (
+														<Fragment key={index}>
+															<motion.li
+																custom={index}
+																initial={initial}
+																whileInView="animate"
+																// viewport={{once: false}}
+																variants={navigationMenuStaggerChildren}
+															>
+																<Link
+																	href={`${item?.node?.url}`}
+																	target={`${
+																		item?.node?.target
+																			? item?.node?.target
+																			: "_self"
+																	}`}
+																	aria-label={`${item?.node?.label}`}
+																	className="font-XenonNueRegular font-normal tracking-[0.05rem] leading-none text-white hover:text-black text-lg text-center"
+																>
+																	{item?.node?.label}
+																</Link>
+															</motion.li>
+														</Fragment>
+													)
+												)
+											) : (
+												<></>
+											)}
+										</motion.ul>
 									</>
 								) : (
 									<></>
@@ -491,7 +1200,6 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 														custom={index}
 														initial={initial}
 														whileInView="animate"
-														// viewport={{once: true}}
 														variants={navigationMenuStaggerChildren}
 														className="self-end"
 													>
