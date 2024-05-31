@@ -34,7 +34,7 @@
 }
 
 .sideMenu {
-	@apply bg-primary-dark bg-center absolute z-10 top-0 right-0 h-screen w-full opacity-100;
+	@apply bg-primary-dark absolute z-10 top-0 right-0 h-screen w-full opacity-100 bg-cover bg-no-repeat bg-center;
 
 	-webkit-animation: hideSideMenu 1.25s ease forwards;
 	-moz-animation: hideSideMenu 1.25s ease forwards;
@@ -59,7 +59,19 @@
 }
 
 .sideMenu-active {
-	@apply absolute z-10 top-0 right-0 min-h-screen h-full w-full opacity-100 bg-primary-dark;
+	@apply absolute z-10 top-0 right-0 overflow-y-auto overflow-x-hidden min-h-screen h-full w-full opacity-100 bg-primary-dark bg-cover bg-no-repeat bg-center;
+
+	&::-webkit-scrollbar {
+		@apply block w-[0.90rem] h-[0.90rem];
+	}
+
+	&::-webkit-scrollbar-track {
+		@apply bg-primary-dark;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		@apply rounded-[2px] bg-primary-two transition-all duration-500 hover:bg-tertiary-default;
+	}
 
 	-webkit-animation: showSideMenu 1.25s ease forwards;
 	-moz-animation: showSideMenu 1.25s ease forwards;
