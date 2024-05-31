@@ -34,7 +34,7 @@
 }
 
 .sideMenu {
-	@apply bg-primary-dark absolute z-10 top-0 right-0 h-screen w-full opacity-100 bg-cover bg-no-repeat bg-center;
+	@apply bg-primary-dark absolute z-10 top-0 right-0 overflow-y-scroll overflow-x-hidden h-screen w-full opacity-100 bg-cover bg-no-repeat bg-center;
 
 	-webkit-animation: hideSideMenu 1.25s ease forwards;
 	-moz-animation: hideSideMenu 1.25s ease forwards;
@@ -59,7 +59,7 @@
 }
 
 .sideMenu-active {
-	@apply absolute z-10 top-0 right-0 overflow-y-auto overflow-x-hidden min-h-screen h-full w-full opacity-100 bg-primary-dark bg-cover bg-no-repeat bg-center;
+	@apply absolute z-10 top-0 right-0 overflow-y-scroll overflow-x-hidden min-h-screen h-full w-full opacity-100 bg-primary-dark bg-cover bg-no-repeat bg-center;
 
 	&::-webkit-scrollbar {
 		@apply block w-[0.90rem] h-[0.90rem];

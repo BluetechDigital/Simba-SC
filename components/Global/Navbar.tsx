@@ -348,7 +348,7 @@ const Navbar: FC = () => {
 								height={1000}
 								alt="Simba SC Logo"
 								src="/img/logos/simba-sc-logo.png"
-								className="object-contain object-center w-[105px] h-[50px] lg:w-full lg:h-[75px]"
+								className="object-contain object-center w-[85px] h-[60px] sm:w-full sm:h-[65px] lg:w-full lg:h-[75px]"
 							/>
 						</Link>
 					</motion.div>
