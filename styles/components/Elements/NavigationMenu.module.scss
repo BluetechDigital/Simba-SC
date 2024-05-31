@@ -29,16 +29,12 @@
 	@apply opacity-0;
 }
 
-.clear {
-	clear: both;
-}
-
 .sideMenu {
-	@apply bg-primary-dark absolute z-10 top-0 right-0 overflow-y-scroll overflow-x-hidden h-screen w-full opacity-100 bg-cover bg-no-repeat bg-center;
+	@apply bg-primary-dark absolute z-10 top-0 right-0 overflow-y-visible overflow-x-hidden h-screen w-full opacity-100 bg-cover bg-no-repeat bg-center;
 
-	-webkit-animation: hideSideMenu 1.25s ease forwards;
-	-moz-animation: hideSideMenu 1.25s ease forwards;
-	-o-animation: hideSideMenu 1.25s ease forwards;
+	// -webkit-animation: hideSideMenu 1.25s ease forwards;
+	// -moz-animation: hideSideMenu 1.25s ease forwards;
+	// -o-animation: hideSideMenu 1.25s ease forwards;
 	animation: hideSideMenu 1.25s ease forwards;
 
 	ul {
@@ -59,7 +55,7 @@
 }
 
 .sideMenu-active {
-	@apply absolute z-10 top-0 right-0 overflow-y-scroll overflow-x-hidden min-h-screen h-full w-full opacity-100 bg-primary-dark bg-cover bg-no-repeat bg-center;
+	@apply absolute z-10 top-0 right-0 overflow-y-visible overflow-x-hidden min-h-screen h-full w-full opacity-100 bg-primary-dark bg-cover bg-no-repeat bg-center;
 
 	&::-webkit-scrollbar {
 		@apply block w-[0.90rem] h-[0.90rem];
@@ -73,9 +69,9 @@
 		@apply rounded-[2px] bg-primary-two transition-all duration-500 hover:bg-tertiary-default;
 	}
 
-	-webkit-animation: showSideMenu 1.25s ease forwards;
-	-moz-animation: showSideMenu 1.25s ease forwards;
-	-o-animation: showSideMenu 1.25s ease forwards;
+	// -webkit-animation: showSideMenu 1.25s ease forwards;
+	// -moz-animation: showSideMenu 1.25s ease forwards;
+	// -o-animation: showSideMenu 1.25s ease forwards;
 	animation: showSideMenu 1.25s ease forwards;
 }
 
@@ -88,23 +84,23 @@
 	}
 }
 
-@-webkit-keyframes showSideMenu {
-	from {
-		@apply hidden top-[-100vh];
-	}
-	to {
-		@apply block top-[0vh];
-	}
-}
+// @-webkit-keyframes showSideMenu {
+// 	from {
+// 		@apply hidden top-[-100vh];
+// 	}
+// 	to {
+// 		@apply block top-[0vh];
+// 	}
+// }
 
-@-moz-keyframes showSideMenu {
-	from {
-		@apply hidden top-[-100vh];
-	}
-	to {
-		@apply block top-[0vh];
-	}
-}
+// @-moz-keyframes showSideMenu {
+// 	from {
+// 		@apply hidden top-[-100vh];
+// 	}
+// 	to {
+// 		@apply block top-[0vh];
+// 	}
+// }
 
 @keyframes hideSideMenu {
 	from {
@@ -115,20 +111,20 @@
 	}
 }
 
-@-webkit-keyframes hideSideMenu {
-	from {
-		@apply block top-[0vh];
-	}
-	to {
-		@apply hidden top-[-100vh];
-	}
-}
+// @-webkit-keyframes hideSideMenu {
+// 	from {
+// 		@apply block top-[0vh];
+// 	}
+// 	to {
+// 		@apply hidden top-[-100vh];
+// 	}
+// }
 
-@-moz-keyframes hideSideMenu {
-	from {
-		@apply block top-[0vh];
-	}
-	to {
-		@apply hidden top-[-100vh];
-	}
-}
+// @-moz-keyframes hideSideMenu {
+// 	from {
+// 		@apply block top-[0vh];
+// 	}
+// 	to {
+// 		@apply hidden top-[-100vh];
+// 	}
+// }

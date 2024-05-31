@@ -348,7 +348,7 @@ const Navbar: FC = () => {
 								height={1000}
 								alt="Simba SC Logo"
 								src="/img/logos/simba-sc-logo.png"
-								className="object-contain object-center w-[85px] h-[60px] sm:w-full sm:h-[65px] lg:w-full lg:h-[75px]"
+								className="object-contain object-center w-[65px] h-[60px] md:w-full sm:h-[65px] lg:h-[75px]"
 							/>
 						</Link>
 					</motion.div>
@@ -372,7 +372,7 @@ const Navbar: FC = () => {
 														whileInView="animate"
 														viewport={{once: true}}
 														variants={arrayLoopStaggerChildren}
-														className="hidden xl:block"
+														className="hidden lg:block"
 													>
 														<Link
 															href={`${item?.node?.url}`}
@@ -448,7 +448,6 @@ const Navbar: FC = () => {
 								<span
 									className={menuActive ? "iconThree-active" : "iconThree"}
 								/>
-								<span className="clear" />
 							</span>
 							<span className="text-white uppercase font-XenonNueBold tracking-[0.05rem]">
 								{menuActive ? "Close" : "Menu"}

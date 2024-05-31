@@ -76,12 +76,59 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 							</motion.ul>
 							<div className="w-full lg:w-1/2"></div>
 						</div>
+						<div
+							className={
+								menuActive
+									? "flex flex-col items-baseline justify-center gap-6"
+									: "hidden"
+							}
+						>
+							<span className="font-OverusedGroteskLight font-semibold text-paragraph tracking-[0.02rem] text-white text-center">
+								About Simba
+							</span>
+							<motion.ul
+								initial={initial}
+								variants={stagger}
+								whileInView="animate"
+								viewport={{once: true}}
+								className="flex flex-col gap-0"
+							>
+								{globalContext?.navbarMenuLinks?.length > 0 ? (
+									globalContext?.navbarMenuLinks?.map(
+										(item: any, index: number) => (
+											<Fragment key={index}>
+												<motion.li
+													custom={index}
+													initial={initial}
+													whileInView="animate"
+													// viewport={{once: false}}
+													variants={navigationMenuStaggerChildren}
+												>
+													<Link
+														href={`${item?.node?.url}`}
+														target={`${
+															item?.node?.target ? item?.node?.target : "_self"
+														}`}
+														aria-label={`${item?.node?.label}`}
+														className="font-XenonNueExtraBold font-extrabold tracking-none leading-none text-accent-two hover:text-black text-5xl text-center uppercase"
+													>
+														{item?.node?.label}
+													</Link>
+												</motion.li>
+											</Fragment>
+										)
+									)
+								) : (
+									<></>
+								)}
+							</motion.ul>
+						</div>
 						<div className="flex items-center justify-between gap-10">
 							<div className="hidden lg:block w-full lg:w-1/4" />
 							<div
 								className={
 									menuActive
-										? "w-full flex flex-col items-end justify-center gap-6 py-10 lg:py-0"
+										? "w-full flex flex-col items-end justify-center gap-6 py-10"
 										: "hidden"
 								}
 							>
