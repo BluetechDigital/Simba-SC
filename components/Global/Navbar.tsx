@@ -436,10 +436,10 @@ const Navbar: FC = () => {
 						whileInView={fadeIn}
 						viewport={{once: true}}
 						onClick={handleClick}
-						className="w-auto lg:w-1/12 h-full hidden lg:flex flex-col items-center justify-center cursor-pointer p-4 bg-primary-default hover:bg-primary-dark bg-cover bg-no-repeat bg-center transition-all ease-in-out duration-500"
-						style={{
-							backgroundImage: `url("/svg/background/red-background-dots.png")`,
-						}}
+						className="w-auto lg:w-1/12 h-full hidden lg:flex flex-col items-center justify-center cursor-pointer p-4 bg-primary-default bg-cover bg-no-repeat bg-center"
+						// style={{
+						// 	backgroundImage: `url("/svg/background/red-background-dots.png")`,
+						// }}
 					>
 						<button className="relative z-50 flex flex-col items-center justify-center">
 							<span className="hamburger-icon">

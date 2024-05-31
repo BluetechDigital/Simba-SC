@@ -15,23 +15,9 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 
 	return (
 		<>
-			<div
-				className={menuActive ? "sideMenu-active" : "sideMenu hidden"}
-				style={{
-					backgroundImage: `linear-gradient(
-						0deg,
-						rgba(234, 29, 37, 0),
-						rgba(234, 29, 37, 0),
-						rgba(234, 29, 37, 0),
-						rgba(234, 29, 37, 0.10),
-						rgba(234, 29, 37, 0.10),
-						rgba(234, 29, 37, 0.45),
-						rgba(234, 29, 37, 0.50)),
-						url("/svg/background/red-background-dots.png")`,
-				}}
-			>
+			<div className={menuActive ? "megaMenu-active" : "megaMenu hidden"}>
 				<div
-					className="h-full w-full p-10 pt-20 flex flex-col bg-cover bg-no-repeat bg-center"
+					className="megaMenu-content overflow-y-visible overflow-x-hidden min-h-screen h-full w-full p-10 pt-20 flex flex-col bg-cover bg-no-repeat bg-center"
 					style={{
 						backgroundImage: `linear-gradient(
 						0deg,
