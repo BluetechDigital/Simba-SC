@@ -30,7 +30,21 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 						url("/svg/background/red-background-dots.png")`,
 				}}
 			>
-				<div className="h-full w-full p-10 pt-20 flex flex-col">
+				<div
+					className="h-full w-full p-10 pt-20 flex flex-col bg-cover bg-no-repeat bg-center"
+					style={{
+						backgroundImage: `linear-gradient(
+						0deg,
+						rgba(234, 29, 37, 0),
+						rgba(234, 29, 37, 0),
+						rgba(234, 29, 37, 0),
+						rgba(234, 29, 37, 0.10),
+						rgba(234, 29, 37, 0.10),
+						rgba(234, 29, 37, 0.45),
+						rgba(234, 29, 37, 0.50)),
+						url("/svg/background/red-background-dots.png")`,
+					}}
+				>
 					<div className="max-w-9xl mx-auto h-full w-full px-0 lg:px-10 pt-20 pb-0 flex flex-col justify-between gap-20 lg:gap-10">
 						<div className="flex flex-col lg:flex-row lg:gap-10 xl:gap-24">
 							<motion.ul
