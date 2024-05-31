@@ -403,14 +403,7 @@ const Navbar: FC = () => {
 							>
 								<button
 									onClick={handleClick}
-									className="relative z-50 w-auto lg:w-1/12 h-full py-2 px-12 flex flex-col items-center justify-center bg-primary-default hover:bg-primary-dark bg-fill bg-no-repeat bg-center transition-all ease-in-out duration-500"
-									style={{
-										backgroundImage: `url("${
-											menuActive
-												? "/svg/background/none.png"
-												: "/svg/background/red-background-dots.png"
-										}")`,
-									}}
+									className="relative z-50 w-auto lg:w-1/12 h-full py-2 px-12 flex flex-col items-center justify-center bg-primary-default hover:bg-primary-dark transition-all ease-in-out duration-500"
 								>
 									<span className="hamburger-icon">
 										<span
