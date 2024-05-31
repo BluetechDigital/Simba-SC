@@ -220,6 +220,10 @@ export type IThemesOptionsContent = {
 			};
 		};
 	};
+	megaNavigation: {
+		fansVideoElement: string;
+		displayFansVideoElement: boolean;
+	};
 	topNavigation: {
 		foundationPageLink: {
 			url: string;

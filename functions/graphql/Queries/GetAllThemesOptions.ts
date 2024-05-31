@@ -64,6 +64,10 @@ export const getThemesOptionsContent = async () => {
 										}
 									}
 								}
+								megaNavigation {
+									fansVideoElement
+									displayFansVideoElement
+								}
 								topNavigation {
 									foundationPageLink {
 										url

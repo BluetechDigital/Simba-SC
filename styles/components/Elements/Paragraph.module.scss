@@ -19,7 +19,7 @@
 
 	ul,
 	ol {
-		@apply p-4 flex gap-2 sm:px-6 flex flex-col items-baseline justify-center border-l-2 border-primary-two;
+		@apply p-4 flex gap-2 sm:px-6 flex-col items-baseline justify-center border-l-2 border-primary-two;
 
 		li {
 			@apply px-2 list-disc text-left ml-4;

@@ -87,3 +87,6 @@ export type INewsLatestArticles = {
 		};
 	};
 };
+export type IMegaNavVideoWrapper = {
+	children: React.ReactNode;
+};
