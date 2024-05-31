@@ -17,7 +17,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 		<>
 			<div className={menuActive ? "megaMenu-active" : "megaMenu hidden"}>
 				<div
-					className="megaMenu-content overflow-y-visible overflow-x-hidden min-h-screen h-full w-full p-10 pt-20 flex flex-col bg-cover bg-no-repeat bg-center"
+					className="megaMenu-content overflow-y-visible overflow-x-hidden min-h-screen h-full w-full py-20 px-10 flex flex-col bg-cover bg-no-repeat bg-center"
 					style={{
 						backgroundImage: `linear-gradient(
 						0deg,
@@ -31,7 +31,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 						url("/svg/background/red-background-dots.png")`,
 					}}
 				>
-					<div className="max-w-9xl mx-auto h-full w-full px-0 lg:px-10 pt-20 pb-0 flex flex-col justify-between gap-20 lg:gap-10">
+					<div className="max-w-9xl mx-auto h-full w-full px-0 lg:px-10 pb-32 pt-32 lg:pt-20 lg:pb-0 flex flex-col justify-between gap-20 lg:gap-10">
 						<div className="flex flex-col lg:flex-row lg:gap-10 xl:gap-24">
 							<motion.ul
 								initial={initial}
@@ -128,7 +128,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 							<div
 								className={
 									menuActive
-										? "w-full flex flex-col items-end justify-center gap-6 py-10"
+										? "w-full flex flex-col items-end justify-center gap-6 py-10 pb-20 lg:pb-10"
 										: "hidden"
 								}
 							>

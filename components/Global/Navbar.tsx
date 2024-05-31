@@ -407,7 +407,7 @@ const Navbar: FC = () => {
 									style={{
 										backgroundImage: `url("${
 											menuActive
-												? "none"
+												? "/svg/background/none.png"
 												: "/svg/background/red-background-dots.png"
 										}")`,
 									}}
@@ -424,7 +424,7 @@ const Navbar: FC = () => {
 										/>
 										<span className="clear" />
 									</span>
-									<span className="text-white uppercase font-XenonNueBold tracking-[0.05rem]">
+									<span className="mt-[1px] text-white uppercase font-XenonNueBold tracking-[0.05rem]">
 										{menuActive ? "Close" : "Menu"}
 									</span>
 								</button>
@@ -436,10 +436,10 @@ const Navbar: FC = () => {
 						whileInView={fadeIn}
 						viewport={{once: true}}
 						onClick={handleClick}
-						className="w-auto lg:w-1/12 h-full hidden lg:flex flex-col items-center justify-center cursor-pointer p-4 bg-primary-default bg-cover bg-no-repeat bg-center"
-						// style={{
-						// 	backgroundImage: `url("/svg/background/red-background-dots.png")`,
-						// }}
+						className="w-auto lg:w-1/12 h-full hidden lg:flex flex-col items-center justify-center cursor-pointer p-4 bg-primary-default hover:bg-primary-dark bg-fill bg-no-repeat bg-center transition-all ease-in-out duration-500"
+						style={{
+							backgroundImage: `url("/svg/background/red-background-dots.png")`,
+						}}
 					>
 						<button className="relative z-50 flex flex-col items-center justify-center">
 							<span className="hamburger-icon">
