@@ -207,20 +207,9 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																				: "hidden"
 																		}
 																	>
-																		<li>
-																			<Link
-																				target="_self"
-																				onClick={toggleMenu}
-																				href={item?.node?.url}
-																				aria-label={`${item?.node?.label}`}
-																				className="font-XenonNueRegular font-normal tracking-[0.05rem] leading-none text-white hover:text-black text-lg text-center"
-																			>
-																				{item?.node?.label}
-																			</Link>
-																		</li>
-																		{globalContext?.megaNavigationLinks
+																		{globalContext?.aboutTheClubSublinks
 																			?.length > 0 ? (
-																			globalContext?.megaNavigationLinks?.map(
+																			globalContext?.aboutTheClubSublinks?.map(
 																				(item: any, index: number) => (
 																					<Fragment key={index}>
 																						<motion.li
@@ -293,20 +282,8 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																				: "hidden"
 																		}
 																	>
-																		<li>
-																			<Link
-																				target="_self"
-																				onClick={toggleMenu}
-																				href={item?.node?.url}
-																				aria-label={`${item?.node?.label}`}
-																				className="font-XenonNueRegular font-normal tracking-[0.05rem] leading-none text-white hover:text-black text-lg text-center"
-																			>
-																				{item?.node?.label}
-																			</Link>
-																		</li>
-																		{globalContext?.megaNavigationLinks
-																			?.length > 0 ? (
-																			globalContext?.megaNavigationLinks?.map(
+																		{globalContext?.newsSublinks?.length > 0 ? (
+																			globalContext?.newsSublinks?.map(
 																				(item: any, index: number) => (
 																					<Fragment key={index}>
 																						<motion.li
@@ -379,20 +356,8 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																				: "hidden"
 																		}
 																	>
-																		<li>
-																			<Link
-																				target="_self"
-																				onClick={toggleMenu}
-																				href={item?.node?.url}
-																				aria-label={`${item?.node?.label}`}
-																				className="font-XenonNueRegular font-normal tracking-[0.05rem] leading-none text-white hover:text-black text-lg text-center"
-																			>
-																				{item?.node?.label}
-																			</Link>
-																		</li>
-																		{globalContext?.megaNavigationLinks
-																			?.length > 0 ? (
-																			globalContext?.megaNavigationLinks?.map(
+																		{globalContext?.fansSublinks?.length > 0 ? (
+																			globalContext?.fansSublinks?.map(
 																				(item: any, index: number) => (
 																					<Fragment key={index}>
 																						<motion.li
@@ -465,20 +430,9 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																				: "hidden"
 																		}
 																	>
-																		<li>
-																			<Link
-																				target="_self"
-																				onClick={toggleMenu}
-																				href={item?.node?.url}
-																				aria-label={`${item?.node?.label}`}
-																				className="font-XenonNueRegular font-normal tracking-[0.05rem] leading-none text-white hover:text-black text-lg text-center"
-																			>
-																				{item?.node?.label}
-																			</Link>
-																		</li>
-																		{globalContext?.megaNavigationLinks
-																			?.length > 0 ? (
-																			globalContext?.megaNavigationLinks?.map(
+																		{globalContext?.communitySublinks?.length >
+																		0 ? (
+																			globalContext?.communitySublinks?.map(
 																				(item: any, index: number) => (
 																					<Fragment key={index}>
 																						<motion.li
@@ -551,20 +505,9 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																				: "hidden"
 																		}
 																	>
-																		<li>
-																			<Link
-																				target="_self"
-																				onClick={toggleMenu}
-																				href={item?.node?.url}
-																				aria-label={`${item?.node?.label}`}
-																				className="font-XenonNueRegular font-normal tracking-[0.05rem] leading-none text-white hover:text-black text-lg text-center"
-																			>
-																				{item?.node?.label}
-																			</Link>
-																		</li>
-																		{globalContext?.megaNavigationLinks
-																			?.length > 0 ? (
-																			globalContext?.megaNavigationLinks?.map(
+																		{globalContext?.ourHistorySublinks?.length >
+																		0 ? (
+																			globalContext?.ourHistorySublinks?.map(
 																				(item: any, index: number) => (
 																					<Fragment key={index}>
 																						<motion.li
@@ -637,20 +580,9 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																				: "hidden"
 																		}
 																	>
-																		<li>
-																			<Link
-																				target="_self"
-																				onClick={toggleMenu}
-																				href={item?.node?.url}
-																				aria-label={`${item?.node?.label}`}
-																				className="font-XenonNueRegular font-normal tracking-[0.05rem] leading-none text-white hover:text-black text-lg text-center"
-																			>
-																				{item?.node?.label}
-																			</Link>
-																		</li>
-																		{globalContext?.megaNavigationLinks
+																		{globalContext?.benjaminMkapaStadiumSublinks
 																			?.length > 0 ? (
-																			globalContext?.megaNavigationLinks?.map(
+																			globalContext?.benjaminMkapaStadiumSublinks?.map(
 																				(item: any, index: number) => (
 																					<Fragment key={index}>
 																						<motion.li
@@ -723,20 +655,10 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																				: "hidden"
 																		}
 																	>
-																		<li>
-																			<Link
-																				target="_self"
-																				onClick={toggleMenu}
-																				href={item?.node?.url}
-																				aria-label={`${item?.node?.label}`}
-																				className="font-XenonNueRegular font-normal tracking-[0.05rem] leading-none text-white hover:text-black text-lg text-center"
-																			>
-																				{item?.node?.label}
-																			</Link>
-																		</li>
-																		{globalContext?.megaNavigationLinks
+																		{globalContext
+																			?.partnershipsAdvertisingSublinks
 																			?.length > 0 ? (
-																			globalContext?.megaNavigationLinks?.map(
+																			globalContext?.partnershipsAdvertisingSublinks?.map(
 																				(item: any, index: number) => (
 																					<Fragment key={index}>
 																						<motion.li
@@ -798,8 +720,8 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 													: "hidden"
 											}
 										>
-											{globalContext?.megaNavigationLinks?.length > 0 ? (
-												globalContext?.megaNavigationLinks?.map(
+											{globalContext?.aboutTheClubSublinks?.length > 0 ? (
+												globalContext?.aboutTheClubSublinks?.map(
 													(item: any, index: number) => (
 														<Fragment key={index}>
 															<motion.li
@@ -842,8 +764,8 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 													: "hidden"
 											}
 										>
-											{globalContext?.megaNavigationLinks?.length > 0 ? (
-												globalContext?.megaNavigationLinks?.map(
+											{globalContext?.newsSublinks?.length > 0 ? (
+												globalContext?.newsSublinks?.map(
 													(item: any, index: number) => (
 														<Fragment key={index}>
 															<motion.li
@@ -887,8 +809,8 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 													: "hidden"
 											}
 										>
-											{globalContext?.megaNavigationLinks?.length > 0 ? (
-												globalContext?.megaNavigationLinks?.map(
+											{globalContext?.fansSublinks?.length > 0 ? (
+												globalContext?.fansSublinks?.map(
 													(item: any, index: number) => (
 														<Fragment key={index}>
 															<motion.li
@@ -953,8 +875,8 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 													: "hidden"
 											}
 										>
-											{globalContext?.megaNavigationLinks?.length > 0 ? (
-												globalContext?.megaNavigationLinks?.map(
+											{globalContext?.communitySublinks?.length > 0 ? (
+												globalContext?.communitySublinks?.map(
 													(item: any, index: number) => (
 														<Fragment key={index}>
 															<motion.li
@@ -997,8 +919,8 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 													: "hidden"
 											}
 										>
-											{globalContext?.megaNavigationLinks?.length > 0 ? (
-												globalContext?.megaNavigationLinks?.map(
+											{globalContext?.ourHistorySublinks?.length > 0 ? (
+												globalContext?.ourHistorySublinks?.map(
 													(item: any, index: number) => (
 														<Fragment key={index}>
 															<motion.li
@@ -1041,8 +963,9 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 													: "hidden"
 											}
 										>
-											{globalContext?.megaNavigationLinks?.length > 0 ? (
-												globalContext?.megaNavigationLinks?.map(
+											{globalContext?.benjaminMkapaStadiumSublinks?.length >
+											0 ? (
+												globalContext?.benjaminMkapaStadiumSublinks?.map(
 													(item: any, index: number) => (
 														<Fragment key={index}>
 															<motion.li
@@ -1085,8 +1008,9 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 													: "hidden"
 											}
 										>
-											{globalContext?.megaNavigationLinks?.length > 0 ? (
-												globalContext?.megaNavigationLinks?.map(
+											{globalContext?.partnershipsAdvertisingSublinks?.length >
+											0 ? (
+												globalContext?.partnershipsAdvertisingSublinks?.map(
 													(item: any, index: number) => (
 														<Fragment key={index}>
 															<motion.li

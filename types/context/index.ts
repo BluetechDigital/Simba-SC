@@ -253,69 +253,40 @@ export type IExecutiveLeadershipsGrid = [
 ];
 
 // WEBSITE LINKS AND SUBLINKS
-export type IMobileLinks = [
-	{
+export namespace ILinks {
+	export type INavbarMenuLinks = {
 		node: {
 			id: string;
 			url: string;
 			label: string;
 		};
-	}
-];
-export type ICareerSublinks = [
-	{
+	}[];
+
+	export interface IMobileLinks extends INavbarMenuLinks {}
+	export interface ICareerSublinks extends INavbarMenuLinks {}
+	export interface ICopyrightLinks extends INavbarMenuLinks {}
+	export interface IFooterMenuLinks extends INavbarMenuLinks {}
+}
+
+export namespace IMegaMenuLinks {
+	export type IMegaNavigationLinks = {
 		node: {
 			id: string;
 			url: string;
 			label: string;
 		};
-	}
-];
-export type ICopyrightLinks = [
-	{
-		node: {
-			id: string;
-			url: string;
-			label: string;
-		};
-	}
-];
-export type IFooterMenuLinks = [
-	{
-		node: {
-			id: string;
-			url: string;
-			label: string;
-		};
-	}
-];
-export type INavbarMenuLinks = [
-	{
-		node: {
-			id: string;
-			url: string;
-			label: string;
-		};
-	}
-];
-export type IMegaNavigationLinks = [
-	{
-		node: {
-			id: string;
-			url: string;
-			label: string;
-		};
-	}
-];
-export type IMegaNavigationUsefulSublinks = [
-	{
-		node: {
-			id: string;
-			url: string;
-			label: string;
-		};
-	}
-];
+	}[];
+
+	export interface INewsSublinks extends IMegaNavigationLinks {}
+	export interface IFansSublinks extends IMegaNavigationLinks {}
+	export interface IStadiumSublinks extends IMegaNavigationLinks {}
+	export interface ICommunitySublinks extends IMegaNavigationLinks {}
+	export interface IOurHistorySublinks extends IMegaNavigationLinks {}
+	export interface IAboutTheClubSublinks extends IMegaNavigationLinks {}
+	export interface IMegaNavigationUsefulSublinks extends IMegaNavigationLinks {}
+	export interface IPartnershipsAdvertisingSublinks
+		extends IMegaNavigationLinks {}
+}
 
 /* CONTEXT PROVIDERS  */
 export type IPostTypes = {
@@ -338,36 +309,54 @@ export type IPageContext = {
 export type IGlobalProps = {
 	news: INews;
 	blogs: IBlogs;
-	mobileLinks: IMobileLinks;
 	caseStudies: ICaseStudies;
 	testimonials: ITestimonials;
 	jobsPositions: IJobsPositions;
-	careerSublinks: ICareerSublinks;
-	copyrightLinks: ICopyrightLinks;
-	navbarMenuLinks: INavbarMenuLinks;
-	footerMenuLinks: IFooterMenuLinks;
-	megaNavigationLinks: IMegaNavigationLinks;
 	themesOptionsContent: IThemesOptionsContent;
 	boardOfDirectorsGrid: IBoardOfDirectorsGrid;
 	executiveLeadershipsGrid: IExecutiveLeadershipsGrid;
-	megaNavigationUsefulSublinks: IMegaNavigationUsefulSublinks;
+
+	// Website Links
+	mobileLinks: ILinks.IMobileLinks;
+	careerSublinks: ILinks.ICareerSublinks;
+	copyrightLinks: ILinks.ICopyrightLinks;
+	navbarMenuLinks: ILinks.INavbarMenuLinks;
+	footerMenuLinks: ILinks.IFooterMenuLinks;
+	newsSublinks: IMegaMenuLinks.INewsSublinks;
+	fansSublinks: IMegaMenuLinks.IFansSublinks;
+	communitySublinks: IMegaMenuLinks.ICommunitySublinks;
+	ourHistorySublinks: IMegaMenuLinks.IOurHistorySublinks;
+	megaNavigationLinks: IMegaMenuLinks.IMegaNavigationLinks;
+	aboutTheClubSublinks: IMegaMenuLinks.IAboutTheClubSublinks;
+	benjaminMkapaStadiumSublinks: IMegaMenuLinks.IStadiumSublinks;
+	megaNavigationUsefulSublinks: IMegaMenuLinks.IMegaNavigationUsefulSublinks;
+	partnershipsAdvertisingSublinks: IMegaMenuLinks.IPartnershipsAdvertisingSublinks;
 };
 export type IGlobalContext = {
 	news: INews;
 	blogs: IBlogs;
-	mobileLinks: IMobileLinks;
 	caseStudies: ICaseStudies;
 	testimonials: ITestimonials;
 	jobsPositions: IJobsPositions;
-	careerSublinks: ICareerSublinks;
-	copyrightLinks: ICopyrightLinks;
-	navbarMenuLinks: INavbarMenuLinks;
-	footerMenuLinks: IFooterMenuLinks;
-	megaNavigationLinks: IMegaNavigationLinks;
 	themesOptionsContent: IThemesOptionsContent;
 	boardOfDirectorsGrid: IBoardOfDirectorsGrid;
 	executiveLeadershipsGrid: IExecutiveLeadershipsGrid;
-	megaNavigationUsefulSublinks: IMegaNavigationUsefulSublinks;
+
+	// Website Links
+	mobileLinks: ILinks.IMobileLinks;
+	careerSublinks: ILinks.ICareerSublinks;
+	copyrightLinks: ILinks.ICopyrightLinks;
+	navbarMenuLinks: ILinks.INavbarMenuLinks;
+	footerMenuLinks: ILinks.IFooterMenuLinks;
+	newsSublinks: IMegaMenuLinks.INewsSublinks;
+	fansSublinks: IMegaMenuLinks.IFansSublinks;
+	communitySublinks: IMegaMenuLinks.ICommunitySublinks;
+	ourHistorySublinks: IMegaMenuLinks.IOurHistorySublinks;
+	megaNavigationLinks: IMegaMenuLinks.IMegaNavigationLinks;
+	aboutTheClubSublinks: IMegaMenuLinks.IAboutTheClubSublinks;
+	benjaminMkapaStadiumSublinks: IMegaMenuLinks.IStadiumSublinks;
+	megaNavigationUsefulSublinks: IMegaMenuLinks.IMegaNavigationUsefulSublinks;
+	partnershipsAdvertisingSublinks: IMegaMenuLinks.IPartnershipsAdvertisingSublinks;
 };
 export type IPageContextProvider = {
 	seo: ISeo;
