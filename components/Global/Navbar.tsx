@@ -382,7 +382,7 @@ const Navbar: FC = () => {
 																	: "_self"
 															}`}
 															aria-label={`${item?.node?.label}`}
-															className="font-XenonNueBold tracking-[0.05rem] text-black hover:text-primary-default text-paragraph text-center uppercase transition-all ease-in-out duration-500"
+															className="font-XenonNueExtraBold font-extrabold tracking-[0.05rem] text-black hover:text-primary-default text-paragraph text-center uppercase transition-all ease-in-out duration-500"
 														>
 															{item?.node?.label}
 														</Link>

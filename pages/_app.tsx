@@ -16,18 +16,18 @@ import {IGlobalProps} from "@/types/context";
 // Queries Functions
 import {
 	getMobileLinks,
+	getFansSublinks,
+	getNewsSublinks,
 	getCopyrightLinks,
 	getCareerSublinks,
 	getNavbarMenuLinks,
 	getFooterMenuLinks,
-	getMegaNavigationLinks,
-	getMegaNavigationUsefulSublinks,
-	getAboutTheClubSublinks,
-	getBenjaminMkapaStadiumSublinks,
 	getCommunitySublinks,
-	getFansSublinks,
-	getNewsSublinks,
 	getOurHistorySublinks,
+	getMegaNavigationLinks,
+	getAboutTheClubSublinks,
+	getMegaNavigationUsefulSublinks,
+	getBenjaminMkapaStadiumSublinks,
 	getPartnershipsAdvertisingSublinks,
 } from "@/functions/graphql/Queries/GetAllMenuLinks";
 import {getAllNewsContent} from "@/functions/graphql/Queries/GetAllNews";
