@@ -1,9 +1,9 @@
 // Imports
 import {
+	fadeIn,
 	initial,
 	stagger,
 	initialTwo,
-	fadeIn,
 	slideInRightFinish,
 	slideInRightInitial,
 	navigationMenuStaggerChildren,
@@ -182,7 +182,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 															aria-label={`${item?.node?.label}`}
 															className={`${
 																aboutTheClubSublinksOpen
-																	? "text-accent-two"
+																	? "text-tertiary-two"
 																	: "text-white"
 															} font-XenonNueExtraBold cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-black text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase`}
 														>
@@ -203,7 +203,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																		whileInView="animate"
 																		className={
 																			menuActive
-																				? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1 my-6 p-4 border-l-2 border-accent-two"
+																				? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-2 my-6 p-4 border-l-2 border-tertiary-two"
 																				: "hidden"
 																		}
 																	>
@@ -257,7 +257,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 															aria-label={`${item?.node?.label}`}
 															className={`${
 																newsSublinksOpen
-																	? "text-accent-two"
+																	? "text-tertiary-two"
 																	: "text-white"
 															} font-XenonNueExtraBold cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-black text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase`}
 														>
@@ -278,7 +278,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																		whileInView="animate"
 																		className={
 																			menuActive
-																				? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1 my-6 p-4 border-l-2 border-accent-two"
+																				? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-2 my-6 p-4 border-l-2 border-tertiary-two"
 																				: "hidden"
 																		}
 																	>
@@ -331,7 +331,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 															aria-label={`${item?.node?.label}`}
 															className={`${
 																fansSublinksOpen
-																	? "text-accent-two"
+																	? "text-tertiary-two"
 																	: "text-white"
 															} font-XenonNueExtraBold cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-black text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase`}
 														>
@@ -352,7 +352,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																		whileInView="animate"
 																		className={
 																			menuActive
-																				? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1 my-6 p-4 border-l-2 border-accent-two"
+																				? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-2 my-6 p-4 border-l-2 border-tertiary-two"
 																				: "hidden"
 																		}
 																	>
@@ -405,7 +405,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 															aria-label={`${item?.node?.label}`}
 															className={`${
 																communitySublinksOpen
-																	? "text-accent-two"
+																	? "text-tertiary-two"
 																	: "text-white"
 															} font-XenonNueExtraBold cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-black text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase`}
 														>
@@ -426,7 +426,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																		whileInView="animate"
 																		className={
 																			menuActive
-																				? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1 my-6 p-4 border-l-2 border-accent-two"
+																				? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-2 my-6 p-4 border-l-2 border-tertiary-two"
 																				: "hidden"
 																		}
 																	>
@@ -480,7 +480,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 															aria-label={`${item?.node?.label}`}
 															className={`${
 																ourHistorySublinksOpen
-																	? "text-accent-two"
+																	? "text-tertiary-two"
 																	: "text-white"
 															} font-XenonNueExtraBold cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-black text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase`}
 														>
@@ -501,7 +501,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																		whileInView="animate"
 																		className={
 																			menuActive
-																				? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1 my-6 p-4 border-l-2 border-accent-two"
+																				? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-2 my-6 p-4 border-l-2 border-tertiary-two"
 																				: "hidden"
 																		}
 																	>
@@ -555,7 +555,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 															aria-label={`${item?.node?.label}`}
 															className={`${
 																benjaminMkapaStadiumSublinksOpen
-																	? "text-accent-two"
+																	? "text-tertiary-two"
 																	: "text-white"
 															} font-XenonNueExtraBold cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-black text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase`}
 														>
@@ -576,7 +576,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																		whileInView="animate"
 																		className={
 																			menuActive
-																				? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1 my-6 p-4 border-l-2 border-accent-two"
+																				? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-2 my-6 p-4 border-l-2 border-tertiary-two"
 																				: "hidden"
 																		}
 																	>
@@ -630,7 +630,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 															aria-label={`${item?.node?.label}`}
 															className={`${
 																partnershipsAdvertisingSublinksOpen
-																	? "text-accent-two"
+																	? "text-tertiary-two"
 																	: "text-white"
 															} font-XenonNueExtraBold cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-black text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase`}
 														>
@@ -651,7 +651,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																		whileInView="animate"
 																		className={
 																			menuActive
-																				? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1 my-6 p-4 border-l-2 border-accent-two"
+																				? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-2 my-6 p-4 border-l-2 border-tertiary-two"
 																				: "hidden"
 																		}
 																	>
@@ -716,7 +716,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 											whileInView="animate"
 											className={
 												menuActive
-													? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1 my-6 p-4 border-l-2 border-accent-two"
+													? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-2 my-6 p-4 border-l-2 border-tertiary-two"
 													: "hidden"
 											}
 										>
@@ -760,7 +760,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 											whileInView="animate"
 											className={
 												menuActive
-													? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1 my-6 p-4 border-l-2 border-accent-two"
+													? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-2 my-6 p-4 border-l-2 border-tertiary-two"
 													: "hidden"
 											}
 										>
@@ -805,7 +805,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 											viewport={{once: true}}
 											className={
 												menuActive
-													? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1 my-6 p-4 border-l-2 border-accent-two"
+													? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-2 my-6 p-4 border-l-2 border-tertiary-two"
 													: "hidden"
 											}
 										>
@@ -871,7 +871,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 											whileInView="animate"
 											className={
 												menuActive
-													? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1 my-6 p-4 border-l-2 border-accent-two"
+													? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-2 my-6 p-4 border-l-2 border-tertiary-two"
 													: "hidden"
 											}
 										>
@@ -915,7 +915,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 											whileInView="animate"
 											className={
 												menuActive
-													? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1 my-6 p-4 border-l-2 border-accent-two"
+													? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-2 my-6 p-4 border-l-2 border-tertiary-two"
 													: "hidden"
 											}
 										>
@@ -959,7 +959,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 											whileInView="animate"
 											className={
 												menuActive
-													? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1 my-6 p-4 border-l-2 border-accent-two"
+													? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-2 my-6 p-4 border-l-2 border-tertiary-two"
 													: "hidden"
 											}
 										>
@@ -1004,7 +1004,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 											whileInView="animate"
 											className={
 												menuActive
-													? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-1 my-6 p-4 border-l-2 border-accent-two"
+													? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-2 my-6 p-4 border-l-2 border-tertiary-two"
 													: "hidden"
 											}
 										>
@@ -1046,7 +1046,11 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 								)}
 							</div>
 						</div>
-						<div
+						<motion.div
+							initial={initial}
+							variants={stagger}
+							whileInView="animate"
+							viewport={{once: true}}
 							className={
 								menuActive
 									? "flex flex-col items-baseline justify-center gap-6"
@@ -1080,7 +1084,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 															item?.node?.target ? item?.node?.target : "_self"
 														}`}
 														aria-label={`${item?.node?.label}`}
-														className="font-XenonNueExtraBold font-extrabold tracking-none leading-none text-accent-two hover:text-black text-5xl text-center uppercase"
+														className="font-XenonNueExtraBold font-extrabold tracking-none leading-none text-tertiary-two hover:text-black text-5xl text-center uppercase"
 													>
 														{item?.node?.label}
 													</Link>
@@ -1092,8 +1096,14 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 									<></>
 								)}
 							</motion.ul>
-						</div>
-						<div className="flex items-center justify-between gap-10">
+						</motion.div>
+						<motion.div
+							initial={initial}
+							variants={stagger}
+							whileInView="animate"
+							viewport={{once: true}}
+							className="flex items-center justify-between gap-10"
+						>
 							<div className="hidden lg:block w-full lg:w-1/4" />
 							<div
 								className={
@@ -1148,7 +1158,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 									)}
 								</motion.ul>
 							</div>
-						</div>
+						</motion.div>
 					</div>
 				</div>
 			</div>

@@ -3,6 +3,7 @@ import React, {FC, Fragment} from "react";
 import {usePageContext} from "@/context/pages";
 
 // Components
+import Hero from "../Hero";
 import ErrorPage from "../Global/ErrorPage";
 import TitleParagraph from "../TitleParagraph";
 import Maintenance from "../Global/Maintenance";
@@ -13,6 +14,7 @@ const RenderFlexibleContent: FC = () => {
 
 	// Components Key Value Pairs
 	const componentMapping: any = {
+		[`${FlexibleContent}_Hero`]: Hero,
 		[`${FlexibleContent}_Maintenance`]: Maintenance,
 		[`${FlexibleContent}_ErrorPageContent`]: ErrorPage,
 		[`${FlexibleContent}_TitleParagraph`]: TitleParagraph,

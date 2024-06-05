@@ -5,6 +5,7 @@
 @import "./base/fonts";
 @import "./base/colors";
 
+@import "./components/Hero.module.scss";
 @import "./components/SocialMedia.module.scss";
 @import "./components/Elements/NavigationMenu.module.scss";
 
@@ -23,11 +24,11 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-	@apply bg-primary-dark;
+	@apply bg-darkGrey hover:bg-primary-dark;
 }
 
 body::-webkit-scrollbar-thumb {
-	@apply rounded-[2px] bg-primary-two transition-all duration-500 hover:bg-tertiary-default;
+	@apply rounded-[2px] bg-quaternary-default transition-all duration-500 hover:bg-primary-default;
 }
 
 a {
@@ -67,35 +68,6 @@ h5 {
 	margin: auto 0;
 	justify-content: center;
 	align-items: center;
-}
-
-.swiper-button-prev,
-.swiper-button-next {
-	@apply mt-64 lg:mt-0 w-16 h-16 p-8 border-2 border-primary-dark hover:border-primary-dark text-primary-dark hover:text-primary-dark;
-
-	top: 85% !important;
-
-	@media screen and (min-width: 1024px) {
-		top: 50% !important;
-	}
-}
-
-.swiper-button-prev::after {
-	content: "next";
-	width: 15px !important;
-	height: 15px !important;
-	font-size: 15px !important;
-	font-weight: 900 !important;
-	color: $primary-dark !important;
-}
-
-.swiper-button-next::after {
-	content: "next";
-	width: 15px !important;
-	height: 15px !important;
-	font-size: 15px !important;
-	font-weight: 900 !important;
-	color: $primary-dark !important;
 }
 
 /* SQUARE BOX CUBES

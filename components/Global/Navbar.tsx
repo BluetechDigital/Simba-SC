@@ -72,7 +72,7 @@ const Navbar: FC = () => {
 									: "_self"
 							}`}
 							aria-label={`Chelsea Foundation`}
-							className="hidden lg:block font-XenonNueRegular text-black hover:hover:text-primary-two text-base text-center transition-all ease-in-out duration-500"
+							className="hidden lg:block font-XenonNueRegular tracking-[0.07rem] uppercase text-black hover:hover:text-accent-two text-base text-center transition-all ease-in-out duration-500"
 						>
 							{
 								globalContext?.themesOptionsContent?.topNavigation

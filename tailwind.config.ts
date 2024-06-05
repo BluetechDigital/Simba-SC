@@ -54,11 +54,16 @@ const config: Config = {
 				dark: "#99070e",
 			},
 			accent: {
+				default: "#3870da",
+				two: "#103fac",
+				dark: "#24315f",
+			},
+			tertiary: {
 				default: "#ffb000",
 				two: "#fb8c00",
 				dark: "#91744c",
 			},
-			tertiary: {
+			quaternary: {
 				default: "#d7d3d3",
 				two: "#cccccc",
 				dark: "#a4a4a4",

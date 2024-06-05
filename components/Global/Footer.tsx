@@ -24,7 +24,7 @@ const Footer: FC = () => {
 
 	return (
 		<footer
-			className={styles.footer + " px-0 overflow-hidden border-t-4 bg-white"}
+			className={styles.footer + " py-4 px-0 overflow-hidden bg-white"}
 		></footer>
 	);
 };
