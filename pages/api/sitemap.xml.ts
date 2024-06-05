@@ -4,15 +4,15 @@ import {SitemapStream, streamToPromise} from "sitemap";
 
 /* PAGES SLUGS (URLS) */
 import {
-	getAllPagesSlugs,
-	getAllFansPagesSlugs,
-	getAllStadiumPagesSlugs,
-	getAllCommunityPagesSlugs,
-	getAllOurHistoryPagesSlugs,
-	getAllAboutTheClubPagesSlugs,
-	getAllPartnershipsAdvertisingPagesSlugs,
-} from "@/functions/graphql/Queries/GetAllPagesSlugs";
+	getFansSublinks,
+	getCommunitySublinks,
+	getOurHistorySublinks,
+	getAboutTheClubSublinks,
+	getBenjaminMkapaStadiumSublinks,
+	getPartnershipsAdvertisingSublinks,
+} from "@/functions/graphql/Queries/GetAllMenuLinks";
 import {getAllNewsPostsSlugs} from "@/functions/graphql/Queries/GetAllNews";
+import {getAllPagesSlugs} from "@/functions/graphql/Queries/GetAllPagesSlugs";
 import {getAllBlogsPostsSlugs} from "@/functions/graphql/Queries/GetAllBlogs";
 import {getAllCaseStudiesSlugs} from "@/functions/graphql/Queries/GetAllCaseStudies";
 import {getAllJobsPositionsSlugs} from "@/functions/graphql/Queries/GetAllJobsPositions";
@@ -29,12 +29,12 @@ export default async (req: any, res: any) => {
 		boardOfDirectorsPostsSlugs,
 		allJobsPositionsPostsSlugs,
 		executiveLeadershipsPostsSlugs,
-		ourHistoryPagesSlugs,
 		aboutTheClubPagesSlugs,
 		fansPagesSlugs,
 		communityPagesSlugs,
-		partnershipsAdvertisingPagesSlugs,
+		ourHistoryPagesSlugs,
 		stadiumPagesSlugs,
+		partnershipsAdvertisingPagesSlugs,
 	] = await Promise.all([
 		getAllPagesSlugs(),
 		getAllBlogsPostsSlugs(),
@@ -43,12 +43,12 @@ export default async (req: any, res: any) => {
 		getAllBoardOfDirectorsPostsSlugs(),
 		getAllJobsPositionsSlugs(),
 		getAllExecutiveLeadershipsPostsSlugs(),
-		getAllOurHistoryPagesSlugs(),
-		getAllAboutTheClubPagesSlugs(),
-		getAllFansPagesSlugs(),
-		getAllCommunityPagesSlugs(),
-		getAllPartnershipsAdvertisingPagesSlugs(),
-		getAllStadiumPagesSlugs(),
+		getAboutTheClubSublinks(),
+		getFansSublinks(),
+		getCommunitySublinks(),
+		getOurHistorySublinks(),
+		getBenjaminMkapaStadiumSublinks(),
+		getPartnershipsAdvertisingSublinks(),
 	]);
 
 	/* Pages, News  Posts Arrays */
@@ -150,24 +150,12 @@ export default async (req: any, res: any) => {
 		executiveLeadershipsPostsLinks.push(object);
 	});
 
-	// Our History Dynamic Links
-	ourHistoryPagesSlugs?.map((keys: any) => {
-		const object = {
-			url: `/our-history/${keys?.slug}`,
-			changefreq: "daily",
-			lastmod: `${keys?.modified}`,
-			priority: 0.8,
-		};
-
-		ourHistoryPagesLinks.push(object);
-	});
-
 	// About The Club Dynamic Links
 	aboutTheClubPagesSlugs?.map((keys: any) => {
 		const object = {
-			url: `/about-the-club/${keys?.slug}`,
+			url: `${keys?.node?.url}`,
 			changefreq: "daily",
-			lastmod: `${keys?.modified}`,
+			lastmod: ``,
 			priority: 0.8,
 		};
 
@@ -177,9 +165,9 @@ export default async (req: any, res: any) => {
 	// Fans Dynamic Links
 	fansPagesSlugs?.map((keys: any) => {
 		const object = {
-			url: `/fans/${keys?.slug}`,
+			url: `${keys?.node?.url}`,
 			changefreq: "daily",
-			lastmod: `${keys?.modified}`,
+			lastmod: ``,
 			priority: 0.8,
 		};
 
@@ -189,37 +177,49 @@ export default async (req: any, res: any) => {
 	// Community Dynamic Links
 	communityPagesSlugs?.map((keys: any) => {
 		const object = {
-			url: `/community/${keys?.slug}`,
+			url: `${keys?.node?.url}`,
 			changefreq: "daily",
-			lastmod: `${keys?.modified}`,
+			lastmod: ``,
 			priority: 0.8,
 		};
 
 		communityPagesLinks.push(object);
 	});
 
-	// Partnerships Advertising Dynamic Links
-	partnershipsAdvertisingPagesSlugs?.map((keys: any) => {
+	// Our History Dynamic Links
+	ourHistoryPagesSlugs?.map((keys: any) => {
 		const object = {
-			url: `/partnerships-advertising/${keys?.slug}`,
+			url: `${keys?.node?.url}`,
 			changefreq: "daily",
-			lastmod: `${keys?.modified}`,
+			lastmod: ``,
 			priority: 0.8,
 		};
 
-		partnershipsAdvertisingPagesLinks.push(object);
+		ourHistoryPagesLinks.push(object);
 	});
 
 	// Benjamin Mkapa Stadium Dynamic Links
 	stadiumPagesSlugs?.map((keys: any) => {
 		const object = {
-			url: `/benjamin-mkapa-stadium/${keys?.slug}`,
+			url: `${keys?.node?.url}`,
 			changefreq: "daily",
-			lastmod: `${keys?.modified}`,
+			lastmod: ``,
 			priority: 0.8,
 		};
 
 		stadiumPagesLinks.push(object);
+	});
+
+	// Partnerships Advertising Dynamic Links
+	partnershipsAdvertisingPagesSlugs?.map((keys: any) => {
+		const object = {
+			url: `${keys?.node?.url}`,
+			changefreq: "daily",
+			lastmod: ``,
+			priority: 0.8,
+		};
+
+		partnershipsAdvertisingPagesLinks.push(object);
 	});
 
 	// Arrays with your all dynamic links
