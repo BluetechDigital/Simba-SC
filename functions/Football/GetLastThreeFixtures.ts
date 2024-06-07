@@ -18,28 +18,34 @@ export const getLastThreeFixturesContent = async () => {
 		},
 	};
 
-	// Check if the data is cached
-	const cachedData = cache.get(CACHE_KEY);
+	// Retrieve cached data
+	const cachedData: unknown | any = cache.get(CACHE_KEY);
+	const now = Date.now();
+
 	if (cachedData) {
-		console.log("Returning cached data");
-		return cachedData;
-	}
-
-	try {
-		// Fetch new data from the API
-		const response = await fetch(url, options);
-		if (!response.ok) {
-			throw new Error(`HTTP error! status: ${response.status}`);
+		const {timestamp, data} = cachedData;
+		// Check if 24 hours have passed since the last fetch
+		if (now - timestamp < CACHE_DURATION) {
+			console.log("Returning cached data");
+			return data;
 		}
-		const fixtures = await response.json();
+	} else {
+		// Fetch new data from the API
+		try {
+			const response = await fetch(url, options);
+			if (!response.ok) {
+				throw new Error(`HTTP error! status: ${response.status}`);
+			}
+			const fixtures = await response.json();
 
-		// Cache the new data
-		cache.set(CACHE_KEY, fixtures, CACHE_DURATION);
+			// Cache the new data with the current timestamp
+			cache.set(CACHE_KEY, {data: fixtures, timestamp: now});
 
-		console.log("Returning new data from API");
-		return fixtures;
-	} catch (error) {
-		console.error(error);
-		return null;
+			console.log("Returning new data from API");
+			return fixtures;
+		} catch (error) {
+			console.error(error);
+			return null;
+		}
 	}
 };
