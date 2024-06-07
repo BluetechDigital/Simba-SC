@@ -1,10 +1,11 @@
 // Imports
 import Link from "next/link";
 import Image from "next/image";
+import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
-import {FC} from "react";
 import {useGlobalContext} from "@/context/global";
 import fadeInUp, {initial} from "../../animations/animations";
+import dateFormat from "dateformat";
 
 const LastThreeFixtures: FC = () => {
 	const globalContext = useGlobalContext();
@@ -15,16 +16,94 @@ const LastThreeFixtures: FC = () => {
 				initial={initial}
 				whileInView={fadeInUp}
 				viewport={{once: true}}
-				className="relative z-[60] max-w-[80%] w-full mx-auto mt-[-200px] px-8 py-4 bg-white h-[35vh]"
+				className="relative z-[60] max-w-[80%] w-full mx-auto mt-[-200px] px-8 py-4 bg-white min-h-[25vh] grid grid-cols-1 md:grid-cols-3 gap-4 items-center justify-center"
 			>
 				{globalContext?.lastThreeFixtures?.response?.length > 0 ? (
 					globalContext?.lastThreeFixtures?.response?.map(
 						(fixture: any, index: number) => (
-							<div key={index}>
-								{/* Render fixture content here */}
-								<p>{fixture?.teams?.away?.name}</p>
-								{/* Example: Adjust according to your fixture data */}
-							</div>
+							<Fragment key={index}>
+								<div className="flex flex-col items-center justify-center gap-5">
+									<div className="">
+										<div className="flex items-center justify-center gap-1">
+											<motion.span
+												initial={initial}
+												whileInView={fadeInUp}
+												viewport={{once: true}}
+												className="text-pureBlack text-base font-XenonNueRegular text-center"
+											>
+												{dateFormat(
+													fixture?.fixture?.date,
+													"dddd, mmmm d, yyyy"
+												)}
+											</motion.span>
+											<motion.span
+												initial={initial}
+												whileInView={fadeInUp}
+												viewport={{once: true}}
+												className="text-pureBlack text-base font-XenonNueRegular text-center"
+											>
+												{fixture?.fixture?.timezone}
+											</motion.span>
+										</div>
+									</div>
+									<div className="flex items-center justify-center gap-12 lg:gap-20">
+										<div className="flex flex-col items-center justify-center gap-4">
+											<Image
+												priority
+												width={1000}
+												height={1000}
+												src={fixture?.teams?.home?.logo}
+												alt={`${fixture?.teams?.home?.name} club Logo`}
+												className="object-contain object-center w-full h-[75px]"
+											/>
+											<span className="text-pureBlack text-base font-XenonNueRegular text-center">
+												{fixture?.teams?.home?.name}
+											</span>
+											<span className="text-pureBlack text-base font-XenonNueRegular text-center">
+												{fixture?.teams?.home?.winner}
+											</span>
+										</div>
+										<div className="bg-pureBlack p-4 rounded-lg flex items-center justify-center gap-4">
+											<motion.span
+												initial={initial}
+												whileInView={fadeInUp}
+												viewport={{once: true}}
+												className="text-white text-2xl font-XenonNueExtraBold text-center"
+											>
+												{fixture?.goals?.home}
+											</motion.span>
+											<span className="text-white text-2xl font-XenonNueExtraBold text-center">
+												-
+											</span>
+											<motion.span
+												initial={initial}
+												whileInView={fadeInUp}
+												viewport={{once: true}}
+												className="text-white text-2xl font-XenonNueExtraBold text-center"
+											>
+												{fixture?.goals?.away}
+											</motion.span>
+										</div>
+										<div className="flex flex-col items-center justify-center gap-4">
+											<Image
+												priority
+												width={1000}
+												height={1000}
+												src={fixture?.teams?.away?.logo}
+												alt={`${fixture?.teams?.away?.name} club Logo`}
+												className="object-contain object-center w-[65px] md:w-[75px] h-[60px] sm:h-[65px] lg:h-[75px]"
+											/>
+											<span className="text-pureBlack text-base font-XenonNueRegular text-center">
+												{fixture?.teams?.away?.name}
+											</span>
+											<span className="text-pureBlack text-base font-XenonNueRegular text-center">
+												{fixture?.teams?.away?.winner}
+											</span>
+										</div>
+									</div>
+									<div className=""></div>
+								</div>
+							</Fragment>
 						)
 					)
 				) : (
