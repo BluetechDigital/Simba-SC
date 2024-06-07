@@ -105,7 +105,7 @@ const Hero: FC<IHero> = ({heroSlider}) => {
 							)}
 						</Swiper>
 					</div>
-					{/* <LastThreeFixtures /> */}
+					<LastThreeFixtures />
 				</div>
 			</div>
 		</>
