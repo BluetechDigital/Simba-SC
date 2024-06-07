@@ -63,6 +63,14 @@ const Navbar: FC = () => {
 					</div>
 					<div className="flex items-center justify-between gap-4">
 						<Link
+							href={`https://account.simbasc.com`}
+							target="_blank"
+							aria-label={`Chelsea Login`}
+							className="hidden lg:block font-OverusedGroteskLight tracking-[0.02rem] uppercase text-black hover:hover:text-accent-two text-base text-center transition-all ease-in-out duration-500"
+						>
+							Login
+						</Link>
+						<Link
 							href={`${globalContext?.themesOptionsContent?.topNavigation?.foundationPageLink?.url}`}
 							target={`${
 								globalContext?.themesOptionsContent?.topNavigation
@@ -72,7 +80,7 @@ const Navbar: FC = () => {
 									: "_self"
 							}`}
 							aria-label={`Chelsea Foundation`}
-							className="hidden lg:block font-XenonNueRegular tracking-[0.07rem] uppercase text-black hover:hover:text-accent-two text-base text-center transition-all ease-in-out duration-500"
+							className="hidden lg:block font-OverusedGroteskLight tracking-[0.02rem] uppercase text-black hover:hover:text-accent-two text-base text-center transition-all ease-in-out duration-500"
 						>
 							{
 								globalContext?.themesOptionsContent?.topNavigation
@@ -382,7 +390,7 @@ const Navbar: FC = () => {
 																	: "_self"
 															}`}
 															aria-label={`${item?.node?.label}`}
-															className="font-XenonNueExtraBold font-extrabold tracking-[0.05rem] text-black hover:text-primary-default text-paragraph text-center uppercase transition-all ease-in-out duration-500"
+															className="font-XenonNueBold font-extrabold tracking-[0.05rem] text-black hover:text-primary-default text-lg text-center uppercase transition-all ease-in-out duration-500"
 														>
 															{item?.node?.label}
 														</Link>

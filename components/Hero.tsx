@@ -17,12 +17,13 @@ import styles from "../styles/components/Hero.module.scss";
 
 // Components
 import Paragraph from "./Elements/Paragraph";
+import LastThreeFixtures from "./Sub/LastThreeFixtures";
 
 const Hero: FC<IHero> = ({heroSlider}) => {
 	return (
 		<>
 			<div className={styles.hero + " relative z-50 flex flex-col h-fit"}>
-				<div className="lg:relative pt-[125px] lg:pt-[138px] flex flex-col lg:flex-row">
+				<div className="lg:relative pt-[120px] lg:pt-[138px] flex flex-col">
 					<div className="HeroSwiperSlider relative overflow-hidden">
 						<Swiper
 							loop={true}
@@ -41,17 +42,24 @@ const Hero: FC<IHero> = ({heroSlider}) => {
 										<SwiperSlide>
 											<div className="w-full p-0">
 												<div
-													className="pt-24 pb-44 sm:pb-20 w-full h-[75vh] sm:h-[75vh] lg:h-[86vh] flex flex-col items-center lg:items-baseline justify-center relative bg-center bg-no-repeat bg-cover"
+													className="pt-24 pb-44 sm:pb-20 w-full h-[75vh] sm:h-[75vh] lg:h-screen flex flex-col items-center lg:items-baseline justify-center relative bg-center bg-no-repeat bg-cover"
 													style={{
 														backgroundImage: `linear-gradient(
 																0deg,
+																rgb(225, 225, 225, 1),
 																rgb(0, 0, 0, 0.30),
-																rgba(0, 0, 0, 0.30),
-																rgba(0, 0, 0, 0.30)
+																rgb(0, 0, 0, 0.30),
+																rgb(0, 0, 0, 0.45),
+																rgb(0, 0, 0, 0.40),
+																rgb(0, 0, 0, 0.30),
+																rgb(0, 0, 0, 0.30),
+																rgb(0, 0, 0, 0.20),
+																rgba(0, 0, 0, 0.20),
+																rgba(0, 0, 0, 0.10)
 															),url("${item?.backgroundImage?.sourceUrl}")`,
 													}}
 												>
-													<div className="relative z-10 flex flex-col items-center lg:items-start gap-4 px-8 px-4 sm:px-8 lg:px-24">
+													<div className="relative z-10 flex flex-col items-center lg:items-start gap-4 px-8 sm:px-8 lg:px-24">
 														<div className="max-w-sm lg:max-w-xl mx-auto lg:mx-0 ">
 															<motion.h1
 																initial={initialTwo}
@@ -72,44 +80,18 @@ const Hero: FC<IHero> = ({heroSlider}) => {
 																target={item?.buttonLink?.target}
 																className={`${
 																	item?.buttonLink?.url ? "block" : "hidden"
-																}`}
+																} py-3 px-10 font-XenonNueExtraBold cursor-pointer rounded-full tracking-[0.05rem] uppercase text-lightGrey text-tiny text-center border-2 border-solid border-white hover:border-primary-two bg-transparent hover:bg-primary-two transition-all ease-in-out duration-500`}
 															>
-																<div
-																	className={`py-4 pl-4 pr-10 w-full mx-auto lg:mx-0 cursor-pointer bg-blue-default hover:bg-blue-dark transition-all ease-in-out duration-500`}
-																>
-																	<h3 className="relative flex items-center justify-center font-semibold tracking-[0.10rem] uppercase pl-4 text-lightGrey text-tiny text-center">
-																		{item?.buttonLink?.title}
-																		<Image
-																			width={550}
-																			height={550}
-																			alt="Black Arrow Icon"
-																			src="/svg/navigation-menu-dropdown-arrow-white.svg"
-																			className="my-auto ml-2 absolute top-[-20px] right-[-40px] rotate-[-135deg] cursor-pointer w-[35px] h-[35px] object-contain object-center"
-																		/>
-																	</h3>
-																</div>
+																{item?.buttonLink?.title}
 															</Link>
 															<Link
 																href={`${item?.buttonLinkTwo?.url}`}
 																target={item?.buttonLinkTwo?.target}
 																className={`${
 																	item?.buttonLinkTwo?.url ? "block" : "hidden"
-																}`}
+																} py-3 px-10 font-XenonNueExtraBold cursor-pointer rounded-full tracking-[0.05rem] uppercase text-lightGrey text-tiny text-center border-2 border-solid border-white hover:border-primary-two bg-transparent hover:bg-primary-two transition-all ease-in-out duration-500`}
 															>
-																<div
-																	className={`py-4 pl-4 pr-10 w-full mx-auto lg:mx-0 cursor-pointer bg-blue-default hover:bg-blue-dark transition-all ease-in-out duration-500`}
-																>
-																	<h3 className="relative flex items-center justify-center font-semibold tracking-[0.10rem] uppercase pl-4 text-lightGrey text-tiny text-center">
-																		{item?.buttonLinkTwo?.title}
-																		<Image
-																			width={550}
-																			height={550}
-																			alt="Black Arrow Icon"
-																			src="/svg/navigation-menu-dropdown-arrow-white.svg"
-																			className="my-auto ml-2 absolute top-[-20px] right-[-40px] rotate-[-135deg] cursor-pointer w-[35px] h-[35px] object-contain object-center"
-																		/>
-																	</h3>
-																</div>
+																{item?.buttonLinkTwo?.title}
 															</Link>
 														</div>
 													</div>
@@ -123,6 +105,7 @@ const Hero: FC<IHero> = ({heroSlider}) => {
 							)}
 						</Swiper>
 					</div>
+					<LastThreeFixtures />
 				</div>
 			</div>
 		</>

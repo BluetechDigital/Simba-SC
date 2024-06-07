@@ -20,6 +20,7 @@
 
 	.swiper-button-prev::after {
 		content: "next";
+		rotate: 180deg;
 		width: 15px !important;
 		height: 15px !important;
 		font-size: 15px !important;
