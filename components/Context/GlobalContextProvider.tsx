@@ -12,12 +12,20 @@ const GlobalContextProvider: FC<IGlobalContextProvider> = ({
 			value={{
 				news: globalProps?.news,
 				blogs: globalProps?.blogs,
-				mobileLinks: globalProps?.mobileLinks,
 				caseStudies: globalProps?.caseStudies,
 				testimonials: globalProps?.testimonials,
+				jobsPositions: globalProps?.jobsPositions,
+				themesOptionsContent: globalProps?.themesOptionsContent,
+				boardOfDirectorsGrid: globalProps?.boardOfDirectorsGrid,
+				executiveLeadershipsGrid: globalProps?.executiveLeadershipsGrid,
+
+				// Football Fixtures
+				lastThreeFixtures: globalProps?.lastThreeFixtures,
+
+				// Website Links
+				mobileLinks: globalProps?.mobileLinks,
 				newsSublinks: globalProps?.newsSublinks,
 				fansSublinks: globalProps?.fansSublinks,
-				jobsPositions: globalProps?.jobsPositions,
 				careerSublinks: globalProps?.careerSublinks,
 				copyrightLinks: globalProps?.copyrightLinks,
 				footerMenuLinks: globalProps?.footerMenuLinks,
@@ -26,9 +34,6 @@ const GlobalContextProvider: FC<IGlobalContextProvider> = ({
 				ourHistorySublinks: globalProps?.ourHistorySublinks,
 				megaNavigationLinks: globalProps?.megaNavigationLinks,
 				aboutTheClubSublinks: globalProps?.aboutTheClubSublinks,
-				themesOptionsContent: globalProps?.themesOptionsContent,
-				boardOfDirectorsGrid: globalProps?.boardOfDirectorsGrid,
-				executiveLeadershipsGrid: globalProps?.executiveLeadershipsGrid,
 				megaNavigationUsefulSublinks: globalProps?.megaNavigationUsefulSublinks,
 				benjaminMkapaStadiumSublinks: globalProps?.benjaminMkapaStadiumSublinks,
 				partnershipsAdvertisingSublinks:

@@ -44,6 +44,7 @@ import GlobalContextProvider from "@/components/Context/GlobalContextProvider";
 import PostHogContextProvider from "@/components/Context/PostHogProviderContext";
 import {getAllBoardOfDirectorsContent} from "@/functions/graphql/Queries/GetAllBoardOfDirectors";
 import {getAllExecutiveLeadershipsContent} from "@/functions/graphql/Queries/GetAllExecutiveLeaderships";
+import {getLastThreeFixturesContent} from "@/functions/Football/GetLastThreeFixtures";
 
 export default function App({
 	Component,
@@ -109,6 +110,9 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 		getAllJobsPositionsContent(),
 		getAllBoardOfDirectorsContent(),
 		getAllExecutiveLeadershipsContent(),
+
+		// Football Fixtures
+		getLastThreeFixturesContent(),
 	];
 
 	const [
@@ -134,28 +138,36 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 		jobsPositions,
 		boardOfDirectorsGrid,
 		executiveLeadershipsGrid,
+
+		// Football Fixtures
+		lastThreeFixtures,
 	] = await Promise.all(promises);
 
 	const globalProps: IGlobalProps = {
 		news: news,
 		blogs: blogs,
-		mobileLinks: mobileLinks,
 		caseStudies: caseStudies,
-		newsSublinks: newsSublinks,
 		testimonials: testimonials,
-		fansSublinks: fansSublinks,
 		jobsPositions: jobsPositions,
-		careerSublinks: careerSublinks,
+		boardOfDirectorsGrid: boardOfDirectorsGrid,
+		themesOptionsContent: themesOptionsContent,
+		executiveLeadershipsGrid: executiveLeadershipsGrid,
+
+		// Football Fixtures
+		lastThreeFixtures: lastThreeFixtures,
+
+		// Website Links
+		mobileLinks: mobileLinks,
+		fansSublinks: fansSublinks,
+		newsSublinks: newsSublinks,
 		copyrightLinks: copyrightLinks,
+		careerSublinks: careerSublinks,
 		navbarMenuLinks: navbarMenuLinks,
 		footerMenuLinks: footerMenuLinks,
 		communitySublinks: communitySublinks,
 		ourHistorySublinks: ourHistorySublinks,
 		megaNavigationLinks: megaNavigationLinks,
 		aboutTheClubSublinks: aboutTheClubSublinks,
-		boardOfDirectorsGrid: boardOfDirectorsGrid,
-		themesOptionsContent: themesOptionsContent,
-		executiveLeadershipsGrid: executiveLeadershipsGrid,
 		benjaminMkapaStadiumSublinks: benjaminMkapaStadiumSublinks,
 		megaNavigationUsefulSublinks: megaNavigationUsefulSublinks,
 		partnershipsAdvertisingSublinks: partnershipsAdvertisingSublinks,

@@ -2,30 +2,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";
-import {IFixtures} from "@/types/components";
-import {FC, useEffect, useState} from "react";
+import {FC} from "react";
+import {useGlobalContext} from "@/context/global";
 import fadeInUp, {initial} from "../../animations/animations";
-import {getLastThreeFixturesContent} from "@/functions/Football/GetLastThreeFixtures";
-import PageLoadingSquares from "../Global/PageLoadingSquares";
 
 const LastThreeFixtures: FC = () => {
-	const [fixtures, setFixtures] = useState<IFixtures[]>([]);
-
-	useEffect(() => {
-		const fetchFixtures = async () => {
-			const response = await getLastThreeFixturesContent();
-			// Ensure fixturesResult is an array, or handle undefined or invalid data
-			if (response && Array.isArray(response)) {
-				setFixtures(response);
-			} else {
-				setFixtures([]); // Handle the case where the result is not as expected
-			}
-		};
-
-		fetchFixtures();
-	}, []);
-
-	console.log(fixtures);
+	const globalContext = useGlobalContext();
 
 	return (
 		<>
@@ -35,14 +17,16 @@ const LastThreeFixtures: FC = () => {
 				viewport={{once: true}}
 				className="relative z-[60] max-w-[80%] w-full mx-auto mt-[-200px] px-8 py-4 bg-white h-[35vh]"
 			>
-				{fixtures?.length > 0 ? (
-					fixtures?.map((fixture: IFixtures, index: number) => (
-						<div key={index}>
-							{/* Render fixture content here */}
-							{/* <p>{fixture?.teams?.home?.name}</p> */}
-							{/* Example: Adjust according to your fixture data */}
-						</div>
-					))
+				{globalContext?.lastThreeFixtures?.response?.length > 0 ? (
+					globalContext?.lastThreeFixtures?.response?.map(
+						(fixture: any, index: number) => (
+							<div key={index}>
+								{/* Render fixture content here */}
+								<p>{fixture?.teams?.away?.name}</p>
+								{/* Example: Adjust according to your fixture data */}
+							</div>
+						)
+					)
 				) : (
 					<div
 						role="status"
