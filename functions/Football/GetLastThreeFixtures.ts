@@ -1,4 +1,5 @@
-const fetch = require("node-fetch");
+// Imports
+import fetch from "node-fetch";
 import NodeCache from "node-cache";
 
 require("dotenv").config();
@@ -10,7 +11,7 @@ const CACHE_DURATION = 24 * 60 * 60; // 24 hours in seconds
 export const getLastThreeFixturesContent = async () => {
 	const url =
 		"https://api-football-v1.p.rapidapi.com/v3/fixtures?league=567&season=2023&team=6432&last=3";
-	const options = {
+	const options: any = {
 		method: "GET",
 		headers: {
 			"x-rapidapi-key": process.env.X_RAPIDAPI_KEY,

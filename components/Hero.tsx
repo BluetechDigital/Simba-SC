@@ -1,3 +1,5 @@
+"use client";
+
 // Imports
 import Link from "next/link";
 import Image from "next/image";
@@ -105,7 +107,7 @@ const Hero: FC<IHero> = ({heroSlider}) => {
 							)}
 						</Swiper>
 					</div>
-					<LastThreeFixtures />
+					{/* <LastThreeFixtures /> */}
 				</div>
 			</div>
 		</>

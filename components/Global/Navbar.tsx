@@ -1,3 +1,5 @@
+"use client";
+
 // Imports
 import {
 	fadeIn,
@@ -29,8 +31,10 @@ const Navbar: FC = () => {
 
 	return (
 		<>
-			<div
-				className={styles.navbar + ` z-[999] w-full fixed group bg-transparent`}
+			<nav
+				className={
+					styles.navbar + ` navbar z-[999] w-full fixed group bg-transparent`
+				}
 			>
 				<div className="py-0 bg-white flex items-center justify-between gap-4 px-4">
 					<div className="flex items-center justify-between gap-4">
@@ -458,7 +462,7 @@ const Navbar: FC = () => {
 				</div>
 				{/* Hidden Mega Navigation Menu */}
 				<MegaNavigation menuActive={menuActive} setMenuActive={setMenuActive} />
-			</div>
+			</nav>
 		</>
 	);
 };

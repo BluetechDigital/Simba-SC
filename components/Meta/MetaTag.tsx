@@ -1,6 +1,6 @@
 // Imports
 import Head from "next/head";
-import {usePageContext} from "@/context/pages";
+import {usePageContext} from "@/context/providers/PageContextProvider";
 
 const MetaTag = () => {
 	const pageContext = usePageContext();

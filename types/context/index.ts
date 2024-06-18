@@ -377,7 +377,7 @@ export type IPostTypes = {
 export type IPageContext = {
 	seo: ISeo;
 	content: IContent;
-	postTypeFlexibleContent: IPostTypeFlexibleContent;
+	postTypeFlexibleContent: string;
 };
 export type IGlobalProps = {
 	news: INews;
@@ -390,7 +390,7 @@ export type IGlobalProps = {
 	executiveLeadershipsGrid: IExecutiveLeadershipsGrid;
 
 	// Football Fixtures
-	lastThreeFixtures: IFixtures;
+	// lastThreeFixtures: IFixtures;
 
 	// Website Links
 	mobileLinks: ILinks.IMobileLinks;
@@ -419,7 +419,7 @@ export type IGlobalContext = {
 	executiveLeadershipsGrid: IExecutiveLeadershipsGrid;
 
 	// Football Fixtures
-	lastThreeFixtures: IFixtures;
+	// lastThreeFixtures: IFixtures;
 
 	// Website Links
 	mobileLinks: ILinks.IMobileLinks;
@@ -441,7 +441,7 @@ export type IPageContextProvider = {
 	seo: ISeo;
 	content: IContent;
 	children: React.ReactNode;
-	postTypeFlexibleContent: IPostTypeFlexibleContent;
+	postTypeFlexibleContent: string;
 };
 export type IFlexibleContentType = {
 	pages: string;
@@ -450,6 +450,9 @@ export type IFlexibleContentType = {
 };
 export type IGlobalContextProvider = {
 	globalProps: IGlobalContext;
+	children: React.ReactNode;
+};
+export type IApolloContextProvider = {
 	children: React.ReactNode;
 };
 export type IPostTypeFlexibleContent = {

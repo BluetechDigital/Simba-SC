@@ -30,7 +30,7 @@ const LastThreeFixtures: FC = () => {
 				>
 					Fixtures
 				</motion.h4>
-				<div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 items-center justify-center lg:gap-10">
+				{/* <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 items-center justify-center lg:gap-10">
 					{globalContext?.lastThreeFixtures?.response?.length > 0 ? (
 						globalContext?.lastThreeFixtures?.response?.map(
 							(fixture: any, index: number) => (
@@ -147,7 +147,7 @@ const LastThreeFixtures: FC = () => {
 							</p>
 						</div>
 					)}
-				</div>
+				</div> */}
 			</motion.div>
 		</>
 	);

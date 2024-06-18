@@ -1,16 +1,18 @@
+"use client";
+
 // Imports
 import React, {FC, Fragment} from "react";
-import {usePageContext} from "@/context/pages";
+import {usePageContext} from "@/context/providers/PageContextProvider";
 
 // Components
-import Hero from "../Hero";
-import ErrorPage from "../Global/ErrorPage";
-import TitleParagraph from "../TitleParagraph";
-import Maintenance from "../Global/Maintenance";
+import Hero from "@/components/Hero";
+import ErrorPage from "@/components/Global/ErrorPage";
+import TitleParagraph from "@/components/TitleParagraph";
+import Maintenance from "@/components/Global/Maintenance";
 
 const RenderFlexibleContent: FC = () => {
-	const content = usePageContext();
-	const FlexibleContent = content?.postTypeFlexibleContent;
+	const pageContextContent = usePageContext();
+	const FlexibleContent = pageContextContent?.postTypeFlexibleContent;
 
 	// Components Key Value Pairs
 	const componentMapping: any = {
@@ -22,8 +24,8 @@ const RenderFlexibleContent: FC = () => {
 
 	return (
 		<>
-			{content?.content?.length > 0 ? (
-				content?.content?.map((item: any, index: number) =>
+			{pageContextContent?.content?.length > 0 ? (
+				pageContextContent?.content?.map((item: any, index: number) =>
 					item?.displaySection ? (
 						<section key={index}>
 							{componentMapping[item?.fieldGroupName] && (
