@@ -20,3 +20,6 @@ export type IMaintenance = {
 		};
 	};
 };
+export type ISmoothScrolling = {
+	children: React.ReactNode;
+};

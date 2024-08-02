@@ -25,8 +25,6 @@ const LatestNewsGrid: FC<ILatestNewsGrid> = ({
 }) => {
 	const globalContext = useGlobalContext();
 
-	console.log(globalContext?.news);
-
 	return (
 		<div className="bg-pureBlack py-10">
 			<div className="mx-auto px-4 lg:px-10 flex flex-col gap-4">

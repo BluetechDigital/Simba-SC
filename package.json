@@ -22,6 +22,7 @@
     "graphql": "^16.8.2",
     "html-react-parser": "^5.1.10",
     "isomorphic-dompurify": "^2.12.0",
+    "lenis": "^1.1.9",
     "lodash": "^4.17.21",
     "next": "14.2.4",
     "node-cache": "^5.1.2",
