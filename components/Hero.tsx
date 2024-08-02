@@ -69,7 +69,7 @@ const Hero: FC<IHero> = ({heroSlider}) => {
 															</motion.h1>
 															<Paragraph
 																content={item?.paragraph}
-																tailwindStyling="py-2 font-OnestRegular leading-snug text-white text-lg text-center lg:text-left"
+																tailwindStyling="py-2 font-OnestRegular leading-tight text-white text-lg text-center lg:text-left"
 															/>
 														</div>
 														<div className="flex flex-col md:flex-row gap-2 sm:gap-4 max-w-sm lg:max-w-4xl mx-auto lg:mx-0">
