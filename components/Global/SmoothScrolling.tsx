@@ -10,16 +10,31 @@ const SmoothScrolling: FC<ISmoothScrolling> = ({children}) => {
 	const {width}: any = useWindowSize();
 
 	return (
-		<ReactLenis
-			root
-			options={{
-				lerp: 0.01,
-				duration: width > 1080 ? 1.75 : 0.5,
-				syncTouch: true,
-			}}
-		>
-			<main>{children}</main>
-		</ReactLenis>
+		<>
+			{width > 1080 ? (
+				<ReactLenis
+					root
+					options={{
+						lerp: 0.01,
+						duration: 1.5,
+						syncTouch: true,
+					}}
+				>
+					<main>{children}</main>
+				</ReactLenis>
+			) : (
+				<ReactLenis
+					root
+					options={{
+						lerp: 0.01,
+						duration: 0.5,
+						syncTouch: true,
+					}}
+				>
+					<main>{children}</main>
+				</ReactLenis>
+			)}
+		</>
 
 		// <main>{children}</main>
 	);

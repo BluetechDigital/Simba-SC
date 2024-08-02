@@ -72,7 +72,7 @@ const Hero: FC<IHero> = ({heroSlider}) => {
 																tailwindStyling="max-w-xl mx-auto lg:mx-0 py-2 font-OnestRegular leading-tight text-white text-lg text-center lg:text-left"
 															/>
 														</div>
-														<div className="flex flex-col md:flex-row gap-2 sm:gap-4 max-w-sm lg:max-w-4xl mx-auto lg:mx-0">
+														<div className="flex flex-col md:flex-row items-center lg:items-baseline gap-2 sm:gap-4 max-w-sm lg:max-w-4xl mx-auto lg:mx-0">
 															<Link
 																href={`${item?.buttonLink?.url}`}
 																target={item?.buttonLink?.target}
