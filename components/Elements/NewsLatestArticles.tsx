@@ -4,8 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import dateFormat from "dateformat";
 import {motion} from "framer-motion";
-import {INewsLatestArticles} from "@/types/components";
 import {initial, fadeInUp} from "@/animations/animations";
+import {INewsLatestArticles} from "@/types/components/Elements";
 
 // Components
 import Paragraph from "@/components/Elements/Paragraph";

@@ -40,7 +40,7 @@ const Error: FC = () => {
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="flex flex-col sm:block text-center mb-3 text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-white font-bold leading-[2rem] sm:leading-[3rem] lg:leading-[4rem]"
+								className="font-OnestBlack text-center uppercase text-3xl lg:text-7xl 2xl:text-8xl tracking-[-0.02rem] text-white font-semibold xl:leading-[3.75rem]"
 							>
 								{globalContext?.themesOptionsContent?.errorPageContent?.title}
 							</motion.h1>
@@ -51,39 +51,36 @@ const Error: FC = () => {
 									globalContext?.themesOptionsContent?.errorPageContent
 										?.paragraph
 								}
-								tailwindStyling="mb-6 py-6 text-white leading-[1.75rem] text-base sm:text-medium text-center"
+								tailwindStyling="mb-6 py-6 font-OnestRegular leading-tight text-white text-lg text-center"
 							/>
 						</div>
 					</motion.div>
 					<div className="flex flex-col items-center justify-center mx-auto md:max-w-max">
-						<motion.button
+						<motion.span
 							initial={initial}
 							whileInView={fadeInUp}
 							viewport={{once: true}}
-							type="button"
 						>
 							<Link
 								href={`${globalContext?.themesOptionsContent?.errorPageContent?.buttonLink?.url}`}
-								aria-label={`${globalContext?.themesOptionsContent?.errorPageContent?.buttonLink?.title}`}
 								target={
 									globalContext?.themesOptionsContent?.errorPageContent
 										?.buttonLink?.target
 								}
-								className={
+								aria-label={`${globalContext?.themesOptionsContent?.errorPageContent?.buttonLink?.title}`}
+								className={`${
 									globalContext?.themesOptionsContent?.errorPageContent
 										?.buttonLink?.url
-										? "block"
+										? ""
 										: "hidden"
-								}
+								} `}
 							>
-								<span className="buttonStyling-alt-two text-lg">
-									{
-										globalContext?.themesOptionsContent?.errorPageContent
-											?.buttonLink?.title
-									}
-								</span>
+								{
+									globalContext?.themesOptionsContent?.errorPageContent
+										?.buttonLink?.title
+								}
 							</Link>
-						</motion.button>
+						</motion.span>
 					</div>
 				</div>
 			</div>

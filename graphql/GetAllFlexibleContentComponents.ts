@@ -53,33 +53,28 @@ export const getAllFlexibleContentComponents = async (
 												paragraph
 												displayParagraph
 											}
-											... on ${postTypeFlexibleContent}_Maintenance {
+											... on ${postTypeFlexibleContent}_LatestNewsGrid {
 												fieldGroupName
-												displaySection
-												title
-												paragraph
-												backgroundImage {
-													altText
-													sourceUrl
-													mediaDetails {
-														height
-														width
-													}
-												}
-											}
-											... on ${postTypeFlexibleContent}_ErrorPageContent {
-												fieldGroupName
-												displaySection
-												title
-												paragraph
-												buttonLink {
-													url
-													title
-													target
-												}
-												backgroundImage {
-												sourceUrl
-												}
+                  								displaySection
+                  								title
+                  								ctaLink {
+                  								  	url
+                  								  	title
+                  								  	target
+                  								}
+                  								buttonLink {
+                  								  	url
+                  								  	title
+                  								  	target
+                  								}
+                  								image {
+                  								  	altText
+                  								  	sourceUrl
+                  								  	mediaDetails {
+                  								  	  	height
+                  								  	  	width
+                  								  	}
+                  								}
 											}
 										}
 									}

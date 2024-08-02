@@ -2,7 +2,7 @@
 import {FC} from "react";
 import parse from "html-react-parser";
 import styled from "styled-components";
-import {IMegaNavVideoWrapper} from "@/types/components";
+import {IMegaNavVideoWrapper} from "@/types/components/Elements";
 
 const MegaNavVideoWrapper: FC<IMegaNavVideoWrapper> = ({children}) => {
 	const YoutubeVideo = styled.div`

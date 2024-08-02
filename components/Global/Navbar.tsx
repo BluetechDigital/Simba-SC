@@ -58,7 +58,7 @@ const Navbar: FC = () => {
 					</motion.div>
 					<div className="w-auto">
 						<div className="flex flex-wrap items-center">
-							<div className="w-auto hidden lg:block">
+							<div className="w-auto hidden xl:block">
 								<motion.ul
 									initial={initial}
 									variants={stagger}

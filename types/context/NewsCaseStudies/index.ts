@@ -3,7 +3,7 @@ export namespace INewsBlogsCaseStudies {
 	export type INews = {
 		node: {
 			id: string;
-			uri: string;
+			slug: string;
 			date: string;
 			title: string;
 			excerpt: string;

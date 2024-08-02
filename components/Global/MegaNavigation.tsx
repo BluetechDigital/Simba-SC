@@ -12,7 +12,7 @@ import Link from "next/link";
 import {motion} from "framer-motion";
 import {FC, Fragment, useState} from "react";
 import {useGlobalContext} from "@/context/global";
-import {IMegaNavigation} from "@/types/components";
+import {IMegaNavigation} from "@/types/components/Global";
 import MegaNavVideoWrapper from "@/components/Elements/MegaNavVideoWrapper";
 
 const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {

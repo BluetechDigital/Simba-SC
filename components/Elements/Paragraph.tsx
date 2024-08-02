@@ -2,7 +2,7 @@
 import {FC} from "react";
 import {motion} from "framer-motion";
 import DOMPurify from "isomorphic-dompurify";
-import {IParagraph} from "@/types/components/index";
+import {IParagraph} from "@/types/components/Elements";
 import {fadeIn, initialTwo} from "@/animations/animations";
 
 // Styling

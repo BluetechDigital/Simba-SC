@@ -11,7 +11,7 @@ import {
 } from "@/animations/animations";
 import {motion} from "framer-motion";
 import {FC, Fragment, useState} from "react";
-import {IPagination} from "@/types/components/index";
+import {IPagination} from "@/types/components/Global";
 
 // Components
 import Paragraph from "@/components/Elements/Paragraph";

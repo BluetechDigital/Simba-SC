@@ -7,6 +7,7 @@ import {usePageContext} from "@/context/providers/PageContextProvider";
 // Components
 import Hero from "@/components/Hero";
 import TitleParagraph from "@/components/TitleParagraph";
+import LatestNewsGrid from "@/components/LatestNewsGrid";
 
 const RenderFlexibleContent: FC = () => {
 	const pageContextContent = usePageContext();
@@ -16,6 +17,7 @@ const RenderFlexibleContent: FC = () => {
 	const componentMapping: any = {
 		[`${FlexibleContent}_Hero`]: Hero,
 		[`${FlexibleContent}_TitleParagraph`]: TitleParagraph,
+		[`${FlexibleContent}_LatestNewsGrid`]: LatestNewsGrid,
 	};
 
 	return (

@@ -2,7 +2,7 @@
 import {FC} from "react";
 import {motion} from "framer-motion";
 import DOMPurify from "isomorphic-dompurify";
-import {ITitle} from "@/types/components/index";
+import {ITitle} from "@/types/components/Elements";
 import {fadeIn, initialTwo} from "@/animations/animations";
 
 const Title: FC<ITitle> = ({content, tailwindStyling}) => {

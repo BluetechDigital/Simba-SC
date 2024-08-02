@@ -134,7 +134,6 @@ const App = async ({children}: AppProps | any) => {
 		executiveLeadershipsGrid: executiveLeadershipsGrid,
 
 		// Mega Menu Links
-
 		newsSublinks: newsSublinks,
 		fansSublinks: fansSublinks,
 		communitySublinks: communitySublinks,

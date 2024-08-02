@@ -3,7 +3,7 @@ import {fadeIn, initial, stagger, initialTwo} from "@/animations/animations";
 import {FC} from "react";
 import Image from "next/image";
 import {motion} from "framer-motion";
-import {IMaintenance} from "@/types/components/index";
+import {IMaintenance} from "@/types/components/Global";
 
 // Styling
 import styles from "@/styles/components/Maintenance.module.scss";

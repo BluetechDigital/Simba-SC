@@ -1,0 +1,8 @@
+.buttonStyling {
+	@apply py-3 px-10 w-fit font-OnestBlack cursor-pointer rounded-full uppercase text-lightGrey text-tiny text-center border-2 border-solid border-white hover:border-primary-two bg-transparent hover:bg-primary-two transition-all ease-in-out duration-500;
+}
+
+.buttonStyling-alt {
+	@extend .buttonStyling;
+	@apply border-primary-default bg-primary-default hover:border-accent-default hover:bg-accent-default;
+}
