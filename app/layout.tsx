@@ -45,6 +45,7 @@ import {getAllExecutiveLeadershipsContent} from "@/graphql/GetAllStakeholders";
 // Components
 import Navbar from "@/components/Global/Navbar";
 import Footer from "@/components/Global/Footer";
+import BackToTopButton from "@/components/Elements/BackToTopButton";
 import GlobalContextProvider from "@/context/providers/GlobalContextProvider";
 import ApolloContextProvider from "@/context/providers/ApolloContextProvider";
 
@@ -153,6 +154,7 @@ const App = async ({children}: AppProps | any) => {
 						<Navbar />
 						<main>{children}</main>
 						<Footer />
+						<BackToTopButton />
 					</GlobalContextProvider>
 				</ApolloContextProvider>
 			</body>

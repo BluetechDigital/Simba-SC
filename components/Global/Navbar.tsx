@@ -86,7 +86,7 @@ const Navbar: FC = () => {
 																	: "_self"
 															}`}
 															aria-label={`${item?.node?.label}`}
-															className="font-XenonNueBold font-extrabold tracking-[0.05rem] text-black hover:text-primary-default text-lg text-center uppercase transition-all ease-in-out duration-500"
+															className="font-OnestBold font-extrabold text-black hover:text-primary-default tracking-[-0.02rem] text-lg text-center uppercase transition-all ease-in-out duration-500"
 														>
 															{item?.node?.label}
 														</Link>
@@ -121,7 +121,7 @@ const Navbar: FC = () => {
 										/>
 										<span className="clear" />
 									</span>
-									<span className="mt-[1px] text-white uppercase font-XenonNueBold tracking-[0.05rem]">
+									<span className="mt-[1px] text-white uppercase font-OnestBold">
 										{menuActive ? "Close" : "Menu"}
 									</span>
 								</button>
@@ -146,7 +146,7 @@ const Navbar: FC = () => {
 									className={menuActive ? "iconThree-active" : "iconThree"}
 								/>
 							</span>
-							<span className="text-white uppercase font-XenonNueBold tracking-[0.05rem]">
+							<span className="text-white uppercase font-OnestBold">
 								{menuActive ? "Close" : "Menu"}
 							</span>
 						</button>

@@ -22,7 +22,7 @@ const LastThreeFixtures: FC = () => {
 					initial={initialTwo}
 					whileInView={fadeIn}
 					viewport={{once: true}}
-					className="font-XenonNueBold text-center lg:text-left uppercase text-medium sm:text-lg md:text-3xl text-pureBlack font-semibold"
+					className="font-OnestBold text-center lg:text-left uppercase text-medium sm:text-lg md:text-3xl text-pureBlack font-semibold"
 				>
 					Fixtures
 				</motion.h4>
@@ -57,10 +57,10 @@ const LastThreeFixtures: FC = () => {
 													alt={`${fixture?.teams?.home?.name} club Logo`}
 													className="object-contain object-center w-full h-[75px]"
 												/>
-												<span className="text-pureBlack text-base font-XenonNueRegular text-center">
+												<span className="text-pureBlack text-base font-OnestRegular text-center">
 													{fixture?.teams?.home?.name}
 												</span>
-												<span className="text-pureBlack text-base font-XenonNueRegular text-center">
+												<span className="text-pureBlack text-base font-OnestRegular text-center">
 													{fixture?.teams?.home?.winner}
 												</span>
 											</div>
@@ -69,18 +69,18 @@ const LastThreeFixtures: FC = () => {
 													initial={initial}
 													whileInView={fadeInUp}
 													viewport={{once: true}}
-													className="text-white text-2xl font-XenonNueExtraBold text-center"
+													className="text-white text-2xl font-OnestBlack text-center"
 												>
 													{fixture?.goals?.home}
 												</motion.span>
-												<span className="text-white text-2xl font-XenonNueExtraBold text-center">
+												<span className="text-white text-2xl font-OnestBlack text-center">
 													-
 												</span>
 												<motion.span
 													initial={initial}
 													whileInView={fadeInUp}
 													viewport={{once: true}}
-													className="text-white text-2xl font-XenonNueExtraBold text-center"
+													className="text-white text-2xl font-OnestBlack text-center"
 												>
 													{fixture?.goals?.away}
 												</motion.span>
@@ -94,19 +94,19 @@ const LastThreeFixtures: FC = () => {
 													alt={`${fixture?.teams?.away?.name} club Logo`}
 													className="object-contain object-center w-[65px] md:w-[75px] h-[60px] sm:h-[65px] lg:h-[75px]"
 												/>
-												<span className="text-pureBlack text-base font-XenonNueRegular text-center">
+												<span className="text-pureBlack text-base font-OnestRegular text-center">
 													{fixture?.teams?.away?.name}
 												</span>
-												<span className="text-pureBlack text-base font-XenonNueRegular text-center">
+												<span className="text-pureBlack text-base font-OnestRegular text-center">
 													{fixture?.teams?.away?.winner}
 												</span>
 											</div>
 										</div>
 										<div className="flex items-center justify-center gap-1">
-											<span className="text-pureBlack text-base font-XenonNueRegular text-center">
+											<span className="text-pureBlack text-base font-OnestRegular text-center">
 												{fixture?.league?.name},
 											</span>
-											<span className="text-pureBlack text-base font-XenonNueRegular text-center">
+											<span className="text-pureBlack text-base font-OnestRegular text-center">
 												{dateFormat(
 													fixture?.fixture?.date,
 													"dddd, mmmm d, yyyy"
@@ -138,7 +138,7 @@ const LastThreeFixtures: FC = () => {
 									fill="currentFill"
 								/>
 							</svg>
-							<p className="font-bold font-OverusedGroteskLight text-paragraph text-black">
+							<p className="font-bold font-OnestThin text-paragraph text-black">
 								Loading...
 							</p>
 						</div>

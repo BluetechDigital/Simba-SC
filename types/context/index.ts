@@ -171,5 +171,4 @@ export type SlugResponse = {
 	slug: string;
 	modified: string;
 };
-
 export interface ISlug extends Array<SlugResponse> {}

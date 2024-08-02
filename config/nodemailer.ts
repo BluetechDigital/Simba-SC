@@ -17,3 +17,11 @@ export const emailTransporter: any = nodemailer.createTransport({
 	logger: true,
 	debug: true,
 });
+
+emailTransporter.verify(function (error: any, success: any) {
+	if (error) {
+		console.log("Connection error:", error);
+	} else {
+		console.log("Server is ready to take our messages");
+	}
+});

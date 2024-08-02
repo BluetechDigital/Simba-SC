@@ -89,7 +89,7 @@ const Pagination: FC<IPagination> = ({
 									initial={initial}
 									whileInView={fadeInUp}
 									viewport={{once: true}}
-									className="mb-2 text-center text-lg leading-tight tracking-[0.05rem] uppercase font-extrabold text-white transition-all ease-in-out duration-200 hover:text-white"
+									className="mb-2 text-center text-lg leading-tight uppercase font-extrabold text-white transition-all ease-in-out duration-200 hover:text-white"
 								>
 									Oops Sorry!
 								</motion.h2>

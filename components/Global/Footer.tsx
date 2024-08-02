@@ -27,8 +27,7 @@ const Footer: FC = () => {
 	return (
 		<footer
 			className={
-				styles.footer +
-				" footer py-4 px-0 overflow-hidden h-[10rem] bg-white border-t-4 border-black border-solid"
+				styles.footer + " footer py-4 px-0 h-full min-h-[50vh] bg-pureBlack"
 			}
 		></footer>
 	);

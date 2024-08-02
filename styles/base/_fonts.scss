@@ -1,42 +1,42 @@
 /*===== FONTS =====*/
 @font-face {
-	font-family: XenonNueExtraBold;
-	src: url("../fonts/XenonNue-ExtraBold.woff");
+	font-family: OnestBlack;
+	src: url("../fonts/OnestBlack.woff");
 }
 
 @font-face {
-	font-family: XenonNueBold;
-	src: url("../fonts/XenonNue-Bold.woff");
+	font-family: OnestBold;
+	src: url("../fonts/OnestBold.woff");
 }
 
 @font-face {
-	font-family: XenonNueRegular;
-	src: url("../fonts/XenonNue-Regular.woff");
+	font-family: OnestRegular;
+	src: url("../fonts/OnestRegular.woff");
 }
 
 @font-face {
-	font-family: OverusedGroteskLight;
-	src: url("../fonts/OverusedGrotesk-Light.woff");
+	font-family: OnestThin;
+	src: url("../fonts/OnestThin.woff");
 }
 
 // Font Stack Properties
-$main: "XenonNueBold";
-$secondary: "XenonNueRegular";
-$tertiary: "XenonNueExtraBold";
-$body: "OverusedGroteskLight", "Inter";
+$main: "OnestBold";
+$secondary: "OnestRegular";
+$tertiary: "OnestBlack";
+$body: "OnestThin", "Inter";
 
-.font-XenonNueExtraBold {
+.font-OnestBlack {
 	font-family: $tertiary;
 }
 
-.font-XenonNueBold {
+.font-OnestBold {
 	font-family: $main;
 }
 
-.font-XenonNueRegular {
+.font-OnestRegular {
 	font-family: $secondary;
 }
 
-.font-OverusedGroteskLight {
+.font-OnestThin {
 	font-family: $body;
 }

@@ -64,7 +64,7 @@ const TopNavigation: FC = () => {
 						href={`https://account.simbasc.com`}
 						target="_blank"
 						aria-label={`Chelsea Login`}
-						className="hidden lg:block font-OverusedGroteskLight tracking-[0.02rem] uppercase text-black hover:hover:text-accent-two text-base text-center transition-all ease-in-out duration-500"
+						className="hidden lg:block font-OnestBold tracking-[-0.02rem] uppercase text-black hover:hover:text-accent-two text-base text-center transition-all ease-in-out duration-500"
 					>
 						Login
 					</Link>
@@ -78,7 +78,7 @@ const TopNavigation: FC = () => {
 								: "_self"
 						}`}
 						aria-label={`Chelsea Foundation`}
-						className="hidden lg:block font-OverusedGroteskLight tracking-[0.02rem] uppercase text-black hover:hover:text-accent-two text-base text-center transition-all ease-in-out duration-500"
+						className="hidden lg:block font-OnestBold tracking-[-0.02rem] uppercase text-black hover:hover:text-accent-two text-base text-center transition-all ease-in-out duration-500"
 					>
 						{
 							globalContext?.themesOptionsContent?.topNavigation

@@ -8,12 +8,12 @@
 	h4,
 	h5 {
 		font-family: $body;
-		@apply text-xl py-4 font-XenonNueBold uppercase;
+		@apply text-xl py-4 font-OnestBold uppercase;
 	}
 
 	h2 {
 		strong {
-			@apply tracking-tight font-XenonNueBold;
+			@apply tracking-tight font-OnestBold;
 		}
 	}
 
