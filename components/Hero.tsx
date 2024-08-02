@@ -23,8 +23,13 @@ import LastThreeFixtures from "@/components/Sub/LastThreeFixtures";
 const Hero: FC<IHero> = ({heroSlider}) => {
 	return (
 		<>
-			<div className={styles.hero + " relative z-50 flex flex-col h-fit"}>
-				<div className="lg:relative pt-[120px] lg:pt-[138px] flex flex-col">
+			<div
+				className={
+					styles.hero +
+					" relative z-50 flex flex-col h-fit pt-[120px] lg:pt-[138px]"
+				}
+			>
+				<div className="lg:relative flex flex-col">
 					<div className="HeroSwiperSlider relative overflow-hidden">
 						<Swiper
 							loop={true}
@@ -43,7 +48,7 @@ const Hero: FC<IHero> = ({heroSlider}) => {
 										<SwiperSlide>
 											<div className="w-full p-0">
 												<div
-													className="pt-24 pb-44 sm:pb-20 w-full h-[75vh] sm:h-[75vh] lg:h-screen flex flex-col items-center lg:items-baseline justify-center relative bg-center bg-no-repeat bg-cover"
+													className="pt-24 pb-44 sm:pb-20 w-full h-[75vh] lg:h-[85vh] flex flex-col items-center lg:items-baseline justify-center relative bg-center bg-no-repeat bg-cover"
 													style={{
 														backgroundImage: `linear-gradient(
 																0deg,
