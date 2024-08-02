@@ -9,9 +9,9 @@ import {useGlobalContext} from "@/context/global";
 import {initial, stagger, fadeInUp} from "@/animations/animations";
 
 // Components
-import Paragraph from "../Elements/Paragraph";
-import NewsletterElement from "../Elements/NewsletterElement";
-import NewsLatestArticles from "../Elements/NewsLatestArticles";
+import Paragraph from "@/components/Elements/Paragraph";
+import NewsletterElement from "@/components/Elements/NewsletterElement";
+import NewsLatestArticles from "@/components/Elements/NewsLatestArticles";
 
 const NewsSingle: FC<INewsSingle> = ({
 	title,

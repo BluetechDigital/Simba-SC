@@ -10,7 +10,7 @@ import {sendNewsletterForm} from "@/lib/newsletterForm";
 import fadeInUp, {initial, initialTwo, fadeIn} from "@/animations/animations";
 
 // Components
-import Paragraph from "./Paragraph";
+import Paragraph from "@/components/Elements/Paragraph";
 
 const NewsletterElement: FC = () => {
 	// Loading, Send & Error Message States

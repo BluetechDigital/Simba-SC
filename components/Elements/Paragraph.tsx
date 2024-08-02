@@ -6,7 +6,7 @@ import {IParagraph} from "@/types/components/index";
 import {fadeIn, initialTwo} from "@/animations/animations";
 
 // Styling
-import styles from "../../styles/components/Elements/Paragraph.module.scss";
+import styles from "@/styles/components/Elements/Paragraph.module.scss";
 
 const Paragraph: FC<IParagraph> = ({content, tailwindStyling}) => {
 	/* Sanitize the WYSIWYG paragraph content */

@@ -6,7 +6,7 @@ import Image from "next/image";
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
 import {IHero} from "@/types/components/index";
-import {fadeIn, initialTwo} from "../animations/animations";
+import {fadeIn, initialTwo} from "@/animations/animations";
 
 // Swiper.js Slider
 import "swiper/css";
@@ -18,7 +18,7 @@ import {Autoplay, Navigation} from "swiper/modules";
 import styles from "../styles/components/Hero.module.scss";
 
 // Components
-import Paragraph from "./Elements/Paragraph";
+import Paragraph from "@/components/Elements/Paragraph";
 import LastThreeFixtures from "./Sub/LastThreeFixtures";
 
 const Hero: FC<IHero> = ({heroSlider}) => {
@@ -39,8 +39,8 @@ const Hero: FC<IHero> = ({heroSlider}) => {
 							}}
 						>
 							{heroSlider?.length > 0 ? (
-								heroSlider?.map((item: any, keys: number) => (
-									<Fragment key={keys}>
+								heroSlider?.map((item: any, index: number) => (
+									<Fragment key={index}>
 										<SwiperSlide>
 											<div className="w-full p-0">
 												<div

@@ -4,7 +4,7 @@ import {FC, useEffect, useState} from "react";
 import {IBackToTopButton} from "@/types/components";
 
 // Styling
-import styles from "../../styles/components/Elements/BackHoverButton.module.scss";
+import styles from "@/styles/components/Elements/BackHoverButton.module.scss";
 
 // Components
 

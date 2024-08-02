@@ -1,20 +1,15 @@
 // Imports
-import {
-	fadeIn,
-	initial,
-	stagger,
-	initialTwo,
-} from "../../animations/animations";
+import {fadeIn, initial, stagger, initialTwo} from "@/animations/animations";
 import {FC} from "react";
 import Image from "next/image";
 import {motion} from "framer-motion";
 import {IMaintenance} from "@/types/components/index";
 
 // Styling
-import styles from "../../styles/components/Maintenance.module.scss";
+import styles from "@/styles/components/Maintenance.module.scss";
 
 // Components
-import Paragraph from "./../Elements/Paragraph";
+import Paragraph from "@/components/Elements/Paragraph";
 
 const Maintenance: FC<IMaintenance> = ({title, paragraph, backgroundImage}) => {
 	const mainImageVideoTailwindCss: string = `object-cover object-center w-full h-full`;

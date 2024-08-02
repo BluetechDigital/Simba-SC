@@ -2,9 +2,8 @@
 
 // Imports
 import {FC} from "react";
-import {IPageContext} from "@/types/context";
 import {createContext, useContext} from "react";
-import {IPageContextProvider} from "@/types/context";
+import {IPageContext, IPageContextProvider} from "@/types/context/Providers";
 
 export const PageContext = createContext<IPageContext | undefined>(undefined);
 
@@ -18,8 +17,7 @@ export const usePageContext = () => {
 	return content;
 };
 
-const PageContextProvider: FC<IPageContextProvider> = ({
-	seo,
+export const PageContextProvider: FC<IPageContextProvider> = ({
 	content,
 	children,
 	postTypeFlexibleContent,
@@ -27,7 +25,6 @@ const PageContextProvider: FC<IPageContextProvider> = ({
 	return (
 		<PageContext.Provider
 			value={{
-				seo: seo,
 				content: content,
 				postTypeFlexibleContent: postTypeFlexibleContent,
 			}}

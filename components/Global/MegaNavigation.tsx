@@ -13,7 +13,7 @@ import {motion} from "framer-motion";
 import {FC, Fragment, useState} from "react";
 import {useGlobalContext} from "@/context/global";
 import {IMegaNavigation} from "@/types/components";
-import MegaNavVideoWrapper from "../Elements/MegaNavVideoWrapper";
+import MegaNavVideoWrapper from "@/components/Elements/MegaNavVideoWrapper";
 
 const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 	const globalContext = useGlobalContext();
@@ -114,18 +114,8 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 		);
 	};
 
-	const removeFansSublinksOpen = () => {
-		setNewsSublinksOpen(false);
-		setFansSublinksOpen(false);
-		setCommunitySublinksOpen(false);
-		setOurHistorySublinksOpen(false);
-		setAboutTheClubSublinksOpen(false);
-		setBenjaminMkapaStadiumSublinksOpen(false);
-		setPartnershipsAdvertisingSublinksOpen(false);
-	};
-
-	const toggleMenu = () => {
-		setMenuActive(!menuActive);
+	const resetMenu = () => {
+		setMenuActive(false);
 		setNewsSublinksOpen(false);
 		setFansSublinksOpen(false);
 		setCommunitySublinksOpen(false);
@@ -137,10 +127,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 
 	return (
 		<>
-			<div
-				// onMouseLeave={removeFansSublinksOpen}
-				className={menuActive ? "megaMenu-active" : "megaMenu hidden"}
-			>
+			<div className={menuActive ? "megaMenu-active" : "megaMenu hidden"}>
 				<div
 					className="megaMenu-content overflow-y-visible overflow-x-hidden min-h-screen h-full w-full py-20 px-10 flex flex-col bg-cover bg-no-repeat bg-center"
 					style={{
@@ -158,6 +145,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 				>
 					<div className="max-w-9xl mx-auto h-full w-full px-0 lg:px-10 pb-32 pt-32 lg:pt-20 lg:pb-0 flex flex-col justify-between gap-20 lg:gap-10">
 						<div className="flex flex-col lg:flex-row items-start lg:gap-10 xl:gap-24">
+							{/* Mobile */}
 							<motion.ul
 								initial={initial}
 								variants={stagger}
@@ -216,13 +204,13 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																							custom={index}
 																							initial={initial}
 																							whileInView="animate"
-																							// viewport={{once: false}}
+																							viewport={{once: false}}
 																							variants={
 																								navigationMenuStaggerChildren
 																							}
 																						>
 																							<Link
-																								onClick={toggleMenu}
+																								onClick={resetMenu}
 																								href={`${item?.node?.url}`}
 																								target={`${
 																									item?.node?.target
@@ -290,13 +278,13 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																							custom={index}
 																							initial={initial}
 																							whileInView="animate"
-																							// viewport={{once: false}}
+																							viewport={{once: false}}
 																							variants={
 																								navigationMenuStaggerChildren
 																							}
 																						>
 																							<Link
-																								onClick={toggleMenu}
+																								onClick={resetMenu}
 																								href={`${item?.node?.url}`}
 																								target={`${
 																									item?.node?.target
@@ -364,13 +352,13 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																							custom={index}
 																							initial={initial}
 																							whileInView="animate"
-																							// viewport={{once: false}}
+																							viewport={{once: false}}
 																							variants={
 																								navigationMenuStaggerChildren
 																							}
 																						>
 																							<Link
-																								onClick={toggleMenu}
+																								onClick={resetMenu}
 																								href={`${item?.node?.url}`}
 																								target={`${
 																									item?.node?.target
@@ -439,13 +427,13 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																							custom={index}
 																							initial={initial}
 																							whileInView="animate"
-																							// viewport={{once: false}}
+																							viewport={{once: false}}
 																							variants={
 																								navigationMenuStaggerChildren
 																							}
 																						>
 																							<Link
-																								onClick={toggleMenu}
+																								onClick={resetMenu}
 																								href={`${item?.node?.url}`}
 																								target={`${
 																									item?.node?.target
@@ -514,13 +502,13 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																							custom={index}
 																							initial={initial}
 																							whileInView="animate"
-																							// viewport={{once: false}}
+																							viewport={{once: false}}
 																							variants={
 																								navigationMenuStaggerChildren
 																							}
 																						>
 																							<Link
-																								onClick={toggleMenu}
+																								onClick={resetMenu}
 																								href={`${item?.node?.url}`}
 																								target={`${
 																									item?.node?.target
@@ -589,13 +577,13 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																							custom={index}
 																							initial={initial}
 																							whileInView="animate"
-																							// viewport={{once: false}}
+																							viewport={{once: false}}
 																							variants={
 																								navigationMenuStaggerChildren
 																							}
 																						>
 																							<Link
-																								onClick={toggleMenu}
+																								onClick={resetMenu}
 																								href={`${item?.node?.url}`}
 																								target={`${
 																									item?.node?.target
@@ -665,13 +653,13 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																							custom={index}
 																							initial={initial}
 																							whileInView="animate"
-																							// viewport={{once: false}}
+																							viewport={{once: false}}
 																							variants={
 																								navigationMenuStaggerChildren
 																							}
 																						>
 																							<Link
-																								onClick={toggleMenu}
+																								onClick={resetMenu}
 																								href={`${item?.node?.url}`}
 																								target={`${
 																									item?.node?.target
@@ -707,6 +695,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 									<></>
 								)}
 							</motion.ul>
+							{/* Desktop */}
 							<div className="hidden lg:flex w-full lg:w-1/2 flex-col gap-12">
 								{aboutTheClubSublinksOpen ? (
 									<>
@@ -728,10 +717,11 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																custom={index}
 																initial={initial}
 																whileInView="animate"
-																// viewport={{once: false}}
+																viewport={{once: false}}
 																variants={navigationMenuStaggerChildren}
 															>
 																<Link
+																	onClick={resetMenu}
 																	href={`${item?.node?.url}`}
 																	target={`${
 																		item?.node?.target
@@ -772,10 +762,11 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																custom={index}
 																initial={initial}
 																whileInView="animate"
-																// viewport={{once: false}}
+																viewport={{once: false}}
 																variants={navigationMenuStaggerChildren}
 															>
 																<Link
+																	onClick={resetMenu}
 																	href={`${item?.node?.url}`}
 																	target={`${
 																		item?.node?.target
@@ -817,7 +808,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																custom={index}
 																initial={initial}
 																whileInView="animate"
-																// viewport={{once: false}}
+																viewport={{once: false}}
 																variants={navigationMenuStaggerChildren}
 															>
 																<Link
@@ -883,10 +874,11 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																custom={index}
 																initial={initial}
 																whileInView="animate"
-																// viewport={{once: false}}
+																viewport={{once: false}}
 																variants={navigationMenuStaggerChildren}
 															>
 																<Link
+																	onClick={resetMenu}
 																	href={`${item?.node?.url}`}
 																	target={`${
 																		item?.node?.target
@@ -927,10 +919,11 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																custom={index}
 																initial={initial}
 																whileInView="animate"
-																// viewport={{once: false}}
+																viewport={{once: false}}
 																variants={navigationMenuStaggerChildren}
 															>
 																<Link
+																	onClick={resetMenu}
 																	href={`${item?.node?.url}`}
 																	target={`${
 																		item?.node?.target
@@ -972,10 +965,11 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																custom={index}
 																initial={initial}
 																whileInView="animate"
-																// viewport={{once: false}}
+																viewport={{once: false}}
 																variants={navigationMenuStaggerChildren}
 															>
 																<Link
+																	onClick={resetMenu}
 																	href={`${item?.node?.url}`}
 																	target={`${
 																		item?.node?.target
@@ -1017,10 +1011,11 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																custom={index}
 																initial={initial}
 																whileInView="animate"
-																// viewport={{once: false}}
+																viewport={{once: false}}
 																variants={navigationMenuStaggerChildren}
 															>
 																<Link
+																	onClick={resetMenu}
 																	href={`${item?.node?.url}`}
 																	target={`${
 																		item?.node?.target
@@ -1075,15 +1070,16 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 													custom={index}
 													initial={initial}
 													whileInView="animate"
-													// viewport={{once: false}}
+													viewport={{once: false}}
 													variants={navigationMenuStaggerChildren}
 												>
 													<Link
+														onClick={resetMenu}
 														href={`${item?.node?.url}`}
+														aria-label={`${item?.node?.label}`}
 														target={`${
 															item?.node?.target ? item?.node?.target : "_self"
 														}`}
-														aria-label={`${item?.node?.label}`}
 														className="font-XenonNueExtraBold font-extrabold tracking-none leading-none text-tertiary-two hover:text-black text-5xl text-center uppercase"
 													>
 														{item?.node?.label}
@@ -1138,12 +1134,13 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 														className="self-end"
 													>
 														<Link
-															href={`${item?.node?.url}`}
+															onClick={resetMenu}
 															target={`${
 																item?.node?.target
 																	? item?.node?.target
 																	: "_self"
 															}`}
+															href={`${item?.node?.url}`}
 															aria-label={`${item?.node?.label}`}
 															className="font-XenonNueBold leading-none text-white hover:text-black text-xl lg:text-xl text-center"
 														>

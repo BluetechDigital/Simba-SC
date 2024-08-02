@@ -2,10 +2,10 @@
 import type {AppProps} from "next/app";
 
 // Styling
-import "../styles/globals.scss";
+import "@/styles/globals.scss";
 
 // Global Context Provider
-import {IGlobalProps} from "@/types/context";
+import {IGlobalProps} from "@/types/context/Providers";
 
 // Queries Functions
 import {
@@ -23,22 +23,30 @@ import {
 	getMegaNavigationUsefulSublinks,
 	getBenjaminMkapaStadiumSublinks,
 	getPartnershipsAdvertisingSublinks,
-} from "@/functions/graphql/Queries/GetAllMenuLinks";
-import {getAllNewsContent} from "@/functions/graphql/Queries/GetAllNews";
-import {getAllBlogsContent} from "@/functions/graphql/Queries/GetAllBlogs";
-import {getAllCaseStudiesContent} from "@/functions/graphql/Queries/GetAllCaseStudies";
-import {getThemesOptionsContent} from "@/functions/graphql/Queries/GetAllThemesOptions";
-import {getAllTestimonialsContent} from "@/functions/graphql/Queries/GetAllTestimonials";
-import {getAllJobsPositionsContent} from "@/functions/graphql/Queries/GetAllJobsPositions";
+} from "@/graphql/GetAllMenuLinks";
+import {getThemesOptionsContent} from "@/graphql/GetAllThemesOptions";
+import {getAllTestimonialsContent} from "@/graphql/GetAllTestimonials";
+import {getAllJobsPositionsContent} from "@/graphql/GetAllJobsPositions";
+
+// News, Blogs & Case Studies
+import {
+	getAllNewsContent,
+	getAllBlogsContent,
+	getAllCaseStudiesContent,
+} from "@/graphql/GetAllNewsBlogsCaseStudies";
+
+// Get All Football Fixtures
+import {getLastThreeFixturesContent} from "@/functions/Football/GetLastThreeFixtures";
+
+// Get All Stakeholders
+import {getAllBoardOfDirectorsContent} from "@/graphql/GetAllStakeholders";
+import {getAllExecutiveLeadershipsContent} from "@/graphql/GetAllStakeholders";
 
 // Components
 import Navbar from "@/components/Global/Navbar";
 import Footer from "@/components/Global/Footer";
 import GlobalContextProvider from "@/context/providers/GlobalContextProvider";
 import ApolloContextProvider from "@/context/providers/ApolloContextProvider";
-import {getLastThreeFixturesContent} from "@/functions/Football/GetLastThreeFixtures";
-import {getAllBoardOfDirectorsContent} from "@/functions/graphql/Queries/GetAllBoardOfDirectors";
-import {getAllExecutiveLeadershipsContent} from "@/functions/graphql/Queries/GetAllExecutiveLeaderships";
 
 const App = async ({children}: AppProps | any) => {
 	// PUBLIC PAGES //
@@ -101,26 +109,33 @@ const App = async ({children}: AppProps | any) => {
 	] = await Promise.all(promises);
 
 	const globalProps: IGlobalProps = {
+		testimonials: testimonials,
+		jobsPositions: jobsPositions,
+		themesOptionsContent: themesOptionsContent,
+
+		// News, Blogs & Case Studies
 		news: news,
 		blogs: blogs,
 		caseStudies: caseStudies,
-		testimonials: testimonials,
-		jobsPositions: jobsPositions,
-		boardOfDirectorsGrid: boardOfDirectorsGrid,
-		themesOptionsContent: themesOptionsContent,
-		executiveLeadershipsGrid: executiveLeadershipsGrid,
 
 		// Football Fixtures
 		// lastThreeFixtures: lastThreeFixtures,
 
 		// Website Links
 		mobileLinks: mobileLinks,
-		fansSublinks: fansSublinks,
-		newsSublinks: newsSublinks,
 		copyrightLinks: copyrightLinks,
 		careerSublinks: careerSublinks,
 		navbarMenuLinks: navbarMenuLinks,
 		footerMenuLinks: footerMenuLinks,
+
+		// Stakeholders
+		boardOfDirectorsGrid: boardOfDirectorsGrid,
+		executiveLeadershipsGrid: executiveLeadershipsGrid,
+
+		// Mega Menu Links
+
+		newsSublinks: newsSublinks,
+		fansSublinks: fansSublinks,
 		communitySublinks: communitySublinks,
 		ourHistorySublinks: ourHistorySublinks,
 		megaNavigationLinks: megaNavigationLinks,

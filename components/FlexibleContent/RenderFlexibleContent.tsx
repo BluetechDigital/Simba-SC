@@ -6,9 +6,7 @@ import {usePageContext} from "@/context/providers/PageContextProvider";
 
 // Components
 import Hero from "@/components/Hero";
-import ErrorPage from "@/components/Global/ErrorPage";
 import TitleParagraph from "@/components/TitleParagraph";
-import Maintenance from "@/components/Global/Maintenance";
 
 const RenderFlexibleContent: FC = () => {
 	const pageContextContent = usePageContext();
@@ -17,8 +15,6 @@ const RenderFlexibleContent: FC = () => {
 	// Components Key Value Pairs
 	const componentMapping: any = {
 		[`${FlexibleContent}_Hero`]: Hero,
-		[`${FlexibleContent}_Maintenance`]: Maintenance,
-		[`${FlexibleContent}_ErrorPageContent`]: ErrorPage,
 		[`${FlexibleContent}_TitleParagraph`]: TitleParagraph,
 	};
 

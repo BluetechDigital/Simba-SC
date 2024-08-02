@@ -14,7 +14,7 @@ import {FC, Fragment, useState} from "react";
 import {IPagination} from "@/types/components/index";
 
 // Components
-import Paragraph from "./Paragraph";
+import Paragraph from "@/components/Elements/Paragraph";
 
 const Pagination: FC<IPagination> = ({
 	contentType,

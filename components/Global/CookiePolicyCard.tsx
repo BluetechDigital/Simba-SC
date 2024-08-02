@@ -89,7 +89,7 @@ const CookiePolicyCard: FC = () => {
 								initial={initial}
 								whileInView={fadeInUp}
 								viewport={{once: true}}
-								className="font-bold font-XenonNueBold text-4xl sm:text-5xl uppercase tracking-tight text-black leading-tight text-center lg:text-left leading-none"
+								className="font-bold font-XenonNueBold text-4xl sm:text-5xl uppercase tracking-tight text-black leading-tight text-center lg:text-left"
 							>
 								Discover Highlights & More
 							</motion.h3>

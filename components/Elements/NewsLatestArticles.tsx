@@ -8,7 +8,7 @@ import {INewsLatestArticles} from "@/types/components";
 import {initial, fadeInUp} from "@/animations/animations";
 
 // Components
-import Paragraph from "./Paragraph";
+import Paragraph from "@/components/Elements/Paragraph";
 
 const NewsLatestArticles: FC<INewsLatestArticles> = ({
 	slug,

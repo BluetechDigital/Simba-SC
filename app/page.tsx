@@ -1,35 +1,39 @@
 // Imports
-import {NextPage} from "next";
-import {homePage, postType, flexibleContentType} from "@/context/pages";
+import {Metadata, NextPage} from "next";
+import {postType, flexibleContentType, pageType} from "@/context/pages";
 
 // Queries Functions
-import {getAllSeoContent} from "@/functions/graphql/Queries/GetAllSeoContent";
-import {getAllFlexibleContentComponents} from "@/functions/graphql/Queries/GetAllFlexibleContentComponents";
+import {getAllSeoContent} from "@/graphql/GetAllSeoContent";
+import {getAllFlexibleContentComponents} from "@/graphql/GetAllFlexibleContentComponents";
 
 // Components
-import Layout from "@/components/Layout/Layout";
 import PageContextProvider from "@/context/providers/PageContextProvider";
 import RenderFlexibleContent from "@/components/FlexibleContent/RenderFlexibleContent";
 
+// Home Page Generated Metadata
+export const generateMetadata = async (): Promise<Metadata> => {
+	const seo: any = await getAllSeoContent(pageType?.home, postType?.pages);
+
+	return {
+		title: seo?.title,
+		description: seo?.metaDesc,
+	};
+};
+
 const HomePage: NextPage = async () => {
 	// Fetch priority content
-	const postTypeFlexibleContent = flexibleContentType?.pages;
-	const seo: any = await getAllSeoContent(homePage, postType?.pages);
 	const flexibleContentComponents: any = await getAllFlexibleContentComponents(
-		homePage,
+		pageType?.home,
 		postType?.pages,
 		flexibleContentType?.pages
 	);
 
 	return (
 		<PageContextProvider
-			seo={seo}
 			content={flexibleContentComponents?.content}
-			postTypeFlexibleContent={postTypeFlexibleContent}
+			postTypeFlexibleContent={flexibleContentType?.pages}
 		>
-			<Layout>
-				<RenderFlexibleContent />
-			</Layout>
+			<RenderFlexibleContent />
 		</PageContextProvider>
 	);
 };

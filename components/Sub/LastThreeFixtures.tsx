@@ -1,9 +1,5 @@
 // Imports
-import fadeInUp, {
-	fadeIn,
-	initial,
-	initialTwo,
-} from "../../animations/animations";
+import fadeInUp, {fadeIn, initial, initialTwo} from "@/animations/animations";
 import Image from "next/image";
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";

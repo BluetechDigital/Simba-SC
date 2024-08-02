@@ -4,7 +4,7 @@
 import {FC} from "react";
 import {motion} from "framer-motion";
 import {GlobalContext} from "@/context/global";
-import {IGlobalContextProvider} from "@/types/context";
+import {IGlobalContextProvider} from "@/types/context/Providers";
 
 // Components
 import {Analytics} from "@vercel/analytics/react";
@@ -19,12 +19,16 @@ const GlobalContextProvider: FC<IGlobalContextProvider> = ({
 	return (
 		<GlobalContext.Provider
 			value={{
-				news: globalProps?.news,
-				blogs: globalProps?.blogs,
-				caseStudies: globalProps?.caseStudies,
 				testimonials: globalProps?.testimonials,
 				jobsPositions: globalProps?.jobsPositions,
 				themesOptionsContent: globalProps?.themesOptionsContent,
+
+				// News, Blogs & Case Studies
+				news: globalProps?.news,
+				blogs: globalProps?.blogs,
+				caseStudies: globalProps?.caseStudies,
+
+				// Stakeholders
 				boardOfDirectorsGrid: globalProps?.boardOfDirectorsGrid,
 				executiveLeadershipsGrid: globalProps?.executiveLeadershipsGrid,
 
@@ -33,18 +37,20 @@ const GlobalContextProvider: FC<IGlobalContextProvider> = ({
 
 				// Website Links
 				mobileLinks: globalProps?.mobileLinks,
-				newsSublinks: globalProps?.newsSublinks,
-				fansSublinks: globalProps?.fansSublinks,
 				careerSublinks: globalProps?.careerSublinks,
 				copyrightLinks: globalProps?.copyrightLinks,
-				footerMenuLinks: globalProps?.footerMenuLinks,
 				navbarMenuLinks: globalProps?.navbarMenuLinks,
+				footerMenuLinks: globalProps?.footerMenuLinks,
+
+				// Mega Menu Links
+				newsSublinks: globalProps?.newsSublinks,
+				fansSublinks: globalProps?.fansSublinks,
 				communitySublinks: globalProps?.communitySublinks,
 				ourHistorySublinks: globalProps?.ourHistorySublinks,
 				megaNavigationLinks: globalProps?.megaNavigationLinks,
 				aboutTheClubSublinks: globalProps?.aboutTheClubSublinks,
-				megaNavigationUsefulSublinks: globalProps?.megaNavigationUsefulSublinks,
 				benjaminMkapaStadiumSublinks: globalProps?.benjaminMkapaStadiumSublinks,
+				megaNavigationUsefulSublinks: globalProps?.megaNavigationUsefulSublinks,
 				partnershipsAdvertisingSublinks:
 					globalProps?.partnershipsAdvertisingSublinks,
 			}}

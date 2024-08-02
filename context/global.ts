@@ -1,8 +1,8 @@
 "use client";
 
 // Imports
-import {IGlobalContext} from "@/types/context";
 import {createContext, useContext} from "react";
+import {IGlobalContext} from "@/types/context/Providers";
 
 export const GlobalContext = createContext<IGlobalContext | undefined>(
 	undefined

@@ -19,7 +19,7 @@ import {useGlobalContext} from "@/context/global";
 import styles from "@/styles/components/Footer.module.scss";
 
 // Components
-import Paragraph from "../Elements/Paragraph";
+import Paragraph from "@/components/Elements/Paragraph";
 
 const Footer: FC = () => {
 	const globalContext = useGlobalContext();
