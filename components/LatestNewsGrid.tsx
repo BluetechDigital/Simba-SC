@@ -26,7 +26,10 @@ const LatestNewsGrid: FC<ILatestNewsGrid> = ({
 	const globalContext = useGlobalContext();
 
 	return (
-		<div className="bg-pureBlack px-4 py-10 lg:p-10 mx-auto flex flex-col gap-4">
+		<div
+			className="bg-pureBlack px-4 py-14
+		 lg:px-10 mx-auto flex flex-col gap-8"
+		>
 			<motion.h2
 				initial={initialTwo}
 				whileInView={fadeIn}
@@ -172,7 +175,7 @@ const LatestNewsGrid: FC<ILatestNewsGrid> = ({
 				href={`${buttonLink?.url}`}
 				target={buttonLink?.target}
 				className={`${
-					buttonLink?.url ? "buttonStyling-alt mx-auto" : "hidden"
+					buttonLink?.url ? "buttonStyling-alt mt-5 mx-auto" : "hidden"
 				}`}
 			>
 				{buttonLink?.title}

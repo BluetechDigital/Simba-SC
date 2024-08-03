@@ -21,7 +21,12 @@ const NewOfficialKitCta: FC<INewOfficialKitCta> = ({
 	imageTwo,
 }) => {
 	return (
-		<div className="bg-primary-default px-4 py-32 lg:px-10">
+		<div
+			className="bg-primary-default px-4 py-32 lg:px-10 bg-no-repeat bg-cover bg-center"
+			style={{
+				backgroundImage: `url("/svg/background/stacked-steps-haikei-red.svg")`,
+			}}
+		>
 			<div className="xl:container mx-auto px-0 flex flex-col gap-8">
 				<motion.h2
 					initial={initialTwo}
