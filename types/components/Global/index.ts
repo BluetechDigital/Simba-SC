@@ -4,10 +4,6 @@ export type IPagination = {
 	tailwindStyling: string;
 	numberOfItemsRenderedPerPage: number;
 };
-export type IMegaNavigation = {
-	menuActive: boolean;
-	setMenuActive: any;
-};
 export type IMaintenance = {
 	title: string;
 	paragraph: string;
@@ -20,6 +16,14 @@ export type IMaintenance = {
 		};
 	};
 };
+export type IMegaNavigation = {
+	menuActive: boolean;
+	setMenuActive: any;
+};
 export type ISmoothScrolling = {
+	children: React.ReactNode;
+};
+export type IScrollYProgressReveal = {
+	tailwindStyling?: string;
 	children: React.ReactNode;
 };

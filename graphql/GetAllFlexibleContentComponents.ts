@@ -53,6 +53,39 @@ export const getAllFlexibleContentComponents = async (
 												paragraph
 												displayParagraph
 											}
+												... on ${postTypeFlexibleContent}_SponsorsLogos {
+												fieldGroupName
+												displaySection
+												title
+												logoGrid {
+													image {
+														altText
+														sourceUrl
+														mediaDetails {
+															height
+															width
+														}
+													}
+												}
+											}
+											... on ${postTypeFlexibleContent}_VisitStore {
+												fieldGroupName
+												displaySection
+												title
+												buttonLink {
+                  								  	url
+                  								  	title
+                  								  	target
+                  								}
+												backgroundImage {
+                  								  	altText
+                  								  	sourceUrl
+                  								  	mediaDetails {
+                  								  	  	height
+                  								  	  	width
+                  								  	}
+                  								}
+											}
 											... on ${postTypeFlexibleContent}_LastThreeFixtures {
 												fieldGroupName
 												displaySection

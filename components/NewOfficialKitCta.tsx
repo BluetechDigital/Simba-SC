@@ -13,8 +13,6 @@ import Image from "next/image";
 import {motion} from "framer-motion";
 import {INewOfficialKitCta} from "@/types/components/index";
 
-// Components
-
 const NewOfficialKitCta: FC<INewOfficialKitCta> = ({
 	title,
 	link,
@@ -23,7 +21,7 @@ const NewOfficialKitCta: FC<INewOfficialKitCta> = ({
 	imageTwo,
 }) => {
 	return (
-		<div className="bg-primary-default px-4 py-10 lg:p-10">
+		<div className="bg-primary-default px-4 py-32 lg:px-10">
 			<div className="xl:container mx-auto px-0 flex flex-col gap-8">
 				<motion.h2
 					initial={initialTwo}
@@ -98,7 +96,7 @@ const NewOfficialKitCta: FC<INewOfficialKitCta> = ({
 												className="object-cover w-full h-full transform group-hover:scale-105 transition-all duration-1000 ease-in-out"
 											/>
 											<div className="absolute w-full h-full p-6 bottom-0 bg-pureBlack/20 group-hover:bg-pureBlack/30 flex flex-col items-center lg:items-baseline justify-end transition-all duration-1000 ease-in-out">
-												<span className="h-[5px] bg-primary-default w-full"></span>
+												<span className="h-[5px] bg-primary-default w-full  max-w-xs"></span>
 												<motion.h3
 													initial={initialTwo}
 													whileInView={fadeIn}
@@ -140,7 +138,7 @@ const NewOfficialKitCta: FC<INewOfficialKitCta> = ({
 													initial={initialTwo}
 													whileInView={fadeIn}
 													viewport={{once: true}}
-													className="font-OnestBlack text-center lg:text-left uppercase text-3xl lg:text-base tracking-[-0.02rem] text-white font-semibold whitespace-nowrap"
+													className="font-OnestBlack text-center lg:text-left uppercase text-3xl lg:text-lg tracking-[-0.02rem] text-white font-semibold whitespace-nowrap"
 												>
 													Away Kit 24/25
 												</motion.h3>

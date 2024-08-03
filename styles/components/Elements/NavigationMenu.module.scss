@@ -31,13 +31,11 @@
 
 .megaMenu {
 	@apply bg-primary-dark absolute z-10 top-0 right-0 overflow-y-visible overflow-x-hidden h-screen w-full opacity-100 bg-cover bg-no-repeat bg-center;
-
 	animation: hideMegaMenu 1.25s ease forwards;
 }
 
 .megaMenu-active {
 	@apply absolute z-10 top-0 right-0 overflow-y-visible overflow-x-hidden min-h-screen h-full w-full opacity-100 bg-primary-dark;
-
 	animation: showMegaMenu 1.25s ease forwards;
 
 	.megaMenu-content {
@@ -50,7 +48,7 @@
 		}
 
 		&::-webkit-scrollbar-thumb {
-			@apply rounded-[2px] bg-primary-two transition-all duration-500 hover:bg-tertiary-default;
+			@apply rounded-[2px] bg-tertiary-two transition-all duration-500 hover:bg-primary-default;
 		}
 	}
 }

@@ -6,3 +6,8 @@
 	@extend .buttonStyling;
 	@apply border-primary-default bg-primary-default hover:border-accent-default hover:bg-accent-default;
 }
+
+.buttonStyling-alt-two {
+	@extend .buttonStyling;
+	@apply border-primary-default bg-primary-default hover:border-primary-dark hover:bg-primary-dark;
+}

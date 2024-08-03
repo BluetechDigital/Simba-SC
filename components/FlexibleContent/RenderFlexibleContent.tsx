@@ -6,6 +6,8 @@ import {usePageContext} from "@/context/providers/PageContextProvider";
 
 // Components
 import Hero from "@/components/Hero";
+import VisitStore from "@/components/VisitStore";
+import SponsorsLogos from "@/components/SponsorsLogos";
 import TitleParagraph from "@/components/TitleParagraph";
 import LatestNewsGrid from "@/components/LatestNewsGrid";
 import NewOfficialKitCta from "@/components/NewOfficialKitCta";
@@ -18,10 +20,12 @@ const RenderFlexibleContent: FC = () => {
 	// Components Key Value Pairs
 	const componentMapping: any = {
 		[`${FlexibleContent}_Hero`]: Hero,
+		[`${FlexibleContent}_VisitStore`]: VisitStore,
+		[`${FlexibleContent}_SponsorsLogos`]: SponsorsLogos,
 		[`${FlexibleContent}_TitleParagraph`]: TitleParagraph,
 		[`${FlexibleContent}_LatestNewsGrid`]: LatestNewsGrid,
-		[`${FlexibleContent}_LastThreeFixtures`]: LastThreeFixtures,
 		[`${FlexibleContent}_NewOfficialKitCta`]: NewOfficialKitCta,
+		[`${FlexibleContent}_LastThreeFixtures`]: LastThreeFixtures,
 	};
 
 	return (
@@ -29,15 +33,15 @@ const RenderFlexibleContent: FC = () => {
 			{pageContextContent?.content?.length > 0 ? (
 				pageContextContent?.content?.map((item: any, index: number) =>
 					item?.displaySection ? (
-						<section key={index}>
+						<Fragment key={index}>
 							{componentMapping[item?.fieldGroupName] && (
-								<Fragment>
+								<>
 									{React.createElement(componentMapping[item?.fieldGroupName], {
 										...item,
 									})}
-								</Fragment>
+								</>
 							)}
-						</section>
+						</Fragment>
 					) : (
 						<></>
 					)

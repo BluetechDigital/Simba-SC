@@ -25,12 +25,44 @@ export type IHero = {
 		}
 	];
 };
+export type IVisitStore = {
+	title: string;
+	buttonLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
+	backgroundImage: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
+	};
+};
 export type INewsSingle = {
 	title: string;
 	readTime: string;
 	paragraph: string;
 	articleType: string;
 	boldParagraph: string;
+};
+export type ISponsorsLogos = {
+	title: string;
+	logoGrid: [
+		{
+			id: string;
+			image: {
+				altText: string;
+				sourceUrl: string;
+				mediaDetails: {
+					height: number;
+					width: number;
+				};
+			};
+		}
+	];
 };
 export type ITitleParagraph = {
 	title: string;

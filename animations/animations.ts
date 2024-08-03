@@ -15,6 +15,11 @@ import {
 	ArrayLoopStaggerChildren,
 } from "@/types/animations";
 
+/* This is the default framer-motion scrollYProgress content reveal.
+ Provides When in view should the content be revealed */
+export const offsetStart: number = 0.9;
+export const offsetFinish: number = 0.5;
+
 export const initial: Initial | any = {
 	y: 0,
 	opacity: 0,

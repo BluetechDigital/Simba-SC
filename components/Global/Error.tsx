@@ -71,7 +71,7 @@ const Error: FC = () => {
 								className={`${
 									globalContext?.themesOptionsContent?.errorPageContent
 										?.buttonLink?.url
-										? ""
+										? "buttonStyling"
 										: "hidden"
 								} `}
 							>
