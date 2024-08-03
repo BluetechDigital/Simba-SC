@@ -1,11 +1,17 @@
 // Imports
-import fadeInUp, {fadeIn, initial, initialTwo} from "@/animations/animations";
-import Image from "next/image";
+import {
+	fadeIn,
+	initial,
+	fadeInUp,
+	initialTwo,
+	arrayLoopStaggerChildren,
+} from "@/animations/animations";
 import {motion} from "framer-motion";
 import {FC, Fragment, Suspense} from "react";
 import {useGlobalContext} from "@/context/global";
 
-import dateFormat from "dateformat";
+// Components
+import LastThreeFixturesCard from "@/components/Cards/LastThreeFixturesCard";
 
 const LastThreeFixtures: FC = () => {
 	const globalContext = useGlobalContext();
@@ -18,103 +24,35 @@ const LastThreeFixtures: FC = () => {
 				viewport={{once: true}}
 				className="w-full mx-auto px-4 py-10 lg:p-10 bg-white min-h-[25vh] flex flex-col"
 			>
-				<motion.h4
+				<motion.h3
 					initial={initialTwo}
 					whileInView={fadeIn}
 					viewport={{once: true}}
-					className="font-OnestBlack text-center lg:text-left uppercase text-3xl lg:text-5xl tracking-[-0.02rem] text-pureBlack font-semibold xl:leading-[3.75rem]"
+					className="mb-20 font-OnestBlack text-center lg:text-left uppercase text-3xl lg:text-5xl tracking-[-0.02rem] text-pureBlack font-semibold xl:leading-[3.75rem]"
 				>
 					Fixtures
-				</motion.h4>
-				<div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-4 items-center justify-center lg:gap-10">
+				</motion.h3>
+				<div className="py-10 grid grid-cols-1 lg:grid-cols-3 gap-4 items-center justify-center lg:gap-10">
 					<Suspense fallback={"...Loading"}>
 						{globalContext?.lastThreeFixtures?.response?.length > 0 ? (
 							globalContext?.lastThreeFixtures?.response?.map(
 								(fixture: any, index: number) => (
 									<Fragment key={index}>
-										<div className="flex flex-col items-center justify-center gap-5">
-											<motion.div
-												initial={initial}
-												whileInView={fadeInUp}
-												viewport={{once: true}}
-												className=""
-											>
-												<Image
-													priority
-													width={1000}
-													height={1000}
-													src={fixture?.league?.logo}
-													alt={`${fixture?.league?.name} league Logo`}
-													className="object-contain object-center w-full h-[75px]"
-												/>
-											</motion.div>
-											<div className="flex items-center justify-center gap-12 lg:gap-12">
-												<div className="flex flex-col items-center justify-center gap-2">
-													<Image
-														priority
-														width={1000}
-														height={1000}
-														src={fixture?.teams?.home?.logo}
-														alt={`${fixture?.teams?.home?.name} club Logo`}
-														className="object-contain object-center w-full h-[75px]"
-													/>
-													<span className="text-pureBlack text-base font-OnestRegular text-center">
-														{fixture?.teams?.home?.name}
-													</span>
-													<span className="text-pureBlack text-base font-OnestRegular text-center">
-														{fixture?.teams?.home?.winner}
-													</span>
-												</div>
-												<div className="bg-pureBlack p-4 rounded-lg flex items-center justify-center gap-2">
-													<motion.span
-														initial={initial}
-														whileInView={fadeInUp}
-														viewport={{once: true}}
-														className="text-white text-2xl font-OnestBlack text-center"
-													>
-														{fixture?.goals?.home}
-													</motion.span>
-													<span className="text-white text-2xl font-OnestBlack text-center">
-														-
-													</span>
-													<motion.span
-														initial={initial}
-														whileInView={fadeInUp}
-														viewport={{once: true}}
-														className="text-white text-2xl font-OnestBlack text-center"
-													>
-														{fixture?.goals?.away}
-													</motion.span>
-												</div>
-												<div className="flex flex-col items-center justify-center gap-2">
-													<Image
-														priority
-														width={1000}
-														height={1000}
-														src={fixture?.teams?.away?.logo}
-														alt={`${fixture?.teams?.away?.name} club Logo`}
-														className="object-contain object-center w-[65px] md:w-[75px] h-[60px] sm:h-[65px] lg:h-[75px]"
-													/>
-													<span className="text-pureBlack text-base font-OnestRegular text-center">
-														{fixture?.teams?.away?.name}
-													</span>
-													<span className="text-pureBlack text-base font-OnestRegular text-center">
-														{fixture?.teams?.away?.winner}
-													</span>
-												</div>
-											</div>
-											<div className="flex items-center justify-center gap-1">
-												<span className="text-pureBlack text-base font-OnestRegular text-center">
-													{fixture?.league?.name},
-												</span>
-												<span className="text-pureBlack text-base font-OnestRegular text-center">
-													{dateFormat(
-														fixture?.fixture?.date,
-														"dddd, mmmm d, yyyy"
-													)}
-												</span>
-											</div>
-										</div>
+										<motion.div
+											custom={index}
+											initial={initial}
+											className="w-full"
+											whileInView="animate"
+											viewport={{once: true}}
+											variants={arrayLoopStaggerChildren}
+										>
+											<LastThreeFixturesCard
+												goals={fixture?.goals}
+												teams={fixture?.teams}
+												league={fixture?.league}
+												date={fixture?.fixture?.fixture?.date}
+											/>
+										</motion.div>
 									</Fragment>
 								)
 							)
