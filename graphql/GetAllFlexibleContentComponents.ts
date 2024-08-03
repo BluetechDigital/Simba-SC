@@ -57,6 +57,33 @@ export const getAllFlexibleContentComponents = async (
 												fieldGroupName
 												displaySection
 											}
+											... on ${postTypeFlexibleContent}_NewOfficialKitCta {
+												fieldGroupName
+                  								displaySection
+                  								title
+												ctaTitle
+                  								link {
+                  								  	url
+                  								  	title
+                  								  	target
+                  								}
+                  								image {
+                  								  	altText
+                  								  	sourceUrl
+                  								  	mediaDetails {
+                  								  	  	height
+                  								  	  	width
+                  								  	}
+                  								}
+												imageTwo {
+                  								  	altText
+                  								  	sourceUrl
+                  								  	mediaDetails {
+                  								  	  	height
+                  								  	  	width
+                  								  	}
+                  								}
+											}
 											... on ${postTypeFlexibleContent}_LatestNewsGrid {
 												fieldGroupName
                   								displaySection

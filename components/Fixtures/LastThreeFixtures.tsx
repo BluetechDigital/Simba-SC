@@ -16,7 +16,7 @@ const LastThreeFixtures: FC = () => {
 				initial={initial}
 				whileInView={fadeInUp}
 				viewport={{once: true}}
-				className="w-full mx-auto px-4 xl:p-10 bg-white min-h-[25vh] flex flex-col"
+				className="w-full mx-auto px-4 py-10 lg:p-10 bg-white min-h-[25vh] flex flex-col"
 			>
 				<motion.h4
 					initial={initialTwo}
@@ -26,7 +26,7 @@ const LastThreeFixtures: FC = () => {
 				>
 					Fixtures
 				</motion.h4>
-				<div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 items-center justify-center lg:gap-10">
+				<div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-4 items-center justify-center lg:gap-10">
 					<Suspense fallback={"...Loading"}>
 						{globalContext?.lastThreeFixtures?.response?.length > 0 ? (
 							globalContext?.lastThreeFixtures?.response?.map(

@@ -8,6 +8,7 @@ import {usePageContext} from "@/context/providers/PageContextProvider";
 import Hero from "@/components/Hero";
 import TitleParagraph from "@/components/TitleParagraph";
 import LatestNewsGrid from "@/components/LatestNewsGrid";
+import NewOfficialKitCta from "@/components/NewOfficialKitCta";
 import LastThreeFixtures from "@/components/Fixtures/LastThreeFixtures";
 
 const RenderFlexibleContent: FC = () => {
@@ -20,6 +21,7 @@ const RenderFlexibleContent: FC = () => {
 		[`${FlexibleContent}_TitleParagraph`]: TitleParagraph,
 		[`${FlexibleContent}_LatestNewsGrid`]: LatestNewsGrid,
 		[`${FlexibleContent}_LastThreeFixtures`]: LastThreeFixtures,
+		[`${FlexibleContent}_NewOfficialKitCta`]: NewOfficialKitCta,
 	};
 
 	return (

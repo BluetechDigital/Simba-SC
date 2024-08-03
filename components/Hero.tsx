@@ -78,6 +78,7 @@ const Hero: FC<IHero> = ({heroSlider}) => {
 															<Link
 																href={`${item?.buttonLink?.url}`}
 																target={item?.buttonLink?.target}
+																aria-label={`${item?.buttonLink?.title}`}
 																className={`${
 																	item?.buttonLink?.url
 																		? "buttonStyling"
@@ -89,6 +90,7 @@ const Hero: FC<IHero> = ({heroSlider}) => {
 															<Link
 																href={`${item?.buttonLinkTwo?.url}`}
 																target={item?.buttonLinkTwo?.target}
+																aria-label={`${item?.buttonLinkTwo?.title}`}
 																className={`${
 																	item?.buttonLinkTwo?.url
 																		? "buttonStyling"

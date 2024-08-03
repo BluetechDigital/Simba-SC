@@ -15,7 +15,7 @@ import {useGlobalContext} from "@/context/global";
 import {ILatestNewsGrid} from "@/types/components/index";
 
 // Components
-import LatestNewsGridCard from "./Cards/LatestNewsGridCard";
+import LatestNewsGridCard from "@/components/Cards/LatestNewsGridCard";
 
 const LatestNewsGrid: FC<ILatestNewsGrid> = ({
 	title,
@@ -26,7 +26,7 @@ const LatestNewsGrid: FC<ILatestNewsGrid> = ({
 	const globalContext = useGlobalContext();
 
 	return (
-		<div className="bg-pureBlack px-4 xl:p-10 mx-auto flex flex-col gap-4">
+		<div className="bg-pureBlack px-4 py-10 lg:p-10 mx-auto flex flex-col gap-4">
 			<motion.h2
 				initial={initialTwo}
 				whileInView={fadeIn}
