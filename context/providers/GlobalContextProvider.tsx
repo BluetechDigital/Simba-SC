@@ -33,7 +33,7 @@ const GlobalContextProvider: FC<IGlobalContextProvider> = ({
 				executiveLeadershipsGrid: globalProps?.executiveLeadershipsGrid,
 
 				// Football Fixtures
-				// lastThreeFixtures: globalProps?.lastThreeFixtures,
+				lastThreeFixtures: globalProps?.lastThreeFixtures,
 
 				// Website Links
 				mobileLinks: globalProps?.mobileLinks,

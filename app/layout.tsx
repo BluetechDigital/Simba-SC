@@ -79,7 +79,7 @@ const App = async ({children}: AppProps | any) => {
 		getAllExecutiveLeadershipsContent(),
 
 		// Football Fixtures
-		// getLastThreeFixturesContent(),
+		getLastThreeFixturesContent(),
 	];
 
 	const [
@@ -107,7 +107,7 @@ const App = async ({children}: AppProps | any) => {
 		executiveLeadershipsGrid,
 
 		// Football Fixtures
-		// lastThreeFixtures,
+		lastThreeFixtures,
 	] = await Promise.all(promises);
 
 	const globalProps: IGlobalProps = {
@@ -121,7 +121,7 @@ const App = async ({children}: AppProps | any) => {
 		caseStudies: caseStudies,
 
 		// Football Fixtures
-		// lastThreeFixtures: lastThreeFixtures,
+		lastThreeFixtures: lastThreeFixtures,
 
 		// Website Links
 		mobileLinks: mobileLinks,

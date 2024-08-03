@@ -52,7 +52,7 @@ export type IGlobalProps = {
 	caseStudies: INewsBlogsCaseStudies.ICaseStudies;
 
 	// Football Fixtures
-	// lastThreeFixtures: IFixtures;
+	lastThreeFixtures: IFixtures;
 
 	// Website Links
 	mobileLinks: ILinks.IMobileLinks;
@@ -87,7 +87,7 @@ export type IGlobalContext = {
 	caseStudies: INewsBlogsCaseStudies.ICaseStudies;
 
 	// Football Fixtures
-	// lastThreeFixtures: IFixtures;
+	lastThreeFixtures: IFixtures;
 
 	// Navigation Links
 	mobileLinks: ILinks.IMobileLinks;

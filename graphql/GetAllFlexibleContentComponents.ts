@@ -53,6 +53,10 @@ export const getAllFlexibleContentComponents = async (
 												paragraph
 												displayParagraph
 											}
+											... on ${postTypeFlexibleContent}_LastThreeFixtures {
+												fieldGroupName
+												displaySection
+											}
 											... on ${postTypeFlexibleContent}_LatestNewsGrid {
 												fieldGroupName
                   								displaySection

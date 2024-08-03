@@ -19,11 +19,11 @@ body {
 }
 
 body::-webkit-scrollbar {
-	@apply block w-[0.90rem] h-[0.90rem];
+	@apply hidden w-[0.90rem] h-[0.90rem];
 }
 
 body::-webkit-scrollbar-track {
-	@apply bg-darkGrey hover:bg-primary-dark;
+	@apply bg-primary-dark;
 }
 
 body::-webkit-scrollbar-thumb {

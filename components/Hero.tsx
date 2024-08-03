@@ -1,9 +1,7 @@
-"use client";
-
 // Imports
 import Link from "next/link";
+import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
-import {FC, Fragment, Suspense} from "react";
 import {IHero} from "@/types/components/index";
 import {fadeIn, initialTwo} from "@/animations/animations";
 
@@ -18,7 +16,6 @@ import styles from "@/styles/components/Hero.module.scss";
 
 // Components
 import Paragraph from "@/components/Elements/Paragraph";
-import LastThreeFixtures from "@/components/Sub/LastThreeFixtures";
 
 const Hero: FC<IHero> = ({heroSlider}) => {
 	return (
@@ -26,7 +23,7 @@ const Hero: FC<IHero> = ({heroSlider}) => {
 			<div
 				className={
 					styles.hero +
-					" relative z-50 flex flex-col h-fit pt-[120px] lg:pt-[138px]"
+					" relative z-50 flex flex-col h-fit pt-[120px] lg:pt-[138px] bg-pureBlack"
 				}
 			>
 				<div className="lg:relative flex flex-col">
@@ -72,7 +69,12 @@ const Hero: FC<IHero> = ({heroSlider}) => {
 																tailwindStyling="max-w-xl mx-auto lg:mx-0 py-2 font-OnestRegular leading-tight text-white text-lg text-center lg:text-left"
 															/>
 														</div>
-														<div className="flex flex-col md:flex-row items-center lg:items-baseline gap-2 sm:gap-4 max-w-sm lg:max-w-4xl mx-auto lg:mx-0">
+														<motion.div
+															initial={initialTwo}
+															whileInView={fadeIn}
+															viewport={{once: true}}
+															className="flex flex-col md:flex-row items-center lg:items-baseline gap-2 sm:gap-4 max-w-sm lg:max-w-4xl mx-auto lg:mx-0"
+														>
 															<Link
 																href={`${item?.buttonLink?.url}`}
 																target={item?.buttonLink?.target}
@@ -95,7 +97,7 @@ const Hero: FC<IHero> = ({heroSlider}) => {
 															>
 																{item?.buttonLinkTwo?.title}
 															</Link>
-														</div>
+														</motion.div>
 													</div>
 												</div>
 											</div>
@@ -107,9 +109,6 @@ const Hero: FC<IHero> = ({heroSlider}) => {
 							)}
 						</Swiper>
 					</div>
-					{/* <Suspense fallback={"...Loading "}>
-						<LastThreeFixtures />
-					</Suspense> */}
 				</div>
 			</div>
 		</>
