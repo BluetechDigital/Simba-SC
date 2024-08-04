@@ -19,6 +19,7 @@ const SimbaTVBanner: FC<ISimbaTVBanner> = ({
 	fansButton,
 	youtubeButton,
 	podcastsButton,
+	backgroundImage,
 }) => {
 	return (
 		<div
@@ -32,7 +33,7 @@ const SimbaTVBanner: FC<ISimbaTVBanner> = ({
 						rgba(250, 0, 8, 0.50),
 						rgba(250, 0, 8, 0.50),
 						rgba(250, 0, 8, 0.50)
-					),url("/img/background/undertone-gradient-backgrounds-V2-07.png")`,
+					),url("${backgroundImage?.sourceUrl}")`,
 			}}
 		>
 			<div className="lg:container px-4 mx-auto">

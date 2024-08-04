@@ -66,6 +66,14 @@ export type ISimbaTVBanner = {
 		title: string;
 		target: string;
 	};
+	backgroundImage: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
+	};
 };
 export type ISponsorsLogos = {
 	title: string;

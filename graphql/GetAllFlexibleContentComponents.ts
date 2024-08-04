@@ -117,6 +117,14 @@ export const getAllFlexibleContentComponents = async (
                   								  	title
                   								  	target
                   								}
+												backgroundImage {
+                  								  	altText
+                  								  	sourceUrl
+                  								  	mediaDetails {
+                  								  	  	height
+                  								  	  	width
+                  								  	}
+                  								}
 											}
 											... on ${postTypeFlexibleContent}_SocialMediaGrid {
 												fieldGroupName
