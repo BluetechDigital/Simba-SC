@@ -11,3 +11,8 @@
 	@extend .buttonStyling;
 	@apply border-primary-default bg-primary-default hover:border-primary-dark hover:bg-primary-dark;
 }
+
+.buttonStyling-alt-three {
+	@extend .buttonStyling;
+	@apply hover:border-accent-default hover:bg-accent-default;
+}

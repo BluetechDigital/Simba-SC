@@ -29,3 +29,7 @@ export type INewsLatestArticles = {
 export type IMegaNavVideoWrapper = {
 	children: React.ReactNode;
 };
+export type INewsletterFormikForm = {
+	formTitle: string;
+	textarea: string;
+};

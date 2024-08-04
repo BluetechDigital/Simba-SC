@@ -86,9 +86,29 @@ export const getAllFlexibleContentComponents = async (
                   								  	}
                   								}
 											}
+											... on ${postTypeFlexibleContent}_NewsletterBanner {
+												fieldGroupName
+												displaySection
+												title
+												paragraph
+												buttonLink {
+                  								  	url
+                  								  	title
+                  								  	target
+                  								}
+												backgroundImage {
+                  								  	altText
+                  								  	sourceUrl
+                  								  	mediaDetails {
+                  								  	  	height
+                  								  	  	width
+                  								  	}
+                  								}
+											}
 											... on ${postTypeFlexibleContent}_LastThreeFixtures {
 												fieldGroupName
 												displaySection
+												title
 											}
 											... on ${postTypeFlexibleContent}_NewOfficialKitCta {
 												fieldGroupName
