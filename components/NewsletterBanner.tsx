@@ -14,7 +14,6 @@ const NewsletterBanner: FC<INewsletterBanner> = ({
 	title,
 	paragraph,
 	buttonLink,
-	backgroundImage,
 }) => {
 	return (
 		<>

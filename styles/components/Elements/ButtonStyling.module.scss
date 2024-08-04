@@ -1,5 +1,5 @@
 .buttonStyling {
-	@apply py-3 px-10 w-fit font-OnestBlack cursor-pointer rounded-full uppercase text-lightGrey text-tiny text-center border-2 border-solid border-white hover:border-primary-default bg-transparent hover:bg-primary-default transition-all ease-in-out duration-500;
+	@apply py-3 px-10 w-fit font-OnestBlack cursor-pointer rounded-full uppercase text-lightGrey text-paragraph text-center border-2 border-solid border-white hover:border-primary-default bg-transparent hover:bg-primary-default transition-all ease-in-out duration-500;
 }
 
 .buttonStyling-alt {

@@ -10,6 +10,7 @@ import VisitStore from "@/components/VisitStore";
 import SponsorsLogos from "@/components/SponsorsLogos";
 import TitleParagraph from "@/components/TitleParagraph";
 import LatestNewsGrid from "@/components/LatestNewsGrid";
+import SocialMediaGrid from "@/components/SocialMediaGrid";
 import NewsletterBanner from "@/components/NewsletterBanner";
 import NewOfficialKitCta from "@/components/NewOfficialKitCta";
 import LastThreeFixtures from "@/components/Fixtures/LastThreeFixtures";
@@ -25,6 +26,7 @@ const RenderFlexibleContent: FC = () => {
 		[`${FlexibleContent}_SponsorsLogos`]: SponsorsLogos,
 		[`${FlexibleContent}_TitleParagraph`]: TitleParagraph,
 		[`${FlexibleContent}_LatestNewsGrid`]: LatestNewsGrid,
+		[`${FlexibleContent}_SocialMediaGrid`]: SocialMediaGrid,
 		[`${FlexibleContent}_NewsletterBanner`]: NewsletterBanner,
 		[`${FlexibleContent}_NewOfficialKitCta`]: NewOfficialKitCta,
 		[`${FlexibleContent}_LastThreeFixtures`]: LastThreeFixtures,

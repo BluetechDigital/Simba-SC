@@ -90,6 +90,9 @@ export type ILatestNewsGrid = {
 		};
 	};
 };
+export type ISocialMediaGrid = {
+	title: string;
+};
 export type INewsletterBanner = {
 	title: string;
 	paragraph: string;
@@ -97,14 +100,6 @@ export type INewsletterBanner = {
 		url: string;
 		title: string;
 		target: string;
-	};
-	backgroundImage: {
-		altText: string;
-		sourceUrl: string;
-		mediaDetails: {
-			width: number;
-			height: number;
-		};
 	};
 };
 export type ILastThreeFixtures = {

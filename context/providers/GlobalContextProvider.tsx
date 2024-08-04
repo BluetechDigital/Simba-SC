@@ -28,9 +28,8 @@ const GlobalContextProvider: FC<IGlobalContextProvider> = ({
 				blogs: globalProps?.blogs,
 				caseStudies: globalProps?.caseStudies,
 
-				// Stakeholders
-				boardOfDirectorsGrid: globalProps?.boardOfDirectorsGrid,
-				executiveLeadershipsGrid: globalProps?.executiveLeadershipsGrid,
+				// Social Media
+				instagramFeed: globalProps?.instagramFeed,
 
 				// Football Fixtures
 				lastThreeFixtures: globalProps?.lastThreeFixtures,
@@ -41,6 +40,10 @@ const GlobalContextProvider: FC<IGlobalContextProvider> = ({
 				copyrightLinks: globalProps?.copyrightLinks,
 				navbarMenuLinks: globalProps?.navbarMenuLinks,
 				footerMenuLinks: globalProps?.footerMenuLinks,
+
+				// Stakeholders
+				boardOfDirectorsGrid: globalProps?.boardOfDirectorsGrid,
+				executiveLeadershipsGrid: globalProps?.executiveLeadershipsGrid,
 
 				// Mega Menu Links
 				newsSublinks: globalProps?.newsSublinks,

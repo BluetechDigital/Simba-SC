@@ -88,22 +88,19 @@ export const getAllFlexibleContentComponents = async (
 											}
 											... on ${postTypeFlexibleContent}_NewsletterBanner {
 												fieldGroupName
-												displaySection
-												title
-												paragraph
-												buttonLink {
+                  								displaySection
+                  								title
+                  								paragraph
+                  								buttonLink {
                   								  	url
                   								  	title
                   								  	target
                   								}
-												backgroundImage {
-                  								  	altText
-                  								  	sourceUrl
-                  								  	mediaDetails {
-                  								  	  	height
-                  								  	  	width
-                  								  	}
-                  								}
+											}
+											... on ${postTypeFlexibleContent}_SocialMediaGrid {
+												fieldGroupName
+												displaySection
+												title
 											}
 											... on ${postTypeFlexibleContent}_LastThreeFixtures {
 												fieldGroupName

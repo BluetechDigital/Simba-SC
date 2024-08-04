@@ -28,6 +28,9 @@ import {getThemesOptionsContent} from "@/graphql/GetAllThemesOptions";
 import {getAllTestimonialsContent} from "@/graphql/GetAllTestimonials";
 import {getAllJobsPositionsContent} from "@/graphql/GetAllJobsPositions";
 
+// Instagram Feed
+import {getAllInstagramFeedContent} from "@/functions/SocialMedia/InstagramFeed";
+
 // News, Blogs & Case Studies
 import {
 	getAllNewsContent,
@@ -55,11 +58,33 @@ const App = async ({children}: AppProps | any) => {
 	/* Fetch all global content
 	remaining content simultaneously */
 	const promises: Promise<any>[] = [
+		getAllTestimonialsContent(),
+		getAllJobsPositionsContent(),
+		getThemesOptionsContent(),
+
+		// News, Blogs & Case Studies
+		getAllNewsContent(),
+		getAllBlogsContent(),
+		getAllCaseStudiesContent(),
+
+		// Social Media
+		getAllInstagramFeedContent(),
+
+		// Football Fixtures
+		getLastThreeFixturesContent(),
+
+		// Website Links
 		getMobileLinks(),
 		getCareerSublinks(),
 		getCopyrightLinks(),
 		getNavbarMenuLinks(),
 		getFooterMenuLinks(),
+
+		// Stakeholders
+		getAllBoardOfDirectorsContent(),
+		getAllExecutiveLeadershipsContent(),
+
+		// Mega Menu Links
 		getMegaNavigationLinks(),
 		getMegaNavigationUsefulSublinks(),
 		getNewsSublinks(),
@@ -69,25 +94,36 @@ const App = async ({children}: AppProps | any) => {
 		getAboutTheClubSublinks(),
 		getBenjaminMkapaStadiumSublinks(),
 		getPartnershipsAdvertisingSublinks(),
-		getThemesOptionsContent(),
-		getAllNewsContent(),
-		getAllBlogsContent(),
-		getAllCaseStudiesContent(),
-		getAllTestimonialsContent(),
-		getAllJobsPositionsContent(),
-		getAllBoardOfDirectorsContent(),
-		getAllExecutiveLeadershipsContent(),
-
-		// Football Fixtures
-		getLastThreeFixturesContent(),
 	];
 
 	const [
+		testimonials,
+		jobsPositions,
+		themesOptionsContent,
+
+		// News, Blogs & Case Studies
+		news,
+		blogs,
+		caseStudies,
+
+		// Social Media
+		instagramFeed,
+
+		// Football Fixtures
+		lastThreeFixtures,
+
+		// Website Links
 		mobileLinks,
 		careerSublinks,
 		copyrightLinks,
 		navbarMenuLinks,
 		footerMenuLinks,
+
+		// Stakeholders
+		boardOfDirectorsGrid,
+		executiveLeadershipsGrid,
+
+		// Mega Menu Links
 		megaNavigationLinks,
 		megaNavigationUsefulSublinks,
 		newsSublinks,
@@ -97,17 +133,6 @@ const App = async ({children}: AppProps | any) => {
 		aboutTheClubSublinks,
 		benjaminMkapaStadiumSublinks,
 		partnershipsAdvertisingSublinks,
-		themesOptionsContent,
-		news,
-		blogs,
-		caseStudies,
-		testimonials,
-		jobsPositions,
-		boardOfDirectorsGrid,
-		executiveLeadershipsGrid,
-
-		// Football Fixtures
-		lastThreeFixtures,
 	] = await Promise.all(promises);
 
 	const globalProps: IGlobalProps = {
@@ -119,6 +144,9 @@ const App = async ({children}: AppProps | any) => {
 		news: news,
 		blogs: blogs,
 		caseStudies: caseStudies,
+
+		// Social Media
+		instagramFeed: instagramFeed,
 
 		// Football Fixtures
 		lastThreeFixtures: lastThreeFixtures,

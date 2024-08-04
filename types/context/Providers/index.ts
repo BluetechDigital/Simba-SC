@@ -6,6 +6,7 @@ import {
 	IThemesOptionsContent,
 } from "@/types/context";
 import {IFixtures} from "@/types/context/Fixtures";
+import {IInstagramFeed} from "@/types/context/SocialMedia";
 import {ILinks, IMegaMenuLinks} from "@/types/context/Links";
 import {INewsBlogsCaseStudies} from "@/types/context/NewsCaseStudies";
 
@@ -51,6 +52,9 @@ export type IGlobalProps = {
 	blogs: INewsBlogsCaseStudies.IBlogs;
 	caseStudies: INewsBlogsCaseStudies.ICaseStudies;
 
+	// Social Media
+	instagramFeed: IInstagramFeed;
+
 	// Football Fixtures
 	lastThreeFixtures: IFixtures;
 
@@ -85,6 +89,9 @@ export type IGlobalContext = {
 	news: INewsBlogsCaseStudies.INews;
 	blogs: INewsBlogsCaseStudies.IBlogs;
 	caseStudies: INewsBlogsCaseStudies.ICaseStudies;
+
+	// Social Media
+	instagramFeed: IInstagramFeed;
 
 	// Football Fixtures
 	lastThreeFixtures: IFixtures;
