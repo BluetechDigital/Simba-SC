@@ -140,7 +140,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 						rgba(234, 29, 37, 0.10),
 						rgba(234, 29, 37, 0.45),
 						rgba(234, 29, 37, 0.50)),
-						url("/svg/background/red-background-dots.png")`,
+						url("/img/background/red-background-dots.png")`,
 					}}
 				>
 					<div className="max-w-9xl mx-auto h-full w-full px-0 lg:px-10 pb-32 pt-32 lg:pt-20 lg:pb-0 flex flex-col justify-between gap-20 lg:gap-10">

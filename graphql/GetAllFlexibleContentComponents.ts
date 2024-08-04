@@ -97,6 +97,27 @@ export const getAllFlexibleContentComponents = async (
                   								  	target
                   								}
 											}
+											... on ${postTypeFlexibleContent}_SimbatvBanner {
+												fieldGroupName
+                  								displaySection
+                  								title
+                  								paragraph
+                  								youtubeButton {
+                  								  	url
+                  								  	title
+                  								  	target
+                  								}
+												podcastsButton {
+                  								  	url
+                  								  	title
+                  								  	target
+                  								}
+												fansButton {
+                  								  	url
+                  								  	title
+                  								  	target
+                  								}
+											}
 											... on ${postTypeFlexibleContent}_SocialMediaGrid {
 												fieldGroupName
 												displaySection

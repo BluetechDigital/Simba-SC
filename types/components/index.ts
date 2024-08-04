@@ -48,6 +48,25 @@ export type INewsSingle = {
 	articleType: string;
 	boldParagraph: string;
 };
+export type ISimbaTVBanner = {
+	title: string;
+	paragraph: string;
+	youtubeButton: {
+		url: string;
+		title: string;
+		target: string;
+	};
+	podcastsButton: {
+		url: string;
+		title: string;
+		target: string;
+	};
+	fansButton: {
+		url: string;
+		title: string;
+		target: string;
+	};
+};
 export type ISponsorsLogos = {
 	title: string;
 	logoGrid: [

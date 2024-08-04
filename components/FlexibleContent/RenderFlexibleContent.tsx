@@ -7,6 +7,7 @@ import {usePageContext} from "@/context/providers/PageContextProvider";
 // Components
 import Hero from "@/components/Hero";
 import VisitStore from "@/components/VisitStore";
+import SimbaTVBanner from "@/components/SimbaTVBanner";
 import SponsorsLogos from "@/components/SponsorsLogos";
 import TitleParagraph from "@/components/TitleParagraph";
 import LatestNewsGrid from "@/components/LatestNewsGrid";
@@ -23,6 +24,7 @@ const RenderFlexibleContent: FC = () => {
 	const componentMapping: any = {
 		[`${FlexibleContent}_Hero`]: Hero,
 		[`${FlexibleContent}_VisitStore`]: VisitStore,
+		[`${FlexibleContent}_SimbatvBanner`]: SimbaTVBanner,
 		[`${FlexibleContent}_SponsorsLogos`]: SponsorsLogos,
 		[`${FlexibleContent}_TitleParagraph`]: TitleParagraph,
 		[`${FlexibleContent}_LatestNewsGrid`]: LatestNewsGrid,
