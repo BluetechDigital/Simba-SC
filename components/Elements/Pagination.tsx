@@ -32,7 +32,7 @@ const Pagination: FC<IPagination> = ({
 	const totalPages = Math.ceil(contentArray?.length / itemsPerPage);
 
 	// Styling
-	const buttonStyling: string = `flex items-center justify-center cursor-pointer mx-auto lg:mx-0 group relative gap-3 px-6 py-2 font-semibold tracking-widest text-tiny w-fit border-2 border-solid border-black hover:bg-primary-two hover:border-primary-two transition-all ease-in-out duration-500 text-black hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-white hover:before:bg-primary-two after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-primary-two`;
+	const buttonStyling: string = `flex items-center justify-center cursor-pointer mx-auto lg:mx-0 group relative gap-3 px-6 py-2 font-semibold tracking-widest text-tiny w-fit border-2 border-solid border-black hover:bg-primary-two hover:border-primary-two transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-white hover:before:bg-primary-two after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-primary-two`;
 
 	const handleNextPage = () => {
 		if (currentPage < totalPages) {
@@ -170,7 +170,7 @@ const Pagination: FC<IPagination> = ({
 								</span>
 								<span>Previous</span>
 							</motion.button>
-							<span className="text-center text-tiny font-semibold leading-tight text-black">{`Page ${currentPage} of ${totalPages}`}</span>
+							<span className="text-center text-tiny font-semibold leading-tight text-pureBlack">{`Page ${currentPage} of ${totalPages}`}</span>
 							<motion.button
 								initial={initialTwo}
 								whileInView={fadeIn}

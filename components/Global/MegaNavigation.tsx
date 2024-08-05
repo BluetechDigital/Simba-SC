@@ -13,6 +13,11 @@ import {motion} from "framer-motion";
 import {FC, Fragment, useState} from "react";
 import {useGlobalContext} from "@/context/global";
 import {IMegaNavigation} from "@/types/components/Global";
+
+// Styling
+import styles from "@/styles/components/Elements/NavigationMenu.module.scss";
+
+// Components
 import MegaNavVideoWrapper from "@/components/Elements/MegaNavVideoWrapper";
 
 const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
@@ -127,7 +132,13 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 
 	return (
 		<>
-			<div className={menuActive ? "megaMenu-active" : "megaMenu hidden"}>
+			<div
+				className={
+					menuActive
+						? styles.megaNavigation + " megaMenu-active"
+						: styles.megaNavigation + " megaMenu hidden"
+				}
+			>
 				<div
 					className="megaMenu-content overflow-y-visible overflow-x-hidden min-h-screen h-full w-full py-20 px-10 flex flex-col bg-cover bg-no-repeat bg-center"
 					style={{
@@ -172,7 +183,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																aboutTheClubSublinksOpen
 																	? "text-tertiary-two"
 																	: "text-white"
-															} font-OnestBlack cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-black text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase`}
+															} font-OnestBlack cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-pureBlack text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase`}
 														>
 															{item?.node?.label}
 														</motion.span>
@@ -218,7 +229,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																										: "_self"
 																								}`}
 																								aria-label={`${item?.node?.label}`}
-																								className="font-OnestRegular font-normal leading-none text-white hover:text-black text-lg text-center"
+																								className="font-OnestRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center"
 																							>
 																								{item?.node?.label}
 																							</Link>
@@ -247,7 +258,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																newsSublinksOpen
 																	? "text-tertiary-two"
 																	: "text-white"
-															} font-OnestBlack cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-black text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase`}
+															} font-OnestBlack cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-pureBlack text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase`}
 														>
 															{item?.node?.label}
 														</motion.span>
@@ -292,7 +303,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																										: "_self"
 																								}`}
 																								aria-label={`${item?.node?.label}`}
-																								className="font-OnestRegular font-normal leading-none text-white hover:text-black text-lg text-center"
+																								className="font-OnestRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center"
 																							>
 																								{item?.node?.label}
 																							</Link>
@@ -321,7 +332,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																fansSublinksOpen
 																	? "text-tertiary-two"
 																	: "text-white"
-															} font-OnestBlack cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-black text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase`}
+															} font-OnestBlack cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-pureBlack text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase`}
 														>
 															{item?.node?.label}
 														</motion.span>
@@ -366,7 +377,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																										: "_self"
 																								}`}
 																								aria-label={`${item?.node?.label}`}
-																								className="font-OnestRegular font-normal leading-none text-white hover:text-black text-lg text-center"
+																								className="font-OnestRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center"
 																							>
 																								{item?.node?.label}
 																							</Link>
@@ -395,7 +406,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																communitySublinksOpen
 																	? "text-tertiary-two"
 																	: "text-white"
-															} font-OnestBlack cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-black text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase`}
+															} font-OnestBlack cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-pureBlack text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase`}
 														>
 															{item?.node?.label}
 														</motion.span>
@@ -441,7 +452,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																										: "_self"
 																								}`}
 																								aria-label={`${item?.node?.label}`}
-																								className="font-OnestRegular font-normal leading-none text-white hover:text-black text-lg text-center"
+																								className="font-OnestRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center"
 																							>
 																								{item?.node?.label}
 																							</Link>
@@ -470,7 +481,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																ourHistorySublinksOpen
 																	? "text-tertiary-two"
 																	: "text-white"
-															} font-OnestBlack cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-black text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase`}
+															} font-OnestBlack cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-pureBlack text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase`}
 														>
 															{item?.node?.label}
 														</motion.span>
@@ -516,7 +527,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																										: "_self"
 																								}`}
 																								aria-label={`${item?.node?.label}`}
-																								className="font-OnestRegular font-normal leading-none text-white hover:text-black text-lg text-center"
+																								className="font-OnestRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center"
 																							>
 																								{item?.node?.label}
 																							</Link>
@@ -545,7 +556,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																benjaminMkapaStadiumSublinksOpen
 																	? "text-tertiary-two"
 																	: "text-white"
-															} font-OnestBlack cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-black text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase`}
+															} font-OnestBlack cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-pureBlack text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase`}
 														>
 															{item?.node?.label}
 														</motion.span>
@@ -591,7 +602,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																										: "_self"
 																								}`}
 																								aria-label={`${item?.node?.label}`}
-																								className="font-OnestRegular font-normal leading-none text-white hover:text-black text-lg text-center"
+																								className="font-OnestRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center"
 																							>
 																								{item?.node?.label}
 																							</Link>
@@ -620,7 +631,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																partnershipsAdvertisingSublinksOpen
 																	? "text-tertiary-two"
 																	: "text-white"
-															} font-OnestBlack cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-black text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase`}
+															} font-OnestBlack cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-pureBlack text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase`}
 														>
 															{item?.node?.label}
 														</motion.span>
@@ -667,7 +678,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																										: "_self"
 																								}`}
 																								aria-label={`${item?.node?.label}`}
-																								className="font-OnestRegular font-normal leading-none text-white hover:text-black text-lg text-center"
+																								className="font-OnestRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center"
 																							>
 																								{item?.node?.label}
 																							</Link>
@@ -729,7 +740,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																			: "_self"
 																	}`}
 																	aria-label={`${item?.node?.label}`}
-																	className="font-OnestRegular font-normal leading-none text-white hover:text-black text-lg text-center"
+																	className="font-OnestRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center"
 																>
 																	{item?.node?.label}
 																</Link>
@@ -774,7 +785,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																			: "_self"
 																	}`}
 																	aria-label={`${item?.node?.label}`}
-																	className="font-OnestRegular font-normal leading-none text-white hover:text-black text-lg text-center"
+																	className="font-OnestRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center"
 																>
 																	{item?.node?.label}
 																</Link>
@@ -820,7 +831,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																			: "_self"
 																	}`}
 																	aria-label={`${item?.node?.label}`}
-																	className="font-OnestRegular font-normal leading-none text-white hover:text-black text-lg text-center"
+																	className="font-OnestRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center"
 																>
 																	{item?.node?.label}
 																</Link>
@@ -887,7 +898,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																			: "_self"
 																	}`}
 																	aria-label={`${item?.node?.label}`}
-																	className="font-OnestRegular font-normal leading-none text-white hover:text-black text-lg text-center"
+																	className="font-OnestRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center"
 																>
 																	{item?.node?.label}
 																</Link>
@@ -932,7 +943,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																			: "_self"
 																	}`}
 																	aria-label={`${item?.node?.label}`}
-																	className="font-OnestRegular font-normal leading-none text-white hover:text-black text-lg text-center"
+																	className="font-OnestRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center"
 																>
 																	{item?.node?.label}
 																</Link>
@@ -978,7 +989,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																			: "_self"
 																	}`}
 																	aria-label={`${item?.node?.label}`}
-																	className="font-OnestRegular font-normal leading-none text-white hover:text-black text-lg text-center"
+																	className="font-OnestRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center"
 																>
 																	{item?.node?.label}
 																</Link>
@@ -1024,7 +1035,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																			: "_self"
 																	}`}
 																	aria-label={`${item?.node?.label}`}
-																	className="font-OnestRegular font-normal leading-none text-white hover:text-black text-lg text-center"
+																	className="font-OnestRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center"
 																>
 																	{item?.node?.label}
 																</Link>
@@ -1081,7 +1092,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 														target={`${
 															item?.node?.target ? item?.node?.target : "_self"
 														}`}
-														className="font-OnestBlack font-extrabold tracking-none leading-none text-tertiary-two hover:text-black text-5xl text-center uppercase"
+														className="font-OnestBlack font-extrabold tracking-none leading-none text-tertiary-two hover:text-pureBlack text-5xl text-center uppercase"
 													>
 														{item?.node?.label}
 													</Link>
@@ -1130,9 +1141,9 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 													<motion.li
 														custom={index}
 														initial={initial}
+														className="self-end"
 														whileInView="animate"
 														variants={navigationMenuStaggerChildren}
-														className="self-end"
 													>
 														<Link
 															onClick={resetMenu}
@@ -1143,7 +1154,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 															}`}
 															href={`${item?.node?.url}`}
 															aria-label={`${item?.node?.label}`}
-															className="font-OnestBold leading-none text-white hover:text-black text-xl lg:text-xl text-center"
+															className="font-OnestBold leading-none text-white hover:text-pureBlack text-xl lg:text-xl text-center"
 														>
 															{item?.node?.label}
 														</Link>

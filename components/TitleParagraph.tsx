@@ -26,7 +26,7 @@ const TitleParagraph: FC<ITitleParagraph> = ({
 					viewport={{once: true}}
 					className={
 						title
-							? "mb-10 text-center font-semibold leading-tight text-4xl lg:text-5xl text-black"
+							? "mb-10 text-center font-semibold leading-tight text-4xl lg:text-5xl text-pureBlack"
 							: "hidden"
 					}
 				>
@@ -36,7 +36,7 @@ const TitleParagraph: FC<ITitleParagraph> = ({
 					content={paragraph}
 					tailwindStyling={
 						paragraph
-							? `lg:max-w-6xl mx-auto mb-10 text-black leading-[1.75rem] text-paragraph text-center ${
+							? `lg:max-w-6xl mx-auto mb-10 text-pureBlack leading-[1.75rem] text-paragraph text-center ${
 									displayParagraph ? "lg:text-center" : "lg:text-left"
 							  }`
 							: "hidden"

@@ -266,11 +266,11 @@ const NewsSingle: FC<INewsSingle> = ({
 						<article>
 							<Paragraph
 								content={boldParagraph}
-								tailwindStyling="lg:max-w-4xl mx-auto lg:mx-0 text-left text-black text-paragraph font-semibold"
+								tailwindStyling="lg:max-w-4xl mx-auto lg:mx-0 text-left text-pureBlack text-paragraph font-semibold"
 							/>
 							<Paragraph
 								content={paragraph}
-								tailwindStyling="lg:max-w-4xl mx-auto lg:mx-0 text-left text-black text-paragraph"
+								tailwindStyling="lg:max-w-4xl mx-auto lg:mx-0 text-left text-pureBlack text-paragraph"
 							/>
 						</article>
 					</div>
@@ -282,7 +282,7 @@ const NewsSingle: FC<INewsSingle> = ({
 								variants={stagger}
 								whileInView="animate"
 								viewport={{once: true}}
-								className="my-4 lg:mb-0 text-2xl font-semibold text-black text-center lg:text-left"
+								className="my-4 lg:mb-0 text-2xl font-semibold text-pureBlack text-center lg:text-left"
 							>
 								Latest Articles
 							</motion.h3>

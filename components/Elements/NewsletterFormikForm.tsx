@@ -144,7 +144,7 @@ const NewsletterFormikForm: FC<INewsletterFormikForm> = ({
 						initial={initialTwo}
 						whileInView={fadeIn}
 						viewport={{once: true}}
-						className="my-2 text-xl font-bold text-center lg:text-left text-black"
+						className="my-2 text-xl font-bold text-center lg:text-left text-pureBlack"
 					>
 						{formTitle}
 					</motion.h3>
@@ -152,7 +152,7 @@ const NewsletterFormikForm: FC<INewsletterFormikForm> = ({
 
 				<Paragraph
 					content={textarea}
-					tailwindStyling="mb-2 lg:max-w-3xl mx-auto text-black text-base text-center lg:text-left"
+					tailwindStyling="mb-2 lg:max-w-3xl mx-auto text-pureBlack text-base text-center lg:text-left"
 				/>
 
 				<motion.div

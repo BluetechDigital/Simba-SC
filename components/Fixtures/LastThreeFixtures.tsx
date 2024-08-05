@@ -85,7 +85,7 @@ const LastThreeFixtures: FC<ILastThreeFixtures> = ({title}) => {
 												fill="currentFill"
 											/>
 										</svg>
-										<p className="font-bold font-OnestThin text-paragraph text-black">
+										<p className="font-bold font-OnestThin text-paragraph text-pureBlack">
 											Loading...
 										</p>
 									</div>

@@ -86,7 +86,7 @@ const Navbar: FC = () => {
 																	: "_self"
 															}`}
 															aria-label={`${item?.node?.label}`}
-															className="font-OnestBold font-extrabold text-black hover:text-primary-default tracking-[-0.02rem] text-lg text-center uppercase transition-all ease-in-out duration-500"
+															className="font-OnestBold font-extrabold text-pureBlack hover:text-primary-default tracking-[-0.02rem] text-lg text-center uppercase transition-all ease-in-out duration-500"
 														>
 															{item?.node?.label}
 														</Link>

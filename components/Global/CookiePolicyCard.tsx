@@ -46,14 +46,14 @@ const CookiePolicyCard: FC = () => {
 							initial={initial}
 							whileInView={fadeInUp}
 							viewport={{once: true}}
-							className="lg:min-w-[10rem] font-bold font-OnestBold text-5xl uppercase tracking-tight text-black leading-none text-center lg:text-left"
+							className="lg:min-w-[10rem] font-bold font-OnestBold text-5xl uppercase tracking-tight text-pureBlack leading-none text-center lg:text-left"
 						>
 							Our Cookie Policies
 						</motion.h3>
 						<div className="flex flex-col lg:flex-row items-center justify-between gap-6 w-full">
 							<Paragraph
 								content={`<p>This website uses cookies to enhance the user experience and ensure the proper functioning of the site. By using this website, you agree to the use of cookies in accordance with this <a href="/cookie-policy">Cookie Policy</a>.</p>`}
-								tailwindStyling="w-full lg:w-2/3 py-0 text-base text-center lg:text-left text-black"
+								tailwindStyling="w-full lg:w-2/3 py-0 text-base text-center lg:text-left text-pureBlack"
 							/>
 							<motion.div
 								initial={initial}
@@ -89,7 +89,7 @@ const CookiePolicyCard: FC = () => {
 								initial={initial}
 								whileInView={fadeInUp}
 								viewport={{once: true}}
-								className="font-bold font-OnestBold text-4xl sm:text-5xl uppercase tracking-tight text-black leading-tight text-center lg:text-left"
+								className="font-bold font-OnestBold text-4xl sm:text-5xl uppercase tracking-tight text-pureBlack leading-tight text-center lg:text-left"
 							>
 								Discover Highlights & More
 							</motion.h3>

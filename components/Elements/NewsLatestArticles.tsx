@@ -83,7 +83,7 @@ const NewsLatestArticles: FC<INewsLatestArticles> = ({
 						initial={initial}
 						whileInView={fadeInUp}
 						viewport={{once: true}}
-						className="text-sm text-black"
+						className="text-sm text-pureBlack"
 					>
 						{dateFormat(date, "dddd, mmmm d, yyyy")}
 					</motion.span>
@@ -92,7 +92,7 @@ const NewsLatestArticles: FC<INewsLatestArticles> = ({
 					initial={initial}
 					whileInView={fadeInUp}
 					viewport={{once: true}}
-					className="mb-2 text-lg font-semibold text-black transition-all ease-in-out duration-200 hover:text-primary-two"
+					className="mb-2 text-lg font-semibold text-pureBlack transition-all ease-in-out duration-200 hover:text-primary-two"
 				>
 					{title}
 				</motion.h4>
