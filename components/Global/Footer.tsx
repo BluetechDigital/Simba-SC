@@ -102,20 +102,70 @@ const Footer: FC = () => {
 						)}
 					</motion.ul>
 				</div>
-				<div className="py-4 border-b border-darkGrey" />
-				<div className="flex flex-wrap items-center justify-between py-2">
+				<div className="py-2 border-b border-primary-default" />
+				<div className="w-full grid grid-cols-1 lg:grid-cols-3 items-center justify-between py-2">
 					<motion.div
 						initial={initialTwo}
 						viewport={{once: true}}
 						whileInView={fadeIn}
-						className="w-auto p-3"
+						className="w-full flex flex-col sm:flex-row  items-center justify-start p-3"
 					>
 						<Paragraph
 							content={globalContext?.themesOptionsContent?.copyrightText}
 							tailwindStyling="font-OnestRegular max-w-lg mx-auto lg:mx-0 text-pureBlack text-tiny text-center lg:text-left"
 						/>
 					</motion.div>
-					<div className="w-auto p-3">
+					<motion.ul
+						initial={initial}
+						variants={stagger}
+						whileInView="animate"
+						viewport={{once: true}}
+						className="w-full p-3 flex flex-col sm:flex-row  items-center justify-center gap-4"
+					>
+						{globalContext?.themesOptionsContent?.simbaApps?.length > 0 ? (
+							globalContext?.themesOptionsContent?.simbaApps?.map(
+								(item: any, index: number) => (
+									<Fragment key={index}>
+										<motion.li
+											custom={index}
+											initial={initial}
+											whileInView="animate"
+											viewport={{once: true}}
+											variants={arrayLoopStaggerChildren}
+										>
+											<Link
+												href={`${item?.link?.url}`}
+												aria-label={`${item?.link?.label}`}
+												target={`${
+													item?.link?.target ? item?.link?.target : "_self"
+												}`}
+												className="font-OnestRegular text-pureBlack transition-all duration-200 ease-in-out text-tiny hover:text-primary-default"
+											>
+												<Image
+													width={
+														item?.image?.mediaDetails?.width
+															? item?.image?.mediaDetails?.width
+															: 500
+													}
+													height={
+														item?.image?.mediaDetails?.height
+															? item?.image?.mediaDetails?.height
+															: 500
+													}
+													src={item?.image?.sourceUrl}
+													alt={`${item?.image?.altText}`}
+													className="object-contain object-center w-full h-[40px]"
+												/>
+											</Link>
+										</motion.li>
+									</Fragment>
+								)
+							)
+						) : (
+							<></>
+						)}
+					</motion.ul>
+					<div className="w-full flex flex-col sm:flex-row items-center justify-end p-3">
 						<Link
 							target="_blank"
 							href={`https://bluetech-digital.co.uk`}
@@ -132,7 +182,7 @@ const Footer: FC = () => {
 								/>
 								<Paragraph
 									content={`BluetechDigital`}
-									tailwindStyling="font-OnestBold max-w-lg mx-auto lg:mx-0 text-base text-center lg:text-left"
+									tailwindStyling="font-OnestRegular max-w-lg mx-auto lg:mx-0 text-tiny text-center lg:text-left"
 								/>
 							</span>
 						</Link>

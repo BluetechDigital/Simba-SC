@@ -112,6 +112,23 @@ export type IThemesOptionsContent = {
 	phoneNumberTwo: string;
 	displayNoticeBanner: boolean;
 	noticeBannerTextarea: string;
+	simbaApps: [
+		{
+			link: {
+				url: string;
+				title: string;
+				target: string;
+			};
+			image: {
+				altText: string;
+				sourceUrl: string;
+				mediaDetails: {
+					width: number;
+					height: number;
+				};
+			};
+		}
+	];
 	newsletter: {
 		title: string;
 		paragraph: string;
