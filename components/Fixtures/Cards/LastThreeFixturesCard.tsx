@@ -14,39 +14,37 @@ const LastThreeFixturesCard: FC<ILastThreeFixturesCard> = ({
 }) => {
 	return (
 		<>
-			<div className="flex flex-col items-center justify-center gap-5">
+			<div className="flex flex-col items-center justify-center gap-5 bg-pureBlack py-10">
 				<motion.div
 					initial={initial}
 					whileInView={fadeInUp}
 					viewport={{once: true}}
 				>
 					<Image
-						priority
 						width={1000}
 						height={1000}
 						src={league?.logo}
 						alt={`${league?.name} league Logo`}
-						className="object-contain object-center w-full h-[75px]"
+						className="object-contain object-center w-full h-[50px]"
 					/>
 				</motion.div>
 				<div className="flex items-center justify-center gap-12 lg:gap-12">
 					<div className="flex flex-col items-center justify-center gap-2">
 						<Image
-							priority
 							width={1000}
 							height={1000}
 							src={teams?.home?.logo}
 							alt={`${teams?.home?.name} club Logo`}
 							className="object-contain object-center w-full h-[75px]"
 						/>
-						<span className="text-pureBlack text-base font-OnestRegular text-center">
+						<span className="text-white text-base font-OnestBold text-center uppercase">
 							{teams?.home?.name}
 						</span>
-						<span className="text-pureBlack text-base font-OnestRegular text-center">
+						<span className="text-white text-base font-OnestRegular text-center">
 							{teams?.home?.winner}
 						</span>
 					</div>
-					<div className="bg-pureBlack p-4 rounded-lg flex items-center justify-center gap-2">
+					<div className="p-4 flex items-center justify-center gap-2">
 						<motion.span
 							initial={initial}
 							whileInView={fadeInUp}
@@ -69,26 +67,25 @@ const LastThreeFixturesCard: FC<ILastThreeFixturesCard> = ({
 					</div>
 					<div className="flex flex-col items-center justify-center gap-2">
 						<Image
-							priority
 							width={1000}
 							height={1000}
 							src={teams?.away?.logo}
 							alt={`${teams?.away?.name} club Logo`}
 							className="object-contain object-center w-[65px] md:w-[75px] h-[60px] sm:h-[65px] lg:h-[75px]"
 						/>
-						<span className="text-pureBlack text-base font-OnestRegular text-center">
+						<span className="text-white text-base font-OnestBold text-center uppercase">
 							{teams?.away?.name}
 						</span>
-						<span className="text-pureBlack text-base font-OnestRegular text-center">
+						<span className="text-white text-base font-OnestRegular text-center">
 							{teams?.away?.winner}
 						</span>
 					</div>
 				</div>
 				<div className="flex items-center justify-center gap-1">
-					<span className="text-pureBlack text-base font-OnestRegular text-center">
+					<span className="text-white text-base font-OnestRegular text-center">
 						{league?.name},
 					</span>
-					<span className="text-pureBlack text-base font-OnestRegular text-center">
+					<span className="text-white text-base font-OnestRegular text-center">
 						{dateFormat(date, "dddd, mmmm d, yyyy")}
 					</span>
 				</div>

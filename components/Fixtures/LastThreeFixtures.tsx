@@ -12,7 +12,7 @@ import {useGlobalContext} from "@/context/global";
 import {ILastThreeFixtures} from "@/types/components";
 
 // Components
-import LastThreeFixturesCard from "@/components/Cards/LastThreeFixturesCard";
+import LastThreeFixturesCard from "@/components/Fixtures/Cards/LastThreeFixturesCard";
 
 const LastThreeFixtures: FC<ILastThreeFixtures> = ({title}) => {
 	const globalContext = useGlobalContext();
@@ -40,7 +40,7 @@ const LastThreeFixtures: FC<ILastThreeFixtures> = ({title}) => {
 						>
 							{title}
 						</motion.h3>
-						<div className="py-10 grid grid-cols-1 lg:grid-cols-3 gap-4 items-center justify-center lg:gap-10">
+						<div className="py-4 grid grid-cols-1 lg:grid-cols-3 gap-4 items-center justify-center lg:gap-4">
 							<Suspense fallback={"...Loading"}>
 								{globalContext?.lastThreeFixtures?.response?.length > 0 ? (
 									globalContext?.lastThreeFixtures?.response?.map(

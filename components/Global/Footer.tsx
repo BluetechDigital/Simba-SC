@@ -72,7 +72,7 @@ const Footer: FC = () => {
 						variants={stagger}
 						whileInView="animate"
 						viewport={{once: true}}
-						className="flex flex-col lg:flex-row items-center justify-center lg:-m-6 px-6 lg:py-2 gap-6"
+						className="flex flex-col lg:flex-row items-center justify-center lg:-m-5 px-6 lg:py-2 gap-6"
 					>
 						{globalContext?.copyrightLinks?.length > 0 ? (
 							globalContext?.copyrightLinks?.map((item: any, index: number) => (
