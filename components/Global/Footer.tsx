@@ -31,13 +31,13 @@ const Footer: FC = () => {
 		>
 			<div className="min-h-[50vh]"></div>
 			<div className="lg:container mx-auto px-4 py-10 lg:pb-2">
-				<div className="flex flex-col lg:flex-row lg:items-center justify-between gap-10 lg:gap-8">
+				<div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 lg:gap-8">
 					<motion.ul
 						initial={initial}
 						variants={stagger}
 						whileInView="animate"
 						viewport={{once: true}}
-						className="w-full lg:max-w-3xl flex flex-col lg:flex-row items-center justify-center lg:justify-start lg:-m-5 px-6 py-2 gap-6"
+						className="w-full lg:max-w-3xl flex flex-col lg:flex-row items-center justify-center lg:justify-start lg:-m-5 px-6 lg:py-2 gap-6"
 					>
 						{globalContext?.megaNavigationUsefulSublinks?.length > 0 ? (
 							globalContext?.megaNavigationUsefulSublinks?.map(
@@ -72,7 +72,7 @@ const Footer: FC = () => {
 						variants={stagger}
 						whileInView="animate"
 						viewport={{once: true}}
-						className="flex flex-col lg:flex-row items-center justify-center lg:-m-6 gap-2 sm:gap-6 p-6"
+						className="flex flex-col lg:flex-row items-center justify-center lg:-m-6 px-6 lg:py-2 gap-6"
 					>
 						{globalContext?.copyrightLinks?.length > 0 ? (
 							globalContext?.copyrightLinks?.map((item: any, index: number) => (
@@ -90,7 +90,7 @@ const Footer: FC = () => {
 											target={`${
 												item?.node?.target ? item?.node?.target : "_self"
 											}`}
-											className="font-OnestRegular text-pureBlack transition-all duration-200 ease-in-out text-center lg:text-right text-tiny hover:text-primary-default"
+											className="font-OnestBold text-pureBlack transition-all duration-200 ease-in-out text-center lg:text-right text-xl lg:text-tiny hover:text-primary-default"
 										>
 											{item?.node?.label}
 										</Link>
@@ -102,7 +102,7 @@ const Footer: FC = () => {
 						)}
 					</motion.ul>
 				</div>
-				<div className="my-10 lg:my-0 py-2 border-b border-primary-default" />
+				<div className="my-10 lg:my-0 py-4 border-b border-primary-default" />
 				<div className="w-full grid grid-cols-1 lg:grid-cols-3 items-center justify-between py-2">
 					<motion.div
 						initial={initialTwo}
@@ -189,12 +189,6 @@ const Footer: FC = () => {
 					</div>
 				</div>
 			</div>
-			<div
-				className="h-[10px] bg-no-repeat bg-cover bg-center"
-				style={{
-					backgroundImage: `url("/svg/background/stacked-steps-haikei-red.svg")`,
-				}}
-			></div>
 		</footer>
 	);
 };
