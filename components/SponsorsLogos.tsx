@@ -1,9 +1,7 @@
 // Imports
 import {
-	fadeIn,
 	initial,
 	stagger,
-	initialTwo,
 	arrayLoopStaggerChildren,
 } from "@/animations/animations";
 import Image from "next/image";
@@ -25,7 +23,7 @@ const SponsorsLogos: FC<ISponsorsLogos> = ({logoGrid}) => {
 							variants={stagger}
 							whileInView="animate"
 							viewport={{once: true}}
-							className="grid items-center justify-center grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-y-4 gap-x-8 lg:justify-between"
+							className="grid items-center justify-center grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-y-2 gap-x-8 lg:justify-between"
 						>
 							{logoGrid?.length > 0 ? (
 								logoGrid?.map((item: any, index: number) => (
@@ -52,7 +50,7 @@ const SponsorsLogos: FC<ISponsorsLogos> = ({logoGrid}) => {
 												}
 												className={
 													item?.image?.sourceUrl
-														? `block w-full lg:h-[125px] object-contain object-center`
+														? `block w-full h-full object-contain object-center`
 														: `hidden`
 												}
 											/>
