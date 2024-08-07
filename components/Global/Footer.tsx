@@ -291,7 +291,7 @@ const Footer: FC = () => {
 					</motion.div>
 				</div>
 				<div className="my-5 lg:my-0 py-1 border-b border-primary-default" />
-				<div className="w-full grid grid-cols-1 lg:grid-cols-3 items-center justify-between py-3 gap-8 lg:gap-4">
+				<div className="w-full grid grid-cols-1 lg:grid-cols-3 items-center justify-between py-2 gap-8 lg:gap-4">
 					<motion.div
 						initial={initialTwo}
 						viewport={{once: true}}
