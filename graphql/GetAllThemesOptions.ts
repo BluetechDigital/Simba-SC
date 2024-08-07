@@ -52,21 +52,6 @@ export const getThemesOptionsContent =
 										title
 										target
 									}
-									simbaApps {
-										link {
-											url
-											title
-											target
-										}
-										image {
-											altText
-											sourceUrl
-											mediaDetails {
-												height
-												width
-											}
-										}
-									}
 									newsletter {
 										title
 										paragraph

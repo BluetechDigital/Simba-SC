@@ -33,7 +33,7 @@ const SponsorsLogos: FC<ISponsorsLogos> = ({title, logoGrid}) => {
 							variants={stagger}
 							whileInView="animate"
 							viewport={{once: true}}
-							className="grid items-center justify-center grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-y-4 gap-x-8 lg:justify-between"
+							className="grid items-center justify-center grid-cols-2 sm:grid-cols-3 lg:grid-cols-8 gap-y-4 gap-x-8 lg:justify-between"
 						>
 							{logoGrid?.length > 0 ? (
 								logoGrid?.map((item: any, index: number) => (
@@ -60,7 +60,7 @@ const SponsorsLogos: FC<ISponsorsLogos> = ({title, logoGrid}) => {
 												}
 												className={
 													item?.image?.sourceUrl
-														? `block w-[150px] h-full sm:w-[150px] lg:w-full lg:h-[200px] object-contain object-center`
+														? `block w-full lg:h-[125px] object-contain object-center`
 														: `hidden`
 												}
 											/>
