@@ -76,7 +76,6 @@ export type ISimbaTVBanner = {
 	};
 };
 export type ISponsorsLogos = {
-	title: string;
 	logoGrid: [
 		{
 			id: string;

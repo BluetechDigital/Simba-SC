@@ -14,26 +14,18 @@ import {ISponsorsLogos} from "@/types/components/index";
 // Components
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 
-const SponsorsLogos: FC<ISponsorsLogos> = ({title, logoGrid}) => {
+const SponsorsLogos: FC<ISponsorsLogos> = ({logoGrid}) => {
 	return (
 		<>
-			<div className="bg-white px-4 py-32 lg:px-10">
+			<div className="bg-white px-4 py-6 lg:px-10">
 				<ScrollYProgressReveal tailwindStyling="container px-0 mx-auto flex flex-col items-center justify-center gap-4">
-					<motion.h2
-						initial={initialTwo}
-						whileInView={fadeIn}
-						viewport={{once: true}}
-						className="mb-20 font-OnestBlack text-center lg:text-left uppercase text-3xl lg:text-5xl tracking-[-0.02rem] text-pureBlack font-semibold leading-tight"
-					>
-						{title}
-					</motion.h2>
-					<div className="max-w-7xl mx-auto">
+					<div className="max-w-3xl mx-auto">
 						<motion.div
 							initial={initial}
 							variants={stagger}
 							whileInView="animate"
 							viewport={{once: true}}
-							className="grid items-center justify-center grid-cols-2 sm:grid-cols-3 lg:grid-cols-8 gap-y-4 gap-x-8 lg:justify-between"
+							className="grid items-center justify-center grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-y-4 gap-x-8 lg:justify-between"
 						>
 							{logoGrid?.length > 0 ? (
 								logoGrid?.map((item: any, index: number) => (

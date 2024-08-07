@@ -56,7 +56,6 @@ export const getAllFlexibleContentComponents = async (
 												... on ${postTypeFlexibleContent}_SponsorsLogos {
 												fieldGroupName
 												displaySection
-												title
 												logoGrid {
 													image {
 														altText
