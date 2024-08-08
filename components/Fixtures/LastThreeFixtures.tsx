@@ -31,7 +31,7 @@ const LastThreeFixtures: FC<ILastThreeFixtures> = ({title}) => {
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="mb-14 font-OnestBlack text-center lg:text-left uppercase text-5xl lg:text-7xl 2xl:text-8xl tracking-[-0.05rem] text-pureBlack font-semibold xl:leading-[3.75rem]"
+							className="mb-8 font-OnestBlack text-center lg:text-left uppercase text-3xl lg:text-5xl tracking-[-0.05rem] text-pureBlack font-semibold xl:leading-[3.75rem]"
 						>
 							{title}
 						</motion.h3>
