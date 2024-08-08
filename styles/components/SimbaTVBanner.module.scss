@@ -4,8 +4,8 @@
 
 .simbaTVBanner {
 	.title {
-		a {
-			@apply underline decoration-primary-two text-primary-two hover:decoration-primary-dark hover:text-primary-dark transition-all duration-500 ease-in-out;
+		span {
+			@apply text-tertiary-default;
 		}
 	}
 }
