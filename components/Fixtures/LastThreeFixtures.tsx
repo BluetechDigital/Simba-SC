@@ -19,28 +19,23 @@ const LastThreeFixtures: FC<ILastThreeFixtures> = ({title}) => {
 
 	return (
 		<>
-			<div
-				className="bg-no-repeat bg-cover bg-center"
-				style={{
-					backgroundImage: `url("/svg/background/low-poly-grid-haikei-lightGreyTwo.svg")`,
-				}}
-			>
-				<div className="container mx-auto px-0">
+			<div className="bg-white">
+				<div className="lg:container mx-auto px-0">
 					<motion.div
 						initial={initial}
 						whileInView={fadeInUp}
 						viewport={{once: true}}
-						className="w-full mx-auto px-4 py-10 lg:p-10 min-h-[25vh] flex flex-col"
+						className="w-full mx-auto px-4 pt-10 pb-10 lg:px-10 min-h-[25vh] flex flex-col"
 					>
 						<motion.h3
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="mb-20 font-OnestBlack text-center lg:text-left uppercase text-3xl lg:text-5xl tracking-[-0.02rem] text-pureBlack font-semibold xl:leading-[3.75rem]"
+							className="mb-14 font-OnestBlack text-center lg:text-left uppercase text-5xl lg:text-7xl 2xl:text-8xl tracking-[-0.05rem] text-pureBlack font-semibold xl:leading-[3.75rem]"
 						>
 							{title}
 						</motion.h3>
-						<div className="py-4 grid grid-cols-1 lg:grid-cols-3 gap-4 items-center justify-center lg:gap-4">
+						<div className="py-0 grid grid-cols-1 lg:grid-cols-3 gap-4 items-center justify-center lg:gap-4">
 							<Suspense fallback={"...Loading"}>
 								{globalContext?.lastThreeFixtures?.response?.length > 0 ? (
 									globalContext?.lastThreeFixtures?.response?.map(
@@ -49,9 +44,9 @@ const LastThreeFixtures: FC<ILastThreeFixtures> = ({title}) => {
 												<motion.div
 													custom={index}
 													initial={initial}
-													className="w-full"
 													whileInView="animate"
 													viewport={{once: true}}
+													className="w-full h-full"
 													variants={arrayLoopStaggerChildren}
 												>
 													<LastThreeFixturesCard

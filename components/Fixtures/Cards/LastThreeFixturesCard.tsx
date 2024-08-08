@@ -14,22 +14,32 @@ const LastThreeFixturesCard: FC<ILastThreeFixturesCard> = ({
 }) => {
 	return (
 		<>
-			<div className="flex flex-col items-center justify-center gap-5 bg-pureBlack py-10">
-				<motion.div
-					initial={initial}
-					whileInView={fadeInUp}
-					viewport={{once: true}}
-				>
-					<Image
-						width={1000}
-						height={1000}
-						src={league?.logo}
-						alt={`${league?.name} league Logo`}
-						className="object-contain object-center w-full h-[50px]"
-					/>
-				</motion.div>
-				<div className="flex items-center justify-center gap-12 lg:gap-12">
-					<div className="flex flex-col items-center justify-center gap-2">
+			<div className="py-5 px-6 w-full h-full flex flex-col items-center lg:items-start justify-center gap-5 bg-lightGrey">
+				<div className="flex items-center justify-center lg:justify-baseline gap-1">
+					<motion.span
+						initial={initial}
+						whileInView={fadeInUp}
+						viewport={{once: true}}
+						className="text-primary-default text-tiny font-OnestBlack text-center uppercase"
+					>
+						Game Day /
+					</motion.span>
+					<motion.span
+						initial={initial}
+						whileInView={fadeInUp}
+						viewport={{once: true}}
+						className="text-pureBlack/35 text-tiny font-OnestBold text-center uppercase"
+					>
+						{dateFormat(date, "mmmm d, yyyy")}
+					</motion.span>
+				</div>
+				<div className="grid grid-cols-3 items-center justify-center gap-12 lg:gap-12">
+					<motion.div
+						initial={initial}
+						whileInView={fadeInUp}
+						viewport={{once: true}}
+						className="flex flex-col items-center justify-center gap-2"
+					>
 						<Image
 							width={1000}
 							height={1000}
@@ -37,35 +47,55 @@ const LastThreeFixturesCard: FC<ILastThreeFixturesCard> = ({
 							alt={`${teams?.home?.name} club Logo`}
 							className="object-contain object-center w-full h-[75px]"
 						/>
-						<span className="text-white text-base font-OnestBold text-center uppercase">
-							{teams?.home?.name}
-						</span>
-						<span className="text-white text-base font-OnestRegular text-center">
-							{teams?.home?.winner}
-						</span>
-					</div>
-					<div className="p-4 flex items-center justify-center gap-2">
 						<motion.span
 							initial={initial}
 							whileInView={fadeInUp}
 							viewport={{once: true}}
-							className="text-white text-2xl font-OnestBlack text-center"
+							className="text-primary-default text-medium font-OnestBlack text-center uppercase italic leading-tight"
+						>
+							{teams?.home?.name}
+						</motion.span>
+						<motion.span
+							initial={initial}
+							whileInView={fadeInUp}
+							viewport={{once: true}}
+							className="text-pureBlack text-tiny font-OnestRegular text-center"
+						>
+							{teams?.home?.winner}
+						</motion.span>
+					</motion.div>
+					<motion.div
+						initial={initial}
+						whileInView={fadeInUp}
+						viewport={{once: true}}
+						className="p-4 grid grid-cols-3 items-center justify-center gap-2"
+					>
+						<motion.span
+							initial={initial}
+							whileInView={fadeInUp}
+							viewport={{once: true}}
+							className="text-pureBlack text-2xl font-OnestBlack text-center"
 						>
 							{goals?.home}
 						</motion.span>
-						<span className="text-white text-2xl font-OnestBlack text-center">
+						<span className="text-pureBlack text-2xl font-OnestBlack text-center">
 							-
 						</span>
 						<motion.span
 							initial={initial}
 							whileInView={fadeInUp}
 							viewport={{once: true}}
-							className="text-white text-2xl font-OnestBlack text-center"
+							className="text-pureBlack text-2xl font-OnestBlack text-center"
 						>
 							{goals?.away}
 						</motion.span>
-					</div>
-					<div className="flex flex-col items-center justify-center gap-2">
+					</motion.div>
+					<motion.div
+						initial={initial}
+						whileInView={fadeInUp}
+						viewport={{once: true}}
+						className="flex flex-col items-center justify-center gap-2"
+					>
 						<Image
 							width={1000}
 							height={1000}
@@ -73,22 +103,32 @@ const LastThreeFixturesCard: FC<ILastThreeFixturesCard> = ({
 							alt={`${teams?.away?.name} club Logo`}
 							className="object-contain object-center w-[65px] md:w-[75px] h-[60px] sm:h-[65px] lg:h-[75px]"
 						/>
-						<span className="text-white text-base font-OnestBold text-center uppercase">
+						<motion.span
+							initial={initial}
+							whileInView={fadeInUp}
+							viewport={{once: true}}
+							className="text-pureBlack text-medium font-OnestBlack text-center uppercase italic leading-tight"
+						>
 							{teams?.away?.name}
-						</span>
-						<span className="text-white text-base font-OnestRegular text-center">
+						</motion.span>
+						<motion.span
+							initial={initial}
+							whileInView={fadeInUp}
+							viewport={{once: true}}
+							className="text-pureBlack text-tiny font-OnestRegular text-center"
+						>
 							{teams?.away?.winner}
-						</span>
-					</div>
+						</motion.span>
+					</motion.div>
 				</div>
-				<div className="flex items-center justify-center gap-1">
-					<span className="text-white text-base font-OnestRegular text-center">
-						{league?.name},
-					</span>
-					<span className="text-white text-base font-OnestRegular text-center">
-						{dateFormat(date, "dddd, mmmm d, yyyy")}
-					</span>
-				</div>
+				<motion.span
+					initial={initial}
+					whileInView={fadeInUp}
+					viewport={{once: true}}
+					className="w-full mx-auto text-pureBlack text-base font-OnestBlack text-center uppercase"
+				>
+					{league?.name}
+				</motion.span>
 			</div>
 		</>
 	);
