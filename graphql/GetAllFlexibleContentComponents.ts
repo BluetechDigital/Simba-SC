@@ -102,6 +102,11 @@ export const getAllFlexibleContentComponents = async (
                   								displaySection
                   								title
                   								paragraph
+												buttonLink {
+                									url
+                									title
+                									target
+                								}
                   								youtubeButton {
                   								  	url
                   								  	title

@@ -1,9 +1,9 @@
 // Imports
 import {
+	IYoutubeVideos,
 	IYoutubeChannel,
 	IYoutubePlaylists,
-	IYoutubeVideos,
-} from "@/types/api/youtube";
+} from "@/types/api/Youtube/index";
 
 // YOUTUBE CONTENT (SIMBA SC)
 // Get Youtube Channel

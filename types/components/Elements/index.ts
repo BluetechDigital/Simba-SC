@@ -6,6 +6,12 @@ export type IParagraph = {
 	content: string;
 	tailwindStyling: string;
 };
+export type ICountUpStats = {
+	number: number;
+	suffix: string;
+	decimals?: number;
+	paragraph: string;
+};
 export type IBackToTopButton = {
 	link: string;
 };

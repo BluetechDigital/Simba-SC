@@ -7,12 +7,12 @@ import {usePageContext} from "@/context/providers/PageContextProvider";
 // Components
 import Hero from "@/components/Hero";
 import VisitStore from "@/components/VisitStore/index";
-import SimbaTVBanner from "@/components/SimbaTVBanner";
 import SponsorsLogos from "@/components/SponsorsLogos";
 import TitleParagraph from "@/components/TitleParagraph";
 import LatestNewsGrid from "@/components/LatestNewsGrid";
 import SocialMediaGrid from "@/components/SocialMediaGrid";
 import NewsletterBanner from "@/components/NewsletterBanner";
+import SimbaTVBanner from "@/components/SimbaTVBanner/index";
 import NewOfficialKitCta from "@/components/NewOfficialKitCta";
 import LastThreeFixtures from "@/components/Fixtures/LastThreeFixtures";
 

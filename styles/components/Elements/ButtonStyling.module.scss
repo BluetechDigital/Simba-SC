@@ -21,3 +21,8 @@
 	@extend .buttonStyling;
 	@apply hover:border-accent-default hover:bg-accent-default;
 }
+
+.buttonStyling-alt-four {
+	@extend .buttonStyling;
+	@apply hover:text-primary-default hover:border-tertiary-default hover:bg-tertiary-default;
+}

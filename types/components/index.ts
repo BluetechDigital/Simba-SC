@@ -51,6 +51,11 @@ export type INewsSingle = {
 export type ISimbaTVBanner = {
 	title: string;
 	paragraph: string;
+	buttonLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
 	youtubeButton: {
 		url: string;
 		title: string;
