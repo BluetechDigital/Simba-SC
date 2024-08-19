@@ -1,3 +1,5 @@
+"use client";
+
 // Imports
 import React, {FC, useEffect, useRef} from "react";
 import {motion, animate, useInView} from "framer-motion";
@@ -36,7 +38,7 @@ const CountUpStats: FC<ICountUpStats> = ({
 					initial={initialTwo}
 					whileInView={fadeIn}
 					viewport={{once: true}}
-					className="font-OnestBlack text-center uppercase text-[12vw] md:text-[5vw] tracking-[-0.02rem] text-white font-semibold"
+					className="font-OnestBlack text-center uppercase text-[16vw] md:text-[5vw] tracking-[-0.02rem] text-white font-semibold"
 				>
 					<span ref={ref}></span>
 					{suffix}

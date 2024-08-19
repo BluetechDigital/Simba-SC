@@ -1,3 +1,5 @@
+"use client";
+
 // Imports
 import {
 	fadeIn,
@@ -161,7 +163,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 								initial={initial}
 								variants={stagger}
 								whileInView="animate"
-								viewport={{once: true}}
+								viewport={{once: false}}
 								className={
 									menuActive
 										? "w-full lg:w-1/2 flex flex-col items-baseline justify-end gap-2"
@@ -804,7 +806,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 											initial={initial}
 											variants={stagger}
 											whileInView="animate"
-											viewport={{once: true}}
+											viewport={{once: false}}
 											className={
 												menuActive
 													? "grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-2 my-6 p-4 border-l-2 border-tertiary-two"
@@ -844,7 +846,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 											)}
 										</motion.ul>
 										<motion.div
-											viewport={{once: true}}
+											viewport={{once: false}}
 											initial={slideInRightInitial}
 											whileInView={slideInRightFinish}
 											className={
@@ -1057,7 +1059,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 							initial={initial}
 							variants={stagger}
 							whileInView="animate"
-							viewport={{once: true}}
+							viewport={{once: false}}
 							className={
 								menuActive
 									? "flex flex-col items-baseline justify-center gap-6"
@@ -1071,7 +1073,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 								initial={initial}
 								variants={stagger}
 								whileInView="animate"
-								viewport={{once: true}}
+								viewport={{once: false}}
 								className="flex flex-col gap-0"
 							>
 								{globalContext?.navbarMenuLinks?.length > 0 ? (
@@ -1109,7 +1111,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 							initial={initial}
 							variants={stagger}
 							whileInView="animate"
-							viewport={{once: true}}
+							viewport={{once: false}}
 							className="flex items-center justify-between gap-10"
 						>
 							<div className="hidden lg:block w-full lg:w-1/4" />
@@ -1127,7 +1129,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 									initial={initial}
 									variants={stagger}
 									whileInView="animate"
-									viewport={{once: true}}
+									viewport={{once: false}}
 									className={
 										menuActive
 											? "w-full lg:w-1/2 flex flex-col items-center justify-end gap-0"

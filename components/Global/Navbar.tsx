@@ -42,7 +42,7 @@ const Navbar: FC = () => {
 					<motion.div
 						initial={initialTwo}
 						whileInView={fadeIn}
-						viewport={{once: true}}
+						viewport={{once: false}}
 						className="w-auto"
 					>
 						<Link href="/" target="_self" aria-label={`Simba SC Homepage Link`}>
@@ -63,7 +63,7 @@ const Navbar: FC = () => {
 									initial={initial}
 									variants={stagger}
 									whileInView="animate"
-									viewport={{once: true}}
+									viewport={{once: false}}
 									className="flex items-center gap-8"
 								>
 									{globalContext?.navbarMenuLinks?.length > 0 ? (
@@ -74,7 +74,7 @@ const Navbar: FC = () => {
 														custom={index}
 														initial={initial}
 														whileInView="animate"
-														viewport={{once: true}}
+														viewport={{once: false}}
 														variants={arrayLoopStaggerChildren}
 														className="hidden lg:block"
 													>
@@ -102,7 +102,7 @@ const Navbar: FC = () => {
 							<motion.div
 								initial={initialTwo}
 								whileInView={fadeIn}
-								viewport={{once: true}}
+								viewport={{once: false}}
 								className="w-auto lg:hidden"
 							>
 								<button
@@ -131,7 +131,7 @@ const Navbar: FC = () => {
 					<motion.div
 						initial={initialTwo}
 						whileInView={fadeIn}
-						viewport={{once: true}}
+						viewport={{once: false}}
 						onClick={handleClick}
 						className="w-auto lg:w-1/12 h-full hidden lg:flex flex-col items-center justify-center cursor-pointer p-4 bg-primary-default hover:bg-primary-dark bg-fill bg-no-repeat bg-center transition-all ease-in-out duration-500"
 						style={{

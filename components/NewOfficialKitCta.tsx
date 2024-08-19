@@ -1,7 +1,6 @@
 // Imports
 import {
 	fadeIn,
-	initial,
 	initialTwo,
 	slideInRightFinish,
 	slideInLeftInitial,

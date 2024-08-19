@@ -25,6 +25,18 @@ export type IHero = {
 		}
 	];
 };
+export type IHeroTwo = {
+	title: string;
+	paragraph: string;
+	backgroundImage: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
+	};
+};
 export type IVisitStore = {
 	title: string;
 	buttonLink: {

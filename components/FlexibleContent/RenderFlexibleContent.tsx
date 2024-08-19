@@ -5,7 +5,8 @@ import React, {FC, Fragment} from "react";
 import {usePageContext} from "@/context/providers/PageContextProvider";
 
 // Components
-import Hero from "@/components/Hero";
+import Hero from "@/components/Hero/index";
+import HeroTwo from "@/components/Hero/HeroTwo";
 import VisitStore from "@/components/VisitStore/index";
 import SponsorsLogos from "@/components/SponsorsLogos";
 import TitleParagraph from "@/components/TitleParagraph";
@@ -23,6 +24,7 @@ const RenderFlexibleContent: FC = () => {
 	// Components Key Value Pairs
 	const componentMapping: any = {
 		[`${FlexibleContent}_Hero`]: Hero,
+		[`${FlexibleContent}_HeroTwo`]: HeroTwo,
 		[`${FlexibleContent}_VisitStore`]: VisitStore,
 		[`${FlexibleContent}_SimbatvBanner`]: SimbaTVBanner,
 		[`${FlexibleContent}_SponsorsLogos`]: SponsorsLogos,
