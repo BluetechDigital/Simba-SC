@@ -11,7 +11,7 @@ const SimbaTVBannerCard: FC = () => {
 	return (
 		<>
 			<ScrollYProgressReveal>
-				<div>Enter</div>
+				<div className=""></div>
 			</ScrollYProgressReveal>
 		</>
 	);

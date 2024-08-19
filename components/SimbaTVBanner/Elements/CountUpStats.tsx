@@ -6,6 +6,7 @@ import {initialTwo, fadeIn} from "@/animations/animations";
 
 // Components
 import Paragraph from "@/components/Elements/Paragraph";
+
 const CountUpStats: FC<ICountUpStats> = ({
 	number,
 	suffix,
@@ -30,19 +31,19 @@ const CountUpStats: FC<ICountUpStats> = ({
 
 	return (
 		<>
-			<div className="flex w-full min-w-72 flex-col items-center py-8 px-8 sm:py-0">
+			<div className="flex w-full min-w-72 flex-col items-center py-8 px-8 sm:py-0 gap-8">
 				<motion.h4
 					initial={initialTwo}
 					whileInView={fadeIn}
 					viewport={{once: true}}
-					className="mb-2 font-OnestBlack text-center uppercase text-3xl lg:text-[5vw] tracking-[-0.02rem] text-white font-semibold"
+					className="font-OnestBlack text-center uppercase text-[12vw] md:text-[5vw] tracking-[-0.02rem] text-white font-semibold"
 				>
 					<span ref={ref}></span>
 					{suffix}
 				</motion.h4>
 				<Paragraph
 					content={paragraph}
-					tailwindStyling="font-OnestRegular leading-tight text-lightGreyTwo text-lg text-center"
+					tailwindStyling="font-OnestBlack uppercase leading-tight text-lightGreyTwo text-paragraph lg:text-lg text-center"
 				/>
 			</div>
 		</>
