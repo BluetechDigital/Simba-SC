@@ -9,20 +9,20 @@ import {IGlobalProps} from "@/types/context/Providers";
 
 // Queries Functions
 import {
-	getMobileLinks,
-	getFansSublinks,
-	getNewsSublinks,
-	getCopyrightLinks,
-	getCareerSublinks,
-	getNavbarMenuLinks,
-	getFooterMenuLinks,
-	getCommunitySublinks,
-	getOurHistorySublinks,
-	getMegaNavigationLinks,
-	getAboutTheClubSublinks,
-	getMegaNavigationUsefulSublinks,
-	getBenjaminMkapaStadiumSublinks,
-	getPartnershipsAdvertisingSublinks,
+	getAllMobileLinks,
+	getAllFansSublinks,
+	getAllNewsSublinks,
+	getAllCopyrightLinks,
+	getAllCareerSublinks,
+	getAllNavbarMenuLinks,
+	getAllFooterMenuLinks,
+	getAllCommunitySublinks,
+	getAllOurHistorySublinks,
+	getAllMegaNavigationLinks,
+	getAllAboutTheClubSublinks,
+	getAllMegaNavigationUsefulSublinks,
+	getAllBenjaminMkapaStadiumSublinks,
+	getAllPartnershipsAdvertisingSublinks,
 } from "@/graphql/GetAllMenuLinks";
 import {getThemesOptionsContent} from "@/graphql/GetAllThemesOptions";
 import {getAllTestimonialsContent} from "@/graphql/GetAllTestimonials";
@@ -40,6 +40,9 @@ import {
 
 // Get All Football Fixtures
 import {getLastThreeFixturesContent} from "@/functions/Football/GetLastThreeFixtures";
+
+// Get All Shopify Online Store
+import {getAllOnlineStoreShirts} from "@/functions/Store/GetAllStoreItems";
 
 // Get All Stakeholders
 import {getAllBoardOfDirectorsContent} from "@/graphql/GetAllStakeholders";
@@ -73,27 +76,30 @@ const App = async ({children}: AppProps | any) => {
 		// Football Fixtures
 		getLastThreeFixturesContent(),
 
+		// Shopify Online Store
+		getAllOnlineStoreShirts(),
+
 		// Website Links
-		getMobileLinks(),
-		getCareerSublinks(),
-		getCopyrightLinks(),
-		getNavbarMenuLinks(),
-		getFooterMenuLinks(),
+		getAllMobileLinks(),
+		getAllCareerSublinks(),
+		getAllCopyrightLinks(),
+		getAllNavbarMenuLinks(),
+		getAllFooterMenuLinks(),
 
 		// Stakeholders
 		getAllBoardOfDirectorsContent(),
 		getAllExecutiveLeadershipsContent(),
 
 		// Mega Menu Links
-		getMegaNavigationLinks(),
-		getMegaNavigationUsefulSublinks(),
-		getNewsSublinks(),
-		getFansSublinks(),
-		getCommunitySublinks(),
-		getOurHistorySublinks(),
-		getAboutTheClubSublinks(),
-		getBenjaminMkapaStadiumSublinks(),
-		getPartnershipsAdvertisingSublinks(),
+		getAllMegaNavigationLinks(),
+		getAllMegaNavigationUsefulSublinks(),
+		getAllNewsSublinks(),
+		getAllFansSublinks(),
+		getAllCommunitySublinks(),
+		getAllOurHistorySublinks(),
+		getAllAboutTheClubSublinks(),
+		getAllBenjaminMkapaStadiumSublinks(),
+		getAllPartnershipsAdvertisingSublinks(),
 	];
 
 	const [
@@ -111,6 +117,9 @@ const App = async ({children}: AppProps | any) => {
 
 		// Football Fixtures
 		lastThreeFixtures,
+
+		// Shopify Online Store
+		onlineStoreShirts,
 
 		// Website Links
 		mobileLinks,
@@ -150,6 +159,9 @@ const App = async ({children}: AppProps | any) => {
 
 		// Football Fixtures
 		lastThreeFixtures: lastThreeFixtures,
+
+		// Shopify Online Store
+		onlineStoreShirts: onlineStoreShirts,
 
 		// Website Links
 		mobileLinks: mobileLinks,

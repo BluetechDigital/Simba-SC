@@ -4,7 +4,7 @@ import {ILinks, IMegaMenuLinks} from "@/types/context/Links";
 
 // NAVIGATION LINKS
 // Navbar Menu Links
-export const getNavbarMenuLinks =
+export const getAllNavbarMenuLinks =
 	async (): Promise<ILinks.INavbarMenuLinks> => {
 		try {
 			const content: any = gql`
@@ -34,7 +34,7 @@ export const getNavbarMenuLinks =
 		}
 	};
 // Mobile Navbar Links
-export const getMobileLinks = async (): Promise<ILinks.IMobileLinks> => {
+export const getAllMobileLinks = async (): Promise<ILinks.IMobileLinks> => {
 	try {
 		const content: any = gql`
 			{
@@ -63,68 +63,73 @@ export const getMobileLinks = async (): Promise<ILinks.IMobileLinks> => {
 	}
 };
 // Career Sublinks
-export const getCareerSublinks = async (): Promise<ILinks.ICareerSublinks> => {
-	try {
-		const content: any = gql`
-			{
-				careerSublinks: menuItems(where: {location: CAREER_LINKS}, first: 10) {
-					edges {
-						node {
-							id
-							url
-							label
+export const getAllCareerSublinks =
+	async (): Promise<ILinks.ICareerSublinks> => {
+		try {
+			const content: any = gql`
+				{
+					careerSublinks: menuItems(
+						where: {location: CAREER_LINKS}
+						first: 10
+					) {
+						edges {
+							node {
+								id
+								url
+								label
+							}
 						}
 					}
 				}
-			}
-		`;
+			`;
 
-		const response: any = await client.query({
-			query: content,
-		});
+			const response: any = await client.query({
+				query: content,
+			});
 
-		return response?.data?.careerSublinks?.edges;
-	} catch (error: unknown) {
-		console.log(error);
-		throw new Error(
-			"Something went wrong trying to fetch career sublinks content"
-		);
-	}
-};
+			return response?.data?.careerSublinks?.edges;
+		} catch (error: unknown) {
+			console.log(error);
+			throw new Error(
+				"Something went wrong trying to fetch career sublinks content"
+			);
+		}
+	};
 // Footer Copyright Links
-export const getCopyrightLinks = async (): Promise<ILinks.ICopyrightLinks> => {
-	try {
-		const content: any = gql`
-			{
-				copyrightLinks: menuItems(
-					where: {location: COPYRIGHT_LINKS}
-					first: 10
-				) {
-					edges {
-						node {
-							id
-							url
-							label
+export const getAllCopyrightLinks =
+	async (): Promise<ILinks.ICopyrightLinks> => {
+		try {
+			const content: any = gql`
+				{
+					copyrightLinks: menuItems(
+						where: {location: COPYRIGHT_LINKS}
+						first: 10
+					) {
+						edges {
+							node {
+								id
+								url
+								label
+							}
 						}
 					}
 				}
-			}
-		`;
+			`;
 
-		const response: any = await client.query({
-			query: content,
-		});
+			const response: any = await client.query({
+				query: content,
+			});
 
-		return response?.data?.copyrightLinks?.edges;
-	} catch (error: unknown) {
-		console.log(error);
-		throw new Error(
-			"Something went wrong trying to fetch copyright links content"
-		);
-	}
-};
+			return response?.data?.copyrightLinks?.edges;
+		} catch (error: unknown) {
+			console.log(error);
+			throw new Error(
+				"Something went wrong trying to fetch copyright links content"
+			);
+		}
+	};
 // Footer Menu Links
-export const getFooterMenuLinks =
+export const getAllFooterMenuLinks =
 	async (): Promise<ILinks.IFooterMenuLinks> => {
 		try {
 			const content: any = gql`
@@ -155,7 +160,7 @@ export const getFooterMenuLinks =
 	};
 
 // MEGA NAVIGATION LINKS
-export const getMegaNavigationLinks =
+export const getAllMegaNavigationLinks =
 	async (): Promise<IMegaMenuLinks.IMegaNavigationLinks> => {
 		try {
 			const content: any = gql`
@@ -189,7 +194,7 @@ export const getMegaNavigationLinks =
 	};
 
 // Mega Navigation Useful Sublinks
-export const getMegaNavigationUsefulSublinks =
+export const getAllMegaNavigationUsefulSublinks =
 	async (): Promise<IMegaMenuLinks.IMegaNavigationUsefulSublinks> => {
 		try {
 			const content: any = gql`
@@ -223,7 +228,7 @@ export const getMegaNavigationUsefulSublinks =
 	};
 
 // About The Club Sublinks
-export const getAboutTheClubSublinks =
+export const getAllAboutTheClubSublinks =
 	async (): Promise<IMegaMenuLinks.IAboutTheClubSublinks> => {
 		try {
 			const content: any = gql`
@@ -257,7 +262,7 @@ export const getAboutTheClubSublinks =
 	};
 
 // News Sublinks
-export const getNewsSublinks =
+export const getAllNewsSublinks =
 	async (): Promise<IMegaMenuLinks.INewsSublinks> => {
 		try {
 			const content: any = gql`
@@ -288,7 +293,7 @@ export const getNewsSublinks =
 	};
 
 // Fans Sublinks
-export const getFansSublinks =
+export const getAllFansSublinks =
 	async (): Promise<IMegaMenuLinks.IFansSublinks> => {
 		try {
 			const content: any = gql`
@@ -319,7 +324,7 @@ export const getFansSublinks =
 	};
 
 // Community Sublinks
-export const getCommunitySublinks =
+export const getAllCommunitySublinks =
 	async (): Promise<IMegaMenuLinks.ICommunitySublinks> => {
 		try {
 			const content: any = gql`
@@ -353,7 +358,7 @@ export const getCommunitySublinks =
 	};
 
 // Our History Sublinks
-export const getOurHistorySublinks =
+export const getAllOurHistorySublinks =
 	async (): Promise<IMegaMenuLinks.IOurHistorySublinks> => {
 		try {
 			const content: any = gql`
@@ -387,7 +392,7 @@ export const getOurHistorySublinks =
 	};
 
 // Benjamin Mkapa Stadium Sublinks
-export const getBenjaminMkapaStadiumSublinks =
+export const getAllBenjaminMkapaStadiumSublinks =
 	async (): Promise<IMegaMenuLinks.IStadiumSublinks> => {
 		try {
 			const content: any = gql`
@@ -421,7 +426,7 @@ export const getBenjaminMkapaStadiumSublinks =
 	};
 
 // Partnerships Advertising Sublinks
-export const getPartnershipsAdvertisingSublinks =
+export const getAllPartnershipsAdvertisingSublinks =
 	async (): Promise<IMegaMenuLinks.IPartnershipsAdvertisingSublinks> => {
 		try {
 			const content: any = gql`

@@ -6,7 +6,7 @@ import {usePageContext} from "@/context/providers/PageContextProvider";
 
 // Components
 import Hero from "@/components/Hero";
-import VisitStore from "@/components/VisitStore";
+import VisitStore from "@/components/VisitStore/index";
 import SimbaTVBanner from "@/components/SimbaTVBanner";
 import SponsorsLogos from "@/components/SponsorsLogos";
 import TitleParagraph from "@/components/TitleParagraph";

@@ -5,6 +5,7 @@ import {
 	IJobsPositions,
 	IThemesOptionsContent,
 } from "@/types/context";
+import {IOnlineStore} from "@/types/api/Store";
 import {IFixtures} from "@/types/context/Fixtures";
 import {IInstagramFeed} from "@/types/context/SocialMedia";
 import {ILinks, IMegaMenuLinks} from "@/types/context/Links";
@@ -58,6 +59,9 @@ export type IGlobalProps = {
 	// Football Fixtures
 	lastThreeFixtures: IFixtures;
 
+	// Shopify Online Store
+	onlineStoreShirts: IOnlineStore.IOnlineStoreShirts;
+
 	// Website Links
 	mobileLinks: ILinks.IMobileLinks;
 	careerSublinks: ILinks.ICareerSublinks;
@@ -95,6 +99,9 @@ export type IGlobalContext = {
 
 	// Football Fixtures
 	lastThreeFixtures: IFixtures;
+
+	// Shopify Online Store
+	onlineStoreShirts: IOnlineStore.IOnlineStoreShirts;
 
 	// Navigation Links
 	mobileLinks: ILinks.IMobileLinks;

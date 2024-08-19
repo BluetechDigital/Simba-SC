@@ -13,7 +13,7 @@ const SponsorsLogos: FC<ISponsorsLogos> = ({logoGrid}) => {
 	return (
 		<>
 			<div className="bg-white px-4 py-6 lg:px-10">
-				<div className="container px-0 mx-auto flex flex-col items-center justify-center gap-4 max-w-3xl mx-auto">
+				<div className="container px-0 mx-auto flex flex-col items-center justify-center gap-4 max-w-3xl">
 					<motion.div
 						initial={initial}
 						variants={stagger}

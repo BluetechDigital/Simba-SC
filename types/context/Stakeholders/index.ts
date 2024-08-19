@@ -1,4 +1,4 @@
-// WEBSITE NEWS AND CASE STUDIES TYPES
+// WEBSITE STAKEHOLDERS TYPES
 export namespace IStakeholders {
 	export type IStakeholders = {
 		node: {

@@ -34,6 +34,9 @@ const GlobalContextProvider: FC<IGlobalContextProvider> = ({
 				// Football Fixtures
 				lastThreeFixtures: globalProps?.lastThreeFixtures,
 
+				// Shopify Online Store
+				onlineStoreShirts: globalProps?.onlineStoreShirts,
+
 				// Website Links
 				mobileLinks: globalProps?.mobileLinks,
 				careerSublinks: globalProps?.careerSublinks,
