@@ -34,7 +34,7 @@ const VisitStoreCard: FC = () => {
 											viewport={{once: true}}
 											custom={item?.id ? item?.id : index}
 											variants={arrayLoopStaggerChildren}
-											className="w-full h-full min-h-[400px] px-5 py-6 bg-white"
+											className="w-full h-full px-5 py-6 bg-white"
 										>
 											<Link
 												target="_blank"
@@ -57,7 +57,7 @@ const VisitStoreCard: FC = () => {
 													}
 													className={
 														item?.image?.sourceUrl
-															? `block w-full h-full min-h-[150px] max-h-[400px] object-cover object-center`
+															? `block w-full h-full min-h-[150px] max-h-[500px] object-cover object-center`
 															: `hidden`
 													}
 												/>
@@ -66,14 +66,26 @@ const VisitStoreCard: FC = () => {
 														initial={initialTwo}
 														whileInView={fadeIn}
 														viewport={{once: true}}
-														className="font-OnestBold text-pureBlack text-lg hover:text-primary-default  transition-all duration-200 ease-in-out"
+														className="font-OnestBold text-pureBlack text-lg tracking-tighter uppercase hover:text-primary-default transition-all duration-200 ease-in-out"
 													>
 														{item?.title}
 													</motion.h5>
-													<div className="flex items-center justify-center gap-[1px] font-OnestRegular text-pureBlack text-paragraph">
+													<div className="flex items-center justify-center gap-[1px] font-OnestBold text-pureBlack text-paragraph">
 														<span>{item?.currency === "USD" ? "$" : "£"}</span>
 														<span>{item?.price}</span>
 													</div>
+													<Link
+														target="_blank"
+														aria-label={`${item?.title}`}
+														href={`store.simbasc.co.tz/${item?.slug}`}
+														className={`${
+															item?.slug
+																? "buttonStyling-alt-two-slim mt-2 mx-auto"
+																: "hidden"
+														}`}
+													>
+														Buy Now
+													</Link>
 												</div>
 											</Link>
 										</motion.li>

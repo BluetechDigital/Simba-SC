@@ -35,12 +35,7 @@ const SocialMediaGrid: FC<ISocialMediaGrid> = ({title}) => {
 					" socialMediaGrid pt-16 pb-10 px-4 lg:px-10 bg-white bg-center bg-no-repeat bg-cover"
 				}
 				style={{
-					backgroundImage: `linear-gradient(
-						0deg,
-						rgba(255, 255, 255, 0.50),
-						rgba(255, 255, 255, 0.85),
-						rgba(255, 255, 255, 0.90)
-					),url("/svg/background/grid-background-12.svg")`,
+					backgroundImage: `linear-gradient(0deg,rgba(255, 255, 255, 0.50),rgba(255, 255, 255, 0.85),rgba(255, 255, 255, 0.90)),url("/svg/background/grid-background-12.svg")`,
 				}}
 			>
 				<ScrollYProgressReveal tailwindStyling="w-full">

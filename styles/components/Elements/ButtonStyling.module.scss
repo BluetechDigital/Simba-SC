@@ -12,6 +12,11 @@
 	@apply border-primary-default bg-primary-default hover:border-primary-dark hover:bg-primary-dark;
 }
 
+.buttonStyling-alt-two-slim {
+	@extend .buttonStyling-alt-two;
+	@apply py-2 px-6;
+}
+
 .buttonStyling-alt-three {
 	@extend .buttonStyling;
 	@apply hover:border-accent-default hover:bg-accent-default;

@@ -5,15 +5,13 @@ import {
 	fadeIn,
 	stagger,
 	initial,
-	fadeInUp,
 	initialTwo,
 	arrayLoopStaggerChildren,
-	navigationMenuStaggerChildren,
 } from "@/animations/animations";
 import Link from "next/link";
 import Image from "next/image";
+import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
-import {FC, Fragment, useState} from "react";
 import {useGlobalContext} from "@/context/global";
 
 // Styling
@@ -291,16 +289,16 @@ const Footer: FC = () => {
 					</motion.div>
 				</div>
 				<div className="my-5 lg:my-0 py-1 border-b border-primary-default" />
-				<div className="w-full grid grid-cols-1 lg:grid-cols-3 items-center justify-between py-2 gap-8 lg:gap-4">
+				<div className="w-full grid grid-cols-1 lg:grid-cols-3 items-center justify-between py-2 gap-4 sm:gap-4 md:gap-8 lg:gap-4">
 					<motion.div
 						initial={initialTwo}
 						viewport={{once: true}}
 						whileInView={fadeIn}
-						className="w-full flex flex-col lg:flex-row items-center justify-center lg:justify-start"
+						className="hidden lg:flex w-full flex-col lg:flex-row items-center justify-center lg:justify-start"
 					>
 						<Paragraph
 							content={globalContext?.themesOptionsContent?.copyrightText}
-							tailwindStyling="font-OnestRegular max-w-lg mx-auto lg:mx-0 text-pureBlack text-xs text-center lg:text-left"
+							tailwindStyling="hidden lg:block font-OnestRegular max-w-lg mx-auto lg:mx-0 text-pureBlack text-xs text-center lg:text-left"
 						/>
 					</motion.div>
 					<motion.ul
@@ -308,7 +306,7 @@ const Footer: FC = () => {
 						variants={stagger}
 						whileInView="animate"
 						viewport={{once: true}}
-						className="w-full flex flex-col lg:flex-row items-center justify-center gap-4"
+						className="w-full flex flex-col sm:flex-row items-center justify-center gap-4"
 					>
 						<Link
 							target="_Blank"
@@ -339,13 +337,13 @@ const Footer: FC = () => {
 							/>
 						</Link>
 					</motion.ul>
-					<div className="w-full flex flex-col lg:flex-row items-center justify-center lg:justify-end gap-6">
+					<div className="w-full flex flex-col lg:flex-row items-center justify-center lg:justify-end gap-4 xl:gap-6">
 						<motion.ul
 							initial={initial}
 							variants={stagger}
 							whileInView="animate"
 							viewport={{once: true}}
-							className="flex flex-col lg:flex-row items-center justify-center lg:-m-5 px-6 lg:py-2 gap-4"
+							className="flex flex-col sm:flex-row items-center justify-center 2xl:-m-5 2xl:px-6 lg:py-2 gap-2 sm:gap-4"
 						>
 							{globalContext?.copyrightLinks?.length > 0 ? (
 								globalContext?.copyrightLinks?.map(
@@ -376,12 +374,16 @@ const Footer: FC = () => {
 								<></>
 							)}
 						</motion.ul>
+						<Paragraph
+							content={globalContext?.themesOptionsContent?.copyrightText}
+							tailwindStyling="block lg:hidden font-OnestRegular max-w-lg mx-auto lg:mx-0 text-pureBlack text-xs text-center lg:text-left"
+						/>
 						<Link
 							target="_blank"
 							href={`https://bluetech-digital.co.uk`}
 							className="lg:inline-block items-center justify-center text-pureBlack hover:text-accent-default hover:underline"
 						>
-							<span className="flex items-center justify-center lg:justify-left gap-2">
+							<span className="flex lg:hidden xl:flex items-center justify-center lg:justify-left gap-2">
 								<Image
 									priority
 									width={500}

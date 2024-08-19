@@ -28,12 +28,7 @@ const SimbaTVBanner: FC<ISimbaTVBanner> = ({
 				" simbaTVBanner py-16 h-full min-h-[50vh] bg-no-repeat bg-cover bg-center"
 			}
 			style={{
-				backgroundImage: `linear-gradient(
-						0deg,
-						rgba(250, 0, 8, 0.50),
-						rgba(250, 0, 8, 0.50),
-						rgba(250, 0, 8, 0.50)
-					),url("${backgroundImage?.sourceUrl}")`,
+				backgroundImage: `linear-gradient(0deg,rgba(250, 0, 8, 0.50),rgba(250, 0, 8, 0.50),rgba(250, 0, 8, 0.50)),url("${backgroundImage?.sourceUrl}")`,
 			}}
 		>
 			<div className="lg:container px-4 mx-auto">
