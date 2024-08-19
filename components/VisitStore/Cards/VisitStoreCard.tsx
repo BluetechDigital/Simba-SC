@@ -20,11 +20,11 @@ const VisitStoreCard: FC = () => {
 	const globalContext = useGlobalContext();
 	return (
 		<>
-			<ul className="py-0 grid grid-cols-1 lg:grid-cols-3 gap-4 items-center justify-center lg:gap-4">
+			<ul className="py-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-center justify-center lg:gap-4">
 				<Suspense fallback={"Loading..."}>
 					{globalContext?.onlineStoreShirts?.length > 0 ? (
 						globalContext?.onlineStoreShirts
-							?.slice(0, 3)
+							?.slice(0, 4)
 							?.map((item: any, index: number) => (
 								<Fragment key={item?.id ? item?.id : index}>
 									<ScrollYProgressReveal>
@@ -57,7 +57,7 @@ const VisitStoreCard: FC = () => {
 													}
 													className={
 														item?.image?.sourceUrl
-															? `block w-full h-full min-h-[150px] max-h-[500px] object-cover object-center`
+															? `block w-full h-full min-h-[250px] max-h-[400px] object-cover object-center`
 															: `hidden`
 													}
 												/>
@@ -66,11 +66,11 @@ const VisitStoreCard: FC = () => {
 														initial={initialTwo}
 														whileInView={fadeIn}
 														viewport={{once: true}}
-														className="font-OnestBold text-pureBlack text-lg tracking-tighter uppercase hover:text-primary-default transition-all duration-200 ease-in-out"
+														className="font-OnestBold text-pureBlack text-lg tracking-tighter  hover:text-primary-default transition-all duration-200 ease-in-out"
 													>
 														{item?.title}
 													</motion.h5>
-													<div className="flex items-center justify-center gap-[1px] font-OnestBold text-pureBlack text-paragraph">
+													<div className="flex items-center justify-center gap-[1px] font-OnestRegular text-pureBlack text-paragraph">
 														<span>{item?.currency === "USD" ? "$" : "£"}</span>
 														<span>{item?.price}</span>
 													</div>
