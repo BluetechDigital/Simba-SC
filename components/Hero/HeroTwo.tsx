@@ -15,11 +15,12 @@ const HeroTwo: FC<IHeroTwo> = ({title, paragraph, backgroundImage}) => {
 		<>
 			<div
 				className={
-					styles.heroTwo + ` relative z-50 w-full pt-[100px] lg:pt-[110px]`
+					styles.heroTwo +
+					` relative z-50 w-full h-fit pt-[120px] lg:pt-[138px] bg-white`
 				}
 			>
 				<div
-					className="py-20 w-full h-[35vh] flex flex-col items-center lg:items-baseline justify-center relative bg-primary-darker bg-center bg-no-repeat bg-cover"
+					className="py-20 w-full h-[30vh] flex flex-col items-center lg:items-baseline justify-center relative bg-primary-darker bg-center bg-no-repeat bg-cover"
 					style={{
 						backgroundImage: `linear-gradient(0deg,rgba(234, 29, 37, 0),rgba(234, 29, 37, 0.5),rgba(234, 29, 37, 0.80)),url("${backgroundImage?.sourceUrl}")`,
 					}}

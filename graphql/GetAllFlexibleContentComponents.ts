@@ -68,7 +68,54 @@ export const getAllFlexibleContentComponents = async (
 												paragraph
 												displayParagraph
 											}
-												... on ${postTypeFlexibleContent}_SponsorsLogos {
+											... on ${postTypeFlexibleContent}_AboutSimba {
+												fieldGroupName
+                  								displaySection
+                  								title
+                  								titleTwo
+												paragraph
+												paragraphTwo
+                  								buttonLink {
+                  								  	url
+                  								  	title
+                  								  	target
+                  								}
+                  								image {
+                  								  	altText
+                  								  	sourceUrl
+                  								  	mediaDetails {
+                  								  	  	height
+                  								  	  	width
+                  								  	}
+                  								}
+											}
+											... on ${postTypeFlexibleContent}_OfficialMembershipsCta {
+												fieldGroupName
+                  								displaySection
+                  								title
+                  								paragraph
+                  								image {
+                  									altText
+                  									sourceUrl
+                  									mediaDetails {
+                  										height
+                  										width
+                  									}
+                  								}
+                  								buttonLink {
+                  									url
+                  									title
+                  									target
+                  								}
+                  								bulletPoints {
+                  								  	point {
+                  								  		url
+                  								  		title
+                  								  		target
+                  								  	}
+                  								}
+											}
+											... on ${postTypeFlexibleContent}_SponsorsLogos {
 												fieldGroupName
 												displaySection
 												logoGrid {

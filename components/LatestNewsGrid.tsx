@@ -83,7 +83,7 @@ const LatestNewsGrid: FC<ILatestNewsGrid> = ({
 								}
 								className={
 									image?.sourceUrl
-										? `bg-white block w-full h-fill max-h-[375px] object-cover object center`
+										? `bg-white w-full h-fill max-h-[375px] object-cover object center`
 										: `hidden`
 								}
 							/>

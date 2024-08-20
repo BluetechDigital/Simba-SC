@@ -287,15 +287,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																			globalContext?.newsSublinks?.map(
 																				(item: any, index: number) => (
 																					<Fragment key={index}>
-																						<motion.li
-																							custom={index}
-																							initial={initial}
-																							whileInView="animate"
-																							viewport={{once: false}}
-																							variants={
-																								navigationMenuStaggerChildren
-																							}
-																						>
+																						<motion.li key={index}>
 																							<Link
 																								onClick={resetMenu}
 																								href={`${item?.node?.url}`}
@@ -361,15 +353,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																			globalContext?.fansSublinks?.map(
 																				(item: any, index: number) => (
 																					<Fragment key={index}>
-																						<motion.li
-																							custom={index}
-																							initial={initial}
-																							whileInView="animate"
-																							viewport={{once: false}}
-																							variants={
-																								navigationMenuStaggerChildren
-																							}
-																						>
+																						<motion.li key={index}>
 																							<Link
 																								onClick={resetMenu}
 																								href={`${item?.node?.url}`}
@@ -436,15 +420,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																			globalContext?.communitySublinks?.map(
 																				(item: any, index: number) => (
 																					<Fragment key={index}>
-																						<motion.li
-																							custom={index}
-																							initial={initial}
-																							whileInView="animate"
-																							viewport={{once: false}}
-																							variants={
-																								navigationMenuStaggerChildren
-																							}
-																						>
+																						<motion.li key={index}>
 																							<Link
 																								onClick={resetMenu}
 																								href={`${item?.node?.url}`}
@@ -511,15 +487,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																			globalContext?.ourHistorySublinks?.map(
 																				(item: any, index: number) => (
 																					<Fragment key={index}>
-																						<motion.li
-																							custom={index}
-																							initial={initial}
-																							whileInView="animate"
-																							viewport={{once: false}}
-																							variants={
-																								navigationMenuStaggerChildren
-																							}
-																						>
+																						<motion.li key={index}>
 																							<Link
 																								onClick={resetMenu}
 																								href={`${item?.node?.url}`}
@@ -586,15 +554,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																			globalContext?.benjaminMkapaStadiumSublinks?.map(
 																				(item: any, index: number) => (
 																					<Fragment key={index}>
-																						<motion.li
-																							custom={index}
-																							initial={initial}
-																							whileInView="animate"
-																							viewport={{once: false}}
-																							variants={
-																								navigationMenuStaggerChildren
-																							}
-																						>
+																						<motion.li key={index}>
 																							<Link
 																								onClick={resetMenu}
 																								href={`${item?.node?.url}`}
@@ -662,15 +622,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 																			globalContext?.partnershipsAdvertisingSublinks?.map(
 																				(item: any, index: number) => (
 																					<Fragment key={index}>
-																						<motion.li
-																							custom={index}
-																							initial={initial}
-																							whileInView="animate"
-																							viewport={{once: false}}
-																							variants={
-																								navigationMenuStaggerChildren
-																							}
-																						>
+																						<motion.li key={index}>
 																							<Link
 																								onClick={resetMenu}
 																								href={`${item?.node?.url}`}
@@ -725,29 +677,21 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 											{globalContext?.aboutTheClubSublinks?.length > 0 ? (
 												globalContext?.aboutTheClubSublinks?.map(
 													(item: any, index: number) => (
-														<Fragment key={index}>
-															<motion.li
-																custom={index}
-																initial={initial}
-																whileInView="animate"
-																viewport={{once: false}}
-																variants={navigationMenuStaggerChildren}
+														<motion.li key={index}>
+															<Link
+																onClick={resetMenu}
+																href={`${item?.node?.url}`}
+																target={`${
+																	item?.node?.target
+																		? item?.node?.target
+																		: "_self"
+																}`}
+																aria-label={`${item?.node?.label}`}
+																className="font-OnestRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center"
 															>
-																<Link
-																	onClick={resetMenu}
-																	href={`${item?.node?.url}`}
-																	target={`${
-																		item?.node?.target
-																			? item?.node?.target
-																			: "_self"
-																	}`}
-																	aria-label={`${item?.node?.label}`}
-																	className="font-OnestRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center"
-																>
-																	{item?.node?.label}
-																</Link>
-															</motion.li>
-														</Fragment>
+																{item?.node?.label}
+															</Link>
+														</motion.li>
 													)
 												)
 											) : (
@@ -770,29 +714,21 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 											{globalContext?.newsSublinks?.length > 0 ? (
 												globalContext?.newsSublinks?.map(
 													(item: any, index: number) => (
-														<Fragment key={index}>
-															<motion.li
-																custom={index}
-																initial={initial}
-																whileInView="animate"
-																viewport={{once: false}}
-																variants={navigationMenuStaggerChildren}
+														<motion.li key={index}>
+															<Link
+																onClick={resetMenu}
+																href={`${item?.node?.url}`}
+																target={`${
+																	item?.node?.target
+																		? item?.node?.target
+																		: "_self"
+																}`}
+																aria-label={`${item?.node?.label}`}
+																className="font-OnestRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center"
 															>
-																<Link
-																	onClick={resetMenu}
-																	href={`${item?.node?.url}`}
-																	target={`${
-																		item?.node?.target
-																			? item?.node?.target
-																			: "_self"
-																	}`}
-																	aria-label={`${item?.node?.label}`}
-																	className="font-OnestRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center"
-																>
-																	{item?.node?.label}
-																</Link>
-															</motion.li>
-														</Fragment>
+																{item?.node?.label}
+															</Link>
+														</motion.li>
 													)
 												)
 											) : (
@@ -816,29 +752,21 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 											{globalContext?.fansSublinks?.length > 0 ? (
 												globalContext?.fansSublinks?.map(
 													(item: any, index: number) => (
-														<Fragment key={index}>
-															<motion.li
-																custom={index}
-																initial={initial}
-																whileInView="animate"
-																viewport={{once: false}}
-																variants={navigationMenuStaggerChildren}
+														<motion.li key={index}>
+															<Link
+																onClick={resetMenu}
+																href={`${item?.node?.url}`}
+																target={`${
+																	item?.node?.target
+																		? item?.node?.target
+																		: "_self"
+																}`}
+																aria-label={`${item?.node?.label}`}
+																className="font-OnestRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center"
 															>
-																<Link
-																	onClick={resetMenu}
-																	href={`${item?.node?.url}`}
-																	target={`${
-																		item?.node?.target
-																			? item?.node?.target
-																			: "_self"
-																	}`}
-																	aria-label={`${item?.node?.label}`}
-																	className="font-OnestRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center"
-																>
-																	{item?.node?.label}
-																</Link>
-															</motion.li>
-														</Fragment>
+																{item?.node?.label}
+															</Link>
+														</motion.li>
 													)
 												)
 											) : (
@@ -883,29 +811,21 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 											{globalContext?.communitySublinks?.length > 0 ? (
 												globalContext?.communitySublinks?.map(
 													(item: any, index: number) => (
-														<Fragment key={index}>
-															<motion.li
-																custom={index}
-																initial={initial}
-																whileInView="animate"
-																viewport={{once: false}}
-																variants={navigationMenuStaggerChildren}
+														<motion.li key={index}>
+															<Link
+																onClick={resetMenu}
+																href={`${item?.node?.url}`}
+																target={`${
+																	item?.node?.target
+																		? item?.node?.target
+																		: "_self"
+																}`}
+																aria-label={`${item?.node?.label}`}
+																className="font-OnestRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center"
 															>
-																<Link
-																	onClick={resetMenu}
-																	href={`${item?.node?.url}`}
-																	target={`${
-																		item?.node?.target
-																			? item?.node?.target
-																			: "_self"
-																	}`}
-																	aria-label={`${item?.node?.label}`}
-																	className="font-OnestRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center"
-																>
-																	{item?.node?.label}
-																</Link>
-															</motion.li>
-														</Fragment>
+																{item?.node?.label}
+															</Link>
+														</motion.li>
 													)
 												)
 											) : (
@@ -928,29 +848,21 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 											{globalContext?.ourHistorySublinks?.length > 0 ? (
 												globalContext?.ourHistorySublinks?.map(
 													(item: any, index: number) => (
-														<Fragment key={index}>
-															<motion.li
-																custom={index}
-																initial={initial}
-																whileInView="animate"
-																viewport={{once: false}}
-																variants={navigationMenuStaggerChildren}
+														<motion.li key={index}>
+															<Link
+																onClick={resetMenu}
+																href={`${item?.node?.url}`}
+																target={`${
+																	item?.node?.target
+																		? item?.node?.target
+																		: "_self"
+																}`}
+																aria-label={`${item?.node?.label}`}
+																className="font-OnestRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center"
 															>
-																<Link
-																	onClick={resetMenu}
-																	href={`${item?.node?.url}`}
-																	target={`${
-																		item?.node?.target
-																			? item?.node?.target
-																			: "_self"
-																	}`}
-																	aria-label={`${item?.node?.label}`}
-																	className="font-OnestRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center"
-																>
-																	{item?.node?.label}
-																</Link>
-															</motion.li>
-														</Fragment>
+																{item?.node?.label}
+															</Link>
+														</motion.li>
 													)
 												)
 											) : (
@@ -974,29 +886,21 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 											0 ? (
 												globalContext?.benjaminMkapaStadiumSublinks?.map(
 													(item: any, index: number) => (
-														<Fragment key={index}>
-															<motion.li
-																custom={index}
-																initial={initial}
-																whileInView="animate"
-																viewport={{once: false}}
-																variants={navigationMenuStaggerChildren}
+														<motion.li key={index}>
+															<Link
+																onClick={resetMenu}
+																href={`${item?.node?.url}`}
+																target={`${
+																	item?.node?.target
+																		? item?.node?.target
+																		: "_self"
+																}`}
+																aria-label={`${item?.node?.label}`}
+																className="font-OnestRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center"
 															>
-																<Link
-																	onClick={resetMenu}
-																	href={`${item?.node?.url}`}
-																	target={`${
-																		item?.node?.target
-																			? item?.node?.target
-																			: "_self"
-																	}`}
-																	aria-label={`${item?.node?.label}`}
-																	className="font-OnestRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center"
-																>
-																	{item?.node?.label}
-																</Link>
-															</motion.li>
-														</Fragment>
+																{item?.node?.label}
+															</Link>
+														</motion.li>
 													)
 												)
 											) : (
@@ -1020,29 +924,21 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 											0 ? (
 												globalContext?.partnershipsAdvertisingSublinks?.map(
 													(item: any, index: number) => (
-														<Fragment key={index}>
-															<motion.li
-																custom={index}
-																initial={initial}
-																whileInView="animate"
-																viewport={{once: false}}
-																variants={navigationMenuStaggerChildren}
+														<motion.li key={index}>
+															<Link
+																onClick={resetMenu}
+																href={`${item?.node?.url}`}
+																target={`${
+																	item?.node?.target
+																		? item?.node?.target
+																		: "_self"
+																}`}
+																aria-label={`${item?.node?.label}`}
+																className="font-OnestRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center"
 															>
-																<Link
-																	onClick={resetMenu}
-																	href={`${item?.node?.url}`}
-																	target={`${
-																		item?.node?.target
-																			? item?.node?.target
-																			: "_self"
-																	}`}
-																	aria-label={`${item?.node?.label}`}
-																	className="font-OnestRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center"
-																>
-																	{item?.node?.label}
-																</Link>
-															</motion.li>
-														</Fragment>
+																{item?.node?.label}
+															</Link>
+														</motion.li>
 													)
 												)
 											) : (

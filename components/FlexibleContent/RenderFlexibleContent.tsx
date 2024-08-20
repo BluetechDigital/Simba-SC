@@ -7,6 +7,7 @@ import {usePageContext} from "@/context/providers/PageContextProvider";
 // Components
 import Hero from "@/components/Hero/index";
 import HeroTwo from "@/components/Hero/HeroTwo";
+import AboutSimba from "@/components/AboutSimba";
 import VisitStore from "@/components/VisitStore/index";
 import SponsorsLogos from "@/components/SponsorsLogos";
 import TitleParagraph from "@/components/TitleParagraph";
@@ -16,6 +17,7 @@ import NewsletterBanner from "@/components/NewsletterBanner";
 import SimbaTVBanner from "@/components/SimbaTVBanner/index";
 import NewOfficialKitCta from "@/components/NewOfficialKitCta";
 import LastThreeFixtures from "@/components/Fixtures/LastThreeFixtures";
+import OfficialMembershipsCta from "@/components/OfficialMembershipsCta";
 
 const RenderFlexibleContent: FC = () => {
 	const pageContextContent = usePageContext();
@@ -25,6 +27,7 @@ const RenderFlexibleContent: FC = () => {
 	const componentMapping: any = {
 		[`${FlexibleContent}_Hero`]: Hero,
 		[`${FlexibleContent}_HeroTwo`]: HeroTwo,
+		[`${FlexibleContent}_AboutSimba`]: AboutSimba,
 		[`${FlexibleContent}_VisitStore`]: VisitStore,
 		[`${FlexibleContent}_SimbatvBanner`]: SimbaTVBanner,
 		[`${FlexibleContent}_SponsorsLogos`]: SponsorsLogos,
@@ -34,6 +37,7 @@ const RenderFlexibleContent: FC = () => {
 		[`${FlexibleContent}_NewsletterBanner`]: NewsletterBanner,
 		[`${FlexibleContent}_NewOfficialKitCta`]: NewOfficialKitCta,
 		[`${FlexibleContent}_LastThreeFixtures`]: LastThreeFixtures,
+		[`${FlexibleContent}_OfficialMembershipsCta`]: OfficialMembershipsCta,
 	};
 
 	return (
