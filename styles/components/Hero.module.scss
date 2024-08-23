@@ -59,3 +59,11 @@
 		}
 	}
 }
+
+.heroThree {
+	.title {
+		span {
+			@apply text-tertiary-default;
+		}
+	}
+}

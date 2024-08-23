@@ -31,7 +31,7 @@ const NewOfficialKitCta: FC<INewOfficialKitCta> = ({
 					initial={initialTwo}
 					whileInView={fadeIn}
 					viewport={{once: true}}
-					className="font-OnestBlack text-center lg:text-left uppercase text-3xl lg:text-5xl tracking-[-0.02rem] text-white font-semibold leading-tight"
+					className="font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-white leading-tight"
 				>
 					{title}
 				</motion.h2>

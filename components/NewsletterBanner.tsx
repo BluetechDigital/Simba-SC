@@ -27,7 +27,7 @@ const NewsletterBanner: FC<INewsletterBanner> = ({
 					<ScrollYProgressReveal tailwindStyling="w-full flex flex-col items-center justify-center gap-8">
 						<Title
 							content={title}
-							tailwindStyling="max-w-2xl font-OnestBlack text-center italic uppercase text-5xl lg:text-7xl 2xl:text-8xl tracking-[-0.05rem] text-white font-semibold leading-tight xl:leading-[3.75rem]"
+							tailwindStyling="max-w-2xl font-schaboCondensed text-center uppercase text-[12.5vw] sm:text-[10vw] md:text-[5vw] tracking-[-0.05rem] text-white leading-tight xl:leading-[5.5rem]"
 						/>
 						<Paragraph
 							content={paragraph}

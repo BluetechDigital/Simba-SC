@@ -23,7 +23,7 @@ const VisitStore: FC<IVisitStore> = ({title, buttonLink, backgroundImage}) => {
 						initial={initialTwo}
 						whileInView={fadeIn}
 						viewport={{once: true}}
-						className="mb-2 font-OnestBlack text-center lg:text-left uppercase text-3xl lg:text-5xl tracking-[-0.02rem] text-white font-semibold leading-tight"
+						className="mb-2 font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-white leading-tight"
 					>
 						{title}
 					</motion.h2>

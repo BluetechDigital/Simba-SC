@@ -39,7 +39,7 @@ const SimbaTVBanner: FC<ISimbaTVBanner> = ({
 							<div>
 								<Title
 									content={title}
-									tailwindStyling="title max-w-2xl font-OnestBlack text-center lg:text-left uppercase italic text-5xl lg:text-7xl 2xl:text-8xl tracking-[-0.05rem] text-white font-semibold leading-tight xl:leading-[3.75rem]"
+									tailwindStyling="title max-w-2xl font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl lg:text-12xl tracking-[-0.05rem] text-white leading-tight xl:leading-[5.5rem]"
 								/>
 								<Paragraph
 									content={paragraph}

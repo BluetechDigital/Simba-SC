@@ -37,6 +37,18 @@ export type IHeroTwo = {
 		};
 	};
 };
+export type IHeroThree = {
+	title: string;
+	paragraph: string;
+	backgroundImage: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
+	};
+};
 export type IAboutSimba = {
 	title: string;
 	titleTwo: string;

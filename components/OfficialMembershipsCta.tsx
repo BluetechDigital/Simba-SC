@@ -38,7 +38,7 @@ const OfficialMembershipsCta: FC<IOfficialMembershipsCta> = ({
 									initial={initialTwo}
 									whileInView={fadeIn}
 									viewport={{once: true}}
-									className="mb-6 font-OnestBlack text-center lg:text-left uppercase text-3xl lg:text-5xl xl:text-6xl tracking-[-0.02rem] text-pureBlack font-semibold xl:leading-tight"
+									className="mb-6 font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-pureBlack leading-tight"
 								>
 									{title}
 								</motion.h4>

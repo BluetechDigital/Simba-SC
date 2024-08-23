@@ -45,7 +45,7 @@ const AboutSimba: FC<IAboutSimba> = ({
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="max-w-xs md:max-w-lg mx-auto lg:mx-0 mb-6 font-OnestBlack text-center lg:text-left uppercase text-5xl lg:text-[3.75vw] tracking-[-0.02rem] text-pureBlack font-semibold leading-tight xl:leading-[3.95rem]"
+								className="max-w-xs md:max-w-lg mx-auto lg:mx-0 mb-6 font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl lg:text-12xl tracking-[-0.05rem] text-pureBlack leading-tight xl:leading-[5.5rem]"
 							>
 								{title}
 							</motion.h4>
@@ -94,7 +94,7 @@ const AboutSimba: FC<IAboutSimba> = ({
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="mb-6 font-OnestBlack text-center uppercase text-3xl lg:text-[1.5vw] tracking-[-0.02rem] text-tertiary-default font-semibold xl:leading-tight"
+							className="mb-6 font-schaboCondensed text-center uppercase text-7xl tracking-[-0.05rem] text-tertiary-default xl:leading-tight"
 						>
 							{titleTwo}
 						</motion.h5>

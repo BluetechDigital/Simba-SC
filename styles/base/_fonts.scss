@@ -1,5 +1,9 @@
 /*===== FONTS =====*/
 @font-face {
+	font-family: SchaboCondensed;
+	src: url("../fonts/schabo-condensed.woff");
+}
+@font-face {
 	font-family: OnestBlack;
 	src: url("../fonts/OnestBlack.woff");
 }
@@ -23,8 +27,12 @@
 $main: "OnestBold";
 $secondary: "OnestRegular";
 $tertiary: "OnestBlack";
+$quaternary: "SchaboCondensed";
 $body: "OnestThin", "Inter";
 
+.font-schaboCondensed {
+	font-family: $quaternary;
+}
 .font-OnestBlack {
 	font-family: $tertiary;
 }
