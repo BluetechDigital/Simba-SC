@@ -87,3 +87,14 @@ export type SlideInRightFinish = {
 		staggerChildren: number;
 	};
 };
+
+// ScrollY Progress Based Content Reveal Animation
+export namespace IScrollYProgressReveal {
+	export type IProps = {
+		tailwindStyling?: string;
+		children: React.ReactNode;
+	};
+
+	export interface IFadeInAnimation extends IProps {}
+	export interface ISlideInXAnimation extends IProps {}
+}

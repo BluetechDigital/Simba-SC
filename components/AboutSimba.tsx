@@ -1,12 +1,21 @@
+// Imports
+import {
+	fadeIn,
+	initialTwo,
+	slideInLeftInitial,
+	slideInRightFinish,
+	slideInRightInitial,
+} from "@/animations/animations";
 import {FC} from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";
 import {IAboutSimba} from "@/types/components/index";
-import {initialTwo, fadeIn} from "@/animations/animations";
 
 // Components
 import Paragraph from "@/components/Elements/Paragraph";
+import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
+import SlideInXLeftAnimation from "@/components/Animations/SlideInXLeftAnimation";
 
 const AboutSimba: FC<IAboutSimba> = ({
 	title,
@@ -25,32 +34,46 @@ const AboutSimba: FC<IAboutSimba> = ({
 				}}
 			>
 				<div className="w-full lg:w-5/12 p-4">
-					<div className="flex flex-col items-center lg:items-start justify-center lg:justify-end h-full">
-						<motion.h4
-							initial={initialTwo}
-							whileInView={fadeIn}
-							viewport={{once: true}}
-							className="max-w-xs md:max-w-lg mx-auto lg:mx-0 mb-6 font-OnestBlack text-center lg:text-left uppercase text-5xl lg:text-[5vw] tracking-[-0.02rem] text-pureBlack font-semibold xl:leading-tight"
-						>
-							{title}
-						</motion.h4>
-						<Paragraph
-							content={paragraph}
-							tailwindStyling="mb-12 lg:mb-8 lg:max-w-lg mx-auto lg:mx-0 font-OnestRegular leading-normal text-pureBlack text-lg text-center lg:text-left"
-						/>
-						<Link
-							href={`${buttonLink?.url}`}
-							target={buttonLink?.target}
-							aria-label={`${buttonLink?.title}`}
-							className={`${
-								buttonLink?.url ? "buttonStyling-alt-two" : "hidden"
-							}`}
-						>
-							{buttonLink?.title}
-						</Link>
-					</div>
+					<motion.div
+						viewport={{once: true}}
+						initial={slideInLeftInitial}
+						whileInView={slideInRightFinish}
+						className="flex flex-col items-center lg:items-start justify-center lg:justify-end h-full"
+					>
+						<SlideInXLeftAnimation>
+							<motion.h4
+								initial={initialTwo}
+								whileInView={fadeIn}
+								viewport={{once: true}}
+								className="max-w-xs md:max-w-lg mx-auto lg:mx-0 mb-6 font-OnestBlack text-center lg:text-left uppercase text-5xl lg:text-[3.75vw] tracking-[-0.02rem] text-pureBlack font-semibold leading-tight xl:leading-[3.95rem]"
+							>
+								{title}
+							</motion.h4>
+							<ScrollYProgressReveal>
+								<Paragraph
+									content={paragraph}
+									tailwindStyling="mb-12 lg:mb-8 lg:max-w-lg mx-auto lg:mx-0 font-OnestRegular leading-normal text-pureBlack text-lg text-center lg:text-left"
+								/>
+								<Link
+									href={`${buttonLink?.url}`}
+									target={buttonLink?.target}
+									aria-label={`${buttonLink?.title}`}
+									className={`${
+										buttonLink?.url ? "buttonStyling-alt-two" : "hidden"
+									}`}
+								>
+									{buttonLink?.title}
+								</Link>
+							</ScrollYProgressReveal>
+						</SlideInXLeftAnimation>
+					</motion.div>
 				</div>
-				<div className="w-full lg:w-7/12 px-4 lg:p-4 relative flex flex-col-reverse lg:flex-col">
+				<motion.div
+					viewport={{once: true}}
+					initial={slideInRightInitial}
+					whileInView={slideInRightFinish}
+					className="w-full lg:w-7/12 px-4 lg:p-4 relative flex flex-col-reverse lg:flex-col"
+				>
 					<Image
 						src={image?.sourceUrl}
 						alt={`${image?.altText}`}
@@ -80,7 +103,7 @@ const AboutSimba: FC<IAboutSimba> = ({
 							tailwindStyling="font-OnestRegular leading-normal text-pureBlack text-lg lg:text-paragraph text-center md:text-left"
 						/>
 					</div>
-				</div>
+				</motion.div>
 			</div>
 		</>
 	);

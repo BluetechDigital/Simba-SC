@@ -1,21 +1,8 @@
-export type IInstagramFeed = [
-	{
-		node: {
-			id: string;
-			slug: string;
-			date: string;
-			title: string;
-			excerpt: string;
-			featuredImage: {
-				node: {
-					altText: string;
-					sourceUrl: string;
-					mediaDetails: {
-						width: number;
-						height: number;
-					};
-				};
-			};
-		};
-	}
-];
+export type IInstagramFeed = {
+	id: string;
+	media_type: string;
+	media_url: string;
+	timestamp: string;
+	permalink: string;
+	caption: string;
+}[];
