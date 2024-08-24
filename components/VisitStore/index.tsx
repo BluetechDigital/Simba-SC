@@ -8,6 +8,7 @@ import {fadeIn, initialTwo} from "@/animations/animations";
 
 // Components
 import VisitStoreCard from "@/components/VisitStore/Cards/VisitStoreCard";
+import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 
 const VisitStore: FC<IVisitStore> = ({title, buttonLink, backgroundImage}) => {
 	return (
@@ -28,15 +29,17 @@ const VisitStore: FC<IVisitStore> = ({title, buttonLink, backgroundImage}) => {
 						{title}
 					</motion.h2>
 					<VisitStoreCard />
-					<Link
-						href={`${buttonLink?.url}`}
-						target={buttonLink?.target}
-						className={`${
-							buttonLink?.url ? "buttonStyling-alt-two mx-auto" : "hidden"
-						}`}
-					>
-						{buttonLink?.title}
-					</Link>
+					<ScrollYProgressReveal tailwindStyling="flex flex-col items-center">
+						<Link
+							href={`${buttonLink?.url}`}
+							target={buttonLink?.target}
+							className={`${
+								buttonLink?.url ? "buttonStyling-alt-two mx-auto" : "hidden"
+							}`}
+						>
+							{buttonLink?.title}
+						</Link>
+					</ScrollYProgressReveal>
 				</div>
 			</div>
 		</>

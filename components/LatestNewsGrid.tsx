@@ -16,6 +16,7 @@ import {ILatestNewsGrid} from "@/types/components/index";
 
 // Components
 import LatestNewsGridCard from "@/components/Cards/LatestNewsGridCard";
+import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 
 const LatestNewsGrid: FC<ILatestNewsGrid> = ({
 	title,
@@ -173,15 +174,17 @@ const LatestNewsGrid: FC<ILatestNewsGrid> = ({
 						</div>
 					</div>
 				</div>
-				<Link
-					href={`${buttonLink?.url}`}
-					target={buttonLink?.target}
-					className={`${
-						buttonLink?.url ? "buttonStyling-alt mt-5 mx-auto" : "hidden"
-					}`}
-				>
-					{buttonLink?.title}
-				</Link>
+				<ScrollYProgressReveal tailwindStyling="flex flex-col items-center">
+					<Link
+						href={`${buttonLink?.url}`}
+						target={buttonLink?.target}
+						className={`${
+							buttonLink?.url ? "buttonStyling-alt mt-5 mx-auto" : "hidden"
+						}`}
+					>
+						{buttonLink?.title}
+					</Link>
+				</ScrollYProgressReveal>
 			</div>
 		</>
 	);

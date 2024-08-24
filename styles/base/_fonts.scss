@@ -3,6 +3,12 @@
 	font-family: SchaboCondensed;
 	src: url("../fonts/schabo-condensed.woff");
 }
+
+@font-face {
+	font-family: Inter;
+	src: url("../fonts/Inter.woff");
+}
+
 @font-face {
 	font-family: OnestBlack;
 	src: url("../fonts/OnestBlack.woff");
@@ -26,15 +32,19 @@
 // Font Stack Properties
 $main: "OnestBold";
 $secondary: "OnestRegular";
-$tertiary: "OnestBlack";
-$quaternary: "SchaboCondensed";
+$third: "OnestBlack";
+$fourth: "SchaboCondensed";
+$fifth: "Inter";
 $body: "OnestThin", "Inter";
 
 .font-schaboCondensed {
-	font-family: $quaternary;
+	font-family: $fourth;
+}
+.font-Inter {
+	font-family: $fifth;
 }
 .font-OnestBlack {
-	font-family: $tertiary;
+	font-family: $third;
 }
 .font-OnestBold {
 	font-family: $main;

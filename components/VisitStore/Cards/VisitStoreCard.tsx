@@ -71,7 +71,9 @@ const VisitStoreCard: FC = () => {
 														{item?.title}
 													</motion.h5>
 													<div className="flex items-center justify-center gap-[1px] font-OnestRegular text-pureBlack text-paragraph">
-														<span>{item?.currency === "USD" ? "$" : "£"}</span>
+														<span className="font-Inter">
+															{item?.currency === "USD" ? "$" : "£"}
+														</span>
 														<span>{item?.price}</span>
 													</div>
 													<Link

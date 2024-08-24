@@ -42,13 +42,13 @@ const NewOfficialKitCta: FC<INewOfficialKitCta> = ({
 								viewport={{once: true}}
 								initial={slideInLeftInitial}
 								whileInView={slideInRightFinish}
-								className="lg:pt-7 max-w-md"
+								className="lg:pt-7 max-w-full lg:max-w-md"
 							>
 								<motion.h2
 									initial={initialTwo}
 									whileInView={fadeIn}
 									viewport={{once: true}}
-									className="font-OnestBlack text-left uppercase text-3xl lg:text-5xl tracking-[-0.02rem] text-white font-semibold leading-tight mb-6 lg:mb-12"
+									className="font-OnestBlack text-center lg:text-left uppercase text-3xl lg:text-5xl tracking-[-0.02rem] text-white font-semibold leading-tight mb-6 lg:mb-12"
 								>
 									{ctaTitle}
 								</motion.h2>
@@ -56,7 +56,7 @@ const NewOfficialKitCta: FC<INewOfficialKitCta> = ({
 									initial={initialTwo}
 									whileInView={fadeIn}
 									viewport={{once: true}}
-									className="flex flex-wrap gap-4"
+									className="flex flex-wrap items-start justify-center lg:justify-start gap-4"
 								>
 									<Link
 										href={`${link?.url}`}
