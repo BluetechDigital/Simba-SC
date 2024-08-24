@@ -41,7 +41,7 @@ const SocialMediaGrid: FC<ISocialMediaGrid> = ({title}) => {
 				<ScrollYProgressReveal tailwindStyling="w-full">
 					<Title
 						content={title}
-						tailwindStyling="title w-full mb-10 max-w-3xl mx-auto font-schaboCondensed text-center uppercase text-7xl sm:text-8xl lg:text-12xl tracking-[-0.05rem] text-pureBlack leading-tight xl:leading-[5.5rem]"
+						tailwindStyling="title w-full mb-10 max-w-3xl mx-auto font-schaboCondensed text-center uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-pureBlack leading-tight xl:leading-[4.5rem]"
 					/>
 
 					<div className="grid grid-cols-2 md:grid-cols-5 gap-0 items-center justify-center">

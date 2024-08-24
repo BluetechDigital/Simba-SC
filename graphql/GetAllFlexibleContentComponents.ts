@@ -161,6 +161,37 @@ export const getAllFlexibleContentComponents = async (
                   								  	}
                   								}
 											}
+											... on ${postTypeFlexibleContent}_TrophyCabinetBanner {
+												fieldGroupName
+                  								displaySection
+                  								title
+                  								paragraph
+												buttonLink {
+                									url
+                									title
+                									target
+                								}
+												trophyCabinet {
+                  									name
+                  									totalAmount
+                  									image {
+                  										altText
+                  										sourceUrl
+                  										mediaDetails {
+                  											height
+                  											width
+                  										}
+                  									}
+                  								}
+												backgroundImage {
+                  								  	altText
+                  								  	sourceUrl
+                  								  	mediaDetails {
+                  								  	  	height
+                  								  	  	width
+                  								  	}
+                  								}
+											}
 											... on ${postTypeFlexibleContent}_NewsletterBanner {
 												fieldGroupName
                   								displaySection

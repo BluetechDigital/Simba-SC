@@ -7,8 +7,8 @@ import {usePageContext} from "@/context/providers/PageContextProvider";
 // Components
 import Hero from "@/components/Hero/index";
 import HeroTwo from "@/components/Hero/HeroTwo";
-import HeroThree from "@/components/Hero/HeroThree";
 import AboutSimba from "@/components/AboutSimba";
+import HeroThree from "@/components/Hero/HeroThree";
 import VisitStore from "@/components/VisitStore/index";
 import SponsorsLogos from "@/components/SponsorsLogos";
 import TitleParagraph from "@/components/TitleParagraph";
@@ -17,6 +17,7 @@ import SocialMediaGrid from "@/components/SocialMediaGrid";
 import NewsletterBanner from "@/components/NewsletterBanner";
 import SimbaTVBanner from "@/components/SimbaTVBanner/index";
 import NewOfficialKitCta from "@/components/NewOfficialKitCta";
+import TrophyCabinetBanner from "@/components/TrophyCabinetBanner";
 import LastThreeFixtures from "@/components/Fixtures/LastThreeFixtures";
 import OfficialMembershipsCta from "@/components/OfficialMembershipsCta";
 
@@ -39,6 +40,7 @@ const RenderFlexibleContent: FC = () => {
 		[`${FlexibleContent}_NewsletterBanner`]: NewsletterBanner,
 		[`${FlexibleContent}_NewOfficialKitCta`]: NewOfficialKitCta,
 		[`${FlexibleContent}_LastThreeFixtures`]: LastThreeFixtures,
+		[`${FlexibleContent}_TrophyCabinetBanner`]: TrophyCabinetBanner,
 		[`${FlexibleContent}_OfficialMembershipsCta`]: OfficialMembershipsCta,
 	};
 
