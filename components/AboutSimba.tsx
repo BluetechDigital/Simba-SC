@@ -16,6 +16,7 @@ import {IAboutSimba} from "@/types/components/index";
 import Paragraph from "@/components/Elements/Paragraph";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import SlideInXLeftAnimation from "@/components/Animations/SlideInXLeftAnimation";
+import SlideInXRightAnimation from "./Animations/SlideInXRightAnimation";
 
 const AboutSimba: FC<IAboutSimba> = ({
 	title,
@@ -49,7 +50,7 @@ const AboutSimba: FC<IAboutSimba> = ({
 							>
 								{title}
 							</motion.h4>
-							<ScrollYProgressReveal>
+							<ScrollYProgressReveal tailwindStyling="flex flex-col items-center lg:items-baseline">
 								<Paragraph
 									content={paragraph}
 									tailwindStyling="mb-12 lg:mb-8 lg:max-w-lg mx-auto lg:mx-0 font-OnestRegular leading-normal text-pureBlack text-lg text-center lg:text-left"
@@ -59,7 +60,9 @@ const AboutSimba: FC<IAboutSimba> = ({
 									target={buttonLink?.target}
 									aria-label={`${buttonLink?.title}`}
 									className={`${
-										buttonLink?.url ? "buttonStyling-alt-two" : "hidden"
+										buttonLink?.url
+											? "buttonStyling-alt-two mx-auto lg:mx-0"
+											: "hidden"
 									}`}
 								>
 									{buttonLink?.title}
@@ -74,22 +77,24 @@ const AboutSimba: FC<IAboutSimba> = ({
 					whileInView={slideInRightFinish}
 					className="w-full lg:w-7/12 px-4 lg:p-4 relative flex flex-col-reverse lg:flex-col"
 				>
-					<Image
-						src={image?.sourceUrl}
-						alt={`${image?.altText}`}
-						width={
-							image?.mediaDetails?.width ? image?.mediaDetails?.width : 500
-						}
-						height={
-							image?.mediaDetails?.height ? image?.mediaDetails?.height : 500
-						}
-						className={
-							image?.sourceUrl
-								? `bg-white object-cover object-center w-full h-[500px] lg:h-[552px] lg:h-[752px]`
-								: `hidden`
-						}
-					/>
-					<div className="bg-white md:absolute bottom-0 right-0 z-10 w-fit max-w-[500px] p-10 mx-auto md:mx-0">
+					<ScrollYProgressReveal>
+						<Image
+							src={image?.sourceUrl}
+							alt={`${image?.altText}`}
+							width={
+								image?.mediaDetails?.width ? image?.mediaDetails?.width : 500
+							}
+							height={
+								image?.mediaDetails?.height ? image?.mediaDetails?.height : 500
+							}
+							className={
+								image?.sourceUrl
+									? `bg-white object-cover object-center w-full h-[500px] lg:h-[552px] lg:h-[752px]`
+									: `hidden`
+							}
+						/>
+					</ScrollYProgressReveal>
+					<SlideInXRightAnimation tailwindStyling="bg-white md:absolute bottom-0 right-0 z-10 w-fit max-w-[500px] p-10 mx-auto md:mx-0">
 						<motion.h5
 							initial={initialTwo}
 							whileInView={fadeIn}
@@ -102,7 +107,7 @@ const AboutSimba: FC<IAboutSimba> = ({
 							content={paragraphTwo}
 							tailwindStyling="font-OnestRegular leading-normal text-pureBlack text-lg lg:text-paragraph text-center md:text-left"
 						/>
-					</div>
+					</SlideInXRightAnimation>
 				</motion.div>
 			</div>
 		</>

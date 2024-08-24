@@ -45,7 +45,7 @@ const Hero: FC<IHero> = ({heroSlider}) => {
 										<SwiperSlide>
 											<div className="w-full p-0">
 												<div
-													className="pt-24 pb-44 sm:pb-20 w-full h-[75vh] lg:h-[87vh] flex flex-col items-center lg:items-baseline justify-center relative bg-center bg-no-repeat bg-cover"
+													className="pt-24 pb-44 sm:pb-20 w-full h-[87vh] sm:h-[75vh] lg:h-[87vh] flex flex-col items-center lg:items-baseline justify-center relative bg-center bg-no-repeat bg-cover"
 													style={{
 														backgroundImage: `linear-gradient(
 																0deg,
@@ -60,7 +60,7 @@ const Hero: FC<IHero> = ({heroSlider}) => {
 																initial={initialTwo}
 																whileInView={fadeIn}
 																viewport={{once: true}}
-																className="font-OnestBlack text-center lg:text-left uppercase text-3xl lg:text-7xl 2xl:text-8xl tracking-[-0.02rem] text-white font-semibold leading-tight xl:leading-[3.75rem]"
+																className="font-OnestBlack text-center lg:text-left uppercase text-5xl sm:text-7xl 2xl:text-8xl tracking-[-0.02rem] text-white font-semibold leading-[2.5rem] sm:leading-[2.75rem] md:leading-tight xl:leading-[3.75rem]"
 															>
 																{item?.title}
 															</motion.h1>

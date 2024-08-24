@@ -26,7 +26,7 @@ const NewOfficialKitCta: FC<INewOfficialKitCta> = ({
 				backgroundImage: `url("/svg/background/stacked-steps-haikei-red.svg")`,
 			}}
 		>
-			<div className="xl:container mx-auto px-0 flex flex-col gap-8">
+			<div className="px-0 flex flex-col gap-8">
 				<motion.h2
 					initial={initialTwo}
 					whileInView={fadeIn}

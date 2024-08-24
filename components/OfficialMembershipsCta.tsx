@@ -25,7 +25,7 @@ const OfficialMembershipsCta: FC<IOfficialMembershipsCta> = ({
 					backgroundImage: `url("/svg/background/stacked-steps-haikei-lightgrey.svg")`,
 				}}
 			>
-				<div className="lg:max-w-[1700px] mx-auto py-14 px-4 ">
+				<div className="lg:max-w-[1700px] mx-auto py-14 px-4">
 					<div
 						className="p-8 bg-no-repeat bg-cover bg-center overflow-hidden"
 						style={{
@@ -33,7 +33,7 @@ const OfficialMembershipsCta: FC<IOfficialMembershipsCta> = ({
 						}}
 					>
 						<SlideInXLeftAnimation tailwindStyling="py-11 px-9 max-w-xl bg-white">
-							<ScrollYProgressReveal>
+							<ScrollYProgressReveal tailwindStyling="flex flex-col items-center lg:items-baseline">
 								<motion.h4
 									initial={initialTwo}
 									whileInView={fadeIn}

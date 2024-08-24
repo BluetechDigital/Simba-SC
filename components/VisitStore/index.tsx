@@ -18,7 +18,7 @@ const VisitStore: FC<IVisitStore> = ({title, buttonLink, backgroundImage}) => {
 					backgroundImage: `linear-gradient( 0deg, rgb(0, 0, 0, 0.80), rgba(0, 0, 0, 0.80)),url("${backgroundImage?.sourceUrl}")`,
 				}}
 			>
-				<div className="lg:container px-0 mx-auto flex flex-col gap-8">
+				<div className="px-0 flex flex-col gap-8">
 					<motion.h2
 						initial={initialTwo}
 						whileInView={fadeIn}
