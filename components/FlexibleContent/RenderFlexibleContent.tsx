@@ -18,7 +18,7 @@ import NewsletterBanner from "@/components/NewsletterBanner";
 import SimbaTVBanner from "@/components/SimbaTVBanner/index";
 import NewOfficialKitCta from "@/components/NewOfficialKitCta";
 import TrophyCabinetBanner from "@/components/TrophyCabinetBanner";
-import ClubCardMembershipCTA from "@/components/ClubCardMembershipCTA";
+import ClubCardMembershipCTA from "@/components/ClubCardMembershipCta";
 import LastThreeFixtures from "@/components/Fixtures/LastThreeFixtures";
 import OfficialMembershipsCta from "@/components/OfficialMembershipsCta";
 
