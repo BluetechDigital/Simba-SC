@@ -260,3 +260,23 @@ export type IOfficialMembershipsCta = {
 		};
 	}[];
 };
+export type IClubCardMembershipCTA = {
+	title: string;
+	paragraph: string;
+	buttonLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
+	clubCardMembership: {
+		title: string;
+	};
+	backgroundImage: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
+	};
+};

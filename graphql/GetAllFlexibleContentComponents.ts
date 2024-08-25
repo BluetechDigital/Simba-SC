@@ -192,6 +192,28 @@ export const getAllFlexibleContentComponents = async (
                   								  	}
                   								}
 											}
+											... on ${postTypeFlexibleContent}_ClubCardMembershipCta {
+												fieldGroupName
+                  								displaySection
+                  								title
+                  								paragraph
+												buttonLink {
+                									url
+                									title
+                									target
+                								}
+												clubCardMembership {
+                  									title
+                  								}
+												backgroundImage {
+                  								  	altText
+                  								  	sourceUrl
+                  								  	mediaDetails {
+                  								  	  	height
+                  								  	  	width
+                  								  	}
+                  								}
+											}
 											... on ${postTypeFlexibleContent}_NewsletterBanner {
 												fieldGroupName
                   								displaySection

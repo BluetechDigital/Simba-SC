@@ -1,24 +1,24 @@
 // Imports
+import {
+	fadeIn,
+	initial,
+	initialTwo,
+	arrayLoopStaggerChildren,
+} from "@/animations/animations";
 import Link from "next/link";
 import Image from "next/image";
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
 import {ITrophyCabinetBanner} from "@/types/components/index";
-import {
-	initial,
-	arrayLoopStaggerChildren,
-	initialTwo,
-	fadeIn,
-} from "@/animations/animations";
 
 // Styling
 import styles from "@/styles/components/TrophyCabinetBanner.module.scss";
 
 // Components
 import Title from "@/components/Elements/Title";
+import Paragraph from "@/components/Elements/Paragraph";
+import LatestNewsGridCard from "@/components/Cards/LatestNewsGridCard";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
-import LatestNewsGridCard from "./Cards/LatestNewsGridCard";
-import Paragraph from "./Elements/Paragraph";
 
 const TrophyCabinetBanner: FC<ITrophyCabinetBanner> = ({
 	title,

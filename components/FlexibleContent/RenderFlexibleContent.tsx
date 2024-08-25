@@ -18,6 +18,7 @@ import NewsletterBanner from "@/components/NewsletterBanner";
 import SimbaTVBanner from "@/components/SimbaTVBanner/index";
 import NewOfficialKitCta from "@/components/NewOfficialKitCta";
 import TrophyCabinetBanner from "@/components/TrophyCabinetBanner";
+import ClubCardMembershipCTA from "@/components/ClubCardMembershipCTA";
 import LastThreeFixtures from "@/components/Fixtures/LastThreeFixtures";
 import OfficialMembershipsCta from "@/components/OfficialMembershipsCta";
 
@@ -41,6 +42,7 @@ const RenderFlexibleContent: FC = () => {
 		[`${FlexibleContent}_NewOfficialKitCta`]: NewOfficialKitCta,
 		[`${FlexibleContent}_LastThreeFixtures`]: LastThreeFixtures,
 		[`${FlexibleContent}_TrophyCabinetBanner`]: TrophyCabinetBanner,
+		[`${FlexibleContent}_ClubCardMembershipCta`]: ClubCardMembershipCTA,
 		[`${FlexibleContent}_OfficialMembershipsCta`]: OfficialMembershipsCta,
 	};
 
