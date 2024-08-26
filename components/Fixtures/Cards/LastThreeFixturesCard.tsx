@@ -14,7 +14,7 @@ const LastThreeFixturesCard: FC<ILastThreeFixturesCard> = ({
 }) => {
 	return (
 		<>
-			<div className="py-5 px-6 w-full h-full flex flex-col items-center lg:items-start justify-center gap-5 bg-lightGrey">
+			<div className="w-full h-full p-6 flex flex-col items-center lg:items-start justify-between gap-5">
 				<div className="flex items-center justify-center lg:justify-baseline gap-1">
 					<motion.span
 						initial={initial}

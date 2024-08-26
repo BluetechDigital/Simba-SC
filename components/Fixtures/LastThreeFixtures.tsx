@@ -36,7 +36,7 @@ const LastThreeFixtures: FC<ILastThreeFixtures> = ({title}) => {
 					>
 						{title}
 					</motion.h3>
-					<div className="py-0 grid grid-cols-1 lg:grid-cols-3 gap-4 items-center justify-center lg:gap-4">
+					<div className="py-0 grid grid-cols-1 lg:grid-cols-3 gap-4 items-center justify-center lg:gap-4 overflow-hidden">
 						<Suspense fallback={"Loading..."}>
 							{globalContext?.lastThreeFixtures?.response?.length > 0 ? (
 								globalContext?.lastThreeFixtures?.response?.map(
@@ -48,7 +48,7 @@ const LastThreeFixtures: FC<ILastThreeFixtures> = ({title}) => {
 												whileInView="animate"
 												viewport={{once: true}}
 												variants={arrayLoopStaggerChildren}
-												className="w-full h-full overflow-hidden"
+												className="w-full h-full bg-lightGrey"
 											>
 												<LastThreeFixturesCard
 													goals={fixture?.goals}

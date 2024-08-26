@@ -49,7 +49,7 @@ const TopNavigation: FC = () => {
 													? item?.mediaDetails?.height
 													: 1000
 											}
-											className="object-contain object-center w-full h-[50px]"
+											className="object-contain object-center w-[50px] h-[50px]"
 										/>
 									</motion.div>
 								</Fragment>
