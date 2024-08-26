@@ -1,5 +1,5 @@
 // Imports
-import {
+import fadeInUp, {
 	fadeIn,
 	initial,
 	initialTwo,
@@ -39,32 +39,48 @@ const ClubCardMembershipCTA: FC<IClubCardMembershipCTA> = ({
 				}}
 			>
 				<div className="lg:max-w-[1700px] mx-auto py-14 px-4 flex flex-col gap-8">
-					<div className="flex flex-col lg:flex-row items-center justify-between">
-						<div>
-							<Title
-								content={title}
-								tailwindStyling="title max-w-2xl mx-auto lg:mx-0 font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-pureBlack leading-tight"
-							/>
-							<Paragraph
-								content={paragraph}
-								tailwindStyling="mb-8 lg:max-w-lg mx-auto lg:mx-0 font-OnestRegular leading-normal text-pureBlack text-lg text-center lg:text-left"
-							/>
-						</div>
-						<ScrollYProgressReveal tailwindStyling="flex flex-col items-center lg:items-baseline">
-							<Link
-								href={`${buttonLink?.url}`}
-								target={buttonLink?.target}
-								className={`${
-									buttonLink?.url
-										? "buttonStyling-alt lg:mt-5 mx-auto lg:mx-0"
-										: "hidden"
-								}`}
-							>
-								{buttonLink?.title}
-							</Link>
-						</ScrollYProgressReveal>
+					<div className="flex flex-col items-center justify-between">
+						<Title
+							content={title}
+							tailwindStyling="title max-w-2xl mx-auto lg:mx-0 font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-pureBlack leading-tight"
+						/>
+						<Paragraph
+							content={paragraph}
+							tailwindStyling="mb-8 lg:max-w-lg mx-auto lg:mx-0 font-OnestRegular leading-normal text-pureBlack text-lg text-center lg:text-left"
+						/>
 					</div>
-					<div className="flex flex-col lg:flex-row items-center justify-center gap-16"></div>
+					<div className="flex flex-col lg:flex-row items-center justify-center gap-16">
+						<div
+							className=" w-full py-44 px-16 flex flex-col items-center justify-center bg-white bg-no-repeat bg-center bg-cover overflow-hidden"
+							style={{
+								backgroundImage: `linear-gradient(0deg,rgba(234, 29, 37, 0),rgba(234, 29, 37, 0.5),rgba(234, 29, 37, 0.80)),url("${backgroundImage?.sourceUrl}")`,
+							}}
+						>
+							<ScrollYProgressReveal>
+								<motion.h4
+									initial={initial}
+									whileInView={fadeInUp}
+									viewport={{once: true}}
+									className="mb-5 max-w-2xl mx-auto lg:mx-0 font-schaboCondensed text-center  uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-white leading-tight"
+								>
+									{clubCardMembership?.title}
+								</motion.h4>
+								<ScrollYProgressReveal tailwindStyling="flex flex-col items-center">
+									<Link
+										href={`${buttonLink?.url}`}
+										target={buttonLink?.target}
+										className={`${
+											buttonLink?.url
+												? "buttonStyling-alt-four lg:mt-5 mx-auto lg:mx-0"
+												: "hidden"
+										}`}
+									>
+										{buttonLink?.title}
+									</Link>
+								</ScrollYProgressReveal>
+							</ScrollYProgressReveal>
+						</div>
+					</div>
 				</div>
 			</div>
 		</>
