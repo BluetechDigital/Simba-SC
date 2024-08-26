@@ -19,6 +19,7 @@ import Title from "@/components/Elements/Title";
 import Paragraph from "@/components/Elements/Paragraph";
 import LatestNewsGridCard from "@/components/Cards/LatestNewsGridCard";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
+import SlideInXRightAnimation from "@/components/Animations/SlideInXRightAnimation";
 
 const TrophyCabinetBanner: FC<ITrophyCabinetBanner> = ({
 	title,
@@ -51,7 +52,7 @@ const TrophyCabinetBanner: FC<ITrophyCabinetBanner> = ({
 					</div>
 					<div className="flex flex-col lg:flex-row items-center justify-center gap-16">
 						<div className="w-full lg:w-[60%] flex flex-col gap-16 px-6">
-							<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+							<ScrollYProgressReveal tailwindStyling="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 								{trophyCabinet?.length > 0 ? (
 									trophyCabinet?.map((item: any, index: number) => (
 										<Fragment key={index}>
@@ -83,7 +84,7 @@ const TrophyCabinetBanner: FC<ITrophyCabinetBanner> = ({
 																: `hidden`
 														}
 													/>
-													<span className="font-schaboCondensed text-center uppercase text-8xl tracking-[-0.05rem] text-pureBlack leading-tight">
+													<span className="mt-4 font-schaboCondensed text-center uppercase text-8xl tracking-[-0.05rem] text-pureBlack leading-tight">
 														{item?.totalAmount}
 													</span>
 												</div>
@@ -91,7 +92,7 @@ const TrophyCabinetBanner: FC<ITrophyCabinetBanner> = ({
 													initial={initialTwo}
 													whileInView={fadeIn}
 													viewport={{once: true}}
-													className="mt-4 font-OnestRegular text-center lg:text-left text-paragraph tracking-[-0.05rem] text-pureBlack leading-tight"
+													className="mt-2 font-OnestRegular text-center lg:text-left text-paragraph tracking-[-0.05rem] text-pureBlack leading-tight"
 												>
 													{item?.name}
 												</motion.h4>
@@ -101,7 +102,7 @@ const TrophyCabinetBanner: FC<ITrophyCabinetBanner> = ({
 								) : (
 									<></>
 								)}
-							</div>
+							</ScrollYProgressReveal>
 							<ScrollYProgressReveal tailwindStyling="flex flex-col items-center lg:items-baseline">
 								<Link
 									href={`${buttonLink?.url}`}
@@ -116,7 +117,7 @@ const TrophyCabinetBanner: FC<ITrophyCabinetBanner> = ({
 								</Link>
 							</ScrollYProgressReveal>
 						</div>
-						<div className="w-full lg:w-[40%]">
+						<SlideInXRightAnimation tailwindStyling="w-full lg:w-[40%]">
 							<Image
 								src={backgroundImage?.sourceUrl}
 								alt={`${backgroundImage?.altText}`}
@@ -136,7 +137,7 @@ const TrophyCabinetBanner: FC<ITrophyCabinetBanner> = ({
 										: `hidden`
 								}
 							/>
-						</div>
+						</SlideInXRightAnimation>
 					</div>
 				</div>
 			</div>
