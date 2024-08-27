@@ -22,48 +22,72 @@ import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal
 
 const ClubCardMembershipCTA: FC<IClubCardMembershipCTA> = ({
 	title,
-	paragraph,
+	video,
 	buttonLink,
+	displayVideo,
 	backgroundImage,
-	clubCardMembership,
+	clubCardMembershipText,
 }) => {
 	return (
 		<>
 			<div
 				className={
-					styles.officialMembershipsCta +
-					" officialMembershipsCta bg-primary-default bg-no-repeat bg-cover bg-center"
+					styles.clubCardMembershipCta +
+					" clubCardMembershipCta bg-white bg-no-repeat bg-cover bg-center"
 				}
 				style={{
-					backgroundImage: `url("/svg/background/stacked-steps-haikei-lightgrey.svg")`,
+					backgroundImage: `url("/svg/background/layered-peaks-haikei-red.svg")`,
 				}}
 			>
 				<div className="lg:max-w-[1700px] mx-auto py-14 px-4 flex flex-col gap-8">
 					<div className="flex flex-col items-center justify-between">
 						<Title
 							content={title}
-							tailwindStyling="title max-w-2xl mx-auto lg:mx-0 font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-pureBlack leading-tight"
-						/>
-						<Paragraph
-							content={paragraph}
-							tailwindStyling="mb-8 lg:max-w-lg mx-auto lg:mx-0 font-OnestRegular leading-normal text-pureBlack text-lg text-center lg:text-left"
+							tailwindStyling="title w-full mb-5 max-w-3xl mx-auto font-schaboCondensed text-center uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-pureBlack leading-tight xl:leading-[4.5rem]"
 						/>
 					</div>
 					<div className="flex flex-col lg:flex-row items-center justify-center gap-16">
 						<div
-							className=" w-full py-44 px-16 flex flex-col items-center justify-center bg-white bg-no-repeat bg-center bg-cover overflow-hidden"
+							className="relative w-full h-[65vh] lg:h-[75vh] lg:aspect-[16/9] aspect-[9/16] flex flex-col items-center justify-center bg-white bg-no-repeat bg-center bg-cover overflow-hidden"
 							style={{
 								backgroundImage: `linear-gradient(0deg,rgba(234, 29, 37, 0),rgba(234, 29, 37, 0.5),rgba(234, 29, 37, 0.80)),url("${backgroundImage?.sourceUrl}")`,
 							}}
 						>
-							<ScrollYProgressReveal>
+							<motion.video
+								muted
+								autoPlay
+								loop={true}
+								controls={false}
+								aria-label={`Video Element: ${video?.title}`}
+								className={
+									displayVideo
+										? "absolute top-0 left-0 w-full h-full object-cover"
+										: "hidden"
+								}
+							>
+								<source
+									src={video?.link}
+									type="video/mp4"
+									width={
+										video?.mediaDetails?.width
+											? video?.mediaDetails?.width
+											: 550
+									}
+									height={
+										video?.mediaDetails?.height
+											? video?.mediaDetails?.height
+											: 550
+									}
+								/>
+							</motion.video>
+							<ScrollYProgressReveal tailwindStyling="relative z-10 w-full py-44 px-16 flex flex-col items-center justify-center">
 								<motion.h4
 									initial={initial}
 									whileInView={fadeInUp}
 									viewport={{once: true}}
-									className="mb-5 max-w-2xl mx-auto lg:mx-0 font-schaboCondensed text-center  uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-white leading-tight"
+									className="mb-5 max-w-2xl lg:max-w-4xl mx-auto lg:mx-0 font-schaboCondensed text-center uppercase text-7xl sm:text-8xl lg:text-12xl 2xl:text-[5vw] tracking-[-0.05rem] text-white leading-tight lg:leading-[5rem]"
 								>
-									{clubCardMembership?.title}
+									{clubCardMembershipText}
 								</motion.h4>
 								<ScrollYProgressReveal tailwindStyling="flex flex-col items-center">
 									<Link
@@ -71,7 +95,7 @@ const ClubCardMembershipCTA: FC<IClubCardMembershipCTA> = ({
 										target={buttonLink?.target}
 										className={`${
 											buttonLink?.url
-												? "buttonStyling-alt-four lg:mt-5 mx-auto lg:mx-0"
+												? "buttonStyling-alt lg:mt-5 mx-auto lg:mx-0"
 												: "hidden"
 										}`}
 									>

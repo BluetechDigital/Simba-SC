@@ -9,3 +9,11 @@
 		}
 	}
 }
+
+.clubCardMembershipCta {
+	.title {
+		span {
+			@apply text-primary-default;
+		}
+	}
+}

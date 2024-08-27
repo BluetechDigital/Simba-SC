@@ -196,15 +196,21 @@ export const getAllFlexibleContentComponents = async (
 												fieldGroupName
                   								displaySection
                   								title
-                  								paragraph
+                  								displayVideo
 												buttonLink {
                 									url
                 									title
                 									target
                 								}
-												clubCardMembership {
-                  									title
+												video {
+                  								  	link
+                  								  	title
+                  								  	mediaDetails {
+                  								  	  	height
+                  								  	  	width
+                  								  	}
                   								}
+												clubCardMembershipText
 												backgroundImage {
                   								  	altText
                   								  	sourceUrl

@@ -262,15 +262,21 @@ export type IOfficialMembershipsCta = {
 };
 export type IClubCardMembershipCTA = {
 	title: string;
-	paragraph: string;
+	displayVideo: boolean;
 	buttonLink: {
 		url: string;
 		title: string;
 		target: string;
 	};
-	clubCardMembership: {
+	video: {
+		link: string;
 		title: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
 	};
+	clubCardMembershipText: string;
 	backgroundImage: {
 		altText: string;
 		sourceUrl: string;
