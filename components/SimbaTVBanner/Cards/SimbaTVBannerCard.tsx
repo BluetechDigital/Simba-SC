@@ -10,13 +10,18 @@ import {
 import Link from "next/link";
 import {motion} from "framer-motion";
 import {FC, useState} from "react";
+import {ISimbaTVBannerCard} from "@/types/components/Elements";
 
 // Components
 import Paragraph from "@/components/Elements/Paragraph";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import SimbaTVBannerVideos from "@/components/SimbaTVBanner/Elements/SimbaTVBannerVideos";
 
-const SimbaTVBannerCard: FC = () => {
+const SimbaTVBannerCard: FC<ISimbaTVBannerCard> = ({
+	fansButton,
+	youtubeButton,
+	podcastsButton,
+}) => {
 	const [activeIndex, setActiveIndex] = useState(0);
 
 	const ITEMS = [
@@ -45,8 +50,13 @@ const SimbaTVBannerCard: FC = () => {
 			<ScrollYProgressReveal tailwindStyling="py-10">
 				<div className="mb-4 w-full flex flex-col md:flex-row items-center justify-center lg:justify-start space-x-2 space-y-2 md:space-y-0">
 					{ITEMS.map((item, index) => (
-						<button
+						<motion.button
 							key={index}
+							custom={index}
+							initial={initial}
+							whileInView="animate"
+							viewport={{once: true}}
+							variants={arrayLoopStaggerChildren}
 							onClick={() => setActiveIndex(index)}
 							className={`${
 								activeIndex === index
@@ -55,7 +65,7 @@ const SimbaTVBannerCard: FC = () => {
 							}`}
 						>
 							{item.title}
-						</button>
+						</motion.button>
 					))}
 				</div>
 				<div className="overflow-hidden my-6 border-t border-white">

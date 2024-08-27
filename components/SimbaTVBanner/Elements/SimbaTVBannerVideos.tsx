@@ -22,13 +22,13 @@ const SimbaTVBannerVideos: FC<ISimbaTVBannerVideos> = ({
 					custom={motionProps?.custom}
 				>
 					<motion.div
+						exit="exit"
+						initial="enter"
+						animate="center"
+						{...motionProps}
 						key={activeIndex}
 						variants={variants}
 						transition={transition}
-						initial="enter"
-						animate="center"
-						exit="exit"
-						{...motionProps}
 					>
 						{children[activeIndex]}
 					</motion.div>

@@ -18,6 +18,23 @@ export type ICountUpStats = {
 export type IBackToTopButton = {
 	link: string;
 };
+export type ISimbaTVBannerCard = {
+	youtubeButton: {
+		url: string;
+		title: string;
+		target: string;
+	};
+	podcastsButton: {
+		url: string;
+		title: string;
+		target: string;
+	};
+	fansButton: {
+		url: string;
+		title: string;
+		target: string;
+	};
+};
 export type INewsLatestArticles = {
 	slug: string;
 	date: string;

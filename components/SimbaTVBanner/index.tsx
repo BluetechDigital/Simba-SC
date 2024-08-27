@@ -57,7 +57,11 @@ const SimbaTVBanner: FC<ISimbaTVBanner> = ({
 								{buttonLink?.title}
 							</Link>
 						</ScrollYProgressReveal>
-						<SimbaTVBannerCard />
+						<SimbaTVBannerCard
+							fansButton={fansButton}
+							youtubeButton={youtubeButton}
+							podcastsButton={podcastsButton}
+						/>
 						<SimbaTVStatsCard />
 					</div>
 				</div>
