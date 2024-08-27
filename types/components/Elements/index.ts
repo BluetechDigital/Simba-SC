@@ -1,3 +1,6 @@
+// Imports
+import {MotionProps, Transition, Variant} from "framer-motion";
+
 export type ITitle = {
 	content: string;
 	tailwindStyling: string;
@@ -35,6 +38,13 @@ export type INewsLatestArticles = {
 export type IMegaNavVideoWrapper = {
 	children: React.ReactNode;
 };
+export type ISimbaTVBannerVideos = {
+	children: React.ReactNode[];
+	className?: string;
+	transition?: Transition;
+	activeIndex: number;
+	variants?: {enter: Variant; center: Variant; exit: Variant};
+} & MotionProps;
 export type INewsletterFormikForm = {
 	formTitle: string;
 	textarea: string;

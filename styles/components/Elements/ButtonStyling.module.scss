@@ -26,3 +26,13 @@
 	@extend .buttonStyling;
 	@apply hover:text-primary-default hover:border-tertiary-default hover:bg-tertiary-default;
 }
+
+.buttonStyling-alt-five {
+	@extend .buttonStyling;
+	@apply pt-2 pb-1 text-paragraph lg:text-medium hover:border-primary-three hover:bg-primary-three;
+}
+
+.buttonStyling-alt-five-active {
+	@extend .buttonStyling-alt-five;
+	@apply text-primary-default border-tertiary-default bg-tertiary-default hover:border-tertiary-default hover:bg-tertiary-default;
+}

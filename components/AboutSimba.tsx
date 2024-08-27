@@ -14,9 +14,9 @@ import {IAboutSimba} from "@/types/components/index";
 
 // Components
 import Paragraph from "@/components/Elements/Paragraph";
+import SlideInXRightAnimation from "./Animations/SlideInXRightAnimation";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import SlideInXLeftAnimation from "@/components/Animations/SlideInXLeftAnimation";
-import SlideInXRightAnimation from "./Animations/SlideInXRightAnimation";
 
 const AboutSimba: FC<IAboutSimba> = ({
 	title,
