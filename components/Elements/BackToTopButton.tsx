@@ -24,6 +24,11 @@ const BackToTopButton: FC = () => {
 		};
 	}, []);
 
+	// Function to scroll to the top of the page smoothly
+	const scrollToTop = () => {
+		window.scrollTo({top: 0, behavior: "smooth"});
+	};
+
 	return (
 		<>
 			<div
@@ -34,10 +39,9 @@ const BackToTopButton: FC = () => {
 				}
 			>
 				<div className="fixed right-6 z-20 bottom-[2.5rem] flex justify-center">
-					<Link
-						href="#"
-						target="_self"
-						aria-label={`back to the top Button`}
+					<button
+						onClick={scrollToTop}
+						aria-label="Back to the top Button"
 						className={styles.backToTopButton}
 					>
 						<span className={styles.span}>
@@ -50,23 +54,20 @@ const BackToTopButton: FC = () => {
 								className="w-[35px] h-[35px] object-center object-contain rotate-[180deg]"
 							>
 								<g id="SVGRepo_bgCarrier" strokeWidth="0" />
-
 								<g
 									id="SVGRepo_tracerCarrier"
 									strokeLinecap="round"
 									strokeLinejoin="round"
 								/>
-
 								<g id="SVGRepo_iconCarrier">
-									{" "}
 									<path
 										d="M6.34292 7.75734L4.92871 9.17155L11.9998 16.2426L19.0708 9.17158L17.6566 7.75737L11.9998 13.4142L6.34292 7.75734Z"
 										fill="#ffffff"
-									/>{" "}
+									/>
 								</g>
 							</svg>
 						</span>
-					</Link>
+					</button>
 				</div>
 			</div>
 		</>
