@@ -8,8 +8,9 @@ import {
 	arrayLoopStaggerChildren,
 } from "@/animations/animations";
 import Link from "next/link";
-import {motion} from "framer-motion";
 import {FC, useState} from "react";
+import {motion} from "framer-motion";
+import {useGlobalContext} from "@/context/global";
 import {ISimbaTVBannerCard} from "@/types/components/Elements";
 
 // Components
@@ -22,6 +23,7 @@ const SimbaTVBannerCard: FC<ISimbaTVBannerCard> = ({
 	youtubeButton,
 	podcastsButton,
 }) => {
+	const globalContext = useGlobalContext();
 	const [activeIndex, setActiveIndex] = useState(0);
 
 	const ITEMS = [

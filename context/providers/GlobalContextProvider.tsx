@@ -32,6 +32,7 @@ const GlobalContextProvider: FC<IGlobalContextProvider> = ({
 				instagramFeed: globalProps?.instagramFeed,
 
 				// Youtube Channel Info
+				youtubeVideos: globalProps?.youtubeVideos,
 				youtubeChannelInfo: globalProps?.youtubeChannelInfo,
 
 				// Football Fixtures

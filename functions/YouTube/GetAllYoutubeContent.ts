@@ -11,6 +11,7 @@ import {
 const youtubeAPI = `${process.env.YOUTUBE_API}`;
 const youtubeKey = `${process.env.YOUTUBE_KEY}`;
 const youtubeChannelId = `${process.env.YOUTUBE_CHANNEL_ID}`;
+const youtubePlaylistId = `${process.env.YOUTUBE_PLAYLIST_ID}`;
 
 export const getAllYoutubeChannelInfo =
 	async (): Promise<IYoutubeChannelInfo> => {
@@ -47,14 +48,48 @@ export const getAllYoutubeChannelInfo =
 
 // Get All Youtube Playlists
 export const getAllYoutubePlaylists = async (): Promise<IYoutubePlaylists> => {
-	let data = "";
-
-	return data;
+	try {
+		return "";
+	} catch (error: unknown) {
+		console.log(error);
+		throw new Error(
+			"Something went wrong trying to fetch youtube playlists content"
+		);
+	}
 };
 
 // Get All Youtube Videos
 export const getAllYoutubeVideos = async (): Promise<IYoutubeVideos> => {
-	let data = "";
+	try {
+		/* IF PLAYLIST ID IIS NEEDED TO BE UPDATED OR FETCHED */
+		// const getPlaylistIdUrl = `${youtubeAPI}/channels?part=contentDetails&id=${youtubeChannelId}&key=${youtubeKey}`;
 
-	return data;
+		// // Catch Data indefinitely
+		// const relatedPlaylistsData = await fetch(getPlaylistIdUrl, {
+		// 	next: {revalidate: false},
+		// });
+
+		// const response = await relatedPlaylistsData.json();
+
+		// // Get Playlist Id
+		// const playlistId = youtubePlaylistId;
+		// // const playlistId =
+		// // 	response.items[0].contentDetails?.relatedPlaylists?.uploads;
+
+		const fetchVideosData = `${youtubeAPI}/playlistItems?part=snippet,contentDetails,status&playlistId=${youtubePlaylistId}&key=${youtubeKey}&maxResults=10`;
+
+		// Catch Data for 1 Hours before refetching
+		const responseVideosData = await fetch(fetchVideosData, {
+			next: {revalidate: 3600},
+		});
+
+		const videosData = await responseVideosData.json();
+
+		return videosData?.items;
+	} catch (error: unknown) {
+		console.log(error);
+		throw new Error(
+			"Something went wrong trying to fetch youtube videos content"
+		);
+	}
 };

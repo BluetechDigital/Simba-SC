@@ -63,7 +63,7 @@ const TopNavigation: FC = () => {
 					<Link
 						href={`https://account.simbasc.com`}
 						target="_blank"
-						aria-label={`Chelsea Login`}
+						aria-label={`Simba Login`}
 						className="hidden lg:block font-OnestBold tracking-[-0.02rem] uppercase text-pureBlack hover:hover:text-accent-two text-base text-center transition-all ease-in-out duration-500"
 					>
 						Login
@@ -77,7 +77,7 @@ const TopNavigation: FC = () => {
 										?.foundationPageLink?.target
 								: "_self"
 						}`}
-						aria-label={`Chelsea Foundation`}
+						aria-label={`Simba Foundation`}
 						className="hidden lg:block font-OnestBold tracking-[-0.02rem] uppercase text-pureBlack hover:hover:text-accent-two text-base text-center transition-all ease-in-out duration-500"
 					>
 						{
@@ -107,12 +107,10 @@ const TopNavigation: FC = () => {
 							}`}
 						>
 							<Link
+								target="_blank"
 								className="inline-block text-primary-default"
 								href={`${globalContext?.themesOptionsContent?.facebookLink?.url}`}
 								aria-label={`Facebook Social Media Link ${globalContext?.themesOptionsContent?.facebookLink?.title}`}
-								target={
-									globalContext?.themesOptionsContent?.facebookLink?.target
-								}
 							>
 								<svg
 									width="100%"
@@ -145,12 +143,10 @@ const TopNavigation: FC = () => {
 							}`}
 						>
 							<Link
+								target="_blank"
 								className="inline-block text-primary-default"
 								href={`${globalContext?.themesOptionsContent?.twitterLink?.url}`}
 								aria-label={`Twitter Social Media Link ${globalContext?.themesOptionsContent?.twitterLink?.title}`}
-								target={
-									globalContext?.themesOptionsContent?.twitterLink?.target
-								}
 							>
 								<svg
 									version="1.1"
@@ -182,12 +178,10 @@ const TopNavigation: FC = () => {
 							}`}
 						>
 							<Link
+								target="_blank"
 								className="inline-block text-primary-default"
 								href={`${globalContext?.themesOptionsContent?.linkedinLink?.url}`}
 								aria-label={`Linkedin Social Media Link ${globalContext?.themesOptionsContent?.linkedinLink.title}`}
-								target={
-									globalContext?.themesOptionsContent?.linkedinLink?.target
-								}
 							>
 								<svg
 									height="100%"
@@ -220,12 +214,10 @@ const TopNavigation: FC = () => {
 							}`}
 						>
 							<Link
+								target="_blank"
 								className="inline-block text-primary-default"
 								href={`${globalContext?.themesOptionsContent?.instagramLink?.url}`}
 								aria-label={`Instagram Social Media Link ${globalContext?.themesOptionsContent?.instagramLink?.title}`}
-								target={
-									globalContext?.themesOptionsContent?.instagramLink?.target
-								}
 							>
 								<svg
 									fill="#ea1d25"
@@ -257,10 +249,10 @@ const TopNavigation: FC = () => {
 							}`}
 						>
 							<Link
+								target="_blank"
 								className="inline-block text-primary-default"
 								href={`${globalContext?.themesOptionsContent?.tiktokLink?.url}`}
 								aria-label={`Tiktok Social Media Link ${globalContext?.themesOptionsContent?.tiktokLink?.title}`}
-								target={globalContext?.themesOptionsContent?.tiktokLink?.target}
 							>
 								<svg
 									id="icons"
@@ -292,12 +284,10 @@ const TopNavigation: FC = () => {
 							}`}
 						>
 							<Link
+								target="_blank"
 								className="inline-block text-primary-default"
 								href={`${globalContext?.themesOptionsContent?.youtubeLink?.url}`}
 								aria-label={`Youtube Social Media Link ${globalContext?.themesOptionsContent?.youtubeLink?.title}`}
-								target={
-									globalContext?.themesOptionsContent?.youtubeLink?.target
-								}
 							>
 								<svg
 									version="1.1"
