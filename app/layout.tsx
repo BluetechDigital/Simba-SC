@@ -31,6 +31,9 @@ import {getAllJobsPositionsContent} from "@/graphql/GetAllJobsPositions";
 // Instagram Feed
 import {getAllInstagramFeedContent} from "@/functions/SocialMedia/InstagramFeed";
 
+// Youtube Channel Info
+import {getAllYoutubeChannelInfo} from "@/functions/YouTube/GetAllYoutubeContent";
+
 // News, Blogs & Case Studies
 import {
 	getAllNewsContent,
@@ -72,6 +75,9 @@ const App = async ({children}: AppProps | any) => {
 
 		// Social Media
 		getAllInstagramFeedContent(),
+
+		// Youtube Channel Info
+		getAllYoutubeChannelInfo(),
 
 		// Football Fixtures
 		getLastThreeFixturesContent(),
@@ -115,6 +121,9 @@ const App = async ({children}: AppProps | any) => {
 		// Social Media
 		instagramFeed,
 
+		// Youtube Channel Info
+		youtubeChannelInfo,
+
 		// Football Fixtures
 		lastThreeFixtures,
 
@@ -156,6 +165,9 @@ const App = async ({children}: AppProps | any) => {
 
 		// Social Media
 		instagramFeed: instagramFeed,
+
+		// Youtube Channel Info
+		youtubeChannelInfo: youtubeChannelInfo,
 
 		// Football Fixtures
 		lastThreeFixtures: lastThreeFixtures,

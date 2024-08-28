@@ -18,22 +18,36 @@ const CountUpStats: FC<ICountUpStats> = ({
 	const ref: any = useRef(null);
 	const isInView = useInView(ref);
 
+	// Formatting function to convert numbers to short form (e.g., 613k)
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	const formatNumber = (num: number): string => {
+		if (num >= 1000000) {
+			return (num / 1000000).toFixed(decimals) + "M";
+		} else if (num >= 1000) {
+			return (num / 1000).toFixed(decimals) + "k";
+		}
+		return num.toString();
+	};
+
 	useEffect(() => {
 		if (!isInView) return;
 
-		animate(0, number, {
+		animate(0, Number(number), {
 			duration: 2.5,
 			onUpdate(value) {
 				if (!ref.current) return;
 
-				ref.current.textContent = value.toFixed(decimals);
+				// Update the text content with the formatted value
+				ref.current.textContent = formatNumber(
+					parseFloat(value.toFixed(decimals))
+				);
 			},
 		});
-	}, [number, decimals, isInView]);
+	}, [number, decimals, isInView, formatNumber]);
 
 	return (
 		<>
-			<div className="flex w-full min-w-72 flex-col items-center py-8 px-8 sm:py-0 gap-8">
+			<div className="flex w-full flex-col items-center py-8 px-8 sm:py-0 gap-8">
 				<motion.h4
 					initial={initialTwo}
 					whileInView={fadeIn}

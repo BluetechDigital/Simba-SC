@@ -19,6 +19,35 @@ export namespace IYoutube {
 	export interface IOnlineStoreShirts extends IYoutube {}
 }
 
-export type IYoutubeChannel = string;
+export type IYoutubeChannelInfo = {
+	kind: string;
+	etag: string;
+	id: string;
+	snippet: {
+		title: string;
+		description: string;
+		customUrl: string;
+		publishedAt: any;
+		thumbnails: {
+			(key: any): {
+				url: string;
+				width: number;
+				height: number;
+			};
+		};
+		defaultLanguage: string;
+		localized: {
+			title: string;
+			description: string;
+		};
+		country: string;
+	};
+	statistics: {
+		viewCount: string;
+		subscriberCount: string; // this value is rounded to three significant figures
+		hiddenSubscriberCount: boolean;
+		videoCount: string;
+	};
+};
 export type IYoutubePlaylists = string;
 export type IYoutubeVideos = string;

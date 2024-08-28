@@ -10,7 +10,7 @@ export type IParagraph = {
 	tailwindStyling: string;
 };
 export type ICountUpStats = {
-	number: number;
+	number: string;
 	suffix: string;
 	decimals?: number;
 	paragraph: string;

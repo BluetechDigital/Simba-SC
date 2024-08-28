@@ -7,6 +7,7 @@ import {
 } from "@/types/context";
 import {IOnlineStore} from "@/types/api/Store";
 import {IFixtures} from "@/types/context/Fixtures";
+import {IYoutubeChannelInfo} from "@/types/api/Youtube";
 import {IInstagramFeed} from "@/types/context/SocialMedia";
 import {ILinks, IMegaMenuLinks} from "@/types/context/Links";
 import {INewsBlogsCaseStudies} from "@/types/context/NewsCaseStudies";
@@ -56,6 +57,9 @@ export type IGlobalProps = {
 	// Social Media
 	instagramFeed: IInstagramFeed;
 
+	// Youtube Channel Info
+	youtubeChannelInfo: IYoutubeChannelInfo;
+
 	// Football Fixtures
 	lastThreeFixtures: IFixtures;
 
@@ -96,6 +100,9 @@ export type IGlobalContext = {
 
 	// Social Media
 	instagramFeed: IInstagramFeed;
+
+	// Youtube Channel Info
+	youtubeChannelInfo: IYoutubeChannelInfo;
 
 	// Football Fixtures
 	lastThreeFixtures: IFixtures;
