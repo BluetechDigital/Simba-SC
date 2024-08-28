@@ -112,7 +112,7 @@ export const getAllInstagramFeedContent = async (): Promise<IInstagramFeed> => {
 		];
 
 		// const url = `https://graph.instagram.com/me/${instagramFeedMediaType}&access_token=${instagramUserToken}`;
-		// // Catch Data Lifetime for 24 Hours
+		// // Catch Data for 24 Hours before refetching
 		// const data = await fetch(url, {next: {revalidate: 86400}});
 		// const instagramFeed = await data.json();
 		// return instagramFeed?.data;

@@ -15,18 +15,32 @@ const youtubeChannelId = `${process.env.YOUTUBE_CHANNEL_ID}`;
 export const getAllYoutubeChannelInfo =
 	async (): Promise<IYoutubeChannelInfo> => {
 		try {
-			const url = `${youtubeAPI}/channels?part=snippet,statistics&id=${youtubeChannelId}&key=${youtubeKey}`;
+			const snippetUrl = `${youtubeAPI}/channels?part=snippet&id=${youtubeChannelId}&key=${youtubeKey}`;
+			const statisticsUrl = `${youtubeAPI}/channels?part=statistics&id=${youtubeChannelId}&key=${youtubeKey}`;
 
-			// Catch Data Lifetime for 24 Hours
-			const data = await fetch(url, {
+			// Catch Data indefinitely
+			const fetchSnippetData = await fetch(snippetUrl, {
+				next: {revalidate: false},
+			});
+
+			// Catch Data for 24 Hours before refetching
+			const fetchStatisticsData = await fetch(statisticsUrl, {
 				next: {revalidate: 86400},
 			});
-			const channelInfo = await data.json();
-			return channelInfo?.items[0];
+
+			const snippetData = await fetchSnippetData.json();
+			const statisticsData = await fetchStatisticsData.json();
+
+			const data = {
+				...snippetData?.items[0]?.snippet,
+				...statisticsData?.items[0]?.statistics,
+			};
+
+			return data;
 		} catch (error: unknown) {
 			console.log(error);
 			throw new Error(
-				"Something went wrong trying to fetch Youtube Channel content"
+				"Something went wrong trying to fetch youtube channel content"
 			);
 		}
 	};

@@ -11,7 +11,7 @@ export type IParagraph = {
 };
 export type ICountUpStats = {
 	number: string;
-	suffix: string;
+	suffix?: string;
 	decimals?: number;
 	paragraph: string;
 };

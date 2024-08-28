@@ -55,7 +55,7 @@ const CountUpStats: FC<ICountUpStats> = ({
 					className="font-OnestBlack text-center uppercase text-[16vw] md:text-[5vw] tracking-[-0.02rem] text-white font-semibold"
 				>
 					<span ref={ref}></span>
-					{suffix}
+					{suffix ? suffix : <></>}
 				</motion.h4>
 				<Paragraph
 					content={paragraph}

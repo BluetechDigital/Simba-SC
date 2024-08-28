@@ -24,26 +24,21 @@ const SimbaTVStatsCard: FC = () => {
 					className="flex flex-col items-center justify-center md:flex-row gap-10 md:gap-0"
 				>
 					<CountUpStats
-						suffix=""
 						decimals={0}
 						paragraph="Subscribers"
-						number={
-							globalContext?.youtubeChannelInfo?.statistics?.subscriberCount
-						}
+						number={globalContext?.youtubeChannelInfo?.subscriberCount}
 					/>
 					<div className="hidden md:block h-[1px] w-12 bg-lightGreyTwo sm:h-32 sm:w-[1px]" />
 					<CountUpStats
-						decimals={0}
-						suffix=""
+						decimals={2}
 						paragraph="Views"
-						number={globalContext?.youtubeChannelInfo?.statistics?.viewCount}
+						number={globalContext?.youtubeChannelInfo?.viewCount}
 					/>
 					<div className="hidden md:block h-[1px] w-12 bg-lightGreyTwo sm:h-32 sm:w-[1px]" />
 					<CountUpStats
 						decimals={1}
-						suffix=""
 						paragraph="Videos"
-						number={globalContext?.youtubeChannelInfo?.statistics?.videoCount}
+						number={globalContext?.youtubeChannelInfo?.videoCount}
 					/>
 				</motion.div>
 			</ScrollYProgressReveal>
