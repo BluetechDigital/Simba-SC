@@ -8,7 +8,8 @@ import {
 	arrayLoopStaggerChildren,
 } from "@/animations/animations";
 import Link from "next/link";
-import {FC, useState} from "react";
+import Image from "next/image";
+import {FC, Fragment, useState} from "react";
 import {motion} from "framer-motion";
 import {useGlobalContext} from "@/context/global";
 import {ISimbaTVBannerCard} from "@/types/components/Elements";
@@ -25,6 +26,8 @@ const SimbaTVBannerCard: FC<ISimbaTVBannerCard> = ({
 }) => {
 	const globalContext = useGlobalContext();
 	const [activeIndex, setActiveIndex] = useState(0);
+
+	console.log(globalContext?.youtubeVideos);
 
 	const ITEMS = [
 		{
@@ -105,6 +108,58 @@ const SimbaTVBannerCard: FC<ISimbaTVBannerCard> = ({
 							</motion.div>
 						))}
 					</SimbaTVBannerVideos>
+					<ul className="pt-16 grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-center">
+						{globalContext?.youtubeVideos?.length > 0 ? (
+							globalContext?.youtubeVideos
+								?.slice(0, 2)
+								?.map((item: any, index: number) => (
+									<Fragment key={index}>
+										<ScrollYProgressReveal>
+											<motion.li
+												custom={index}
+												initial={initial}
+												whileInView="animate"
+												viewport={{once: true}}
+												variants={arrayLoopStaggerChildren}
+												className={
+													item?.status?.privacyStatus == "public"
+														? "w-full h-full py-6 px-10 bg-tertiary-default"
+														: "hidden"
+												}
+											>
+												<Link
+													target="_blank"
+													href={`https://www.youtube.com/channel/UC3W0zHzX_Iu3lJ20bOfYUeA/`}
+													aria-label={`${item?.snippet?.channelTitle}: ${item?.snippet?.title}`}
+												>
+													<Image
+														src={item?.snippet?.thumbnails?.maxres?.url}
+														alt={`${item?.image?.altText}`}
+														width={
+															item?.snippet?.thumbnails?.maxres?.width
+																? item?.snippet?.thumbnails?.maxres?.width
+																: 500
+														}
+														height={
+															item?.snippet?.thumbnails?.maxres?.height
+																? item?.snippet?.thumbnails?.maxres?.height
+																: 500
+														}
+														className={
+															item?.snippet?.thumbnails?.maxres?.url
+																? `block w-full h-full object-cover object-center`
+																: `hidden`
+														}
+													/>
+												</Link>
+											</motion.li>
+										</ScrollYProgressReveal>
+									</Fragment>
+								))
+						) : (
+							<></>
+						)}
+					</ul>
 				</div>
 			</ScrollYProgressReveal>
 		</>
