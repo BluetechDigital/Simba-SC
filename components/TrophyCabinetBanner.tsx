@@ -16,8 +16,10 @@ import styles from "@/styles/components/TrophyCabinetBanner.module.scss";
 
 // Components
 import Title from "@/components/Elements/Title";
+import CountUp from "@/components/Elements/CountUp";
 import Paragraph from "@/components/Elements/Paragraph";
 import LatestNewsGridCard from "@/components/Cards/LatestNewsGridCard";
+import CountUpStats from "@/components/SimbaTVBanner/Elements/CountUpStats";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import SlideInXRightAnimation from "@/components/Animations/SlideInXRightAnimation";
 
@@ -84,9 +86,11 @@ const TrophyCabinetBanner: FC<ITrophyCabinetBanner> = ({
 																: `hidden`
 														}
 													/>
-													<span className="mt-4 font-schaboCondensed text-center uppercase text-8xl tracking-[-0.05rem] text-pureBlack leading-tight">
-														{item?.totalAmount}
-													</span>
+													<CountUp
+														decimals={0}
+														tailwindStyling="mt-4 font-schaboCondensed text-center uppercase text-8xl tracking-[-0.05rem] text-pureBlack leading-tight"
+														number={item?.totalAmount}
+													/>
 												</div>
 												<motion.h4
 													initial={initialTwo}

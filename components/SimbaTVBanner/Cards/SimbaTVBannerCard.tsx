@@ -27,8 +27,6 @@ const SimbaTVBannerCard: FC<ISimbaTVBannerCard> = ({
 	const globalContext = useGlobalContext();
 	const [activeIndex, setActiveIndex] = useState(0);
 
-	console.log(globalContext?.youtubeVideos);
-
 	const ITEMS = [
 		{
 			title: "Youtube",
