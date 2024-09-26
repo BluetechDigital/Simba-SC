@@ -1,7 +1,7 @@
 export type IPagination = {
 	contentArray: any;
 	contentType: string;
-	tailwindStyling: string;
+	className: string;
 	numberOfItemsRenderedPerPage: number;
 };
 export type IMaintenance = {
@@ -24,6 +24,6 @@ export type ISmoothScrolling = {
 	children: React.ReactNode;
 };
 export type IScrollYProgressReveal = {
-	tailwindStyling?: string;
+	className?: string;
 	children: React.ReactNode;
 };

@@ -107,7 +107,7 @@ const NewsLatestArticles: FC<INewsLatestArticles> = ({
 								? excerpt?.substring(0, 200) + "..."
 								: excerpt
 						}
-						tailwindStyling="block px-0 text-tiny text-darkGrey"
+						className="block px-0 text-tiny text-darkGrey"
 					/>
 				</motion.article>
 			</Link>

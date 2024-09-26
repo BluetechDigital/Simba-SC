@@ -68,7 +68,7 @@ const Maintenance: FC<IMaintenance> = ({title, paragraph, backgroundImage}) => {
 						<div className="max-w-xl mx-auto">
 							<Paragraph
 								content={paragraph}
-								tailwindStyling="mb-6 py-6 text-white leading-[1.75rem] text-base sm:text-medium text-center sm:text-left"
+								className="mb-6 py-6 text-white leading-[1.75rem] text-base sm:text-medium text-center sm:text-left"
 							/>
 						</div>
 					</motion.div>

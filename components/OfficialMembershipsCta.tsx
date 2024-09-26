@@ -28,13 +28,13 @@ const OfficialMembershipsCta: FC<IOfficialMembershipsCta> = ({
 			>
 				<div className="lg:max-w-[1700px] mx-auto py-14 px-4">
 					<div
-						className="p-8 bg-no-repeat bg-cover bg-center overflow-hidden"
 						style={{
 							backgroundImage: `url("${image?.sourceUrl}")`,
 						}}
+						className="p-8 bg-no-repeat bg-cover bg-center overflow-hidden"
 					>
-						<SlideInXLeftAnimation tailwindStyling="py-11 px-9 max-w-xl bg-white">
-							<ScrollYProgressReveal tailwindStyling="flex flex-col items-center lg:items-baseline">
+						<SlideInXLeftAnimation className="py-11 px-9 max-w-xl bg-white">
+							<ScrollYProgressReveal className="flex flex-col items-center lg:items-baseline">
 								<motion.h4
 									initial={initialTwo}
 									whileInView={fadeIn}
@@ -45,7 +45,7 @@ const OfficialMembershipsCta: FC<IOfficialMembershipsCta> = ({
 								</motion.h4>
 								<Paragraph
 									content={paragraph}
-									tailwindStyling="mb-4 font-OnestRegular leading-normal text-pureBlack text-lg text-center lg:text-left"
+									className="mb-4 font-OnestRegular leading-normal text-pureBlack text-lg text-center lg:text-left"
 								/>
 								<div className="flex flex-wrap gap-4">
 									<Link

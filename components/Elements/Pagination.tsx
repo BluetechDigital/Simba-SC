@@ -19,7 +19,7 @@ import Paragraph from "@/components/Elements/Paragraph";
 const Pagination: FC<IPagination> = ({
 	contentType,
 	contentArray,
-	tailwindStyling,
+	className,
 	numberOfItemsRenderedPerPage,
 }) => {
 	const itemsPerPage = numberOfItemsRenderedPerPage;
@@ -53,7 +53,7 @@ const Pagination: FC<IPagination> = ({
 				variants={stagger}
 				whileInView="animate"
 				viewport={{once: true}}
-				className={`${tailwindStyling}`}
+				className={`${className}`}
 			>
 				{currentImages?.length > 0 ? (
 					currentImages?.map((item: any, index: number) => (
@@ -100,7 +100,7 @@ const Pagination: FC<IPagination> = ({
 								>
 									<Paragraph
 										content="No images to display"
-										tailwindStyling="px-0 text-base text-white"
+										className="px-0 text-base text-white"
 									/>
 								</motion.div>
 							</motion.div>

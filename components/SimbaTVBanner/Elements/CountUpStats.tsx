@@ -59,7 +59,7 @@ const CountUpStats: FC<ICountUpStats> = ({
 				</motion.h4>
 				<Paragraph
 					content={paragraph}
-					tailwindStyling="font-OnestBlack uppercase leading-tight text-lightGreyTwo text-paragraph lg:text-lg text-center"
+					className="font-OnestBlack uppercase leading-tight text-lightGreyTwo text-paragraph lg:text-lg text-center"
 				/>
 			</div>
 		</>

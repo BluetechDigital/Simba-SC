@@ -2,7 +2,7 @@ export type ILatestNewsGridCard = {
 	slug: string;
 	date: string;
 	title: string;
-	tailwindStyling: string;
+	className: string;
 	featuredImage: {
 		node: {
 			altText: string;

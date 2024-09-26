@@ -15,7 +15,7 @@ const SimbaTVStatsCard: FC = () => {
 
 	return (
 		<>
-			<ScrollYProgressReveal tailwindStyling="mx-auto w-full px-4 py-20 md:py-24 border-t border-white">
+			<ScrollYProgressReveal className="mx-auto w-full px-4 py-20 md:py-24 border-t border-white">
 				<motion.div
 					initial={initial}
 					variants={stagger}

@@ -6,7 +6,7 @@ import {fadeIn, offsetFinish, offsetStart} from "@/animations/animations";
 
 const SlideInXRightAnimation: FC<IScrollYProgressReveal.ISlideInXAnimation> = ({
 	children,
-	tailwindStyling,
+	className,
 }) => {
 	const container = useRef(null);
 
@@ -25,7 +25,7 @@ const SlideInXRightAnimation: FC<IScrollYProgressReveal.ISlideInXAnimation> = ({
 				x: slideInX,
 				opacity: fadeIn ? scrollYProgress : 1,
 			}}
-			className={children ? ` ${tailwindStyling}` : `hidden`}
+			className={children ? ` ${className}` : `hidden`}
 		>
 			{children}
 		</motion.div>

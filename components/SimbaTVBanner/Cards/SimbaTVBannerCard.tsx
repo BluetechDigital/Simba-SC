@@ -9,8 +9,8 @@ import {
 } from "@/animations/animations";
 import Link from "next/link";
 import Image from "next/image";
-import {FC, Fragment, useState} from "react";
 import {motion} from "framer-motion";
+import {FC, Fragment, useState} from "react";
 import {useGlobalContext} from "@/context/global";
 import {ISimbaTVBannerCard} from "@/types/components/Elements";
 
@@ -50,7 +50,7 @@ const SimbaTVBannerCard: FC<ISimbaTVBannerCard> = ({
 
 	return (
 		<>
-			<ScrollYProgressReveal tailwindStyling="py-10">
+			<ScrollYProgressReveal className="py-10">
 				<div className="mb-4 w-full flex flex-col md:flex-row items-center justify-center lg:justify-start space-x-2 space-y-2 md:space-y-0">
 					{ITEMS.map((item, index) => (
 						<motion.button
@@ -101,7 +101,7 @@ const SimbaTVBannerCard: FC<ISimbaTVBannerCard> = ({
 								</motion.h5>
 								<Paragraph
 									content={item.content}
-									tailwindStyling="font-OnestRegular leading-tight text-white text-lg lg:text-xl text-center md:text-left"
+									className="font-OnestRegular leading-tight text-white text-lg lg:text-xl text-center md:text-left"
 								/>
 							</motion.div>
 						))}

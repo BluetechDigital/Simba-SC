@@ -66,7 +66,7 @@ const Hero: FC<IHero> = ({heroSlider}) => {
 															</motion.h1>
 															<Paragraph
 																content={item?.paragraph}
-																tailwindStyling="max-w-xl mx-auto lg:mx-0 py-2 font-OnestRegular leading-tight text-white text-lg text-center lg:text-left"
+																className="max-w-xl mx-auto lg:mx-0 py-2 font-OnestRegular leading-tight text-white text-lg text-center lg:text-left"
 															/>
 														</div>
 														<motion.div

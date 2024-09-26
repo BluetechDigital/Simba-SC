@@ -147,7 +147,7 @@ const NewsletterElement: FC = () => {
 
 						<Paragraph
 							content={`Get the latest updates delivered into your inbox monthly. No spam.`}
-							tailwindStyling="mb-2 lg:max-w-3xl mx-auto text-white text-base text-center lg:text-left"
+							className="mb-2 lg:max-w-3xl mx-auto text-white text-base text-center lg:text-left"
 						/>
 					</div>
 

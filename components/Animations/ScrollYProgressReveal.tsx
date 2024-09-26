@@ -8,7 +8,7 @@ import {fadeIn, offsetFinish, offsetStart} from "@/animations/animations";
 
 const ScrollYProgressReveal: FC<IScrollYProgressReveal> = ({
 	children,
-	tailwindStyling,
+	className,
 }) => {
 	const container = useRef(null);
 
@@ -21,7 +21,7 @@ const ScrollYProgressReveal: FC<IScrollYProgressReveal> = ({
 		<motion.div
 			ref={container}
 			style={{opacity: fadeIn ? scrollYProgress : 1}}
-			className={children ? `${tailwindStyling}` : `hidden`}
+			className={children ? `${className}` : `hidden`}
 		>
 			{children}
 		</motion.div>

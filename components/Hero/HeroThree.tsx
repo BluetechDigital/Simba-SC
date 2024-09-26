@@ -29,7 +29,7 @@ const HeroThree: FC<IHeroThree> = ({title, paragraph, backgroundImage}) => {
 					<div className="max-w-full lg:max-w-5xl mx-auto lg:mx-0 relative z-10 flex flex-col items-center lg:items-start px-6 md:px-24">
 						<Title
 							content={title}
-							tailwindStyling={`title max-w-3xl font-schaboCondensed text-center lg:text-left uppercase  text-7xl sm:text-8xl lg:text-12xl tracking-[-0.05rem] text-white leading-tight xl:leading-[5.5rem] ${
+							className={`title max-w-3xl font-schaboCondensed text-center lg:text-left uppercase  text-7xl sm:text-8xl lg:text-12xl tracking-[-0.05rem] text-white leading-tight xl:leading-[5.5rem] ${
 								paragraph
 									? "border-none"
 									: " pb-2 border-b-[1px] border-solid border-lightGreyTwo"
@@ -37,7 +37,7 @@ const HeroThree: FC<IHeroThree> = ({title, paragraph, backgroundImage}) => {
 						/>
 						<Paragraph
 							content={paragraph}
-							tailwindStyling="max-w-2xl mx-auto lg:mx-0 font-OnestRegular leading-tight text-white text-lg text-center lg:text-left"
+							className="max-w-2xl mx-auto lg:mx-0 font-OnestRegular leading-tight text-white text-lg text-center lg:text-left"
 						/>
 					</div>
 				</div>

@@ -1,6 +1,14 @@
 /*  FRAMER-MOTION ANIMATIONS
 Custom reusable Animation Properties/variables */
 
+// 3D Tilt animation effect
+export type UseTiltEffect = {
+	rotateX: number;
+	rotateY: number;
+	translateX: number;
+	translateY: number;
+};
+
 // WhileInView
 export type Initial = {
 	y: number;
@@ -91,7 +99,7 @@ export type SlideInRightFinish = {
 // ScrollY Progress Based Content Reveal Animation
 export namespace IScrollYProgressReveal {
 	export type IProps = {
-		tailwindStyling?: string;
+		className?: string;
 		children: React.ReactNode;
 	};
 

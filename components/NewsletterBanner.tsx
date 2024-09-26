@@ -24,14 +24,14 @@ const NewsletterBanner: FC<INewsletterBanner> = ({
 				}}
 			>
 				<div className="lg:container px-4 mx-auto">
-					<ScrollYProgressReveal tailwindStyling="w-full flex flex-col items-center justify-center gap-8">
+					<ScrollYProgressReveal className="w-full flex flex-col items-center justify-center gap-8">
 						<Title
 							content={title}
-							tailwindStyling="max-w-2xl font-schaboCondensed text-center uppercase text-[12.5vw] sm:text-[10vw] md:text-[5vw] tracking-[-0.05rem] text-white leading-tight xl:leading-[5.5rem]"
+							className="max-w-2xl font-schaboCondensed text-center uppercase text-[12.5vw] sm:text-[10vw] md:text-[5vw] tracking-[-0.05rem] text-white leading-tight xl:leading-[5.5rem]"
 						/>
 						<Paragraph
 							content={paragraph}
-							tailwindStyling="max-w-xl mx-auto lg:mx-0 font-OnestRegular leading-tight text-white text-lg text-center lg:text-left"
+							className="max-w-xl mx-auto lg:mx-0 font-OnestRegular leading-tight text-white text-lg text-center lg:text-left"
 						/>
 						<motion.div
 							initial={initialTwo}

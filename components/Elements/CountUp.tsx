@@ -6,12 +6,7 @@ import {ICountUp} from "@/types/components/Elements";
 import {motion, animate, useInView} from "framer-motion";
 import {initialTwo, fadeIn} from "@/animations/animations";
 
-const CountUp: FC<ICountUp> = ({
-	number,
-	suffix,
-	decimals = 0,
-	tailwindStyling,
-}) => {
+const CountUp: FC<ICountUp> = ({number, suffix, decimals = 0, className}) => {
 	const ref: any = useRef(null);
 	const isInView = useInView(ref);
 
@@ -48,7 +43,7 @@ const CountUp: FC<ICountUp> = ({
 				initial={initialTwo}
 				whileInView={fadeIn}
 				viewport={{once: true}}
-				className={tailwindStyling}
+				className={className}
 			>
 				<span ref={ref}></span>
 				{suffix ? suffix : <></>}

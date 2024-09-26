@@ -57,7 +57,7 @@ const LatestNewsGrid: FC<ILatestNewsGrid> = ({
 												date={item?.node?.date}
 												title={item?.node?.title}
 												featuredImage={item?.node?.featuredImage}
-												tailwindStyling={"w-full h-fill min-h-[375px]"}
+												className={"w-full h-fill min-h-[375px]"}
 											/>
 										</motion.div>
 									</Fragment>
@@ -109,7 +109,7 @@ const LatestNewsGrid: FC<ILatestNewsGrid> = ({
 												date={item?.node?.date}
 												title={item?.node?.title}
 												featuredImage={item?.node?.featuredImage}
-												tailwindStyling={
+												className={
 													"w-full h-fill min-h-[375px] lg:min-h-[758px]"
 												}
 											/>
@@ -163,7 +163,7 @@ const LatestNewsGrid: FC<ILatestNewsGrid> = ({
 													date={item?.node?.date}
 													title={item?.node?.title}
 													featuredImage={item?.node?.featuredImage}
-													tailwindStyling={"w-full h-fill min-h-[375px]"}
+													className={"w-full h-fill min-h-[375px]"}
 												/>
 											</motion.div>
 										</Fragment>
@@ -174,7 +174,7 @@ const LatestNewsGrid: FC<ILatestNewsGrid> = ({
 						</div>
 					</div>
 				</div>
-				<ScrollYProgressReveal tailwindStyling="flex flex-col items-center">
+				<ScrollYProgressReveal className="flex flex-col items-center">
 					<Link
 						href={`${buttonLink?.url}`}
 						target={buttonLink?.target}

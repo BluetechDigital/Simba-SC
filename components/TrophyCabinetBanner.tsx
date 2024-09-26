@@ -45,16 +45,16 @@ const TrophyCabinetBanner: FC<ITrophyCabinetBanner> = ({
 					<div>
 						<Title
 							content={title}
-							tailwindStyling="title max-w-2xl mx-auto lg:mx-0 font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-pureBlack leading-tight"
+							className="title max-w-2xl mx-auto lg:mx-0 font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-pureBlack leading-tight"
 						/>
 						<Paragraph
 							content={paragraph}
-							tailwindStyling="mb-12 lg:mb-8 lg:max-w-lg mx-auto lg:mx-0 font-OnestRegular leading-normal text-pureBlack text-lg text-center lg:text-left"
+							className="mb-12 lg:mb-8 lg:max-w-lg mx-auto lg:mx-0 font-OnestRegular leading-normal text-pureBlack text-lg text-center lg:text-left"
 						/>
 					</div>
 					<div className="flex flex-col lg:flex-row items-center justify-center gap-16">
 						<div className="w-full lg:w-[60%] flex flex-col gap-16 px-6">
-							<ScrollYProgressReveal tailwindStyling="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+							<ScrollYProgressReveal className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 								{trophyCabinet?.length > 0 ? (
 									trophyCabinet?.map((item: any, index: number) => (
 										<Fragment key={index}>
@@ -88,7 +88,7 @@ const TrophyCabinetBanner: FC<ITrophyCabinetBanner> = ({
 													/>
 													<CountUp
 														decimals={0}
-														tailwindStyling="mt-4 font-schaboCondensed text-center uppercase text-8xl tracking-[-0.05rem] text-pureBlack leading-tight"
+														className="mt-4 font-schaboCondensed text-center uppercase text-8xl tracking-[-0.05rem] text-pureBlack leading-tight"
 														number={item?.totalAmount}
 													/>
 												</div>
@@ -107,7 +107,7 @@ const TrophyCabinetBanner: FC<ITrophyCabinetBanner> = ({
 									<></>
 								)}
 							</ScrollYProgressReveal>
-							<ScrollYProgressReveal tailwindStyling="flex flex-col items-center lg:items-baseline">
+							<ScrollYProgressReveal className="flex flex-col items-center lg:items-baseline">
 								<Link
 									href={`${buttonLink?.url}`}
 									target={buttonLink?.target}
@@ -121,7 +121,7 @@ const TrophyCabinetBanner: FC<ITrophyCabinetBanner> = ({
 								</Link>
 							</ScrollYProgressReveal>
 						</div>
-						<SlideInXRightAnimation tailwindStyling="w-full lg:w-[40%]">
+						<SlideInXRightAnimation className="w-full lg:w-[40%]">
 							<Image
 								src={backgroundImage?.sourceUrl}
 								alt={`${backgroundImage?.altText}`}

@@ -9,6 +9,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
+import {useTiltEffect} from "@/hooks/useTiltEffect";
 import {IClubCardMembershipCTA} from "@/types/components/index";
 
 // Styling
@@ -28,6 +29,9 @@ const ClubCardMembershipCTA: FC<IClubCardMembershipCTA> = ({
 	backgroundImage,
 	clubCardMembershipText,
 }) => {
+	// Content wrapper tilt animation effect
+	const {rotateX, rotateY, translateX, translateY} = useTiltEffect();
+
 	return (
 		<>
 			<div
@@ -43,13 +47,19 @@ const ClubCardMembershipCTA: FC<IClubCardMembershipCTA> = ({
 					<div className="flex flex-col items-center justify-between">
 						<Title
 							content={title}
-							tailwindStyling="title w-full mb-5 max-w-3xl mx-auto font-schaboCondensed text-center uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-pureBlack leading-tight xl:leading-[4.5rem]"
+							className="title w-full mb-5 max-w-3xl mx-auto font-schaboCondensed text-center uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-pureBlack leading-tight xl:leading-[4.5rem]"
 						/>
 					</div>
 					<div className="flex flex-col lg:flex-row items-center justify-center gap-16">
-						<div
+						<motion.div
 							className="relative w-full h-[65vh] lg:h-[75vh] lg:aspect-[16/9] aspect-[9/16] flex flex-col items-center justify-center bg-white bg-no-repeat bg-center bg-cover overflow-hidden"
 							style={{
+								x: translateX,
+								y: translateY,
+								rotateX: `${rotateX}deg`,
+								rotateY: `${rotateY}deg`,
+								transformPerspective: 1000, // Adds perspective for the tilt effect
+								transition: "transform 0.2s ease-out", // Smoother transition
 								backgroundImage: `linear-gradient(0deg,rgba(234, 29, 37, 0),rgba(234, 29, 37, 0.5),rgba(234, 29, 37, 0.80)),url("${backgroundImage?.sourceUrl}")`,
 							}}
 						>
@@ -80,7 +90,7 @@ const ClubCardMembershipCTA: FC<IClubCardMembershipCTA> = ({
 									}
 								/>
 							</motion.video>
-							<ScrollYProgressReveal tailwindStyling="relative z-10 w-full py-44 px-16 flex flex-col items-center justify-center">
+							<ScrollYProgressReveal className="relative z-10 w-full py-44 px-16 flex flex-col items-center justify-center">
 								<motion.h4
 									initial={initial}
 									whileInView={fadeInUp}
@@ -89,7 +99,7 @@ const ClubCardMembershipCTA: FC<IClubCardMembershipCTA> = ({
 								>
 									{clubCardMembershipText}
 								</motion.h4>
-								<ScrollYProgressReveal tailwindStyling="flex flex-col items-center">
+								<ScrollYProgressReveal className="flex flex-col items-center">
 									<Link
 										href={`${buttonLink?.url}`}
 										target={buttonLink?.target}
@@ -103,7 +113,7 @@ const ClubCardMembershipCTA: FC<IClubCardMembershipCTA> = ({
 									</Link>
 								</ScrollYProgressReveal>
 							</ScrollYProgressReveal>
-						</div>
+						</motion.div>
 					</div>
 				</div>
 			</div>

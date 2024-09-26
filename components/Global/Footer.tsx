@@ -298,7 +298,7 @@ const Footer: FC = () => {
 					>
 						<Paragraph
 							content={globalContext?.themesOptionsContent?.copyrightText}
-							tailwindStyling="hidden lg:block font-OnestRegular max-w-lg mx-auto lg:mx-0 text-pureBlack text-xs text-center lg:text-left"
+							className="hidden lg:block font-OnestRegular max-w-lg mx-auto lg:mx-0 text-pureBlack text-xs text-center lg:text-left"
 						/>
 					</motion.div>
 					<motion.ul
@@ -376,7 +376,7 @@ const Footer: FC = () => {
 						</motion.ul>
 						<Paragraph
 							content={globalContext?.themesOptionsContent?.copyrightText}
-							tailwindStyling="block lg:hidden font-OnestRegular max-w-lg mx-auto lg:mx-0 text-pureBlack text-xs text-center lg:text-left"
+							className="block lg:hidden font-OnestRegular max-w-lg mx-auto lg:mx-0 text-pureBlack text-xs text-center lg:text-left"
 						/>
 						<Link
 							target="_blank"
@@ -394,7 +394,7 @@ const Footer: FC = () => {
 								/>
 								<Paragraph
 									content={`BluetechDigital`}
-									tailwindStyling="font-OnestRegular max-w-lg mx-auto lg:mx-0 text-xs text-center lg:text-left"
+									className="font-OnestRegular max-w-lg mx-auto lg:mx-0 text-xs text-center lg:text-left"
 								/>
 							</span>
 						</Link>

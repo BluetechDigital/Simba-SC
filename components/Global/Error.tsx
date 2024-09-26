@@ -51,7 +51,7 @@ const Error: FC = () => {
 									globalContext?.themesOptionsContent?.errorPageContent
 										?.paragraph
 								}
-								tailwindStyling="mb-6 py-6 font-OnestRegular leading-tight text-white text-lg text-center"
+								className="mb-6 py-6 font-OnestRegular leading-tight text-white text-lg text-center"
 							/>
 						</div>
 					</motion.div>

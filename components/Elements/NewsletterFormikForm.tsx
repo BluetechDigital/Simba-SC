@@ -152,7 +152,7 @@ const NewsletterFormikForm: FC<INewsletterFormikForm> = ({
 
 				<Paragraph
 					content={textarea}
-					tailwindStyling="mb-2 lg:max-w-3xl mx-auto text-pureBlack text-base text-center lg:text-left"
+					className="mb-2 lg:max-w-3xl mx-auto text-pureBlack text-base text-center lg:text-left"
 				/>
 
 				<motion.div

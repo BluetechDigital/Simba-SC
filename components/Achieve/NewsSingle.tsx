@@ -268,11 +268,11 @@ const NewsSingle: FC<INewsSingle> = ({
 						<article>
 							<Paragraph
 								content={boldParagraph}
-								tailwindStyling="lg:max-w-4xl mx-auto lg:mx-0 text-left text-pureBlack text-paragraph font-semibold"
+								className="lg:max-w-4xl mx-auto lg:mx-0 text-left text-pureBlack text-paragraph font-semibold"
 							/>
 							<Paragraph
 								content={paragraph}
-								tailwindStyling="lg:max-w-4xl mx-auto lg:mx-0 text-left text-pureBlack text-paragraph"
+								className="lg:max-w-4xl mx-auto lg:mx-0 text-left text-pureBlack text-paragraph"
 							/>
 						</article>
 					</div>

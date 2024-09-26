@@ -3,17 +3,17 @@ import {MotionProps, Transition, Variant} from "framer-motion";
 
 export type ITitle = {
 	content: string;
-	tailwindStyling: string;
+	className: string;
 };
 export type IParagraph = {
 	content: string;
-	tailwindStyling: string;
+	className: string;
 };
 export type ICountUp = {
 	number: string;
 	suffix?: string;
 	decimals?: number;
-	tailwindStyling: string;
+	className: string;
 };
 export type ICountUpStats = {
 	number: string;

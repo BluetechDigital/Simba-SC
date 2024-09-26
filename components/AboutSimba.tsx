@@ -50,10 +50,10 @@ const AboutSimba: FC<IAboutSimba> = ({
 							>
 								{title}
 							</motion.h4>
-							<ScrollYProgressReveal tailwindStyling="flex flex-col items-center lg:items-baseline">
+							<ScrollYProgressReveal className="flex flex-col items-center lg:items-baseline">
 								<Paragraph
 									content={paragraph}
-									tailwindStyling="mb-12 lg:mb-8 lg:max-w-lg mx-auto lg:mx-0 font-OnestRegular leading-normal text-pureBlack text-lg text-center lg:text-left"
+									className="mb-12 lg:mb-8 lg:max-w-lg mx-auto lg:mx-0 font-OnestRegular leading-normal text-pureBlack text-lg text-center lg:text-left"
 								/>
 								<Link
 									href={`${buttonLink?.url}`}
@@ -94,7 +94,7 @@ const AboutSimba: FC<IAboutSimba> = ({
 							}
 						/>
 					</ScrollYProgressReveal>
-					<SlideInXRightAnimation tailwindStyling="bg-white md:absolute bottom-0 right-0 z-10 w-fit max-w-[500px] p-10 mx-auto md:mx-0">
+					<SlideInXRightAnimation className="bg-white md:absolute bottom-0 right-0 z-10 w-fit max-w-[500px] p-10 mx-auto md:mx-0">
 						<motion.h5
 							initial={initialTwo}
 							whileInView={fadeIn}
@@ -105,7 +105,7 @@ const AboutSimba: FC<IAboutSimba> = ({
 						</motion.h5>
 						<Paragraph
 							content={paragraphTwo}
-							tailwindStyling="font-OnestRegular leading-normal text-pureBlack text-lg lg:text-paragraph text-center md:text-left"
+							className="font-OnestRegular leading-normal text-pureBlack text-lg lg:text-paragraph text-center md:text-left"
 						/>
 					</SlideInXRightAnimation>
 				</motion.div>

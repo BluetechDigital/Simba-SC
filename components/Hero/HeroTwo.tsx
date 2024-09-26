@@ -36,7 +36,7 @@ const HeroTwo: FC<IHeroTwo> = ({title, paragraph, backgroundImage}) => {
 						</motion.h1>
 						<Paragraph
 							content={paragraph}
-							tailwindStyling="max-w-2xl mx-auto lg:mx-0 font-OnestRegular leading-tight text-white text-lg text-center lg:text-left"
+							className="max-w-2xl mx-auto lg:mx-0 font-OnestRegular leading-tight text-white text-lg text-center lg:text-left"
 						/>
 					</div>
 				</div>

@@ -35,15 +35,15 @@ const SimbaTVBanner: FC<ISimbaTVBanner> = ({
 			>
 				<div className="lg:container px-4 mx-auto">
 					<div className="w-full flex flex-col items-center lg:items-baseline justify-center gap-8">
-						<ScrollYProgressReveal tailwindStyling="w-full flex flex-col lg:flex-row items-center justify-between gap-6">
+						<ScrollYProgressReveal className="w-full flex flex-col lg:flex-row items-center justify-between gap-6">
 							<div>
 								<Title
 									content={title}
-									tailwindStyling="title max-w-2xl font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl lg:text-12xl tracking-[-0.05rem] text-white leading-tight xl:leading-[5.5rem]"
+									className="title max-w-2xl font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl lg:text-12xl tracking-[-0.05rem] text-white leading-tight xl:leading-[5.5rem]"
 								/>
 								<Paragraph
 									content={paragraph}
-									tailwindStyling="max-w-xl mx-auto lg:mx-0 font-OnestRegular leading-tight text-white text-lg text-center lg:text-left"
+									className="max-w-xl mx-auto lg:mx-0 font-OnestRegular leading-tight text-white text-lg text-center lg:text-left"
 								/>
 							</div>
 							<Link

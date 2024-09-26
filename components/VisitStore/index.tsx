@@ -29,7 +29,7 @@ const VisitStore: FC<IVisitStore> = ({title, buttonLink, backgroundImage}) => {
 						{title}
 					</motion.h2>
 					<VisitStoreCard />
-					<ScrollYProgressReveal tailwindStyling="flex flex-col items-center">
+					<ScrollYProgressReveal className="flex flex-col items-center">
 						<Link
 							href={`${buttonLink?.url}`}
 							target={buttonLink?.target}
