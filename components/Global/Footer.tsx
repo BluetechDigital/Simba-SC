@@ -383,7 +383,7 @@ const Footer: FC = () => {
 							href={`https://bluetech-digital.co.uk`}
 							className="lg:inline-block items-center justify-center text-pureBlack hover:text-accent-default hover:underline"
 						>
-							<span className="flex lg:hidden xl:flex items-center justify-center lg:justify-left gap-2">
+							<span className="flex items-center justify-center lg:justify-left gap-2">
 								<Image
 									priority
 									width={500}
@@ -394,7 +394,7 @@ const Footer: FC = () => {
 								/>
 								<Paragraph
 									content={`BluetechDigital`}
-									className="font-OnestRegular max-w-lg mx-auto lg:mx-0 text-xs text-center lg:text-left"
+									className="flex lg:hidden xl:flex font-OnestRegular max-w-lg mx-auto lg:mx-0 text-xs text-center lg:text-left"
 								/>
 							</span>
 						</Link>

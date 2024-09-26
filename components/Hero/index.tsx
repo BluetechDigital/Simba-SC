@@ -16,6 +16,7 @@ import styles from "@/styles/components/Hero.module.scss";
 
 // Components
 import Paragraph from "@/components/Elements/Paragraph";
+import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
 const Hero: FC<IHero> = ({heroSlider}) => {
 	return (
@@ -56,14 +57,11 @@ const Hero: FC<IHero> = ({heroSlider}) => {
 												>
 													<div className="relative z-10 flex flex-col items-center lg:items-start gap-4 px-8 sm:px-8 lg:px-24">
 														<div className="max-w-full lg:max-w-xl 2xl:max-w-5xl mx-auto lg:mx-0">
-															<motion.h1
-																initial={initialTwo}
-																whileInView={fadeIn}
-																viewport={{once: true}}
-																className="font-OnestBlack text-center lg:text-left uppercase text-5xl sm:text-7xl 2xl:text-8xl tracking-[-0.02rem] text-white font-semibold leading-[2.5rem] sm:leading-[2.75rem] md:leading-tight xl:leading-[3.75rem]"
-															>
-																{item?.title}
-															</motion.h1>
+															<ContentSliceRevealMaskAnimation>
+																<h1 className="font-OnestBlack text-center lg:text-left uppercase text-5xl sm:text-7xl 2xl:text-8xl tracking-[-0.02rem] text-white font-semibold leading-[2.5rem] sm:leading-[2.75rem] md:leading-tight xl:leading-[3.75rem]">
+																	{item?.title}
+																</h1>
+															</ContentSliceRevealMaskAnimation>
 															<Paragraph
 																content={item?.paragraph}
 																className="max-w-xl mx-auto lg:mx-0 py-2 font-OnestRegular leading-tight text-white text-lg text-center lg:text-left"

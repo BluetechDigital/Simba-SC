@@ -17,6 +17,7 @@ import {ILatestNewsGrid} from "@/types/components/index";
 // Components
 import LatestNewsGridCard from "@/components/Cards/LatestNewsGridCard";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
+import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
 const LatestNewsGrid: FC<ILatestNewsGrid> = ({
 	title,
@@ -29,14 +30,11 @@ const LatestNewsGrid: FC<ILatestNewsGrid> = ({
 	return (
 		<>
 			<div className="bg-pureBlack px-4 py-14 lg:px-10 mx-auto flex flex-col gap-8">
-				<motion.h2
-					initial={initialTwo}
-					whileInView={fadeIn}
-					viewport={{once: true}}
-					className="font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-white leading-tight"
-				>
-					{title}
-				</motion.h2>
+				<ContentSliceRevealMaskAnimation>
+					<h2 className="font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-white leading-tight">
+						{title}
+					</h2>
+				</ContentSliceRevealMaskAnimation>
 				<div className="flex flex-col-reverse lg:flex-xol gap-2 lg:flex-row">
 					<div className="flex flex-col gap-2 w-full lg:w-1/4">
 						{globalContext?.news?.length > 0 ? (

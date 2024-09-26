@@ -16,15 +16,12 @@ const SlideInXLeftAnimation: FC<IScrollYProgressReveal.ISlideInXAnimation> = ({
 	});
 
 	// Transform scrollYProgress to control horizontal sliding
-	const slideInX = useTransform(scrollYProgress, [0, 1], ["-300px", "0px"]);
+	const slideInX = useTransform(scrollYProgress, [0, 1], ["-500px", "0px"]);
 
 	return (
 		<motion.div
 			ref={container}
-			style={{
-				x: slideInX,
-				opacity: fadeIn ? scrollYProgress : 1,
-			}}
+			style={{x: slideInX, opacity: fadeIn ? scrollYProgress : 1}}
 			className={children ? ` ${className}` : `hidden`}
 		>
 			{children}

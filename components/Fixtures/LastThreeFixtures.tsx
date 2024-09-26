@@ -15,6 +15,7 @@ import {ILastThreeFixtures} from "@/types/components";
 
 // Components
 import LastThreeFixturesCard from "@/components/Fixtures/Cards/LastThreeFixturesCard";
+import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
 const LastThreeFixtures: FC<ILastThreeFixtures> = ({title}) => {
 	const globalContext = useGlobalContext();
@@ -28,14 +29,11 @@ const LastThreeFixtures: FC<ILastThreeFixtures> = ({title}) => {
 					viewport={{once: true}}
 					className="w-full mx-auto px-4 pt-10 pb-10 lg:px-10 min-h-[25vh] flex flex-col"
 				>
-					<motion.h3
-						initial={initialTwo}
-						whileInView={fadeIn}
-						viewport={{once: true}}
-						className="mb-8 font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-pureBlack leading-tight"
-					>
-						{title}
-					</motion.h3>
+					<ContentSliceRevealMaskAnimation>
+						<h2 className="mb-8 font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-pureBlack leading-tight">
+							{title}
+						</h2>
+					</ContentSliceRevealMaskAnimation>
 					<div className="py-0 grid grid-cols-1 lg:grid-cols-3 gap-4 items-center justify-center lg:gap-4 overflow-hidden">
 						<Suspense fallback={"Loading..."}>
 							{globalContext?.lastThreeFixtures?.response?.length > 0 ? (

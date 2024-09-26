@@ -20,6 +20,7 @@ import Title from "@/components/Elements/Title";
 import Paragraph from "@/components/Elements/Paragraph";
 import LatestNewsGridCard from "@/components/Cards/LatestNewsGridCard";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
+import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
 const ClubCardMembershipCTA: FC<IClubCardMembershipCTA> = ({
 	title,
@@ -31,6 +32,8 @@ const ClubCardMembershipCTA: FC<IClubCardMembershipCTA> = ({
 }) => {
 	// Content wrapper tilt animation effect
 	const {rotateX, rotateY, translateX, translateY} = useTiltEffect();
+
+	console.log(video?.link);
 
 	return (
 		<>
@@ -45,10 +48,12 @@ const ClubCardMembershipCTA: FC<IClubCardMembershipCTA> = ({
 			>
 				<div className="lg:max-w-[1700px] mx-auto py-14 px-4 flex flex-col gap-8">
 					<div className="flex flex-col items-center justify-between">
-						<Title
-							content={title}
-							className="title w-full mb-5 max-w-3xl mx-auto font-schaboCondensed text-center uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-pureBlack leading-tight xl:leading-[4.5rem]"
-						/>
+						<ContentSliceRevealMaskAnimation>
+							<Title
+								content={title}
+								className="title w-full mb-5 max-w-3xl mx-auto font-schaboCondensed text-center uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-pureBlack leading-tight xl:leading-[4.5rem]"
+							/>
+						</ContentSliceRevealMaskAnimation>
 					</div>
 					<div className="flex flex-col lg:flex-row items-center justify-center gap-16">
 						<motion.div

@@ -9,6 +9,7 @@ import {initialTwo, fadeIn} from "@/animations/animations";
 import Title from "@/components/Elements/Title";
 import Paragraph from "@/components/Elements/Paragraph";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
+import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
 const NewsletterBanner: FC<INewsletterBanner> = ({
 	title,
@@ -25,10 +26,12 @@ const NewsletterBanner: FC<INewsletterBanner> = ({
 			>
 				<div className="lg:container px-4 mx-auto">
 					<ScrollYProgressReveal className="w-full flex flex-col items-center justify-center gap-8">
-						<Title
-							content={title}
-							className="max-w-2xl font-schaboCondensed text-center uppercase text-[12.5vw] sm:text-[10vw] md:text-[5vw] tracking-[-0.05rem] text-white leading-tight xl:leading-[5.5rem]"
-						/>
+						<ContentSliceRevealMaskAnimation>
+							<Title
+								content={title}
+								className="max-w-2xl font-schaboCondensed text-center uppercase text-[12.5vw] sm:text-[10vw] md:text-[5vw] tracking-[-0.05rem] text-white leading-tight xl:leading-[5.5rem]"
+							/>
+						</ContentSliceRevealMaskAnimation>
 						<Paragraph
 							content={paragraph}
 							className="max-w-xl mx-auto lg:mx-0 font-OnestRegular leading-tight text-white text-lg text-center lg:text-left"

@@ -22,6 +22,7 @@ import LatestNewsGridCard from "@/components/Cards/LatestNewsGridCard";
 import CountUpStats from "@/components/SimbaTVBanner/Elements/CountUpStats";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import SlideInXRightAnimation from "@/components/Animations/SlideInXRightAnimation";
+import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
 const TrophyCabinetBanner: FC<ITrophyCabinetBanner> = ({
 	title,
@@ -43,10 +44,12 @@ const TrophyCabinetBanner: FC<ITrophyCabinetBanner> = ({
 			>
 				<div className="lg:max-w-[1700px] mx-auto py-14 px-4 flex flex-col gap-8">
 					<div>
-						<Title
-							content={title}
-							className="title max-w-2xl mx-auto lg:mx-0 font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-pureBlack leading-tight"
-						/>
+						<ContentSliceRevealMaskAnimation>
+							<Title
+								content={title}
+								className="title max-w-2xl mx-auto lg:mx-0 font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-pureBlack leading-tight"
+							/>
+						</ContentSliceRevealMaskAnimation>
 						<Paragraph
 							content={paragraph}
 							className="mb-12 lg:mb-8 lg:max-w-lg mx-auto lg:mx-0 font-OnestRegular leading-normal text-pureBlack text-lg text-center lg:text-left"

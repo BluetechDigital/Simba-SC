@@ -18,8 +18,8 @@ import {useGlobalContext} from "@/context/global";
 import styles from "@/styles/components/Navbar.module.scss";
 
 // Components
-import MegaNavigation from "@/components/Global/MegaNavigation";
 import TopNavigation from "@/components/Global/TopNavigation";
+import MegaNavigation from "@/components/Global/MegaNavigation";
 
 const Navbar: FC = () => {
 	const globalContext = useGlobalContext();

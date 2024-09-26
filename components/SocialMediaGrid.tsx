@@ -19,6 +19,7 @@ import styles from "@/styles/components/SocialMedia.module.scss";
 // Components
 import Title from "@/components/Elements/Title";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
+import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
 const SocialMediaGrid: FC<ISocialMediaGrid> = ({title}) => {
 	const globalContext = useGlobalContext();
@@ -39,10 +40,12 @@ const SocialMediaGrid: FC<ISocialMediaGrid> = ({title}) => {
 				}}
 			>
 				<ScrollYProgressReveal className="w-full">
-					<Title
-						content={title}
-						className="title w-full mb-10 max-w-3xl mx-auto font-schaboCondensed text-center uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-pureBlack leading-tight xl:leading-[4.5rem]"
-					/>
+					<ContentSliceRevealMaskAnimation>
+						<Title
+							content={title}
+							className="title w-full mb-10 max-w-3xl mx-auto font-schaboCondensed text-center uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-pureBlack leading-tight xl:leading-[4.5rem]"
+						/>
+					</ContentSliceRevealMaskAnimation>
 					<div className="grid grid-cols-2 md:grid-cols-5 gap-0 items-center justify-center">
 						{globalContext?.instagramFeed?.length > 0 ? (
 							globalContext?.instagramFeed

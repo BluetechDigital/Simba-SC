@@ -12,6 +12,9 @@ import Image from "next/image";
 import {motion} from "framer-motion";
 import {INewOfficialKitCta} from "@/types/components/index";
 
+// Components
+import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
+
 const NewOfficialKitCta: FC<INewOfficialKitCta> = ({
 	title,
 	link,
@@ -27,14 +30,11 @@ const NewOfficialKitCta: FC<INewOfficialKitCta> = ({
 			}}
 		>
 			<div className="px-0 flex flex-col gap-8">
-				<motion.h2
-					initial={initialTwo}
-					whileInView={fadeIn}
-					viewport={{once: true}}
-					className="font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-white leading-tight"
-				>
-					{title}
-				</motion.h2>
+				<ContentSliceRevealMaskAnimation>
+					<h2 className="font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-white leading-tight">
+						{title}
+					</h2>
+				</ContentSliceRevealMaskAnimation>
 				<div className="relative p-6 bg-pureBlack overflow-hidden">
 					<div className="flex flex-wrap p-8 -m-7">
 						<div className="w-full lg:w-3/12 p-7">

@@ -96,6 +96,26 @@ export type SlideInRightFinish = {
 	};
 };
 
+// Content Slice Reveal Mask Animation
+export namespace IContentSliceRevealMaskAnimation {
+	export type IContentWrapper = {
+		children: React.ReactNode;
+	};
+	export type IAnimationProps = {
+		initial: {
+			y: string;
+		};
+		enter: (i: number) => {
+			y: string;
+			transition: {
+				duration: number;
+				ease: number[];
+				delay: number;
+			};
+		};
+	};
+}
+
 // ScrollY Progress Based Content Reveal Animation
 export namespace IScrollYProgressReveal {
 	export type IProps = {

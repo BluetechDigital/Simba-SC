@@ -9,6 +9,7 @@ import {fadeIn, initialTwo} from "@/animations/animations";
 // Components
 import VisitStoreCard from "@/components/VisitStore/Cards/VisitStoreCard";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
+import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
 const VisitStore: FC<IVisitStore> = ({title, buttonLink, backgroundImage}) => {
 	return (
@@ -20,14 +21,16 @@ const VisitStore: FC<IVisitStore> = ({title, buttonLink, backgroundImage}) => {
 				}}
 			>
 				<div className="px-0 flex flex-col gap-8">
-					<motion.h2
-						initial={initialTwo}
-						whileInView={fadeIn}
-						viewport={{once: true}}
-						className="mb-2 font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-white leading-tight"
-					>
-						{title}
-					</motion.h2>
+					<ContentSliceRevealMaskAnimation>
+						<motion.h2
+							initial={initialTwo}
+							whileInView={fadeIn}
+							viewport={{once: true}}
+							className="mb-2 font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-white leading-tight"
+						>
+							{title}
+						</motion.h2>
+					</ContentSliceRevealMaskAnimation>
 					<VisitStoreCard />
 					<ScrollYProgressReveal className="flex flex-col items-center">
 						<Link
