@@ -33,8 +33,6 @@ const ClubCardMembershipCTA: FC<IClubCardMembershipCTA> = ({
 	// Content wrapper tilt animation effect
 	const {rotateX, rotateY, translateX, translateY} = useTiltEffect();
 
-	console.log(video?.link);
-
 	return (
 		<>
 			<div
