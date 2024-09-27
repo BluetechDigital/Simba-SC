@@ -124,6 +124,24 @@ export const getAllFlexibleContentComponents = async (
 													}
                   								}
 											}
+											... on ${postTypeFlexibleContent}_GeneralInformation {
+												fieldGroupName
+                  								displaySection
+												title
+												paragraph
+												informationGrid {
+                  								  	title
+													paragraph
+                  								}
+												image {
+													altText
+													sourceUrl
+													mediaDetails {
+														height
+														width
+													}
+												}
+											}
 											... on ${postTypeFlexibleContent}_OfficialMembershipsCta {
 												fieldGroupName
                   								displaySection

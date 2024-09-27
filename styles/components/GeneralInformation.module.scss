@@ -1,0 +1,51 @@
+// Imports
+@import "../base//fonts";
+@import "../base/colors";
+
+.generalInformation {
+	@apply bg-white py-12 px-8 lg:p-24;
+
+	.wrapper {
+		@apply max-w-[1700px] mx-auto px-0 flex flex-col items-center justify-center gap-8;
+
+		.content {
+			@apply pt-24 pb-4 px-8 w-full h-[450px] flex flex-col items-baseline justify-center bg-no-repeat bg-cover bg-center;
+
+			.title {
+				@apply max-w-sm md:max-w-xl lg:max-w-2xl font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-white leading-tight;
+			}
+
+			.paragraph {
+				@apply max-w-2xl mx-auto lg:mx-0 font-OnestRegular leading-tight text-white text-lg text-center lg:text-left;
+
+				span {
+					a {
+						@apply font-OnestRegular text-lg underline tracking-[0.02rem] text-primary-default hover:text-accent-default transition-all duration-500 ease-in-out;
+					}
+				}
+			}
+		}
+
+		.gridContent {
+			@apply w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-14 lg:gap-16;
+
+			.card {
+				@apply bg-lightGreyTwo rounded-2xl p-10 h-full;
+
+				.title {
+					@apply font-OnestBold text-pureBlack text-lg text-center lg:text-left tracking-[-0.05rem] leading-tight;
+				}
+
+				.paragraph {
+					@apply mb-0 lg:max-w-lg mx-auto lg:mx-0 font-OnestRegular leading-normal text-pureBlack text-paragraph text-center lg:text-left;
+
+					span {
+						a {
+							@apply font-OnestRegular text-lg underline tracking-[0.02rem] text-primary-default hover:text-accent-default transition-all duration-500 ease-in-out;
+						}
+					}
+				}
+			}
+		}
+	}
+}

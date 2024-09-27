@@ -1,10 +1,10 @@
 // Imports
 import {
+	fadeIn,
 	initial,
 	stagger,
-	arrayLoopStaggerChildren,
-	fadeIn,
 	initialTwo,
+	arrayLoopStaggerChildren,
 } from "@/animations/animations";
 import {FC, Fragment} from "react";
 import Link from "next/link";

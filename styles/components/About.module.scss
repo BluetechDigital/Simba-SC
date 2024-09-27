@@ -16,7 +16,7 @@
 					@apply h-full flex flex-col items-center lg:items-baseline justify-between gap-3 py-6;
 
 					.title {
-						@apply font-OnestBold text-pureBlack text-lg uppercase tracking-tighter  hover:text-primary-default transition-all duration-200 ease-in-out;
+						@apply font-OnestBold text-pureBlack text-lg uppercase tracking-tighter hover:text-primary-default transition-all duration-200 ease-in-out;
 					}
 
 					.paragraph {
