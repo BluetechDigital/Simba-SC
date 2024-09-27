@@ -103,6 +103,27 @@ export const getAllFlexibleContentComponents = async (
                   								  	}
                   								}
 											}
+											... on ${postTypeFlexibleContent}_AboutTheClubGrid {
+												fieldGroupName
+                  								displaySection
+                  								aboutGrid {
+                  								  	title
+													paragraph
+													buttonLink {
+														url
+														title
+														target
+													}
+													image {
+														altText
+														sourceUrl
+														mediaDetails {
+															height
+															width
+														}
+													}
+                  								}
+											}
 											... on ${postTypeFlexibleContent}_OfficialMembershipsCta {
 												fieldGroupName
                   								displaySection

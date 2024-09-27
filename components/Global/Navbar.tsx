@@ -131,8 +131,8 @@ const Navbar: FC = () => {
 					<motion.div
 						initial={initialTwo}
 						whileInView={fadeIn}
-						viewport={{once: false}}
 						onClick={handleClick}
+						viewport={{once: false}}
 						className="w-auto lg:w-1/12 h-full hidden lg:flex flex-col items-center justify-center cursor-pointer p-4 bg-primary-default hover:bg-primary-dark bg-fill bg-no-repeat bg-center transition-all ease-in-out duration-500"
 						style={{
 							backgroundImage: `url("/img/background/red-background-dots.png")`,

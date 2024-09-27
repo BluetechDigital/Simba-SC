@@ -1,15 +1,9 @@
 // Imports
-import fadeInUp, {
-	fadeIn,
-	initial,
-	initialTwo,
-	arrayLoopStaggerChildren,
-} from "@/animations/animations";
+import {FC} from "react";
 import Link from "next/link";
 import Image from "next/image";
-import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
-import {useTiltEffect} from "@/hooks/useTiltEffect";
+import fadeInUp, {initial} from "@/animations/animations";
 import {IClubCardMembershipCTA} from "@/types/components/index";
 
 // Styling
@@ -30,9 +24,6 @@ const ClubCardMembershipCTA: FC<IClubCardMembershipCTA> = ({
 	backgroundImage,
 	clubCardMembershipText,
 }) => {
-	// Content wrapper tilt animation effect
-	const {rotateX, rotateY, translateX, translateY} = useTiltEffect();
-
 	return (
 		<>
 			<div
@@ -57,12 +48,6 @@ const ClubCardMembershipCTA: FC<IClubCardMembershipCTA> = ({
 						<motion.div
 							className="relative w-full h-[65vh] lg:h-[75vh] lg:aspect-[16/9] aspect-[9/16] flex flex-col items-center justify-center bg-white bg-no-repeat bg-center bg-cover overflow-hidden"
 							style={{
-								x: translateX,
-								y: translateY,
-								rotateX: `${rotateX}deg`,
-								rotateY: `${rotateY}deg`,
-								transformPerspective: 1000, // Adds perspective for the tilt effect
-								transition: "transform 0.2s ease-out", // Smoother transition
 								backgroundImage: `linear-gradient(0deg,rgba(234, 29, 37, 0),rgba(234, 29, 37, 0.5),rgba(234, 29, 37, 0.80)),url("${backgroundImage?.sourceUrl}")`,
 							}}
 						>

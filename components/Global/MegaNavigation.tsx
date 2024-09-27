@@ -21,6 +21,7 @@ import styles from "@/styles/components/Elements/NavigationMenu.module.scss";
 
 // Components
 import MegaNavVideoWrapper from "@/components/Elements/MegaNavVideoWrapper";
+import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
 const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 	const globalContext = useGlobalContext();
@@ -142,7 +143,7 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 				}
 			>
 				<div
-					className="megaMenu-content overflow-y-visible overflow-x-hidden min-h-screen h-full w-full py-20 px-10 flex flex-col bg-cover bg-no-repeat bg-center"
+					className="megaMenu-content relative z-10 overflow-y-visible overflow-x-hidden min-h-screen h-full w-full py-20 px-10 flex flex-col bg-cover bg-no-repeat bg-center"
 					style={{
 						backgroundImage: `linear-gradient(
 						0deg,
@@ -983,17 +984,21 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 													viewport={{once: false}}
 													variants={navigationMenuStaggerChildren}
 												>
-													<Link
-														onClick={resetMenu}
-														href={`${item?.node?.url}`}
-														aria-label={`${item?.node?.label}`}
-														target={`${
-															item?.node?.target ? item?.node?.target : "_self"
-														}`}
-														className="font-OnestBlack font-extrabold tracking-none leading-none text-tertiary-two hover:text-pureBlack text-5xl text-center uppercase"
-													>
-														{item?.node?.label}
-													</Link>
+													<ContentSliceRevealMaskAnimation>
+														<Link
+															onClick={resetMenu}
+															href={`${item?.node?.url}`}
+															aria-label={`${item?.node?.label}`}
+															target={`${
+																item?.node?.target
+																	? item?.node?.target
+																	: "_self"
+															}`}
+															className="font-OnestBlack font-extrabold tracking-none leading-none text-tertiary-two hover:text-pureBlack text-5xl text-center uppercase"
+														>
+															{item?.node?.label}
+														</Link>
+													</ContentSliceRevealMaskAnimation>
 												</motion.li>
 											</Fragment>
 										)
@@ -1043,19 +1048,21 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 														whileInView="animate"
 														variants={navigationMenuStaggerChildren}
 													>
-														<Link
-															onClick={resetMenu}
-															target={`${
-																item?.node?.target
-																	? item?.node?.target
-																	: "_self"
-															}`}
-															href={`${item?.node?.url}`}
-															aria-label={`${item?.node?.label}`}
-															className="font-OnestBold leading-none text-white hover:text-pureBlack text-xl lg:text-xl text-center"
-														>
-															{item?.node?.label}
-														</Link>
+														<ContentSliceRevealMaskAnimation>
+															<Link
+																onClick={resetMenu}
+																target={`${
+																	item?.node?.target
+																		? item?.node?.target
+																		: "_self"
+																}`}
+																href={`${item?.node?.url}`}
+																aria-label={`${item?.node?.label}`}
+																className="font-OnestBold leading-none text-white hover:text-pureBlack text-xl lg:text-xl text-center"
+															>
+																{item?.node?.label}
+															</Link>
+														</ContentSliceRevealMaskAnimation>
 													</motion.li>
 												</Fragment>
 											)
@@ -1068,6 +1075,24 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 						</motion.div>
 					</div>
 				</div>
+				<motion.div
+					onClick={resetMenu}
+					initial={initialTwo}
+					whileInView={fadeIn}
+					viewport={{once: false}}
+					className="absolute z-20 right-[14px] top-10 w-auto lg:w-1/12 h-fit hidden lg:flex flex-col items-center justify-center cursor-pointer p-4 bg-tertiary-two hover:bg-primary-dark bg-fill bg-no-repeat bg-center transition-all ease-in-out duration-500"
+				>
+					<button className="relative z-50 flex flex-col items-center justify-center">
+						<span className="hamburger-icon">
+							<span className={menuActive ? "iconOne-active" : "iconOne"} />
+							<span className={menuActive ? "iconTwo-active" : "iconTwo"} />
+							<span className={menuActive ? "iconThree-active" : "iconThree"} />
+						</span>
+						<span className="text-white uppercase font-OnestBold">
+							{menuActive ? "Close" : "Menu"}
+						</span>
+					</button>
+				</motion.div>
 			</div>
 		</>
 	);

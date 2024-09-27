@@ -7,8 +7,8 @@ import {usePageContext} from "@/context/providers/PageContextProvider";
 // Components
 import Hero from "@/components/Hero/index";
 import HeroTwo from "@/components/Hero/HeroTwo";
-import AboutSimba from "@/components/AboutSimba";
 import HeroThree from "@/components/Hero/HeroThree";
+import AboutSimba from "@/components/AboutSimba/index";
 import VisitStore from "@/components/VisitStore/index";
 import SponsorsLogos from "@/components/SponsorsLogos";
 import TitleParagraph from "@/components/TitleParagraph";
@@ -19,6 +19,7 @@ import SimbaTVBanner from "@/components/SimbaTVBanner/index";
 import NewOfficialKitCta from "@/components/NewOfficialKitCta";
 import TrophyCabinetBanner from "@/components/TrophyCabinetBanner";
 import ClubCardMembershipCTA from "@/components/ClubCardMembershipCta";
+import AboutTheClubGrid from "@/components/AboutSimba/AboutTheClubGrid";
 import LastThreeFixtures from "@/components/Fixtures/LastThreeFixtures";
 import OfficialMembershipsCta from "@/components/OfficialMembershipsCta";
 
@@ -38,6 +39,7 @@ const RenderFlexibleContent: FC = () => {
 		[`${FlexibleContent}_TitleParagraph`]: TitleParagraph,
 		[`${FlexibleContent}_LatestNewsGrid`]: LatestNewsGrid,
 		[`${FlexibleContent}_SocialMediaGrid`]: SocialMediaGrid,
+		[`${FlexibleContent}_AboutTheClubGrid`]: AboutTheClubGrid,
 		[`${FlexibleContent}_NewsletterBanner`]: NewsletterBanner,
 		[`${FlexibleContent}_NewOfficialKitCta`]: NewOfficialKitCta,
 		[`${FlexibleContent}_LastThreeFixtures`]: LastThreeFixtures,

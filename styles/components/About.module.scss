@@ -1,0 +1,39 @@
+// Imports
+@import "../base//fonts";
+@import "../base/colors";
+
+.aboutTheClubGrid {
+	@apply bg-white py-12 px-8 lg:p-24;
+
+	.wrapper {
+		@apply max-w-[1700px] mx-auto px-0;
+
+		.gridContent {
+			@apply w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-14 lg:gap-16;
+
+			.aboutTheClubCard {
+				.details {
+					@apply h-full flex flex-col items-center lg:items-baseline justify-between gap-3 py-6;
+
+					.title {
+						@apply font-OnestBold text-pureBlack text-lg uppercase tracking-tighter  hover:text-primary-default transition-all duration-200 ease-in-out;
+					}
+
+					.paragraph {
+						@apply mb-0 lg:max-w-lg mx-auto lg:mx-0 font-OnestRegular leading-normal text-pureBlack text-paragraph text-center lg:text-left;
+
+						span {
+							a {
+								@apply font-OnestRegular text-lg underline tracking-[0.02rem] text-primary-default hover:text-accent-default transition-all duration-500 ease-in-out;
+							}
+						}
+					}
+				}
+
+				.image {
+					@apply w-full h-[250px] object-cover object-center;
+				}
+			}
+		}
+	}
+}

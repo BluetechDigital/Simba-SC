@@ -10,15 +10,15 @@ import {FC} from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";
-import {IAboutSimba} from "@/types/components/index";
+import {IAbout} from "@/types/components/index";
 
 // Components
 import Paragraph from "@/components/Elements/Paragraph";
-import SlideInXRightAnimation from "./Animations/SlideInXRightAnimation";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import SlideInXLeftAnimation from "@/components/Animations/SlideInXLeftAnimation";
+import SlideInXRightAnimation from "@/components/Animations/SlideInXRightAnimation";
 
-const AboutSimba: FC<IAboutSimba> = ({
+const AboutSimba: FC<IAbout.IAboutSimba> = ({
 	title,
 	image,
 	titleTwo,
@@ -89,7 +89,7 @@ const AboutSimba: FC<IAboutSimba> = ({
 							}
 							className={
 								image?.sourceUrl
-									? `bg-white object-cover object-center w-full h-[500px] lg:h-[552px] lg:h-[752px]`
+									? `bg-white object-cover object-center w-full h-[500px] md:h-[552px] lg:h-[752px]`
 									: `hidden`
 							}
 						/>
