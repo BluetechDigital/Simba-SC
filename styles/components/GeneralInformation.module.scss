@@ -27,13 +27,13 @@
 		}
 
 		.gridContent {
-			@apply w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-14 lg:gap-16;
+			@apply w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-6;
 
 			.card {
-				@apply bg-lightGreyTwo rounded-2xl p-10 h-full;
+				@apply bg-lightGreyTwo p-10 h-full;
 
 				.title {
-					@apply font-OnestBold text-pureBlack text-lg text-center lg:text-left tracking-[-0.05rem] leading-tight;
+					@apply mb-4 font-OnestBold text-pureBlack text-lg text-center lg:text-left tracking-[-0.05rem] leading-tight;
 				}
 
 				.paragraph {
@@ -41,7 +41,7 @@
 
 					span {
 						a {
-							@apply font-OnestRegular text-lg underline tracking-[0.02rem] text-primary-default hover:text-accent-default transition-all duration-500 ease-in-out;
+							@apply font-thin font-OnestRegular text-lg underline tracking-[0.02rem] text-primary-default hover:text-accent-default transition-all duration-500 ease-in-out;
 						}
 					}
 				}
