@@ -7,8 +7,6 @@ import {
 	arrayLoopStaggerChildren,
 } from "@/animations/animations";
 import {FC, Fragment} from "react";
-import Link from "next/link";
-import Image from "next/image";
 import {motion} from "framer-motion";
 import {IGeneralInformation} from "@/types/components/index";
 
