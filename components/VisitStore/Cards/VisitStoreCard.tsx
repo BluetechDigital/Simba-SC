@@ -27,7 +27,7 @@ const VisitStoreCard: FC = () => {
 							?.slice(0, 4)
 							?.map((item: any, index: number) => (
 								<Fragment key={item?.id ? item?.id : index}>
-									<ScrollYProgressReveal>
+									<ScrollYProgressReveal className="w-full h-full">
 										<motion.li
 											initial={initial}
 											whileInView="animate"
@@ -40,7 +40,7 @@ const VisitStoreCard: FC = () => {
 												target="_blank"
 												aria-label={`${item?.title}`}
 												href={`store.simbasc.co.tz/${item?.slug}`}
-												className="flex flex-col items-center justify-start gap-6"
+												className="h-full flex flex-col justify-between gap-6"
 											>
 												<Image
 													src={item?.image?.sourceUrl}
@@ -57,16 +57,16 @@ const VisitStoreCard: FC = () => {
 													}
 													className={
 														item?.image?.sourceUrl
-															? `block w-full h-full min-h-[250px] max-h-[400px] object-cover object-center`
+															? `block w-full h-[300px] object-cover object-center`
 															: `hidden`
 													}
 												/>
-												<div className="flex flex-col gap-2 py-4">
+												<div className="flex flex-col justify-start gap-2 py-4">
 													<motion.h5
 														initial={initialTwo}
 														whileInView={fadeIn}
 														viewport={{once: true}}
-														className="font-OnestBold text-pureBlack text-lg tracking-tighter  hover:text-primary-default transition-all duration-200 ease-in-out"
+														className="font-OnestBold text-pureBlack text-lg text-center tracking-tighter hover:text-primary-default transition-all duration-200 ease-in-out"
 													>
 														{item?.title}
 													</motion.h5>
