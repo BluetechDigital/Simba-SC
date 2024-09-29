@@ -3,7 +3,7 @@
 @import "../base/colors";
 
 .generalInformation {
-	@apply bg-white py-12 px-8 lg:p-24;
+	@apply bg-white py-12 px-8 xl:p-24;
 
 	.wrapper {
 		@apply xl:max-w-[1700px] mx-auto px-0 flex flex-col items-center justify-center gap-8;
