@@ -6,10 +6,10 @@
 	@apply bg-white py-12 px-8 lg:p-24;
 
 	.wrapper {
-		@apply max-w-[1700px] mx-auto px-0;
+		@apply xl:max-w-[1700px] mx-auto px-0;
 
 		.gridContent {
-			@apply w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-14 lg:gap-16;
+			@apply w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-14 xl:gap-16;
 
 			.aboutTheClubCard {
 				.details {
