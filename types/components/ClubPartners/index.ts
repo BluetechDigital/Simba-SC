@@ -18,8 +18,26 @@ export namespace IClubPartnersPostType {
 		};
 	}[];
 	export type IClubPartnersContent = {
-		clubPartners: {
-			title: string;
+		clubPartnersContent: {
+			/* Dynamic ACF Components specifically
+			 for the Club Partners Custom Post Type */
+			titleContentImage: {
+				title: string;
+				paragraph: string;
+				buttonLink: {
+					url: string;
+					title: string;
+					target: string;
+				};
+				image: {
+					altText: string;
+					sourceUrl: string;
+					mediaDetails: {
+						width: number;
+						height: number;
+					};
+				};
+			};
 		};
 	};
 }

@@ -74,10 +74,13 @@ export const getAllClubPartnersExcerpt =
 		}
 	};
 
-// Full Content
+/* Dynamic ACF Components specifically
+ for the Club Partners Custom Post Type */
 export const getAllClubPartnersContent = async (
 	slug: string
-): Promise<IClubPartnersPostType.IClubPartnersContent[`clubPartners`]> => {
+): Promise<
+	IClubPartnersPostType.IClubPartnersContent[`clubPartnersContent`]
+> => {
 	try {
 		const content: DocumentNode = gql`
 			{
@@ -91,8 +94,24 @@ export const getAllClubPartnersContent = async (
 				) {
 					edges {
 						node {
-							clubPartners {
-								title
+							clubPartnersContent {
+								titleContentImage {
+									title
+              						paragraph
+									buttonLink {
+                						url
+                						title
+                						target
+                					}
+              						image {
+              							altText
+              							sourceUrl
+              							mediaDetails {
+              								height
+              								width
+              							}
+              						}
+								}
 							}
 						}
 					}
@@ -104,7 +123,8 @@ export const getAllClubPartnersContent = async (
 			query: content,
 		});
 
-		return response?.data?.clubPartnersContent?.edges[0]?.node?.clubPartners;
+		return response?.data?.clubPartnersContent?.edges[0]?.node
+			?.clubPartnersContent;
 	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(

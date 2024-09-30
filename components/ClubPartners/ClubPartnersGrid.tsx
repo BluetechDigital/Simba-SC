@@ -11,7 +11,7 @@ import Image from "next/image";
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
 import {useGlobalContext} from "@/context/global";
-import {IClubPartnersGrid} from "@/types/components/index";
+import {IClubPartners} from "@/types/components/index";
 
 // Styling
 import styles from "@/styles/components/ClubPartnersGrid.module.scss";
@@ -19,7 +19,7 @@ import styles from "@/styles/components/ClubPartnersGrid.module.scss";
 // Components
 import Paragraph from "@/components/Elements/Paragraph";
 
-const Card: FC<IClubPartnersGrid.ICard> = ({
+const Card: FC<IClubPartners.ICard> = ({
 	slug,
 	title,
 	excerpt,

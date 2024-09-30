@@ -44,7 +44,6 @@ export const getAllFlexibleContentComponents = async (
               												width
               											}
               										}
-													
               									}
 											}
 											... on ${postTypeFlexibleContent}_HeroTwo {

@@ -225,7 +225,7 @@ const App = async ({children}: AppProps | any) => {
 							<Navbar />
 							<main>{children}</main>
 							<Footer />
-							<BackToTopButton />
+							<BackToTopButton link={`#`} />
 						</SmoothScrolling>
 					</GlobalContextProvider>
 				</ApolloContextProvider>

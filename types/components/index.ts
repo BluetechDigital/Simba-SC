@@ -353,13 +353,49 @@ export namespace IGeneralInformation {
 	};
 }
 
-export namespace IClubPartnersGrid {
+export namespace IClubPartners {
+	export type IClubPartnersGrid = {
+		slug: string;
+		title: string;
+		excerpt: string;
+		featuredImage: {
+			node: {
+				altText: string;
+				sourceUrl: string;
+				mediaDetails: {
+					width: number;
+					height: number;
+				};
+			};
+		};
+	};
+
 	export type ICard = {
 		slug: string;
 		title: string;
 		excerpt: string;
 		featuredImage: {
 			node: {
+				altText: string;
+				sourceUrl: string;
+				mediaDetails: {
+					width: number;
+					height: number;
+				};
+			};
+		};
+	};
+
+	export type ITitleContentImage = {
+		titleContentImage: {
+			title: string;
+			paragraph: string;
+			buttonLink: {
+				url: string;
+				title: string;
+				target: string;
+			};
+			image: {
 				altText: string;
 				sourceUrl: string;
 				mediaDetails: {

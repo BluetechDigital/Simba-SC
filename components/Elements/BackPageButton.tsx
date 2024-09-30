@@ -8,7 +8,7 @@ import {IBackButtons} from "@/types/components/Elements";
 // Styling
 import styles from "@/styles/components/Elements/Buttons.module.scss";
 
-const BackToTopButton: FC<IBackButtons.IProps> = ({link}) => {
+const BackPageButton: FC<IBackButtons.IProps> = ({link}) => {
 	// Background color scroll position change
 	const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -29,17 +29,17 @@ const BackToTopButton: FC<IBackButtons.IProps> = ({link}) => {
 		<>
 			<div
 				className={
-					scrollPosition > 1000
+					scrollPosition > 300
 						? "relative w-fit h-fit xl:block z-[998]"
 						: "hidden"
 				}
 			>
-				<div className="fixed right-6 z-20 bottom-[2.5rem] flex justify-center">
+				<div className="fixed left-6 z-20 top-[5rem] flex justify-center">
 					<Link
 						target="_self"
 						href={`${link}`}
-						aria-label={`back to the top Button`}
-						className={styles.backToTopButton}
+						className={styles.backPageButton}
+						aria-label={`back to the previous page`}
 					>
 						<span className={styles.span}>
 							<svg
@@ -50,7 +50,7 @@ const BackToTopButton: FC<IBackButtons.IProps> = ({link}) => {
 								fill="#ffffff"
 								viewBox="0 0 24 24"
 								xmlns="http://www.w3.org/2000/svg"
-								className="w-[30px] h-[30px] object-center object-contain rotate-[90deg]"
+								className="w-[30px] h-[30px] object-center object-contain rotate-[0deg]"
 							>
 								<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
 								<g
@@ -71,4 +71,4 @@ const BackToTopButton: FC<IBackButtons.IProps> = ({link}) => {
 	);
 };
 
-export default BackToTopButton;
+export default BackPageButton;

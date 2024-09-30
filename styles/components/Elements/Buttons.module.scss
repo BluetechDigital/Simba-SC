@@ -2,6 +2,7 @@
 @import "../../base/fonts";
 @import "../../base/colors";
 
+.backPageButton,
 .backToTopButton {
 	font-family: $body;
 
@@ -14,6 +15,10 @@
 	&:hover {
 		transition: 0.5s;
 	}
+}
+
+.backPageButton {
+	@apply bg-primary-default hover:bg-accent-default;
 }
 
 .backHoverButton {

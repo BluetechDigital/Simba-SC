@@ -21,10 +21,11 @@ export type ICountUpStats = {
 	decimals?: number;
 	paragraph: string;
 };
-
-export type IBackToTopButton = {
-	link: string;
-};
+export namespace IBackButtons {
+	export type IProps = {
+		link: string;
+	};
+}
 export type ISimbaTVBannerCard = {
 	youtubeButton: {
 		url: string;
