@@ -352,3 +352,21 @@ export namespace IGeneralInformation {
 		paragraph: string;
 	};
 }
+
+export namespace IClubPartnersGrid {
+	export type ICard = {
+		slug: string;
+		title: string;
+		excerpt: string;
+		featuredImage: {
+			node: {
+				altText: string;
+				sourceUrl: string;
+				mediaDetails: {
+					width: number;
+					height: number;
+				};
+			};
+		};
+	};
+}

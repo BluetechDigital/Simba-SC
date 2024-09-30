@@ -54,6 +54,9 @@ import {getAllOnlineStoreShirts} from "@/functions/Store/GetAllStoreItems";
 import {getAllBoardOfDirectorsContent} from "@/graphql/GetAllStakeholders";
 import {getAllExecutiveLeadershipsContent} from "@/graphql/GetAllStakeholders";
 
+// Get All Club Partners
+import {getAllClubPartnersExcerpt} from "@/graphql/GetAllClubPartners";
+
 // Components
 import Navbar from "@/components/Global/Navbar";
 import Footer from "@/components/Global/Footer";
@@ -75,6 +78,9 @@ const App = async ({children}: AppProps | any) => {
 		getAllNewsContent(),
 		getAllBlogsContent(),
 		getAllCaseStudiesContent(),
+
+		// Club Partners Content
+		getAllClubPartnersExcerpt(),
 
 		// Social Media
 		getAllInstagramFeedContent(),
@@ -122,6 +128,9 @@ const App = async ({children}: AppProps | any) => {
 		blogs,
 		caseStudies,
 
+		// Club Partners
+		clubPartners,
+
 		// Social Media
 		instagramFeed,
 
@@ -167,6 +176,9 @@ const App = async ({children}: AppProps | any) => {
 		news: news,
 		blogs: blogs,
 		caseStudies: caseStudies,
+
+		// Club Partners
+		clubPartners: clubPartners,
 
 		// Social Media
 		instagramFeed: instagramFeed,

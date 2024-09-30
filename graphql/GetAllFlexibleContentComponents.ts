@@ -182,6 +182,10 @@ export const getAllFlexibleContentComponents = async (
 													}
 												}
 											}
+											... on ${postTypeFlexibleContent}_ClubPartnersGrid {
+												fieldGroupName
+                  								displaySection
+											}
 											... on ${postTypeFlexibleContent}_VisitStore {
 												fieldGroupName
 												displaySection

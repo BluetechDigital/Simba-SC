@@ -14,6 +14,7 @@ import SponsorsLogos from "@/components/SponsorsLogos";
 import TitleParagraph from "@/components/TitleParagraph";
 import LatestNewsGrid from "@/components/LatestNewsGrid";
 import SocialMediaGrid from "@/components/SocialMediaGrid";
+import ClubPartnersGrid from "@/components/ClubPartnersGrid";
 import NewsletterBanner from "@/components/NewsletterBanner";
 import SimbaTVBanner from "@/components/SimbaTVBanner/index";
 import NewOfficialKitCta from "@/components/NewOfficialKitCta";
@@ -42,6 +43,7 @@ const RenderFlexibleContent: FC = () => {
 		[`${FlexibleContent}_SocialMediaGrid`]: SocialMediaGrid,
 		[`${FlexibleContent}_AboutTheClubGrid`]: AboutTheClubGrid,
 		[`${FlexibleContent}_NewsletterBanner`]: NewsletterBanner,
+		[`${FlexibleContent}_ClubPartnersGrid`]: ClubPartnersGrid,
 		[`${FlexibleContent}_NewOfficialKitCta`]: NewOfficialKitCta,
 		[`${FlexibleContent}_LastThreeFixtures`]: LastThreeFixtures,
 		[`${FlexibleContent}_GeneralInformation`]: GeneralInformation,

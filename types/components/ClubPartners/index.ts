@@ -1,4 +1,4 @@
-// ClubPartners CUSTOM POST TYPE
+// Club Partners CUSTOM POST TYPE
 export namespace IClubPartnersPostType {
 	export type IClubPartnersExcept = {
 		node: {

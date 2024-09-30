@@ -28,6 +28,9 @@ const GlobalContextProvider: FC<IGlobalContextProvider> = ({
 				blogs: globalProps?.blogs,
 				caseStudies: globalProps?.caseStudies,
 
+				// Club Partners
+				clubPartners: globalProps?.clubPartners,
+
 				// Social Media
 				instagramFeed: globalProps?.instagramFeed,
 

@@ -28,6 +28,9 @@ import {
 // Get All Jobs Positions
 import {getAllJobsPositionsSlugs} from "@/graphql/GetAllJobsPositions";
 
+// Club Partners
+import {getAllClubPartnersSlugs} from "@/graphql/GetAllClubPartners";
+
 const sitemap = async () => {
 	const [
 		pagesSlugs,
@@ -43,6 +46,7 @@ const sitemap = async () => {
 		boardOfDirectorsSlugs,
 		executiveLeadershipSlugs,
 		partnershipsAdvertisingSlugs,
+		clubPartnersSlugs,
 	] = await Promise.all([
 		getAllPagesSlugs(),
 		getAllFansPagesSlugs(),
@@ -57,6 +61,7 @@ const sitemap = async () => {
 		getAllBoardOfDirectorsPostsSlugs(),
 		getAllExecutiveLeadershipsPostsSlugs(),
 		getAllPartnershipsAdvertisingPagesSlugs(),
+		getAllClubPartnersSlugs(),
 	]);
 
 	const siteUrl: any = process.env.SITE_URL;
@@ -75,6 +80,7 @@ const sitemap = async () => {
 	const boardOfDirectorsLinks: any = [];
 	const executiveLeadershipLinks: any = [];
 	const partnershipsAdvertisingLinks: any = [];
+	const clubPartnersLinks: any = [];
 
 	// Pages Dynamic Links
 	pagesSlugs?.map((keys: any) => {
@@ -172,6 +178,18 @@ const sitemap = async () => {
 		caseStudiesLinks.push(object);
 	});
 
+	// Club Partners Pages Dynamic Links
+	clubPartnersSlugs?.map((keys: any) => {
+		const object = {
+			url: `${siteUrl}/club-partners/${keys?.slug}`,
+			changefreq: "monthly",
+			lastmod: `${keys?.modified}`,
+			priority: 0.8,
+		};
+
+		clubPartnersLinks.push(object);
+	});
+
 	// Job Positions Pages Dynamic Links
 	jobPositionsSlugs?.map((keys: any) => {
 		const object = {
@@ -247,6 +265,7 @@ const sitemap = async () => {
 		...boardOfDirectorsLinks,
 		...executiveLeadershipLinks,
 		...partnershipsAdvertisingLinks,
+		...clubPartnersLinks,
 	];
 
 	return allLinks;

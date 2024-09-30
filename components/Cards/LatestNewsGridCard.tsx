@@ -16,12 +16,12 @@ const LatestNewsGridCard: FC<ILatestNewsGridCard> = ({
 }) => {
 	return (
 		<Link
-			href={`/news/${slug}`}
 			target={"_blank"}
+			href={`/news/${slug}`}
 			aria-label={`${title} link ${slug}`}
 		>
 			<div
-				className={`${className} py-8 px-4 xl:p-8 bg-no-repeat bg-cover bg-center h-full w-full bg-no-repeat bg-cover bg-center flex flex-col items-baseline justify-end`}
+				className={`${className} py-8 px-4 xl:p-8 bg-no-repeat bg-cover bg-center h-full w-full flex flex-col items-baseline justify-end`}
 				style={{
 					backgroundImage: `linear-gradient(
 										0deg,

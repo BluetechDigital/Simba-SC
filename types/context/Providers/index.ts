@@ -7,10 +7,11 @@ import {
 } from "@/types/context";
 import {IOnlineStore} from "@/types/api/Store";
 import {IFixtures} from "@/types/context/Fixtures";
-import {IYoutubeChannelInfo, IYoutubeVideos} from "@/types/api/Youtube";
 import {IInstagramFeed} from "@/types/context/SocialMedia";
 import {ILinks, IMegaMenuLinks} from "@/types/context/Links";
 import {INewsBlogsCaseStudies} from "@/types/context/NewsCaseStudies";
+import {IClubPartnersPostType} from "@/types/components/ClubPartners";
+import {IYoutubeChannelInfo, IYoutubeVideos} from "@/types/api/Youtube";
 
 /* CONTEXT PROVIDERS  */
 export type IPostTypes = {
@@ -22,6 +23,7 @@ export type IPostTypes = {
 	caseStudies: string;
 	testimonials: string;
 	jobPositions: string;
+	clubPartners: string;
 	boardOfDirectors: string;
 	executiveLeaderships: string;
 };
@@ -34,6 +36,7 @@ export type IPageTypes = {
 	community: string;
 	ourHistory: string;
 	caseStudies: string;
+	clubPartners: string;
 	aboutTheClub: string;
 	jobPositions: string;
 	boardOfDirectors: string;
@@ -53,6 +56,9 @@ export type IGlobalProps = {
 	news: INewsBlogsCaseStudies.INews;
 	blogs: INewsBlogsCaseStudies.IBlogs;
 	caseStudies: INewsBlogsCaseStudies.ICaseStudies;
+
+	// Club Partners
+	clubPartners: IClubPartnersPostType.IClubPartnersExcept;
 
 	// Social Media
 	instagramFeed: IInstagramFeed;
@@ -98,6 +104,9 @@ export type IGlobalContext = {
 	news: INewsBlogsCaseStudies.INews;
 	blogs: INewsBlogsCaseStudies.IBlogs;
 	caseStudies: INewsBlogsCaseStudies.ICaseStudies;
+
+	// Club Partners
+	clubPartners: IClubPartnersPostType.IClubPartnersExcept;
 
 	// Social Media
 	instagramFeed: IInstagramFeed;

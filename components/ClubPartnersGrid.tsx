@@ -10,37 +10,42 @@ import Link from "next/link";
 import Image from "next/image";
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
-import {IAbout} from "@/types/components/index";
+import {useGlobalContext} from "@/context/global";
+import {IClubPartnersGrid} from "@/types/components/index";
 
 // Styling
-import styles from "@/styles/components/About.module.scss";
+import styles from "@/styles/components/ClubPartnersGrid.module.scss";
 
 // Components
 import Paragraph from "@/components/Elements/Paragraph";
 
-const Card: FC<IAbout.IAboutTheClubCard> = ({
-	image,
+const Card: FC<IClubPartnersGrid.ICard> = ({
+	slug,
 	title,
-	paragraph,
-	buttonLink,
+	excerpt,
+	featuredImage,
 }) => {
 	return (
 		<>
 			<Link
-				href={`${buttonLink?.url}`}
-				aria-label={`${buttonLink?.title}`}
-				target={`${buttonLink?.target ? buttonLink?.target : "_self"}`}
+				target={"_self"}
+				href={`/club-partners/${slug}`}
+				aria-label={`${title} link ${slug}`}
 			>
-				<div className={styles.aboutTheClubCard}>
+				<div className={styles.card}>
 					<Image
 						className={styles.image}
-						alt={image?.altText}
-						src={image?.sourceUrl}
+						alt={featuredImage?.node?.altText}
+						src={featuredImage?.node?.sourceUrl}
 						width={
-							image?.mediaDetails?.width ? image?.mediaDetails?.width : 1000
+							featuredImage?.node?.mediaDetails?.width
+								? featuredImage?.node?.mediaDetails?.width
+								: 1000
 						}
 						height={
-							image?.mediaDetails?.height ? image?.mediaDetails?.height : 1000
+							featuredImage?.node?.mediaDetails?.height
+								? featuredImage?.node?.mediaDetails?.height
+								: 1000
 						}
 					/>
 					<div className={styles.details}>
@@ -52,24 +57,18 @@ const Card: FC<IAbout.IAboutTheClubCard> = ({
 						>
 							{title}
 						</motion.h5>
-						<Paragraph
-							content={
-								paragraph?.length > 100
-									? paragraph?.substring(0, 100) + "..."
-									: paragraph
-							}
-							className={styles.paragraph}
-						/>
+						<Paragraph content={excerpt} className={styles.paragraph} />
 						<Link
-							href={`${buttonLink?.url}`}
-							target={buttonLink?.target}
+							target={"_self"}
+							href={`/club-partners/${slug}`}
+							aria-label={`${title} link ${slug}`}
 							className={`${
-								buttonLink?.url
+								slug
 									? "buttonStyling-alt-two-slim mt-2 mx-auto lg:mx-0"
 									: "hidden"
 							}`}
 						>
-							{buttonLink?.title}
+							Learn More
 						</Link>
 					</div>
 				</div>
@@ -78,10 +77,12 @@ const Card: FC<IAbout.IAboutTheClubCard> = ({
 	);
 };
 
-const AboutTheClubGrid: FC<IAbout.IAboutTheClubGrid> = ({aboutGrid}) => {
+const ClubPartnersGrid: FC = () => {
+	const globalContext = useGlobalContext();
+
 	return (
 		<>
-			<div className={styles.aboutTheClubGrid}>
+			<div className={styles.clubPartnersGrid}>
 				<div className={styles.wrapper}>
 					<motion.div
 						initial={initial}
@@ -90,8 +91,8 @@ const AboutTheClubGrid: FC<IAbout.IAboutTheClubGrid> = ({aboutGrid}) => {
 						viewport={{once: true}}
 						className={styles.gridContent}
 					>
-						{aboutGrid?.length > 0 ? (
-							aboutGrid?.map((item: any, index: number) => (
+						{globalContext?.clubPartners?.length > 0 ? (
+							globalContext?.clubPartners?.map((item: any, index: number) => (
 								<Fragment key={index}>
 									<motion.div
 										custom={index}
@@ -102,10 +103,10 @@ const AboutTheClubGrid: FC<IAbout.IAboutTheClubGrid> = ({aboutGrid}) => {
 										variants={arrayLoopStaggerChildren}
 									>
 										<Card
-											image={item?.image}
-											title={item?.title}
-											paragraph={item?.paragraph}
-											buttonLink={item?.buttonLink}
+											slug={item?.node?.slug}
+											title={item?.node?.title}
+											excerpt={item?.node?.excerpt}
+											featuredImage={item?.node?.featuredImage}
 										/>
 									</motion.div>
 								</Fragment>
@@ -120,4 +121,4 @@ const AboutTheClubGrid: FC<IAbout.IAboutTheClubGrid> = ({aboutGrid}) => {
 	);
 };
 
-export default AboutTheClubGrid;
+export default ClubPartnersGrid;

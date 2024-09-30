@@ -46,7 +46,7 @@ const Hero: FC<IHero> = ({heroSlider}) => {
 										<SwiperSlide>
 											<div className="w-full p-0">
 												<div
-													className="pt-24 pb-44 sm:pb-20 w-full h-[87vh] lg:h-[75vh] lg:h-[87vh] flex flex-col items-center lg:items-baseline justify-center relative bg-center bg-no-repeat bg-cover"
+													className="pt-24 pb-44 sm:pb-20 w-full h-[87vh] flex flex-col items-center lg:items-baseline justify-center relative bg-center bg-no-repeat bg-cover"
 													style={{
 														backgroundImage: `linear-gradient(
 																0deg,
@@ -58,7 +58,7 @@ const Hero: FC<IHero> = ({heroSlider}) => {
 													<div className="relative z-10 flex flex-col items-center lg:items-start gap-4 px-8 sm:px-8 lg:px-24">
 														<div className="max-w-full lg:max-w-xl 2xl:max-w-5xl mx-auto lg:mx-0">
 															<ContentSliceRevealMaskAnimation>
-																<h1 className="font-OnestBlack text-center lg:text-left uppercase text-5xl sm:text-7xl 2xl:text-8xl tracking-[-0.02rem] text-white font-semibold leading-[2.5rem] sm:leading-[2.75rem] md:leading-tight xl:leading-[3.75rem]">
+																<h1 className="font-OnestBlack text-center lg:text-left uppercase text-5xl sm:text-7xl 2xl:text-8xl tracking-[-0.02rem] text-white font-semibold leading-[0.90]">
 																	{item?.title}
 																</h1>
 															</ContentSliceRevealMaskAnimation>
