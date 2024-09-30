@@ -14,7 +14,7 @@ import {useGlobalContext} from "@/context/global";
 import {IClubPartners} from "@/types/components/index";
 
 // Styling
-import styles from "@/styles/components/ClubPartnersGrid.module.scss";
+import styles from "@/styles/components/ClubPartners.module.scss";
 
 // Components
 import Paragraph from "@/components/Elements/Paragraph";

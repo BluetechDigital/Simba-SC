@@ -387,7 +387,7 @@ export namespace IClubPartners {
 	};
 
 	export type ITitleContentImage = {
-		titleContentImage: {
+		content: {
 			title: string;
 			paragraph: string;
 			buttonLink: {

@@ -25,9 +25,9 @@ export const generateMetadata = async ({params}: any): Promise<Metadata> => {
 	};
 };
 
-const dynamicPages: NextPage = async ({params}: any) => {
-	// Fetch portfolio content
-	const clubPartnersContent: IClubPartnersPostType.IClubPartnersContent[`clubPartnersContent`] =
+const clubPartnerPage: NextPage = async ({params}: any) => {
+	// Fetch Club Partners content
+	const clubPartnersContent: IClubPartnersPostType.IClubPartnersContent[`partnersContent`] =
 		await getAllClubPartnersContent(params?.slug);
 
 	// Fetch priority content
@@ -45,13 +45,11 @@ const dynamicPages: NextPage = async ({params}: any) => {
 			>
 				<BackToTopButton link={`#`} />
 				<BackPageButton link={`/club-partners`} />
-				<TitleContentImage
-					titleContentImage={clubPartnersContent?.titleContentImage}
-				/>
+				<TitleContentImage content={clubPartnersContent?.titleContentImage} />
 				<RenderFlexibleContent />
 			</PageContextProvider>
 		</>
 	);
 };
 
-export default dynamicPages;
+export default clubPartnerPage;

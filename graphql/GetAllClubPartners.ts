@@ -78,9 +78,7 @@ export const getAllClubPartnersExcerpt =
  for the Club Partners Custom Post Type */
 export const getAllClubPartnersContent = async (
 	slug: string
-): Promise<
-	IClubPartnersPostType.IClubPartnersContent[`clubPartnersContent`]
-> => {
+): Promise<IClubPartnersPostType.IClubPartnersContent[`partnersContent`]> => {
 	try {
 		const content: DocumentNode = gql`
 			{
@@ -88,33 +86,32 @@ export const getAllClubPartnersContent = async (
 					where: {
 						name: "${slug}"
 						status: PUBLISH
-						orderby: {field: DATE, order: ASC}
 					}
 					first: 100
 				) {
 					edges {
-						node {
-							clubPartnersContent {
-								titleContentImage {
-									title
-              						paragraph
-									buttonLink {
-                						url
-                						title
-                						target
-                					}
-              						image {
-              							altText
-              							sourceUrl
-              							mediaDetails {
-              								height
-              								width
-              							}
-              						}
-								}
-							}
-						}
-					}
+    					node {
+    						partnersContent {
+    							titleContentImage {
+    								title
+    								paragraph
+    								image {
+    									altText
+    									sourceUrl
+    									mediaDetails {
+    										height
+    										width
+    									}
+    								}
+    								buttonLink {
+    									url
+    									title
+    									target
+    								}
+    							}
+    						}
+    					}
+    				}
 				}
 			}
 		`;
@@ -123,8 +120,7 @@ export const getAllClubPartnersContent = async (
 			query: content,
 		});
 
-		return response?.data?.clubPartnersContent?.edges[0]?.node
-			?.clubPartnersContent;
+		return response?.data?.clubPartnersContent?.edges[0]?.node?.partnersContent;
 	} catch (error: unknown) {
 		console.log(error);
 		throw new Error(

@@ -17,10 +17,11 @@ export namespace IClubPartnersPostType {
 			};
 		};
 	}[];
+
+	/* Dynamic ACF Components specifically
+	for the Club Partners Custom Post Type */
 	export type IClubPartnersContent = {
-		clubPartnersContent: {
-			/* Dynamic ACF Components specifically
-			 for the Club Partners Custom Post Type */
+		partnersContent: {
 			titleContentImage: {
 				title: string;
 				paragraph: string;
