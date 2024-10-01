@@ -18,7 +18,7 @@ import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal
 import SlideInXLeftAnimation from "@/components/Animations/SlideInXLeftAnimation";
 import SlideInXRightAnimation from "@/components/Animations/SlideInXRightAnimation";
 
-const AboutSimba: FC<IAbout.IAboutSimba> = ({
+const AboutSimba: FC<IAbout.ISimbaProps> = ({
 	title,
 	image,
 	titleTwo,

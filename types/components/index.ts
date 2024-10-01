@@ -124,27 +124,6 @@ export type ITitleParagraph = {
 	paragraph: string;
 	displayParagraph: boolean;
 };
-export type ILatestNewsGrid = {
-	title: string;
-	buttonLink: {
-		url: string;
-		title: string;
-		target: string;
-	};
-	ctaLink: {
-		url: string;
-		title: string;
-		target: string;
-	};
-	image: {
-		altText: string;
-		sourceUrl: string;
-		mediaDetails: {
-			width: number;
-			height: number;
-		};
-	};
-};
 export type ISocialMediaGrid = {
 	title: string;
 };
@@ -270,7 +249,7 @@ export type IClubCardMembershipCTA = {
 
 // About Sub & Main Components
 export namespace IAbout {
-	export type IAboutSimba = {
+	export type ISimbaProps = {
 		title: string;
 		titleTwo: string;
 		paragraph: string;
@@ -290,7 +269,7 @@ export namespace IAbout {
 		};
 	};
 
-	export type IAboutTheClubGrid = {
+	export type ITheClubGrid = {
 		aboutGrid: {
 			title: string;
 			paragraph: string;
@@ -310,7 +289,7 @@ export namespace IAbout {
 		}[];
 	};
 
-	export type IAboutTheClubCard = {
+	export type ITheClubCard = {
 		title: string;
 		paragraph: string;
 		buttonLink: {
@@ -328,7 +307,6 @@ export namespace IAbout {
 		};
 	};
 }
-
 export namespace ILatestNews {
 	export type IGridProps = {
 		title: string;
@@ -369,15 +347,11 @@ export namespace ILatestNews {
 		};
 	};
 }
-
-export namespace IGeneralInformation {
+export namespace IContactForm {
 	export type IProps = {
 		title: string;
+		formTitle: string;
 		paragraph: string;
-		informationGrid: {
-			title: string;
-			paragraph: string;
-		}[];
 		image: {
 			altText: string;
 			sourceUrl: string;
@@ -388,12 +362,10 @@ export namespace IGeneralInformation {
 		};
 	};
 
-	export type ICard = {
-		title: string;
-		paragraph: string;
+	export type IForm = {
+		formTitle: string;
 	};
 }
-
 export namespace IClubPartners {
 	export type IClubPartnersGrid = {
 		slug: string;
@@ -445,5 +417,28 @@ export namespace IClubPartners {
 				};
 			};
 		};
+	};
+}
+export namespace IGeneralInformation {
+	export type IProps = {
+		title: string;
+		paragraph: string;
+		informationGrid: {
+			title: string;
+			paragraph: string;
+		}[];
+		image: {
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
+		};
+	};
+
+	export type ICard = {
+		title: string;
+		paragraph: string;
 	};
 }

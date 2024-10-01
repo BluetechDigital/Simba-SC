@@ -11,6 +11,7 @@ import HeroThree from "@/components/Hero/HeroThree";
 import AboutSimba from "@/components/AboutSimba/index";
 import VisitStore from "@/components/VisitStore/index";
 import SponsorsLogos from "@/components/SponsorsLogos";
+import ContactForm from "@/components/ContactForm/index";
 import TitleParagraph from "@/components/TitleParagraph";
 import LatestNewsGrid from "@/components/LatestNews/index";
 import SocialMediaGrid from "@/components/SocialMediaGrid";
@@ -36,6 +37,7 @@ const RenderFlexibleContent: FC = () => {
 		[`${FlexibleContent}_HeroThree`]: HeroThree,
 		[`${FlexibleContent}_AboutSimba`]: AboutSimba,
 		[`${FlexibleContent}_VisitStore`]: VisitStore,
+		[`${FlexibleContent}_ContactForm`]: ContactForm,
 		[`${FlexibleContent}_SimbatvBanner`]: SimbaTVBanner,
 		[`${FlexibleContent}_SponsorsLogos`]: SponsorsLogos,
 		[`${FlexibleContent}_TitleParagraph`]: TitleParagraph,

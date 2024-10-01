@@ -1,0 +1,86 @@
+// Imports
+@import "../base//fonts";
+@import "../base/colors";
+
+.contactForm {
+	@apply py-12 px-8 xl:p-24 bg-cover bg-center bg-no-repeat;
+
+	.containerWrapper {
+		@apply xl:max-w-[1700px] mx-auto flex flex-col lg:flex-row items-baseline justify-between gap-24 lg:gap-44;
+
+		.wrapper {
+			@apply w-full lg:w-1/2 sm:p-6 flex flex-col;
+
+			.title {
+				@apply mb-2 font-OnestBlack text-center lg:text-left uppercase text-3xl lg:text-5xl xl:text-7xl tracking-[-0.05rem] text-pureBlack font-semibold leading-tight;
+			}
+
+			.paragraph {
+				@apply max-w-2xl mx-auto lg:mx-0 font-OnestRegular leading-tight text-pureBlack text-lg text-center lg:text-left;
+			}
+
+			.contactDetails {
+				@apply flex mb-6 items-center;
+
+				.details {
+					@apply max-w-xl mx-auto sm:mx-0;
+
+					.subtitle {
+						@apply mb-2 font-OnestBlack text-pureBlack text-center uppercase sm:text-left font-semibold tracking-[-0.05rem] text-lg lg:text-xl leading-tight;
+					}
+
+					.link {
+						@apply block font-OnestRegular text-lg text-pureBlack text-center sm:text-left hover:text-primary-default;
+					}
+
+					.paragraph {
+						@apply font-OnestRegular max-w-xl mx-auto xl:mx-0 text-lg text-pureBlack text-center sm:text-left;
+					}
+				}
+
+				.svg {
+					@apply hidden sm:flex flex-shrink-0 mr-5 sm:mr-8 items-center justify-center p-1 w-10 h-10 rounded-full bg-primary-default;
+				}
+			}
+		}
+
+		.formikForm {
+			@apply w-full bg-grey lg:container mx-auto p-10 lg:py-20 flex flex-col items-center;
+
+			.title {
+				@apply w-full mb-10 font-OnestBlack text-center uppercase text-3xl lg:text-5xl xl:text-7xl tracking-[-0.05rem] font-semibold leading-tight;
+			}
+
+			.formFields {
+				@apply w-full flex flex-col gap-4;
+
+				.errorMessage {
+					@apply py-1 font-OnestRegular text-left text-tiny text-primary-default;
+				}
+
+				.field {
+					@apply px-4 py-3 w-full font-OnestRegular text-pureBlack placeholder-pureBlack bg-white outline-none border-[1px] border-white active:border-tertiary-dark focus:border-tertiary-dark focus:ring-[1px] focus:ring-tertiary-dark;
+				}
+
+				.textarea {
+					@apply p-4 w-full h-48 font-OnestRegular text-pureBlack placeholder-pureBlack bg-white outline-none border-[1px] border-white active:border-primary-dark focus:border-primary-dark resize-none focus:ring-[1px] focus:ring-primary-dark;
+				}
+			}
+		}
+	}
+}
+
+.submitButton,
+.messageSent {
+	.text {
+		@apply font-OnestBlack uppercase text-tiny sm:text-base lg:text-paragraph tracking-[0.05rem] text-white uppercase;
+	}
+}
+
+.submitButton {
+	@apply w-fit mx-auto lg:mx-0 flex items-center justify-center py-3 px-6 bg-primary-default hover:bg-primary-dark transition-all duration-200 ease-in-out;
+}
+
+.messageSent {
+	@apply w-fit flex items-center justify-center py-3 px-6 bg-tertiary-default;
+}

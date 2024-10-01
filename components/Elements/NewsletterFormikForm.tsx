@@ -176,7 +176,7 @@ const NewsletterFormikForm: FC<INewsletterFormikForm> = ({
 						onBlur={formik?.handleBlur}
 						onChange={formik?.handleChange}
 						value={formik?.values?.email}
-						className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-primary-darker focus:border-primary-darker focus:ring-[1px] focus:ring-primary-darker"
+						className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-primary-dark focus:border-primary-dark focus:ring-[1px] focus:ring-primary-dark"
 					/>
 				</motion.div>
 				<motion.div

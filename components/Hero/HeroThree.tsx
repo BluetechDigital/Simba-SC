@@ -21,7 +21,7 @@ const HeroThree: FC<IHeroThree> = ({title, paragraph, backgroundImage}) => {
 				}
 			>
 				<div
-					className="py-20 w-full h-[50vh] flex flex-col items-center lg:items-baseline justify-center relative bg-primary-darker bg-center bg-no-repeat bg-cover"
+					className="py-20 w-full h-[50vh] flex flex-col items-center lg:items-baseline justify-center relative bg-primary-dark bg-center bg-no-repeat bg-cover"
 					style={{
 						backgroundImage: `linear-gradient(0deg,rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url("${backgroundImage?.sourceUrl}")`,
 					}}

@@ -18,7 +18,7 @@ import styles from "@/styles/components/About.module.scss";
 // Components
 import Paragraph from "@/components/Elements/Paragraph";
 
-const Card: FC<IAbout.IAboutTheClubCard> = ({
+const Card: FC<IAbout.ITheClubCard> = ({
 	image,
 	title,
 	paragraph,
@@ -78,7 +78,7 @@ const Card: FC<IAbout.IAboutTheClubCard> = ({
 	);
 };
 
-const AboutTheClubGrid: FC<IAbout.IAboutTheClubGrid> = ({aboutGrid}) => {
+const AboutTheClubGrid: FC<IAbout.ITheClubGrid> = ({aboutGrid}) => {
 	return (
 		<>
 			<div className={styles.aboutTheClubGrid}>
