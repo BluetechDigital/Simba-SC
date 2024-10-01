@@ -26,26 +26,17 @@ const SimbaTVBanner: FC<ISimbaTVBanner> = ({
 	return (
 		<>
 			<div
-				className={
-					styles.simbaTVBanner +
-					" simbaTVBanner py-16 h-full min-h-[50vh] bg-no-repeat bg-cover bg-center"
-				}
+				className={styles.simbaTVBanner}
 				style={{
 					backgroundImage: `linear-gradient(0deg,rgba(250, 0, 8, 0.50),rgba(250, 0, 8, 0.50),rgba(250, 0, 8, 0.50)),url("${backgroundImage?.sourceUrl}")`,
 				}}
 			>
-				<div className="lg:container px-4 mx-auto">
-					<div className="w-full flex flex-col items-center lg:items-baseline justify-center gap-8">
-						<ScrollYProgressReveal className="w-full flex flex-col lg:flex-row items-center justify-between gap-6">
+				<div className={styles.containerWrapper}>
+					<div className={styles.contentWrapper}>
+						<ScrollYProgressReveal className={styles.content}>
 							<ContentSliceRevealMaskAnimation>
-								<Title
-									content={title}
-									className="title max-w-2xl font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl lg:text-12xl tracking-[-0.05rem] text-white leading-tight xl:leading-[5.5rem]"
-								/>
-								<Paragraph
-									content={paragraph}
-									className="max-w-xl mx-auto lg:mx-0 font-OnestRegular leading-tight text-white text-lg text-center lg:text-left"
-								/>
+								<Title content={title} className={styles.title} />
+								<Paragraph content={paragraph} className={styles.paragraph} />
 							</ContentSliceRevealMaskAnimation>
 							<Link
 								href={`${buttonLink?.url}`}
