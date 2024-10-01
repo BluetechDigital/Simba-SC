@@ -12,7 +12,7 @@ import styles from "@/styles/components/OfficialMembershipsCta.module.scss";
 // Components
 import Title from "@/components/Elements/Title";
 import Paragraph from "@/components/Elements/Paragraph";
-import LatestNewsGridCard from "@/components/Cards/LatestNewsGridCard";
+import LatestNewsGridCard from "@/components/LatestNews/Cards/Card";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 

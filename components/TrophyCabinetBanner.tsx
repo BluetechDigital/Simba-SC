@@ -18,7 +18,7 @@ import styles from "@/styles/components/TrophyCabinetBanner.module.scss";
 import Title from "@/components/Elements/Title";
 import CountUp from "@/components/Elements/CountUp";
 import Paragraph from "@/components/Elements/Paragraph";
-import LatestNewsGridCard from "@/components/Cards/LatestNewsGridCard";
+import LatestNewsGridCard from "@/components/LatestNews/Cards/Card";
 import CountUpStats from "@/components/SimbaTVBanner/Elements/CountUpStats";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import SlideInXRightAnimation from "@/components/Animations/SlideInXRightAnimation";
