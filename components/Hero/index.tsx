@@ -55,10 +55,10 @@ const Hero: FC<IHero> = ({heroSlider}) => {
 															),url("${item?.backgroundImage?.sourceUrl}")`,
 													}}
 												>
-													<div className="relative z-10 flex flex-col items-center lg:items-start gap-4 px-8 sm:px-8 lg:px-24">
+													<div className="relative z-10 flex flex-col items-center lg:items-start gap-4 px-8 sm:px-4 lg:px-24">
 														<div className="max-w-full lg:max-w-xl 2xl:max-w-5xl mx-auto lg:mx-0">
 															<ContentSliceRevealMaskAnimation>
-																<h1 className="font-OnestBlack text-center lg:text-left uppercase text-5xl sm:text-7xl 2xl:text-8xl tracking-[-0.02rem] text-white font-semibold leading-[0.90]">
+																<h1 className="font-OnestBlack text-center lg:text-left uppercase text-5xl sm:text-6xl md:text-7xl 2xl:text-8xl tracking-[-0.02rem] text-white font-semibold leading-[0.90]">
 																	{item?.title}
 																</h1>
 															</ContentSliceRevealMaskAnimation>
