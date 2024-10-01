@@ -12,7 +12,7 @@ import AboutSimba from "@/components/AboutSimba/index";
 import VisitStore from "@/components/VisitStore/index";
 import SponsorsLogos from "@/components/SponsorsLogos";
 import TitleParagraph from "@/components/TitleParagraph";
-import LatestNewsGrid from "@/components/LatestNewsGrid";
+import LatestNewsGrid from "@/components/LatestNews/index";
 import SocialMediaGrid from "@/components/SocialMediaGrid";
 import NewsletterBanner from "@/components/NewsletterBanner";
 import SimbaTVBanner from "@/components/SimbaTVBanner/index";

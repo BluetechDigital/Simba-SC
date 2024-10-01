@@ -12,14 +12,14 @@ import Image from "next/image";
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
 import {useGlobalContext} from "@/context/global";
-import {ILatestNewsGrid} from "@/types/components/index";
+import {ILatestNews} from "@/types/components/index";
 
 // Components
-import LatestNewsGridCard from "@/components/Cards/LatestNewsGridCard";
+import Card from "@/components/LatestNews/Cards/Card";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
-const LatestNewsGrid: FC<ILatestNewsGrid> = ({
+const LatestNewsGrid: FC<ILatestNews.IGridProps> = ({
 	title,
 	image,
 	ctaLink,
@@ -50,7 +50,7 @@ const LatestNewsGrid: FC<ILatestNewsGrid> = ({
 											viewport={{once: true}}
 											variants={arrayLoopStaggerChildren}
 										>
-											<LatestNewsGridCard
+											<Card
 												slug={item?.node?.slug}
 												date={item?.node?.date}
 												title={item?.node?.title}
@@ -102,7 +102,7 @@ const LatestNewsGrid: FC<ILatestNewsGrid> = ({
 											viewport={{once: true}}
 											variants={arrayLoopStaggerChildren}
 										>
-											<LatestNewsGridCard
+											<Card
 												slug={item?.node?.slug}
 												date={item?.node?.date}
 												title={item?.node?.title}
@@ -156,7 +156,7 @@ const LatestNewsGrid: FC<ILatestNewsGrid> = ({
 												viewport={{once: true}}
 												variants={arrayLoopStaggerChildren}
 											>
-												<LatestNewsGridCard
+												<Card
 													slug={item?.node?.slug}
 													date={item?.node?.date}
 													title={item?.node?.title}

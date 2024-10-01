@@ -1,19 +1,3 @@
-export type ILatestNewsGridCard = {
-	slug: string;
-	date: string;
-	title: string;
-	className: string;
-	featuredImage: {
-		node: {
-			altText: string;
-			sourceUrl: string;
-			mediaDetails: {
-				width: number;
-				height: number;
-			};
-		};
-	};
-};
 export type ILastThreeFixturesCard = {
 	date: string;
 	league: {

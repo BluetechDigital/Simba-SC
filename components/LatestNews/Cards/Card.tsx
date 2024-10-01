@@ -4,15 +4,15 @@ import Link from "next/link";
 import dateFormat from "dateformat";
 import {motion} from "framer-motion";
 import {useGlobalContext} from "@/context/global";
+import {ILatestNews} from "@/types/components/index";
 import {fadeIn, initialTwo} from "@/animations/animations";
-import {ILatestNewsGridCard} from "@/types/components/Cards";
 
-const LatestNewsGridCard: FC<ILatestNewsGridCard> = ({
+const LatestNewsGridCard: FC<ILatestNews.ICard> = ({
 	slug,
 	date,
 	title,
-	featuredImage,
 	className,
+	featuredImage,
 }) => {
 	return (
 		<Link
@@ -43,7 +43,7 @@ const LatestNewsGridCard: FC<ILatestNewsGridCard> = ({
 						initial={initialTwo}
 						whileInView={fadeIn}
 						viewport={{once: true}}
-						className="font-OnestBlack text-left uppercase text-base tracking-[-0.02rem] text-white font-semibold xl:leading-tight"
+						className="font-OnestBlack text-left uppercase text-base tracking-[-0.02rem] text-white font-semibold leading-4"
 					>
 						{title}
 					</motion.h2>
