@@ -45,7 +45,7 @@
 		}
 
 		.formikForm {
-			@apply w-full bg-grey lg:container mx-auto p-10 lg:py-20 flex flex-col items-center;
+			@apply w-full bg-lightGreyTwo border-b-[15px] border-solid border-primary-default lg:container mx-auto p-10 lg:py-20 flex flex-col items-center;
 
 			.title {
 				@apply w-full mb-10 font-OnestBlack text-center uppercase text-3xl lg:text-5xl xl:text-7xl tracking-[-0.05rem] font-semibold leading-tight;
