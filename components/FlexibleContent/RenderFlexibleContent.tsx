@@ -8,6 +8,7 @@ import {usePageContext} from "@/context/providers/PageContextProvider";
 import Hero from "@/components/Hero/index";
 import HeroTwo from "@/components/Hero/HeroTwo";
 import HeroThree from "@/components/Hero/HeroThree";
+import VideoBlock from "@/components/VideoBlock/index";
 import AboutSimba from "@/components/AboutSimba/index";
 import VisitStore from "@/components/VisitStore/index";
 import SponsorsLogos from "@/components/SponsorsLogos";
@@ -36,6 +37,7 @@ const RenderFlexibleContent: FC = () => {
 		[`${FlexibleContent}_HeroTwo`]: HeroTwo,
 		[`${FlexibleContent}_HeroThree`]: HeroThree,
 		[`${FlexibleContent}_AboutSimba`]: AboutSimba,
+		[`${FlexibleContent}_VideoBlock`]: VideoBlock,
 		[`${FlexibleContent}_VisitStore`]: VisitStore,
 		[`${FlexibleContent}_ContactForm`]: ContactForm,
 		[`${FlexibleContent}_SimbatvBanner`]: SimbaTVBanner,

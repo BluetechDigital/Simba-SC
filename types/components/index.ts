@@ -307,6 +307,27 @@ export namespace IAbout {
 		};
 	};
 }
+export namespace IVideoBlock {
+	export type IProps = {
+		title: string;
+		video: string;
+		subtitle: string;
+		paragraph: string;
+		displayVideo: boolean;
+		buttonLink: {
+			url: string;
+			title: string;
+			target: string;
+		};
+		videoBackgroundImage: {
+			sourceUrl: string;
+		};
+	};
+
+	export type IVideoWrapper = {
+		children: React.ReactNode;
+	};
+}
 export namespace ILatestNews {
 	export type IGridProps = {
 		title: string;
