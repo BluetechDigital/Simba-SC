@@ -5,7 +5,7 @@ import type {AppProps} from "next/app";
 import "@/styles/globals.scss";
 
 // Global Context Provider
-import {IGlobalProps} from "@/types/context/Providers";
+import {IGlobal} from "@/types/context/Providers";
 
 // Queries Functions
 import {
@@ -167,7 +167,7 @@ const App = async ({children}: AppProps | any) => {
 		partnershipsAdvertisingSublinks,
 	] = await Promise.all(promises);
 
-	const globalProps: IGlobalProps = {
+	const globalProps: IGlobal.IProps = {
 		testimonials: testimonials,
 		jobsPositions: jobsPositions,
 		themesOptionsContent: themesOptionsContent,

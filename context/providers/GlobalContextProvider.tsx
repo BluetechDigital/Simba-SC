@@ -4,7 +4,7 @@
 import {FC} from "react";
 import {motion} from "framer-motion";
 import {GlobalContext} from "@/context/global";
-import {IGlobalContextProvider} from "@/types/context/Providers";
+import {IGlobal} from "@/types/context/Providers";
 
 // Components
 import {Analytics} from "@vercel/analytics/react";
@@ -12,7 +12,7 @@ import {SpeedInsights} from "@vercel/speed-insights/next";
 // import PageLoadingSquares from "@/components/Global/PageLoadingSquares";
 import PostHogContextProvider from "@/context/providers/PostHogProviderContext";
 
-const GlobalContextProvider: FC<IGlobalContextProvider> = ({
+const GlobalContextProvider: FC<IGlobal.IContextProvider> = ({
 	children,
 	globalProps,
 }) => {

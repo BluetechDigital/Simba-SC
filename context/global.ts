@@ -2,9 +2,9 @@
 
 // Imports
 import {createContext, useContext} from "react";
-import {IGlobalContext} from "@/types/context/Providers";
+import {IGlobal} from "@/types/context/Providers";
 
-export const GlobalContext = createContext<IGlobalContext | undefined>(
+export const GlobalContext = createContext<IGlobal.IContext | undefined>(
 	undefined
 );
 

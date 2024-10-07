@@ -1,7 +1,7 @@
 // Imports
 import {
 	IPostTypes,
-	IPageTypes,
+	IPage,
 	IFlexibleContentType,
 } from "@/types/context/Providers";
 
@@ -24,7 +24,7 @@ export const postType: IPostTypes = {
 	previewPost: "post",
 };
 
-export const pageType: IPageTypes = {
+export const pageType: IPage.ITypes = {
 	// Public pages
 	fans: "fans",
 	news: "news",
