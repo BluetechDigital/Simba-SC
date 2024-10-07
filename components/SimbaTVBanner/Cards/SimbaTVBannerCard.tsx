@@ -12,14 +12,14 @@ import Image from "next/image";
 import {motion} from "framer-motion";
 import {FC, Fragment, useState} from "react";
 import {useGlobalContext} from "@/context/global";
-import {ISimbaTVBannerCard} from "@/types/components/Elements";
+import {ISimbaTVBanner} from "@/types/components";
 
 // Components
 import Paragraph from "@/components/Elements/Paragraph";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import SimbaTVBannerVideos from "@/components/SimbaTVBanner/Elements/SimbaTVBannerVideos";
 
-const SimbaTVBannerCard: FC<ISimbaTVBannerCard> = ({
+const SimbaTVBannerCard: FC<ISimbaTVBanner.ICard> = ({
 	fansButton,
 	youtubeButton,
 	podcastsButton,

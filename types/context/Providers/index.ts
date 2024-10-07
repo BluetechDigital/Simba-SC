@@ -113,7 +113,6 @@ export namespace IGlobal {
 		children: React.ReactNode;
 	};
 }
-
 export type IFlexibleContentType = {
 	pages: string;
 	previewPage: string;

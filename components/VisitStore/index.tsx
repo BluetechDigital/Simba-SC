@@ -11,7 +11,11 @@ import VisitStoreCard from "@/components/VisitStore/Cards/VisitStoreCard";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
-const VisitStore: FC<IVisitStore> = ({title, buttonLink, backgroundImage}) => {
+const VisitStore: FC<IVisitStore.IProps> = ({
+	title,
+	buttonLink,
+	backgroundImage,
+}) => {
 	return (
 		<>
 			<div

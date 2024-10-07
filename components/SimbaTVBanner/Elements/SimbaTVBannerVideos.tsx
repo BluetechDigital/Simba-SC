@@ -2,10 +2,10 @@
 
 // Imports
 import {FC} from "react";
+import {ISimbaTVBanner} from "@/types/components";
 import {motion, AnimatePresence} from "framer-motion";
-import {ISimbaTVBannerVideos} from "@/types/components/Elements";
 
-const SimbaTVBannerVideos: FC<ISimbaTVBannerVideos> = ({
+const SimbaTVBannerVideos: FC<ISimbaTVBanner.IVideos> = ({
 	children,
 	className,
 	transition,

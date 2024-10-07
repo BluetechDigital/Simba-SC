@@ -14,7 +14,7 @@ import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal
 import SimbaTVBannerCard from "@/components/SimbaTVBanner/Cards/SimbaTVBannerCard";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
-const SimbaTVBanner: FC<ISimbaTVBanner> = ({
+const SimbaTVBanner: FC<ISimbaTVBanner.IProps> = ({
 	title,
 	paragraph,
 	buttonLink,

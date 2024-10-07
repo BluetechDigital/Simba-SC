@@ -9,10 +9,10 @@ import {
 	initialTwo,
 } from "@/animations/animations";
 import {motion} from "framer-motion";
+import React, {useState, FC} from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import {IContactForm} from "@/types/components";
 import {sendContactForm} from "@/lib/contactForm";
-import React, {useState, FC, Fragment} from "react";
 import {useFormik, Formik, Field, Form} from "formik";
 
 // Styling

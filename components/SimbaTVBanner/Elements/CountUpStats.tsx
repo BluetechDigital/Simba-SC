@@ -1,15 +1,15 @@
 "use client";
 
 // Imports
+import {ISimbaTVBanner} from "@/types/components";
 import React, {FC, useEffect, useRef} from "react";
 import {motion, animate, useInView} from "framer-motion";
-import {ICountUpStats} from "@/types/components/Elements";
 import {initialTwo, fadeIn} from "@/animations/animations";
 
 // Components
 import Paragraph from "@/components/Elements/Paragraph";
 
-const CountUpStats: FC<ICountUpStats> = ({
+const CountUpStats: FC<ISimbaTVBanner.ICountUpStats> = ({
 	number,
 	suffix,
 	decimals = 0,

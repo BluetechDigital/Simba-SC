@@ -4,13 +4,14 @@
 import {FC} from "react";
 import {motion} from "framer-motion";
 import {useGlobalContext} from "@/context/global";
+import {ISimbaTVBanner} from "@/types/components";
 import {stagger, initial} from "@/animations/animations";
 
 // Components
 import CountUpStats from "@/components/SimbaTVBanner/Elements/CountUpStats";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 
-const SimbaTVStatsCard: FC = () => {
+const SimbaTVStatsCard: FC<ISimbaTVBanner.IStatsCard> = () => {
 	const globalContext = useGlobalContext();
 
 	return (

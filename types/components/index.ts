@@ -1,3 +1,6 @@
+// Imports
+import {MotionProps, Transition, Variant} from "framer-motion";
+
 // Components
 export type IHero = {
 	heroSlider: [
@@ -49,60 +52,12 @@ export type IHeroThree = {
 		};
 	};
 };
-export type IVisitStore = {
-	title: string;
-	buttonLink: {
-		url: string;
-		title: string;
-		target: string;
-	};
-	backgroundImage: {
-		altText: string;
-		sourceUrl: string;
-		mediaDetails: {
-			width: number;
-			height: number;
-		};
-	};
-};
 export type INewsSingle = {
 	title: string;
 	readTime: string;
 	paragraph: string;
 	articleType: string;
 	boldParagraph: string;
-};
-export type ISimbaTVBanner = {
-	title: string;
-	paragraph: string;
-	buttonLink: {
-		url: string;
-		title: string;
-		target: string;
-	};
-	youtubeButton: {
-		url: string;
-		title: string;
-		target: string;
-	};
-	podcastsButton: {
-		url: string;
-		title: string;
-		target: string;
-	};
-	fansButton: {
-		url: string;
-		title: string;
-		target: string;
-	};
-	backgroundImage: {
-		altText: string;
-		sourceUrl: string;
-		mediaDetails: {
-			width: number;
-			height: number;
-		};
-	};
 };
 export type ISponsorsLogos = {
 	logoGrid: [
@@ -368,6 +323,24 @@ export namespace ILatestNews {
 		};
 	};
 }
+export namespace IVisitStore {
+	export type IProps = {
+		title: string;
+		buttonLink: {
+			url: string;
+			title: string;
+			target: string;
+		};
+		backgroundImage: {
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
+		};
+	};
+}
 export namespace IContactForm {
 	export type IProps = {
 		title: string;
@@ -438,6 +411,59 @@ export namespace IClubPartners {
 				};
 			};
 		};
+	};
+}
+export namespace ISimbaTVBanner {
+	export type IProps = {
+		title: string;
+		paragraph: string;
+		buttonLink: {
+			url: string;
+			title: string;
+			target: string;
+		};
+		youtubeButton: {
+			url: string;
+			title: string;
+			target: string;
+		};
+		podcastsButton: {
+			url: string;
+			title: string;
+			target: string;
+		};
+		fansButton: {
+			url: string;
+			title: string;
+			target: string;
+		};
+		backgroundImage: {
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
+		};
+	};
+	export type ICard = {
+		fansButton: IProps[`fansButton`];
+		youtubeButton: IProps[`youtubeButton`];
+		podcastsButton: IProps[`podcastsButton`];
+	};
+	export type IStatsCard = {};
+	export type IVideos = {
+		children: React.ReactNode[];
+		className?: string;
+		transition?: Transition;
+		activeIndex: number;
+		variants?: {enter: Variant; center: Variant; exit: Variant};
+	} & MotionProps;
+	export type ICountUpStats = {
+		number: string;
+		suffix?: string;
+		decimals?: number;
+		paragraph: string;
 	};
 }
 export namespace IGeneralInformation {
