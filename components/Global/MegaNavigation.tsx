@@ -1075,24 +1075,6 @@ const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
 						</motion.div>
 					</div>
 				</div>
-				<motion.div
-					onClick={resetMenu}
-					initial={initialTwo}
-					whileInView={fadeIn}
-					viewport={{once: false}}
-					className="absolute z-20 right-[14px] top-10 w-auto lg:w-1/12 h-fit hidden lg:flex flex-col items-center justify-center cursor-pointer p-4 bg-tertiary-two hover:bg-primary-dark bg-fill bg-no-repeat bg-center transition-all ease-in-out duration-500"
-				>
-					<button className="relative z-50 flex flex-col items-center justify-center">
-						<span className="hamburger-icon">
-							<span className={menuActive ? "iconOne-active" : "iconOne"} />
-							<span className={menuActive ? "iconTwo-active" : "iconTwo"} />
-							<span className={menuActive ? "iconThree-active" : "iconThree"} />
-						</span>
-						<span className="text-white uppercase font-OnestBold">
-							{menuActive ? "Close" : "Menu"}
-						</span>
-					</button>
-				</motion.div>
 			</div>
 		</>
 	);

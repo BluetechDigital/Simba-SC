@@ -38,12 +38,12 @@ const Navbar: FC = () => {
 				}
 			>
 				<TopNavigation />
-				<div className="flex items-center justify-between bg-lightGreyTwo pl-4">
+				<div className="flex items-center justify-between bg-lightGreyTwo pl-2 lg:pl-4">
 					<motion.div
 						initial={initialTwo}
 						whileInView={fadeIn}
 						viewport={{once: false}}
-						className="w-auto"
+						className={styles.logo}
 					>
 						<Link href="/" target="_self" aria-label={`Simba SC Homepage Link`}>
 							<Image
@@ -52,80 +52,49 @@ const Navbar: FC = () => {
 								height={1000}
 								alt="Simba SC Logo"
 								src="/img/logos/simba-sc-logo.png"
-								className="object-contain object-center w-[65px] md:w-[75px] h-[60px] sm:h-[65px] lg:h-[75px]"
+								className={styles.image}
 							/>
 						</Link>
 					</motion.div>
-					<div className="w-auto">
-						<div className="flex flex-wrap items-center">
-							<div className="w-auto hidden xl:block">
-								<motion.ul
-									initial={initial}
-									variants={stagger}
-									whileInView="animate"
-									viewport={{once: false}}
-									className="flex items-center gap-8"
-								>
-									{globalContext?.navbarMenuLinks?.length > 0 ? (
-										globalContext?.navbarMenuLinks?.map(
-											(item: any, index: number) => (
-												<Fragment key={index}>
-													<motion.li
-														custom={index}
-														initial={initial}
-														whileInView="animate"
-														viewport={{once: false}}
-														variants={arrayLoopStaggerChildren}
-														className="hidden lg:block"
-													>
-														<Link
-															href={`${item?.node?.url}`}
-															target={`${
-																item?.node?.target
-																	? item?.node?.target
-																	: "_self"
-															}`}
-															aria-label={`${item?.node?.label}`}
-															className="font-OnestBold font-extrabold text-pureBlack hover:text-primary-default tracking-[-0.02rem] text-lg text-center uppercase transition-all ease-in-out duration-500"
-														>
-															{item?.node?.label}
-														</Link>
-													</motion.li>
-												</Fragment>
-											)
-										)
-									) : (
-										<></>
-									)}
-								</motion.ul>
-							</div>
-							<motion.div
-								initial={initialTwo}
-								whileInView={fadeIn}
+					<div className={styles.navigation}>
+						<div className={styles.wrapper}>
+							<motion.ul
+								initial={initial}
+								variants={stagger}
+								whileInView="animate"
+								className={styles.ul}
 								viewport={{once: false}}
-								className="w-auto lg:hidden"
 							>
-								<button
-									onClick={handleClick}
-									className="relative z-50 w-auto lg:w-1/12 h-full py-2 px-12 flex flex-col items-center justify-center bg-primary-default hover:bg-primary-dark transition-all ease-in-out duration-500"
-								>
-									<span className="hamburger-icon">
-										<span
-											className={menuActive ? "iconOne-active" : "iconOne"}
-										/>
-										<span
-											className={menuActive ? "iconTwo-active" : "iconTwo"}
-										/>
-										<span
-											className={menuActive ? "iconThree-active" : "iconThree"}
-										/>
-										<span className="clear" />
-									</span>
-									<span className="mt-[1px] text-white uppercase font-OnestBold">
-										{menuActive ? "Close" : "Menu"}
-									</span>
-								</button>
-							</motion.div>
+								{globalContext?.navbarMenuLinks?.length > 0 ? (
+									globalContext?.navbarMenuLinks?.map(
+										(item: any, index: number) => (
+											<Fragment key={index}>
+												<motion.li
+													custom={index}
+													initial={initial}
+													whileInView="animate"
+													className={styles.li}
+													viewport={{once: false}}
+													variants={arrayLoopStaggerChildren}
+												>
+													<Link
+														className={styles.link}
+														href={`${item?.node?.url}`}
+														aria-label={`${item?.node?.label}`}
+														target={`${
+															item?.node?.target ? item?.node?.target : "_self"
+														}`}
+													>
+														{item?.node?.label}
+													</Link>
+												</motion.li>
+											</Fragment>
+										)
+									)
+								) : (
+									<></>
+								)}
+							</motion.ul>
 						</div>
 					</div>
 					<motion.div
@@ -133,20 +102,31 @@ const Navbar: FC = () => {
 						whileInView={fadeIn}
 						onClick={handleClick}
 						viewport={{once: false}}
-						className="w-auto lg:w-1/12 h-full hidden lg:flex flex-col items-center justify-center cursor-pointer p-4 bg-primary-default hover:bg-primary-dark bg-fill bg-no-repeat bg-center transition-all ease-in-out duration-500"
+						className={
+							styles.megaNavigationMenuButton +
+							` ${menuActive ? "bg-tertiary-two" : "bg-primary-default"}`
+						}
 						style={{
-							backgroundImage: `url("/img/background/red-background-dots.png")`,
+							backgroundImage: `url(${
+								menuActive ? "none" : "/img/background/red-background-dots.png"
+							})`,
 						}}
 					>
-						<button className="relative z-50 flex flex-col items-center justify-center">
-							<span className="hamburger-icon">
-								<span className={menuActive ? "iconOne-active" : "iconOne"} />
-								<span className={menuActive ? "iconTwo-active" : "iconTwo"} />
+						<button className={styles.button}>
+							<span className={styles.hamburgerIcon}>
 								<span
-									className={menuActive ? "iconThree-active" : "iconThree"}
+									className={menuActive ? styles.iconOneActive : styles.iconOne}
+								/>
+								<span
+									className={menuActive ? styles.iconTwoActive : styles.iconTwo}
+								/>
+								<span
+									className={
+										menuActive ? styles.iconThreeActive : styles.iconThree
+									}
 								/>
 							</span>
-							<span className="text-white uppercase font-OnestBold">
+							<span className={styles.text}>
 								{menuActive ? "Close" : "Menu"}
 							</span>
 						</button>

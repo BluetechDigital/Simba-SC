@@ -1,0 +1,22 @@
+// Imports
+@import "../../base/fonts";
+@import "../../base/colors";
+
+/* Hide the div on touch devices */
+@media (hover: none) and (pointer: coarse) {
+	.blurryCursorMouse {
+		@apply hidden;
+	}
+}
+
+/* Show the div on devices that support hover
+ and fine pointer interactions (like desktops) */
+@media (hover: hover) and (pointer: fine) {
+	.blurryCursorMouse {
+		@apply relative z-[999] h-full;
+
+		.element {
+			@apply top-0 left-0 fixed mix-blend-difference pointer-events-none;
+		}
+	}
+}

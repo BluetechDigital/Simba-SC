@@ -60,6 +60,7 @@ import {getAllClubPartnersExcerpt} from "@/graphql/GetAllClubPartners";
 // Components
 import Navbar from "@/components/Global/Navbar";
 import Footer from "@/components/Global/Footer";
+import BlurryCursorMouse from "@/hooks/useBlurryCursorMouse";
 import SmoothScrolling from "@/components/Global/SmoothScrolling";
 import BackToTopButton from "@/components/Elements/BackToTopButton";
 import GlobalContextProvider from "@/context/providers/GlobalContextProvider";
@@ -225,6 +226,7 @@ const App = async ({children}: AppProps | any) => {
 							<Navbar />
 							<main>{children}</main>
 							<Footer />
+							<BlurryCursorMouse />
 							<BackToTopButton link={`#`} />
 						</SmoothScrolling>
 					</GlobalContextProvider>

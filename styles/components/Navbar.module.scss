@@ -3,4 +3,74 @@
 @import "../base/colors";
 
 .navbar {
+	.logo {
+		@apply w-auto;
+
+		.image {
+			@apply object-contain object-center w-[65px] md:w-[75px] h-[60px] sm:h-[65px] lg:h-[75px];
+		}
+	}
+
+	.navigation {
+		@apply w-auto flex flex-wrap items-center;
+
+		.wrapper {
+			@apply w-auto hidden xl:block;
+
+			.ul {
+				@apply flex items-center gap-8;
+
+				.li {
+					@apply hidden lg:block;
+
+					.link {
+						@apply font-OnestBold font-extrabold text-pureBlack hover:text-primary-default tracking-[-0.02rem] text-lg text-center uppercase transition-all ease-in-out duration-500;
+					}
+				}
+			}
+		}
+	}
+
+	.megaNavigationMenuButton {
+		@apply relative z-20 w-1/4 lg:w-1/12 h-full px-8 py-4 lg:p-4 flex flex-col items-center justify-center cursor-pointer bg-no-repeat bg-center hover:bg-primary-dark transition-all ease-in-out duration-500;
+
+		.button {
+			@apply h-full w-full mx-auto flex flex-col items-center justify-center;
+
+			.text {
+				@apply hidden lg:static text-white uppercase font-OnestBold;
+			}
+
+			.hamburgerIcon {
+				@apply relative py-4 lg:ml-1 h-full w-full mx-auto;
+
+				.iconOne,
+				.iconTwo,
+				.iconThree {
+					@apply absolute left-0 top-1/2 w-[40px] h-[4px] bg-white;
+					transition: all 400ms cubic-bezier(0.84, 0.06, 0.52, 1.8);
+				}
+
+				.iconOne {
+					@apply delay-100 opacity-100 translate-y-[-8px];
+				}
+
+				.iconThree {
+					@apply delay-300 opacity-100 translate-y-[8px];
+				}
+
+				.iconOneActive {
+					@apply absolute left-0 top-1/2 w-[40px] h-[4px] ml-[0.40rem] bg-white opacity-100 rotate-[40deg] transition-all ease-in-out duration-500;
+				}
+
+				.iconThreeActive {
+					@apply absolute left-0 top-1/2 w-[40px] h-[4px] ml-[0.40rem] bg-white opacity-100 rotate-[-40deg] transition-all ease-in-out duration-500;
+				}
+
+				.iconTwoActive {
+					@apply opacity-0;
+				}
+			}
+		}
+	}
 }
