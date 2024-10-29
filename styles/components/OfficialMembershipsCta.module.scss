@@ -3,9 +3,37 @@
 @import "../base/colors";
 
 .officialMembershipsCta {
-	.title {
-		span {
-			@apply text-primary-default;
+	@apply bg-primary-default bg-no-repeat bg-cover bg-center;
+
+	.container {
+		@apply lg:max-w-[1700px] mx-auto py-14 px-4;
+
+		.content {
+			@apply p-8 bg-no-repeat bg-cover bg-center overflow-hidden;
+
+			.card {
+				@apply py-11 px-9 max-w-xl bg-white;
+
+				.wrapper {
+					@apply flex flex-col items-center lg:items-baseline;
+
+					.title {
+						@apply mb-6 font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-pureBlack leading-tight;
+
+						span {
+							@apply text-primary-default;
+						}
+					}
+
+					.paragraph {
+						@apply mb-4 font-OnestRegular leading-normal text-pureBlack text-lg text-center lg:text-left;
+					}
+
+					.buttonLink {
+						@apply flex flex-wrap gap-4;
+					}
+				}
+			}
 		}
 	}
 }

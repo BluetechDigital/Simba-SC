@@ -1,10 +1,12 @@
 // Imports
 import {FC} from "react";
 import Link from "next/link";
-import Image from "next/image";
 import {motion} from "framer-motion";
 import {initialTwo, fadeIn} from "@/animations/animations";
 import {IOfficialMembershipsCta} from "@/types/components/index";
+
+// Styling
+import styles from "@/styles/components/OfficialMembershipsCta.module.scss";
 
 // Components
 import Paragraph from "@/components/Elements/Paragraph";
@@ -21,33 +23,30 @@ const OfficialMembershipsCta: FC<IOfficialMembershipsCta> = ({
 	return (
 		<>
 			<div
-				className="bg-primary-default bg-no-repeat bg-cover bg-center"
+				className={styles.officialMembershipsCta}
 				style={{
 					backgroundImage: `url("/svg/background/stacked-steps-haikei-lightgrey.svg")`,
 				}}
 			>
-				<div className="lg:max-w-[1700px] mx-auto py-14 px-4">
+				<div className={styles.container}>
 					<div
+						className={styles.content}
 						style={{
 							backgroundImage: `url("${image?.sourceUrl}")`,
 						}}
-						className="p-8 bg-no-repeat bg-cover bg-center overflow-hidden"
 					>
-						<SlideInXLeftAnimation className="py-11 px-9 max-w-xl bg-white">
-							<ScrollYProgressReveal className="flex flex-col items-center lg:items-baseline">
+						<SlideInXLeftAnimation className={styles.card}>
+							<ScrollYProgressReveal className={styles.wrapper}>
 								<motion.h4
 									initial={initialTwo}
 									whileInView={fadeIn}
 									viewport={{once: true}}
-									className="mb-6 font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-pureBlack leading-tight"
+									className={styles.title}
 								>
 									{title}
 								</motion.h4>
-								<Paragraph
-									content={paragraph}
-									className="mb-4 font-OnestRegular leading-normal text-pureBlack text-lg text-center lg:text-left"
-								/>
-								<div className="flex flex-wrap gap-4">
+								<Paragraph content={paragraph} className={styles.paragraph} />
+								<div className={styles.buttonLink}>
 									<Link
 										href={`${buttonLink?.url}`}
 										target={buttonLink?.target}
