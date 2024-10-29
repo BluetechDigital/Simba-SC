@@ -1,18 +1,16 @@
 "use client";
 
 // Imports
-import {
-	fadeIn,
-	initial,
-	initialTwo,
-	arrayLoopStaggerChildren,
-} from "@/animations/animations";
 import Link from "next/link";
 import Image from "next/image";
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
 import {useGlobalContext} from "@/context/global";
 import {ILatestNews} from "@/types/components/index";
+import {initial, arrayLoopStaggerChildren} from "@/animations/animations";
+
+// Styling
+import styles from "@/styles/components/LatestNews.module.scss";
 
 // Components
 import Card from "@/components/LatestNews/Cards/Card";
@@ -29,14 +27,12 @@ const LatestNewsGrid: FC<ILatestNews.IGridProps> = ({
 
 	return (
 		<>
-			<div className="bg-pureBlack px-4 py-14 lg:px-10 mx-auto flex flex-col gap-8">
+			<div className={styles.latestNewsGrid}>
 				<ContentSliceRevealMaskAnimation>
-					<h2 className="font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-white leading-tight">
-						{title}
-					</h2>
+					<h2 className={styles.title}>{title}</h2>
 				</ContentSliceRevealMaskAnimation>
-				<div className="flex flex-col-reverse lg:flex-xol gap-2 lg:flex-row">
-					<div className="flex flex-col gap-2 w-full lg:w-1/4">
+				<div className={styles.gridsWrapper}>
+					<div className={styles.gridOne}>
 						{globalContext?.news?.length > 0 ? (
 							globalContext?.news
 								?.slice(1, 3)
@@ -51,11 +47,11 @@ const LatestNewsGrid: FC<ILatestNews.IGridProps> = ({
 											variants={arrayLoopStaggerChildren}
 										>
 											<Card
+												className={styles.card}
 												slug={item?.node?.slug}
 												date={item?.node?.date}
 												title={item?.node?.title}
 												featuredImage={item?.node?.featuredImage}
-												className={"w-full h-fill min-h-[375px]"}
 											/>
 										</motion.div>
 									</Fragment>
@@ -80,15 +76,11 @@ const LatestNewsGrid: FC<ILatestNews.IGridProps> = ({
 										? image?.mediaDetails?.height
 										: 500
 								}
-								className={
-									image?.sourceUrl
-										? `bg-white w-full h-fill max-h-[375px] object-cover object center`
-										: `hidden`
-								}
+								className={image?.sourceUrl ? styles.image : `hidden`}
 							/>
 						</Link>
 					</div>
-					<div className="flex flex-col w-full lg:w-1/2">
+					<div className={styles.gridTwo}>
 						{globalContext?.news?.length > 0 ? (
 							globalContext?.news
 								?.slice(0, 1)
@@ -103,13 +95,11 @@ const LatestNewsGrid: FC<ILatestNews.IGridProps> = ({
 											variants={arrayLoopStaggerChildren}
 										>
 											<Card
+												className={styles.card}
 												slug={item?.node?.slug}
 												date={item?.node?.date}
 												title={item?.node?.title}
 												featuredImage={item?.node?.featuredImage}
-												className={
-													"w-full h-fill min-h-[375px] lg:min-h-[758px]"
-												}
 											/>
 										</motion.div>
 									</Fragment>
@@ -118,7 +108,7 @@ const LatestNewsGrid: FC<ILatestNews.IGridProps> = ({
 							<></>
 						)}
 					</div>
-					<div className="hidden lg:flex flex-col gap-2 w-full lg:w-1/2">
+					<div className={styles.gridThree}>
 						<Link
 							href={`${ctaLink?.url}`}
 							target={ctaLink?.target}
@@ -135,14 +125,10 @@ const LatestNewsGrid: FC<ILatestNews.IGridProps> = ({
 										? image?.mediaDetails?.height
 										: 500
 								}
-								className={
-									image?.sourceUrl
-										? `bg-white block w-full h-fill max-h-[375px] object-cover object center`
-										: `hidden`
-								}
+								className={image?.sourceUrl ? styles.image : `hidden`}
 							/>
 						</Link>
-						<div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
+						<div className={styles.gridContent}>
 							{globalContext?.news?.length > 0 ? (
 								globalContext?.news
 									?.slice(3, 5)
@@ -159,9 +145,9 @@ const LatestNewsGrid: FC<ILatestNews.IGridProps> = ({
 												<Card
 													slug={item?.node?.slug}
 													date={item?.node?.date}
+													className={styles.card}
 													title={item?.node?.title}
 													featuredImage={item?.node?.featuredImage}
-													className={"w-full h-fill min-h-[375px]"}
 												/>
 											</motion.div>
 										</Fragment>
@@ -172,12 +158,12 @@ const LatestNewsGrid: FC<ILatestNews.IGridProps> = ({
 						</div>
 					</div>
 				</div>
-				<ScrollYProgressReveal className="flex flex-col items-center">
+				<ScrollYProgressReveal className={styles.buttonLink}>
 					<Link
 						href={`${buttonLink?.url}`}
 						target={buttonLink?.target}
 						className={`${
-							buttonLink?.url ? "buttonStyling-alt mt-5 mx-auto" : "hidden"
+							buttonLink?.url ? styles.link + " buttonStyling-alt" : "hidden"
 						}`}
 					>
 						{buttonLink?.title}

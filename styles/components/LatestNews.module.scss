@@ -1,0 +1,71 @@
+// Imports
+@import "../base//fonts";
+@import "../base/colors";
+
+.latestNewsGrid {
+	@apply bg-pureBlack px-4 py-14 lg:px-10 mx-auto flex flex-col gap-8;
+
+	.title {
+		@apply font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-white leading-tight;
+	}
+
+	.buttonLink {
+		@apply flex flex-col items-center;
+
+		.link {
+			@apply mt-5 mx-auto;
+		}
+	}
+
+	.gridsWrapper {
+		@apply flex flex-col-reverse gap-2 lg:flex-row;
+
+		.gridOne,
+		.gridTwo,
+		.gridThree {
+			.image {
+				@apply bg-white block w-full h-full max-h-[375px] object-cover object-center;
+			}
+
+			.card {
+				@apply w-full h-full min-h-[375px] py-8 px-4 xl:p-8 bg-no-repeat bg-cover bg-center h-full w-full flex flex-col items-baseline justify-end;
+
+				.container {
+					@apply max-w-xs mx-0 flex flex-col gap-2;
+
+					.date {
+						@apply font-OnestRegular font-normal text-white text-tiny;
+					}
+
+					.divider {
+						@apply h-[2.5px] bg-primary-default w-full;
+					}
+
+					.title {
+						@apply font-OnestBlack text-left uppercase text-base tracking-[-0.02rem] text-white font-semibold leading-4;
+					}
+				}
+			}
+		}
+
+		.gridOne {
+			@apply flex flex-col gap-2 w-full lg:w-1/4;
+		}
+
+		.gridTwo {
+			@apply flex flex-col w-full lg:w-1/2;
+
+			.card {
+				@apply lg:min-h-[758px];
+			}
+		}
+
+		.gridThree {
+			@apply hidden lg:flex flex-col gap-2 w-full lg:w-1/2;
+
+			.gridContent {
+				@apply grid grid-cols-1 lg:grid-cols-2 gap-2;
+			}
+		}
+	}
+}
