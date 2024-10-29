@@ -9,17 +9,20 @@ import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
 import {ISponsorsLogos} from "@/types/components/index";
 
+// Styling
+import styles from "@/styles/components/SponsorsLogos.module.scss";
+
 const SponsorsLogos: FC<ISponsorsLogos> = ({logoGrid}) => {
 	return (
 		<>
-			<div className="bg-white px-4 py-6 lg:px-10">
-				<div className="container px-0 mx-auto flex flex-col items-center justify-center gap-4 max-w-6xl">
+			<div className={styles.sponsorsLogos}>
+				<div className={styles.container}>
 					<motion.div
 						initial={initial}
 						variants={stagger}
 						whileInView="animate"
 						viewport={{once: true}}
-						className="grid items-center justify-center grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-y-2 gap-x-8 lg:justify-between"
+						className={styles.content}
 					>
 						{logoGrid?.length > 0 ? (
 							logoGrid?.map((item: any, index: number) => (
@@ -45,9 +48,7 @@ const SponsorsLogos: FC<ISponsorsLogos> = ({logoGrid}) => {
 													: 500
 											}
 											className={
-												item?.image?.sourceUrl
-													? `block w-full h-full object-contain object-center`
-													: `hidden`
+												item?.image?.sourceUrl ? styles.image : `hidden`
 											}
 										/>
 									</motion.div>
