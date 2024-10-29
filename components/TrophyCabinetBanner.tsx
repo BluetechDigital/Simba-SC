@@ -22,7 +22,50 @@ import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal
 import SlideInXRightAnimation from "@/components/Animations/SlideInXRightAnimation";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
-const TrophyCabinetBanner: FC<ITrophyCabinetBanner> = ({
+const Card: FC<ITrophyCabinetBanner.ICard> = ({
+	name,
+	index,
+	image,
+	totalAmount,
+}) => {
+	return (
+		<motion.div
+			custom={index}
+			initial={initial}
+			className="w-full"
+			whileInView="animate"
+			viewport={{once: true}}
+			variants={arrayLoopStaggerChildren}
+		>
+			<div className={styles.content}>
+				<Image
+					src={image?.sourceUrl}
+					alt={`${image?.altText}`}
+					width={image?.mediaDetails?.width ? image?.mediaDetails?.width : 500}
+					height={
+						image?.mediaDetails?.height ? image?.mediaDetails?.height : 500
+					}
+					className={image?.sourceUrl ? styles.image : `hidden`}
+				/>
+				<CountUp
+					decimals={0}
+					number={totalAmount}
+					className={styles.totalAmount}
+				/>
+			</div>
+			<motion.h4
+				initial={initialTwo}
+				whileInView={fadeIn}
+				viewport={{once: true}}
+				className={styles.name}
+			>
+				{name}
+			</motion.h4>
+		</motion.div>
+	);
+};
+
+const TrophyCabinetBanner: FC<ITrophyCabinetBanner.IProps> = ({
 	title,
 	paragraph,
 	buttonLink,
@@ -50,47 +93,12 @@ const TrophyCabinetBanner: FC<ITrophyCabinetBanner> = ({
 								{trophyCabinet?.length > 0 ? (
 									trophyCabinet?.map((item: any, index: number) => (
 										<Fragment key={index}>
-											<motion.div
-												custom={index}
-												initial={initial}
-												className="w-full"
-												whileInView="animate"
-												viewport={{once: true}}
-												variants={arrayLoopStaggerChildren}
-											>
-												<div className={styles.content}>
-													<Image
-														src={item?.image?.sourceUrl}
-														alt={`${item?.image?.altText}`}
-														width={
-															item?.image?.mediaDetails?.width
-																? item?.image?.mediaDetails?.width
-																: 500
-														}
-														height={
-															item?.image?.mediaDetails?.height
-																? item?.image?.mediaDetails?.height
-																: 500
-														}
-														className={
-															item?.image?.sourceUrl ? styles.image : `hidden`
-														}
-													/>
-													<CountUp
-														decimals={0}
-														number={item?.totalAmount}
-														className={styles.totalAmount}
-													/>
-												</div>
-												<motion.h4
-													initial={initialTwo}
-													whileInView={fadeIn}
-													viewport={{once: true}}
-													className={styles.name}
-												>
-													{item?.name}
-												</motion.h4>
-											</motion.div>
+											<Card
+												index={index}
+												name={item?.name}
+												image={item?.image}
+												totalAmount={item?.totalAmount}
+											/>
 										</Fragment>
 									))
 								) : (

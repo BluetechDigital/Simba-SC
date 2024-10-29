@@ -79,9 +79,6 @@ export type ITitleParagraph = {
 	paragraph: string;
 	displayParagraph: boolean;
 };
-export type ISocialMediaGrid = {
-	title: string;
-};
 export type INewsletterBanner = {
 	title: string;
 	paragraph: string;
@@ -111,35 +108,6 @@ export type INewOfficialKitCta = {
 		};
 	};
 	imageTwo: {
-		altText: string;
-		sourceUrl: string;
-		mediaDetails: {
-			width: number;
-			height: number;
-		};
-	};
-};
-export type ITrophyCabinetBanner = {
-	title: string;
-	paragraph: string;
-	buttonLink: {
-		url: string;
-		title: string;
-		target: string;
-	};
-	trophyCabinet: {
-		name: string;
-		totalAmount: string;
-		image: {
-			altText: string;
-			sourceUrl: string;
-			mediaDetails: {
-				width: number;
-				height: number;
-			};
-		};
-	}[];
-	backgroundImage: {
 		altText: string;
 		sourceUrl: string;
 		mediaDetails: {
@@ -223,7 +191,6 @@ export namespace IAbout {
 			};
 		};
 	};
-
 	export type ITheClubGrid = {
 		aboutGrid: {
 			title: string;
@@ -243,7 +210,6 @@ export namespace IAbout {
 			};
 		}[];
 	};
-
 	export type ITheClubCard = {
 		title: string;
 		paragraph: string;
@@ -466,6 +432,19 @@ export namespace ISimbaTVBanner {
 		paragraph: string;
 	};
 }
+export namespace ISocialMediaGrid {
+	export type IProps = {
+		title: string;
+	};
+	export type ICard = {
+		index: number;
+		caption: string;
+		media_url: string;
+		permalink: string;
+		media_type: string;
+		thumbnail_url: string;
+	};
+}
 export namespace IGeneralInformation {
 	export type IProps = {
 		title: string;
@@ -487,5 +466,49 @@ export namespace IGeneralInformation {
 	export type ICard = {
 		title: string;
 		paragraph: string;
+	};
+}
+export namespace ITrophyCabinetBanner {
+	export type IProps = {
+		title: string;
+		paragraph: string;
+		buttonLink: {
+			url: string;
+			title: string;
+			target: string;
+		};
+		trophyCabinet: {
+			name: string;
+			totalAmount: string;
+			image: {
+				altText: string;
+				sourceUrl: string;
+				mediaDetails: {
+					width: number;
+					height: number;
+				};
+			};
+		}[];
+		backgroundImage: {
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
+		};
+	};
+	export type ICard = {
+		index: number;
+		name: string;
+		totalAmount: string;
+		image: {
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
+		};
 	};
 }

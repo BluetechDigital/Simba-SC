@@ -3,6 +3,6 @@ export type IInstagramFeed = {
 	media_type: string;
 	media_url: string;
 	timestamp: string;
-	permalink: string;
 	caption: string;
+	permalink: string;
 }[];
