@@ -21,14 +21,9 @@ import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSlic
 const Hero: FC<IHero> = ({heroSlider}) => {
 	return (
 		<>
-			<div
-				className={
-					styles.hero +
-					" relative z-50 flex flex-col h-fit pt-[138px] lg:pt-[138px] bg-white"
-				}
-			>
-				<div className="lg:relative flex flex-col">
-					<div className="HeroSwiperSlider relative overflow-hidden">
+			<div className={styles.hero}>
+				<div className={styles.container}>
+					<div className={styles.heroSwiperSlider + " HeroSwiperSlider"}>
 						<Swiper
 							loop={true}
 							navigation={true}
@@ -44,34 +39,29 @@ const Hero: FC<IHero> = ({heroSlider}) => {
 								heroSlider?.map((item: any, index: number) => (
 									<Fragment key={index}>
 										<SwiperSlide>
-											<div className="w-full p-0">
+											<div className={styles.slide}>
 												<div
-													className="pt-24 pb-44 sm:pb-20 w-full h-[87vh] flex flex-col items-center lg:items-baseline justify-center relative bg-center bg-no-repeat bg-cover"
+													className={styles.contentWrapper}
 													style={{
-														backgroundImage: `linear-gradient(
-																0deg,
-																rgb(0, 0, 0, 0.30),
-																rgba(0, 0, 0, 0.10)
-															),url("${item?.backgroundImage?.sourceUrl}")`,
+														backgroundImage: `linear-gradient(0deg,rgb(0, 0, 0, 0.30),
+														rgba(0, 0, 0, 0.10)),url("${item?.backgroundImage?.sourceUrl}")`,
 													}}
 												>
-													<div className="relative z-10 flex flex-col items-center lg:items-start gap-4 px-8 sm:px-4 lg:px-24">
-														<div className="max-w-full lg:max-w-xl 2xl:max-w-5xl mx-auto lg:mx-0">
+													<div className={styles.content}>
+														<div className={styles.top}>
 															<ContentSliceRevealMaskAnimation>
-																<h1 className="font-OnestBlack text-center lg:text-left uppercase text-5xl sm:text-6xl md:text-7xl 2xl:text-8xl tracking-[-0.02rem] text-white font-semibold leading-[0.90]">
-																	{item?.title}
-																</h1>
+																<h1 className={styles.title}>{item?.title}</h1>
 															</ContentSliceRevealMaskAnimation>
 															<Paragraph
 																content={item?.paragraph}
-																className="max-w-xl mx-auto lg:mx-0 py-2 font-OnestRegular leading-tight text-white text-lg text-center lg:text-left"
+																className={styles?.paragraph}
 															/>
 														</div>
 														<motion.div
 															initial={initialTwo}
 															whileInView={fadeIn}
 															viewport={{once: true}}
-															className="flex flex-col lg:flex-row items-center lg:items-baseline gap-2 sm:gap-4 max-w-sm lg:max-w-4xl mx-auto lg:mx-0"
+															className={styles.bottom}
 														>
 															<Link
 																href={`${item?.buttonLink?.url}`}
