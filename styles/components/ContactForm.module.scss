@@ -52,18 +52,27 @@
 			}
 
 			.formFields {
-				@apply w-full flex flex-col gap-4;
+				@apply w-full py-8 flex flex-col gap-4;
 
-				.errorMessage {
-					@apply py-1 font-OnestRegular text-left text-tiny text-primary-default;
-				}
+				.fieldWrapper {
+					@apply w-full px-6 pt-10 pb-6 border-t-2 border-solid border-t-grey;
 
-				.field {
-					@apply px-4 py-3 w-full font-OnestRegular text-pureBlack placeholder-pureBlack bg-white outline-none border-[1px] border-white active:border-tertiary-dark focus:border-tertiary-dark focus:ring-[1px] focus:ring-tertiary-dark;
-				}
+					.errorMessage {
+						@apply py-1 font-OnestRegular text-left text-tiny text-primary-default;
+					}
 
-				.textarea {
-					@apply p-4 w-full h-48 font-OnestRegular text-pureBlack placeholder-pureBlack bg-white outline-none border-[1px] border-white active:border-primary-dark focus:border-primary-dark resize-none focus:ring-[1px] focus:ring-primary-dark;
+					.fieldText {
+						@apply w-full mb-8 font-OnestRegular text-left text-pureBlack text-medium lg:text-lg tracking-[-0.05rem] leading-tight;
+					}
+
+					.field,
+					.textarea {
+						@apply w-full font-OnestRegular text-pureBlack text-paragraph lg:text-medium tracking-[-0.05rem] placeholder-darkGrey bg-transparent outline-none border-none focus:ring-[1px] focus:ring-transparent focus:bg-transparent active:bg-transparent;
+					}
+
+					.textarea {
+						@apply h-48;
+					}
 				}
 			}
 		}

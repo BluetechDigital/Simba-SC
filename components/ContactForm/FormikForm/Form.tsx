@@ -198,13 +198,14 @@ const FormikForm: FC<IContactForm.IForm> = ({formTitle}) => {
 						viewport={{once: true}}
 						className={styles.formFields}
 					>
-						<div className="flex flex-col sm:flex-row gap-4">
+						<div className="flex flex-col xl:flex-row gap-4">
 							<motion.div
 								initial={initial}
 								whileInView={fadeInUp}
 								viewport={{once: true}}
-								className="w-full"
+								className={styles.fieldWrapper}
 							>
+								<h5 className={styles.fieldText}>First Name</h5>
 								{formik?.touched?.firstName && formik?.errors?.firstName ? (
 									<>
 										<span className={styles.errorMessage}>
@@ -215,7 +216,7 @@ const FormikForm: FC<IContactForm.IForm> = ({formTitle}) => {
 								<Field
 									id="firstName"
 									name="firstName"
-									placeholder="First Name"
+									placeholder="John *"
 									className={styles.field}
 									onBlur={formik?.handleBlur}
 									onChange={formik?.handleChange}
@@ -226,8 +227,9 @@ const FormikForm: FC<IContactForm.IForm> = ({formTitle}) => {
 								initial={initial}
 								whileInView={fadeInUp}
 								viewport={{once: true}}
-								className="w-full"
+								className={styles.fieldWrapper}
 							>
+								<h5 className={styles.fieldText}>Last Name</h5>
 								{formik?.touched?.lastName && formik?.errors?.lastName ? (
 									<>
 										<span className={styles.errorMessage}>
@@ -238,7 +240,7 @@ const FormikForm: FC<IContactForm.IForm> = ({formTitle}) => {
 								<Field
 									id="lastName"
 									name="lastName"
-									placeholder="Last Name"
+									placeholder="Doe *"
 									className={styles.field}
 									onBlur={formik?.handleBlur}
 									onChange={formik?.handleChange}
@@ -246,13 +248,14 @@ const FormikForm: FC<IContactForm.IForm> = ({formTitle}) => {
 								/>
 							</motion.div>
 						</div>
-						<div className="flex flex-col sm:flex-row gap-4">
+						<div className="flex flex-col xl:flex-row gap-4">
 							<motion.div
 								initial={initial}
 								whileInView={fadeInUp}
 								viewport={{once: true}}
-								className="w-full"
+								className={styles.fieldWrapper}
 							>
+								<h5 className={styles.fieldText}>Phone Number</h5>
 								{formik?.touched?.phoneNumber && formik?.errors?.phoneNumber ? (
 									<>
 										<span className={styles.errorMessage}>
@@ -261,13 +264,13 @@ const FormikForm: FC<IContactForm.IForm> = ({formTitle}) => {
 									</>
 								) : null}
 								<Field
-									type="number"
+									type="text"
 									id="phoneNumber"
 									name="phoneNumber"
 									className={styles.field}
-									placeholder="Phone Number"
 									onBlur={formik?.handleBlur}
 									onChange={formik?.handleChange}
+									placeholder="+255 787 000 000 *"
 									value={formik?.values?.phoneNumber}
 								/>
 							</motion.div>
@@ -275,8 +278,9 @@ const FormikForm: FC<IContactForm.IForm> = ({formTitle}) => {
 								initial={initial}
 								whileInView={fadeInUp}
 								viewport={{once: true}}
-								className="w-full"
+								className={styles.fieldWrapper}
 							>
+								<h5 className={styles.fieldText}>Subject</h5>
 								{formik?.touched?.subject && formik?.errors?.subject ? (
 									<>
 										<span className={styles.errorMessage}>
@@ -288,11 +292,11 @@ const FormikForm: FC<IContactForm.IForm> = ({formTitle}) => {
 									type="text"
 									id="subject"
 									name="subject"
-									placeholder="Subject"
 									className={styles.field}
 									onBlur={formik?.handleBlur}
 									onChange={formik?.handleChange}
 									value={formik?.values?.subject}
+									placeholder="General Information *"
 								/>
 							</motion.div>
 						</div>
@@ -300,8 +304,9 @@ const FormikForm: FC<IContactForm.IForm> = ({formTitle}) => {
 							initial={initial}
 							whileInView={fadeInUp}
 							viewport={{once: true}}
-							className="w-full"
+							className={styles.fieldWrapper}
 						>
+							<h5 className={styles.fieldText}>Email Address</h5>
 							{formik?.touched?.email && formik?.errors?.email ? (
 								<>
 									<span className={styles.errorMessage}>
@@ -314,17 +319,19 @@ const FormikForm: FC<IContactForm.IForm> = ({formTitle}) => {
 								name="email"
 								type="email"
 								className={styles.field}
-								placeholder="Email Address"
 								onBlur={formik?.handleBlur}
 								value={formik?.values?.email}
 								onChange={formik?.handleChange}
+								placeholder="johndoe@gmail.com *"
 							/>
 						</motion.div>
 						<motion.div
 							initial={initial}
 							whileInView={fadeInUp}
 							viewport={{once: true}}
+							className={styles.fieldWrapper}
 						>
+							<h5 className={styles.fieldText}>How can we help?</h5>
 							{formik?.touched?.message && formik?.errors?.message ? (
 								<>
 									<span className={styles.errorMessage}>
@@ -336,9 +343,9 @@ const FormikForm: FC<IContactForm.IForm> = ({formTitle}) => {
 								rows={5}
 								id="message"
 								name="message"
-								placeholder="Your Message"
 								className={styles.textarea}
 								onBlur={formik?.handleBlur}
+								placeholder="Your Message... *"
 								onChange={formik?.handleChange}
 								value={formik?.values?.message}
 							/>
