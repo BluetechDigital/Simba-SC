@@ -80,31 +80,53 @@
 }
 
 .heroTwo {
-	.externalLink {
-		font-family: $main;
-	}
+	@apply relative z-50 w-full h-fit pt-[138px] lg:pt-[138px] bg-white;
 
-	.leftSideContent {
-		clip-path: none;
+	.container {
+		@apply py-20 w-full h-[30vh] flex flex-col items-center lg:items-baseline justify-center relative bg-primary-dark bg-center bg-no-repeat bg-cover;
 
-		@media screen and (min-width: 1024px) {
-			clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%);
-		}
-	}
+		.content {
+			@apply max-w-full lg:max-w-5xl mx-auto lg:mx-0 relative z-10 flex flex-col items-center lg:items-start px-6 md:px-24;
 
-	.rightSideContent {
-		clip-path: none;
+			.title {
+				@apply mb-2 font-OnestBlack text-center lg:text-left uppercase text-3xl lg:text-5xl xl:text-7xl tracking-[-0.05rem] text-white font-semibold xl:leading-[3.75rem];
+			}
 
-		@media screen and (min-width: 1024px) {
-			clip-path: polygon(10% 0, 100% 0%, 100% 100%, 0 100%);
+			.paragraph {
+				@apply max-w-2xl mx-auto lg:mx-0 font-OnestRegular leading-tight text-white text-lg text-center lg:text-left;
+			}
 		}
 	}
 }
 
 .heroThree {
-	.title {
-		span {
-			@apply text-tertiary-default;
+	@apply relative z-50 w-full h-fit pt-[138px] lg:pt-[138px] bg-white;
+
+	.container {
+		@apply py-20 w-full h-[50vh] flex flex-col items-center lg:items-baseline justify-center relative bg-primary-dark bg-center bg-no-repeat bg-cover;
+
+		.content {
+			@apply max-w-full lg:max-w-5xl mx-auto lg:mx-0 relative z-10 flex flex-col items-center lg:items-start px-6 md:px-24;
+
+			.title {
+				@apply max-w-3xl font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl lg:text-12xl tracking-[-0.05rem] text-white leading-tight xl:leading-[5.5rem];
+
+				span {
+					@apply text-tertiary-default;
+				}
+
+				.after {
+					@apply border-none;
+				}
+
+				.before {
+					@apply pb-2 border-b-[1px] border-solid border-lightGreyTwo;
+				}
+			}
+
+			.paragraph {
+				@apply max-w-2xl mx-auto lg:mx-0 font-OnestRegular leading-tight text-white text-lg text-center lg:text-left;
+			}
 		}
 	}
 }
