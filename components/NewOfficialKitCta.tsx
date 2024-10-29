@@ -12,6 +12,9 @@ import Image from "next/image";
 import {motion} from "framer-motion";
 import {INewOfficialKitCta} from "@/types/components/index";
 
+// Styling
+import styles from "@/styles/components/NewOfficialKitCta.module.scss";
+
 // Components
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
@@ -24,31 +27,29 @@ const NewOfficialKitCta: FC<INewOfficialKitCta> = ({
 }) => {
 	return (
 		<div
-			className="bg-primary-default px-4 py-32 lg:px-10 bg-no-repeat bg-cover bg-center"
+			className={styles.newOfficialKitCta}
 			style={{
 				backgroundImage: `url("/svg/background/stacked-steps-haikei-red.svg")`,
 			}}
 		>
-			<div className="px-0 flex flex-col gap-8">
+			<div className={styles.container}>
 				<ContentSliceRevealMaskAnimation>
-					<h2 className="font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-white leading-tight">
-						{title}
-					</h2>
+					<h2 className={styles.title}>{title}</h2>
 				</ContentSliceRevealMaskAnimation>
-				<div className="relative p-6 bg-pureBlack overflow-hidden">
-					<div className="flex flex-wrap p-8 -m-7">
-						<div className="w-full lg:w-3/12 p-7">
+				<div className={styles.contentWrapper}>
+					<div className={styles.content}>
+						<div className={styles.leftSection}>
 							<motion.div
 								viewport={{once: true}}
 								initial={slideInLeftInitial}
 								whileInView={slideInRightFinish}
-								className="lg:pt-7 max-w-full lg:max-w-md"
+								className={styles.section}
 							>
 								<motion.h2
 									initial={initialTwo}
 									whileInView={fadeIn}
 									viewport={{once: true}}
-									className="font-OnestBlack text-center lg:text-left uppercase text-3xl lg:text-5xl tracking-[-0.02rem] text-white font-semibold leading-tight mb-6 lg:mb-12"
+									className={styles.ctaTitle}
 								>
 									{ctaTitle}
 								</motion.h2>
@@ -56,7 +57,7 @@ const NewOfficialKitCta: FC<INewOfficialKitCta> = ({
 									initial={initialTwo}
 									whileInView={fadeIn}
 									viewport={{once: true}}
-									className="flex flex-wrap items-start justify-center lg:justify-start gap-4"
+									className={styles.buttonLink}
 								>
 									<Link
 										href={`${link?.url}`}
@@ -69,21 +70,21 @@ const NewOfficialKitCta: FC<INewOfficialKitCta> = ({
 								</motion.div>
 							</motion.div>
 						</div>
-						<div className="w-full lg:w-9/12 lg:p-7">
+						<div className={styles.rightSection}>
 							<motion.div
 								viewport={{once: true}}
+								className={styles.section}
 								initial={slideInRightInitial}
 								whileInView={slideInRightFinish}
-								className="flex flex-col md:flex-row -m-3"
 							>
-								<div className="w-full md:w-1/2 lg:w-9/12 p-3">
+								<div className={styles.top}>
 									<Link
 										href={`${link?.url}`}
 										target={link?.target}
 										aria-label={`${link?.title}`}
 										className="group"
 									>
-										<div className="relative overflow-hidden h-[550px]">
+										<div className={styles.wrapper}>
 											<Image
 												src={image?.sourceUrl}
 												alt={`${image?.altText}`}
@@ -97,15 +98,15 @@ const NewOfficialKitCta: FC<INewOfficialKitCta> = ({
 														? image?.mediaDetails?.height
 														: 500
 												}
-												className="object-cover w-full h-full transform group-hover:scale-105 transition-all duration-1000 ease-in-out"
+												className={styles.image}
 											/>
-											<div className="absolute w-full h-full p-6 bottom-0 bg-pureBlack/20 group-hover:bg-pureBlack/30 flex flex-col items-center lg:items-baseline justify-end transition-all duration-1000 ease-in-out">
-												<span className="h-[5px] bg-primary-default w-full  max-w-xs"></span>
+											<div className={styles.content}>
+												<span className={styles.divider}></span>
 												<motion.h3
 													initial={initialTwo}
 													whileInView={fadeIn}
 													viewport={{once: true}}
-													className="font-OnestBlack text-center lg:text-left uppercase text-3xl lg:text-5xl tracking-[-0.02rem] text-white font-semibold"
+													className={styles.text}
 												>
 													t-shirt woman
 												</motion.h3>
@@ -113,14 +114,14 @@ const NewOfficialKitCta: FC<INewOfficialKitCta> = ({
 										</div>
 									</Link>
 								</div>
-								<div className="w-full md:w-1/2 lg:w-3/12 p-3">
+								<div className={styles.bottom}>
 									<Link
 										href={`${link?.url}`}
 										target={link?.target}
 										aria-label={`${link?.title}`}
 										className="group"
 									>
-										<div className="relative overflow-hidden h-[550px]">
+										<div className={styles.wrapper}>
 											<Image
 												src={imageTwo?.sourceUrl}
 												alt={`${imageTwo?.altText}`}
@@ -134,15 +135,15 @@ const NewOfficialKitCta: FC<INewOfficialKitCta> = ({
 														? imageTwo?.mediaDetails?.height
 														: 500
 												}
-												className="object-cover w-full h-full transform group-hover:scale-105 transition-all duration-1000 ease-in-out"
+												className={styles.image}
 											/>
-											<div className="flex flex-col gap-2 absolute left-1/2 bottom-2 transform -translate-x-1/2">
-												<span className="h-[5px] bg-primary-default w-full"></span>
+											<div className={styles.content}>
+												<span className={styles.divider}></span>
 												<motion.h3
 													initial={initialTwo}
 													whileInView={fadeIn}
 													viewport={{once: true}}
-													className="font-OnestBlack text-center lg:text-left uppercase text-3xl lg:text-lg tracking-[-0.02rem] text-white font-semibold whitespace-nowrap"
+													className={styles.text}
 												>
 													Away Kit 24/25
 												</motion.h3>
