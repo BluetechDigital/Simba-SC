@@ -24,7 +24,7 @@ const Hero: FC<IHero> = ({heroSlider}) => {
 			<div
 				className={
 					styles.hero +
-					" relative z-50 flex flex-col h-fit pt-[120px] lg:pt-[138px] bg-white"
+					" relative z-50 flex flex-col h-fit pt-[138px] lg:pt-[138px] bg-white"
 				}
 			>
 				<div className="lg:relative flex flex-col">

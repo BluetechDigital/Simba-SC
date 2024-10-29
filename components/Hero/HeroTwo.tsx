@@ -16,7 +16,7 @@ const HeroTwo: FC<IHeroTwo> = ({title, paragraph, backgroundImage}) => {
 			<div
 				className={
 					styles.heroTwo +
-					` relative z-50 w-full h-fit pt-[120px] lg:pt-[138px] bg-white`
+					` relative z-50 w-full h-fit pt-[138px] lg:pt-[138px] bg-white`
 				}
 			>
 				<div

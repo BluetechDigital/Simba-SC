@@ -17,7 +17,7 @@ const HeroThree: FC<IHeroThree> = ({title, paragraph, backgroundImage}) => {
 			<div
 				className={
 					styles.heroThree +
-					` heroThree relative z-50 w-full h-fit pt-[120px] lg:pt-[138px] bg-white`
+					` heroThree relative z-50 w-full h-fit pt-[138px] lg:pt-[138px] bg-white`
 				}
 			>
 				<div

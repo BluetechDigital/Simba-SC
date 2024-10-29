@@ -32,17 +32,15 @@
 	}
 
 	.megaNavigationMenuButton {
-		@apply relative z-20 w-1/4 lg:w-1/12 h-full px-8 py-4 lg:p-4 flex flex-col items-center justify-center cursor-pointer bg-no-repeat bg-center hover:bg-primary-dark transition-all ease-in-out duration-500;
+		@apply relative z-20 w-1/4 md:w-1/6 lg:w-1/12 h-full px-8 py-4 lg:p-4 flex flex-col items-center justify-center cursor-pointer bg-no-repeat bg-center hover:bg-primary-dark transition-all ease-in-out duration-500;
 
 		.button {
-			@apply h-full w-full mx-auto flex flex-col items-center justify-center;
-
 			.text {
-				@apply hidden lg:static text-white uppercase font-OnestBold;
+				@apply text-white uppercase font-OnestBold;
 			}
 
 			.hamburgerIcon {
-				@apply relative py-4 lg:ml-1 h-full w-full mx-auto;
+				@apply relative py-4 ml-[2px] h-full w-full mx-auto flex items-center justify-center;
 
 				.iconOne,
 				.iconTwo,

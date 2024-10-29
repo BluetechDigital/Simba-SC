@@ -38,7 +38,7 @@ const Navbar: FC = () => {
 				}
 			>
 				<TopNavigation />
-				<div className="flex items-center justify-between bg-lightGreyTwo pl-2 lg:pl-4">
+				<div className="h-full flex items-center justify-between bg-lightGreyTwo pl-2 lg:pl-4">
 					<motion.div
 						initial={initialTwo}
 						whileInView={fadeIn}
