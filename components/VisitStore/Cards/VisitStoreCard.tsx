@@ -13,6 +13,9 @@ import {motion} from "framer-motion";
 import {FC, Fragment, Suspense} from "react";
 import {useGlobalContext} from "@/context/global";
 
+// Styling
+import styles from "@/styles/components/VisitStore.module.scss";
+
 // Components
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 
@@ -20,27 +23,27 @@ const VisitStoreCard: FC = () => {
 	const globalContext = useGlobalContext();
 	return (
 		<>
-			<ul className="py-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-center justify-center lg:gap-4">
+			<ul className={styles.visitStoreCard}>
 				<Suspense fallback={"Loading..."}>
 					{globalContext?.onlineStoreShirts?.length > 0 ? (
 						globalContext?.onlineStoreShirts
 							?.slice(0, 4)
 							?.map((item: any, index: number) => (
 								<Fragment key={item?.id ? item?.id : index}>
-									<ScrollYProgressReveal className="w-full h-full">
+									<ScrollYProgressReveal className={styles.content}>
 										<motion.li
 											initial={initial}
 											whileInView="animate"
+											className={styles.li}
 											viewport={{once: true}}
 											custom={item?.id ? item?.id : index}
 											variants={arrayLoopStaggerChildren}
-											className="w-full h-full px-5 py-6 bg-white"
 										>
 											<Link
 												target="_blank"
+												className={styles.link}
 												aria-label={`${item?.title}`}
 												href={`store.simbasc.co.tz/${item?.slug}`}
-												className="h-full flex flex-col justify-between gap-6"
 											>
 												<Image
 													src={item?.image?.sourceUrl}
@@ -56,21 +59,19 @@ const VisitStoreCard: FC = () => {
 															: 500
 													}
 													className={
-														item?.image?.sourceUrl
-															? `block w-full h-[300px] object-cover object-center`
-															: `hidden`
+														item?.image?.sourceUrl ? styles.image : `hidden`
 													}
 												/>
-												<div className="flex flex-col justify-start gap-2 py-4">
+												<div className={styles.wrapper}>
 													<motion.h5
 														initial={initialTwo}
 														whileInView={fadeIn}
 														viewport={{once: true}}
-														className="font-OnestBold text-pureBlack text-lg text-center tracking-tighter hover:text-primary-default transition-all duration-200 ease-in-out"
+														className={styles.title}
 													>
 														{item?.title}
 													</motion.h5>
-													<div className="flex items-center justify-center gap-[1px] font-OnestRegular text-pureBlack text-paragraph">
+													<div className={styles.currencyPriceWrapper}>
 														<span className="font-Inter">
 															{item?.currency === "USD" ? "$" : "£"}
 														</span>
@@ -82,7 +83,8 @@ const VisitStoreCard: FC = () => {
 														href={`store.simbasc.co.tz/${item?.slug}`}
 														className={`${
 															item?.slug
-																? "buttonStyling-alt-two-slim mt-2 mx-auto"
+																? styles.slugLink +
+																  " buttonStyling-alt-two-slim"
 																: "hidden"
 														}`}
 													>
