@@ -11,6 +11,8 @@ import styles from "@/styles/pages/ClubPartners/Partners.module.scss";
 
 // Components
 import Paragraph from "@/components/Elements/Paragraph";
+import SlideInXLeftAnimation from "@/components/Animations/SlideInXLeftAnimation";
+import SlideInXRightAnimation from "@/components/Animations/SlideInXRightAnimation";
 
 const TitleContentImage: FC<IClubPartners.ITitleContentImage> = ({
 	title,
@@ -22,7 +24,7 @@ const TitleContentImage: FC<IClubPartners.ITitleContentImage> = ({
 		<>
 			<div className={styles.titleContentImage}>
 				<div className={styles.wrapper}>
-					<div className="w-full lg:w-1/2 p-4">
+					<SlideInXLeftAnimation className="w-full lg:w-1/2 p-4">
 						<div className={styles.content}>
 							<motion.h5
 								initial={initialTwo}
@@ -46,8 +48,8 @@ const TitleContentImage: FC<IClubPartners.ITitleContentImage> = ({
 								{buttonLink?.title}
 							</Link>
 						</div>
-					</div>
-					<div className="w-full lg:w-1/2 p-4">
+					</SlideInXLeftAnimation>
+					<SlideInXRightAnimation className="w-full lg:w-1/2 p-4">
 						<Image
 							className={styles.image}
 							alt={image?.altText}
@@ -59,7 +61,7 @@ const TitleContentImage: FC<IClubPartners.ITitleContentImage> = ({
 								image?.mediaDetails?.height ? image?.mediaDetails?.height : 1000
 							}
 						/>
-					</div>
+					</SlideInXRightAnimation>
 				</div>
 			</div>
 		</>

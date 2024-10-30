@@ -16,8 +16,6 @@ import styles from "@/styles/components/VideoBlock.module.scss";
 
 // Components
 import Paragraph from "@/components/Elements/Paragraph";
-import VideoWrapper from "@/components/VideoBlock/Elements/VideoWrapper";
-import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import SlideInXLeftAnimation from "@/components/Animations/SlideInXLeftAnimation";
 import SlideInXRightAnimation from "@/components/Animations/SlideInXRightAnimation";
 

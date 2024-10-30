@@ -61,21 +61,12 @@
 
 	.swiper-button-prev::after {
 		content: "next";
-		rotate: 180deg;
-		width: 15px !important;
-		height: 15px !important;
-		font-size: 15px !important;
-		font-weight: 900 !important;
-		color: $white !important;
+		@apply w-[15px] h-[15px] text-[15px] text-white font-extrabold rotate-180 #{!important};
 	}
 
 	.swiper-button-next::after {
 		content: "next";
-		width: 15px !important;
-		height: 15px !important;
-		font-size: 15px !important;
-		font-weight: 900 !important;
-		color: $white !important;
+		@apply w-[15px] h-[15px] text-[15px] text-white font-extrabold #{!important};
 	}
 }
 
