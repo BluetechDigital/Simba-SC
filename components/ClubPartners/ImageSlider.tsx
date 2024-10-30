@@ -1,8 +1,8 @@
 "use client";
 
 // Imports
-import {FC, Fragment, useEffect, useState} from "react";
 import {IClubPartners} from "@/types/components/index";
+import {FC, Fragment, useEffect, useState} from "react";
 
 // Swiper.js Slider
 import "swiper/css";
