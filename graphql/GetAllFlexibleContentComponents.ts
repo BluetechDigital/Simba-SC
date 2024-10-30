@@ -437,3 +437,59 @@ export const getAllFlexibleContentComponents = async (
 		);
 	}
 };
+
+/* CLUB PARTNERS */
+/* Fetch all Club Partners Flexible Content Components 
+(For every flexible content page) */
+export const getAllClubPartnersFlexibleContentComponents = async (
+	slug: string,
+	postType: string,
+	postTypeFlexibleContent: string
+): Promise<any> => {
+	try {
+		const content: DocumentNode = gql`
+			{
+        		mainContent: ${postType}(where: {name: "${slug}", status: PUBLISH}) {
+        		  edges {
+						node {
+							partnersContent {
+								flexibleContent {
+									... on ${postTypeFlexibleContent}_TitleContentImage {
+										fieldGroupName
+										displaySection
+										title
+										paragraph
+										buttonLink {
+											url
+											title
+											target
+										}
+										image {
+											altText
+											sourceUrl
+										}
+									}
+								}
+							}
+						}
+					}
+        		}
+			}
+		`;
+
+		const response: any = await client.query({
+			query: content,
+		});
+
+		return {
+			content:
+				response.data?.mainContent?.edges[0]?.node?.partnersContent
+					?.flexibleContent,
+		};
+	} catch (error: unknown) {
+		console.log(error);
+		throw new Error(
+			"Something went wrong trying to fetch all club partners flexible content components"
+		);
+	}
+};

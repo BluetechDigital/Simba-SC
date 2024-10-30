@@ -330,57 +330,6 @@ export namespace IContactForm {
 		formTitle: string;
 	};
 }
-export namespace IClubPartners {
-	export type IClubPartnersGrid = {
-		slug: string;
-		title: string;
-		excerpt: string;
-		featuredImage: {
-			node: {
-				altText: string;
-				sourceUrl: string;
-				mediaDetails: {
-					width: number;
-					height: number;
-				};
-			};
-		};
-	};
-	export type ICard = {
-		slug: string;
-		title: string;
-		excerpt: string;
-		featuredImage: {
-			node: {
-				altText: string;
-				sourceUrl: string;
-				mediaDetails: {
-					width: number;
-					height: number;
-				};
-			};
-		};
-	};
-	export type ITitleContentImage = {
-		content: {
-			title: string;
-			paragraph: string;
-			buttonLink: {
-				url: string;
-				title: string;
-				target: string;
-			};
-			image: {
-				altText: string;
-				sourceUrl: string;
-				mediaDetails: {
-					width: number;
-					height: number;
-				};
-			};
-		};
-	};
-}
 export namespace ISimbaTVBanner {
 	export type IProps = {
 		title: string;
@@ -503,6 +452,57 @@ export namespace ITrophyCabinetBanner {
 		index: number;
 		name: string;
 		totalAmount: string;
+		image: {
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
+		};
+	};
+}
+
+// Club Partners Custom Post Type
+export namespace IClubPartners {
+	export type IClubPartnersGrid = {
+		slug: string;
+		title: string;
+		excerpt: string;
+		featuredImage: {
+			node: {
+				altText: string;
+				sourceUrl: string;
+				mediaDetails: {
+					width: number;
+					height: number;
+				};
+			};
+		};
+	};
+	export type ICard = {
+		slug: string;
+		title: string;
+		excerpt: string;
+		featuredImage: {
+			node: {
+				altText: string;
+				sourceUrl: string;
+				mediaDetails: {
+					width: number;
+					height: number;
+				};
+			};
+		};
+	};
+	export type ITitleContentImage = {
+		title: string;
+		paragraph: string;
+		buttonLink: {
+			url: string;
+			title: string;
+			target: string;
+		};
 		image: {
 			altText: string;
 			sourceUrl: string;

@@ -1,7 +1,7 @@
 // Imports
 import {
-	IPostTypes,
 	IPage,
+	IPostTypes,
 	IFlexibleContentType,
 } from "@/types/context/Providers";
 
@@ -45,6 +45,7 @@ export const pageType: IPage.ITypes = {
 export const flexibleContentType: IFlexibleContentType = {
 	// Public pages
 	pages: "DefaultTemplate_Flexiblecontent_FlexibleContent",
+	clubPartner: "ClubPartner_Partnerscontent_FlexibleContent",
 	// Preview pages
 	previewPage: "Page_Flexiblecontent_FlexibleContent",
 	previewPost: "Post_Flexiblecontent_FlexibleContent",

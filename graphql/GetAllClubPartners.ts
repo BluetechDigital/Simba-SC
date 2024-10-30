@@ -94,20 +94,20 @@ export const getAllClubPartnersContent = async (
     						partnersContent {
     							titleContentImage {
     								title
-    								paragraph
-    								image {
-    									altText
-    									sourceUrl
-    									mediaDetails {
-    										height
-    										width
-    									}
-    								}
-    								buttonLink {
-    									url
-    									title
-    									target
-    								}
+									paragraph
+									buttonLink {
+										url
+										title
+										target
+									}
+									image {
+									altText
+									sourceUrl
+										mediaDetails {
+											height
+											width
+										}
+									}
     							}
     						}
     					}

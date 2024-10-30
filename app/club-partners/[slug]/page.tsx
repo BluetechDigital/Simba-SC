@@ -1,19 +1,16 @@
 // Imports
 import type {Metadata, NextPage} from "next";
 import {flexibleContentType, postType} from "@/context/pages";
-import {IClubPartnersPostType} from "@/types/components/ClubPartners";
 
 // Queries Functions
 import {getAllSeoContent} from "@/graphql/GetAllSeoContent";
-import {getAllClubPartnersContent} from "@/graphql/GetAllClubPartners";
-import {getAllFlexibleContentComponents} from "@/graphql/GetAllFlexibleContentComponents";
+import {getAllClubPartnersFlexibleContentComponents} from "@/graphql/GetAllFlexibleContentComponents";
 
 // Components
 import BackPageButton from "@/components/Elements/BackPageButton";
 import BackToTopButton from "@/components/Elements/BackToTopButton";
 import PageContextProvider from "@/context/providers/PageContextProvider";
-import TitleContentImage from "@/components/ClubPartners/TitleContentImage";
-import RenderFlexibleContent from "@/components/FlexibleContent/RenderFlexibleContent";
+import RenderClubPartnersFlexibleContent from "@/components/FlexibleContent/RenderClubPartnersFlexibleContent";
 
 // Dynamic Pages Generated Metadata
 export const generateMetadata = async ({params}: any): Promise<Metadata> => {
@@ -26,27 +23,25 @@ export const generateMetadata = async ({params}: any): Promise<Metadata> => {
 };
 
 const clubPartnerPage: NextPage = async ({params}: any) => {
-	// Fetch Club Partners content
-	const clubPartnersContent: IClubPartnersPostType.IClubPartnersContent[`partnersContent`] =
-		await getAllClubPartnersContent(params?.slug);
-
 	// Fetch priority content
-	const flexibleContentComponents: any = await getAllFlexibleContentComponents(
-		params?.slug,
-		postType?.clubPartners,
-		flexibleContentType?.pages
-	);
+	const clubPartnersFlexibleContentComponents: any =
+		await getAllClubPartnersFlexibleContentComponents(
+			params?.slug,
+			postType?.clubPartners,
+			flexibleContentType?.clubPartner
+		);
 
 	return (
 		<>
 			<PageContextProvider
-				content={flexibleContentComponents?.content}
-				postTypeFlexibleContent={flexibleContentType?.pages}
+				content={clubPartnersFlexibleContentComponents?.content}
+				postTypeFlexibleContent={flexibleContentType?.clubPartner}
 			>
-				<BackToTopButton link={`#`} />
-				<BackPageButton link={`/club-partners`} />
-				<TitleContentImage content={clubPartnersContent?.titleContentImage} />
-				<RenderFlexibleContent />
+				<div className="pt-[138px]">
+					<RenderClubPartnersFlexibleContent />
+					<BackToTopButton link={`#`} />
+					<BackPageButton link={`/club-partners`} />
+				</div>
 			</PageContextProvider>
 		</>
 	);

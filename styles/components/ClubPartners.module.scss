@@ -42,7 +42,7 @@
 	@apply bg-white py-12 px-8 xl:p-24;
 
 	.wrapper {
-		@apply xl:max-w-[1700px] mx-auto px-0 flex flex-col items-center justify-center gap-8 -m-4;
+		@apply xl:max-w-[1700px] mx-auto px-0 flex flex-col lg:flex-row items-center justify-center gap-8 -m-4;
 
 		.image {
 			@apply w-full h-[700px] object-cover object-center;

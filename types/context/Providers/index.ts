@@ -115,6 +115,7 @@ export namespace IGlobal {
 }
 export type IFlexibleContentType = {
 	pages: string;
+	clubPartner: string;
 	previewPage: string;
 	previewPost: string;
 };
