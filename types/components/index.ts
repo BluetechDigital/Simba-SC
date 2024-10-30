@@ -231,7 +231,14 @@ export namespace IAbout {
 export namespace IVideoBlock {
 	export type IProps = {
 		title: string;
-		video: string;
+		video: {
+			link: string;
+			title: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
+		};
 		subtitle: string;
 		paragraph: string;
 		displayVideo: boolean;
@@ -244,7 +251,6 @@ export namespace IVideoBlock {
 			sourceUrl: string;
 		};
 	};
-
 	export type IVideoWrapper = {
 		children: React.ReactNode;
 	};
@@ -271,7 +277,6 @@ export namespace ILatestNews {
 			};
 		};
 	};
-
 	export type ICard = {
 		slug: string;
 		date: string;
@@ -321,7 +326,6 @@ export namespace IContactForm {
 			};
 		};
 	};
-
 	export type IForm = {
 		formTitle: string;
 	};
@@ -342,7 +346,6 @@ export namespace IClubPartners {
 			};
 		};
 	};
-
 	export type ICard = {
 		slug: string;
 		title: string;
@@ -358,7 +361,6 @@ export namespace IClubPartners {
 			};
 		};
 	};
-
 	export type ITitleContentImage = {
 		content: {
 			title: string;
@@ -462,7 +464,6 @@ export namespace IGeneralInformation {
 			};
 		};
 	};
-
 	export type ICard = {
 		title: string;
 		paragraph: string;

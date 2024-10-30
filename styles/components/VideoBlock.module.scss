@@ -47,5 +47,9 @@
 				}
 			}
 		}
+
+		.video {
+			@apply w-full h-full max-h-[750px] object-cover;
+		}
 	}
 }

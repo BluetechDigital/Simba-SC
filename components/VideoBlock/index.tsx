@@ -30,6 +30,8 @@ const VideoBlock: FC<IVideoBlock.IProps> = ({
 	displayVideo,
 	videoBackgroundImage,
 }) => {
+	console.log(video);
+
 	return (
 		<>
 			<div
@@ -92,7 +94,29 @@ const VideoBlock: FC<IVideoBlock.IProps> = ({
 							}")`,
 						}}
 					>
-						{displayVideo ? <VideoWrapper>{video}</VideoWrapper> : <></>}
+						<motion.video
+							muted
+							autoPlay
+							loop={true}
+							controls={false}
+							playsInline
+							controlsList="nofullscreen"
+							aria-label={`Video Element: ${video?.title}`}
+							className={displayVideo ? styles.video : "hidden"}
+						>
+							<source
+								src={video?.link}
+								type="video/mp4"
+								width={
+									video?.mediaDetails?.width ? video?.mediaDetails?.width : 550
+								}
+								height={
+									video?.mediaDetails?.height
+										? video?.mediaDetails?.height
+										: 550
+								}
+							/>
+						</motion.video>
 					</motion.div>
 				</div>
 			</div>
