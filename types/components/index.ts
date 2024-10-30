@@ -512,4 +512,16 @@ export namespace IClubPartners {
 			};
 		};
 	};
+	export type IImageSlider = {
+		imageSlider: {
+			image: {
+				altText: string;
+				sourceUrl: string;
+				mediaDetails: {
+					width: number;
+					height: number;
+				};
+			};
+		}[];
+	};
 }

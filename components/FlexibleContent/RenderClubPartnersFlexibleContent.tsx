@@ -5,6 +5,7 @@ import React, {FC, Fragment} from "react";
 import {usePageContext} from "@/context/providers/PageContextProvider";
 
 // Components
+import ImageSlider from "@/components/ClubPartners/ImageSlider";
 import TitleContentImage from "@/components/ClubPartners/TitleContentImage";
 
 const RenderClubPartnersFlexibleContent: FC = () => {
@@ -14,6 +15,7 @@ const RenderClubPartnersFlexibleContent: FC = () => {
 	// Components Key Value Pairs
 	const componentMapping: any = {
 		[`${FlexibleContent}_TitleContentImage`]: TitleContentImage,
+		[`${FlexibleContent}_ImageSlider`]: ImageSlider,
 	};
 
 	return (

@@ -466,7 +466,25 @@ export const getAllClubPartnersFlexibleContentComponents = async (
 										}
 										image {
 											altText
-											sourceUrl
+              								sourceUrl
+              								mediaDetails {
+              									height
+              									width
+              								}
+										}
+									}
+									... on ${postTypeFlexibleContent}_ImageSlider {
+										fieldGroupName
+										displaySection
+										imageSlider {
+											image {
+												altText
+												sourceUrl
+												mediaDetails {
+													height
+													width
+												}
+											}
 										}
 									}
 								}
