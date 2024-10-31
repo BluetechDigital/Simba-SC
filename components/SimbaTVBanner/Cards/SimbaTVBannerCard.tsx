@@ -14,6 +14,9 @@ import {FC, Fragment, useState} from "react";
 import {useGlobalContext} from "@/context/global";
 import {ISimbaTVBanner} from "@/types/components";
 
+// Styling
+import styles from "@/styles/components/SimbaTVBanner.module.scss";
+
 // Components
 import Paragraph from "@/components/Elements/Paragraph";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
@@ -50,8 +53,8 @@ const SimbaTVBannerCard: FC<ISimbaTVBanner.ICard> = ({
 
 	return (
 		<>
-			<ScrollYProgressReveal className="py-10">
-				<div className="mb-4 w-full flex flex-col md:flex-row items-center justify-center lg:justify-start space-x-2 space-y-2 md:space-y-0">
+			<ScrollYProgressReveal className={styles.bannerCard}>
+				<div className={styles.topSection}>
 					{ITEMS.map((item, index) => (
 						<motion.button
 							key={index}
@@ -71,9 +74,10 @@ const SimbaTVBannerCard: FC<ISimbaTVBanner.ICard> = ({
 						</motion.button>
 					))}
 				</div>
-				<div className="overflow-hidden my-6 border-t border-white">
+				<div className={styles.bottomSection}>
 					<SimbaTVBannerVideos
 						activeIndex={activeIndex}
+						className={styles.bannerVideos}
 						transition={{duration: 0.2, ease: "easeInOut"}}
 						variants={{
 							enter: {opacity: 0, y: -50, filter: "blur(4px)"},
@@ -88,25 +92,25 @@ const SimbaTVBannerCard: FC<ISimbaTVBanner.ICard> = ({
 								initial={initial}
 								whileInView="animate"
 								viewport={{once: true}}
-								className="pt-10 px-4 lg:px-20"
+								className={styles.item}
 								variants={arrayLoopStaggerChildren}
 							>
 								<motion.h5
 									initial={initialTwo}
 									whileInView={fadeIn}
 									viewport={{once: true}}
-									className="my-6 font-schaboCondensed text-center lg:text-left uppercase text-7xl tracking-[-0.05rem] text-white xl:leading-tight"
+									className={styles.subtitle}
 								>
 									{item.subtitle}
 								</motion.h5>
 								<Paragraph
 									content={item.content}
-									className="font-OnestRegular leading-tight text-white text-lg lg:text-xl text-center md:text-left"
+									className={styles.paragraph}
 								/>
 							</motion.div>
 						))}
 					</SimbaTVBannerVideos>
-					<ul className="pt-16 grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-center">
+					<ul className={styles.ul}>
 						{globalContext?.youtubeVideos?.length > 0 ? (
 							globalContext?.youtubeVideos
 								?.slice(0, 2)
@@ -121,7 +125,7 @@ const SimbaTVBannerCard: FC<ISimbaTVBanner.ICard> = ({
 												variants={arrayLoopStaggerChildren}
 												className={
 													item?.status?.privacyStatus == "public"
-														? "w-full h-full py-6 px-10 bg-tertiary-default"
+														? styles.li
 														: "hidden"
 												}
 											>
@@ -145,7 +149,7 @@ const SimbaTVBannerCard: FC<ISimbaTVBanner.ICard> = ({
 														}
 														className={
 															item?.snippet?.thumbnails?.maxres?.url
-																? `block w-full h-full object-cover object-center`
+																? styles.thumbnails
 																: `hidden`
 														}
 													/>
