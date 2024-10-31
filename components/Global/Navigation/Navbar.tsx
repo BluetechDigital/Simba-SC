@@ -19,8 +19,8 @@ import useOnDesktopView from "@/hooks/useOnDesktopView";
 import styles from "@/styles/components/Navbar.module.scss";
 
 // Components
-import TopNavigation from "@/components/Global/TopNavigation";
-import MegaNavigation from "@/components/Global/MegaNavigation";
+import TopNavigation from "@/components/Global/Navigation/TopNavigation";
+import MegaNavigation from "@/components/Global/Navigation/MegaNavigation";
 
 const Navbar: FC = () => {
 	const globalContext = useGlobalContext();

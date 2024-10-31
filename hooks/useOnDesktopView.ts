@@ -3,7 +3,7 @@
 // Imports
 import {useEffect, useState} from "react";
 
-const useOnDesktopView = () => {
+const useOnDesktopView = (): boolean => {
 	// State to track window width and check if on desktop
 	const [onDesktop, setOnDesktop] = useState(false);
 

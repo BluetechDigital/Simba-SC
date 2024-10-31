@@ -58,8 +58,8 @@ import {getAllExecutiveLeadershipsContent} from "@/graphql/GetAllStakeholders";
 import {getAllClubPartnersExcerpt} from "@/graphql/GetAllClubPartners";
 
 // Components
-import Navbar from "@/components/Global/Navbar";
 import Footer from "@/components/Global/Footer";
+import Navbar from "@/components/Global/Navigation/Navbar";
 import BlurryCursorMouse from "@/hooks/useBlurryCursorMouse";
 import SmoothScrolling from "@/components/Global/SmoothScrolling";
 import BackToTopButton from "@/components/Elements/BackToTopButton";

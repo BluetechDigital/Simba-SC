@@ -2,7 +2,7 @@
 import {IFixtures} from "@/types/context/Fixtures";
 
 export const getLastThreeFixturesContent = async (): Promise<
-	IFixtures | undefined
+	any | undefined
 > => {
 	const rapidApiEndpoint = `${process.env.X_RAPIDAPI_URL}`;
 	const team = `${process.env.X_RAPIDAPI_TEAM_ID}`;
@@ -22,12 +22,13 @@ export const getLastThreeFixturesContent = async (): Promise<
 
 	// Fetch new data from the API
 	try {
-		const response = await fetch(url, options);
-		if (!response.ok) {
-			throw new Error(`HTTP error! status: ${response.status}`);
-		}
-		const fixtures = await response.json();
-		return fixtures;
+		// const response = await fetch(url, options);
+		// if (!response.ok) {
+		// 	throw new Error(`HTTP error! status: ${response.status}`);
+		// }
+		// const fixtures = await response.json();
+		// return fixtures;
+		return "fixtures";
 	} catch (error: unknown) {
 		console.error(error);
 	}

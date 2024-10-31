@@ -10,19 +10,27 @@ import {
 } from "@/animations/animations";
 import Link from "next/link";
 import Image from "next/image";
-import {motion} from "framer-motion";
 import {FC, Fragment} from "react";
+import {motion} from "framer-motion";
 import {useGlobalContext} from "@/context/global";
+import useScrollPosition from "@/hooks/useScrollPosition";
 
 // Styling
 import styles from "@/styles/components/Navbar.module.scss";
 
 const TopNavigation: FC = () => {
 	const globalContext = useGlobalContext();
+	const scrollPosition = useScrollPosition();
 
 	return (
 		<>
-			<div className="py-0 bg-white flex items-center justify-between gap-4 px-4">
+			<div
+				className={
+					scrollPosition < 50
+						? "py-0 bg-white flex items-center justify-between gap-4 px-4"
+						: "hidden"
+				}
+			>
 				<div className="flex items-center justify-between gap-4">
 					{globalContext?.themesOptionsContent?.topNavigation?.sponsorsIcons
 						?.length > 0 ? (
