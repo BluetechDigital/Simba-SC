@@ -1,16 +1,17 @@
 // Imports
-import Link from "next/link";
-import Image from "next/image";
-import {FC, Fragment} from "react";
-import {ISimbaTVBanner} from "@/types/components";
-import {motion, AnimatePresence} from "framer-motion";
-import useOnDesktopView from "@/hooks/useOnDesktopView";
 import {
-	arrayLoopStaggerChildren,
 	initial,
 	slideInLeftInitial,
 	slideInRightFinish,
+	arrayLoopStaggerChildren,
 } from "@/animations/animations";
+import Link from "next/link";
+import Image from "next/image";
+import {FC, Fragment} from "react";
+import dateFormat from "dateformat";
+import {ISimbaTVBanner} from "@/types/components";
+import {motion, AnimatePresence} from "framer-motion";
+import useOnDesktopView from "@/hooks/useOnDesktopView";
 
 // Swiper.js Slider
 import "swiper/css";
@@ -95,14 +96,17 @@ const VideosSlider: FC<ISimbaTVBanner.IVideosSlider> = ({
 													}}
 												>
 													<div className={styles.wrapper}>
-														<motion.h5
+														<motion.span
 															viewport={{once: false}}
 															initial={slideInLeftInitial}
 															whileInView={slideInRightFinish}
-															className={styles.channelTitle}
+															className={styles.date}
 														>
-															{item?.snippet?.channelTitle}
-														</motion.h5>
+															{dateFormat(
+																item?.snippet?.publishedAt,
+																"dddd, mmmm d, yyyy"
+															)}
+														</motion.span>
 														<span className={styles.div}></span>
 														<ContentSliceRevealMaskAnimation>
 															<h5 className={styles.title}>

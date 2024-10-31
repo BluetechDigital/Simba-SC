@@ -70,8 +70,8 @@
 									.wrapper {
 										@apply max-w-xs mx-0 flex flex-col gap-2;
 
-										.channelTitle {
-											@apply font-OnestRegular font-normal text-white text-base text-left;
+										.date {
+											@apply font-OnestRegular font-normal text-white text-tiny text-left;
 										}
 
 										.div {
