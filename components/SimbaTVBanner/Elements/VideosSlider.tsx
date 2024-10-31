@@ -5,7 +5,12 @@ import {FC, Fragment} from "react";
 import {ISimbaTVBanner} from "@/types/components";
 import {motion, AnimatePresence} from "framer-motion";
 import useOnDesktopView from "@/hooks/useOnDesktopView";
-import {arrayLoopStaggerChildren, initial} from "@/animations/animations";
+import {
+	arrayLoopStaggerChildren,
+	initial,
+	slideInLeftInitial,
+	slideInRightFinish,
+} from "@/animations/animations";
 
 // Swiper.js Slider
 import "swiper/css";
@@ -18,6 +23,7 @@ import styles from "@/styles/components/SimbaTVBanner.module.scss";
 
 // Components
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
+import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
 const VideosSlider: FC<ISimbaTVBanner.IVideosSlider> = ({
 	variants,
@@ -80,25 +86,31 @@ const VideosSlider: FC<ISimbaTVBanner.IVideosSlider> = ({
 												href={`https://www.youtube.com/channel/UC3W0zHzX_Iu3lJ20bOfYUeA/`}
 												aria-label={`${item?.snippet?.channelTitle}: ${item?.snippet?.title}`}
 											>
-												<Image
-													alt={`${item?.image?.altText}`}
-													src={item?.snippet?.thumbnails?.maxres?.url}
-													width={
-														item?.snippet?.thumbnails?.maxres?.width
-															? item?.snippet?.thumbnails?.maxres?.width
-															: 500
-													}
-													height={
-														item?.snippet?.thumbnails?.maxres?.height
-															? item?.snippet?.thumbnails?.maxres?.height
-															: 500
-													}
-													className={
-														item?.snippet?.thumbnails?.maxres?.url
-															? styles.thumbnails
-															: `hidden`
-													}
-												/>
+												<div
+													className={styles.card}
+													style={{
+														backgroundImage: `linear-gradient(0deg,rgba(0, 0, 0, 0.70),rgba(0, 0, 0, 0.60),
+														rgba(0, 0, 0, 0.50),rgba(0, 0, 0, 0.30),rgba(0, 0, 0, 0.20),
+														rgba(0, 0, 0, 0.15)),url("${item?.snippet?.thumbnails?.maxres?.url}")`,
+													}}
+												>
+													<div className={styles.wrapper}>
+														<motion.h5
+															viewport={{once: false}}
+															initial={slideInLeftInitial}
+															whileInView={slideInRightFinish}
+															className={styles.channelTitle}
+														>
+															{item?.snippet?.channelTitle}
+														</motion.h5>
+														<span className={styles.div}></span>
+														<ContentSliceRevealMaskAnimation>
+															<h5 className={styles.title}>
+																{item?.snippet?.title}
+															</h5>
+														</ContentSliceRevealMaskAnimation>
+													</div>
+												</div>
 											</Link>
 										</motion.li>
 									</SwiperSlide>

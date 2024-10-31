@@ -36,7 +36,7 @@ const LatestNewsGridCard: FC<ILatestNews.ICard> = ({
 					</span>
 					<span className={styles.divider}></span>
 					<ContentSliceRevealMaskAnimation>
-						<h2 className={styles.title}>{title}</h2>
+						<h5 className={styles.title}>{title}</h5>
 					</ContentSliceRevealMaskAnimation>
 				</div>
 			</div>

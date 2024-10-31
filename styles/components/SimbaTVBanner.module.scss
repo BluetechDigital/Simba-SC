@@ -64,10 +64,24 @@
 							@apply w-full h-full;
 
 							.li {
-								@apply w-full h-full lg:min-h-[450px] p-0 bg-pureBlack;
+								.card {
+									@apply w-full h-full min-h-[450px] overflow-hidden py-8 px-4 xl:p-8 bg-no-repeat bg-cover bg-center flex flex-col items-baseline justify-end;
 
-								.thumbnails {
-									@apply block w-full h-full lg:min-h-[450px] object-cover object-center;
+									.wrapper {
+										@apply max-w-xs mx-0 flex flex-col gap-2;
+
+										.channelTitle {
+											@apply font-OnestRegular font-normal text-white text-base text-left;
+										}
+
+										.div {
+											@apply h-[2.5px] bg-primary-default w-full;
+										}
+
+										.title {
+											@apply font-OnestBlack text-left uppercase text-base tracking-[-0.02rem] text-white font-semibold leading-4;
+										}
+									}
 								}
 							}
 						}

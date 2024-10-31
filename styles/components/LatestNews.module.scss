@@ -28,12 +28,12 @@
 			}
 
 			.card {
-				@apply w-full h-full min-h-[375px] py-8 px-4 xl:p-8 bg-no-repeat bg-cover bg-center h-full w-full flex flex-col items-baseline justify-end;
+				@apply w-full h-full min-h-[375px] py-8 px-4 xl:p-8 bg-no-repeat bg-cover bg-center flex flex-col items-baseline justify-end;
 
 				.container {
 					@apply max-w-xs mx-0 flex flex-col gap-2;
 
-					.date {
+					.channelTitle {
 						@apply font-OnestRegular font-normal text-white text-tiny;
 					}
 

@@ -47,7 +47,6 @@ const SimbaTVBanner: FC<ISimbaTVBanner.IProps> = ({
 								{buttonLink?.title}
 							</Link>
 						</ScrollYProgressReveal>
-
 						<SimbaTVBannerCard contentOptions={contentOptions} />
 						<SimbaTVStatsCard />
 					</div>
