@@ -1,7 +1,7 @@
 // Imports
 import {FC} from "react";
 import {motion} from "framer-motion";
-import {IHeroTwo} from "@/types/components/index";
+import {IHero} from "@/types/components/index";
 import {fadeIn, initialTwo} from "@/animations/animations";
 
 // Styling
@@ -10,7 +10,7 @@ import styles from "@/styles/components/Hero.module.scss";
 // Components
 import Paragraph from "@/components/Elements/Paragraph";
 
-const HeroTwo: FC<IHeroTwo> = ({title, paragraph, backgroundImage}) => {
+const HeroTwo: FC<IHero.IHeroTwo> = ({title, paragraph, backgroundImage}) => {
 	return (
 		<>
 			<div className={styles.heroTwo}>

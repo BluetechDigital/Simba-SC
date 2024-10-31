@@ -9,14 +9,16 @@ import styles from "@/styles/components/Hero.module.scss";
 import Title from "@/components/Elements/Title";
 import Paragraph from "@/components/Elements/Paragraph";
 
-const HeroThree: FC<IHero.IHeroThree> = ({
+const HeroFour: FC<IHero.IHeroFour> = ({
 	title,
 	paragraph,
+	buttonLink,
+	buttonLinkTwo,
 	backgroundImage,
 }) => {
 	return (
 		<>
-			<div className={styles.heroThree}>
+			<div className={styles.heroFour}>
 				<div
 					className={styles.container}
 					style={{
@@ -39,4 +41,4 @@ const HeroThree: FC<IHero.IHeroThree> = ({
 	);
 };
 
-export default HeroThree;
+export default HeroFour;

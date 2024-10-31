@@ -6,7 +6,6 @@ import {
 	arrayLoopStaggerChildren,
 } from "@/animations/animations";
 import Link from "next/link";
-import Image from "next/image";
 import {FC, Fragment} from "react";
 import dateFormat from "dateformat";
 import {ISimbaTVBanner} from "@/types/components";

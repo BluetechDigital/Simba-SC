@@ -7,6 +7,7 @@ import {usePageContext} from "@/context/providers/PageContextProvider";
 // Components
 import Hero from "@/components/Hero/index";
 import HeroTwo from "@/components/Hero/HeroTwo";
+import HeroFour from "@/components/Hero/HeroFour";
 import HeroThree from "@/components/Hero/HeroThree";
 import VideoBlock from "@/components/VideoBlock/index";
 import AboutSimba from "@/components/AboutSimba/index";
@@ -16,6 +17,7 @@ import ContactForm from "@/components/ContactForm/index";
 import TitleParagraph from "@/components/TitleParagraph";
 import LatestNewsGrid from "@/components/LatestNews/index";
 import SocialMediaGrid from "@/components/SocialMediaGrid";
+import FoundationIntro from "@/components/FoundationIntro";
 import NewsletterBanner from "@/components/NewsletterBanner";
 import SimbaTVBanner from "@/components/SimbaTVBanner/index";
 import NewOfficialKitCta from "@/components/NewOfficialKitCta";
@@ -35,6 +37,7 @@ const RenderFlexibleContent: FC = () => {
 	const componentMapping: any = {
 		[`${FlexibleContent}_Hero`]: Hero,
 		[`${FlexibleContent}_HeroTwo`]: HeroTwo,
+		[`${FlexibleContent}_HeroFour`]: HeroFour,
 		[`${FlexibleContent}_HeroThree`]: HeroThree,
 		[`${FlexibleContent}_AboutSimba`]: AboutSimba,
 		[`${FlexibleContent}_VideoBlock`]: VideoBlock,
@@ -45,6 +48,7 @@ const RenderFlexibleContent: FC = () => {
 		[`${FlexibleContent}_TitleParagraph`]: TitleParagraph,
 		[`${FlexibleContent}_LatestNewsGrid`]: LatestNewsGrid,
 		[`${FlexibleContent}_SocialMediaGrid`]: SocialMediaGrid,
+		[`${FlexibleContent}_FoundationIntro`]: FoundationIntro,
 		[`${FlexibleContent}_AboutTheClubGrid`]: AboutTheClubGrid,
 		[`${FlexibleContent}_NewsletterBanner`]: NewsletterBanner,
 		[`${FlexibleContent}_ClubPartnersGrid`]: ClubPartnersGrid,

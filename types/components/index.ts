@@ -3,56 +3,6 @@ import {IYoutubeVideos} from "../api/Youtube";
 import {MotionProps, Transition, Variant} from "framer-motion";
 
 // Components
-export type IHero = {
-	heroSlider: [
-		{
-			title: string;
-			paragraph: string;
-			buttonLink: {
-				url: string;
-				title: string;
-				target: string;
-			};
-			buttonLinkTwo: {
-				url: string;
-				title: string;
-				target: string;
-			};
-			backgroundImage: {
-				altText: string;
-				sourceUrl: string;
-				mediaDetails: {
-					width: number;
-					height: number;
-				};
-			};
-		}
-	];
-};
-export type IHeroTwo = {
-	title: string;
-	paragraph: string;
-	backgroundImage: {
-		altText: string;
-		sourceUrl: string;
-		mediaDetails: {
-			width: number;
-			height: number;
-		};
-	};
-};
-export type IHeroThree = {
-	title: string;
-	paragraph: string;
-	backgroundImage: {
-		altText: string;
-		sourceUrl: string;
-		mediaDetails: {
-			width: number;
-			height: number;
-		};
-	};
-};
 export type INewsSingle = {
 	title: string;
 	readTime: string;
@@ -79,6 +29,10 @@ export type ITitleParagraph = {
 	title: string;
 	paragraph: string;
 	displayParagraph: boolean;
+};
+export type IFoundationIntro = {
+	title: string;
+	paragraph: string;
 };
 export type INewsletterBanner = {
 	title: string;
@@ -171,6 +125,80 @@ export type IClubCardMembershipCTA = {
 	};
 };
 
+export namespace IHero {
+	export type IHero = {
+		heroSlider: [
+			{
+				title: string;
+				paragraph: string;
+				buttonLink: {
+					url: string;
+					title: string;
+					target: string;
+				};
+				buttonLinkTwo: {
+					url: string;
+					title: string;
+					target: string;
+				};
+				backgroundImage: {
+					altText: string;
+					sourceUrl: string;
+					mediaDetails: {
+						width: number;
+						height: number;
+					};
+				};
+			}
+		];
+	};
+	export type IHeroTwo = {
+		title: string;
+		paragraph: string;
+		backgroundImage: {
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
+		};
+	};
+	export type IHeroThree = {
+		title: string;
+		paragraph: string;
+		backgroundImage: {
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
+		};
+	};
+	export type IHeroFour = {
+		title: string;
+		paragraph: string;
+		buttonLink: {
+			url: string;
+			title: string;
+			target: string;
+		};
+		buttonLinkTwo: {
+			url: string;
+			title: string;
+			target: string;
+		};
+		backgroundImage: {
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
+		};
+	};
+}
 // About Sub & Main Components
 export namespace IAbout {
 	export type ISimbaProps = {

@@ -74,6 +74,30 @@ export const getAllFlexibleContentComponents = async (
 													}
 												}
 											}
+											... on ${postTypeFlexibleContent}_HeroFour {
+												fieldGroupName
+												displaySection
+												title
+												paragraph
+												buttonLink {
+                									url
+                									title
+                									target
+                								}
+                								buttonLinkTwo {
+                									url
+                									title
+                									target
+                								}
+												backgroundImage {
+													altText
+													sourceUrl
+													mediaDetails {
+														height
+														width
+													}
+												}
+											}
 											... on ${postTypeFlexibleContent}_TitleParagraph {
 												fieldGroupName
 												displaySection
@@ -231,6 +255,12 @@ export const getAllFlexibleContentComponents = async (
                   								  	  	width
                   								  	}
                   								}
+											}
+											... on ${postTypeFlexibleContent}_FoundationIntro {
+												fieldGroupName
+												displaySection
+												title
+												paragraph
 											}
 											... on ${postTypeFlexibleContent}_TrophyCabinetBanner {
 												fieldGroupName

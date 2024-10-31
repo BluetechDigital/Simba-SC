@@ -18,7 +18,7 @@ import styles from "@/styles/components/Hero.module.scss";
 import Paragraph from "@/components/Elements/Paragraph";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
-const Hero: FC<IHero> = ({heroSlider}) => {
+const Hero: FC<IHero.IHero> = ({heroSlider}) => {
 	return (
 		<>
 			<div className={styles.hero}>
