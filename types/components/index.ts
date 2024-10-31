@@ -1,4 +1,5 @@
 // Imports
+import {IYoutubeVideos} from "../api/Youtube";
 import {MotionProps, Transition, Variant} from "framer-motion";
 
 // Components
@@ -339,21 +340,12 @@ export namespace ISimbaTVBanner {
 			title: string;
 			target: string;
 		};
-		youtubeButton: {
-			url: string;
-			title: string;
-			target: string;
-		};
-		podcastsButton: {
-			url: string;
-			title: string;
-			target: string;
-		};
-		fansButton: {
-			url: string;
-			title: string;
-			target: string;
-		};
+		contentOptions: {
+			subtitle: string;
+			buttonTitle: string;
+			contentExcerpt: string;
+			buttonFunction: string;
+		}[];
 		backgroundImage: {
 			altText: string;
 			sourceUrl: string;
@@ -364,9 +356,7 @@ export namespace ISimbaTVBanner {
 		};
 	};
 	export type ICard = {
-		fansButton: IProps[`fansButton`];
-		youtubeButton: IProps[`youtubeButton`];
-		podcastsButton: IProps[`podcastsButton`];
+		contentOptions: IProps[`contentOptions`];
 	};
 	export type IStatsCard = {};
 	export type IVideos = {
@@ -382,6 +372,12 @@ export namespace ISimbaTVBanner {
 		decimals?: number;
 		paragraph: string;
 	};
+	export type IVideosSlider = {
+		youtubeVideos: IYoutubeVideos;
+		transition?: Transition;
+		activeIndex: number;
+		variants?: {enter: Variant; center: Variant; exit: Variant};
+	} & MotionProps;
 }
 export namespace ISocialMediaGrid {
 	export type IProps = {

@@ -18,9 +18,7 @@ const SimbaTVBanner: FC<ISimbaTVBanner.IProps> = ({
 	title,
 	paragraph,
 	buttonLink,
-	fansButton,
-	youtubeButton,
-	podcastsButton,
+	contentOptions,
 	backgroundImage,
 }) => {
 	return (
@@ -49,11 +47,8 @@ const SimbaTVBanner: FC<ISimbaTVBanner.IProps> = ({
 								{buttonLink?.title}
 							</Link>
 						</ScrollYProgressReveal>
-						<SimbaTVBannerCard
-							fansButton={fansButton}
-							youtubeButton={youtubeButton}
-							podcastsButton={podcastsButton}
-						/>
+
+						<SimbaTVBannerCard contentOptions={contentOptions} />
 						<SimbaTVStatsCard />
 					</div>
 				</div>

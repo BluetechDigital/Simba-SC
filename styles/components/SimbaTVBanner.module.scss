@@ -6,13 +6,13 @@
 	@apply py-16 h-full min-h-[50vh] bg-no-repeat bg-cover bg-center;
 
 	.containerWrapper {
-		@apply lg:container px-4 mx-auto;
+		@apply w-full px-0 mx-auto;
 
 		.contentWrapper {
 			@apply w-full flex flex-col items-center lg:items-baseline justify-center gap-8;
 
 			.content {
-				@apply w-full flex flex-col lg:flex-row items-center justify-between gap-6;
+				@apply lg:max-w-[1700px] px-4 mx-auto w-full flex flex-col lg:flex-row items-center justify-between gap-6;
 
 				.title {
 					@apply max-w-2xl font-schaboCondensed text-center lg:text-left uppercase text-7xl sm:text-8xl lg:text-12xl tracking-[-0.05rem] text-white leading-tight xl:leading-[5.5rem];
@@ -28,18 +28,24 @@
 			}
 
 			.bannerCard {
-				@apply py-10;
+				@apply w-full py-10;
 
 				.topSection {
-					@apply mb-4 w-full flex flex-col md:flex-row items-center justify-center lg:justify-start space-x-2 space-y-2 md:space-y-0;
+					@apply lg:max-w-[1700px] px-4 mx-auto mb-4 w-full flex flex-col md:flex-row items-center justify-center lg:justify-start space-x-2 space-y-2 md:space-y-0;
+				}
+
+				.divider {
+					@apply lg:max-w-[1700px] px-4 mx-auto w-full mt-10 border-t border-white;
 				}
 
 				.bottomSection {
-					@apply overflow-hidden my-6 border-t border-white;
+					@apply w-full px-0 mx-auto overflow-hidden flex flex-col items-center justify-center;
 
 					.bannerVideos {
+						@apply lg:max-w-[1700px] px-4 mx-auto;
+
 						.item {
-							@apply pt-10 px-4 lg:px-20;
+							@apply pt-10 lg:px-20;
 
 							.subtitle {
 								@apply my-6 font-schaboCondensed text-center lg:text-left uppercase text-7xl tracking-[-0.05rem] text-white xl:leading-tight;
@@ -51,14 +57,18 @@
 						}
 					}
 
-					.ul {
-						@apply pt-16 grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-center;
+					.videosSlider {
+						@apply lg:max-w-[1800px] px-6 lg:px-0 mx-auto lg:mr-0 w-full pt-16 flex flex-col gap-4;
 
-						.li {
-							@apply w-full h-full py-6 px-10 bg-tertiary-default;
+						.container {
+							@apply w-full h-full;
 
-							.thumbnails {
-								@apply block w-full h-full object-cover object-center;
+							.li {
+								@apply w-full h-full lg:min-h-[450px] p-0 bg-pureBlack;
+
+								.thumbnails {
+									@apply block w-full h-full lg:min-h-[450px] object-cover object-center;
+								}
 							}
 						}
 					}
@@ -66,7 +76,7 @@
 			}
 
 			.statsCard {
-				@apply mx-auto w-full px-4 py-20 md:py-24 border-t border-white;
+				@apply lg:max-w-[1700px] px-4 mx-auto w-full py-20 md:py-24 border-t border-white;
 
 				.content {
 					@apply flex flex-col items-center justify-center md:flex-row gap-10 md:gap-0;

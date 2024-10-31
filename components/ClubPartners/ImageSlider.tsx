@@ -1,15 +1,13 @@
-"use client";
-
 // Imports
 import {FC, Fragment} from "react";
 import {IClubPartners} from "@/types/components/index";
+import useOnDesktopView from "@/hooks/useOnDesktopView";
 
 // Swiper.js Slider
 import "swiper/css";
 import "swiper/css/navigation";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay, Navigation} from "swiper/modules";
-import useOnDesktopView from "@/hooks/useOnDesktopView";
 
 // Styling
 import styles from "@/styles/pages/ClubPartners/Partners.module.scss";

@@ -312,20 +312,11 @@ export const getAllFlexibleContentComponents = async (
                 									title
                 									target
                 								}
-                  								youtubeButton {
-                  								  	url
-                  								  	title
-                  								  	target
-                  								}
-												podcastsButton {
-                  								  	url
-                  								  	title
-                  								  	target
-                  								}
-												fansButton {
-                  								  	url
-                  								  	title
-                  								  	target
+												contentOptions {
+                  								  	subtitle
+                  								  	buttonTitle
+                  								  	contentExcerpt
+                  								  	buttonFunction
                   								}
 												backgroundImage {
                   								  	altText
