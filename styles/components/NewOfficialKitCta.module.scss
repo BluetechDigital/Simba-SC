@@ -80,7 +80,7 @@
 
 							.wrapper {
 								.content {
-									@apply flex flex-col gap-2 absolute left-1/2 bottom-2 transform -translate-x-1/2;
+									@apply m-auto lg:mx-0 absolute left-1/2 bottom-2 flex flex-col gap-2 transform -translate-x-1/2;
 
 									.divider {
 										@apply h-[2.5px] bg-primary-default w-full;
