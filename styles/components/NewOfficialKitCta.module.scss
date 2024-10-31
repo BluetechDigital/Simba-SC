@@ -45,7 +45,7 @@
 							@apply w-full md:w-1/2 lg:w-9/12 p-3;
 
 							.wrapper {
-								@apply relative overflow-hidden h-[550px];
+								@apply relative overflow-hidden w-full h-[550px];
 
 								.image {
 									@apply object-cover w-full h-full transform group-hover:scale-105 transition-all duration-1000 ease-in-out;
@@ -62,14 +62,14 @@
 
 							.wrapper {
 								.content {
-									@apply absolute w-full h-full p-6 bottom-0 bg-pureBlack/20 group-hover:bg-pureBlack/30 flex flex-col items-center lg:items-baseline justify-end transition-all duration-1000 ease-in-out;
+									@apply absolute w-full h-full m-auto p-6 top-0 bg-pureBlack/20 group-hover:bg-pureBlack/30 flex flex-col items-center lg:items-baseline justify-end transition-all duration-1000 ease-in-out;
 
 									.divider {
-										@apply h-[2.5px]  bg-primary-default w-full max-w-xs;
+										@apply h-[2.5px] bg-primary-default w-full max-w-xs;
 									}
 
 									.text {
-										@apply lg:text-5xl;
+										@apply lg:text-lg;
 									}
 								}
 							}
