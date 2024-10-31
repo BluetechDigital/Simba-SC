@@ -36,13 +36,9 @@ const Navbar: FC = () => {
 
 	return (
 		<>
-			<nav
-				className={
-					styles.navbar + ` navbar z-[999] w-full fixed group bg-transparent`
-				}
-			>
+			<nav className={styles.navbar + " group"}>
 				<TopNavigation />
-				<div className="h-full flex items-center justify-between bg-lightGreyTwo pl-2 lg:pl-4">
+				<div className={styles.mainNavigation}>
 					<motion.div
 						initial={initialTwo}
 						whileInView={fadeIn}

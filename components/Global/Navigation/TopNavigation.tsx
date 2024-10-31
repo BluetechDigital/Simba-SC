@@ -24,14 +24,10 @@ const TopNavigation: FC = () => {
 
 	return (
 		<>
-			<div
-				className={
-					scrollPosition < 50
-						? "py-0 bg-white flex items-center justify-between gap-4 px-4"
-						: "hidden"
-				}
+			<motion.div
+				className={scrollPosition < 50 ? styles.topNavigation : "hidden"}
 			>
-				<div className="flex items-center justify-between gap-4">
+				<div className={styles.top}>
 					{globalContext?.themesOptionsContent?.topNavigation?.sponsorsIcons
 						?.length > 0 ? (
 						globalContext?.themesOptionsContent?.topNavigation?.sponsorsIcons?.map(
@@ -47,6 +43,7 @@ const TopNavigation: FC = () => {
 										<Image
 											alt={item?.altText}
 											src={item?.sourceUrl}
+											className={styles.image}
 											width={
 												item?.mediaDetails?.width
 													? item?.mediaDetails?.width
@@ -57,7 +54,6 @@ const TopNavigation: FC = () => {
 													? item?.mediaDetails?.height
 													: 1000
 											}
-											className="object-contain object-center w-[50px] h-[50px]"
 										/>
 									</motion.div>
 								</Fragment>
@@ -67,16 +63,18 @@ const TopNavigation: FC = () => {
 						<></>
 					)}
 				</div>
-				<div className="flex items-center justify-between gap-4">
+				<div className={styles.bottom}>
 					<Link
-						href={`https://account.simbasc.com`}
 						target="_blank"
 						aria-label={`Simba Login`}
-						className="hidden lg:block font-OnestBold tracking-[-0.02rem] uppercase text-pureBlack hover:hover:text-accent-two text-base text-center transition-all ease-in-out duration-500"
+						className={styles.simbaLogin}
+						href={`https://account.simbasc.com`}
 					>
 						Login
 					</Link>
 					<Link
+						aria-label={`Simba Foundation`}
+						className={styles.simbaFoundation}
 						href={`${globalContext?.themesOptionsContent?.topNavigation?.foundationPageLink?.url}`}
 						target={`${
 							globalContext?.themesOptionsContent?.topNavigation
@@ -85,24 +83,19 @@ const TopNavigation: FC = () => {
 										?.foundationPageLink?.target
 								: "_self"
 						}`}
-						aria-label={`Simba Foundation`}
-						className="hidden lg:block font-OnestBold tracking-[-0.02rem] uppercase text-pureBlack hover:hover:text-accent-two text-base text-center transition-all ease-in-out duration-500"
 					>
 						{
 							globalContext?.themesOptionsContent?.topNavigation
 								?.foundationPageLink?.title
 						}
 					</Link>
-					<div className="hidden sm:flex mx-6 h-[25px] w-[1px] bg-grey"></div>
+					<div className={styles.divider} />
 					<motion.div
 						initial={initial}
 						variants={stagger}
 						whileInView="animate"
 						viewport={{once: true}}
-						className={
-							styles.socialLinks +
-							" hidden sm:flex items-center justify-center gap-6 text-center"
-						}
+						className={styles.socialLinks}
 					>
 						<motion.div
 							initial={initialTwo}
@@ -115,10 +108,12 @@ const TopNavigation: FC = () => {
 							}`}
 						>
 							<Link
-								target="_blank"
-								className="inline-block text-primary-default"
+								className={styles.link}
 								href={`${globalContext?.themesOptionsContent?.facebookLink?.url}`}
 								aria-label={`Facebook Social Media Link ${globalContext?.themesOptionsContent?.facebookLink?.title}`}
+								target={
+									globalContext?.themesOptionsContent?.facebookLink?.target
+								}
 							>
 								<svg
 									width="100%"
@@ -131,7 +126,7 @@ const TopNavigation: FC = () => {
 										strokeLinejoin: "round",
 										strokeMiterlimit: "2",
 									}}
-									className="w-[22.5px] h-[22.5px] fill-primary-default hover:fill-primary-dark transition-all duration-500 ease-in-out"
+									className={styles.svg}
 								>
 									<path
 										d="M512,257.555c0,-141.385 -114.615,-256 -256,-256c-141.385,0 -256,114.615 -256,256c0,127.777 93.616,233.685 216,252.89l0,-178.89l-65,0l0,-74l65,0l0,-56.4c0,-64.16 38.219,-99.6 96.695,-99.6c28.009,0 57.305,5 57.305,5l0,63l-32.281,0c-31.801,0 -41.719,19.733 -41.719,39.978l0,48.022l71,0l-11.35,74l-59.65,0l0,178.89c122.385,-19.205 216,-125.113 216,-252.89Z"
@@ -151,10 +146,12 @@ const TopNavigation: FC = () => {
 							}`}
 						>
 							<Link
-								target="_blank"
-								className="inline-block text-primary-default"
+								className={styles.link}
 								href={`${globalContext?.themesOptionsContent?.twitterLink?.url}`}
 								aria-label={`Twitter Social Media Link ${globalContext?.themesOptionsContent?.twitterLink?.title}`}
+								target={
+									globalContext?.themesOptionsContent?.twitterLink?.target
+								}
 							>
 								<svg
 									version="1.1"
@@ -169,7 +166,7 @@ const TopNavigation: FC = () => {
 										strokeMiterlimit: "2",
 									}}
 									xmlns="http://www.w3.org/2000/svg"
-									className="w-[22.5px] h-[22.5px] fill-primary-default hover:fill-primary-dark transition-all duration-500 ease-in-out"
+									className={styles.svg}
 								>
 									<path d="M14.095479,10.316482L22.286354,1h-1.940718l-7.115352,8.087682L7.551414,1H1l8.589488,12.231093L1,23h1.940717  l7.509372-8.542861L16.448587,23H23L14.095479,10.316482z M11.436522,13.338465l-0.871624-1.218704l-6.924311-9.68815h2.981339  l5.58978,7.82155l0.867949,1.218704l7.26506,10.166271h-2.981339L11.436522,13.338465z" />
 								</svg>
@@ -186,10 +183,12 @@ const TopNavigation: FC = () => {
 							}`}
 						>
 							<Link
-								target="_blank"
-								className="inline-block text-primary-default"
+								className={styles.link}
 								href={`${globalContext?.themesOptionsContent?.linkedinLink?.url}`}
 								aria-label={`Linkedin Social Media Link ${globalContext?.themesOptionsContent?.linkedinLink.title}`}
+								target={
+									globalContext?.themesOptionsContent?.linkedinLink?.target
+								}
 							>
 								<svg
 									height="100%"
@@ -202,7 +201,7 @@ const TopNavigation: FC = () => {
 										strokeLinejoin: "round",
 										strokeMiterlimit: "2",
 									}}
-									className="w-[22.5px] h-[22.5px] fill-primary-default hover:fill-primary-dark transition-all duration-500 ease-in-out"
+									className={styles.svg}
 								>
 									<path
 										d="M473.305,-1.353c20.88,0 37.885,16.533 37.885,36.926l0,438.251c0,20.393 -17.005,36.954 -37.885,36.954l-436.459,0c-20.839,0 -37.773,-16.561 -37.773,-36.954l0,-438.251c0,-20.393 16.934,-36.926 37.773,-36.926l436.459,0Zm-37.829,436.389l0,-134.034c0,-65.822 -14.212,-116.427 -91.12,-116.427c-36.955,0 -61.739,20.263 -71.867,39.476l-1.04,0l0,-33.411l-72.811,0l0,244.396l75.866,0l0,-120.878c0,-31.883 6.031,-62.773 45.554,-62.773c38.981,0 39.468,36.461 39.468,64.802l0,118.849l75.95,0Zm-284.489,-244.396l-76.034,0l0,244.396l76.034,0l0,-244.396Zm-37.997,-121.489c-24.395,0 -44.066,19.735 -44.066,44.047c0,24.318 19.671,44.052 44.066,44.052c24.299,0 44.026,-19.734 44.026,-44.052c0,-24.312 -19.727,-44.047 -44.026,-44.047Z"
@@ -222,16 +221,18 @@ const TopNavigation: FC = () => {
 							}`}
 						>
 							<Link
-								target="_blank"
-								className="inline-block text-primary-default"
+								className={styles.link}
 								href={`${globalContext?.themesOptionsContent?.instagramLink?.url}`}
 								aria-label={`Instagram Social Media Link ${globalContext?.themesOptionsContent?.instagramLink?.title}`}
+								target={
+									globalContext?.themesOptionsContent?.instagramLink?.target
+								}
 							>
 								<svg
 									fill="#ea1d25"
 									viewBox="0 0 32 32"
+									className={styles.svgAlt}
 									xmlns="http://www.w3.org/2000/svg"
-									className="w-[30px] h-[30px] fill-primary-default hover:fill-primary-dark transition-all duration-500 ease-in-out"
 								>
 									<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
 									<g
@@ -257,16 +258,16 @@ const TopNavigation: FC = () => {
 							}`}
 						>
 							<Link
-								target="_blank"
-								className="inline-block text-primary-default"
+								className={styles.link}
 								href={`${globalContext?.themesOptionsContent?.tiktokLink?.url}`}
 								aria-label={`Tiktok Social Media Link ${globalContext?.themesOptionsContent?.tiktokLink?.title}`}
+								target={globalContext?.themesOptionsContent?.tiktokLink?.target}
 							>
 								<svg
 									id="icons"
 									fill="#ea1d25"
 									viewBox="0 0 512 512"
-									className="w-[22.5px] h-[22.5px] fill-primary-default hover:fill-primary-dark transition-all duration-500 ease-in-out"
+									className={styles.svg}
 									xmlns="http://www.w3.org/2000/svg"
 								>
 									<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
@@ -292,16 +293,18 @@ const TopNavigation: FC = () => {
 							}`}
 						>
 							<Link
-								target="_blank"
-								className="inline-block text-primary-default"
+								className={styles.link}
 								href={`${globalContext?.themesOptionsContent?.youtubeLink?.url}`}
 								aria-label={`Youtube Social Media Link ${globalContext?.themesOptionsContent?.youtubeLink?.title}`}
+								target={
+									globalContext?.themesOptionsContent?.youtubeLink?.target
+								}
 							>
 								<svg
 									version="1.1"
 									fill="#000000"
 									viewBox="0 -7 48 48"
-									className="w-[28px] h-[28px]"
+									className={styles.svgAltTwo}
 									xmlns="http://www.w3.org/2000/svg"
 								>
 									<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
@@ -335,7 +338,7 @@ const TopNavigation: FC = () => {
 						</motion.div>
 					</motion.div>
 				</div>
-			</div>
+			</motion.div>
 		</>
 	);
 };
