@@ -97,10 +97,10 @@ const VideosSlider: FC<ISimbaTVBanner.IVideosSlider> = ({
 												>
 													<div className={styles.wrapper}>
 														<motion.span
+															className={styles.date}
 															viewport={{once: false}}
 															initial={slideInLeftInitial}
 															whileInView={slideInRightFinish}
-															className={styles.date}
 														>
 															{dateFormat(
 																item?.snippet?.publishedAt,

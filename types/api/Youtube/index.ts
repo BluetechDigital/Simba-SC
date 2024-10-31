@@ -45,10 +45,13 @@ export type IYoutubeChannelInfo = {
 export type IYoutubePlaylists = any;
 export type IYoutubeVideos = {
 	snippet: {
-		publishedAt: string;
-		channelId: string;
 		title: string;
+		position: number;
+		channelId: string;
+		playlistId: string;
+		publishedAt: string;
 		description: string;
+		channelTitle: string;
 		thumbnails: {
 			default: {
 				url: string;
@@ -76,15 +79,12 @@ export type IYoutubeVideos = {
 				height: number;
 			};
 		};
-		channelTitle: string;
-		playlistId: string;
-		position: number;
 		resourceId: {
 			kind: string;
 			videoId: string;
 		};
-		videoOwnerChannelTitle: string;
 		videoOwnerChannelId: string;
+		videoOwnerChannelTitle: string;
 	};
 	contentDetails: {
 		videoId: string;
