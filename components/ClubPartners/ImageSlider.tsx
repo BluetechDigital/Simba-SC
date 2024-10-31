@@ -1,36 +1,22 @@
 "use client";
 
 // Imports
+import {FC, Fragment} from "react";
 import {IClubPartners} from "@/types/components/index";
-import {FC, Fragment, useEffect, useState} from "react";
 
 // Swiper.js Slider
 import "swiper/css";
 import "swiper/css/navigation";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay, Navigation} from "swiper/modules";
+import useOnDesktopView from "@/hooks/useOnDesktopView";
 
 // Styling
 import styles from "@/styles/pages/ClubPartners/Partners.module.scss";
 
 const ImageSlider: FC<IClubPartners.IImageSlider> = ({imageSlider}) => {
 	// State to track window width and check if on desktop
-	const [onDesktop, setOnDesktop] = useState(false);
-
-	// Update windowSize and onDesktop when the component mounts
-	useEffect(() => {
-		const handleResize = () => {
-			const size = window.innerWidth;
-			setOnDesktop(size > 1024);
-		};
-
-		// Call handleResize initially and add event listener for resize events
-		handleResize();
-		window.addEventListener("resize", handleResize);
-
-		// Cleanup resize listener
-		return () => window.removeEventListener("resize", handleResize);
-	}, []);
+	const onDesktop = useOnDesktopView();
 
 	return (
 		<>

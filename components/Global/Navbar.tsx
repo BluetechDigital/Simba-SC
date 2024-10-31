@@ -13,6 +13,7 @@ import Image from "next/image";
 import {motion} from "framer-motion";
 import {useState, FC, Fragment} from "react";
 import {useGlobalContext} from "@/context/global";
+import useOnDesktopView from "@/hooks/useOnDesktopView";
 
 // Styling
 import styles from "@/styles/components/Navbar.module.scss";
@@ -23,6 +24,9 @@ import MegaNavigation from "@/components/Global/MegaNavigation";
 
 const Navbar: FC = () => {
 	const globalContext = useGlobalContext();
+
+	// State to track window width and check if on desktop
+	const onDesktop = useOnDesktopView();
 
 	const [menuActive, setMenuActive] = useState(false);
 
@@ -108,7 +112,13 @@ const Navbar: FC = () => {
 						}
 						style={{
 							backgroundImage: `url(${
-								menuActive ? "none" : "/img/background/red-background-dots.png"
+								menuActive
+									? "none"
+									: ` ${
+											onDesktop
+												? "/img/background/red-background-dots.png"
+												: "none"
+									  }`
 							})`,
 						}}
 					>
