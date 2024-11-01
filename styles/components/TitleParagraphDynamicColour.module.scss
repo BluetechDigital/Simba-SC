@@ -3,7 +3,7 @@
 @import "../base/colors";
 
 .titleParagraphDynamicColour {
-	@apply relative z-50 w-full h-full min-h-[50vh];
+	@apply relative z-50;
 
 	.container {
 		@apply lg:max-w-[1700px] mx-auto px-4 py-20 flex flex-col items-center justify-center;
@@ -20,7 +20,7 @@
 			}
 
 			.paragraph {
-				@apply max-w-2xl mx-auto lg:mx-0 font-OnestRegular leading-tight text-lg text-center lg:text-left;
+				@apply max-w-2xl mx-auto lg:mx-0 font-OnestRegular leading-loose text-lg text-center lg:text-left;
 			}
 		}
 	}
