@@ -5,6 +5,7 @@ import React, {FC, Fragment} from "react";
 import {usePageContext} from "@/context/providers/PageContextProvider";
 
 // Components
+import CTA from "@/components/CTA/Index";
 import Hero from "@/components/Hero/index";
 import HeroTwo from "@/components/Hero/HeroTwo";
 import HeroFour from "@/components/Hero/HeroFour";
@@ -36,6 +37,7 @@ const RenderFlexibleContent: FC = () => {
 
 	// Components Key Value Pairs
 	const componentMapping: any = {
+		[`${FlexibleContent}_Cta`]: CTA,
 		[`${FlexibleContent}_Hero`]: Hero,
 		[`${FlexibleContent}_HeroTwo`]: HeroTwo,
 		[`${FlexibleContent}_HeroFour`]: HeroFour,

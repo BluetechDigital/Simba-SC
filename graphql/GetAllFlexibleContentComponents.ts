@@ -98,6 +98,35 @@ export const getAllFlexibleContentComponents = async (
 													}
 												}
 											}
+											... on ${postTypeFlexibleContent}_Cta {
+												fieldGroupName
+                  								displaySection
+                  								title
+                  								paragraph
+												displayVideo
+												displayBigCta
+												video {
+                  								  	link
+                  								  	title
+                  								  	mediaDetails {
+                  								  	  	height
+                  								  	  	width
+                  								  	}
+                  								}
+												buttonLink {
+                									url
+                									title
+                									target
+                								}
+												backgroundImage {
+                  								  	altText
+                  								  	sourceUrl
+                  								  	mediaDetails {
+                  								  	  	height
+                  								  	  	width
+                  								  	}
+                  								}
+											}
 											... on ${postTypeFlexibleContent}_TitleParagraph {
 												fieldGroupName
 												displaySection

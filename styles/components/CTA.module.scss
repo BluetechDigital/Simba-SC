@@ -1,0 +1,39 @@
+// Imports
+@import "../base//fonts";
+@import "../base/colors";
+
+.cta {
+	@apply bg-white px-4 py-6 lg:px-10;
+
+	.container {
+		@apply lg:max-w-[1700px] mx-auto px-0 flex flex-col items-center justify-center gap-4 max-w-6xl;
+
+		.cardWrapper {
+			@apply relative w-full h-full lg:aspect-[16/9] aspect-[9/16] flex flex-col items-center justify-center bg-white bg-no-repeat bg-center bg-cover overflow-hidden;
+
+			.video {
+				@apply absolute top-0 left-0 w-full h-full object-cover;
+			}
+
+			.card {
+				@apply relative z-10 w-full h-full py-44 px-16 flex flex-col items-center justify-center bg-pureBlack/30;
+
+				.title {
+					@apply mb-5 max-w-2xl lg:max-w-4xl mx-auto lg:mx-0 font-schaboCondensed text-center uppercase text-7xl sm:text-8xl lg:text-12xl 2xl:text-[5vw] tracking-[-0.05rem] text-white leading-tight lg:leading-[5rem];
+				}
+
+				.paragraph {
+					@apply lg:max-w-4xl mx-auto mb-4 font-OnestRegular leading-normal text-white text-lg text-center;
+				}
+
+				.buttonLink {
+					@apply flex flex-col items-center;
+
+					.link {
+						@apply lg:mt-5 mx-auto lg:mx-0;
+					}
+				}
+			}
+		}
+	}
+}
