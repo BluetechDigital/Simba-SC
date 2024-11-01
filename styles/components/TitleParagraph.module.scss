@@ -24,16 +24,12 @@
 			h4,
 			h5 {
 				font-family: $body;
-				@apply text-xl my-6 py-0 font-OnestBold uppercase tracking-[-0.05rem] border-solid border-l-4 border-primary-two;
-
-				strong {
-					@apply ml-5;
-				}
+				@apply text-xl my-6 pl-5 py-0 font-OnestBold uppercase tracking-[-0.05rem] border-solid border-l-4 border-primary-two;
 			}
 
 			ul,
 			ol {
-				@apply p-4 flex gap-2 sm:px-6 flex-col items-baseline justify-center border-l-2 border-primary-two;
+				@apply p-4 flex gap-2 sm:px-6 flex-col items-baseline justify-center border-l-2 border-grey;
 
 				li {
 					@apply px-2 list-disc text-left ml-4;
