@@ -11,6 +11,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";
+import {INavbar} from "@/types/components";
 import {useState, FC, Fragment} from "react";
 import {useGlobalContext} from "@/context/global";
 import useOnDesktopView from "@/hooks/useOnDesktopView";
@@ -22,7 +23,7 @@ import styles from "@/styles/components/Navbar.module.scss";
 import TopNavigation from "@/components/Global/Navigation/TopNavigation";
 import MegaNavigation from "@/components/Global/Navigation/MegaNavigation";
 
-const Navbar: FC = () => {
+const Navbar: FC<INavbar.IProps> = () => {
 	const globalContext = useGlobalContext();
 
 	// State to track window width and check if on desktop

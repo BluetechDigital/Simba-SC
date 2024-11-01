@@ -256,12 +256,6 @@ export const getAllFlexibleContentComponents = async (
                   								  	}
                   								}
 											}
-											... on ${postTypeFlexibleContent}_FoundationIntro {
-												fieldGroupName
-												displaySection
-												title
-												paragraph
-											}
 											... on ${postTypeFlexibleContent}_TrophyCabinetBanner {
 												fieldGroupName
                   								displaySection
@@ -315,6 +309,14 @@ export const getAllFlexibleContentComponents = async (
             									}
             									displayContentOption
             									displayParagraphColor
+            									displayBackgroundColor
+            								}
+											... on ${postTypeFlexibleContent}_TitleParagraphDynamicColour {
+            									fieldGroupName
+												displaySection
+            									title
+            									paragraph
+            									displayContentColor
             									displayBackgroundColor
             								}
 											... on ${postTypeFlexibleContent}_ClubCardMembershipCta {

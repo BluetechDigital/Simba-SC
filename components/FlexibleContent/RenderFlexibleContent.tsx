@@ -17,7 +17,6 @@ import ContactForm from "@/components/ContactForm/index";
 import TitleParagraph from "@/components/TitleParagraph";
 import LatestNewsGrid from "@/components/LatestNews/index";
 import SocialMediaGrid from "@/components/SocialMediaGrid";
-import FoundationIntro from "@/components/FoundationIntro";
 import NewsletterBanner from "@/components/NewsletterBanner";
 import SimbaTVBanner from "@/components/SimbaTVBanner/index";
 import NewOfficialKitCta from "@/components/NewOfficialKitCta";
@@ -29,6 +28,7 @@ import AboutTheClubGrid from "@/components/AboutSimba/AboutTheClubGrid";
 import LastThreeFixtures from "@/components/Fixtures/LastThreeFixtures";
 import OfficialMembershipsCta from "@/components/OfficialMembershipsCta";
 import ClubPartnersGrid from "@/components/ClubPartners/ClubPartnersGrid";
+import TitleParagraphDynamicColour from "@/components/TitleParagraphDynamicColour";
 
 const RenderFlexibleContent: FC = () => {
 	const pageContextContent = usePageContext();
@@ -44,12 +44,13 @@ const RenderFlexibleContent: FC = () => {
 		[`${FlexibleContent}_VideoBlock`]: VideoBlock,
 		[`${FlexibleContent}_VisitStore`]: VisitStore,
 		[`${FlexibleContent}_ContactForm`]: ContactForm,
+		[`${FlexibleContent}_TitleParagraphDynamicColour`]:
+			TitleParagraphDynamicColour,
 		[`${FlexibleContent}_SimbatvBanner`]: SimbaTVBanner,
 		[`${FlexibleContent}_SponsorsLogos`]: SponsorsLogos,
 		[`${FlexibleContent}_TitleParagraph`]: TitleParagraph,
 		[`${FlexibleContent}_LatestNewsGrid`]: LatestNewsGrid,
 		[`${FlexibleContent}_SocialMediaGrid`]: SocialMediaGrid,
-		[`${FlexibleContent}_FoundationIntro`]: FoundationIntro,
 		[`${FlexibleContent}_AboutTheClubGrid`]: AboutTheClubGrid,
 		[`${FlexibleContent}_NewsletterBanner`]: NewsletterBanner,
 		[`${FlexibleContent}_ClubPartnersGrid`]: ClubPartnersGrid,

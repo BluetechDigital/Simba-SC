@@ -16,10 +16,6 @@ export type IMaintenance = {
 		};
 	};
 };
-export type IMegaNavigation = {
-	menuActive: boolean;
-	setMenuActive: any;
-};
 export type ISmoothScrolling = {
 	children: React.ReactNode;
 };

@@ -14,7 +14,7 @@ import Paragraph from "@/components/Elements/Paragraph";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
-const NewsletterBanner: FC<INewsletterBanner> = ({
+const NewsletterBanner: FC<INewsletterBanner.IProps> = ({
 	title,
 	paragraph,
 	buttonLink,

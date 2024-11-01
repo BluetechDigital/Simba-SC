@@ -5,12 +5,12 @@ import Image from "next/image";
 import dateFormat from "dateformat";
 import {motion} from "framer-motion";
 import {initial, fadeInUp} from "@/animations/animations";
-import {INewsLatestArticles} from "@/types/components/Elements";
+import {IElements} from "@/types/components/Elements";
 
 // Components
 import Paragraph from "@/components/Elements/Paragraph";
 
-const NewsLatestArticles: FC<INewsLatestArticles> = ({
+const NewsLatestArticles: FC<IElements.INewsLatestArticles> = ({
 	slug,
 	date,
 	title,

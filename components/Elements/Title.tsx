@@ -2,10 +2,10 @@
 import {FC} from "react";
 import {motion} from "framer-motion";
 import DOMPurify from "isomorphic-dompurify";
-import {ITitle} from "@/types/components/Elements";
+import {IElements} from "@/types/components/Elements";
 import {fadeIn, initialTwo} from "@/animations/animations";
 
-const Title: FC<ITitle> = ({content, className}) => {
+const Title: FC<IElements.ITitle> = ({content, className, style}) => {
 	/* Sanitize the WYSIWYG title content */
 	function createTitleMarkup(titleContent: string) {
 		return {
@@ -18,8 +18,9 @@ const Title: FC<ITitle> = ({content, className}) => {
 			initial={initialTwo}
 			whileInView={fadeIn}
 			viewport={{once: true}}
-			className={content ? `block ${className}` : `hidden`}
+			style={style ? style : ""}
 			dangerouslySetInnerHTML={createTitleMarkup(content)}
+			className={content ? `block ${className}` : `hidden`}
 		/>
 	);
 };

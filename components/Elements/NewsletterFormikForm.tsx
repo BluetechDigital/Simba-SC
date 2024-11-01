@@ -7,13 +7,13 @@ import React, {useState, FC} from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import {useFormik, Formik, Field, Form} from "formik";
 import {sendNewsletterForm} from "@/lib/newsletterForm";
-import {INewsletterFormikForm} from "@/types/components/Elements";
+import {INewsletterBanner} from "@/types/components";
 import {fadeIn, initial, fadeInUp, initialTwo} from "@/animations/animations";
 
 // Components
 import Paragraph from "@/components/Elements/Paragraph";
 
-const NewsletterFormikForm: FC<INewsletterFormikForm> = ({
+const NewsletterFormikForm: FC<INewsletterBanner.INewsletterFormikForm> = ({
 	formTitle,
 	textarea,
 }) => {

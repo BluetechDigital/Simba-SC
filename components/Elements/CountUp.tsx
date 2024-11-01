@@ -2,11 +2,16 @@
 
 // Imports
 import React, {FC, useEffect, useRef} from "react";
-import {ICountUp} from "@/types/components/Elements";
+import {IElements} from "@/types/components/Elements";
 import {motion, animate, useInView} from "framer-motion";
 import {initialTwo, fadeIn} from "@/animations/animations";
 
-const CountUp: FC<ICountUp> = ({number, suffix, decimals = 0, className}) => {
+const CountUp: FC<IElements.ICountUp> = ({
+	number,
+	suffix,
+	decimals = 0,
+	className,
+}) => {
 	const ref: any = useRef(null);
 	const isInView = useInView(ref);
 

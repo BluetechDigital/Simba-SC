@@ -12,9 +12,9 @@ import {
 } from "@/animations/animations";
 import Link from "next/link";
 import {motion} from "framer-motion";
+import {INavbar} from "@/types/components";
 import {FC, Fragment, useState} from "react";
 import {useGlobalContext} from "@/context/global";
-import {IMegaNavigation} from "@/types/components/Global";
 
 // Styling
 import styles from "@/styles/components/Elements/NavigationMenu.module.scss";
@@ -23,7 +23,10 @@ import styles from "@/styles/components/Elements/NavigationMenu.module.scss";
 import MegaNavVideoWrapper from "@/components/Elements/MegaNavVideoWrapper";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
-const MegaNavigation: FC<IMegaNavigation> = ({menuActive, setMenuActive}) => {
+const MegaNavigation: FC<INavbar.IMegaNavigation> = ({
+	menuActive,
+	setMenuActive,
+}) => {
 	const globalContext = useGlobalContext();
 
 	const [aboutTheClubSublinksOpen, setAboutTheClubSublinksOpen]: any =

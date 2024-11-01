@@ -30,19 +30,6 @@ export type ITitleParagraph = {
 	paragraph: string;
 	displayParagraph: boolean;
 };
-export type IFoundationIntro = {
-	title: string;
-	paragraph: string;
-};
-export type INewsletterBanner = {
-	title: string;
-	paragraph: string;
-	buttonLink: {
-		url: string;
-		title: string;
-		target: string;
-	};
-};
 export type ILastThreeFixtures = {
 	title: string;
 };
@@ -124,6 +111,12 @@ export type IClubCardMembershipCTA = {
 		};
 	};
 };
+export type ITitleParagraphDynamicColour = {
+	title: string;
+	paragraph: string;
+	displayContentColor: string;
+	displayBackgroundColor: string;
+};
 
 export namespace IHero {
 	export type IHero = {
@@ -197,6 +190,16 @@ export namespace IHero {
 				height: number;
 			};
 		};
+	};
+}
+export namespace INavbar {
+	export type IProps = {};
+	export type IMegaNavigation = {
+		menuActive: boolean;
+		setMenuActive: any;
+	};
+	export type IMegaNavVideoWrapper = {
+		children: React.ReactNode;
 	};
 }
 // About Sub & Main Components
@@ -418,6 +421,21 @@ export namespace ISocialMediaGrid {
 		permalink: string;
 		media_type: string;
 		thumbnail_url: string;
+	};
+}
+export namespace INewsletterBanner {
+	export type IProps = {
+		title: string;
+		paragraph: string;
+		buttonLink: {
+			url: string;
+			title: string;
+			target: string;
+		};
+	};
+	export type INewsletterFormikForm = {
+		formTitle: string;
+		textarea: string;
 	};
 }
 export namespace ITitleContentImage {

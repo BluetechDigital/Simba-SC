@@ -3,12 +3,12 @@
 // Imports
 import Link from "next/link";
 import {FC, useEffect, useState} from "react";
-import {IBackButtons} from "@/types/components/Elements";
+import {IElements} from "@/types/components/Elements";
 
 // Styling
 import styles from "@/styles/components/Elements/Buttons.module.scss";
 
-const BackPageButton: FC<IBackButtons.IProps> = ({link}) => {
+const BackPageButton: FC<IElements.IBackButtons.IProps> = ({link}) => {
 	// Background color scroll position change
 	const [scrollPosition, setScrollPosition] = useState(0);
 
