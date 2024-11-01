@@ -28,8 +28,6 @@ const VideoBlock: FC<IVideoBlock.IProps> = ({
 	displayVideo,
 	videoBackgroundImage,
 }) => {
-	console.log(video);
-
 	return (
 		<>
 			<div
@@ -44,7 +42,7 @@ const VideoBlock: FC<IVideoBlock.IProps> = ({
 						variants={stagger}
 						whileInView="animate"
 						viewport={{once: true}}
-						className={displayVideo ? styles.wrapper : "hidden"}
+						className={title || paragraph ? styles.wrapper : "hidden"}
 					>
 						<SlideInXLeftAnimation>
 							<motion.h4
@@ -83,14 +81,14 @@ const VideoBlock: FC<IVideoBlock.IProps> = ({
 						viewport={{once: true}}
 						initial={slideInRightInitial}
 						whileInView={slideInRightFinish}
-						className={`${
-							displayVideo ? "h-fit" : "h-[300px] lg:h-[500px]"
-						} bg-center bg-no-repeat bg-cover mt-6 lg:mt-12 w-full`}
-						style={{
-							backgroundImage: `url("${
-								displayVideo ? "none" : videoBackgroundImage
-							}")`,
-						}}
+						className={
+							displayVideo
+								? `${
+										displayVideo ? "h-fit" : "h-[300px] lg:h-[500px]"
+								  } bg-center bg-no-repeat bg-cover mt-6 lg:mt-12 w-full`
+								: "hidden"
+						}
+						style={{backgroundImage: `url("${videoBackgroundImage}")`}}
 					>
 						<motion.video
 							muted
