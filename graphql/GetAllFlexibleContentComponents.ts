@@ -79,6 +79,15 @@ export const getAllFlexibleContentComponents = async (
 												displaySection
 												title
 												paragraph
+												displayVideo
+												video {
+                  								  	link
+                  								  	title
+                  								  	mediaDetails {
+                  								  	  	height
+                  								  	  	width
+                  								  	}
+                  								}
 												buttonLink {
                 									url
                 									title
@@ -356,6 +365,16 @@ export const getAllFlexibleContentComponents = async (
 												displaySection
             									title
             									paragraph
+												buttonLink {
+                									url
+                									title
+                									target
+                								}
+                								buttonLinkTwo {
+                									url
+                									title
+                									target
+                								}
             									displayContentColor
             									displayBackgroundColor
             								}

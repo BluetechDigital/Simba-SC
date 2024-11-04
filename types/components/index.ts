@@ -114,6 +114,16 @@ export type IClubCardMembershipCTA = {
 export type ITitleParagraphDynamicColour = {
 	title: string;
 	paragraph: string;
+	buttonLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
+	buttonLinkTwo: {
+		url: string;
+		title: string;
+		target: string;
+	};
 	displayContentColor: string;
 	displayBackgroundColor: string;
 };
@@ -211,6 +221,15 @@ export namespace IHero {
 	export type IHeroFour = {
 		title: string;
 		paragraph: string;
+		displayVideo: boolean;
+		video: {
+			link: string;
+			title: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
+		};
 		buttonLink: {
 			url: string;
 			title: string;
@@ -228,6 +247,29 @@ export namespace IHero {
 				width: number;
 				height: number;
 			};
+		};
+	};
+	export type IHeroFourCard = {
+		title: string;
+		paragraph: string;
+		displayVideo: boolean;
+		video: {
+			link: string;
+			title: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
+		};
+		buttonLink: {
+			url: string;
+			title: string;
+			target: string;
+		};
+		buttonLinkTwo: {
+			url: string;
+			title: string;
+			target: string;
 		};
 	};
 }

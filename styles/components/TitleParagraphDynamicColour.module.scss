@@ -19,8 +19,20 @@
 				}
 			}
 
-			.paragraph {
-				@apply max-w-2xl mx-auto lg:mx-0 font-OnestRegular leading-loose text-lg text-center lg:text-left;
+			.leftContent {
+				@apply flex flex-col items-center lg:items-baseline lg:justify-between gap-6;
+
+				.paragraph {
+					@apply max-w-2xl mx-auto lg:mx-0 font-OnestRegular leading-loose text-lg text-center lg:text-left;
+				}
+
+				.buttonSection {
+					@apply max-w-2xl mx-auto lg:mx-0 flex flex-col lg:flex-row gap-2 sm:gap-4;
+
+					.buttonStyling {
+						@apply pt-3 pb-2 px-10 w-fit font-OnestBlack cursor-pointer rounded-full uppercase text-paragraph lg:text-lg text-center border-2 border-solid hover:border-accent-default bg-transparent hover:bg-accent-default transition-all ease-in-out duration-500 #{!important};
+					}
+				}
 			}
 		}
 	}
