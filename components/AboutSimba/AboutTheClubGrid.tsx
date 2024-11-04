@@ -33,9 +33,9 @@ const Card: FC<IAbout.ITheClubCard> = ({
 			>
 				<div className={styles.aboutTheClubCard}>
 					<Image
-						className={styles.image}
 						alt={image?.altText}
 						src={image?.sourceUrl}
+						className={image?.sourceUrl ? styles.image : "hidden"}
 						width={
 							image?.mediaDetails?.width ? image?.mediaDetails?.width : 1000
 						}
@@ -54,8 +54,8 @@ const Card: FC<IAbout.ITheClubCard> = ({
 						</motion.h5>
 						<Paragraph
 							content={
-								paragraph?.length > 100
-									? paragraph?.substring(0, 100) + "..."
+								paragraph?.length > 200
+									? paragraph?.substring(0, 200) + "..."
 									: paragraph
 							}
 							className={styles.paragraph}

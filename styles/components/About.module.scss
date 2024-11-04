@@ -61,7 +61,7 @@
 		@apply xl:max-w-[1700px] mx-auto px-0;
 
 		.gridContent {
-			@apply w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-14 xl:gap-16;
+			@apply w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-14 xl:gap-x-16 xl:gap-y-36;
 
 			.aboutTheClubCard {
 				.image {
@@ -72,7 +72,7 @@
 					@apply h-full flex flex-col items-center lg:items-baseline justify-between gap-3 py-6;
 
 					.title {
-						@apply font-OnestBold text-pureBlack text-lg uppercase tracking-tighter hover:text-primary-default transition-all duration-200 ease-in-out;
+						@apply pl-5 font-OnestBold text-pureBlack text-lg uppercase tracking-tighter border-solid border-l-4 border-tertiary-default hover:text-primary-default transition-all duration-200 ease-in-out;
 					}
 
 					.paragraph {
