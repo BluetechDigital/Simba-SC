@@ -127,6 +127,17 @@ export const getAllFlexibleContentComponents = async (
                   								  	}
                   								}
 											}
+											... on ${postTypeFlexibleContent}_CtaTwo {
+												fieldGroupName
+                  								displaySection
+                  								title
+                  								paragraph
+                  								buttonLink {
+                  								  	url
+                  								  	title
+                  								  	target
+                  								}
+											}
 											... on ${postTypeFlexibleContent}_TitleParagraph {
 												fieldGroupName
 												displaySection

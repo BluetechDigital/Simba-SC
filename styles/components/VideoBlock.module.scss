@@ -12,7 +12,7 @@
 			@apply flex flex-col lg:flex-row items-center justify-between gap-8 w-full;
 
 			.subtitle {
-				@apply mb-2 font-OnestThin text-center lg:text-left uppercase text-medium lg:text-lg tracking-[-0.05rem] text-tertiary-default font-semibold leading-tight;
+				@apply mb-2 font-OnestBold text-center lg:text-left uppercase text-medium lg:text-lg tracking-[-0.05rem] text-tertiary-default font-semibold leading-tight;
 			}
 
 			.title {

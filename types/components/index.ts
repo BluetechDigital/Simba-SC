@@ -146,6 +146,15 @@ export namespace ICTA {
 			};
 		};
 	};
+	export type ICTATwo = {
+		title: string;
+		paragraph: string;
+		buttonLink: {
+			url: string;
+			title: string;
+			target: string;
+		};
+	};
 }
 
 export namespace IHero {

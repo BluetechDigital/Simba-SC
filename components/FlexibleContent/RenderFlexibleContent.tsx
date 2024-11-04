@@ -7,6 +7,7 @@ import {usePageContext} from "@/context/providers/PageContextProvider";
 // Components
 import CTA from "@/components/CTA/Index";
 import Hero from "@/components/Hero/index";
+import CTATwo from "@/components/CTA/CTATwo";
 import HeroTwo from "@/components/Hero/HeroTwo";
 import HeroFour from "@/components/Hero/HeroFour";
 import HeroThree from "@/components/Hero/HeroThree";
@@ -39,6 +40,7 @@ const RenderFlexibleContent: FC = () => {
 	const componentMapping: any = {
 		[`${FlexibleContent}_Cta`]: CTA,
 		[`${FlexibleContent}_Hero`]: Hero,
+		[`${FlexibleContent}_CtaTwo`]: CTATwo,
 		[`${FlexibleContent}_HeroTwo`]: HeroTwo,
 		[`${FlexibleContent}_HeroFour`]: HeroFour,
 		[`${FlexibleContent}_HeroThree`]: HeroThree,
