@@ -48,7 +48,7 @@
 			@apply w-full flex flex-col items-center justify-center gap-8;
 
 			.title {
-				@apply max-w-2xl font-schaboCondensed text-center uppercase text-[12.5vw] sm:text-[10vw] md:text-[5vw] tracking-[-0.05rem] text-white leading-tight xl:leading-[5.5rem];
+				@apply max-w-2xl font-schaboCondensed text-center uppercase text-7xl sm:text-8xl md:text-[5vw] tracking-[-0.05rem] text-white leading-tight xl:leading-[5.5rem];
 
 				span {
 					@apply text-tertiary-default;

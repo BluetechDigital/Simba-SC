@@ -69,7 +69,7 @@
 				}
 
 				.details {
-					@apply h-full flex flex-col items-center lg:items-baseline justify-between gap-3 py-6;
+					@apply w-full h-full flex flex-col items-center lg:items-baseline justify-between gap-3 py-6;
 
 					.title {
 						@apply pl-5 font-OnestBold text-pureBlack text-lg uppercase tracking-tighter border-solid border-l-4 border-tertiary-default hover:text-primary-default transition-all duration-200 ease-in-out;
