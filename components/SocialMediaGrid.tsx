@@ -21,6 +21,7 @@ import Title from "@/components/Elements/Title";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
+/* API ROUTE */
 const Card: FC<ISocialMediaGrid.ICard> = ({
 	index,
 	caption,
@@ -52,8 +53,8 @@ const Card: FC<ISocialMediaGrid.ICard> = ({
 					<div className={styles.card}>
 						<div className={styles.content}>
 							<Image
-								width={550}
-								height={550}
+								width={1000}
+								height={1000}
 								alt="Instagram Posts Icon"
 								src={
 									media_type === "VIDEO"
@@ -92,6 +93,8 @@ const SocialMediaGrid: FC<ISocialMediaGrid.IProps> = ({title}) => {
 					<ContentSliceRevealMaskAnimation>
 						<Title content={title} className={styles.title} />
 					</ContentSliceRevealMaskAnimation>
+
+					{/* API ROUTE */}
 					<div className={styles.instagramFeedCGrid}>
 						{globalContext?.instagramFeed?.length > 0 ? (
 							globalContext?.instagramFeed
