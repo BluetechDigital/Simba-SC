@@ -1,9 +1,5 @@
 // Imports
-import {
-	IYoutubeVideos,
-	IYoutubePlaylists,
-	IYoutubeChannelInfo,
-} from "@/types/api/Youtube/index";
+import {IYoutube} from "@/types/api/Youtube/index";
 
 // YOUTUBE CONTENT (SIMBA SC)
 // Get Youtube Channel
@@ -13,8 +9,9 @@ const youtubeKey = `${process.env.YOUTUBE_KEY}`;
 const youtubeChannelId = `${process.env.YOUTUBE_CHANNEL_ID}`;
 const youtubePlaylistId = `${process.env.YOUTUBE_PLAYLIST_ID}`;
 
+// Get All Youtube Channel Info
 export const getAllYoutubeChannelInfo =
-	async (): Promise<IYoutubeChannelInfo> => {
+	async (): Promise<IYoutube.IYoutubeChannelInfo> => {
 		try {
 			const snippetUrl = `${youtubeAPI}/channels?part=snippet&id=${youtubeChannelId}&key=${youtubeKey}`;
 			const statisticsUrl = `${youtubeAPI}/channels?part=statistics&id=${youtubeChannelId}&key=${youtubeKey}`;
@@ -47,49 +44,51 @@ export const getAllYoutubeChannelInfo =
 	};
 
 // Get All Youtube Playlists
-export const getAllYoutubePlaylists = async (): Promise<IYoutubePlaylists> => {
-	try {
-		return "";
-	} catch (error: unknown) {
-		console.log(error);
-		throw new Error(
-			"Something went wrong trying to fetch youtube playlists content"
-		);
-	}
-};
+export const getAllYoutubePlaylists =
+	async (): Promise<IYoutube.IYoutubePlaylists> => {
+		try {
+			return "";
+		} catch (error: unknown) {
+			console.log(error);
+			throw new Error(
+				"Something went wrong trying to fetch youtube playlists content"
+			);
+		}
+	};
 
 // Get All Youtube Videos
-export const getAllYoutubeVideos = async (): Promise<IYoutubeVideos> => {
-	try {
-		/* IF PLAYLIST ID IIS NEEDED TO BE UPDATED OR FETCHED */
-		// const getPlaylistIdUrl = `${youtubeAPI}/channels?part=contentDetails&id=${youtubeChannelId}&key=${youtubeKey}`;
+export const getAllYoutubeVideos =
+	async (): Promise<IYoutube.IYoutubeVideos> => {
+		try {
+			/* IF PLAYLIST ID IIS NEEDED TO BE UPDATED OR FETCHED */
+			// const getPlaylistIdUrl = `${youtubeAPI}/channels?part=contentDetails&id=${youtubeChannelId}&key=${youtubeKey}`;
 
-		// // Catch Data indefinitely
-		// const relatedPlaylistsData = await fetch(getPlaylistIdUrl, {
-		// 	next: {revalidate: false},
-		// });
+			// // Catch Data indefinitely
+			// const relatedPlaylistsData = await fetch(getPlaylistIdUrl, {
+			// 	next: {revalidate: false},
+			// });
 
-		// const response = await relatedPlaylistsData.json();
+			// const response = await relatedPlaylistsData.json();
 
-		// // Get Playlist Id
-		// const playlistId = youtubePlaylistId;
-		// // const playlistId =
-		// // 	response.items[0].contentDetails?.relatedPlaylists?.uploads;
+			// // Get Playlist Id
+			// const playlistId = youtubePlaylistId;
+			// // const playlistId =
+			// // 	response.items[0].contentDetails?.relatedPlaylists?.uploads;
 
-		const fetchVideosData = `${youtubeAPI}/playlistItems?part=snippet,contentDetails,status&playlistId=${youtubePlaylistId}&key=${youtubeKey}&maxResults=10`;
+			const fetchVideosData = `${youtubeAPI}/playlistItems?part=snippet,contentDetails,status&playlistId=${youtubePlaylistId}&key=${youtubeKey}&maxResults=50`;
 
-		// Catch Data for 1 Hours before refetching
-		const responseVideosData = await fetch(fetchVideosData, {
-			next: {revalidate: 3600},
-		});
+			// Catch Data for 1 Hours before refetching
+			const responseVideosData = await fetch(fetchVideosData, {
+				next: {revalidate: 3600},
+			});
 
-		const videosData = await responseVideosData.json();
+			const videosData = await responseVideosData.json();
 
-		return videosData?.items;
-	} catch (error: unknown) {
-		console.log(error);
-		throw new Error(
-			"Something went wrong trying to fetch youtube videos content"
-		);
-	}
-};
+			return videosData?.items;
+		} catch (error: unknown) {
+			console.log(error);
+			throw new Error(
+				"Something went wrong trying to fetch youtube videos content"
+			);
+		}
+	};

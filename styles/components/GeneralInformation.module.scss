@@ -6,7 +6,7 @@
 	@apply bg-white py-12 px-8 xl:p-24;
 
 	.wrapper {
-		@apply xl:max-w-[1700px] mx-auto px-0 flex flex-col items-center justify-center gap-8;
+		@apply lg:max-w-[1700px] mx-auto px-0 flex flex-col items-center justify-center gap-8;
 
 		.content {
 			@apply pt-24 pb-4 px-8 w-full h-[450px] flex flex-col items-baseline justify-center bg-no-repeat bg-cover bg-center;

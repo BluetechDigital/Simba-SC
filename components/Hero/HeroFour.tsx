@@ -90,12 +90,15 @@ const HeroFour: FC<IHero.IHeroFour> = ({
 	displayVideo,
 	buttonLinkTwo,
 	backgroundImage,
+	displayFullHeight,
 }) => {
 	return (
 		<>
 			<div className={styles.heroFour}>
 				<div
-					className={styles.container}
+					className={
+						styles.container + ` ${displayFullHeight ? "h-[87vh]" : "h-[50vh]"}`
+					}
 					style={{
 						backgroundImage: `linear-gradient(0deg,rgba(0, 0, 0, 0.5),
 						rgba(0, 0, 0, 0.5)),url("${backgroundImage?.sourceUrl}")`,

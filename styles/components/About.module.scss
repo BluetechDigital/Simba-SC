@@ -58,7 +58,7 @@
 	@apply bg-white py-12 px-8 xl:p-24;
 
 	.wrapper {
-		@apply xl:max-w-[1700px] mx-auto px-0;
+		@apply lg:max-w-[1700px] mx-auto px-0;
 
 		.gridContent {
 			@apply w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-14 xl:gap-x-16 xl:gap-y-36;

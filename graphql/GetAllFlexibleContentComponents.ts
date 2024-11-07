@@ -80,6 +80,7 @@ export const getAllFlexibleContentComponents = async (
 												title
 												paragraph
 												displayVideo
+												displayFullHeight
 												video {
                   								  	link
                   								  	title
@@ -286,6 +287,46 @@ export const getAllFlexibleContentComponents = async (
 														width
 													}
 												}
+											}
+											... on ${postTypeFlexibleContent}_LatestVideoBlock {
+												fieldGroupName
+												displaySection
+												title
+												video {
+                  								  	link
+                  								  	title
+                  								  	mediaDetails {
+                  								  	  	height
+                  								  	  	width
+                  								  	}
+                  								}
+												subtitle
+												paragraph
+												displayVideo
+												buttonLink {
+													url
+													title
+													target
+												}
+												displayButtonColor
+												displayContentColor
+												displayBackgroundSvg
+            									displayBackgroundColor
+												videoBackgroundImage {
+													altText
+													sourceUrl
+													mediaDetails {
+														height
+														width
+													}
+												}
+											}
+											... on ${postTypeFlexibleContent}_AllYoutubeVideos {
+											fieldGroupName
+											displaySection
+											title
+											displayContentColor
+											displayBackgroundColor
 											}
 											... on ${postTypeFlexibleContent}_VisitStore {
 												fieldGroupName

@@ -6,7 +6,7 @@
 	@apply bg-white py-12 px-4 lg:px-8 lg:py-24;
 
 	.wrapper {
-		@apply xl:max-w-[1700px] mx-auto px-0 flex flex-col lg:flex-row items-center justify-center gap-8 -m-4;
+		@apply lg:max-w-[1700px] mx-auto px-0 flex flex-col lg:flex-row items-center justify-center gap-8 -m-4;
 
 		.image {
 			@apply w-full h-[350px] lg:h-[700px] object-cover object-center;
@@ -40,7 +40,7 @@
 	@apply bg-lightGreyTwo py-12 pl-8 lg:pb-44 lg:pt-20;
 
 	.container {
-		@apply xl:max-w-[1700px] ml-auto px-0 flex flex-col lg:flex-row items-center justify-center gap-8 -m-4;
+		@apply lg:max-w-[1700px] ml-auto px-0 flex flex-col lg:flex-row items-center justify-center gap-8 -m-4;
 
 		.slide {
 			@apply w-full h-[350px] lg:h-[650px] bg-cover bg-center bg-no-repeat;

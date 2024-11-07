@@ -3,7 +3,7 @@
 @import "../base/colors";
 
 .hero {
-	@apply relative z-50 flex flex-col h-fit pt-[138px] lg:pt-[138px] bg-white;
+	@apply relative z-50 flex flex-col h-fit pt-[138px] bg-white;
 
 	.container {
 		@apply lg:relative flex flex-col;
@@ -71,7 +71,7 @@
 }
 
 .heroTwo {
-	@apply relative z-50 w-full h-fit pt-[138px] lg:pt-[138px] bg-white;
+	@apply relative z-50 w-full h-fit pt-[138px] bg-white;
 
 	.container {
 		@apply py-20 w-full h-[30vh] flex flex-col items-center lg:items-baseline justify-center relative bg-primary-dark bg-center bg-no-repeat bg-cover;
@@ -91,7 +91,7 @@
 }
 
 .heroThree {
-	@apply relative z-50 w-full h-fit pt-[138px] lg:pt-[138px] bg-white;
+	@apply relative z-50 w-full h-fit pt-[138px] bg-white;
 
 	.container {
 		@apply py-20 w-full h-[50vh] flex flex-col items-center lg:items-baseline justify-center relative bg-primary-dark bg-center bg-no-repeat bg-cover;
@@ -123,10 +123,10 @@
 }
 
 .heroFour {
-	@apply relative z-50 w-full h-fit pt-[138px] lg:pt-[138px] bg-white;
+	@apply relative z-50 w-full h-fit pt-[138px] bg-white;
 
 	.container {
-		@apply w-full h-[87vh] relative z-10 flex flex-col items-center justify-center bg-center bg-no-repeat bg-cover;
+		@apply w-full relative z-10 flex flex-col items-center justify-center bg-center bg-no-repeat bg-cover;
 
 		.contentWrapper {
 			@apply sticky w-full h-full m-auto aspect-[9/16] lg:aspect-[16/9];

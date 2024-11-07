@@ -62,6 +62,7 @@ const config: Config = {
 				},
 				tertiary: {
 					default: "#ffb000",
+					light: "#ffca10",
 					two: "#fb8c00",
 					dark: "#91744c",
 				},

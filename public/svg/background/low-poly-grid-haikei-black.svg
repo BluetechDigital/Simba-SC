@@ -1,0 +1,12 @@
+<svg id="visual" viewBox="0 0 960 540" width="960" height="540" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+    <g stroke-width="1" stroke-linejoin="bevel">
+        <path d="M480 270L480 0L0 0Z" fill="#000" stroke="#000"></path>
+        <path d="M0 0L0 270L480 270Z" fill="#000" stroke="#000"></path>
+        <path d="M0 270L0 540L480 270Z" fill="#000" stroke="#000"></path>
+        <path d="M0 540L480 540L480 270Z" fill="#111" stroke="#111"></path>
+        <path d="M960 270L960 0L480 270Z" fill="#000" stroke="#000"></path>
+        <path d="M480 270L960 0L480 0Z" fill="#000" stroke="#000"></path>
+        <path d="M480 540L960 270L480 270Z" fill="#111" stroke="#111"></path>
+        <path d="M480 540L960 540L960 270Z" fill="#000" stroke="#000"></path>
+    </g>
+</svg>

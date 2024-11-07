@@ -22,7 +22,7 @@ const LastThreeFixtures: FC<ILastThreeFixtures> = ({title}) => {
 
 	return (
 		<>
-			<div className="bg-white xl:max-w-[1700px] mx-auto px-0">
+			<div className="bg-white lg:max-w-[1700px] mx-auto px-0">
 				<motion.div
 					initial={initial}
 					whileInView={fadeInUp}

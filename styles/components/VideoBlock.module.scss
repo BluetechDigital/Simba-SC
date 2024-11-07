@@ -6,7 +6,7 @@
 	@apply py-12 px-8 xl:p-24 bg-lightGreyTwo bg-cover bg-center bg-no-repeat;
 
 	.containerWrapper {
-		@apply xl:max-w-[1700px] mx-auto flex flex-col items-center justify-center gap-4 lg:gap-x-4 xl:gap-x-16;
+		@apply lg:max-w-[1700px] mx-auto flex flex-col items-center justify-center gap-4 lg:gap-x-4 xl:gap-x-16;
 
 		.wrapper {
 			@apply flex flex-col lg:flex-row items-center justify-between gap-8 w-full;

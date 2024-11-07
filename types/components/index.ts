@@ -1,5 +1,5 @@
 // Imports
-import {IYoutubeVideos} from "../api/Youtube";
+import {IYoutube} from "../api/Youtube";
 import {MotionProps, Transition, Variant} from "framer-motion";
 
 // Components
@@ -128,6 +128,57 @@ export type ITitleParagraphDynamicColour = {
 	displayBackgroundColor: string;
 };
 
+export namespace IFans {
+	export namespace ILatestVideoBlock {
+		export type IProps = {
+			title: string;
+			video: {
+				link: string;
+				title: string;
+				mediaDetails: {
+					width: number;
+					height: number;
+				};
+			};
+			subtitle: string;
+			paragraph: string;
+			displayVideo: boolean;
+			buttonLink: {
+				url: string;
+				title: string;
+				target: string;
+			};
+			displayButtonColor: string;
+			displayContentColor: string;
+			displayBackgroundSvg: boolean;
+			displayBackgroundColor: string;
+			videoBackgroundImage: {
+				sourceUrl: string;
+			};
+		};
+		export type IVideoWrapper = {
+			children: React.ReactNode;
+		};
+	}
+	export namespace IAllYouTubeVideos {
+		export type IProps = {
+			title: string;
+			displayContentColor: string;
+			displayBackgroundColor: string;
+		};
+		export type ICard = {
+			content: IYoutube.IYoutubeVideos[0][`snippet`];
+		};
+		export type IPagination = {
+			totalPages: number;
+			currentPage: number;
+			handlePrevPage: () => void;
+			handleNextPage: () => void;
+			youtubeVideos: IYoutube.IYoutubeVideos;
+		};
+	}
+}
+
 export namespace ICTA {
 	export type IProps = {
 		title: string;
@@ -222,6 +273,7 @@ export namespace IHero {
 		title: string;
 		paragraph: string;
 		displayVideo: boolean;
+		displayFullHeight: boolean;
 		video: {
 			link: string;
 			title: string;
@@ -485,9 +537,9 @@ export namespace ISimbaTVBanner {
 		paragraph: string;
 	};
 	export type IVideosSlider = {
-		youtubeVideos: IYoutubeVideos;
-		transition?: Transition;
 		activeIndex: number;
+		transition?: Transition;
+		youtubeVideos: IYoutube.IYoutubeVideos;
 		variants?: {enter: Variant; center: Variant; exit: Variant};
 	} & MotionProps;
 }

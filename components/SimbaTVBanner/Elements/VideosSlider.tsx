@@ -83,7 +83,7 @@ const VideosSlider: FC<ISimbaTVBanner.IVideosSlider> = ({
 										>
 											<Link
 												target="_blank"
-												href={`https://www.youtube.com/channel/UC3W0zHzX_Iu3lJ20bOfYUeA/`}
+												href={`https://www.youtube.com/@simbasctanzania255/videos`}
 												aria-label={`${item?.snippet?.channelTitle}: ${item?.snippet?.title}`}
 											>
 												<div

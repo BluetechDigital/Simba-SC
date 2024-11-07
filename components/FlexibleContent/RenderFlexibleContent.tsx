@@ -4,13 +4,21 @@
 import React, {FC, Fragment} from "react";
 import {usePageContext} from "@/context/providers/PageContextProvider";
 
-// Components
+// CTA Components
 import CTA from "@/components/CTA/Index";
-import Hero from "@/components/Hero/index";
 import CTATwo from "@/components/CTA/CTATwo";
+
+// Hero Components
+import Hero from "@/components/Hero/index";
 import HeroTwo from "@/components/Hero/HeroTwo";
 import HeroFour from "@/components/Hero/HeroFour";
 import HeroThree from "@/components/Hero/HeroThree";
+
+// Fans Pages
+import AllYoutubeVideos from "@/components/Fans/AllYouTubeVideos/index";
+import LatestVideoBlock from "@/components/Fans/LatestVideoBlock/index";
+
+// Other Components
 import VideoBlock from "@/components/VideoBlock/index";
 import AboutSimba from "@/components/AboutSimba/index";
 import VisitStore from "@/components/VisitStore/index";
@@ -55,9 +63,11 @@ const RenderFlexibleContent: FC = () => {
 		[`${FlexibleContent}_TitleParagraph`]: TitleParagraph,
 		[`${FlexibleContent}_LatestNewsGrid`]: LatestNewsGrid,
 		[`${FlexibleContent}_SocialMediaGrid`]: SocialMediaGrid,
+		[`${FlexibleContent}_AllYoutubeVideos`]: AllYoutubeVideos,
+		[`${FlexibleContent}_ClubPartnersGrid`]: ClubPartnersGrid,
+		[`${FlexibleContent}_LatestVideoBlock`]: LatestVideoBlock,
 		[`${FlexibleContent}_AboutTheClubGrid`]: AboutTheClubGrid,
 		[`${FlexibleContent}_NewsletterBanner`]: NewsletterBanner,
-		[`${FlexibleContent}_ClubPartnersGrid`]: ClubPartnersGrid,
 		[`${FlexibleContent}_NewOfficialKitCta`]: NewOfficialKitCta,
 		[`${FlexibleContent}_TitleContentImage`]: TitleContentImage,
 		[`${FlexibleContent}_LastThreeFixtures`]: LastThreeFixtures,

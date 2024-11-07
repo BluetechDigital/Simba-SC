@@ -5,13 +5,13 @@ import {
 	IJobsPositions,
 	IThemesOptionsContent,
 } from "@/types/context";
+import {IYoutube} from "@/types/api/Youtube";
 import {IOnlineStore} from "@/types/api/Store";
 import {IFixtures} from "@/types/context/Fixtures";
 import {IInstagramFeed} from "@/types/context/SocialMedia";
 import {ILinks, IMegaMenuLinks} from "@/types/context/Links";
 import {INewsBlogsCaseStudies} from "@/types/context/NewsCaseStudies";
 import {IClubPartnersPostType} from "@/types/components/ClubPartners";
-import {IYoutubeChannelInfo, IYoutubeVideos} from "@/types/api/Youtube";
 
 /* CONTEXT PROVIDERS  */
 export type IPostTypes = {
@@ -76,8 +76,8 @@ export namespace IGlobal {
 		instagramFeed: IInstagramFeed;
 
 		// Youtube Channel Info
-		youtubeVideos: IYoutubeVideos;
-		youtubeChannelInfo: IYoutubeChannelInfo;
+		youtubeVideos: IYoutube.IYoutubeVideos;
+		youtubeChannelInfo: IYoutube.IYoutubeChannelInfo;
 
 		// Football Fixtures
 		lastThreeFixtures: IFixtures;
