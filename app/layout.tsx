@@ -35,6 +35,7 @@ import {getAllInstagramFeedContent} from "@/functions/SocialMedia/InstagramFeed"
 import {
 	getAllYoutubeVideos,
 	getAllYoutubeChannelInfo,
+	getAllYoutubePlaylists,
 } from "@/functions/YouTube/GetAllYoutubeContent";
 
 // News, Blogs & Case Studies

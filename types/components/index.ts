@@ -166,6 +166,7 @@ export namespace IFans {
 			title: string;
 		};
 		export type ICard = {
+			videoId: IYoutube.IYoutubeVideos[0][`videoId`];
 			snippet: IYoutube.IYoutubeVideos[0][`snippet`];
 			statistics: IYoutube.IYoutubeVideos[0][`statistics`];
 		};

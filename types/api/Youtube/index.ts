@@ -15,7 +15,6 @@ export namespace IYoutube {
 			};
 		};
 	}[];
-
 	export type IYoutubeChannelInfo = {
 		title: string;
 		description: string;
@@ -39,11 +38,14 @@ export namespace IYoutube {
 		hiddenSubscriberCount: boolean;
 		videoCount: string;
 	};
-	export type IYoutubePlaylists = any;
+	export type IYoutubePlaylists = {
+		id: string;
+	}[];
 	export type IYoutubeVideos = {
 		kind: string;
 		etag: string;
 		id: string;
+		videoId: string;
 		snippet: {
 			publishedAt: string;
 			channelId: string;
