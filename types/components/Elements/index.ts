@@ -16,6 +16,11 @@ export namespace IElements {
 		decimals?: number;
 		className: string;
 	};
+	export type IFormatNumber = {
+		number: string;
+		decimals: number;
+		className: string;
+	};
 	export namespace IBackButtons {
 		export type IProps = {
 			link: string;

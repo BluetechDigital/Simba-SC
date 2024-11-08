@@ -30,7 +30,7 @@ const CountUp: FC<IElements.ICountUp> = ({
 		if (!isInView) return;
 
 		animate(0, Number(number), {
-			duration: 2.5,
+			duration: 1.5,
 			onUpdate(value) {
 				if (!ref.current) return;
 
@@ -51,7 +51,13 @@ const CountUp: FC<IElements.ICountUp> = ({
 				className={className}
 			>
 				<span ref={ref}></span>
-				{suffix ? suffix : <></>}
+				{suffix ? (
+					<>
+						<span className="pl-1">{suffix}</span>
+					</>
+				) : (
+					<></>
+				)}
 			</motion.h4>
 		</>
 	);

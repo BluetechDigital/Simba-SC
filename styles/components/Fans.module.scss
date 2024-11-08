@@ -91,14 +91,14 @@
 				@apply w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 py-6 gap-44 sm:gap-6 lg:gap-6;
 
 				.card {
-					@apply p-4 w-full min-h-[350px] lg:min-h-[335px] flex flex-col items-center justify-between rounded-md bg-tertiary-light hover:bg-primary-default transition-all duration-500 ease-in-out;
+					@apply p-4 w-full min-h-[350px] lg:min-h-[370px] flex flex-col items-center justify-between rounded-md bg-tertiary-light hover:bg-primary-default transition-all duration-500 ease-in-out;
 
 					.image {
 						@apply w-full h-[200px] md:h-[150px] object-cover object-center;
 					}
 
 					.content {
-						@apply py-6 px-4 w-full h-full flex flex-col gap-4 justify-between;
+						@apply pt-6 pb-4 px-2 w-full h-full flex flex-col justify-between gap-4;
 
 						.title {
 							@apply font-OnestBold text-left uppercase text-sm sm:text-tiny tracking-[-0.05rem] leading-tight;
@@ -112,10 +112,11 @@
 							@apply flex items-center justify-between gap-4;
 
 							.publishedViews {
-								@apply flex items-center justify-between gap-2;
+								@apply flex flex-col gap-2;
 
 								.date,
-								.views {
+								.views,
+								.likeCount {
 									@apply font-OnestRegular text-left text-sm sm:text-tiny tracking-[-0.05rem] leading-tight;
 								}
 
@@ -123,13 +124,27 @@
 									@apply pr-2 border-r-[1px] border-solid;
 								}
 
-								.views {
+								.views,
+								.likeCount {
 									@apply font-OnestBold tracking-normal;
+								}
+
+								.likeCountStats {
+									@apply flex items-center justify-start gap-4;
+
+									.items {
+										@apply flex gap-2;
+
+										.likeCountSvg,
+										.commentCountSvg {
+											@apply w-full h-[15px] object-contain object-center;
+										}
+									}
 								}
 							}
 
 							.svg {
-								@apply w-full h-[35px] object-contain object-center;
+								@apply w-full h-[50px] object-contain object-center;
 							}
 						}
 					}
