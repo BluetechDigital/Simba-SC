@@ -41,54 +41,43 @@ export namespace IYoutube {
 	};
 	export type IYoutubePlaylists = any;
 	export type IYoutubeVideos = {
+		kind: string;
+		etag: string;
+		id: string;
 		snippet: {
-			title: string;
-			position: number;
-			channelId: string;
-			playlistId: string;
 			publishedAt: string;
+			channelId: string;
+			title: string;
 			description: string;
-			channelTitle: string;
 			thumbnails: {
-				default: {
-					url: string;
-					width: number;
-					height: number;
-				};
-				medium: {
-					url: string;
-					width: number;
-					height: number;
-				};
-				high: {
-					url: string;
-					width: number;
-					height: number;
-				};
-				standard: {
-					url: string;
-					width: number;
-					height: number;
-				};
-				maxres: {
-					url: string;
-					width: number;
-					height: number;
-				};
+				default: {url: string; width: number; height: number};
+				medium: {url: string; width: number; height: number};
+				high: {url: string; width: number; height: number};
+				[key: string]: {url: string; width: number; height: number} | undefined;
 			};
-			resourceId: {
-				kind: string;
-				videoId: string;
+			channelTitle: string;
+			tags?: string[];
+			categoryId: string;
+			liveBroadcastContent: string;
+			localized: {
+				title: string;
+				description: string;
 			};
-			videoOwnerChannelId: string;
-			videoOwnerChannelTitle: string;
-		};
-		contentDetails: {
-			videoId: string;
-			videoPublishedAt: string;
+			defaultAudioLanguage?: string;
 		};
 		status: {
+			uploadStatus: string;
 			privacyStatus: string;
+			license: string;
+			embeddable: boolean;
+			publicStatsViewable: boolean;
+			madeForKids: boolean;
+		};
+		statistics: {
+			viewCount: string;
+			likeCount: string;
+			favoriteCount: string;
+			commentCount: string;
 		};
 	}[];
 }

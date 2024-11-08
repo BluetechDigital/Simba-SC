@@ -35,7 +35,7 @@ const Card: FC<IFans.IAllYouTubeVideos.ICard> = ({content}) => {
 				<div className={styles.card + ` group`}>
 					<Image
 						className={styles.image}
-						src={content?.thumbnails?.maxres?.url}
+						src={content?.thumbnails?.high?.url}
 						alt={`${content?.channelTitle}: ${content?.title}`}
 						width={
 							content?.thumbnails?.maxres?.width
@@ -105,11 +105,11 @@ const Card: FC<IFans.IAllYouTubeVideos.ICard> = ({content}) => {
 									viewBox="0 0 472.615 472.615"
 									xmlns="http://www.w3.org/2000/svg"
 								>
-									<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+									<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
 									<g
 										id="SVGRepo_tracerCarrier"
-										stroke-linecap="round"
-										stroke-linejoin="round"
+										strokeLinecap="round"
+										strokeLinejoin="round"
 									></g>
 									<g id="SVGRepo_iconCarrier">
 										<g>

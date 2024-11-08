@@ -75,6 +75,11 @@ export const getAllYoutubeVideos =
 			// // const playlistId =
 			// // 	response.items[0].contentDetails?.relatedPlaylists?.uploads;
 
+			// YouTube Videos ID Data
+			const youtubeVideosID: {videoId: string}[] = [];
+			const youtubeVideosFullData: any[] = [];
+
+			// Fetch YouTube Playlist Data
 			const fetchVideosData = `${youtubeAPI}/playlistItems?part=snippet,contentDetails,status&playlistId=${youtubePlaylistId}&key=${youtubeKey}&maxResults=50`;
 
 			// Catch Data for 1 Hours before refetching
@@ -82,13 +87,39 @@ export const getAllYoutubeVideos =
 				next: {revalidate: 3600},
 			});
 
-			const videosData = await responseVideosData.json();
+			// Playlist Videos Data
+			const playlistVideosData = await responseVideosData.json();
 
-			return videosData?.items;
+			// Collect Video IDs from playlist data into a new array
+			playlistVideosData?.items?.forEach((item: any) => {
+				const object = {
+					videoId: `${item?.contentDetails?.videoId}`,
+				};
+				youtubeVideosID.push(object);
+			});
+
+			// Fetch YouTube Videos Full Data via Video IDs
+			const fetchPromises = youtubeVideosID.map(async (item) => {
+				const fetchVideosFullData = `${youtubeAPI}/videos?part=statistics,snippet,status&id=${item.videoId}&key=${youtubeKey}&maxResults=1`;
+
+				// Cache Data for 1 hour before refetching
+				const responseVideosData = await fetch(fetchVideosFullData, {
+					next: {revalidate: 3600},
+				});
+
+				const videosFullData = await responseVideosData.json();
+				return videosFullData.items; // Assuming 'items' contains the relevant data
+			});
+
+			// Wait until all fetches are completed and flatten the results
+			const fetchedDataArray = await Promise.all(fetchPromises);
+			fetchedDataArray.forEach((data) => youtubeVideosFullData.push(...data));
+
+			return youtubeVideosFullData;
 		} catch (error: unknown) {
-			console.log(error);
+			console.error(error);
 			throw new Error(
-				"Something went wrong trying to fetch youtube videos content"
+				"Something went wrong trying to fetch YouTube videos content"
 			);
 		}
 	};

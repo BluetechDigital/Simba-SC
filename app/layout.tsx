@@ -33,8 +33,8 @@ import {getAllInstagramFeedContent} from "@/functions/SocialMedia/InstagramFeed"
 
 // Youtube Channel Info
 import {
-	getAllYoutubeChannelInfo,
 	getAllYoutubeVideos,
+	getAllYoutubeChannelInfo,
 } from "@/functions/YouTube/GetAllYoutubeContent";
 
 // News, Blogs & Case Studies

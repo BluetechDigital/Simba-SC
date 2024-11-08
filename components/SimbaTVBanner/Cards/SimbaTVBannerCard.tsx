@@ -91,8 +91,8 @@ const SimbaTVBannerCard: FC<ISimbaTVBanner.ICard> = ({contentOptions}) => {
 					<VideosSlider
 						activeIndex={activeIndex}
 						variants={variantsAnimations}
-						youtubeVideos={globalContext?.youtubeVideos}
 						transition={{duration: 0.7, ease: "easeInOut"}}
+						youtubeVideos={globalContext?.youtubeVideos}
 					/>
 				</div>
 			</ScrollYProgressReveal>
