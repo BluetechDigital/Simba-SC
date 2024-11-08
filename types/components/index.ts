@@ -1,4 +1,5 @@
 // Imports
+import {Dispatch, SetStateAction} from "react";
 import {IYoutube} from "../api/Youtube";
 import {MotionProps, Transition, Variant} from "framer-motion";
 
@@ -163,18 +164,16 @@ export namespace IFans {
 	export namespace IAllYouTubeVideos {
 		export type IProps = {
 			title: string;
-			displayContentColor: string;
-			displayBackgroundColor: string;
 		};
 		export type ICard = {
 			content: IYoutube.IYoutubeVideos[0][`snippet`];
 		};
+		export type IVideosGrid = {};
 		export type IPagination = {
 			totalPages: number;
 			currentPage: number;
-			handlePrevPage: () => void;
-			handleNextPage: () => void;
 			youtubeVideos: IYoutube.IYoutubeVideos;
+			setCurrentPage: Dispatch<SetStateAction<number>>;
 		};
 	}
 }

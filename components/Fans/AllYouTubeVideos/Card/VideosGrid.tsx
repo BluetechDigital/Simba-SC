@@ -129,7 +129,7 @@ const Card: FC<IFans.IAllYouTubeVideos.ICard> = ({content}) => {
 };
 
 // Main Content
-const VideosGrid: FC = () => {
+const VideosGrid: FC<IFans.IAllYouTubeVideos.IVideosGrid> = ({}) => {
 	const globalContext = useGlobalContext();
 
 	const itemsPerPage = 20;
@@ -146,21 +146,9 @@ const VideosGrid: FC = () => {
 		globalContext?.youtubeVideos?.length / itemsPerPage
 	);
 
-	const handleNextPage = () => {
-		if (currentPage < totalPages) {
-			setCurrentPage(currentPage + 1);
-		}
-	};
-
-	const handlePrevPage = () => {
-		if (currentPage > 1) {
-			setCurrentPage(currentPage - 1);
-		}
-	};
-
 	return (
 		<>
-			<div className={styles.videosGrid}>
+			<div className={styles.videosGrid} id="videosGrid">
 				<div className={styles.mainContent}>
 					{currentContent?.length > 0 ? (
 						currentContent?.map((item: any, index: number) => (
@@ -186,8 +174,7 @@ const VideosGrid: FC = () => {
 				<Pagination
 					totalPages={totalPages}
 					currentPage={currentPage}
-					handlePrevPage={handlePrevPage}
-					handleNextPage={handleNextPage}
+					setCurrentPage={setCurrentPage}
 					youtubeVideos={globalContext?.youtubeVideos}
 				/>
 			</div>
@@ -230,9 +217,37 @@ const Pagination: FC<IFans.IAllYouTubeVideos.IPagination> = ({
 	totalPages,
 	currentPage,
 	youtubeVideos,
-	handlePrevPage,
-	handleNextPage,
+	setCurrentPage,
 }) => {
+	const handleNextPage = () => {
+		if (currentPage < totalPages) {
+			setCurrentPage(currentPage + 1);
+			scrollIntoView();
+		}
+	};
+
+	const handlePrevPage = () => {
+		if (currentPage > 1) {
+			setCurrentPage(currentPage - 1);
+			scrollIntoView();
+		}
+	};
+
+	/* Scroll to the top of the component each time the page changes */
+	const scrollIntoView = () => {
+		const element = document.getElementById("videosGrid");
+		if (element) {
+			element.scrollIntoView({behavior: "smooth", block: "start"});
+
+			// Add a slight delay to ensure scrollIntoView finishes
+			setTimeout(() => {
+				const extraOffset = -500; // Adjust this value for more or less negative margin
+				const scrollPosition = window.scrollY + extraOffset;
+				window.scrollTo({top: scrollPosition, behavior: "smooth"});
+			}, 300); // Adjust delay if necessary
+		}
+	};
+
 	return (
 		<div className={styles.pagination}>
 			{totalPages > 1 && youtubeVideos?.length > 0 ? (

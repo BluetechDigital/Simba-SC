@@ -3,7 +3,7 @@
 @import "../base/colors";
 
 .latestVideoBlock {
-	@apply py-12 px-8 pt-[14.5rem] bg-cover bg-center bg-no-repeat;
+	@apply py-12 px-8 lg:py-24 bg-cover bg-center bg-no-repeat;
 
 	.containerWrapper {
 		@apply lg:max-w-[1700px] mx-auto flex flex-col items-center justify-center gap-4 lg:gap-x-4 xl:gap-x-16;
@@ -67,7 +67,7 @@
 }
 
 .allYouTubeVideos {
-	@apply px-8 py-12 lg:py-24 lg:px-10 h-full min-h-screen bg-cover bg-center bg-no-repeat;
+	@apply px-8 py-12 lg:pb-24 lg:px-10 pt-[14rem] h-full min-h-screen bg-cover bg-center bg-no-repeat;
 
 	.container {
 		@apply lg:max-w-[1700px] mx-auto flex flex-col gap-12;
@@ -76,7 +76,7 @@
 			@apply flex flex-col w-full xl:w-1/3 mx-0;
 
 			.title {
-				@apply my-2 max-w-3xl mx-auto lg:mx-0 font-OnestBlack text-center lg:text-left uppercase text-3xl sm:text-4xl lg:text-5xl tracking-[-0.05rem] leading-tight;
+				@apply my-2 max-w-3xl mx-auto lg:mx-0 font-schaboCondensed text-pureBlack text-center lg:text-left uppercase text-7xl sm:text-8xl lg:text-12xl tracking-[-0.05rem] leading-tight xl:leading-[5.5rem];
 
 				span {
 					@apply text-tertiary-default;
@@ -159,11 +159,11 @@
 					@apply mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 lg:gap-6;
 
 					.pageNumber {
-						@apply font-OnestBlack m-auto text-center text-paragraph lg:text-lg uppercase text-white tracking-[0.05rem] leading-tight;
+						@apply font-OnestBlack m-auto text-pureBlack text-center text-paragraph lg:text-lg uppercase tracking-[0.05rem] leading-tight;
 					}
 
 					.buttonStyling {
-						@apply relative mx-auto lg:mx-0 pt-3 pb-2 px-10 w-fit font-OnestBlack cursor-pointer rounded-full uppercase text-white text-paragraph lg:text-lg text-center border-2 border-solid border-white hover:border-primary-default hover:bg-primary-default transition-all duration-500 ease-in-out;
+						@apply relative mx-auto lg:mx-0 pt-3 pb-2 px-10 w-fit font-OnestBlack cursor-pointer rounded-full uppercase text-paragraph lg:text-lg text-pureBlack text-center border-2 border-solid border-pureBlack hover:text-white hover:border-primary-default hover:bg-primary-default transition-all duration-500 ease-in-out #{!important};
 					}
 				}
 			}

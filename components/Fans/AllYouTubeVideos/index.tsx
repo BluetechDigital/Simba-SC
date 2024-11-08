@@ -11,18 +11,13 @@ import styles from "@/styles/components/Fans.module.scss";
 import Title from "@/components/Elements/Title";
 import VideosGrid from "@/components/Fans/AllYouTubeVideos/Card/VideosGrid";
 
-const AllYouTubeVideos: FC<IFans.IAllYouTubeVideos.IProps> = ({
-	title,
-	displayContentColor,
-	displayBackgroundColor,
-}) => {
+const AllYouTubeVideos: FC<IFans.IAllYouTubeVideos.IProps> = ({title}) => {
 	return (
 		<>
 			<div
 				className={styles.allYouTubeVideos}
 				style={{
-					backgroundColor: displayBackgroundColor,
-					backgroundImage: `url("/svg/background/low-poly-grid-haikei-black.svg")`,
+					backgroundImage: `url("/svg/background/low-poly-grid-haikei-red-white.svg")`,
 				}}
 			>
 				<div className={styles.container}>
@@ -32,11 +27,7 @@ const AllYouTubeVideos: FC<IFans.IAllYouTubeVideos.IProps> = ({
 						whileInView={slideInRightFinish}
 						className={title ? styles.topSection : "hidden"}
 					>
-						<Title
-							content={title}
-							className={styles.title}
-							style={{color: displayContentColor}}
-						/>
+						<Title content={title} className={styles.title} />
 					</motion.div>
 					<VideosGrid />
 				</div>

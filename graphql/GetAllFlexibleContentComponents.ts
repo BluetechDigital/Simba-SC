@@ -325,8 +325,6 @@ export const getAllFlexibleContentComponents = async (
 											fieldGroupName
 											displaySection
 											title
-											displayContentColor
-											displayBackgroundColor
 											}
 											... on ${postTypeFlexibleContent}_VisitStore {
 												fieldGroupName
