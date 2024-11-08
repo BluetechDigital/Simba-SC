@@ -53,17 +53,17 @@ export const getAllYoutubePlaylists =
 			const getPlaylistIdUrl = `${youtubeAPI}/playlists?part=snippet&channelId=${youtubeChannelId}&key=${youtubeKey}`;
 
 			// Cache Data for 24 Hours before refetching
-			// const relatedPlaylistsData = await fetch(getPlaylistIdUrl, {
-			// 	next: {revalidate: 86400},
-			// });
+			const relatedPlaylistsData = await fetch(getPlaylistIdUrl, {
+				next: {revalidate: 86400},
+			});
 
-			// const response = await relatedPlaylistsData.json();
+			const response = await relatedPlaylistsData.json();
 
-			// // Collect Video IDs from playlist data
-			// response?.items?.forEach((item: any) => {
-			// 	const object = {id: item?.id};
-			// 	playlistIDData.push(object);
-			// });
+			// Collect Video IDs from playlist data
+			response?.items?.forEach((item: any) => {
+				const object = {id: item?.id};
+				playlistIDData.push(object);
+			});
 
 			return playlistIDData;
 		} catch (error: unknown) {

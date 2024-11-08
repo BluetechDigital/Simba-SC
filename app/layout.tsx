@@ -71,6 +71,7 @@ const App = async ({children}: AppProps | any) => {
 	// PUBLIC PAGES //
 	/* Fetch all global content
 	remaining content simultaneously */
+
 	const promises: Promise<any>[] = [
 		getAllTestimonialsContent(),
 		getAllJobsPositionsContent(),

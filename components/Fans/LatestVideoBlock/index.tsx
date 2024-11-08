@@ -18,6 +18,7 @@ import styles from "@/styles/components/Fans.module.scss";
 // Components
 import Title from "@/components/Elements/Title";
 import Paragraph from "@/components/Elements/Paragraph";
+import LatestVideoBlockCard from "@/components/Fans/LatestVideoBlock/Card/Card";
 
 const LatestVideoBlock: FC<IFans.ILatestVideoBlock.IProps> = ({
 	title,
@@ -101,35 +102,40 @@ const LatestVideoBlock: FC<IFans.ILatestVideoBlock.IProps> = ({
 								displayVideo
 									? styles.rightSection +
 									  ` ${displayVideo ? "h-fit" : "h-[300px] lg:h-[300px]"}`
-									: "hidden"
+									: styles.rightSection
 							}
-							style={{backgroundImage: `url("${videoBackgroundImage}")`}}
 						>
-							<motion.video
-								muted
-								autoPlay
-								loop={true}
-								controls={false}
-								playsInline
-								controlsList="nofullscreen"
-								aria-label={`Video Element: ${video?.title}`}
-								className={displayVideo ? styles.video : "hidden"}
-							>
-								<source
-									src={video?.link}
-									type="video/mp4"
-									width={
-										video?.mediaDetails?.width
-											? video?.mediaDetails?.width
-											: 550
-									}
-									height={
-										video?.mediaDetails?.height
-											? video?.mediaDetails?.height
-											: 550
-									}
-								/>
-							</motion.video>
+							{displayVideo ? (
+								<>
+									<motion.video
+										muted
+										autoPlay
+										loop={true}
+										controls={false}
+										playsInline
+										controlsList="nofullscreen"
+										aria-label={`Video Element: ${video?.title}`}
+										className={displayVideo ? styles.video : "hidden"}
+									>
+										<source
+											src={video?.link}
+											type="video/mp4"
+											width={
+												video?.mediaDetails?.width
+													? video?.mediaDetails?.width
+													: 550
+											}
+											height={
+												video?.mediaDetails?.height
+													? video?.mediaDetails?.height
+													: 550
+											}
+										/>
+									</motion.video>
+								</>
+							) : (
+								<LatestVideoBlockCard />
+							)}
 						</motion.div>
 					</motion.div>
 				</div>

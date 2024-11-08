@@ -62,6 +62,43 @@
 			.video {
 				@apply w-full h-full max-h-[500px] object-cover object-center;
 			}
+
+			.card {
+				@apply w-full h-full min-h-[350px] lg:min-h-[450px] overflow-hidden py-8 px-4 xl:p-8 bg-no-repeat bg-cover bg-center flex flex-col items-baseline justify-end;
+
+				.wrapper {
+					@apply max-w-xs mx-0 flex flex-col items-baseline gap-2;
+
+					.date {
+						@apply font-OnestRegular font-normal text-white text-tiny text-left;
+					}
+
+					.div {
+						@apply h-[2.5px] bg-primary-default w-full;
+					}
+
+					.title {
+						@apply font-OnestBlack text-left uppercase text-base tracking-[-0.02rem] text-white font-semibold leading-4;
+					}
+
+					.likeCountStats {
+						@apply mt-2 flex items-center justify-start gap-4;
+
+						.items {
+							@apply flex gap-2;
+
+							.likeCount {
+								@apply font-OnestRegular text-left text-base sm:text-paragraph tracking-[-0.05rem] leading-tight;
+							}
+
+							.likeCountSvg,
+							.commentCountSvg {
+								@apply w-full h-[20px] fill-white object-contain object-center;
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }
