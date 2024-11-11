@@ -104,6 +104,9 @@ const LatestVideoBlock: FC<IFans.ILatestVideoBlock.IProps> = ({
 									  ` ${displayVideo ? "h-fit" : "h-[300px] lg:h-[300px]"}`
 									: styles.rightSection
 							}
+							style={{
+								backgroundImage: `url("${videoBackgroundImage}")`,
+							}}
 						>
 							{displayVideo ? (
 								<>
