@@ -167,7 +167,7 @@
 								}
 
 								.likeCountStats {
-									@apply flex items-center justify-start gap-4;
+									@apply flex items-baseline justify-start gap-4;
 
 									.items {
 										@apply flex items-start justify-start gap-2;
