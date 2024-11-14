@@ -178,6 +178,38 @@ export namespace IFans {
 			setCurrentPage: Dispatch<SetStateAction<number>>;
 		};
 	}
+
+	export namespace IAllPodcastsVideos {
+		export type IProps = {
+			title: string;
+			cta: {
+				text: string;
+				link: {
+					url: string;
+					title: string;
+					target: string;
+				};
+			};
+		};
+		export type IPodcastsVideosGrid = {
+			cta: IProps[`cta`];
+		};
+		export type IRecommendations = {
+			cta: IProps[`cta`];
+		};
+		export type ICard = {
+			index: number;
+			videoId: IYoutube.IYoutubeVideos[0][`videoId`];
+			snippet: IYoutube.IYoutubeVideos[0][`snippet`];
+			statistics: IYoutube.IYoutubeVideos[0][`statistics`];
+		};
+		export type IPagination = {
+			totalPages: number;
+			currentPage: number;
+			youtubeVideos: IYoutube.IYoutubeVideos;
+			setCurrentPage: Dispatch<SetStateAction<number>>;
+		};
+	}
 }
 
 export namespace ICTA {

@@ -17,6 +17,7 @@ import HeroThree from "@/components/Hero/HeroThree";
 // Fans Pages
 import AllYoutubeVideos from "@/components/Fans/AllYouTubeVideos/index";
 import LatestVideoBlock from "@/components/Fans/LatestVideoBlock/index";
+import AllPodcastsVideos from "@/components/Fans/AllPodcastsVideos/index";
 
 // Other Components
 import VideoBlock from "@/components/VideoBlock/index";
@@ -46,12 +47,17 @@ const RenderFlexibleContent: FC = () => {
 
 	// Components Key Value Pairs
 	const componentMapping: any = {
+		// CTA Components
 		[`${FlexibleContent}_Cta`]: CTA,
-		[`${FlexibleContent}_Hero`]: Hero,
 		[`${FlexibleContent}_CtaTwo`]: CTATwo,
+
+		// Hero Components
+		[`${FlexibleContent}_Hero`]: Hero,
 		[`${FlexibleContent}_HeroTwo`]: HeroTwo,
 		[`${FlexibleContent}_HeroFour`]: HeroFour,
 		[`${FlexibleContent}_HeroThree`]: HeroThree,
+
+		// Other Components
 		[`${FlexibleContent}_AboutSimba`]: AboutSimba,
 		[`${FlexibleContent}_VideoBlock`]: VideoBlock,
 		[`${FlexibleContent}_VisitStore`]: VisitStore,
@@ -63,9 +69,7 @@ const RenderFlexibleContent: FC = () => {
 		[`${FlexibleContent}_TitleParagraph`]: TitleParagraph,
 		[`${FlexibleContent}_LatestNewsGrid`]: LatestNewsGrid,
 		[`${FlexibleContent}_SocialMediaGrid`]: SocialMediaGrid,
-		[`${FlexibleContent}_AllYoutubeVideos`]: AllYoutubeVideos,
 		[`${FlexibleContent}_ClubPartnersGrid`]: ClubPartnersGrid,
-		[`${FlexibleContent}_LatestVideoBlock`]: LatestVideoBlock,
 		[`${FlexibleContent}_AboutTheClubGrid`]: AboutTheClubGrid,
 		[`${FlexibleContent}_NewsletterBanner`]: NewsletterBanner,
 		[`${FlexibleContent}_NewOfficialKitCta`]: NewOfficialKitCta,
@@ -75,6 +79,11 @@ const RenderFlexibleContent: FC = () => {
 		[`${FlexibleContent}_TrophyCabinetBanner`]: TrophyCabinetBanner,
 		[`${FlexibleContent}_ClubCardMembershipCta`]: ClubCardMembershipCTA,
 		[`${FlexibleContent}_OfficialMembershipsCta`]: OfficialMembershipsCta,
+
+		// Fans Pages
+		[`${FlexibleContent}_AllYoutubeVideos`]: AllYoutubeVideos,
+		[`${FlexibleContent}_LatestVideoBlock`]: LatestVideoBlock,
+		[`${FlexibleContent}_AllPodcastsVideos`]: AllPodcastsVideos,
 	};
 
 	return (

@@ -322,9 +322,22 @@ export const getAllFlexibleContentComponents = async (
 												}
 											}
 											... on ${postTypeFlexibleContent}_AllYoutubeVideos {
-											fieldGroupName
-											displaySection
-											title
+												fieldGroupName
+												displaySection
+												title
+											}
+											... on ${postTypeFlexibleContent}_AllPodcastsVideos {
+												fieldGroupName
+												displaySection
+												title
+												cta {
+													text
+													link {
+														url
+														title
+														target
+													}
+												}
 											}
 											... on ${postTypeFlexibleContent}_VisitStore {
 												fieldGroupName
