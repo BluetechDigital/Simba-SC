@@ -104,7 +104,7 @@ const VideosSlider: FC<ISimbaTVBanner.IVideosSlider> = ({
 														>
 															{dateFormat(
 																item?.snippet?.publishedAt,
-																"dddd, mmmm d, yyyy"
+																"mmmm d, yyyy"
 															)}
 														</motion.span>
 														<span className={styles.div}></span>
