@@ -170,7 +170,7 @@
 									@apply flex items-baseline justify-start gap-4;
 
 									.items {
-										@apply flex items-start justify-start gap-2;
+										@apply flex gap-2;
 
 										.likeCountSvg,
 										.commentCountSvg {
