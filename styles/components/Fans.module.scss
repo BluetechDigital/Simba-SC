@@ -170,11 +170,11 @@
 									@apply flex items-center justify-start gap-4;
 
 									.items {
-										@apply flex gap-2;
+										@apply flex items-start justify-start gap-2;
 
 										.likeCountSvg,
 										.commentCountSvg {
-											@apply w-full h-[15px] object-contain object-center;
+											@apply w-fit h-[15px] object-contain object-center;
 										}
 									}
 								}

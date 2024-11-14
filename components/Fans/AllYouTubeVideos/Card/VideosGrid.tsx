@@ -41,7 +41,7 @@ const Card: FC<IFans.IAllYouTubeVideos.ICard> = ({
 				<div className={styles.card + ` group`}>
 					<Image
 						className={styles.image}
-						src={`${snippet?.thumbnails?.maxres?.url}`}
+						src={`${snippet?.thumbnails?.high?.url}`}
 						alt={`${snippet?.channelTitle}: ${snippet?.title}`}
 						width={
 							snippet?.thumbnails?.maxres?.width
@@ -239,7 +239,6 @@ const Card: FC<IFans.IAllYouTubeVideos.ICard> = ({
 							</div>
 							<div>
 								<svg
-									fill="#000000"
 									viewBox="0 0 32 32"
 									xmlns="http://www.w3.org/2000/svg"
 									className={

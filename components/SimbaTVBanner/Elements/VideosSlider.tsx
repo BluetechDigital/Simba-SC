@@ -76,7 +76,7 @@ const VideosSlider: FC<ISimbaTVBanner.IVideosSlider> = ({
 											viewport={{once: true}}
 											variants={arrayLoopStaggerChildren}
 											className={
-												item?.snippet?.thumbnails?.maxres?.url ||
+												item?.snippet?.thumbnails?.high?.url ||
 												item?.status?.privacyStatus == "public"
 													? styles.li
 													: "hidden"
@@ -92,7 +92,7 @@ const VideosSlider: FC<ISimbaTVBanner.IVideosSlider> = ({
 													style={{
 														backgroundImage: `linear-gradient(0deg,rgba(0, 0, 0, 0.70),rgba(0, 0, 0, 0.60),
 														rgba(0, 0, 0, 0.50),rgba(0, 0, 0, 0.30),rgba(0, 0, 0, 0.20),
-														rgba(0, 0, 0, 0.15)),url("${item?.snippet?.thumbnails?.maxres?.url}")`,
+														rgba(0, 0, 0, 0.15)),url("${item?.snippet?.thumbnails?.high?.url}")`,
 													}}
 												>
 													<div className={styles.wrapper}>

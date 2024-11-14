@@ -32,7 +32,7 @@ const Card: FC = () => {
 					style={{
 						backgroundImage: `linear-gradient(0deg,rgba(0, 0, 0, 0.70),rgba(0, 0, 0, 0.60),
 						rgba(0, 0, 0, 0.50),rgba(0, 0, 0, 0.30),rgba(0, 0, 0, 0.20),
-						rgba(0, 0, 0, 0.15)),url("${content?.snippet?.thumbnails?.maxres?.url}")`,
+						rgba(0, 0, 0, 0.15)),url("${content?.snippet?.thumbnails?.high?.url}")`,
 					}}
 				>
 					<div className={styles.wrapper}>
