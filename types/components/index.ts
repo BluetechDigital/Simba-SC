@@ -197,9 +197,15 @@ export namespace IFans {
 		export type IRecommendations = {
 			className: string;
 			cta: IProps[`cta`];
+			podcastsVideos: IYoutube.IYoutubeVideos;
 		};
 		export type ICard = {
 			index: number;
+			videoId: IYoutube.IYoutubeVideos[0][`videoId`];
+			snippet: IYoutube.IYoutubeVideos[0][`snippet`];
+			statistics: IYoutube.IYoutubeVideos[0][`statistics`];
+		};
+		export type IRecommendationsCard = {
 			videoId: IYoutube.IYoutubeVideos[0][`videoId`];
 			snippet: IYoutube.IYoutubeVideos[0][`snippet`];
 			statistics: IYoutube.IYoutubeVideos[0][`statistics`];

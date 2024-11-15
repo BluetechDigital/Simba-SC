@@ -27,8 +27,7 @@ import CountUp from "@/components/Elements/CountUp";
 import UseFormatNumber from "@/hooks/useFormatNumber";
 import Paragraph from "@/components/Elements/Paragraph";
 import Recommendations from "@/components/Fans/AllPodcastsVideos/Card/Recommendations";
-
-// layered-peaks-haikei-red-darkred-slanted
+import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
 // Content Cards
 const Card: FC<IFans.IAllPodcastsVideos.ICard> = ({
@@ -71,10 +70,7 @@ const Card: FC<IFans.IAllPodcastsVideos.ICard> = ({
 						/>
 					</div>
 					<div className={styles.content}>
-						<motion.h4
-							initial={initialTwo}
-							whileInView={fadeIn}
-							viewport={{once: true}}
+						<ContentSliceRevealMaskAnimation
 							className={
 								styles.title +
 								` ${
@@ -87,7 +83,7 @@ const Card: FC<IFans.IAllPodcastsVideos.ICard> = ({
 							{snippet?.title?.length > 45
 								? snippet?.title?.substring(0, 45) + "..."
 								: snippet?.title}
-						</motion.h4>
+						</ContentSliceRevealMaskAnimation>
 						<div
 							className={
 								styles.divider +
@@ -370,7 +366,7 @@ const PodcastsVideosGrid: FC<IFans.IAllPodcastsVideos.IPodcastsVideosGrid> = ({
 }) => {
 	const globalContext = useGlobalContext();
 
-	const itemsPerPage = 6;
+	const itemsPerPage = 8;
 	const [currentPage, setCurrentPage] = useState(1);
 
 	const startIndex = (currentPage - 1) * itemsPerPage;
@@ -420,7 +416,11 @@ const PodcastsVideosGrid: FC<IFans.IAllPodcastsVideos.IPodcastsVideosGrid> = ({
 							</>
 						)}
 					</motion.div>
-					<Recommendations cta={cta} className={styles.recommendation} />
+					<Recommendations
+						cta={cta}
+						podcastsVideos={currentContent}
+						className={styles.recommendation}
+					/>
 				</div>
 				<Pagination
 					totalPages={totalPages}
@@ -428,7 +428,11 @@ const PodcastsVideosGrid: FC<IFans.IAllPodcastsVideos.IPodcastsVideosGrid> = ({
 					setCurrentPage={setCurrentPage}
 					youtubeVideos={globalContext?.youtubeVideos}
 				/>
-				<Recommendations cta={cta} className={styles.recommendationMobile} />
+				<Recommendations
+					cta={cta}
+					podcastsVideos={currentContent}
+					className={styles.recommendationMobile}
+				/>
 			</div>
 		</>
 	);

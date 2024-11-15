@@ -1,8 +1,6 @@
 // Imports
 import {FC} from "react";
-import {motion} from "framer-motion";
 import {IFans} from "@/types/components";
-import {slideInRightFinish, slideInLeftInitial} from "@/animations/animations";
 
 // Styling
 import styles from "@/styles/components/Fans.module.scss";
@@ -10,10 +8,11 @@ import styles from "@/styles/components/Fans.module.scss";
 // Components
 import Title from "@/components/Elements/Title";
 import PodcastsVideosGrid from "@/components/Fans/AllPodcastsVideos/Card/PodcastsVideosGrid";
+import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
 const AllPodcastsVideos: FC<IFans.IAllPodcastsVideos.IProps> = ({
-	title,
 	cta,
+	title,
 }) => {
 	return (
 		<>
@@ -24,14 +23,11 @@ const AllPodcastsVideos: FC<IFans.IAllPodcastsVideos.IProps> = ({
 				}}
 			>
 				<div className={styles.container}>
-					<motion.div
-						viewport={{once: true}}
-						initial={slideInLeftInitial}
-						whileInView={slideInRightFinish}
+					<ContentSliceRevealMaskAnimation
 						className={title ? styles.topSection : "hidden"}
 					>
 						<Title content={title} className={styles.title} />
-					</motion.div>
+					</ContentSliceRevealMaskAnimation>
 					<PodcastsVideosGrid cta={cta} />
 				</div>
 			</div>

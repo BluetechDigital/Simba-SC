@@ -99,6 +99,7 @@ export type SlideInRightFinish = {
 // Content Slice Reveal Mask Animation
 export namespace IContentSliceRevealMaskAnimation {
 	export type IContentWrapper = {
+		className?: string;
 		children: React.ReactNode;
 	};
 	export type IAnimationProps = {

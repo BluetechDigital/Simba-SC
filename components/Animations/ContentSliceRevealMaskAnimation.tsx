@@ -23,21 +23,23 @@ export const AnimationProps: IContentSliceRevealMaskAnimation.IAnimationProps =
 
 const ContentSliceRevealMaskAnimation: FC<
 	IContentSliceRevealMaskAnimation.IContentWrapper
-> = ({children}) => {
+> = ({children, className}) => {
 	const body = useRef(null);
 	const isInView = useInView(body, {once: false, margin: "-5%"});
 
 	return (
 		<>
-			<div ref={body} className="overflow-hidden">
-				<div className="overflow-hidden">
-					<motion.div
-						initial="initial"
-						animate={isInView ? "enter" : ""}
-						variants={AnimationProps}
-					>
-						{children}
-					</motion.div>
+			<div className={className}>
+				<div ref={body} className="overflow-hidden">
+					<div className="overflow-hidden">
+						<motion.div
+							initial="initial"
+							animate={isInView ? "enter" : ""}
+							variants={AnimationProps}
+						>
+							{children}
+						</motion.div>
+					</div>
 				</div>
 			</div>
 		</>
