@@ -7,6 +7,8 @@ import {
 	initial,
 	fadeInUp,
 	initialTwo,
+	slideInRightFinish,
+	slideInLeftInitial,
 	arrayLoopStaggerChildren,
 } from "@/animations/animations";
 import Link from "next/link";
@@ -386,7 +388,12 @@ const PodcastsVideosGrid: FC<IFans.IAllPodcastsVideos.IPodcastsVideosGrid> = ({
 		<>
 			<div className={styles.podcastsVideosGrid} id="videosGrid">
 				<div className={styles.mainContent}>
-					<div className={styles.content}>
+					<motion.div
+						viewport={{once: true}}
+						className={styles.content}
+						initial={slideInLeftInitial}
+						whileInView={slideInRightFinish}
+					>
 						{currentContent?.length > 0 ? (
 							currentContent?.map((item: any, index: number) => (
 								<Fragment key={index}>
@@ -412,8 +419,8 @@ const PodcastsVideosGrid: FC<IFans.IAllPodcastsVideos.IPodcastsVideosGrid> = ({
 								<ErrorCard />
 							</>
 						)}
-					</div>
-					<Recommendations cta={cta} />
+					</motion.div>
+					<Recommendations cta={cta} className={styles.recommendation} />
 				</div>
 				<Pagination
 					totalPages={totalPages}
@@ -421,6 +428,7 @@ const PodcastsVideosGrid: FC<IFans.IAllPodcastsVideos.IPodcastsVideosGrid> = ({
 					setCurrentPage={setCurrentPage}
 					youtubeVideos={globalContext?.youtubeVideos}
 				/>
+				<Recommendations cta={cta} className={styles.recommendationMobile} />
 			</div>
 		</>
 	);

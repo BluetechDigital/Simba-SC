@@ -1,7 +1,12 @@
 "use client";
 
 // Imports
-import {fadeIn, initialTwo} from "@/animations/animations";
+import {
+	fadeIn,
+	initialTwo,
+	slideInRightFinish,
+	slideInRightInitial,
+} from "@/animations/animations";
 import {FC} from "react";
 import Link from "next/link";
 import {motion} from "framer-motion";
@@ -16,10 +21,16 @@ import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSlic
 
 const Recommendations: FC<IFans.IAllPodcastsVideos.IRecommendations> = ({
 	cta,
+	className,
 }) => {
 	return (
 		<>
-			<div className={styles.recommendation}>
+			<motion.div
+				className={className}
+				viewport={{once: true}}
+				initial={slideInRightInitial}
+				whileInView={slideInRightFinish}
+			>
 				<div
 					className={styles.cta}
 					style={{
@@ -39,16 +50,14 @@ const Recommendations: FC<IFans.IAllPodcastsVideos.IRecommendations> = ({
 							href={`${cta.link?.url}`}
 							target={cta.link?.target}
 							aria-label={`${cta.link?.title}`}
-							className={`${
-								cta.link?.url ? "buttonStyling-alt-three" : "hidden"
-							}`}
+							className={`${cta.link?.url ? styles.buttonStyling : "hidden"}`}
 						>
 							{cta.link?.title}
 						</Link>
 					</motion.div>
 				</div>
 				<div className={styles.content}>Enter</div>
-			</div>
+			</motion.div>
 		</>
 	);
 };

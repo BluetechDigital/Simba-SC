@@ -195,6 +195,7 @@ export namespace IFans {
 			cta: IProps[`cta`];
 		};
 		export type IRecommendations = {
+			className: string;
 			cta: IProps[`cta`];
 		};
 		export type ICard = {
