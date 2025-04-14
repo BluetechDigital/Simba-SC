@@ -1,13 +1,14 @@
-import {gql} from "@apollo/client";
+// Imports
 import {client} from "@/config/apollo";
-import {ILinks, IMegaMenuLinks} from "@/types/context/Links";
+import {DocumentNode, gql} from "@apollo/client";
+import {ILinks, IMegaMenuLinks} from "@/types/index";
 
 // NAVIGATION LINKS
 // Navbar Menu Links
 export const getAllNavbarMenuLinks =
 	async (): Promise<ILinks.INavbarMenuLinks> => {
 		try {
-			const content: any = gql`
+			const content: DocumentNode = gql`
 				{
 					navbarMenuLinks: menuItems(where: {location: PRIMARY}) {
 						edges {
@@ -36,7 +37,7 @@ export const getAllNavbarMenuLinks =
 // Mobile Navbar Links
 export const getAllMobileLinks = async (): Promise<ILinks.IMobileLinks> => {
 	try {
-		const content: any = gql`
+		const content: DocumentNode = gql`
 			{
 				mobileLinks: menuItems(where: {location: MOBILE_LINKS}, first: 10) {
 					edges {
@@ -66,7 +67,7 @@ export const getAllMobileLinks = async (): Promise<ILinks.IMobileLinks> => {
 export const getAllCareerSublinks =
 	async (): Promise<ILinks.ICareerSublinks> => {
 		try {
-			const content: any = gql`
+			const content: DocumentNode = gql`
 				{
 					careerSublinks: menuItems(
 						where: {location: CAREER_LINKS}
@@ -99,7 +100,7 @@ export const getAllCareerSublinks =
 export const getAllCopyrightLinks =
 	async (): Promise<ILinks.ICopyrightLinks> => {
 		try {
-			const content: any = gql`
+			const content: DocumentNode = gql`
 				{
 					copyrightLinks: menuItems(
 						where: {location: COPYRIGHT_LINKS}
@@ -132,7 +133,7 @@ export const getAllCopyrightLinks =
 export const getAllFooterMenuLinks =
 	async (): Promise<ILinks.IFooterMenuLinks> => {
 		try {
-			const content: any = gql`
+			const content: DocumentNode = gql`
 				{
 					footerMenuLinks: menuItems(where: {location: FOOTER}) {
 						edges {
@@ -163,7 +164,7 @@ export const getAllFooterMenuLinks =
 export const getAllMegaNavigationLinks =
 	async (): Promise<IMegaMenuLinks.IMegaNavigationLinks> => {
 		try {
-			const content: any = gql`
+			const content: DocumentNode = gql`
 				{
 					megaNavigationLinks: menuItems(
 						where: {location: MEGA_NAVIGATION_LINKS}
@@ -197,7 +198,7 @@ export const getAllMegaNavigationLinks =
 export const getAllMegaNavigationUsefulSublinks =
 	async (): Promise<IMegaMenuLinks.IMegaNavigationUsefulSublinks> => {
 		try {
-			const content: any = gql`
+			const content: DocumentNode = gql`
 				{
 					megaNavigationUsefulSublinks: menuItems(
 						where: {location: MEGA_NAVIGATION_USEFUL_SUBLINKS}
@@ -231,7 +232,7 @@ export const getAllMegaNavigationUsefulSublinks =
 export const getAllAboutTheClubSublinks =
 	async (): Promise<IMegaMenuLinks.IAboutTheClubSublinks> => {
 		try {
-			const content: any = gql`
+			const content: DocumentNode = gql`
 				{
 					aboutTheClubSublinks: menuItems(
 						where: {location: ABOUT_THE_CLUB_SUBLINKS}
@@ -265,7 +266,7 @@ export const getAllAboutTheClubSublinks =
 export const getAllNewsSublinks =
 	async (): Promise<IMegaMenuLinks.INewsSublinks> => {
 		try {
-			const content: any = gql`
+			const content: DocumentNode = gql`
 				{
 					newsSublinks: menuItems(where: {location: NEWS_SUBLINKS}, first: 10) {
 						edges {
@@ -296,7 +297,7 @@ export const getAllNewsSublinks =
 export const getAllFansSublinks =
 	async (): Promise<IMegaMenuLinks.IFansSublinks> => {
 		try {
-			const content: any = gql`
+			const content: DocumentNode = gql`
 				{
 					fansSublinks: menuItems(where: {location: FANS_SUBLINKS}, first: 10) {
 						edges {
@@ -327,7 +328,7 @@ export const getAllFansSublinks =
 export const getAllCommunitySublinks =
 	async (): Promise<IMegaMenuLinks.ICommunitySublinks> => {
 		try {
-			const content: any = gql`
+			const content: DocumentNode = gql`
 				{
 					communitySublinks: menuItems(
 						where: {location: COMMUNITY_SUBLINKS}
@@ -361,7 +362,7 @@ export const getAllCommunitySublinks =
 export const getAllOurHistorySublinks =
 	async (): Promise<IMegaMenuLinks.IOurHistorySublinks> => {
 		try {
-			const content: any = gql`
+			const content: DocumentNode = gql`
 				{
 					ourHistorySublinks: menuItems(
 						where: {location: OUR_HISTORY_SUBLINKS}
@@ -395,7 +396,7 @@ export const getAllOurHistorySublinks =
 export const getAllBenjaminMkapaStadiumSublinks =
 	async (): Promise<IMegaMenuLinks.IStadiumSublinks> => {
 		try {
-			const content: any = gql`
+			const content: DocumentNode = gql`
 				{
 					benjaminMkapaStadiumSublinks: menuItems(
 						where: {location: STADIUM_SUBLINKS}
@@ -429,7 +430,7 @@ export const getAllBenjaminMkapaStadiumSublinks =
 export const getAllPartnershipsAdvertisingSublinks =
 	async (): Promise<IMegaMenuLinks.IPartnershipsAdvertisingSublinks> => {
 		try {
-			const content: any = gql`
+			const content: DocumentNode = gql`
 				{
 					partnershipsAdvertisingSublinks: menuItems(
 						where: {location: PARTNERSHIPS_ADVERTISING_SUBLINKS}

@@ -1,6 +1,6 @@
 // Imports
 import * as React from "react";
-import {IEmailFooter} from "@/types/email";
+import {IEmailFooter} from "@/components/Emails/types/index";
 import {Img, Row, Link, Text, Column, Section} from "@react-email/components";
 
 const EmailFooter: React.FC<IEmailFooter.IEmailFooter> = ({

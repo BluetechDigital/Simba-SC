@@ -2,7 +2,7 @@
 import {Metadata, NextPage} from "next";
 
 // Components
-import ErrorPage from "@/components/Global/Error";
+import ErrorPage from "@/components/Global/Error/Error";
 
 // Not-Found Page Generated Metadata
 export const metadata: Metadata = {

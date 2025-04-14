@@ -1,0 +1,63 @@
+.trophyCabinetBanner {
+	@apply bg-primary-default bg-no-repeat bg-cover bg-center;
+
+	.container {
+		@apply lg:max-w-[1700px] mx-auto py-14 px-4 flex flex-col gap-8;
+
+		.title {
+			@apply max-w-2xl mx-auto lg:mx-0 font-primary text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-pureBlack leading-tight;
+
+			span {
+				@apply text-primary-default;
+			}
+		}
+
+		.paragraph {
+			@apply mb-12 lg:mb-8 lg:max-w-lg mx-auto lg:mx-0 font-secondaryRegular leading-normal text-pureBlack text-lg text-center lg:text-left;
+		}
+
+		.content {
+			@apply flex flex-col lg:flex-row items-center justify-center gap-16;
+
+			.cardWrapper {
+				@apply w-full lg:w-[60%] flex flex-col gap-16 px-6;
+
+				.trophyCabinetWrapper {
+					@apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6;
+
+					.content {
+						@apply flex items-center justify-center lg:justify-start gap-4;
+
+						.image {
+							@apply w-[70px] h-[70px] object-contain object-center;
+						}
+
+						.totalAmount {
+							@apply mt-4 font-primary text-center uppercase text-8xl tracking-[-0.05rem] text-pureBlack leading-tight;
+						}
+					}
+
+					.name {
+						@apply mt-2 font-secondaryRegular text-center lg:text-left text-paragraph tracking-[-0.05rem] text-pureBlack leading-tight;
+					}
+				}
+
+				.buttonLink {
+					@apply flex flex-col items-center lg:items-baseline;
+
+					.link {
+						@apply mt-5 mx-auto lg:mx-0;
+					}
+				}
+			}
+
+			.imageWrapper {
+				@apply w-full lg:w-[40%];
+
+				.image {
+					@apply block w-full h-full min-h-[350px] lg:min-h-[550px] object-cover object-center;
+				}
+			}
+		}
+	}
+}

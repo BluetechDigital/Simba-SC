@@ -2,11 +2,17 @@
 
 // Imports
 import React, {FC, useEffect, useRef} from "react";
-import {IElements} from "@/types/components/Elements";
 import {motion, animate, useInView} from "framer-motion";
-import {initialTwo, fadeIn} from "@/animations/animations";
+import { initialTwo, fadeIn } from "@/animations/animations";
 
-const CountUp: FC<IElements.ICountUp> = ({
+type ICountUp = {
+	number: string;
+	suffix?: string;
+	decimals?: number;
+	className: string;
+};
+	
+const CountUp: FC<ICountUp> = ({
 	number,
 	suffix,
 	decimals = 0,
@@ -43,23 +49,19 @@ const CountUp: FC<IElements.ICountUp> = ({
 	}, [number, decimals, isInView, formatNumber]);
 
 	return (
-		<>
-			<motion.h4
-				initial={initialTwo}
-				whileInView={fadeIn}
-				viewport={{once: true}}
-				className={className}
-			>
-				<span ref={ref}></span>
-				{suffix ? (
-					<>
-						<span className="pl-1">{suffix}</span>
-					</>
-				) : (
-					<></>
-				)}
-			</motion.h4>
-		</>
+		<motion.h4
+			initial={initialTwo}
+			whileInView={fadeIn}
+			viewport={{once: true}}
+			className={className}
+		>
+			<span ref={ref}></span>
+			{suffix ? (
+				<span className="pl-1">{suffix}</span>
+			) : (
+				<></>
+			)}
+		</motion.h4>
 	);
 };
 

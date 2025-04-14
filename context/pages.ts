@@ -1,13 +1,13 @@
 // Imports
 import {
 	IPage,
-	IPostTypes,
+	IPost,
 	IFlexibleContentType,
-} from "@/types/context/Providers";
+} from "@/context/types/context";
 
 /* PUBLIC PAGES & POSTS */
 /* PREVIEW PAGES & POSTS */
-export const postType: IPostTypes = {
+export const postType: IPost.ITypes = {
 	// Public pages
 	news: "news",
 	pages: "pages",
@@ -42,7 +42,7 @@ export const pageType: IPage.ITypes = {
 	partnershipsAdvertising: "partnerships-advertising",
 };
 
-export const flexibleContentType: IFlexibleContentType = {
+export const flexibleContentType: IFlexibleContentType.ITypes = {
 	// Public pages
 	pages: "DefaultTemplate_Flexiblecontent_FlexibleContent",
 	clubPartner: "ClubPartner_Partnerscontent_FlexibleContent",

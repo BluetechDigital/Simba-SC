@@ -7,9 +7,9 @@ import {getAllSeoContent} from "@/graphql/GetAllSeoContent";
 import {getAllClubPartnersFlexibleContentComponents} from "@/graphql/GetAllFlexibleContentComponents";
 
 // Components
-import BackPageButton from "@/components/Elements/BackPageButton";
-import BackToTopButton from "@/components/Elements/BackToTopButton";
 import PageContextProvider from "@/context/providers/PageContextProvider";
+import BackPageButton from "@/components/Elements/BackPageButton/BackPageButton";
+import BackToTopButton from "@/components/Elements/BackToTopButton/BackToTopButton";
 import RenderClubPartnersFlexibleContent from "@/components/FlexibleContent/RenderClubPartnersFlexibleContent";
 
 // Dynamic Pages Generated Metadata

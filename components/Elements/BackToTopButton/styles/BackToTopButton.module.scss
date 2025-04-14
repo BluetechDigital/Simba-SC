@@ -1,0 +1,25 @@
+.backToTopButton {
+	@apply relative w-fit h-fit xl:block z-[998];
+
+	.container {
+		@apply fixed right-6 z-20 bottom-[2.5rem] flex justify-center;
+
+		.content {
+			@apply font-secondaryRegular bg-primary-default py-2 px-3 hover:bg-primary-dark transition-all ease-in-out duration-500;
+
+			&:focus {
+				outline: none;
+			}
+
+			&:hover {
+				@apply transition-all duration-500 ease-in-out;
+			}
+
+			.span {
+				.svg {
+					@apply w-[30px] h-[30px] object-center object-contain rotate-[90deg];
+				}
+			}
+		}
+	}
+}

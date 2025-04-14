@@ -4,9 +4,9 @@
 import {FC} from "react";
 import {client} from "@/config/apollo";
 import {ApolloProvider} from "@apollo/client";
-import {IApolloContextProvider} from "@/types/context/Providers";
+import {IApollo} from "@/context/types/context";
 
-const ApolloContextProvider: FC<IApolloContextProvider> = ({children}) => {
+const ApolloContextProvider: FC<IApollo.IContextProvider> = ({children}) => {
 	return <ApolloProvider client={client}>{children}</ApolloProvider>;
 };
 

@@ -1,13 +1,13 @@
 import {render} from "@react-email/components";
 import {emailTransporter} from "@/config/nodemailer";
 // Types
-import {INewsletterEmail} from "@/types/email";
+import {INewsletterEmail} from "@/components/Emails/types/index";
 import {getThemesOptionsContent} from "@/graphql/GetAllThemesOptions";
 
 // Components
 import NewsletterEnquiryConfirmationEmail from "@/components/Emails/NewsletterEnquiryConfirmationEmail";
 
-export async function POST(req: Request, res: Response) {
+export async function POST(req: Request | any, res: Response | any) {
 	const data = await req.json();
 
 	// If any of these values are undefined
@@ -21,7 +21,7 @@ export async function POST(req: Request, res: Response) {
 
 		/* Render React Newsletter
 			 Confirmation Email Component*/
-		const newsletterEmailHtml: string = render(
+		const newsletterEmailHtml: any = render(
 			<NewsletterEnquiryConfirmationEmail
 				email={`${data?.email}`}
 				imagesDirUrl={imagesDirUrl}
@@ -30,7 +30,7 @@ export async function POST(req: Request, res: Response) {
 		);
 
 		/* NewsletterConfirmation Email */
-		const newsletterEmail: INewsletterEmail = {
+		const newsletterEmail: INewsletterEmail | any = {
 			from: `${themesOptionsContent?.email}`,
 			to: `${themesOptionsContent?.email}`,
 			subject: `Thank You for Contacting Simba SC`,

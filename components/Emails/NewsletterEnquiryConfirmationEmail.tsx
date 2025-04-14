@@ -10,7 +10,7 @@ import {
 	Container,
 } from "@react-email/components";
 import * as React from "react";
-import {INewsletterEmail} from "@/types/email";
+import {INewsletterEmail} from "@/components/Emails/types/index";
 
 // Components
 import EmailFooter from "./Layout/EmailFooter";

@@ -4,7 +4,7 @@
 import {FC} from "react";
 import {motion} from "framer-motion";
 import {GlobalContext} from "@/context/global";
-import {IGlobal} from "@/types/context/Providers";
+import {IGlobal} from "@/context/types/context";
 
 // Components
 import {Analytics} from "@vercel/analytics/react";

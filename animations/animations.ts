@@ -1,33 +1,26 @@
 /*  FRAMER-MOTION ANIMATIONS
 Custom reusable Animation Properties/variables */
 
-// WhileInView
-import {
-	FadeIn,
-	Stagger,
-	Initial,
-	FadeInUp,
-	FadeInTwo,
-	InitialTwo,
-	SlideInLeftInitial,
-	SlideInRightFinish,
-	SlideInRightInitial,
-	ArrayLoopStaggerChildren,
-} from "@/types/animations";
+// Imports
+import {IAnimation} from "@/animations/types/index";
 
 /* This is the default framer-motion scrollYProgress content reveal.
  Provides When in view should the content be revealed */
 export const offsetStart: number = 0.9;
-export const offsetFinish: number = 0.7;
+export const offsetFinish: number = 0.5;
 
-export const initial: Initial | any = {
+export const initial: IAnimation.IInitial | any = {
 	y: 0,
 	opacity: 0,
 };
-export const initialTwo: InitialTwo | any = {
+export const initialTwo: IAnimation.IInitialTwo | any = {
 	opacity: 0,
 };
-export const fadeIn: FadeIn | any = {
+export const initialThree: IAnimation.IInitial | any = {
+	y: 90,
+	opacity: 0,
+};
+export const fadeIn: IAnimation.IFadeIn | any = {
 	opacity: 1,
 	transition: {
 		delay: 0.5,
@@ -35,7 +28,7 @@ export const fadeIn: FadeIn | any = {
 		ease: "easeOut",
 	},
 };
-export const fadeInTwo: FadeInTwo | any = {
+export const fadeInTwo: IAnimation.IFadeInTwo | any = {
 	y: 0,
 	opacity: 1,
 	transition: {
@@ -44,16 +37,16 @@ export const fadeInTwo: FadeInTwo | any = {
 		ease: "easeOut",
 	},
 };
-export const fadeInUp: FadeInUp = {
+export const fadeInUp: IAnimation.IFadeInUp = {
 	y: 0,
 	opacity: 1,
 	transition: {
 		delay: 0.5,
-		duration: 0.75,
+		duration: 0.5,
 		ease: "easeInOut",
 	},
 };
-export const stagger: Stagger = {
+export const stagger: IAnimation.IStagger = {
 	initial: {
 		opacity: 0,
 		y: 0,
@@ -68,7 +61,7 @@ export const stagger: Stagger = {
 		},
 	},
 };
-export const arrayLoopStaggerChildren: ArrayLoopStaggerChildren = {
+export const arrayLoopStaggerChildren: IAnimation.IArrayLoopStaggerChildren = {
 	initial: {
 		opacity: 0,
 		y: 0,
@@ -83,7 +76,7 @@ export const arrayLoopStaggerChildren: ArrayLoopStaggerChildren = {
 		},
 	}),
 };
-export const navigationMenuStaggerChildren: ArrayLoopStaggerChildren = {
+export const navigationMenuStaggerChildren: IAnimation.IArrayLoopStaggerChildren = {
 	initial: {
 		opacity: 0,
 		y: 0,
@@ -100,17 +93,17 @@ export const navigationMenuStaggerChildren: ArrayLoopStaggerChildren = {
 };
 
 // Slide In Direction (Horizontal)
-export const slideInRightInitial: SlideInRightInitial | any = {
+export const slideInRightInitial: IAnimation.ISlideInRightInitial | any = {
 	y: 0,
 	x: 200,
 	opacity: 0,
 };
-export const slideInLeftInitial: SlideInLeftInitial | any = {
+export const slideInLeftInitial: IAnimation.ISlideInLeftInitial | any = {
 	y: 0,
 	x: -200,
 	opacity: 0,
 };
-export const slideInRightFinish: SlideInRightFinish = {
+export const slideInRightFinish: IAnimation.ISlideInRightFinish = {
 	y: 0,
 	x: 0,
 	opacity: 1,

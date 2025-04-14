@@ -1,0 +1,102 @@
+.footer {
+	@apply px-4 py-2 bg-white;
+
+	.topContent {
+		@apply flex flex-col lg:flex-row lg:items-center justify-between gap-8;
+
+		.logo {
+			@apply w-fit h-[60px] mx-auto lg:mx-0 object-contain object-center;
+		}
+
+		.socialLinks {
+			@apply hidden sm:flex items-center justify-center gap-6 text-center;
+
+			.link {
+				@apply inline-block text-primary-default;
+
+				.svg,
+				.svgAlt,
+				.svgAltTwo {
+					@apply w-[22.5px] h-[22.5px] fill-primary-default hover:fill-primary-dark transition-all duration-500 ease-in-out;
+				}
+
+				.svgAlt {
+					@apply w-[30px] h-[30px];
+				}
+
+				.svgAltTwo {
+					@apply w-[28px] h-[28px];
+				}
+			}
+		}
+	}
+
+	.divider {
+		@apply my-5 lg:my-0 py-1 border-b border-primary-default;
+	}
+
+	.bottomContent {
+		@apply w-full grid grid-cols-1 lg:grid-cols-3 items-center justify-between py-2 gap-4 sm:gap-4 md:gap-8 lg:gap-4;
+
+		.copyrightText {
+			@apply hidden lg:flex w-full flex-col lg:flex-row items-center justify-center lg:justify-start;
+
+			.text {
+				@apply hidden lg:block font-secondaryRegular max-w-lg mx-auto lg:mx-0 text-pureBlack text-xs text-center lg:text-left;
+			}
+		}
+
+		.ul {
+			@apply w-full flex flex-col sm:flex-row items-center justify-center gap-4;
+
+			.link {
+				@apply font-secondaryRegular text-pureBlack transition-all duration-200 ease-in-out text-tiny hover:text-primary-default;
+
+				.image,
+				.imageTwo {
+					@apply object-contain object-center;
+				}
+
+				.image {
+					@apply w-[100px] h-[40px];
+				}
+
+				.imageTwo {
+					@apply w-[135px] h-[40px];
+				}
+			}
+		}
+
+		.rightSideContent {
+			@apply w-full flex flex-col lg:flex-row items-center justify-center lg:justify-end gap-4 xl:gap-6;
+
+			.paragraph {
+				@apply block lg:hidden font-secondaryRegular max-w-lg mx-auto lg:mx-0 text-pureBlack text-xs text-center lg:text-left;
+			}
+
+			.ul {
+				@apply w-fit flex flex-col sm:flex-row items-center justify-center 2xl:-m-5 2xl:px-6 lg:py-2 gap-2 sm:gap-4;
+
+				.link {
+					@apply font-secondaryRegular text-pureBlack transition-all duration-200 ease-in-out text-center lg:text-right text-xs hover:text-primary-default;
+				}
+			}
+
+			.bluetechDigital {
+				@apply lg:inline-block items-center justify-center text-pureBlack hover:text-accent-default hover:underline;
+
+				.span {
+					@apply flex items-center justify-center lg:justify-end gap-2;
+
+					.image {
+						@apply object-contain object-center w-[25px] h-[25px];
+					}
+
+					.text {
+						@apply flex lg:hidden xl:flex font-secondaryRegular max-w-lg mx-auto lg:mx-0 text-xs text-center lg:text-left;
+					}
+				}
+			}
+		}
+	}
+}

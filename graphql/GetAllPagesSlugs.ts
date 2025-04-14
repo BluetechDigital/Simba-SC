@@ -1,5 +1,5 @@
 // Imports
-import {ISlug} from "@/types/context";
+import {ISlug} from "@/types/index";
 import {client} from "@/config/apollo";
 import {DocumentNode, gql} from "@apollo/client";
 

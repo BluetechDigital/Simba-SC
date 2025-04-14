@@ -2,6 +2,45 @@
 import {client} from "@/config/apollo";
 import {DocumentNode, gql} from "@apollo/client";
 
+// Components: ACF Flexible Content Post Types
+import { CTA } from "@/components/CTA/graphql/index";
+import { Hero } from "@/components/Hero/graphql/index";
+import { CTATwo } from "@/components/CTATwo/graphql/index";
+import { HeroTwo } from "@/components/HeroTwo/graphql/index";
+import { HeroFour } from "@/components/HeroFour/graphql/index";
+import { HeroThree } from "@/components/HeroThree/graphql/index";
+import { VideoBlock } from "@/components/VideoBlock/graphql/index";
+import { AboutSimba } from "@/components/AboutSimba/graphql/index";
+import { VisitStore } from "@/components/VisitStore/graphql/index";
+import { ContactForm } from "@/components/ContactForm/graphql/index";
+import { SimbaTVBanner } from "@/components/SimbaTVBanner/graphql/index";
+import { SponsorsLogos } from "@/components/SponsorsLogos/graphql/index";
+import { LatestNewsGrid } from "@/components/LatestNewsGrid/graphql/index";
+import { TitleParagraph } from "@/components/TitleParagraph/graphql/index";
+import { SocialMediaGrid } from "@/components/SocialMediaGrid/graphql/index";
+import { AboutTheClubGrid } from "@/components/AboutTheClubGrid/graphql/index";
+import { NewsletterBanner } from "@/components/NewsletterBanner/graphql/index";
+import { NewOfficialKitCta } from "@/components/NewOfficialKitCta/graphql/index";
+import { TitleContentImage } from "@/components/TitleContentImage/graphql/index";
+import { GeneralInformation } from "@/components/GeneralInformation/graphql/index";
+import { TrophyCabinetBanner } from "@/components/TrophyCabinetBanner/graphql/index";
+import { ClubCardMembershipCTA } from "@/components/ClubCardMembershipCTA/graphql/index";
+import { OfficialMembershipsCta } from "@/components/OfficialMembershipsCta/graphql/index";
+import { TitleParagraphDynamicColour } from "@/components/TitleParagraphDynamicColour/graphql/index";
+
+// Components: Fixtures
+import { LastThreeFixtures } from "@/components/Fixtures/LastThreeFixtures/graphql/index";
+
+// Components: Fans
+import { LatestVideoBlock } from "@/components/Fans/LatestVideoBlock/graphql/index";
+import { AllYouTubeVideos } from "@/components/Fans/AllYouTubeVideos/graphql/index";
+import { AllPodcastsVideos } from "@/components/Fans/AllPodcastsVideos/graphql/index";
+
+// Components: Club Partners Flexible Content Post Types
+import { ImageSlider } from "@/components/ClubPartners/ImageSlider/graphql/index";
+import { ClubPartnersGrid } from "@/components/ClubPartners/ClubPartnersGrid/graphql/index";
+import { ClubPartnersTitleContentImage } from "@/components/ClubPartners/TitleContentImage/graphql/index";
+
 /* PAGES & BLOGS POSTS*/
 /* Fetch all Flexible Content Components 
 (For every flexible content page) */
@@ -20,555 +59,35 @@ export const getAllFlexibleContentComponents = async (
 								... on DefaultTemplate {
 									flexibleContent {
 										flexibleContent {
-											... on ${postTypeFlexibleContent}_Hero {
-												fieldGroupName
-												displaySection
-												heroSlider {
-              										title
-              										paragraph
-													buttonLink {
-                										url
-                										title
-                										target
-                									}
-                									buttonLinkTwo {
-                										url
-                										title
-                										target
-                									}
-              										backgroundImage {
-              											altText
-              											sourceUrl
-              											mediaDetails {
-              												height
-              												width
-              											}
-              										}
-              									}
-											}
-											... on ${postTypeFlexibleContent}_HeroTwo {
-												fieldGroupName
-												displaySection
-												title
-												paragraph
-												backgroundImage {
-													altText
-													sourceUrl
-													mediaDetails {
-														height
-														width
-													}
-												}
-											}
-											... on ${postTypeFlexibleContent}_HeroThree {
-												fieldGroupName
-												displaySection
-												title
-												paragraph
-												backgroundImage {
-													altText
-													sourceUrl
-													mediaDetails {
-														height
-														width
-													}
-												}
-											}
-											... on ${postTypeFlexibleContent}_HeroFour {
-												fieldGroupName
-												displaySection
-												title
-												paragraph
-												displayVideo
-												displayFullHeight
-												video {
-                  								  	link
-                  								  	title
-                  								  	mediaDetails {
-                  								  	  	height
-                  								  	  	width
-                  								  	}
-                  								}
-												buttonLink {
-                									url
-                									title
-                									target
-                								}
-                								buttonLinkTwo {
-                									url
-                									title
-                									target
-                								}
-												backgroundImage {
-													altText
-													sourceUrl
-													mediaDetails {
-														height
-														width
-													}
-												}
-											}
-											... on ${postTypeFlexibleContent}_Cta {
-												fieldGroupName
-                  								displaySection
-                  								title
-                  								paragraph
-												displayVideo
-												displayBigCta
-												video {
-                  								  	link
-                  								  	title
-                  								  	mediaDetails {
-                  								  	  	height
-                  								  	  	width
-                  								  	}
-                  								}
-												buttonLink {
-                									url
-                									title
-                									target
-                								}
-												backgroundImage {
-                  								  	altText
-                  								  	sourceUrl
-                  								  	mediaDetails {
-                  								  	  	height
-                  								  	  	width
-                  								  	}
-                  								}
-											}
-											... on ${postTypeFlexibleContent}_CtaTwo {
-												fieldGroupName
-                  								displaySection
-                  								title
-                  								paragraph
-                  								buttonLink {
-                  								  	url
-                  								  	title
-                  								  	target
-                  								}
-											}
-											... on ${postTypeFlexibleContent}_TitleParagraph {
-												fieldGroupName
-												displaySection
-												title
-												paragraph
-												displayParagraph
-											}
-											... on ${postTypeFlexibleContent}_AboutSimba {
-												fieldGroupName
-                  								displaySection
-                  								title
-                  								titleTwo
-												paragraph
-												paragraphTwo
-                  								buttonLink {
-                  								  	url
-                  								  	title
-                  								  	target
-                  								}
-                  								image {
-                  								  	altText
-                  								  	sourceUrl
-                  								  	mediaDetails {
-                  								  	  	height
-                  								  	  	width
-                  								  	}
-                  								}
-											}
-											... on ${postTypeFlexibleContent}_AboutTheClubGrid {
-												fieldGroupName
-                  								displaySection
-                  								aboutGrid {
-                  								  	title
-													paragraph
-													buttonLink {
-														url
-														title
-														target
-													}
-													image {
-														altText
-														sourceUrl
-														mediaDetails {
-															height
-															width
-														}
-													}
-                  								}
-											}
-											... on ${postTypeFlexibleContent}_GeneralInformation {
-												fieldGroupName
-                  								displaySection
-												title
-												paragraph
-												informationGrid {
-                  								  	title
-													paragraph
-                  								}
-												image {
-													altText
-													sourceUrl
-													mediaDetails {
-														height
-														width
-													}
-												}
-											}
-											... on ${postTypeFlexibleContent}_OfficialMembershipsCta {
-												fieldGroupName
-                  								displaySection
-                  								title
-                  								paragraph
-                  								image {
-                  									altText
-                  									sourceUrl
-                  									mediaDetails {
-                  										height
-                  										width
-                  									}
-                  								}
-                  								buttonLink {
-                  									url
-                  									title
-                  									target
-                  								}
-                  								bulletPoints {
-                  								  	point {
-                  								  		url
-                  								  		title
-                  								  		target
-                  								  	}
-                  								}
-											}
-											... on ${postTypeFlexibleContent}_SponsorsLogos {
-												fieldGroupName
-												displaySection
-												logoGrid {
-													image {
-														altText
-														sourceUrl
-														mediaDetails {
-															height
-															width
-														}
-													}
-												}
-											}
-											... on ${postTypeFlexibleContent}_ClubPartnersGrid {
-												fieldGroupName
-                  								displaySection
-											}
-											... on ${postTypeFlexibleContent}_VideoBlock {
-												fieldGroupName
-												displaySection
-												title
-												video {
-                  								  	link
-                  								  	title
-                  								  	mediaDetails {
-                  								  	  	height
-                  								  	  	width
-                  								  	}
-                  								}
-												subtitle
-												paragraph
-												displayVideo
-												buttonLink {
-													url
-													title
-													target
-												}
-												videoBackgroundImage {
-													altText
-													sourceUrl
-													mediaDetails {
-														height
-														width
-													}
-												}
-											}
-											... on ${postTypeFlexibleContent}_LatestVideoBlock {
-												fieldGroupName
-												displaySection
-												title
-												video {
-                  								  	link
-                  								  	title
-                  								  	mediaDetails {
-                  								  	  	height
-                  								  	  	width
-                  								  	}
-                  								}
-												subtitle
-												paragraph
-												displayVideo
-												buttonLink {
-													url
-													title
-													target
-												}
-												displayButtonColor
-												displayContentColor
-												displayBackgroundSvg
-            									displayBackgroundColor
-												videoBackgroundImage {
-													altText
-													sourceUrl
-													mediaDetails {
-														height
-														width
-													}
-												}
-											}
-											... on ${postTypeFlexibleContent}_AllYoutubeVideos {
-												fieldGroupName
-												displaySection
-												title
-											}
-											... on ${postTypeFlexibleContent}_AllPodcastsVideos {
-												fieldGroupName
-												displaySection
-												title
-												cta {
-													text
-													link {
-														url
-														title
-														target
-													}
-												}
-											}
-											... on ${postTypeFlexibleContent}_VisitStore {
-												fieldGroupName
-												displaySection
-												title
-												buttonLink {
-                  								  	url
-                  								  	title
-                  								  	target
-                  								}
-												backgroundImage {
-                  								  	altText
-                  								  	sourceUrl
-                  								  	mediaDetails {
-                  								  	  	height
-                  								  	  	width
-                  								  	}
-                  								}
-											}
-											... on ${postTypeFlexibleContent}_TrophyCabinetBanner {
-												fieldGroupName
-                  								displaySection
-                  								title
-                  								paragraph
-												buttonLink {
-                									url
-                									title
-                									target
-                								}
-												trophyCabinet {
-                  									name
-                  									totalAmount
-                  									image {
-                  										altText
-                  										sourceUrl
-                  										mediaDetails {
-                  											height
-                  											width
-                  										}
-                  									}
-                  								}
-												backgroundImage {
-                  								  	altText
-                  								  	sourceUrl
-                  								  	mediaDetails {
-                  								  	  	height
-                  								  	  	width
-                  								  	}
-                  								}
-											}
-											... on ${postTypeFlexibleContent}_TitleContentImage {
-            									fieldGroupName
-												displaySection
-            									title
-            									subtitle
-            									textTitle
-            									paragraph
-            									image {
-            										altText
-            										sourceUrl
-            										mediaDetails {
-            											height
-            											width
-            										}
-            									}
-            									buttonLink {
-            										url
-            										title
-            										target
-            									}
-            									displayContentOption
-            									displayParagraphColor
-            									displayBackgroundColor
-            								}
-											... on ${postTypeFlexibleContent}_TitleParagraphDynamicColour {
-            									fieldGroupName
-												displaySection
-            									title
-            									paragraph
-												buttonLink {
-                									url
-                									title
-                									target
-                								}
-                								buttonLinkTwo {
-                									url
-                									title
-                									target
-                								}
-            									displayContentColor
-            									displayBackgroundColor
-            								}
-											... on ${postTypeFlexibleContent}_ClubCardMembershipCta {
-												fieldGroupName
-                  								displaySection
-                  								title
-                  								displayVideo
-												buttonLink {
-                									url
-                									title
-                									target
-                								}
-												video {
-                  								  	link
-                  								  	title
-                  								  	mediaDetails {
-                  								  	  	height
-                  								  	  	width
-                  								  	}
-                  								}
-												clubCardMembershipText
-												backgroundImage {
-                  								  	altText
-                  								  	sourceUrl
-                  								  	mediaDetails {
-                  								  	  	height
-                  								  	  	width
-                  								  	}
-                  								}
-											}
-											... on ${postTypeFlexibleContent}_NewsletterBanner {
-												fieldGroupName
-                  								displaySection
-                  								title
-                  								paragraph
-                  								buttonLink {
-                  								  	url
-                  								  	title
-                  								  	target
-                  								}
-											}
-											... on ${postTypeFlexibleContent}_SimbatvBanner {
-												fieldGroupName
-                  								displaySection
-                  								title
-                  								paragraph
-												buttonLink {
-                									url
-                									title
-                									target
-                								}
-												contentOptions {
-                  								  	subtitle
-                  								  	buttonTitle
-                  								  	contentExcerpt
-                  								  	buttonFunction
-                  								}
-												backgroundImage {
-                  								  	altText
-                  								  	sourceUrl
-                  								  	mediaDetails {
-                  								  	  	height
-                  								  	  	width
-                  								  	}
-                  								}
-											}
-											... on ${postTypeFlexibleContent}_SocialMediaGrid {
-												fieldGroupName
-												displaySection
-												title
-											}
-											... on ${postTypeFlexibleContent}_LastThreeFixtures {
-												fieldGroupName
-												displaySection
-												title
-											}
-											... on ${postTypeFlexibleContent}_NewOfficialKitCta {
-												fieldGroupName
-                  								displaySection
-                  								title
-												ctaTitle
-                  								link {
-                  								  	url
-                  								  	title
-                  								  	target
-                  								}
-                  								image {
-                  								  	altText
-                  								  	sourceUrl
-                  								  	mediaDetails {
-                  								  	  	height
-                  								  	  	width
-                  								  	}
-                  								}
-												imageTwo {
-                  								  	altText
-                  								  	sourceUrl
-                  								  	mediaDetails {
-                  								  	  	height
-                  								  	  	width
-                  								  	}
-                  								}
-											}
-											... on ${postTypeFlexibleContent}_LatestNewsGrid {
-												fieldGroupName
-                  								displaySection
-                  								title
-                  								ctaLink {
-                  								  	url
-                  								  	title
-                  								  	target
-                  								}
-                  								buttonLink {
-                  								  	url
-                  								  	title
-                  								  	target
-                  								}
-                  								image {
-                  								  	altText
-                  								  	sourceUrl
-                  								  	mediaDetails {
-                  								  	  	height
-                  								  	  	width
-                  								  	}
-                  								}
-											}
-											... on ${postTypeFlexibleContent}_ContactForm {
-												fieldGroupName
-												displaySection
-												title
-												formTitle
-												paragraph
-												image {
-                  								  	altText
-                  								  	sourceUrl
-                  								  	mediaDetails {
-                  								  	  	height
-                  								  	  	width
-                  								  	}
-                  								}
-											}
+											... on ${postTypeFlexibleContent}_Cta {${CTA}}
+											... on ${postTypeFlexibleContent}_Hero {${Hero}}
+											... on ${postTypeFlexibleContent}_CtaTwo {${CTATwo}}
+											... on ${postTypeFlexibleContent}_HeroTwo {${HeroTwo}}
+											... on ${postTypeFlexibleContent}_HeroFour {${HeroFour}}
+											... on ${postTypeFlexibleContent}_HeroThree {${HeroThree}}
+											... on ${postTypeFlexibleContent}_AboutSimba {${AboutSimba}}
+											... on ${postTypeFlexibleContent}_VideoBlock {${VideoBlock}}
+											... on ${postTypeFlexibleContent}_VisitStore {${VisitStore}}
+											... on ${postTypeFlexibleContent}_ContactForm {${ContactForm}}
+											... on ${postTypeFlexibleContent}_SponsorsLogos {${SponsorsLogos}}
+											... on ${postTypeFlexibleContent}_SimbatvBanner {${SimbaTVBanner}}
+											... on ${postTypeFlexibleContent}_TitleParagraph {${TitleParagraph}}
+											... on ${postTypeFlexibleContent}_LatestNewsGrid {${LatestNewsGrid}}
+											... on ${postTypeFlexibleContent}_SocialMediaGrid {${SocialMediaGrid}}
+											... on ${postTypeFlexibleContent}_AboutTheClubGrid {${AboutTheClubGrid}}
+											... on ${postTypeFlexibleContent}_ClubPartnersGrid {${ClubPartnersGrid}}
+											... on ${postTypeFlexibleContent}_LatestVideoBlock {${LatestVideoBlock}}
+											... on ${postTypeFlexibleContent}_AllYoutubeVideos {${AllYouTubeVideos}}
+											... on ${postTypeFlexibleContent}_NewsletterBanner {${NewsletterBanner}}
+											... on ${postTypeFlexibleContent}_AllPodcastsVideos {${AllPodcastsVideos}}
+											... on ${postTypeFlexibleContent}_TitleContentImage {${TitleContentImage}}
+											... on ${postTypeFlexibleContent}_LastThreeFixtures {${LastThreeFixtures}}
+											... on ${postTypeFlexibleContent}_NewOfficialKitCta {${NewOfficialKitCta}}
+											... on ${postTypeFlexibleContent}_GeneralInformation {${GeneralInformation}}
+											... on ${postTypeFlexibleContent}_TrophyCabinetBanner {${TrophyCabinetBanner}}
+											... on ${postTypeFlexibleContent}_ClubCardMembershipCta {${ClubCardMembershipCTA}}
+											... on ${postTypeFlexibleContent}_OfficialMembershipsCta {${OfficialMembershipsCta}}
+											... on ${postTypeFlexibleContent}_TitleParagraphDynamicColour {${TitleParagraphDynamicColour}}
 										}
 									}
 								}
@@ -612,39 +131,8 @@ export const getAllClubPartnersFlexibleContentComponents = async (
 						node {
 							partnersContent {
 								flexibleContent {
-									... on ${postTypeFlexibleContent}_TitleContentImage {
-										fieldGroupName
-										displaySection
-										title
-										paragraph
-										buttonLink {
-											url
-											title
-											target
-										}
-										image {
-											altText
-              								sourceUrl
-              								mediaDetails {
-              									height
-              									width
-              								}
-										}
-									}
-									... on ${postTypeFlexibleContent}_ImageSlider {
-										fieldGroupName
-										displaySection
-										imageSlider {
-											image {
-												altText
-												sourceUrl
-												mediaDetails {
-													height
-													width
-												}
-											}
-										}
-									}
+									... on ${postTypeFlexibleContent}_ImageSlider {${ImageSlider}}
+									... on ${postTypeFlexibleContent}_TitleContentImage {${ClubPartnersTitleContentImage}}
 								}
 							}
 						}

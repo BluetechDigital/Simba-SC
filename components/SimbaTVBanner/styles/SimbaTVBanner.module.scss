@@ -1,0 +1,118 @@
+.simbaTVBanner {
+    @apply py-16 h-full min-h-[50vh] bg-no-repeat bg-cover bg-center;
+
+    .containerWrapper {
+        @apply w-full px-0 mx-auto;
+
+        .contentWrapper {
+            @apply w-full flex flex-col items-center lg:items-baseline justify-center gap-8;
+
+            .content {
+                @apply lg:max-w-[1700px] px-4 mx-auto w-full flex flex-col lg:flex-row items-center justify-between gap-6;
+
+                .title {
+                    @apply max-w-2xl font-primary text-center lg:text-left uppercase text-7xl sm:text-8xl lg:text-12xl tracking-[-0.05rem] text-white leading-tight xl:leading-[5.5rem];
+
+                    span {
+                        @apply text-tertiary-default;
+                    }
+                }
+
+                .paragraph {
+                    @apply max-w-xl mx-auto lg:mx-0 font-secondaryRegular leading-tight text-white text-lg text-center lg:text-left;
+                }
+            }
+
+            .bannerCard {
+                @apply w-full py-10;
+
+                .topSection {
+                    @apply lg:max-w-[1700px] px-4 mx-auto mb-4 w-full flex flex-col md:flex-row items-center justify-center lg:justify-start space-x-2 space-y-2 md:space-y-0;
+                }
+
+                .divider {
+                    @apply lg:max-w-[1700px] px-4 mx-auto w-full mt-10 border-t border-white;
+                }
+
+                .bottomSection {
+                    @apply w-full px-0 mx-auto overflow-hidden flex flex-col items-center justify-center;
+
+                    .bannerVideos {
+                        @apply lg:max-w-[1700px] px-4 mx-auto;
+
+                        .item {
+                            @apply pt-10 lg:px-20;
+
+                            .subtitle {
+                                @apply my-6 font-primary text-center lg:text-left uppercase text-7xl tracking-[0.05rem] text-white xl:leading-tight;
+                            }
+
+                            .paragraph {
+                                @apply font-secondaryRegular leading-tight text-white text-lg lg:text-xl text-center md:text-left;
+                            }
+                        }
+                    }
+
+                    .videosSlider {
+                        @apply lg:max-w-[1800px] px-6 lg:px-0 mx-auto lg:mr-0 w-full pt-16 flex flex-col gap-4;
+
+                        .container {
+                            @apply w-full h-full;
+
+                            .li {
+                                .card {
+                                    @apply w-full h-full min-h-[350px] lg:min-h-[450px] overflow-hidden py-8 px-4 xl:p-8 bg-no-repeat bg-cover bg-center flex flex-col items-baseline justify-end;
+
+                                    .wrapper {
+                                        @apply max-w-xs mx-0 flex flex-col gap-2;
+
+                                        .date {
+                                            @apply font-secondaryRegular font-normal text-white text-tiny text-left;
+                                        }
+
+                                        .div {
+                                            @apply h-[2.5px] bg-primary-default w-full;
+                                        }
+
+                                        .title {
+                                            @apply font-secondaryBlack text-left uppercase text-base tracking-[-0.02rem] text-white font-semibold leading-4;
+                                        }
+
+                                        .likeCountStats {
+                                            @apply mt-2 flex items-center justify-start gap-4;
+
+                                            .items {
+                                                @apply flex gap-2;
+
+                                                .likeCount {
+                                                    @apply font-secondaryRegular text-left text-base sm:text-paragraph tracking-[-0.05rem] leading-tight;
+                                                }
+
+                                                .likeCountSvg,
+                                                .commentCountSvg {
+                                                    @apply w-[20px] h-[20px] fill-white object-contain object-center;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .statsCard {
+                @apply lg:max-w-[1700px] px-4 mx-auto w-full py-20 md:py-24 border-t border-white;
+
+                .content {
+                    @apply flex flex-col items-center justify-center md:flex-row gap-10 md:gap-0;
+
+                    .divider {
+                        @apply hidden md:block h-[1px] w-12 bg-lightGreyTwo sm:h-32 sm:w-[1px];
+                    }
+                }
+            }
+        }
+    }
+}

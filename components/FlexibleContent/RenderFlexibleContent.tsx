@@ -5,45 +5,49 @@ import React, {FC, Fragment} from "react";
 import {usePageContext} from "@/context/providers/PageContextProvider";
 
 // CTA Components
-import CTA from "@/components/CTA/Index";
-import CTATwo from "@/components/CTA/CTATwo";
+import CTA from "@/components/CTA/CTA";
+import CTATwo from "@/components/CTATwo/CTATwo";
 
 // Hero Components
-import Hero from "@/components/Hero/index";
-import HeroTwo from "@/components/Hero/HeroTwo";
-import HeroFour from "@/components/Hero/HeroFour";
-import HeroThree from "@/components/Hero/HeroThree";
+import Hero from "@/components/Hero/Hero";
+import HeroTwo from "@/components/HeroTwo/HeroTwo";
+import HeroFour from "@/components/HeroFour/HeroFour";
+import HeroThree from "@/components/HeroThree/HeroThree";
 
 // Fans Pages
-import AllYoutubeVideos from "@/components/Fans/AllYouTubeVideos/index";
-import LatestVideoBlock from "@/components/Fans/LatestVideoBlock/index";
-import AllPodcastsVideos from "@/components/Fans/AllPodcastsVideos/index";
+import AllYoutubeVideos from "@/components/Fans/AllYouTubeVideos/AllYouTubeVideos";
+import LatestVideoBlock from "@/components/Fans/LatestVideoBlock/LatestVideoBlock";
+import AllPodcastsVideos from "@/components/Fans/AllPodcastsVideos/AllPodcastsVideos";
+
+// Components: Fixtures
+import LastThreeFixtures from "@/components/Fixtures/LastThreeFixtures/LastThreeFixtures";
+
+// Components: Club Partners
+import ClubPartnersGrid from "@/components/ClubPartners/ClubPartnersGrid/ClubPartnersGrid";
 
 // Other Components
-import VideoBlock from "@/components/VideoBlock/index";
-import AboutSimba from "@/components/AboutSimba/index";
-import VisitStore from "@/components/VisitStore/index";
-import SponsorsLogos from "@/components/SponsorsLogos";
-import ContactForm from "@/components/ContactForm/index";
-import TitleParagraph from "@/components/TitleParagraph";
-import LatestNewsGrid from "@/components/LatestNews/index";
-import SocialMediaGrid from "@/components/SocialMediaGrid";
-import NewsletterBanner from "@/components/NewsletterBanner";
-import SimbaTVBanner from "@/components/SimbaTVBanner/index";
-import NewOfficialKitCta from "@/components/NewOfficialKitCta";
-import GeneralInformation from "@/components/GeneralInformation";
-import TrophyCabinetBanner from "@/components/TrophyCabinetBanner";
-import TitleContentImage from "@/components/TitleContentImage/Index";
-import ClubCardMembershipCTA from "@/components/ClubCardMembershipCta";
-import AboutTheClubGrid from "@/components/AboutSimba/AboutTheClubGrid";
-import LastThreeFixtures from "@/components/Fixtures/LastThreeFixtures";
-import OfficialMembershipsCta from "@/components/OfficialMembershipsCta";
-import ClubPartnersGrid from "@/components/ClubPartners/ClubPartnersGrid";
-import TitleParagraphDynamicColour from "@/components/TitleParagraphDynamicColour";
+import VisitStore from "@/components/VisitStore/VisitStore";
+import VideoBlock from "@/components/VideoBlock/VideoBlock";
+import AboutSimba from "@/components/AboutSimba/AboutSimba";
+import ContactForm from "@/components/ContactForm/ContactForm";
+import SimbaTVBanner from "@/components/SimbaTVBanner/SimbaTVBanner";
+import SponsorsLogos from "@/components/SponsorsLogos/SponsorsLogos";
+import LatestNewsGrid from "@/components/LatestNewsGrid/LatestNewsGrid";
+import TitleParagraph from "@/components/TitleParagraph/TitleParagraph";
+import SocialMediaGrid from "@/components/SocialMediaGrid/SocialMediaGrid";
+import NewsletterBanner from "@/components/NewsletterBanner/NewsletterBanner";
+import AboutTheClubGrid from "@/components/AboutTheClubGrid/AboutTheClubGrid";
+import NewOfficialKitCta from "@/components/NewOfficialKitCta/NewOfficialKitCta";
+import TitleContentImage from "@/components/TitleContentImage/TitleContentImage";
+import GeneralInformation from "@/components/GeneralInformation/GeneralInformation";
+import TrophyCabinetBanner from "@/components/TrophyCabinetBanner/TrophyCabinetBanner";
+import ClubCardMembershipCTA from "@/components/ClubCardMembershipCTA/ClubCardMembershipCTA";
+import OfficialMembershipsCta from "@/components/OfficialMembershipsCta/OfficialMembershipsCta";
+import TitleParagraphDynamicColour from "@/components/TitleParagraphDynamicColour/TitleParagraphDynamicColour";
 
 const RenderFlexibleContent: FC = () => {
-	const pageContextContent = usePageContext();
-	const FlexibleContent = pageContextContent?.postTypeFlexibleContent;
+	const content = usePageContext();
+	const FlexibleContent: any = content?.postTypeFlexibleContent;
 
 	// Components Key Value Pairs
 	const componentMapping: any = {
@@ -88,25 +92,25 @@ const RenderFlexibleContent: FC = () => {
 
 	return (
 		<>
-			{pageContextContent?.content?.length > 0 ? (
-				pageContextContent?.content?.map((item: any, index: number) =>
-					item?.displaySection ? (
-						<Fragment key={index}>
-							{componentMapping[item?.fieldGroupName] && (
-								<>
-									{React.createElement(componentMapping[item?.fieldGroupName], {
-										...item,
-									})}
-								</>
-							)}
-						</Fragment>
-					) : (
-						<></>
-					)
-				)
-			) : (
-				<></>
-			)}
+			{content?.content?.length > 0 &&
+				content?.content?.map((item: any, index: number) => (
+					<Fragment key={index}>
+						{item?.displaySection ? (
+							<section>
+								{componentMapping[item?.fieldGroupName] && (
+									<>
+										{React.createElement(componentMapping[item?.fieldGroupName], {
+											...item,
+										})}
+									</>
+								)}
+							</section>
+						) : (
+							<></>
+						)}
+					</Fragment>
+				))
+			}
 		</>
 	);
 };

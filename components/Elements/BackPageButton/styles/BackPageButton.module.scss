@@ -1,0 +1,25 @@
+.backPageButton {
+	@apply relative w-fit h-fit xl:block z-[998];
+
+	.container {
+		@apply fixed left-6 z-20 top-[5rem] flex justify-center;
+
+		.content {
+			@apply bg-primary-default hover:bg-accent-default;
+
+			&:focus {
+				outline: none;
+			}
+
+			&:hover {
+				@apply transition-all duration-500 ease-in-out;
+			}
+
+			.span {
+				.svg {
+					@apply w-[30px] h-[30px] object-center object-contain rotate-[0deg];
+				}
+			}
+		}
+	}
+}

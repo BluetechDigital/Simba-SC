@@ -1,0 +1,67 @@
+.hero {
+    @apply relative z-50 flex flex-col h-fit pt-[138px] bg-white;
+
+    .container {
+        @apply lg:relative flex flex-col;
+
+        .heroSwiperSlider {
+            @apply relative overflow-hidden;
+
+            .slide {
+                @apply w-full p-0;
+
+                .contentWrapper {
+                    @apply pt-24 pb-44 sm:pb-20 w-full h-[87vh] flex flex-col items-center lg:items-baseline justify-center relative bg-center bg-no-repeat bg-cover;
+
+                    .content {
+                        @apply relative z-10 flex flex-col items-center lg:items-start gap-4 px-8 sm:px-4 lg:px-24;
+
+                        .top {
+                            @apply max-w-full lg:max-w-xl 2xl:max-w-5xl mx-auto lg:mx-0;
+
+                            .title {
+                                @apply font-secondaryBlack text-center lg:text-left uppercase text-5xl sm:text-6xl md:text-7xl 2xl:text-8xl tracking-[-0.02rem] text-white font-semibold leading-[0.90];
+                            }
+
+                            .paragraph {
+                                @apply max-w-xl mx-auto lg:mx-0 py-2 font-secondaryRegular leading-tight text-white text-lg text-center lg:text-left;
+                            }
+                        }
+
+                        .bottom {
+                            @apply flex flex-col lg:flex-row items-center lg:items-baseline gap-2 sm:gap-4 max-w-sm lg:max-w-4xl mx-auto lg:mx-0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Home Page Hero Slider
+.HeroSwiperSlider {
+    .externalLink {
+        @apply font-primary;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        @apply mt-64 lg:mt-0 w-16 h-16 p-8 border-2 border-primary-default hover:border-primary-dark text-primary-default hover:text-primary-dark;
+
+        top: 85% !important;
+
+        @media screen and (min-width: 1024px) {
+            top: 50% !important;
+        }
+    }
+
+    .swiper-button-prev::after {
+        content: "next";
+        @apply w-[15px] h-[15px] text-[15px] text-white font-extrabold rotate-180 #{!important};
+    }
+
+    .swiper-button-next::after {
+        content: "next";
+        @apply w-[15px] h-[15px] text-[15px] text-white font-extrabold #{!important};
+    }
+}

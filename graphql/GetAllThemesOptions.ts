@@ -1,12 +1,13 @@
-import {client} from "@/config/apollo";
+// Imports
+import { client } from "@/config/apollo";
+import {ICustomPostTypes} from "@/types/index";
 import {DocumentNode, gql} from "@apollo/client";
-import {IThemesOptionsContent} from "@/types/context";
 
 /* THEMES OPTIONS CONTENT
  The ID number refers to the
 "Global Content" page ID*/
 export const getThemesOptionsContent =
-	async (): Promise<IThemesOptionsContent> => {
+	async (): Promise<ICustomPostTypes.IThemesOptions> => {
 		try {
 			const content: DocumentNode = gql`
 				{

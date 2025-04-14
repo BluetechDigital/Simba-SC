@@ -5,7 +5,7 @@ import type {AppProps} from "next/app";
 import "@/styles/globals.scss";
 
 // Global Context Provider
-import {IGlobal} from "@/types/context/Providers";
+import {IGlobal} from "@/context/types/context";
 
 // Queries Functions
 import {
@@ -29,14 +29,14 @@ import {getAllTestimonialsContent} from "@/graphql/GetAllTestimonials";
 import {getAllJobsPositionsContent} from "@/graphql/GetAllJobsPositions";
 
 // Instagram Feed
-import {getAllInstagramFeedContent} from "@/functions/SocialMedia/InstagramFeed";
+import {getAllInstagramFeedContent} from "@/api/SocialMedia/InstagramFeed";
 
 // Youtube Channel Info
 import {
 	getAllYoutubeVideos,
-	getAllYoutubeChannelInfo,
 	getAllYoutubePlaylists,
-} from "@/functions/YouTube/GetAllYoutubeContent";
+	getAllYoutubeChannelInfo,
+} from "@/api/YouTube/GetAllYoutubeContent";
 
 // News, Blogs & Case Studies
 import {
@@ -46,10 +46,10 @@ import {
 } from "@/graphql/GetAllNewsBlogsCaseStudies";
 
 // Get All Football Fixtures
-import {getLastThreeFixturesContent} from "@/functions/Football/GetLastThreeFixtures";
+import {getLastThreeFixturesContent} from "@/api/Football/GetLastThreeFixtures";
 
 // Get All Shopify Online Store
-import {getAllOnlineStoreShirts} from "@/functions/Store/GetAllStoreItems";
+import {getAllOnlineStoreShirts} from "@/api/Store/GetAllStoreItems";
 
 // Get All Stakeholders
 import {getAllBoardOfDirectorsContent} from "@/graphql/GetAllStakeholders";
@@ -58,14 +58,15 @@ import {getAllExecutiveLeadershipsContent} from "@/graphql/GetAllStakeholders";
 // Get All Club Partners
 import {getAllClubPartnersExcerpt} from "@/graphql/GetAllClubPartners";
 
+
 // Components
-import Footer from "@/components/Global/Footer";
+import Footer from "@/components/Global/Footer/Footer";
 import Navbar from "@/components/Global/Navigation/Navbar";
-import BlurryCursorMouse from "@/hooks/useBlurryCursorMouse";
 import SmoothScrolling from "@/components/Global/SmoothScrolling";
-import BackToTopButton from "@/components/Elements/BackToTopButton";
 import GlobalContextProvider from "@/context/providers/GlobalContextProvider";
 import ApolloContextProvider from "@/context/providers/ApolloContextProvider";
+import BackToTopButton from "@/components/Elements/BackToTopButton/BackToTopButton";
+import BlurryCursorMouse from "@/components/Global/BlurryCursorMouse/BlurryCursorMouse";
 
 const App = async ({children}: AppProps | any) => {
 	// PUBLIC PAGES //
@@ -239,3 +240,4 @@ const App = async ({children}: AppProps | any) => {
 };
 
 export default App;
+

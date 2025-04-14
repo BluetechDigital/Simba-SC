@@ -1,0 +1,185 @@
+.newsSingle {
+	@apply flex flex-col gap-4;
+
+	.topSection {
+		@apply flex flex-col lg:flex-row gap-4 lg:gap-12 py-10 container px-4 lg:px-0 mx-auto;
+
+		.topWrapper {
+			@apply w-full lg:w-8/12 mb-6 lg:mb-0;
+
+			.title {
+				@apply text-center lg:text-left text-3xl lg:text-5xl xl:text-6xl font-bold mb-12 lg:max-w-3xl mx-auto lg:mx-0 leading-snug;
+			}
+
+			.content {
+				@apply flex items-center justify-between flex-col md:flex-row gap-8 md:gap-4 mb-12;
+
+				.contentStats {
+					@apply flex items-center gap-4 flex-col sm:flex-row;
+
+					.logo {
+						@apply object-center object-cover w-20 h-20;
+					}
+
+					.innerContent {
+						@apply flex flex-col gap-2;
+
+						.titleText {
+							@apply text-lg font-semibold;
+						}
+
+						.wrapper {
+							@apply flex mb-4 items-center;
+
+							.articleType {
+								@apply inline-flex items-center h-7 px-3 text-xs text-white font-medium bg-primary-two bg-opacity-60 rounded-full;
+							}
+
+							.svgDiv {
+								@apply inline-block mx-4;
+							}
+
+							.readTime {
+								@apply text-tiny text-darkGrey;
+							}
+						}
+					}
+				}
+
+				.socialMediaLink {
+					@apply flex items-center gap-4 flex-wrap lg:gap-8;
+
+					.link {
+						@apply inline-block text-primary;
+					}
+				}
+			}
+
+			.article {
+				@apply flex flex-col gap-4;
+
+				.paragraph,
+				.boldParagraph {
+					@apply lg:max-w-4xl mx-auto lg:mx-0 text-left text-pureBlack text-paragraph;
+				}
+
+				.boldParagraph {
+					@apply font-semibold;
+				}
+			}
+		}
+
+		.bottomWrapper {
+			@apply w-full lg:w-4/12 flex flex-col gap-4 lg:gap-10;
+
+			.newsletterElement {
+				@apply w-full bg-primary-dark py-6 px-8;
+
+				.titleMessageWrapper {
+					@apply mb-4;
+
+					.title,
+					.sendingMessage,
+					.messageSent,
+					.errorMessage {
+						@apply my-2 text-xl font-bold text-center lg:text-left text-primary-two;
+					}
+
+					.title {
+						@apply text-white;
+					}
+
+					.paragraph {
+						@apply mb-2 lg:max-w-3xl mx-auto text-white text-base text-center lg:text-left;
+					}
+				}
+
+				.fieldWrapper {
+					@apply mb-2 w-full;
+
+					.errorMessage {
+						@apply py-1 mb-1 text-left text-tiny text-primary-two;
+					}
+
+					.fieldText {
+						@apply px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-primary-dark focus:border-primary-dark focus:ring-[1px] focus:ring-primary-dark;
+					}
+				}
+
+				.formSubmitButton {
+					@apply mt-1 w-full lg:w-fit inline-block text-white disabled:bg-opacity-20 disabled:cursor-not-allowed;
+
+					.textWrapper {
+						@apply w-full flex items-center justify-center gap-3 py-4 px-6 lg:px-10 bg-primary-default hover:bg-primary-two transition-all duration-200 ease-in-out;
+
+						.text {
+							@apply text-white tracking-widest text-paragraph uppercase;
+						}
+					}
+				}
+			}
+
+			.latestArticlesWrapper {
+				@apply flex flex-col gap-4;
+
+				.text {
+					@apply my-4 lg:mb-0 text-2xl font-semibold text-pureBlack text-center lg:text-left;
+				}
+
+				.latestArticlesGrid {
+					@apply block py-0 px-4 lg:px-0;
+
+					.featuredImageWrapper {
+						@apply block lg:hidden relative px-0 h-[300px] border-r-[5px] lg:border-r-[10px] border-t-[5px] border-b-0 border-twoGrey;
+
+						.featuredImage {
+							@apply object-cover object-center w-full h-full;
+						}
+					}
+
+					.insightsWrapper {
+						@apply flex mt-6 mb-2 items-center;
+
+						.text {
+							@apply inline-flex items-center h-7 px-3 text-xs text-white font-medium bg-primary-two bg-opacity-60 rounded-full;
+						}
+
+						.svgDiv {
+							@apply inline-block mx-4;
+						}
+
+						.date {
+							@apply text-sm text-pureBlack;
+						}
+					}
+
+					.title {
+						@apply mb-2 text-lg font-semibold text-pureBlack transition-all ease-in-out duration-200 hover:text-primary-two;
+					}
+
+					.article {
+						.excerpt {
+							@apply block px-0 text-tiny text-darkGrey;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.bottomSection {
+		@apply flex flex-col gap-4 container px-4 lg:px-0 mx-auto;
+
+		.content {
+			@apply px-6 py-4 flex items-center flex-wrap gap-2 bg-dark border border-grey mb-12;
+
+			.text {
+				@apply text-darkGrey text-base;
+			}
+
+			.newsletterElement {
+				@apply flex items-center flex-wrap gap-2 text-primary-two hover:text-primary-dark transition duration-200 font-bold;
+			}
+		}
+	}
+}

@@ -2,23 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "./base/fonts";
-@import "./base/colors";
-
-@import "./components/Hero.module.scss";
-@import "./components/SocialMedia.module.scss";
-@import "./components/SimbaTVBanner.module.scss";
-@import "./components/Elements/Buttons.module.scss";
-@import "./components/TrophyCabinetBanner.module.scss";
-@import "./components/OfficialMembershipsCta.module.scss";
-@import "./components/Elements/ButtonStyling.module.scss";
-@import "./components/Elements/NavigationMenu.module.scss";
-
 html,
 body {
-	@apply p-0 m-0 overflow-x-hidden;
-	font-family: -apple-system, $body, BlinkMacSystemFont, Segoe UI, Roboto,
-		Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	@apply p-0 m-0 bg-white overflow-x-hidden;
+	font-family: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+		"Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 body::-webkit-scrollbar {
@@ -52,6 +40,45 @@ h3,
 h4,
 h5 {
 	font-family: "Kanit";
+}
+
+.buttonStyling {
+	@apply pt-3 pb-2 px-10 w-fit font-secondaryBlack cursor-pointer rounded-full uppercase text-lightGrey text-paragraph lg:text-lg text-center border-2 border-solid border-white hover:border-primary-default bg-transparent hover:bg-primary-default transition-all ease-in-out duration-500;
+}
+
+.buttonStyling-alt {
+	@extend .buttonStyling;
+	@apply border-primary-default bg-primary-default hover:border-accent-default hover:bg-accent-default;
+}
+
+.buttonStyling-alt-two {
+	@extend .buttonStyling;
+	@apply border-primary-default bg-primary-default hover:border-primary-dark hover:bg-primary-dark;
+}
+
+.buttonStyling-alt-two-slim {
+	@extend .buttonStyling-alt-two;
+	@apply py-1 px-6 text-tiny lg:text-base;
+}
+
+.buttonStyling-alt-three {
+	@extend .buttonStyling;
+	@apply hover:border-accent-default hover:bg-accent-default;
+}
+
+.buttonStyling-alt-four {
+	@extend .buttonStyling;
+	@apply hover:text-primary-default hover:border-tertiary-default hover:bg-tertiary-default;
+}
+
+.buttonStyling-alt-five {
+	@extend .buttonStyling;
+	@apply pt-2 pb-1 text-paragraph lg:text-medium hover:border-primary-two hover:bg-accent-default;
+}
+
+.buttonStyling-alt-five-active {
+	@extend .buttonStyling-alt-five;
+	@apply text-primary-default border-tertiary-default bg-tertiary-default hover:border-tertiary-default hover:bg-tertiary-default;
 }
 
 /* Testimonials Swiper.js Slider */
@@ -149,8 +176,7 @@ PAGE LOADING ANIMATION */
 		transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(1);
 	}
 	.loader .ground div {
-		transform: rotateX(90deg) rotateY(0deg) translate(-48px, -120px)
-			translateZ(100px) scale(0);
+		transform: rotateX(90deg) rotateY(0deg) translate(-48px, -120px) translateZ(100px) scale(0);
 		width: 200px;
 		height: 200px;
 		background: var(--primary);
@@ -178,8 +204,7 @@ PAGE LOADING ANIMATION */
 		opacity: 0;
 		background: linear-gradient(var(--primary), var(--primary-rgba));
 		position: absolute;
-		transform: rotateX(var(--rx)) rotateY(var(--ry))
-			translate(var(--x), var(--y)) translateZ(var(--z));
+		transform: rotateX(var(--rx)) rotateY(var(--ry)) translate(var(--x), var(--y)) translateZ(var(--z));
 		-webkit-animation: ground-shine var(--duration) linear forwards infinite;
 		animation: ground-shine var(--duration) linear forwards infinite;
 	}
@@ -220,8 +245,7 @@ PAGE LOADING ANIMATION */
 		background-color: inherit;
 		width: inherit;
 		height: inherit;
-		transform: rotateX(var(--rx)) rotateY(var(--ry))
-			translate(var(--x), var(--y)) translateZ(var(--z));
+		transform: rotateX(var(--rx)) rotateY(var(--ry)) translate(var(--x), var(--y)) translateZ(var(--z));
 		filter: brightness(var(--b, 1.2));
 	}
 	.loader .box div:after {
@@ -747,33 +771,27 @@ PAGE LOADING ANIMATION */
 	@-webkit-keyframes ground {
 		0%,
 		65% {
-			transform: rotateX(90deg) rotateY(0deg) translate(-48px, -120px)
-				translateZ(100px) scale(0);
+			transform: rotateX(90deg) rotateY(0deg) translate(-48px, -120px) translateZ(100px) scale(0);
 		}
 		75%,
 		90% {
-			transform: rotateX(90deg) rotateY(0deg) translate(-48px, -120px)
-				translateZ(100px) scale(1);
+			transform: rotateX(90deg) rotateY(0deg) translate(-48px, -120px) translateZ(100px) scale(1);
 		}
 		100% {
-			transform: rotateX(90deg) rotateY(0deg) translate(-48px, -120px)
-				translateZ(100px) scale(0);
+			transform: rotateX(90deg) rotateY(0deg) translate(-48px, -120px) translateZ(100px) scale(0);
 		}
 	}
 	@keyframes ground {
 		0%,
 		65% {
-			transform: rotateX(90deg) rotateY(0deg) translate(-48px, -120px)
-				translateZ(100px) scale(0);
+			transform: rotateX(90deg) rotateY(0deg) translate(-48px, -120px) translateZ(100px) scale(0);
 		}
 		75%,
 		90% {
-			transform: rotateX(90deg) rotateY(0deg) translate(-48px, -120px)
-				translateZ(100px) scale(1);
+			transform: rotateX(90deg) rotateY(0deg) translate(-48px, -120px) translateZ(100px) scale(1);
 		}
 		100% {
-			transform: rotateX(90deg) rotateY(0deg) translate(-48px, -120px)
-				translateZ(100px) scale(0);
+			transform: rotateX(90deg) rotateY(0deg) translate(-48px, -120px) translateZ(100px) scale(0);
 		}
 	}
 	@-webkit-keyframes ground-shine {
@@ -822,4 +840,30 @@ PAGE LOADING ANIMATION */
 			opacity: 1;
 		}
 	}
+}
+
+/*===== FONTS =====*/
+@font-face {
+	font-family: primary;
+	src: url("./fonts/schabo-condensed.woff");
+}
+@font-face {
+	font-family: Inter;
+	src: url("./fonts/Inter.woff");
+}
+@font-face {
+	font-family: secondaryThin;
+	src: url("./fonts/OnestThin.woff");
+}
+@font-face {
+	font-family: secondaryRegular;
+	src: url("./fonts/OnestRegular.woff");
+}
+@font-face {
+	font-family: secondaryBold;
+	src: url("./fonts/OnestBold.woff");
+}
+@font-face {
+	font-family: secondaryBlack;
+	src: url("./fonts/OnestBlack.woff");
 }

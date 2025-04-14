@@ -3,10 +3,15 @@
 // Imports
 import {FC} from "react";
 import {motion} from "framer-motion";
-import {IElements} from "@/types/components/Elements";
-import {initialTwo, fadeIn} from "@/animations/animations";
+import { initialTwo, fadeIn } from "@/animations/animations";
 
-const useFormatNumber: FC<IElements.IFormatNumber> = ({
+type IFormatNumber = {
+	number: string;
+	decimals: number;
+	className: string;
+};
+	
+const useFormatNumber: FC<IFormatNumber> = ({
 	number,
 	decimals = 0,
 	className,

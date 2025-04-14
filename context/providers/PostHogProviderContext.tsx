@@ -7,7 +7,7 @@ import {useRouter} from "next/navigation";
 // PostHog Cookies Policy
 import postHog from "posthog-js";
 import {PostHogProvider} from "posthog-js/react";
-import CookiePolicyCard from "@/components/Global/CookiePolicyCard";
+import CookiePolicyCard from "@/components/Global/CookiePolicy/CookiePolicyCard";
 
 // Components
 

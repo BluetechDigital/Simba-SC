@@ -1,9 +1,10 @@
-import {client} from "@/config/apollo";
-import {ITestimonials} from "@/types/context";
+// Imports
+import { client } from "@/config/apollo";
+import {ICustomPostTypes} from "@/types/index";
 import {DocumentNode, gql} from "@apollo/client";
 
 /* TESTIMONIALS */
-export const getAllTestimonialsContent = async (): Promise<ITestimonials> => {
+export const getAllTestimonialsContent = async (): Promise<ICustomPostTypes.ITestimonials> => {
 	try {
 		const content: DocumentNode = gql`
 			{
@@ -44,7 +45,7 @@ export const getAllTestimonialsContent = async (): Promise<ITestimonials> => {
 
 export const getAllTestimonialsContentType = async (
 	type: string
-): Promise<ITestimonials> => {
+): Promise<ICustomPostTypes.ITestimonials> => {
 	try {
 		const content: DocumentNode = gql`
 			{

@@ -1,6 +1,7 @@
-import {client} from "@/config/apollo";
+// Imports
+import { client } from "@/config/apollo";
 import {DocumentNode, gql} from "@apollo/client";
-import {IJobsPositions, ISlug} from "@/types/context";
+import {ISlug, ICustomPostTypes} from "@/types/index";
 
 /* JOBS POSITIONS SLUGS (URLS) */
 export const getAllJobsPositionsSlugs = async (): Promise<ISlug> => {
@@ -30,7 +31,7 @@ export const getAllJobsPositionsSlugs = async (): Promise<ISlug> => {
 };
 
 // All Jobs Positions Content
-export const getAllJobsPositionsContent = async (): Promise<IJobsPositions> => {
+export const getAllJobsPositionsContent = async (): Promise<ICustomPostTypes.IJobsPositions> => {
 	try {
 		const content: DocumentNode = gql`
 			{
@@ -74,7 +75,7 @@ export const getAllJobsPositionsContent = async (): Promise<IJobsPositions> => {
 
 // Latest Three Jobs Positions Content
 export const getThreeJobsPositionsContent =
-	async (): Promise<IJobsPositions> => {
+	async (): Promise<ICustomPostTypes.IJobsPositions> => {
 		try {
 			const content: DocumentNode = gql`
 				{

@@ -20,6 +20,7 @@ export const generateMetadata = async ({params}: any): Promise<Metadata> => {
 	};
 };
 
+
 const dynamicPages: NextPage = async ({params}: any) => {
 	// Fetch priority content
 	const flexibleContentComponents: any = await getAllFlexibleContentComponents(
@@ -29,14 +30,12 @@ const dynamicPages: NextPage = async ({params}: any) => {
 	);
 
 	return (
-		<>
-			<PageContextProvider
-				content={flexibleContentComponents?.content}
-				postTypeFlexibleContent={flexibleContentType?.pages}
-			>
-				<RenderFlexibleContent />
-			</PageContextProvider>
-		</>
+		<PageContextProvider
+			content={flexibleContentComponents?.content}
+			postTypeFlexibleContent={flexibleContentType?.pages}
+		>
+			<RenderFlexibleContent />
+		</PageContextProvider>
 	);
 };
 

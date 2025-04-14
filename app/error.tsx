@@ -4,7 +4,7 @@
 import {NextPage} from "next";
 
 // Components
-import ErrorPage from "@/components/Global/Error";
+import ErrorPage from "@/components/Global/Error/Error";
 
 const Error: NextPage = () => {
 	return <ErrorPage />;

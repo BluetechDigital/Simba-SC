@@ -1,7 +1,7 @@
-import {ISlug} from "@/types/context";
+// Imports
 import {client} from "@/config/apollo";
 import {DocumentNode, gql} from "@apollo/client";
-import {IStakeholders} from "@/types/context/Stakeholders";
+import {ISlug, IStakeholders} from "@/types/index";
 
 /* EXECUTIVE LEADERSHIPS  SLUGS (URLS) */
 export const getAllExecutiveLeadershipsPostsSlugs =

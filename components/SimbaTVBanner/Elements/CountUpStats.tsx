@@ -1,13 +1,13 @@
 "use client";
 
 // Imports
-import {ISimbaTVBanner} from "@/types/components";
 import React, {FC, useEffect, useRef} from "react";
 import {motion, animate, useInView} from "framer-motion";
 import {initialTwo, fadeIn} from "@/animations/animations";
+import { ISimbaTVBanner } from "@/components/SimbaTVBanner/types/index";
 
 // Components
-import Paragraph from "@/components/Elements/Paragraph";
+import Paragraph from "@/components/Elements/Paragraph/Paragraph";
 
 const CountUpStats: FC<ISimbaTVBanner.ICountUpStats> = ({
 	number,
@@ -46,23 +46,21 @@ const CountUpStats: FC<ISimbaTVBanner.ICountUpStats> = ({
 	}, [number, decimals, isInView, formatNumber]);
 
 	return (
-		<>
-			<div className="flex w-full flex-col items-center py-8 px-8 sm:py-0 gap-8">
-				<motion.h4
-					initial={initialTwo}
-					whileInView={fadeIn}
-					viewport={{once: true}}
-					className="font-OnestBlack text-center uppercase text-[16vw] md:text-[5vw] tracking-[-0.02rem] text-white font-semibold"
-				>
-					<span ref={ref}></span>
-					{suffix ? suffix : <></>}
-				</motion.h4>
-				<Paragraph
-					content={paragraph}
-					className="font-OnestBlack uppercase leading-tight text-lightGreyTwo text-paragraph lg:text-lg text-center"
-				/>
-			</div>
-		</>
+		<div className="flex w-full flex-col items-center py-8 px-8 sm:py-0 gap-8">
+			<motion.h4
+				initial={initialTwo}
+				whileInView={fadeIn}
+				viewport={{once: true}}
+				className="font-secondaryBlack text-center uppercase text-[16vw] md:text-[5vw] tracking-[-0.02rem] text-white font-semibold"
+			>
+				<span ref={ref}></span>
+				{suffix ? suffix : <></>}
+			</motion.h4>
+			<Paragraph
+				content={paragraph}
+				className="font-secondaryBlack uppercase leading-tight text-lightGreyTwo text-paragraph lg:text-lg text-center"
+			/>
+		</div>
 	);
 };
 

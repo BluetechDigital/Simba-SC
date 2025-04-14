@@ -2,8 +2,8 @@
 
 // Imports
 import {FC} from "react";
+import {IPage} from "@/context/types/context";
 import {createContext, useContext} from "react";
-import {IPage} from "@/types/context/Providers";
 
 export const PageContext = createContext<IPage.IContext | undefined>(undefined);
 

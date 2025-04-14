@@ -3,7 +3,10 @@
 // Imports
 import {FC} from "react";
 import {ReactLenis} from "lenis/react";
-import {ISmoothScrolling} from "@/types/components/Global";
+
+export type ISmoothScrolling = {
+	children: React.ReactNode;
+};
 
 const SmoothScrolling: FC<ISmoothScrolling> = ({children}) => {
 	return (
@@ -16,7 +19,7 @@ const SmoothScrolling: FC<ISmoothScrolling> = ({children}) => {
 				//   syncTouch: true,
 			}}
 		>
-			<main>{children}</main>
+			{children}
 		</ReactLenis>
 	);
 };

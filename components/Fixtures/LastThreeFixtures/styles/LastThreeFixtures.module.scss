@@ -1,0 +1,103 @@
+.lastThreeFixtures {
+	@apply bg-white lg:max-w-[1700px] mx-auto px-0;
+
+	.container {
+		@apply w-full mx-auto px-4 pt-10 pb-10 lg:px-10 min-h-[25vh] flex flex-col;
+
+		.title {
+			@apply mb-8 font-primary text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-005rem] text-pureBlack leading-tight;
+		}
+
+		.fixturesGrid {
+			@apply py-0 grid grid-cols-1 lg:grid-cols-3 gap-4 items-center justify-center lg:gap-4 overflow-hidden;
+
+			.cardWrapper {
+				@apply w-full h-full bg-lightGrey;
+
+				.card {
+					@apply w-full h-full p-6 flex flex-col items-center lg:items-start justify-between gap-5;
+
+					.gameDayDateWrapper {
+						@apply flex items-center justify-center lg:justify-start gap-1;
+
+						.gameDay {
+							@apply text-primary-default text-tiny font-secondaryBlack text-center uppercase;
+						}
+
+						.date {
+							@apply text-pureBlack/35 text-tiny font-secondaryBold text-center uppercase;
+						}
+					}
+
+					.homeAndAwayWrapper {
+						@apply grid grid-cols-3 items-center justify-center gap-12 lg:gap-12;
+
+						.homeTeam {
+							@apply flex flex-col items-center justify-center gap-2;
+
+							.logo {
+								@apply object-contain object-center w-full h-[75px];
+							}
+
+							.name {
+								@apply text-primary-default text-medium font-secondaryBlack text-center uppercase italic leading-tight;
+							}
+
+							.winner {
+								@apply text-pureBlack text-tiny font-secondaryRegular text-center;
+							}
+						}
+
+						.goalsStats {
+							@apply p-4 grid grid-cols-3 items-center justify-center gap-2;
+
+							.home {
+								@apply text-pureBlack text-2xl font-secondaryBlack text-center;
+							}
+
+							.div {
+								@apply text-pureBlack text-2xl font-secondaryBlack text-center;
+							}
+
+							.away {
+								@apply text-pureBlack text-2xl font-secondaryBlack text-center;
+							}
+						}
+
+						.awayTeam {
+							@apply flex flex-col items-center justify-center gap-2;
+
+							.logo {
+								@apply object-contain object-center w-[65px] md:w-[75px] h-[60px] sm:h-[65px] lg:h-[75px];
+							}
+
+							.name {
+								@apply text-pureBlack text-medium font-secondaryBlack text-center uppercase italic leading-tight;
+							}
+
+							.winner {
+								@apply text-pureBlack text-tiny font-secondaryRegular text-center;
+							}
+						}
+					}
+
+					.leagueName {
+						@apply w-full mx-auto text-pureBlack text-base font-secondaryBlack text-center uppercase;
+					}
+				}
+			}
+
+			.loading {
+				@apply h-full flex flex-col items-center justify-center;
+
+				.svg {
+					@apply inline w-12 h-12 text-lightGrey animate-spin dark:text-pureBlack fill-primary-two;
+				}
+
+				.paragraph {
+					@apply font-bold font-secondaryThin text-paragraph text-pureBlack;
+				}
+			}
+		}
+	}
+}

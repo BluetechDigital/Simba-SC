@@ -1,8 +1,7 @@
 // Imports
 import {client} from "@/config/apollo";
-import {ISlug} from "@/types/context";
 import {DocumentNode, gql} from "@apollo/client";
-import {IClubPartnersPostType} from "@/types/components/ClubPartners";
+import {ISlug, ICustomPostTypes} from "@/types/index";
 
 /* CLUB PARTNERS */
 // Club Partners Content
@@ -32,7 +31,7 @@ export const getAllClubPartnersSlugs = async (): Promise<ISlug> => {
 
 // Content Except
 export const getAllClubPartnersExcerpt =
-	async (): Promise<IClubPartnersPostType.IClubPartnersExcept> => {
+	async (): Promise<ICustomPostTypes.IClubPartners.IExcept> => {
 		try {
 			const content: DocumentNode = gql`
 				{
@@ -78,7 +77,7 @@ export const getAllClubPartnersExcerpt =
  for the Club Partners Custom Post Type */
 export const getAllClubPartnersContent = async (
 	slug: string
-): Promise<IClubPartnersPostType.IClubPartnersContent[`partnersContent`]> => {
+): Promise<ICustomPostTypes.IClubPartners.IContent[`partnersContent`]> => {
 	try {
 		const content: DocumentNode = gql`
 			{

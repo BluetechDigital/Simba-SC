@@ -1,7 +1,7 @@
-import {ISlug} from "@/types/context";
+// Imports
 import {client} from "@/config/apollo";
 import {DocumentNode, gql} from "@apollo/client";
-import {INewsBlogsCaseStudies} from "@/types/context/NewsCaseStudies";
+import {ISlug, ICustomPostTypes} from "@/types/index";
 
 /* NEWS SLUGS (URLS) */
 export const getAllNewsPostsSlugs = async (): Promise<ISlug> => {
@@ -30,7 +30,7 @@ export const getAllNewsPostsSlugs = async (): Promise<ISlug> => {
 
 // All News Content
 export const getAllNewsContent =
-	async (): Promise<INewsBlogsCaseStudies.INews> => {
+	async (): Promise<ICustomPostTypes.INews> => {
 		try {
 			const content: DocumentNode = gql`
 				{
@@ -98,7 +98,7 @@ export const getAllBlogsPostsSlugs = async (): Promise<ISlug> => {
 
 // All Blogs Content
 export const getAllBlogsContent =
-	async (): Promise<INewsBlogsCaseStudies.IBlogs> => {
+	async (): Promise<ICustomPostTypes.IBlogs> => {
 		try {
 			const content: DocumentNode = gql`
 				{
@@ -168,7 +168,7 @@ export const getAllCaseStudiesSlugs = async (): Promise<ISlug> => {
 
 // All Case Studies Content
 export const getAllCaseStudiesContent =
-	async (): Promise<INewsBlogsCaseStudies.ICaseStudies> => {
+	async (): Promise<ICustomPostTypes.ICaseStudies> => {
 		try {
 			const content: DocumentNode = gql`
 				{

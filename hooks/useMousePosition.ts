@@ -3,11 +3,16 @@
 // Imports
 import {useState, useEffect, useRef} from "react";
 
+type IUseMousePosition = {
+	x: number | null;
+	y: number | null;
+};
+
 const useMousePosition = () => {
-	const [mousePosition, setMousePosition] = useState<{
-		x: number | null;
-		y: number | null;
-	}>({x: null, y: null});
+	const [mousePosition, setMousePosition] = useState<IUseMousePosition>({
+		x: null,
+		y: null,
+	});
 	const requestRef = useRef<number | null>(null);
 
 	const updateMousePosition = (event: MouseEvent) => {

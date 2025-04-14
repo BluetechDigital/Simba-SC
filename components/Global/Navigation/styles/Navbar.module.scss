@@ -1,0 +1,257 @@
+.navbar {
+	@apply z-[999] w-full fixed bg-transparent;
+
+	.topNavigation {
+		@apply py-0 bg-white flex items-center justify-between gap-4 px-4;
+
+		.top,
+		.bottom {
+			@apply flex items-center justify-between gap-4;
+
+			.image {
+				@apply object-contain object-center w-[50px] h-[50px];
+			}
+		}
+
+		.bottom {
+			@apply flex items-center justify-between gap-4;
+
+			.simbaLogin,
+			.simbaFoundation {
+				@apply hidden lg:block font-secondaryBold tracking-[-0.02rem] uppercase text-pureBlack hover:hover:text-accent-two text-base text-center transition-all ease-in-out duration-500;
+			}
+
+			.divider {
+				@apply hidden sm:flex mx-6 h-[25px] w-[1px] bg-grey;
+			}
+
+			.socialLinks {
+				@apply hidden sm:flex items-center justify-center gap-6 text-center;
+
+				.link {
+					@apply inline-block text-primary-default;
+
+					.svg,
+					.svgAlt,
+					.svgAltTwo {
+						@apply w-[22.5px] h-[22.5px] fill-primary-default hover:fill-primary-dark transition-all duration-500 ease-in-out;
+					}
+
+					.svgAlt {
+						@apply w-[30px] h-[30px];
+					}
+
+					.svgAltTwo {
+						@apply w-[28px] h-[28px];
+					}
+				}
+			}
+		}
+	}
+
+	.mainNavigation {
+		@apply h-full flex items-center justify-between bg-lightGreyTwo pl-2 lg:pl-4;
+
+		.logo {
+			@apply w-auto;
+
+			.image {
+				@apply object-contain object-center w-[65px] md:w-[75px] h-[60px] sm:h-[65px] lg:h-[75px];
+			}
+		}
+
+		.navigation {
+			@apply w-auto flex flex-wrap items-center;
+
+			.wrapper {
+				@apply w-auto hidden xl:block;
+
+				.ul {
+					@apply flex items-center gap-8;
+
+					.li {
+						@apply hidden lg:block;
+
+						.link {
+							@apply font-secondaryBold font-extrabold text-pureBlack hover:text-primary-default tracking-[-0.02rem] text-lg text-center uppercase transition-all ease-in-out duration-500;
+						}
+					}
+				}
+			}
+		}
+
+		.megaNavigationMenuButton {
+			@apply relative z-20 w-1/4 md:w-1/6 lg:w-1/12 h-full px-8 py-4 lg:p-4 flex flex-col items-center justify-center cursor-pointer bg-no-repeat bg-center hover:bg-primary-dark transition-all ease-in-out duration-500;
+
+			.button {
+				.text {
+					@apply text-white uppercase font-secondaryBold;
+				}
+
+				.hamburgerIcon {
+					@apply relative py-4 ml-[2px] h-full w-full mx-auto flex items-center justify-center;
+
+					.iconOne,
+					.iconTwo,
+					.iconThree {
+						@apply absolute left-0 top-1/2 w-[40px] h-[4px] bg-white;
+						transition: all 400ms cubic-bezier(0.84, 0.06, 0.52, 1.8);
+					}
+
+					.iconOne {
+						@apply delay-100 opacity-100 translate-y-[-8px];
+					}
+
+					.iconThree {
+						@apply delay-300 opacity-100 translate-y-[8px];
+					}
+
+					.iconOneActive {
+						@apply absolute left-0 top-1/2 w-[40px] h-[4px] ml-[0.40rem] bg-white opacity-100 rotate-[40deg] transition-all ease-in-out duration-500;
+					}
+
+					.iconThreeActive {
+						@apply absolute left-0 top-1/2 w-[40px] h-[4px] ml-[0.40rem] bg-white opacity-100 rotate-[-40deg] transition-all ease-in-out duration-500;
+					}
+
+					.iconTwoActive {
+						@apply opacity-0;
+					}
+				}
+			}
+		}
+	}
+
+	.megaMenuActive,
+	.megaNavigation {
+		.megaMenuContent {
+			@apply relative z-10 overflow-y-visible overflow-x-hidden min-h-screen h-full w-full py-20 px-10 flex flex-col bg-cover bg-no-repeat bg-center;
+
+			.wrapper {
+				@apply max-w-[1900px] mx-auto h-full w-full px-0 lg:px-10 pb-32 pt-32 lg:pt-20 lg:pb-0 flex flex-col justify-between gap-20 lg:gap-10;
+
+				.mainMegaNavLinksWrapper {
+					@apply flex flex-col lg:flex-row items-start lg:gap-10 xl:gap-24;
+
+					.mobile {
+						@apply w-full lg:w-1/2 flex flex-col items-baseline justify-end gap-2;
+
+						.text {
+							@apply font-secondaryBlack cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-pureBlack text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase;
+						}
+
+						.ulWrapper {
+							@apply w-full flex lg:hidden;
+
+							.ul {
+								@apply grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-2 my-6 p-4 border-l-2 border-tertiary-two;
+
+								.link {
+									@apply font-secondaryRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center;
+								}
+							}
+						}
+					}
+
+					.desktop {
+						@apply hidden lg:flex w-full lg:w-1/2 flex-col gap-12;
+
+						.ul {
+							@apply grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-2 my-6 p-4 border-l-2 border-tertiary-two;
+
+							.link {
+								@apply font-secondaryRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center;
+							}
+						}
+					}
+				}
+
+				.aboutSimbaLinksWrapper {
+					@apply flex flex-col items-baseline justify-center gap-6;
+
+					.text {
+						@apply font-secondaryThin font-semibold text-paragraph tracking-[0.02rem] text-white text-center;
+					}
+
+					.ul {
+						@apply flex flex-col gap-0 items-baseline justify-start;
+
+						li {
+							@apply self-start;
+
+							.link {
+								@apply font-secondaryBlack font-extrabold tracking-normal leading-none text-tertiary-two hover:text-pureBlack text-5xl text-center uppercase;
+							}
+						}
+					}
+				}
+
+				.usefulLinksWrapper {
+					@apply flex items-center justify-between gap-10;
+
+					.divider {
+						@apply hidden lg:block w-full lg:w-1/4;
+					}
+
+					.content {
+						@apply w-full flex flex-col items-end justify-center gap-6 py-10 pb-20 lg:pb-10;
+
+						.text {
+							@apply font-secondaryThin font-semibold text-paragraph tracking-[0.02rem] text-white text-center;
+						}
+
+						.ul {
+							@apply w-full lg:w-1/2 flex flex-col items-center justify-end gap-0;
+
+							.link {
+								@apply font-secondaryBold leading-none text-white hover:text-pureBlack text-xl lg:text-xl text-center;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.megaMenu {
+	@apply bg-primary-dark absolute z-10 top-0 right-0 overflow-y-visible overflow-x-hidden h-screen w-full opacity-100 bg-cover bg-no-repeat bg-center;
+	animation: hideMegaMenu 1.25s ease forwards;
+}
+
+.megaMenuActive {
+	@apply absolute z-10 top-0 right-0 overflow-y-visible overflow-x-hidden min-h-screen h-full w-full opacity-100 bg-primary-dark;
+	animation: showMegaMenu 1.25s ease forwards;
+
+	.megaMenuContent {
+		&::-webkit-scrollbar {
+			@apply block w-[0.90rem] h-[0.90rem];
+		}
+
+		&::-webkit-scrollbar-track {
+			@apply bg-primary-dark;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			@apply rounded-[2px] bg-tertiary-two transition-all duration-500 hover:bg-primary-default;
+		}
+	}
+}
+
+@keyframes showMegaMenu {
+	from {
+		@apply hidden top-[-100vh];
+	}
+	to {
+		@apply block top-[0vh];
+	}
+}
+
+@keyframes hideMegaMenu {
+	from {
+		@apply block top-[0vh];
+	}
+	to {
+		@apply hidden top-[-100vh];
+	}
+}

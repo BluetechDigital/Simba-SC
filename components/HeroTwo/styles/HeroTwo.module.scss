@@ -1,0 +1,19 @@
+.heroTwo {
+    @apply relative z-50 w-full h-fit pt-[138px] bg-white;
+
+    .container {
+        @apply py-20 w-full h-[30vh] flex flex-col items-center lg:items-baseline justify-center relative bg-primary-dark bg-center bg-no-repeat bg-cover;
+
+        .content {
+            @apply max-w-full lg:max-w-5xl mx-auto lg:mx-0 relative z-10 flex flex-col items-center lg:items-start px-6 md:px-24;
+
+            .title {
+                @apply mb-2 font-secondaryBlack text-center lg:text-left uppercase text-3xl lg:text-5xl xl:text-7xl tracking-[-0.05rem] text-white font-semibold xl:leading-[3.75rem];
+            }
+
+            .paragraph {
+                @apply max-w-2xl mx-auto lg:mx-0 font-secondaryRegular leading-tight text-white text-lg text-center lg:text-left;
+            }
+        }
+    }
+}

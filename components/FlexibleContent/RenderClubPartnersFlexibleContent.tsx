@@ -5,8 +5,8 @@ import React, {FC, Fragment} from "react";
 import {usePageContext} from "@/context/providers/PageContextProvider";
 
 // Components
-import ImageSlider from "@/components/ClubPartners/ImageSlider";
-import TitleContentImage from "@/components/ClubPartners/TitleContentImage";
+import ImageSlider from "@/components/ClubPartners/ImageSlider/ImageSlider";
+import TitleContentImage from "@/components/ClubPartners/TitleContentImage/TitleContentImage";
 
 const RenderClubPartnersFlexibleContent: FC = () => {
 	const pageContextContent = usePageContext();
@@ -14,8 +14,8 @@ const RenderClubPartnersFlexibleContent: FC = () => {
 
 	// Components Key Value Pairs
 	const componentMapping: any = {
-		[`${FlexibleContent}_TitleContentImage`]: TitleContentImage,
 		[`${FlexibleContent}_ImageSlider`]: ImageSlider,
+		[`${FlexibleContent}_TitleContentImage`]: TitleContentImage,
 	};
 
 	return (

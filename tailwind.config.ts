@@ -1,4 +1,6 @@
-import type {Config} from "tailwindcss";
+// Import
+import type { Config } from "tailwindcss";
+import {PluginAPI, CSSRuleObject} from "tailwindcss/types/config";
 
 const config: Config = {
 	content: [
@@ -74,6 +76,32 @@ const config: Config = {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [
+		function ({addUtilities}: PluginAPI) {
+			addUtilities({
+				".font-primary": {
+					fontFamily: '"primary"',
+				},
+				".font-inter": {
+					fontFamily: '"Inter"',
+				},
+				".font-secondaryBlack": {
+					fontFamily: '"secondaryBlack"',
+				},
+				".font-secondaryThin": {
+					fontFamily: '"secondaryThin"',
+				},
+				".font-secondaryRegular": {
+					fontFamily: '"secondaryRegular"',
+				},
+				".font-secondaryBold": {
+					fontFamily: '"secondaryBold"',
+				},
+				".font-secondarBlack": {
+					fontFamily: '"secondaryBlack"',
+				},
+			} as CSSRuleObject);
+		},
+	],
 };
 export default config;

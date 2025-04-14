@@ -1,4 +1,5 @@
-import {ISeo} from "@/types/context";
+// Imports
+import {ISeo} from "@/types/index";
 import {client} from "@/config/apollo";
 import {DocumentNode, gql} from "@apollo/client";
 
