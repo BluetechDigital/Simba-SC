@@ -132,13 +132,7 @@ const MegaNavigation: FC<INavbar.IMegaNavigation> = ({ menuActive, setMenuActive
     };
 
     return (
-        <div
-            className={
-                menuActive
-                    ? styles.megaMenuActive
-                    : styles.megaNavigation + " megaMenu hidden"
-            }
-        >
+        <div className={menuActive ? styles.megaMenuActive : styles.megaNavigation + " megaMenu hidden"}>
             <div
                 className={styles.megaMenuContent}
                 style={{
