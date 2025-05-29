@@ -89,7 +89,6 @@ export namespace IYoutube {
 const youtubeAPI = `${process.env.YOUTUBE_API}`;
 const youtubeKey = `${process.env.YOUTUBE_KEY}`;
 const youtubeChannelId = `${process.env.YOUTUBE_CHANNEL_ID}`;
-const youtubePlaylistId = `${process.env.YOUTUBE_PLAYLIST_ID}`;
 
 // Get All Youtube Channel Info
 export const getAllYoutubeChannelInfo =
@@ -160,49 +159,36 @@ export const getAllYoutubePlaylists =
 export const getAllYoutubeVideos =
 	async (): Promise<IYoutube.IYoutubeVideos> => {
 		try {
-			// Prepare arrays for storing video IDs and full data
-			const youtubeVideosID: {videoId: string}[] = [];
+			
 			const youtubeVideosFullData: IYoutube.IYoutubeVideos | any[] = [];
-
-			// Fetch YouTube Playlist Data
-			const fetchVideosData = `${youtubeAPI}/playlistItems?part=snippet,contentDetails,status&playlistId=${youtubePlaylistId}&key=${youtubeKey}&maxResults=50`;
-
-			// Cache Data for 1 Hour before refetching
-			const response = await fetch(fetchVideosData, {
-				next: {revalidate: 3600},
+	
+			const searchUrl = `${youtubeAPI}/search?key=${youtubeKey}&channelId=${youtubeChannelId}&part=snippet,id&order=date&maxResults=50&type=video`;
+			
+			const response = await fetch(searchUrl, {
+				next: { revalidate: 3600 }, // 1 hour cache
 			});
+			
+			const data = await response.json();
+			const videoIds = data.items.map((item: any) => item.id.videoId).join(',');
+			const videosUrl = `${youtubeAPI}/videos?part=snippet,statistics,status&id=${videoIds}&key=${youtubeKey}`;
 
-			// Playlist Videos Data
-			const playlistVideosData = await response.json();
-
-			// Collect Video IDs from playlist data
-			playlistVideosData?.items?.forEach((item: any) => {
-				const object = {videoId: item?.contentDetails?.videoId};
-				youtubeVideosID.push(object);
+			const videoDetailsResponse = await fetch(videosUrl, {
+				next: { revalidate: 3600 },
 			});
+			
+			const videoDetails = await videoDetailsResponse.json();
+			
+			// Add `videoId` to match your existing data structure
+			const formattedVideos = videoDetails.items.map((video: any) => ({
+				...video,
+				videoId: video.id,
+			}));
+			
+			youtubeVideosFullData.push(...formattedVideos);
+		
+				return youtubeVideosFullData;
+			
 
-			// Fetch YouTube Videos Full Data via Video IDs
-			const fetchPromises = youtubeVideosID.map(async (item) => {
-				const fetchVideosFullData = `${youtubeAPI}/videos?part=statistics,snippet,status&id=${item.videoId}&key=${youtubeKey}&maxResults=50`;
-
-				// Cache Data for 1 hour before refetching
-				const responseVideosData = await fetch(fetchVideosFullData, {
-					next: {revalidate: 3600},
-				});
-
-				const videosFullData = await responseVideosData.json();
-				// Add videoId to each item and return it
-				return videosFullData.items.map((videoData: any) => ({
-					...videoData,
-					videoId: item.videoId,
-				}));
-			});
-
-			// Wait for all fetches to complete and flatten results into youtubeVideosFullData
-			const fetchedDataArray = await Promise.all(fetchPromises);
-			fetchedDataArray.forEach((data) => youtubeVideosFullData.push(...data));
-
-			return youtubeVideosFullData;
 		} catch (error: unknown) {
 			console.error(error);
 			throw new Error(
