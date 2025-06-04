@@ -20,6 +20,16 @@ export const generateMetadata = async (): Promise<Metadata> => {
 	return {
 		title: seo?.title,
 		description: seo?.metaDesc,
+		openGraph: {
+			type: 'website',
+			url: seo?.opengraphUrl,
+			title: seo?.opengraphTitle,
+			siteName: seo?.opengraphSiteName,
+			description: seo?.opengraphDescription
+		},
+		alternates: {
+			canonical: seo?.canonical,
+		},
 	};
 };
 

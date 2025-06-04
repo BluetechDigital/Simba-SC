@@ -14,11 +14,21 @@ import RenderClubPartnersFlexibleContent from "@/components/FlexibleContent/Rend
 
 // Dynamic Pages Generated Metadata
 export const generateMetadata = async ({params}: any): Promise<Metadata> => {
-	const seo: any = await getAllSeoContent(params?.slug, postType?.clubPartners);
+	const seo: any = await getAllSeoContent(params?.slug, postType?.pages);
 
 	return {
 		title: seo?.title,
 		description: seo?.metaDesc,
+		openGraph: {
+			type: 'website',
+			url: seo?.opengraphUrl,
+			title: seo?.opengraphTitle,
+			siteName: seo?.opengraphSiteName,
+			description: seo?.opengraphDescription
+		},
+		alternates: {
+			canonical: seo?.canonical,
+		},
 	};
 };
 

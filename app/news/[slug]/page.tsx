@@ -14,13 +14,23 @@ import RenderFlexibleContent from "@/components/FlexibleContent/RenderFlexibleCo
 export const generateMetadata = async ({params}: any): Promise<Metadata> => {
 	const seo: any = await getAllSeoContent(params?.slug, postType?.pages);
 
-	return {
+  return {
 		title: seo?.title,
 		description: seo?.metaDesc,
+		openGraph: {
+			type: 'website',
+			url: seo?.opengraphUrl,
+			title: seo?.opengraphTitle,
+			siteName: seo?.opengraphSiteName,
+			description: seo?.opengraphDescription
+		},
+		alternates: {
+			canonical: seo?.canonical,
+		},
 	};
 };
 
-const dynamicPages: NextPage = async ({params}: any) => {
+const dynamicPages: NextPage = async ({ params }: any) => {
 	// Fetch priority content
 	const flexibleContentComponents: any = await getAllFlexibleContentComponents(
 		params?.slug,

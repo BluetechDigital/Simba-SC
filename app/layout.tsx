@@ -58,7 +58,6 @@ import {getAllExecutiveLeadershipsContent} from "@/graphql/GetAllStakeholders";
 // Get All Club Partners
 import {getAllClubPartnersExcerpt} from "@/graphql/GetAllClubPartners";
 
-
 // Components
 import Footer from "@/components/Global/Footer/Footer";
 import Navbar from "@/components/Global/Navigation/Navbar";
