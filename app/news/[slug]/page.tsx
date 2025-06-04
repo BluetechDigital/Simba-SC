@@ -39,14 +39,12 @@ const dynamicPages: NextPage = async ({ params }: any) => {
 	);
 
 	return (
-		<>
-			<PageContextProvider
-				content={flexibleContentComponents?.content}
-				postTypeFlexibleContent={flexibleContentType?.pages}
-			>
-				<RenderFlexibleContent />
-			</PageContextProvider>
-		</>
+		<PageContextProvider
+			content={flexibleContentComponents?.content}
+			postTypeFlexibleContent={flexibleContentType?.pages}
+		>
+			<RenderFlexibleContent />
+		</PageContextProvider>
 	);
 };
 

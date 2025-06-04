@@ -42,14 +42,12 @@ const partnershipsAdvertisingPage: NextPage = async () => {
 	);
 
 	return (
-		<>
-			<PageContextProvider
-				content={flexibleContentComponents?.content}
-				postTypeFlexibleContent={flexibleContentType?.pages}
-			>
-				<RenderFlexibleContent />
-			</PageContextProvider>
-		</>
+		<PageContextProvider
+			content={flexibleContentComponents?.content}
+			postTypeFlexibleContent={flexibleContentType?.pages}
+		>
+			<RenderFlexibleContent />
+		</PageContextProvider>
 	);
 };
 
