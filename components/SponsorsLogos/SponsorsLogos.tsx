@@ -3,16 +3,18 @@ import {
 	initial,
 	stagger,
 	arrayLoopStaggerChildren,
-} from "@/animations/animations";
+ } from "@/animations/animations";
 import Image from "next/image";
-import {FC, Fragment} from "react";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
+import { FC, memo, Fragment} from "react";
 import {ISponsorsLogos} from "@/components/SponsorsLogos/types/index";
 
 // Styling
 import styles from "@/components/SponsorsLogos/styles/SponsorsLogos.module.scss";
 
-const SponsorsLogos: FC<ISponsorsLogos.IProps> = ({logoGrid}) => {
+const SponsorsLogos: FC<ISponsorsLogos.IProps> = memo(({
+	logoGrid
+}) => {
 	return (
 		<div className={styles.sponsorsLogos}>
 			<div className={styles.container}>
@@ -50,6 +52,8 @@ const SponsorsLogos: FC<ISponsorsLogos.IProps> = ({logoGrid}) => {
 			</div>
 		</div>
 	);
-};
+});
+
+SponsorsLogos.displayName = 'SponsorsLogos';
 
 export default SponsorsLogos;

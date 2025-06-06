@@ -1,7 +1,7 @@
 // Imports
-import {FC} from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { FC, memo } from "react";
 import dateFormat from "dateformat";
 import {motion} from "framer-motion";
 import {fadeIn,initialTwo,} from "@/animations/animations";
@@ -15,7 +15,7 @@ import CountUp from "@/components/Elements/CountUp";
 import UseFormatNumber from "@/hooks/useFormatNumber";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
-const VideosGrid: FC<IAllPodcastsVideos.ICard> = ({
+const VideosGrid: FC<IAllPodcastsVideos.ICard> = memo(({
 	index,
 	videoId,
 	snippet,
@@ -333,6 +333,8 @@ const VideosGrid: FC<IAllPodcastsVideos.ICard> = ({
 			</div>
 		</Link>
     );
-}
+});
+
+VideosGrid.displayName = 'VideosGrid';
 
 export default VideosGrid;

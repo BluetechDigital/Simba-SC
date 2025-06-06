@@ -1,6 +1,6 @@
 // Imports
-import {FC} from "react"; 
 import Image from "next/image";
+import { FC, memo } from "react"; 
 import dateFormat from "dateformat";
 import { motion } from "framer-motion";
 import {initial, fadeInUp} from "@/animations/animations";
@@ -9,7 +9,7 @@ import {ILastThreeFixtures} from "@/components/Fixtures/LastThreeFixtures/types/
 // Styling
 import styles from "@/components/Fixtures/LastThreeFixtures/styles/LastThreeFixtures.module.scss";
 
-const Card: FC<ILastThreeFixtures.ICard> = ({
+const Card: FC<ILastThreeFixtures.ICard> = memo(({
 	date,
 	goals,
 	teams,
@@ -133,6 +133,8 @@ const Card: FC<ILastThreeFixtures.ICard> = ({
 			</motion.span>
 		</div>
 	);
-};
+});
+
+Card.displayName = 'Card';
 
 export default Card;

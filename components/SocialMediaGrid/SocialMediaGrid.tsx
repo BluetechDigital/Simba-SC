@@ -1,10 +1,10 @@
 "use client";
 
 // Imports
-import {FC, Fragment} from "react";
 import { motion } from "framer-motion";
-import {useGlobalContext} from "@/context/global";
-import {stagger, initial} from "@/animations/animations";
+import { FC, memo, Fragment} from "react";
+import { useGlobalContext } from "@/context/global";
+import {stagger, initial } from "@/animations/animations";
 import {ISocialMediaGrid} from "@/components/SocialMediaGrid/types/index";
 
 // Styling
@@ -16,7 +16,9 @@ import Card from "@/components/SocialMediaGrid/fragments/Card";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
-const SocialMediaGrid: FC<ISocialMediaGrid.IProps> = ({title}) => {
+const SocialMediaGrid: FC<ISocialMediaGrid.IProps> = memo(({
+	title
+}) => {
 	const globalContext = useGlobalContext();
 
 	return (
@@ -59,6 +61,8 @@ const SocialMediaGrid: FC<ISocialMediaGrid.IProps> = ({title}) => {
 			</ScrollYProgressReveal>
 		</motion.div>
 	);
-};
+});
+
+SocialMediaGrid.displayName = 'SocialMediaGrid';
 
 export default SocialMediaGrid;

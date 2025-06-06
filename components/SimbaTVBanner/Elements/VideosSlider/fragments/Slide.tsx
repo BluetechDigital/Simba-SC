@@ -7,7 +7,7 @@ import {
 	slideInRightFinish,
 	arrayLoopStaggerChildren,
 } from "@/animations/animations";
-import {FC} from "react";
+import { FC } from "react";
 import Link from "next/link";
 import dateFormat from "dateformat";
 import {motion} from "framer-motion";

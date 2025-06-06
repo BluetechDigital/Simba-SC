@@ -1,5 +1,5 @@
 // Imports
-import {FC} from "react";
+import { FC, memo, useMemo } from "react";
 import {IHeroThree} from "@/components/HeroThree/types/index";
 
 // Styling
@@ -9,20 +9,21 @@ import styles from "@/components/HeroThree/styles/HeroThree.module.scss";
 import Title from "@/components/Elements/Title";
 import Paragraph from "@/components/Elements/Paragraph/Paragraph";
 
-const HeroThree: FC<IHeroThree.IProps> = ({
+const HeroThree: FC<IHeroThree.IProps> = memo(({
 	title,
 	paragraph,
 	backgroundImage,
 }) => {
+
+	// Optimize inline styles:
+	const backgroundImageStyle = useMemo(() => ({
+		backgroundImage: backgroundImage?.sourceUrl ? `linear-gradient(0deg,rgba(0, 0, 0, 0.5),
+		rgba(0, 0, 0, 0.5)), url("${backgroundImage.sourceUrl}")` : 'none',
+	}), [backgroundImage?.sourceUrl]);
+
 	return (
 		<div className={styles.heroThree}>
-			<div
-				className={styles.container}
-				style={{
-					backgroundImage: `linear-gradient(0deg,rgba(0, 0, 0, 0.5),
-					rgba(0, 0, 0, 0.5)),url("${backgroundImage?.sourceUrl}")`,
-				}}
-			>
+			<div className={styles.container} style={backgroundImageStyle}>
 				<div className={styles.content}>
 					<Title
 						content={title}
@@ -35,6 +36,6 @@ const HeroThree: FC<IHeroThree.IProps> = ({
 			</div>
 		</div>
 	);
-};
+});
 
 export default HeroThree;

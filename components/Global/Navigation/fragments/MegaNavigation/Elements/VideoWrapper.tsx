@@ -1,5 +1,5 @@
 // Imports
-import {FC} from "react";
+import { FC } from "react";
 import parse from "html-react-parser";
 import styled from "styled-components";
 import {INavbar} from "@/components/Global/Navigation/types/index";

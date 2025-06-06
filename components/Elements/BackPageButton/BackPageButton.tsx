@@ -2,7 +2,7 @@
 
 // Imports
 import Link from "next/link";
-import {FC, useEffect, useState} from "react";
+import { FC, memo, useEffect, useState} from "react";
 
 // Styling
 import styles from "@/components/Elements/BackPageButton/styles/BackPageButton.module.scss";
@@ -11,7 +11,9 @@ type IBackHoverButton = {
 	link: string;
 };
 
-const BackPageButton: FC<IBackHoverButton> = ({link}) => {
+const BackPageButton: FC<IBackHoverButton> = memo(({
+	link
+}) => {
 	// Background color scroll position change
 	const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -64,6 +66,8 @@ const BackPageButton: FC<IBackHoverButton> = ({link}) => {
 			</div>
 		</div>
 	);
-};
+});
+
+BackPageButton.displayName = 'BackPageButton';
 
 export default BackPageButton;

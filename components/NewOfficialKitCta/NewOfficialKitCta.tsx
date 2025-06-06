@@ -5,20 +5,22 @@ import {
 	slideInRightFinish,
 	slideInLeftInitial,
 	slideInRightInitial,
-} from "@/animations/animations";
-import { FC } from "react";
+ } from "@/animations/animations";
 import Link from "next/link";
 import Image from "next/image";
-import {motion} from "framer-motion";
+import { FC, memo } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {INewOfficialKitCta} from "@/components/NewOfficialKitCta/types/index";
 
 // Styling
 import styles from "@/components/NewOfficialKitCta/styles/NewOfficialKitCta.module.scss";
 
 // Components
+import Button from "@/components/Elements/Button/Button";
+import SlideUpDivMaskReveal from "@/components/Animations/SlideUpDivMaskReveal/SlideUpDivMaskReveal";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
-const NewOfficialKitCta: FC<INewOfficialKitCta.IProps> = ({
+const NewOfficialKitCta: FC<INewOfficialKitCta.IProps> = memo(({
 	title,
 	link,
 	image,
@@ -59,14 +61,7 @@ const NewOfficialKitCta: FC<INewOfficialKitCta.IProps> = ({
 									viewport={{once: true}}
 									className={styles.buttonLink}
 								>
-									<Link
-										href={`${link?.url}`}
-										target={link?.target}
-										aria-label={`${link?.title}`}
-										className={`${link?.url ? "buttonStyling" : "hidden"}`}
-									>
-										{link?.title}
-									</Link>
+									<Button styleNumber={0} link={link}/>
 								</motion.div>
 							</motion.div>
 						</div>
@@ -84,34 +79,32 @@ const NewOfficialKitCta: FC<INewOfficialKitCta.IProps> = ({
 										aria-label={`${link?.title}`}
 										className="group"
 									>
-										<div className={styles.wrapper}>
-											<Image
-												src={image?.sourceUrl}
-												alt={`${image?.altText}`}
-												width={
-													image?.mediaDetails?.width
-														? image?.mediaDetails?.width
-														: 500
-												}
-												height={
-													image?.mediaDetails?.height
-														? image?.mediaDetails?.height
-														: 500
-												}
-												className={styles.image}
-											/>
-											<div className={styles.content}>
-												<span className={styles.divider}></span>
-												<motion.h3
-													initial={initialTwo}
-													whileInView={fadeIn}
-													viewport={{once: true}}
-													className={styles.text}
-												>
-													t-shirt woman
-												</motion.h3>
-											</div>
-										</div>
+										<AnimatePresence mode="wait">
+											<SlideUpDivMaskReveal
+												triggerOnce={true}
+												className={styles.wrapper}
+												backgroundColor={"bg-pureBlack"}
+											>
+												<Image
+													src={image?.sourceUrl}
+													className={styles.image}
+													alt={`${image?.altText}`}
+													width={image?.mediaDetails?.width || 1000}
+													height={image?.mediaDetails?.height || 1000}
+												/>
+												<div className={styles.content}>
+													<span className={styles.divider}></span>
+													<motion.h3
+														initial={initialTwo}
+														whileInView={fadeIn}
+														viewport={{once: true}}
+														className={styles.text}
+													>
+														t-shirt woman
+													</motion.h3>
+												</div>
+											</SlideUpDivMaskReveal>
+										</AnimatePresence>
 									</Link>
 								</div>
 								<div className={styles.bottom}>
@@ -121,34 +114,32 @@ const NewOfficialKitCta: FC<INewOfficialKitCta.IProps> = ({
 										aria-label={`${link?.title}`}
 										className="group"
 									>
-										<div className={styles.wrapper}>
-											<Image
-												src={imageTwo?.sourceUrl}
-												alt={`${imageTwo?.altText}`}
-												width={
-													imageTwo?.mediaDetails?.width
-														? imageTwo?.mediaDetails?.width
-														: 500
-												}
-												height={
-													imageTwo?.mediaDetails?.height
-														? imageTwo?.mediaDetails?.height
-														: 500
-												}
-												className={styles.image}
-											/>
-											<div className={styles.content}>
-												<span className={styles.divider}></span>
-												<motion.h3
-													initial={initialTwo}
-													whileInView={fadeIn}
-													viewport={{once: true}}
-													className={styles.text}
-												>
-													Away Kit 24/25
-												</motion.h3>
-											</div>
-										</div>
+										<AnimatePresence mode="wait">
+											<SlideUpDivMaskReveal
+												triggerOnce={true}
+												className={styles.wrapper}
+												backgroundColor={"bg-pureBlack"}
+											>
+												<Image
+													src={imageTwo?.sourceUrl}
+													className={styles.image}
+													alt={`${imageTwo?.altText}`}
+													width={imageTwo?.mediaDetails?.width || 1000}
+													height={imageTwo?.mediaDetails?.height || 1000}
+												/>
+												<div className={styles.content}>
+													<span className={styles.divider}></span>
+													<motion.h3
+														initial={initialTwo}
+														whileInView={fadeIn}
+														viewport={{once: true}}
+														className={styles.text}
+													>
+														Away Kit 24/25
+													</motion.h3>
+												</div>
+											</SlideUpDivMaskReveal>
+										</AnimatePresence>
 									</Link>
 								</div>
 							</motion.div>
@@ -158,6 +149,8 @@ const NewOfficialKitCta: FC<INewOfficialKitCta.IProps> = ({
 			</div>
 		</div>
 	);
-};
+});
+
+NewOfficialKitCta.displayName = 'NewOfficialKitCta';
 
 export default NewOfficialKitCta;

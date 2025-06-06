@@ -1,5 +1,5 @@
 // Imports
-import {FC} from "react";
+import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import dateFormat from "dateformat";
@@ -242,6 +242,8 @@ const VideosGrid: FC<IAllYouTubeVideos.ICard> = ({
 			</div>
 		</Link>
     );
-}
+};
+
+VideosGrid.displayName = 'VideosGrid';
 
 export default VideosGrid;

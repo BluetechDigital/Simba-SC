@@ -1,6 +1,6 @@
 // Imports
-import { FC } from "react";
 import Link from "next/link";
+import { FC, memo } from "react";
 import { motion } from "framer-motion";
 import { fadeIn, initialTwo} from "@/animations/animations";
 import {IFooter} from "@/components/Global/Footer/types/index";
@@ -8,7 +8,9 @@ import {IFooter} from "@/components/Global/Footer/types/index";
 // Styling
 import styles from "@/components/Global/Footer/styles/Footer.module.scss";
 
-const SocialLinksWrapper: FC<IFooter.ISocialLinksWrapper> = ({ socialLinks }) => {
+const SocialLinksWrapper: FC<IFooter.ISocialLinksWrapper> = memo(({
+    socialLinks
+}) => {
     
     let svg: any;
     let ariaLabelText: string;
@@ -169,6 +171,8 @@ const SocialLinksWrapper: FC<IFooter.ISocialLinksWrapper> = ({ socialLinks }) =>
             </Link>
         </motion.div>
     );
-}
+});
+
+SocialLinksWrapper.displayName = 'SocialLinksWrapper';
 
 export default SocialLinksWrapper;

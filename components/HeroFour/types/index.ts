@@ -7,6 +7,8 @@ export namespace IHeroFour {
 		video: {
 			link: string;
 			title: string;
+			mimeType: string;
+			mediaItemUrl: string;
 			mediaDetails: {
 				width: number;
 				height: number;

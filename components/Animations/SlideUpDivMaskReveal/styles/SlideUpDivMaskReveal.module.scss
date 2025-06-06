@@ -1,0 +1,11 @@
+.revealContainer {
+    @apply relative overflow-hidden w-full h-full min-h-[200px];
+
+    .revealContentWrapper {
+        @apply w-full h-full flex items-center justify-center;
+    }
+
+    .revealMask {
+        @apply absolute top-0 left-0 w-full h-full z-[1];
+    }
+}

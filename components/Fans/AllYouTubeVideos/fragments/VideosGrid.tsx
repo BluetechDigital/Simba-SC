@@ -15,7 +15,9 @@ import Card from "@/components/Fans/AllYouTubeVideos/fragments/Card";
 import ErrorCard from "@/components/Fans/AllYouTubeVideos/fragments/ErrorCard";
 import Pagination from "@/components/Fans/AllYouTubeVideos/fragments/Pagination";
 
-const VideosGrid: FC<IAllYouTubeVideos.IVideosGrid> = ({ }) => {
+const VideosGrid: FC<IAllYouTubeVideos.IVideosGrid> = ({ 
+
+}) => {
     
     const globalContext = useGlobalContext();
 
@@ -68,5 +70,7 @@ const VideosGrid: FC<IAllYouTubeVideos.IVideosGrid> = ({ }) => {
 		</div>
     );
 }
+
+VideosGrid.displayName = 'VideosGrid';
 
 export default VideosGrid;

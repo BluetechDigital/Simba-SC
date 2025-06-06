@@ -1,19 +1,19 @@
 // Imports
-import {FC} from "react";
-import Link from "next/link";
-import {motion} from "framer-motion";
-import {ICTA} from "@/components/CTA/types/index";
-import fadeInUp, {initial} from "@/animations/animations";
+import { motion } from "framer-motion";
+import { FC, memo, useMemo } from "react";
+import { ICTA } from "@/components/CTA/types/index";
+import fadeInUp, {initial } from "@/animations/animations";
 
 // Styling
 import styles from "@/components/CTA/styles/CTA.module.scss";
 
 // Components
+import Button from "@/components/Elements/Button/Button";
 import VideoCard from "@/components/CTA/fragments/VideoCard";
 import Paragraph from "@/components/Elements/Paragraph/Paragraph";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 
-const CTA: FC<ICTA.IProps> = ({
+const CTA: FC<ICTA.IProps> = memo(({
 	title,
 	video,
 	paragraph,
@@ -22,6 +22,13 @@ const CTA: FC<ICTA.IProps> = ({
 	displayBigCta,
 	backgroundImage,
 }) => {
+
+	// Optimize inline styles:
+	const backgroundImageStyle = useMemo(() => ({
+		backgroundImage: backgroundImage?.sourceUrl ? `linear-gradient(0deg,rgba(45, 90, 49, 0),
+		rgba(45, 90, 49, 0.5),rgba(45, 90, 49, 0.80)), url("${backgroundImage.sourceUrl}")` : 'none',
+	}), [backgroundImage?.sourceUrl]);
+
 	return (
 		<div className={styles.cta}>
 			<div className={styles.container}>
@@ -34,7 +41,7 @@ const CTA: FC<ICTA.IProps> = ({
 								: "min-h-[45vh] lg:min-h-[50vh] max-h-[50vh]"
 						}`
 					}
-					style={{backgroundImage: `url("${backgroundImage?.sourceUrl}")`}}
+					style={backgroundImageStyle}
 				>
 					<VideoCard video={video} displayVideo={displayVideo} />
 					<ScrollYProgressReveal className={styles.card}>
@@ -48,23 +55,15 @@ const CTA: FC<ICTA.IProps> = ({
 						</motion.h4>
 						<Paragraph content={paragraph} className={styles.paragraph} />
 						<ScrollYProgressReveal className={styles.buttonLink}>
-							<Link
-								href={`${buttonLink?.url}`}
-								target={buttonLink?.target}
-								className={`${
-									buttonLink?.url
-										? styles.link + " buttonStyling-alt"
-										: "hidden"
-								}`}
-							>
-								{buttonLink?.title}
-							</Link>
+							<Button styleNumber={1} link={buttonLink}/>
 						</ScrollYProgressReveal>
 					</ScrollYProgressReveal>
 				</motion.div>
 			</div>
 		</div>
 	);
-};
+});
+
+CTA.displayName = 'CTA';
 
 export default CTA;

@@ -3,21 +3,22 @@
 // Imports
 import Link from "next/link";
 import Image from "next/image";
-import {FC, Fragment} from "react";
 import { motion } from "framer-motion";
-import {useGlobalContext} from "@/context/global";
-import {initial, arrayLoopStaggerChildren} from "@/animations/animations";
+import { FC, memo, Fragment} from "react";
+import { useGlobalContext } from "@/context/global";
+import {initial, arrayLoopStaggerChildren } from "@/animations/animations";
 import {ILatestNewsGrid} from "@/components/LatestNewsGrid/types/index";
 
 // Styling
 import styles from "@/components/LatestNewsGrid/styles/LatestNewsGrid.module.scss";
 
 // Components
+import Button from "@/components/Elements/Button/Button";
 import Card from "@/components/LatestNewsGrid/fragments/Card";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
-const LatestNewsGrid: FC<ILatestNewsGrid.IProps> = ({
+const LatestNewsGrid: FC<ILatestNewsGrid.IProps> = memo(({
 	title,
 	image,
 	ctaLink,
@@ -67,14 +68,8 @@ const LatestNewsGrid: FC<ILatestNewsGrid.IProps> = ({
 						<Image
 							src={image?.sourceUrl}
 							alt={`${image?.altText}`}
-							width={
-								image?.mediaDetails?.width ? image?.mediaDetails?.width : 500
-							}
-							height={
-								image?.mediaDetails?.height
-									? image?.mediaDetails?.height
-									: 500
-							}
+							width={image?.mediaDetails?.width || 1000}
+							height={image?.mediaDetails?.height || 1000}
 							className={image?.sourceUrl ? styles.image : `hidden`}
 						/>
 					</Link>
@@ -116,14 +111,8 @@ const LatestNewsGrid: FC<ILatestNewsGrid.IProps> = ({
 						<Image
 							src={image?.sourceUrl}
 							alt={`${image?.altText}`}
-							width={
-								image?.mediaDetails?.width ? image?.mediaDetails?.width : 500
-							}
-							height={
-								image?.mediaDetails?.height
-									? image?.mediaDetails?.height
-									: 500
-							}
+							width={image?.mediaDetails?.width || 1000}
+							height={image?.mediaDetails?.height || 1000}
 							className={image?.sourceUrl ? styles.image : `hidden`}
 						/>
 					</Link>
@@ -158,18 +147,12 @@ const LatestNewsGrid: FC<ILatestNewsGrid.IProps> = ({
 				</div>
 			</div>
 			<ScrollYProgressReveal className={styles.buttonLink}>
-				<Link
-					href={`${buttonLink?.url}`}
-					target={buttonLink?.target}
-					className={`${
-						buttonLink?.url ? styles.link + " buttonStyling-alt" : "hidden"
-					}`}
-				>
-					{buttonLink?.title}
-				</Link>
+				<Button styleNumber={1} link={buttonLink}/>
 			</ScrollYProgressReveal>
 		</div>
 	);
-};
+});
+
+LatestNewsGrid.displayName = 'LatestNewsGrid';
 
 export default LatestNewsGrid;

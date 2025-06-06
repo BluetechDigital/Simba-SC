@@ -1,5 +1,5 @@
 // Imports
-import {FC} from "react";
+import { FC, memo } from "react";
 import {motion} from "framer-motion";
 import { initialTwo, fadeIn } from "@/animations/animations";
 import {IGeneralInformation} from "@/components/GeneralInformation/types/index";
@@ -10,7 +10,10 @@ import styles from "@/components/GeneralInformation/styles/GeneralInformation.mo
 // Components
 import Paragraph from "@/components/Elements/Paragraph/Paragraph";
 
-const Card: FC<IGeneralInformation.ICard> = ({title, paragraph}) => {
+const Card: FC<IGeneralInformation.ICard> = memo(({
+	title,
+	paragraph
+}) => {
 	return (
 		<div className={styles.card}>
 			<motion.h5
@@ -24,6 +27,8 @@ const Card: FC<IGeneralInformation.ICard> = ({title, paragraph}) => {
 			<Paragraph content={paragraph} className={styles.paragraph} />
 		</div>
 	);
-};
+});
+
+Card.displayName = 'Card';
 
 export default Card;

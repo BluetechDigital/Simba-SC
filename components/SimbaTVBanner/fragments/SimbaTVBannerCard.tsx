@@ -6,10 +6,10 @@ import {
 	initial,
 	initialTwo,
 	arrayLoopStaggerChildren,
-} from "@/animations/animations";
-import {motion} from "framer-motion";
-import {FC, useState} from "react";
-import {useGlobalContext} from "@/context/global";
+ } from "@/animations/animations";
+import { motion } from "framer-motion";
+import { FC, memo, useState} from "react";
+import { useGlobalContext } from "@/context/global";
 import {ISimbaTVBanner} from "@/components/SimbaTVBanner/types/index";
 
 // Styling
@@ -28,7 +28,9 @@ const variantsAnimations = {
 	exit: {opacity: 0, y: 50, filter: "blur(4px)"},
 };
 
-const SimbaTVBannerCard: FC<ISimbaTVBanner.ICard> = ({contentOptions}) => {
+const SimbaTVBannerCard: FC<ISimbaTVBanner.ICard> = memo(({
+	contentOptions
+}) => {
 	const globalContext = useGlobalContext();
 	const [activeIndex, setActiveIndex] = useState(0);
 
@@ -96,6 +98,8 @@ const SimbaTVBannerCard: FC<ISimbaTVBanner.ICard> = ({contentOptions}) => {
 			</div>
 		</ScrollYProgressReveal>
 	);
-};
+});
+
+SimbaTVBannerCard.displayName = 'SimbaTVBannerCard';
 
 export default SimbaTVBannerCard;

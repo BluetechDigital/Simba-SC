@@ -1,8 +1,7 @@
 // Imports
-import {FC, useRef} from "react";
-import {MotionValue} from "framer-motion";
 import DOMPurify from "isomorphic-dompurify";
-import {motion, useScroll} from "framer-motion";
+import { FC, memo, useRef, useMemo } from "react";
+import { motion, useScroll, MotionValue} from "framer-motion";
 
 // Styling
 import styles from "@/components/Elements/Paragraph/styles/Paragraph.module.scss";
@@ -16,38 +15,49 @@ type IParagraph = {
 	styleTextColor?: MotionValue<string> | string;
 };
 
-const Paragraph: FC<IParagraph> = ({
-	fadeIn,
+const Paragraph: FC<IParagraph> = memo(({
 	content,
 	className,
-	offsetStart,
-	offsetFinish,
+	fadeIn = false,
 	styleTextColor,
+	offsetStart = 0.9,
+	offsetFinish = 0.5,
 }) => {
-	const container = useRef(null);
+	const container = useRef<HTMLDivElement>(null);
 
 	const {scrollYProgress} = useScroll({
 		target: container,
-		offset: [`start ${offsetStart || 0.9}`, `start ${offsetFinish || 0.5}`],
+		offset: [`start ${offsetStart}`, `start ${offsetFinish}`],
 	});
 
-	/* Sanitize the WYSIWYG paragraph content */
-	const createParagraphMarkup = (paragraphContent: string) => {
-		return {
-			__html: DOMPurify.sanitize(paragraphContent),
-		};
-	};
+	/* Use useMemo to Sanitize the WYSIWYG paragraph &
+	prevent re-sanitizing content on every render */
+    const cleanMarkup = useMemo(() => {
+        // Only sanitize if content exists, otherwise return empty HTML
+        return content ? { __html: DOMPurify.sanitize(content) } : { __html: '' };
+	}, [content]);
+
+	// Combine class names more cleanly
+    const paragraphClasses = useMemo(() => {
+        if (!content) {
+			return 'hidden';
+		}
+        return `${styles.paragraph} block ${className}`.trim();
+	}, [content, className]);
+	
 	return (
 		<motion.div
 			ref={container}
 			style={{
-				color: styleTextColor || "",
+				color: styleTextColor,
 				opacity: fadeIn ? scrollYProgress : 1,
 			}}
-			dangerouslySetInnerHTML={createParagraphMarkup(content)}
-			className={content ? styles.paragraph + ` block ${className}` : `hidden`}
+            className={paragraphClasses}
+			dangerouslySetInnerHTML={cleanMarkup}
 		/>
 	);
-};
+});
+
+Paragraph.displayName = 'Paragraph';
 
 export default Paragraph;

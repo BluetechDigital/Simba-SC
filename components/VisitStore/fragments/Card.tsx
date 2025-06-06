@@ -90,4 +90,6 @@ const Card: FC = () => {
 	);
 };
 
+Card.displayName = 'VisitStoreCard';
+
 export default Card;

@@ -1,9 +1,9 @@
 // Imports
-import { FC } from "react";
 import Image from "next/image";
-import {motion} from "framer-motion";
+import { FC, memo } from "react";
+import { motion } from "framer-motion";
 import {ITrophyCabinetBanner} from "@/components/TrophyCabinetBanner/types/index";
-import {fadeIn, initial, initialTwo, arrayLoopStaggerChildren } from "@/animations/animations";
+import { fadeIn, initial, initialTwo, arrayLoopStaggerChildren  } from "@/animations/animations";
 
 // Styling
 import styles from "@/components/TrophyCabinetBanner/styles/TrophyCabinetBanner.module.scss";
@@ -11,7 +11,7 @@ import styles from "@/components/TrophyCabinetBanner/styles/TrophyCabinetBanner.
 // Components
 import CountUp from "@/components/Elements/CountUp";
 
-const Card: FC<ITrophyCabinetBanner.ICard> = ({
+const Card: FC<ITrophyCabinetBanner.ICard> = memo(({
 	name,
 	index,
 	image,
@@ -50,6 +50,8 @@ const Card: FC<ITrophyCabinetBanner.ICard> = ({
 			</motion.h4>
 		</motion.div>
 	);
-};
+});
+
+Card.displayName = 'TrophyCabinetBannerCard';
 
 export default Card;

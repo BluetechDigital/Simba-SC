@@ -1,18 +1,18 @@
 "use client";
 
 // Imports
-import {FC} from "react";
 import Link from "next/link";
 import Image from "next/image";
-import {motion} from "framer-motion";
-import {initial, arrayLoopStaggerChildren} from "@/animations/animations";
+import { FC, memo } from "react";
+import { motion } from "framer-motion";
+import {initial, arrayLoopStaggerChildren } from "@/animations/animations";
 import {ISocialMediaGrid} from "@/components/SocialMediaGrid/types/index";
 
 // Styling
 import styles from "@/components/SocialMediaGrid/styles/SocialMediaGrid.module.scss";
 
 
-const Card: FC<ISocialMediaGrid.ICard> = ({
+const Card: FC<ISocialMediaGrid.ICard> = memo(({
 	index,
 	caption,
 	media_url,
@@ -60,6 +60,8 @@ const Card: FC<ISocialMediaGrid.ICard> = ({
 			</motion.div>
 		</Link>
 	);
-};
+});
+
+Card.displayName = 'SocialMediaGridCard';
 
 export default Card;

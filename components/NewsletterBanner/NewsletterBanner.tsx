@@ -1,20 +1,24 @@
 // Imports
-import { FC } from "react";
-import Link from "next/link";
-import {motion} from "framer-motion";
+import { FC, memo } from "react";
+import { motion } from "framer-motion";
 import {INewsletterBanner} from "@/components/NewsletterBanner/types/index";
-import {fadeIn, initialTwo} from "@/animations/animations";
+import { fadeIn, initialTwo } from "@/animations/animations";
 
 // Styling
 import styles from "@/components/NewsletterBanner/styles/NewsletterBanner.module.scss";
 
 // Components
 import Title from "@/components/Elements/Title";
+import Button from "@/components/Elements/Button/Button";
 import Paragraph from "@/components/Elements/Paragraph/Paragraph";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
-const NewsletterBanner: FC<INewsletterBanner.IProps> = ({title, paragraph, buttonLink}) => {
+const NewsletterBanner: FC<INewsletterBanner.IProps> = memo(({
+	title,
+	paragraph,
+	buttonLink
+}) => {
 	return (
 		<div
 			className={styles.newsletterBanner}
@@ -33,21 +37,14 @@ const NewsletterBanner: FC<INewsletterBanner.IProps> = ({title, paragraph, butto
 						whileInView={fadeIn}
 						viewport={{once: true}}
 					>
-						<Link
-							href={`${buttonLink?.url}`}
-							target={buttonLink?.target}
-							aria-label={`${buttonLink?.title}`}
-							className={`${
-								buttonLink?.url ? "buttonStyling-alt-three" : "hidden"
-							}`}
-						>
-							{buttonLink?.title}
-						</Link>
+						<Button styleNumber={3} link={buttonLink}/>
 					</motion.div>
 				</ScrollYProgressReveal>
 			</div>
 		</div>
 	);
-};
+});
+
+NewsletterBanner.displayName = 'NewsletterBanner';
 
 export default NewsletterBanner;

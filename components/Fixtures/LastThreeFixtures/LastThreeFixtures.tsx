@@ -5,10 +5,10 @@ import {
 	initial,
 	fadeInUp,
 	arrayLoopStaggerChildren,
-} from "@/animations/animations";
+ } from "@/animations/animations";
 import { motion } from "framer-motion";
-import {FC, Fragment, Suspense} from "react";
-import {useGlobalContext} from "@/context/global";
+import { FC, memo, Fragment, Suspense} from "react";
+import { useGlobalContext } from "@/context/global";
 import {ILastThreeFixtures} from "@/components/Fixtures/LastThreeFixtures/types/index";
 
 // Styling
@@ -18,7 +18,9 @@ import styles from "@/components/Fixtures/LastThreeFixtures/styles/LastThreeFixt
 import Card from "@/components/Fixtures/LastThreeFixtures/fragments/Card";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
-const LastThreeFixtures: FC<ILastThreeFixtures.IProps> = ({ title }) => {
+const LastThreeFixtures: FC<ILastThreeFixtures.IProps> = memo(({
+	title
+}) => {
 	const globalContext = useGlobalContext();
 	return (
 		<div className={styles.lastThreeFixtures}>
@@ -88,6 +90,8 @@ const LastThreeFixtures: FC<ILastThreeFixtures.IProps> = ({ title }) => {
 			</motion.div>
 		</div>
 	);
-};
+});
+
+LastThreeFixtures.displayName = 'LastThreeFixtures';
 
 export default LastThreeFixtures;

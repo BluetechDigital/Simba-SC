@@ -4,12 +4,12 @@ import {
 	stagger,
 	fadeInUp,
 	slideInRightFinish,
-	slideInRightInitial,
 	slideInLeftInitial,
-} from "@/animations/animations";
-import {FC} from "react";
+	slideInRightInitial,
+ } from "@/animations/animations";
 import Link from "next/link";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
+import { FC, memo, useMemo } from "react";
 import {ILatestVideoBlock} from "@/components/Fans/LatestVideoBlock/types/index";
 
 // Styling
@@ -21,7 +21,7 @@ import Paragraph from "@/components/Elements/Paragraph/Paragraph";
 import Card from "@/components/Fans/LatestVideoBlock/fragments/Card";
 import VideoCard from "@/components/Fans/LatestVideoBlock/fragments/VideoCard";
 
-const LatestVideoBlock: FC<ILatestVideoBlock.IProps> = ({
+const LatestVideoBlock: FC<ILatestVideoBlock.IProps> = memo(({
 	title,
 	video,
 	subtitle,
@@ -34,18 +34,27 @@ const LatestVideoBlock: FC<ILatestVideoBlock.IProps> = ({
 	displayBackgroundSvg,
 	displayBackgroundColor,
 }) => {
+
+	// Optimize inline styles:
+	const videoBackgroundImageStyle = useMemo(() => ({
+		backgroundImage: videoBackgroundImage?.sourceUrl ? `url("${videoBackgroundImage.sourceUrl}")` : 'none',
+	}), [videoBackgroundImage?.sourceUrl]);
+
+	// Optimize inline styles:
+	const displayBackgroundColorImageStyle = useMemo(() => ({
+		backgroundColor: displayBackgroundColor ? `url("${displayBackgroundColor}")` : 'none',
+		backgroundImage: `url(${displayBackgroundSvg ? "/svg/background/stacked-steps-haikei-red.svg" : "none"})`,
+	}), [displayBackgroundColor]);
+
+	// Optimize inline styles:
+	const colorAndBorderColorStyle = useMemo(() => ({
+		color: displayButtonColor ? displayButtonColor : 'none',
+		borderColor: displayButtonColor ? displayButtonColor : 'none',
+	}), [displayButtonColor]);
+
 	return (
 		<div
-			className={styles.latestVideoBlock}
-			style={{
-				backgroundColor: displayBackgroundColor,
-				backgroundImage: `url(${
-					displayBackgroundSvg
-						? "/svg/background/stacked-steps-haikei-red.svg"
-						: "none"
-				})`,
-			}}
-		>
+			className={styles.latestVideoBlock} style={displayBackgroundColorImageStyle}>
 			<div className={styles.containerWrapper}>
 				<motion.div
 					initial={initial}
@@ -81,13 +90,8 @@ const LatestVideoBlock: FC<ILatestVideoBlock.IProps> = ({
 						<Link
 							href={`${buttonLink?.url}`}
 							target={buttonLink?.target}
-							style={{
-								color: displayButtonColor,
-								borderColor: displayButtonColor,
-							}}
-							className={`${
-								buttonLink?.url ? styles.buttonStyling : "hidden"
-							}`}
+							style={colorAndBorderColorStyle}
+							className={`${buttonLink?.url ? styles.buttonStyling : "hidden"}`}
 						>
 							{buttonLink?.title}
 						</Link>
@@ -96,15 +100,13 @@ const LatestVideoBlock: FC<ILatestVideoBlock.IProps> = ({
 						viewport={{once: true}}
 							initial={slideInRightInitial}
 							whileInView={slideInRightFinish}
+							style={videoBackgroundImageStyle}
 							className={
 								displayVideo
 									? styles.rightSection +
 									  ` ${displayVideo ? "h-fit" : "h-[300px] lg:h-[300px]"}`
 									: styles.rightSection
 							}
-							style={{
-								backgroundImage: `url("${videoBackgroundImage}")`,
-						}}
 					>
 						{displayVideo ? (
 							<VideoCard video={video} displayVideo={displayVideo} />
@@ -116,6 +118,8 @@ const LatestVideoBlock: FC<ILatestVideoBlock.IProps> = ({
 			</div>
 		</div>
 	);
-};
+});
+
+LatestVideoBlock.displayName = 'LatestVideoBlock';
 
 export default LatestVideoBlock;

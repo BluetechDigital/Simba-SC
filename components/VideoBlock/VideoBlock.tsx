@@ -5,10 +5,10 @@ import {
 	fadeInUp,
 	slideInRightFinish,
 	slideInRightInitial,
-} from "@/animations/animations";
-import {FC} from "react";
-import Link from "next/link";
-import {motion} from "framer-motion";
+ } from "@/animations/animations";
+ import Link from "next/link";
+ import { FC, memo } from "react";
+import { motion } from "framer-motion";
 import {IVideoBlock} from "@/components/VideoBlock/types/index";
 
 // Styling
@@ -20,7 +20,7 @@ import VideoCard from "@/components/VideoBlock/fragments/VideoCard";
 import SlideInXLeftAnimation from "@/components/Animations/SlideInXLeftAnimation";
 import SlideInXRightAnimation from "@/components/Animations/SlideInXRightAnimation";
 
-const VideoBlock: FC<IVideoBlock.IProps> = ({
+const VideoBlock: FC<IVideoBlock.IProps> = memo(({
 	title,
 	video,
 	subtitle,
@@ -93,6 +93,8 @@ const VideoBlock: FC<IVideoBlock.IProps> = ({
 			</div>
 		</div>
 	);
-};
+});
+
+VideoBlock.displayName = 'VideoBlock';
 
 export default VideoBlock;

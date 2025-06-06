@@ -1,5 +1,5 @@
 // Imports
-import {FC} from "react";
+import { FC } from "react";
 import {motion} from "framer-motion";
 import {fadeIn,initialTwo,} from "@/animations/animations";
 import {IAllYouTubeVideos} from "@/components/Fans/AllYouTubeVideos/types/index";
@@ -77,5 +77,7 @@ const Pagination: FC<IAllYouTubeVideos.IPagination> = ({
 		</div>
     );
 }
+
+Pagination.displayName = 'Pagination';
 
 export default Pagination;

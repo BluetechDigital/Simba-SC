@@ -6,22 +6,23 @@ import {
 	slideInRightFinish,
 	slideInRightInitial,
 } from "@/animations/animations";
-import {FC} from "react";
-import Link from "next/link";
 import Image from "next/image";
-import {motion} from "framer-motion";
+import { FC, memo } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {IAboutSimba} from "@/components/AboutSimba/types/index";
 
 // Styling
 import styles from "@/components/AboutSimba/styles/AboutSimba.module.scss";
 
 // Components
+import Button from "@/components/Elements/Button/Button";
 import Paragraph from "@/components/Elements/Paragraph/Paragraph";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import SlideInXLeftAnimation from "@/components/Animations/SlideInXLeftAnimation";
 import SlideInXRightAnimation from "@/components/Animations/SlideInXRightAnimation";
+import SlideUpDivMaskReveal from "@/components/Animations/SlideUpDivMaskReveal/SlideUpDivMaskReveal";
 
-const AboutSimba: FC<IAboutSimba.IProps> = ({
+const AboutSimba: FC<IAboutSimba.IProps> = memo(({
 	title,
 	image,
 	titleTwo,
@@ -54,18 +55,7 @@ const AboutSimba: FC<IAboutSimba.IProps> = ({
 						</motion.h4>
 						<ScrollYProgressReveal className={styles.wrapper}>
 							<Paragraph content={paragraph} className={styles.paragraph} />
-							<Link
-								href={`${buttonLink?.url}`}
-									target={buttonLink?.target}
-									aria-label={`${buttonLink?.title}`}
-									className={`${
-										buttonLink?.url
-											? styles.buttonLink + " buttonStyling-alt-two"
-											: "hidden"
-								}`}
-							>
-								{buttonLink?.title}
-							</Link>
+							<Button styleNumber={2} link={buttonLink}/>
 						</ScrollYProgressReveal>
 					</SlideInXLeftAnimation>
 				</motion.div>
@@ -76,29 +66,33 @@ const AboutSimba: FC<IAboutSimba.IProps> = ({
 				whileInView={slideInRightFinish}
 				className={styles.bottomContent}
 			>
-				<ScrollYProgressReveal>
-					<Image
-						alt={image?.altText}
-						src={image?.sourceUrl}
-						width={image?.mediaDetails?.width || 1000}
-						height={image?.mediaDetails?.height || 1000}
-						className={image?.sourceUrl ? styles.image : `hidden`}
-					/>
-				</ScrollYProgressReveal>
-				<SlideInXRightAnimation className={styles.wrapper}>
-					<motion.h5
-						initial={initialTwo}
-						whileInView={fadeIn}
-						viewport={{once: true}}
-						className={styles.titleTwo}
-					>
-						{titleTwo}
-					</motion.h5>
-					<Paragraph content={paragraphTwo} className={styles.paragraph} />
-				</SlideInXRightAnimation>
+				<AnimatePresence mode="wait">
+					<SlideUpDivMaskReveal triggerOnce={true} backgroundColor={"bg-lightGreyTwo"}>
+						<Image
+							alt={image?.altText}
+							src={image?.sourceUrl}
+							width={image?.mediaDetails?.width || 1000}
+							height={image?.mediaDetails?.height || 1000}
+							className={image?.sourceUrl ? styles.image : `hidden`}
+						/>
+					</SlideUpDivMaskReveal>
+					<SlideInXRightAnimation className={styles.wrapper}>
+						<motion.h5
+							initial={initialTwo}
+							whileInView={fadeIn}
+							viewport={{once: true}}
+							className={styles.titleTwo}
+						>
+							{titleTwo}
+						</motion.h5>
+						<Paragraph content={paragraphTwo} className={styles.paragraph} />
+						</SlideInXRightAnimation>
+				</AnimatePresence>
 			</motion.div>
 		</div>
 	);
-};
+});
+
+AboutSimba.displayName = 'AboutSimba';
 
 export default AboutSimba;

@@ -1,9 +1,8 @@
 "use client";
 
 // Imports
-import {FC} from "react";
 import {IPage} from "@/context/types/context";
-import {createContext, useContext} from "react";
+import { FC, useMemo, createContext, useContext } from "react";
 
 export const PageContext = createContext<IPage.IContext | undefined>(undefined);
 
@@ -22,13 +21,17 @@ export const PageContextProvider: FC<IPage.IContextProvider> = ({
 	children,
 	postTypeFlexibleContent,
 }) => {
+
+	// Memoize the context value
+    const memoizedValues = useMemo(() => {
+        return {
+            content: content,
+            postTypeFlexibleContent: postTypeFlexibleContent,
+        };
+	}, [content, postTypeFlexibleContent]); // Dependencies are the props passed to the provider
+	
 	return (
-		<PageContext.Provider
-			value={{
-				content: content,
-				postTypeFlexibleContent: postTypeFlexibleContent,
-			}}
-		>
+		<PageContext.Provider value={{memoizedValues}}>
 			{children}
 		</PageContext.Provider>
 	);

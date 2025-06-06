@@ -1,9 +1,9 @@
 // Imports
-import { FC } from "react";
 import Link from "next/link";
-import {motion} from "framer-motion";
+import { FC, memo } from "react";
+import { motion } from "framer-motion";
 import {ITitleContentImage} from "@/components/TitleContentImage/types/index";
-import {fadeIn, initial, stagger, initialTwo } from "@/animations/animations";
+import { fadeIn, initial, stagger, initialTwo  } from "@/animations/animations";
 
 // Styling
 import styles from "@/components/TitleContentImage/styles/TitleContentImage.module.scss";
@@ -11,7 +11,7 @@ import styles from "@/components/TitleContentImage/styles/TitleContentImage.modu
 // Components
 import Paragraph from "@/components/Elements/Paragraph/Paragraph";
 
-const Card: FC<ITitleContentImage.ICard> = ({
+const Card: FC<ITitleContentImage.ICard> = memo(({
 	title,
 	textTitle,
 	paragraph,
@@ -53,6 +53,8 @@ const Card: FC<ITitleContentImage.ICard> = ({
 			</div>
 		</motion.div>
 	);
-};
+});
+
+Card.displayName = 'Card';
 
 export default Card;

@@ -1,7 +1,7 @@
 "use client";
 
 // Imports
-import {FC} from "react";
+import { FC } from "react";
 import {motion, AnimatePresence} from "framer-motion";
 import { ISimbaTVBanner } from "@/components/SimbaTVBanner/types/index";
 

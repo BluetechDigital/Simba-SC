@@ -8,8 +8,8 @@ import {
 	arrayLoopStaggerChildren,
 } from "@/animations/animations";
 import Link from "next/link";
-import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
+import {FC, memo, Fragment} from "react";
 import {IAllPodcastsVideos} from "@/components/Fans/AllPodcastsVideos/types/index";
 
 // Styling
@@ -20,7 +20,7 @@ import Title from "@/components/Elements/Title";
 import Card from "@/components/Fans/AllPodcastsVideos/fragments/Recommendations/fragments/Card";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
-const Recommendations: FC<IAllPodcastsVideos.IRecommendations.IProps> = ({
+const Recommendations: FC<IAllPodcastsVideos.IRecommendations.IProps> = memo(({
 	cta,
 	className,
 	podcastsVideos,
@@ -91,6 +91,8 @@ const Recommendations: FC<IAllPodcastsVideos.IRecommendations.IProps> = ({
 			</div>
 		</motion.div>
 	);
-};
+});
+
+Recommendations.displayName = 'Recommendations';
 
 export default Recommendations;

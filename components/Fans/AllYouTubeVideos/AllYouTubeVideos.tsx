@@ -1,5 +1,5 @@
 // Imports
-import {FC} from "react";
+import { FC, memo } from "react";
 import {IAllYouTubeVideos} from "@/components/Fans/AllYouTubeVideos/types/index";
 
 // Styling
@@ -10,7 +10,9 @@ import Title from "@/components/Elements/Title";
 import VideosGrid from "@/components/Fans/AllYouTubeVideos/fragments/VideosGrid";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
-const AllYouTubeVideos: FC<IAllYouTubeVideos.IProps> = ({title}) => {
+const AllYouTubeVideos: FC<IAllYouTubeVideos.IProps> = memo(({
+	title
+}) => {
 	return (
 		<div
 			className={styles.allYouTubeVideos}
@@ -28,6 +30,8 @@ const AllYouTubeVideos: FC<IAllYouTubeVideos.IProps> = ({title}) => {
 			</div>
 		</div>
 	);
-};
+});
+
+AllYouTubeVideos.displayName = 'AllYouTubeVideos';
 
 export default AllYouTubeVideos;

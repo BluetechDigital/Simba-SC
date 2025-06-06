@@ -1,7 +1,7 @@
 "use client";
 
 // Imports
-import {FC} from "react";
+import { FC } from "react";
 import {ReactLenis} from "lenis/react";
 
 export type ISmoothScrolling = {

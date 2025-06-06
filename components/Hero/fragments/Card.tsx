@@ -1,36 +1,39 @@
 "use client";
 
 // Imports
-import { FC} from "react"; 
-import Link from "next/link";
 import { motion } from "framer-motion";
+import { FC, memo, useMemo } from "react";
 import {IHero} from "@/components/Hero/types/index";
-import {fadeIn, initialTwo} from "@/animations/animations";
-
+import { fadeIn, initialTwo } from "@/animations/animations";
 
 // Styling
 import styles from "@/components/Hero/styles/Hero.module.scss";
 
 // Components
+import Button from "@/components/Elements/Button/Button";
+import VideoCard from "@/components/Hero/fragments/VideoCard";
 import Paragraph from "@/components/Elements/Paragraph/Paragraph";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
-const Card: FC<IHero.ICard> = ({
-    title,
-    paragraph,
-    buttonLink,
-    buttonLinkTwo,
-    backgroundImage,
+const Card: FC<IHero.ICard> = memo(({
+    video,
+	title,
+	paragraph,
+	buttonLink,
+	displayVideo,
+	buttonLinkTwo,
+	backgroundImage,
 }) => {
+
+	// Optimize inline styles:
+    const backgroundImageStyle = useMemo(() => ({
+        backgroundImage: backgroundImage?.sourceUrl ? `url("${backgroundImage.sourceUrl}")` : 'none',
+    }), [backgroundImage?.sourceUrl]);
+
     return (
-        <div className={styles.slide}>
-            <div
-                className={styles.contentWrapper}
-                style={{
-                    backgroundImage: `linear-gradient(0deg,rgb(0, 0, 0, 0.30),
-                    rgba(0, 0, 0, 0.10)),url("${backgroundImage?.sourceUrl}")`,
-                }}
-            >
+        <div className={styles.slide} style={backgroundImageStyle}>
+            <VideoCard video={video} displayVideo={displayVideo}/>
+            <div className={styles.heroCard}>
                 <div className={styles.content}>
                     <div className={styles.top}>
                         <ContentSliceRevealMaskAnimation>
@@ -47,35 +50,13 @@ const Card: FC<IHero.ICard> = ({
                         viewport={{once: true}}
                         className={styles.bottom}
                     >
-                        <Link
-                            href={`${buttonLink?.url}`}
-                            target={buttonLink?.target}
-                            aria-label={`${buttonLink?.title}`}
-                            className={`${
-                                buttonLink?.url
-                                    ? "buttonStyling"
-                                    : "hidden"
-                            }`}
-                        >
-                            {buttonLink?.title}
-                        </Link>
-                        <Link
-                            href={`${buttonLinkTwo?.url}`}
-                            target={buttonLinkTwo?.target}
-                            aria-label={`${buttonLinkTwo?.title}`}
-                            className={`${
-                                buttonLinkTwo?.url
-                                    ? "buttonStyling"
-                                    : "hidden"
-                            }`}
-                        >
-                            {buttonLinkTwo?.title}
-                        </Link>
+                        <Button styleNumber={0} link={buttonLink}/>
+                        <Button styleNumber={0} link={buttonLinkTwo}/>
                     </motion.div>
                 </div>
             </div>
         </div>
     );
-};
+});
 
 export default Card;

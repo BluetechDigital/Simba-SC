@@ -8,7 +8,7 @@ import {
     slideInRightInitial,
 } from "@/animations/animations";
 import {motion} from "framer-motion";
-import {FC, Fragment, useState} from "react";
+import {FC, memo, Fragment, useState} from "react";
 import {useGlobalContext} from "@/context/global";
 import {INavbar} from "@/components/Global/Navigation/types/index";
 
@@ -20,7 +20,10 @@ import MegaNavVideoWrapper from "@/components/Global/Navigation/fragments/MegaNa
 import MobileLinksWrapper from "@/components/Global/Navigation/fragments/MegaNavigation/Elements/MobileLinksWrapper";
 import MegaNavLinksWrapper from "@/components/Global/Navigation/fragments/MegaNavigation/Elements/MegaNavLinksWrapper";
 
-const MegaNavigation: FC<INavbar.IMegaNavigation> = ({ menuActive, setMenuActive }) => {
+const MegaNavigation: FC<INavbar.IMegaNavigation> = memo(({
+    menuActive,
+    setMenuActive
+}) => {
     
     const globalContext = useGlobalContext();
 
@@ -334,6 +337,8 @@ const MegaNavigation: FC<INavbar.IMegaNavigation> = ({ menuActive, setMenuActive
             </div>
         </div>
     );
-}
+});
+
+MegaNavigation.displayName = 'MegaNavigation';
 
 export default MegaNavigation;

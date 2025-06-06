@@ -1,14 +1,16 @@
 // Imports
 import Link from "next/link";
-import {FC, Fragment} from "react";
 import { motion } from "framer-motion";
+import {FC, memo, Fragment} from "react";
 import {IFooter} from "@/components/Global/Footer/types/index";
 import { initial, stagger, arrayLoopStaggerChildren} from "@/animations/animations";
 
 // Styling
 import styles from "@/components/Global/Footer/styles/Footer.module.scss";
 
-const FooterLinksWrapper: FC<IFooter.IFooterLinksWrapper> = ({sublinks}) => {
+const FooterLinksWrapper: FC<IFooter.IFooterLinksWrapper> = memo(({
+    sublinks
+}) => {
     return (
         <motion.ul
             initial={initial}
@@ -44,6 +46,8 @@ const FooterLinksWrapper: FC<IFooter.IFooterLinksWrapper> = ({sublinks}) => {
             )}
         </motion.ul>
     );
-}
+});
+
+FooterLinksWrapper.displayName = 'FooterLinksWrapper';
 
 export default FooterLinksWrapper;

@@ -6,8 +6,8 @@ import {
 	initialTwo,
 	arrayLoopStaggerChildren,
 } from "@/animations/animations";
-import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
+import {FC, memo, Fragment} from "react";
 import {IGeneralInformation} from "@/components/GeneralInformation/types/index";
 
 // Styling
@@ -18,7 +18,7 @@ import Card from "@/components/GeneralInformation/fragments/Card";
 import Paragraph from "@/components/Elements/Paragraph/Paragraph";
 import SlideInXLeftAnimation from "@/components/Animations/SlideInXLeftAnimation";
 
-const GeneralInformation: FC<IGeneralInformation.IProps> = ({
+const GeneralInformation: FC<IGeneralInformation.IProps> = memo(({
 	image,
 	title,
 	paragraph,
@@ -75,6 +75,8 @@ const GeneralInformation: FC<IGeneralInformation.IProps> = ({
 			</div>
 		</div>
 	);
-};
+});
+
+GeneralInformation.displayName = 'GeneralInformation';
 
 export default GeneralInformation;

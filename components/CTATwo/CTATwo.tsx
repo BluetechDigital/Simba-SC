@@ -1,9 +1,9 @@
 // Imports
-import {FC} from "react";
 import Link from "next/link";
-import {motion} from "framer-motion";
+import { FC, memo, } from "react";
+import { motion } from "framer-motion";
 import {ICTATwo} from "@/components/CTATwo/types/index";
-import {initialTwo, fadeIn} from "@/animations/animations";
+import {initialTwo, fadeIn } from "@/animations/animations";
 
 // Styling
 import styles from "@/components/CTATwo/styles/CTATwo.module.scss";
@@ -14,7 +14,11 @@ import Paragraph from "@/components/Elements/Paragraph/Paragraph";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
-const CTATwo: FC<ICTATwo.IProps> = ({title, paragraph, buttonLink}) => {
+const CTATwo: FC<ICTATwo.IProps> = memo(({
+	title,
+	paragraph,
+	buttonLink
+}) => {
 	return (
 		<div
 			className={styles.ctaTwo}
@@ -48,6 +52,8 @@ const CTATwo: FC<ICTATwo.IProps> = ({title, paragraph, buttonLink}) => {
 			</div>
 		</div>
 	);
-};
+});
+
+CTATwo.displayName = 'CTATwo';
 
 export default CTATwo;

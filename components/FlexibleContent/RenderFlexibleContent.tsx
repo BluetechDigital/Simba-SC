@@ -1,7 +1,7 @@
 "use client";
 
 // Imports
-import React, {FC, Fragment} from "react";
+import React, { FC, memo, useMemo, Fragment} from "react";
 import {usePageContext} from "@/context/providers/PageContextProvider";
 
 // CTA Components
@@ -45,74 +45,76 @@ import ClubCardMembershipCTA from "@/components/ClubCardMembershipCTA/ClubCardMe
 import OfficialMembershipsCta from "@/components/OfficialMembershipsCta/OfficialMembershipsCta";
 import TitleParagraphDynamicColour from "@/components/TitleParagraphDynamicColour/TitleParagraphDynamicColour";
 
-const RenderFlexibleContent: FC = () => {
-	const content = usePageContext();
-	const FlexibleContent: any = content?.postTypeFlexibleContent;
+const RenderFlexibleContent: FC = memo(() => {
+	const { memoizedValues } = usePageContext();
+	
+	// Destructure for clarity
+	const content = memoizedValues?.content;
+	const postTypeFlexibleContent = memoizedValues?.postTypeFlexibleContent;
 
-	// Components Key Value Pairs
-	const componentMapping: any = {
-		// CTA Components
-		[`${FlexibleContent}_Cta`]: CTA,
-		[`${FlexibleContent}_CtaTwo`]: CTATwo,
+	// Memoize the Components Key Value Pairs
+	const componentMapping = useMemo(() => {
+        const mapping: { [key: string]: React.ComponentType<any> } = {
+			// CTA Components
+			[`${postTypeFlexibleContent}_Cta`]: CTA,
+			[`${postTypeFlexibleContent}_CtaTwo`]: CTATwo,
 
-		// Hero Components
-		[`${FlexibleContent}_Hero`]: Hero,
-		[`${FlexibleContent}_HeroTwo`]: HeroTwo,
-		[`${FlexibleContent}_HeroFour`]: HeroFour,
-		[`${FlexibleContent}_HeroThree`]: HeroThree,
+			// Hero Components
+			[`${postTypeFlexibleContent}_Hero`]: Hero,
+			[`${postTypeFlexibleContent}_HeroTwo`]: HeroTwo,
+			[`${postTypeFlexibleContent}_HeroFour`]: HeroFour,
+			[`${postTypeFlexibleContent}_HeroThree`]: HeroThree,
 
-		// Other Components
-		[`${FlexibleContent}_AboutSimba`]: AboutSimba,
-		[`${FlexibleContent}_VideoBlock`]: VideoBlock,
-		[`${FlexibleContent}_VisitStore`]: VisitStore,
-		[`${FlexibleContent}_ContactForm`]: ContactForm,
-		[`${FlexibleContent}_TitleParagraphDynamicColour`]:
+			// Other Components
+			[`${postTypeFlexibleContent}_AboutSimba`]: AboutSimba,
+			[`${postTypeFlexibleContent}_VideoBlock`]: VideoBlock,
+			[`${postTypeFlexibleContent}_VisitStore`]: VisitStore,
+			[`${postTypeFlexibleContent}_ContactForm`]: ContactForm,
+			[`${postTypeFlexibleContent}_TitleParagraphDynamicColour`]:
 			TitleParagraphDynamicColour,
-		[`${FlexibleContent}_SimbatvBanner`]: SimbaTVBanner,
-		[`${FlexibleContent}_SponsorsLogos`]: SponsorsLogos,
-		[`${FlexibleContent}_TitleParagraph`]: TitleParagraph,
-		[`${FlexibleContent}_LatestNewsGrid`]: LatestNewsGrid,
-		[`${FlexibleContent}_SocialMediaGrid`]: SocialMediaGrid,
-		[`${FlexibleContent}_ClubPartnersGrid`]: ClubPartnersGrid,
-		[`${FlexibleContent}_AboutTheClubGrid`]: AboutTheClubGrid,
-		[`${FlexibleContent}_NewsletterBanner`]: NewsletterBanner,
-		[`${FlexibleContent}_NewOfficialKitCta`]: NewOfficialKitCta,
-		[`${FlexibleContent}_TitleContentImage`]: TitleContentImage,
-		[`${FlexibleContent}_LastThreeFixtures`]: LastThreeFixtures,
-		[`${FlexibleContent}_GeneralInformation`]: GeneralInformation,
-		[`${FlexibleContent}_TrophyCabinetBanner`]: TrophyCabinetBanner,
-		[`${FlexibleContent}_ClubCardMembershipCta`]: ClubCardMembershipCTA,
-		[`${FlexibleContent}_OfficialMembershipsCta`]: OfficialMembershipsCta,
+			[`${postTypeFlexibleContent}_SimbatvBanner`]: SimbaTVBanner,
+			[`${postTypeFlexibleContent}_SponsorsLogos`]: SponsorsLogos,
+			[`${postTypeFlexibleContent}_TitleParagraph`]: TitleParagraph,
+			[`${postTypeFlexibleContent}_LatestNewsGrid`]: LatestNewsGrid,
+			[`${postTypeFlexibleContent}_SocialMediaGrid`]: SocialMediaGrid,
+			[`${postTypeFlexibleContent}_ClubPartnersGrid`]: ClubPartnersGrid,
+			[`${postTypeFlexibleContent}_AboutTheClubGrid`]: AboutTheClubGrid,
+			[`${postTypeFlexibleContent}_NewsletterBanner`]: NewsletterBanner,
+			[`${postTypeFlexibleContent}_NewOfficialKitCta`]: NewOfficialKitCta,
+			[`${postTypeFlexibleContent}_TitleContentImage`]: TitleContentImage,
+			[`${postTypeFlexibleContent}_LastThreeFixtures`]: LastThreeFixtures,
+			[`${postTypeFlexibleContent}_GeneralInformation`]: GeneralInformation,
+			[`${postTypeFlexibleContent}_TrophyCabinetBanner`]: TrophyCabinetBanner,
+			[`${postTypeFlexibleContent}_ClubCardMembershipCta`]: ClubCardMembershipCTA,
+			[`${postTypeFlexibleContent}_OfficialMembershipsCta`]: OfficialMembershipsCta,
 
-		// Fans Pages
-		[`${FlexibleContent}_AllYoutubeVideos`]: AllYoutubeVideos,
-		[`${FlexibleContent}_LatestVideoBlock`]: LatestVideoBlock,
-		[`${FlexibleContent}_AllPodcastsVideos`]: AllPodcastsVideos,
-	};
+			// Fans Pages
+			[`${postTypeFlexibleContent}_AllYoutubeVideos`]: AllYoutubeVideos,
+			[`${postTypeFlexibleContent}_LatestVideoBlock`]: LatestVideoBlock,
+			[`${postTypeFlexibleContent}_AllPodcastsVideos`]: AllPodcastsVideos,
+        };
+        return mapping;
+    }, [postTypeFlexibleContent]); // Recreate mapping only if postTypeFlexibleContent changes
 
 	return (
 		<>
-			{content?.content?.length > 0 &&
-				content?.content?.map((item: any, index: number) => (
-					<Fragment key={index}>
-						{item?.displaySection ? (
-							<section>
-								{componentMapping[item?.fieldGroupName] && (
-									<>
-										{React.createElement(componentMapping[item?.fieldGroupName], {
-											...item,
-										})}
-									</>
-								)}
-							</section>
-						) : (
-							<></>
-						)}
-					</Fragment>
-				))
-			}
-		</>
+			{content?.map((item: any, index: number) => (
+				<Fragment key={item?.id || item?.fieldGroupName + index}>
+					{item?.displaySection === true ? (
+						<section>
+							{componentMapping[item?.fieldGroupName] && (
+								<>
+									{React.createElement(componentMapping[item?.fieldGroupName], {
+										...item,
+									})}
+								</>
+							)}
+						</section>
+					) : (null )}
+				</Fragment>
+			))}
+        </>
 	);
-};
+});
 
 export default RenderFlexibleContent;

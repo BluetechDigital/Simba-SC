@@ -7,12 +7,12 @@ import {
 	fadeInUp,
 	slideInLeftInitial,
 	slideInRightFinish,
-} from "@/animations/animations";
+ } from "@/animations/animations";
 import Link from "next/link";
-import React, {FC} from "react";
-import {motion} from "framer-motion";
-import {useGlobalContext} from "@/context/global";
-import {IContactForm} from "@/components/ContactForm/types/index";
+import { motion } from "framer-motion";
+import React, { FC, memo } from "react";
+import { useGlobalContext } from "@/context/global";
+import { IContactForm } from "@/components/ContactForm/types/index";
 
 // Styling
 import styles from "@/components/ContactForm/styles/ContactForm.module.scss";
@@ -23,7 +23,7 @@ import FormikForm from "@/components/ContactForm/fragments/FormikForm";
 import SlideInXLeftAnimation from "@/components/Animations/SlideInXLeftAnimation";
 import SlideInXRightAnimation from "@/components/Animations/SlideInXRightAnimation";
 
-const ContactForm: FC<IContactForm.IProps> = ({
+const ContactForm: FC<IContactForm.IProps> = memo(({
 	title,
 	image,
 	formTitle,
@@ -252,6 +252,8 @@ const ContactForm: FC<IContactForm.IProps> = ({
 			</div>
 		</div>
 	);
-};
+});
+
+ContactForm.displayName = 'ContactForm';
 
 export default ContactForm;

@@ -7,7 +7,7 @@ import "@/styles/globals.scss";
 // Global Context Provider
 import {IGlobal} from "@/context/types/context";
 
-// Queries Functions
+// GraphQL Query Functions - Grouped for cleaner imports
 import {
 	getAllMobileLinks,
 	getAllFansSublinks,
@@ -28,7 +28,7 @@ import {getThemesOptionsContent} from "@/graphql/GetAllThemesOptions";
 import {getAllTestimonialsContent} from "@/graphql/GetAllTestimonials";
 import {getAllJobsPositionsContent} from "@/graphql/GetAllJobsPositions";
 
-// Instagram Feed
+// API Call for Instagram Feed
 import {getAllInstagramFeedContent} from "@/api/SocialMedia/InstagramFeed";
 
 // Youtube Channel Info
@@ -67,11 +67,10 @@ import ApolloContextProvider from "@/context/providers/ApolloContextProvider";
 import BackToTopButton from "@/components/Elements/BackToTopButton/BackToTopButton";
 import BlurryCursorMouse from "@/components/Global/BlurryCursorMouse/BlurryCursorMouse";
 
-const App = async ({children}: AppProps | any) => {
-	// PUBLIC PAGES //
-	/* Fetch all global content
-	remaining content simultaneously */
-
+const RootLayout = async ({children}: AppProps | any) => {
+	/// PUBLIC PAGES //
+	// Fetch all global content simultaneously using Promise.all
+    // Ensure all functions being awaited are indeed Promise-returning functions.
 	const promises: Promise<any>[] = [
 		getAllTestimonialsContent(),
 		getAllJobsPositionsContent(),
@@ -170,6 +169,8 @@ const App = async ({children}: AppProps | any) => {
 		partnershipsAdvertisingSublinks,
 	] = await Promise.all(promises);
 
+	// Construct the globalProps object, ensuring it matches IGlobal.IProps structure.
+    // TypeScript will help validate this.
 	const globalProps: IGlobal.IProps = {
 		testimonials: testimonials,
 		jobsPositions: jobsPositions,
@@ -238,5 +239,5 @@ const App = async ({children}: AppProps | any) => {
 	);
 };
 
-export default App;
+export default RootLayout;
 

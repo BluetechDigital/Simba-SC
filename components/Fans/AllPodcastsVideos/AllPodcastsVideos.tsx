@@ -1,5 +1,5 @@
 // Imports
-import {FC} from "react";
+import { FC, memo } from "react";
 import {IAllPodcastsVideos} from "@/components/Fans/AllPodcastsVideos/types/index";
 
 // Styling
@@ -11,7 +11,7 @@ import Title from "@/components/Elements/Title";
 import PodcastsVideosGrid from "@/components/Fans/AllPodcastsVideos/fragments/PodcastsVideosGrid";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
-const AllPodcastsVideos: FC<IAllPodcastsVideos.IProps> = ({
+const AllPodcastsVideos: FC<IAllPodcastsVideos.IProps> = memo(({
 	cta,
 	title,
 }) => {
@@ -32,6 +32,8 @@ const AllPodcastsVideos: FC<IAllPodcastsVideos.IProps> = ({
 			</div>
 		</div>
 	);
-};
+});
+
+AllPodcastsVideos.displayName = 'AllPodcastsVideos';
 
 export default AllPodcastsVideos;

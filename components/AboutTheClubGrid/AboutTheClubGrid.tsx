@@ -3,9 +3,9 @@ import {
 	initial,
 	stagger,
 	arrayLoopStaggerChildren,
-} from "@/animations/animations";
-import {FC, Fragment} from "react";
-import {motion} from "framer-motion";
+ } from "@/animations/animations";
+ import { motion } from "framer-motion";
+import { FC, memo, Fragment} from "react";
 import {IAboutTheClubGrid} from "@/components/AboutTheClubGrid/types/index";
 
 // Styling
@@ -14,7 +14,9 @@ import styles from "@/components/AboutTheClubGrid/styles/AboutTheClubGrid.module
 // Components
 import Card from "@/components/AboutTheClubGrid/fragments/Card";
 
-const AboutTheClubGrid: FC<IAboutTheClubGrid.IProps> = ({aboutGrid}) => {
+const AboutTheClubGrid: FC<IAboutTheClubGrid.IProps> = memo(({
+	aboutGrid
+}) => {
 	return (
 		<div className={styles.aboutTheClubGrid}>
 			<div className={styles.wrapper}>
@@ -52,6 +54,8 @@ const AboutTheClubGrid: FC<IAboutTheClubGrid.IProps> = ({aboutGrid}) => {
 			</div>
 		</div>
 	);
-};
+});
+
+AboutTheClubGrid.displayName = 'AboutTheClubGrid';
 
 export default AboutTheClubGrid;

@@ -1,9 +1,9 @@
 "use client";
 
 // Imports
-import { FC} from "react"; 
 import Link from "next/link";
 import Image from "next/image";
+import { FC, memo } from "react";
 import { motion } from "framer-motion";
 import { initialTwo, fadeIn } from "@/animations/animations";
 import {IAboutTheClubGrid} from "@/components/AboutTheClubGrid/types/index";
@@ -14,7 +14,7 @@ import styles from "@/components/AboutTheClubGrid/styles/AboutTheClubGrid.module
 // Components
 import Paragraph from "@/components/Elements/Paragraph/Paragraph";
 
-const Card: FC<IAboutTheClubGrid.ICard> = ({
+const Card: FC<IAboutTheClubGrid.ICard> = memo(({
     image,
     title,
     paragraph,
@@ -70,6 +70,8 @@ const Card: FC<IAboutTheClubGrid.ICard> = ({
             </div>
         </Link>
     );
-};
+});
+
+Card.displayName = 'AboutTheClubGridCard';
 
 export default Card;

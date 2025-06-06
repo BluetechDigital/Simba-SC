@@ -1,6 +1,6 @@
 // Imports
-import {FC} from "react";
 import Link from "next/link";
+import { FC, memo } from "react";
 import {motion} from "framer-motion";
 import {IHeroFour} from "@/components/HeroFour/types/index";
 import {initialTwo, fadeIn} from "@/animations/animations";
@@ -13,7 +13,7 @@ import Title from "@/components/Elements/Title";
 import Paragraph from "@/components/Elements/Paragraph/Paragraph";
 import VideoCard from "@/components/HeroFour/fragments/VideoCard";
 
-const Card: FC<IHeroFour.ICard> = ({
+const Card: FC<IHeroFour.ICard> = memo(({
 	title,
 	video,
 	paragraph,
@@ -63,6 +63,8 @@ const Card: FC<IHeroFour.ICard> = ({
 			</div>
 		</>
 	);
-};
+});
+
+Card.displayName = 'Card';
 
 export default Card;

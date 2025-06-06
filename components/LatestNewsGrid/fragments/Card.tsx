@@ -1,6 +1,6 @@
 // Imports
-import {FC} from "react";
 import Link from "next/link";
+import { FC, memo } from "react";
 import dateFormat from "dateformat";
 import {ILatestNewsGrid} from "@/components/LatestNewsGrid/types/index";
 
@@ -10,7 +10,7 @@ import styles from "@/components/LatestNewsGrid/styles/LatestNewsGrid.module.scs
 // Components
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
-const Card: FC<ILatestNewsGrid.ICard> = ({
+const Card: FC<ILatestNewsGrid.ICard> = memo(({
 	slug,
 	date,
 	title,
@@ -42,6 +42,8 @@ const Card: FC<ILatestNewsGrid.ICard> = ({
 			</div>
 		</Link>
 	);
-};
+});
+
+Card.displayName = 'Card';
 
 export default Card;

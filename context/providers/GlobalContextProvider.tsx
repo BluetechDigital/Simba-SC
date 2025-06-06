@@ -1,7 +1,7 @@
 "use client";
 
 // Imports
-import {FC} from "react";
+import { FC } from "react";
 import {motion} from "framer-motion";
 import {GlobalContext} from "@/context/global";
 import {IGlobal} from "@/context/types/context";

@@ -4,7 +4,7 @@ import {
 	initial,
 	fadeInUp,
 } from "@/animations/animations";
-import {FC} from "react";
+import { FC } from "react";
 import {motion} from "framer-motion";
 
 // Styling
@@ -42,5 +42,7 @@ const ErrorCard: FC = () => {
 		</div>
     );
 }
+
+ErrorCard.displayName = 'ErrorCard';
 
 export default ErrorCard;

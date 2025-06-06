@@ -1,5 +1,5 @@
 // Imports
-import {FC} from "react";
+import { FC, memo } from "react";
 import {motion} from "framer-motion";
 import {fadeIn,initialTwo,} from "@/animations/animations";
 import {IAllPodcastsVideos} from "@/components/Fans/AllPodcastsVideos/types/index";
@@ -7,7 +7,7 @@ import {IAllPodcastsVideos} from "@/components/Fans/AllPodcastsVideos/types/inde
 // Styling
 import styles from "@/components/Fans/AllPodcastsVideos/styles/AllPodcastsVideos.module.scss";
 
-const Pagination: FC<IAllPodcastsVideos.IPagination> = ({
+const Pagination: FC<IAllPodcastsVideos.IPagination> = memo(({
 	totalPages,
 	currentPage,
 	youtubeVideos,
@@ -76,6 +76,8 @@ const Pagination: FC<IAllPodcastsVideos.IPagination> = ({
 			)}
 		</div>
     );
-}
+});
+
+Pagination.displayName = 'Pagination';
 
 export default Pagination;

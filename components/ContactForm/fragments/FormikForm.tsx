@@ -9,8 +9,8 @@ import {
 	initialTwo,
 } from "@/animations/animations";
 import {motion} from "framer-motion";
-import React, {useState, FC} from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import React, {useState, FC, memo} from "react";
 import {sendContactForm} from "@/lib/contactForm";
 import {useFormik, Formik, Field, Form} from "formik";
 import { IContactForm } from "@/components/ContactForm/types/index";
@@ -18,7 +18,9 @@ import { IContactForm } from "@/components/ContactForm/types/index";
 // Styling
 import styles from "@/components/ContactForm/styles/ContactForm.module.scss";
 
-const FormikForm: FC<IContactForm.IForm> = ({formTitle}) => {
+const FormikForm: FC<IContactForm.IForm> = memo(({
+	formTitle
+}) => {
 	// Loading, Send & Error Message States
 	const [loading, setLoading] = useState(false);
 	const [messageSent, setMessageSent] = useState(false);
@@ -405,6 +407,8 @@ const FormikForm: FC<IContactForm.IForm> = ({formTitle}) => {
 			</Form>
 		</Formik>
 	);
-};
+});
+
+FormikForm.displayName = 'FormikForm';
 
 export default FormikForm;

@@ -1,7 +1,7 @@
 // Imports
-import {FC} from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { FC, memo } from "react";
 import dateFormat from "dateformat";
 import {motion} from "framer-motion";
 import {fadeIn,initialTwo} from "@/animations/animations";
@@ -15,7 +15,7 @@ import CountUp from "@/components/Elements/CountUp";
 import UseFormatNumber from "@/hooks/useFormatNumber";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
-const Card: FC<IAllPodcastsVideos.IRecommendations.ICard> = ({
+const Card: FC<IAllPodcastsVideos.IRecommendations.ICard> = memo(({
 	videoId,
 	snippet,
 	statistics,
@@ -170,6 +170,8 @@ const Card: FC<IAllPodcastsVideos.IRecommendations.ICard> = ({
 			</div>
 		</Link>
     );
-}
+});
+
+Card.displayName = 'Card';
 
 export default Card;

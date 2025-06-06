@@ -1,6 +1,6 @@
 // Imports
-import { FC } from "react";
 import Link from "next/link";
+import { FC, memo, useMemo } from "react";
 import {ITitleParagraphDynamicColour} from "@/components/TitleParagraphDynamicColour/types/index";
 
 
@@ -11,7 +11,7 @@ import styles from "@/components/TitleParagraphDynamicColour/styles/TitleParagra
 import Title from "@/components/Elements/Title";
 import Paragraph from "@/components/Elements/Paragraph/Paragraph";
 
-const TitleParagraphDynamicColour: FC<ITitleParagraphDynamicColour.IProps> = ({
+const TitleParagraphDynamicColour: FC<ITitleParagraphDynamicColour.IProps> = memo(({
 	title,
 	paragraph,
 	buttonLink,
@@ -20,11 +20,19 @@ const TitleParagraphDynamicColour: FC<ITitleParagraphDynamicColour.IProps> = ({
 	displayBackgroundColor,
 }) => {
 
+	// Optimize inline styles:
+	const backgroundColorStyle = useMemo(() => ({
+		backgroundColor: displayBackgroundColor ? displayBackgroundColor : 'none',
+	}), [displayBackgroundColor]);
+
+	// Optimize inline styles:
+	const colorAndBorderColorStyle = useMemo(() => ({
+		color: displayBackgroundColor ? displayBackgroundColor : 'none',
+		borderColor: displayBackgroundColor ? displayBackgroundColor : 'none',
+	}), [displayBackgroundColor]);
+
 	return (
-		<div
-			className={styles.titleParagraphDynamicColour}
-			style={{backgroundColor: displayBackgroundColor}}
-		>
+		<div style={backgroundColorStyle} className={styles.titleParagraphDynamicColour}>
 			<div className={styles.container}>
 				<div className={styles.content}>
 					<Title
@@ -42,11 +50,8 @@ const TitleParagraphDynamicColour: FC<ITitleParagraphDynamicColour.IProps> = ({
 							<Link
 								href={`${buttonLink?.url}`}
 								target={buttonLink?.target}
+								style={colorAndBorderColorStyle}
 								aria-label={`${buttonLink?.title}`}
-								style={{
-									color: displayContentColor,
-									borderColor: displayContentColor,
-								}}
 								className={`${
 									buttonLink?.url ? styles.buttonStyling : "hidden"
 								}`}
@@ -56,11 +61,8 @@ const TitleParagraphDynamicColour: FC<ITitleParagraphDynamicColour.IProps> = ({
 							<Link
 								href={`${buttonLinkTwo?.url}`}
 								target={buttonLinkTwo?.target}
+								style={colorAndBorderColorStyle}
 								aria-label={`${buttonLinkTwo?.title}`}
-								style={{
-									color: displayContentColor,
-									borderColor: displayContentColor,
-								}}
 								className={`${
 									buttonLinkTwo?.url ? styles.buttonStyling : "hidden"
 								}`}
@@ -73,6 +75,8 @@ const TitleParagraphDynamicColour: FC<ITitleParagraphDynamicColour.IProps> = ({
 			</div>
 		</div>
 	);
-};
+});
+
+TitleParagraphDynamicColour.displayName = 'TitleParagraphDynamicColour';
 
 export default TitleParagraphDynamicColour;

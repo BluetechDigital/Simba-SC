@@ -5,9 +5,9 @@ import {
 	slideInLeftInitial,
 	slideInRightFinish,
 	slideInRightInitial,
-} from "@/animations/animations";
-import {FC} from "react";
-import {motion} from "framer-motion";
+ } from "@/animations/animations";
+import { FC, memo } from "react";
+import { motion } from "framer-motion";
 import {ITitleContentImage} from "@/components/TitleContentImage/types/index";
 
 
@@ -17,7 +17,7 @@ import styles from "@/components/TitleContentImage/styles/TitleContentImage.modu
 // Components
 import TitleContentImageCard from "@/components/TitleContentImage/fragments/Card";
 
-const TitleContentImage: FC<ITitleContentImage.IProps> = ({
+const TitleContentImage: FC<ITitleContentImage.IProps> = memo(({
 	title,
 	image,
 	subtitle,
@@ -155,6 +155,8 @@ const TitleContentImage: FC<ITitleContentImage.IProps> = ({
 			</div>
 		</div>
 	);
-};
+});
+
+TitleContentImage.displayName = 'TitleContentImage';
 
 export default TitleContentImage;

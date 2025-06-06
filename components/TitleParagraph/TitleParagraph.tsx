@@ -4,9 +4,9 @@ import {
 	fadeInUp,
 	offsetStart,
 	offsetFinish,
-} from "@/animations/animations";
-import {FC} from "react";
-import {motion} from "framer-motion";
+ } from "@/animations/animations";
+import { FC, memo } from "react";
+import { motion } from "framer-motion";
 
 // Styling
 import styles from "@/components/TitleParagraph/styles/TitleParagraph.module.scss";
@@ -21,7 +21,7 @@ type ITitleParagraph = {
 	displayParagraph: boolean;
 };
 
-const TitleParagraph: FC<ITitleParagraph> = ({
+const TitleParagraph: FC<ITitleParagraph> = memo(({
 	title,
 	paragraph,
 	displayParagraph,
@@ -61,6 +61,8 @@ const TitleParagraph: FC<ITitleParagraph> = ({
 			</motion.div>
 		</ScrollYProgressReveal>
 	);
-};
+});
+
+TitleParagraph.displayName = 'TitleParagraph';
 
 export default TitleParagraph;

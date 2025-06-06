@@ -1,7 +1,7 @@
 "use client";
 
 // Imports
-import {FC} from "react";
+import { FC } from "react";
 import {motion} from "framer-motion";
 import {useGlobalContext} from "@/context/global";
 import {stagger, initial} from "@/animations/animations";
@@ -47,5 +47,7 @@ const SimbaTVStatsCard: FC<ISimbaTVBanner.IStatsCard> = () => {
 		</ScrollYProgressReveal>
 	);
 };
+
+SimbaTVStatsCard.displayName = 'SimbaTVStatsCard';
 
 export default SimbaTVStatsCard;

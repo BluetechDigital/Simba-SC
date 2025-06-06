@@ -7,7 +7,7 @@ import {
 	initial,
 	initialTwo,
 } from "@/animations/animations";
-import {FC} from "react";
+import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";

@@ -52,8 +52,10 @@ export namespace IPage {
 		partnershipsAdvertising: string;
 	};
 	export type IContext = {
-		content: IContent;
-		postTypeFlexibleContent: string;
+		memoizedValues: {
+			content: IContent;
+			postTypeFlexibleContent: string;
+		}
 	};
 	export type IContextProvider = {
 		content: IContent;

@@ -1,5 +1,5 @@
 // Imports
-import {FC} from "react";
+import { FC } from "react";
 import {motion} from "framer-motion";
 import {IHeroTwo} from "@/components/HeroTwo/types/index";
 import {fadeIn, initialTwo} from "@/animations/animations";
@@ -16,7 +16,8 @@ const HeroTwo: FC<IHeroTwo.IProps> = ({title, paragraph, backgroundImage}) => {
 			<div
 				className={styles.container}
 				style={{
-					backgroundImage: `linear-gradient(0deg,rgba(234, 29, 37, 0),rgba(234, 29, 37, 0.5),rgba(234, 29, 37, 0.80)),url("${backgroundImage?.sourceUrl}")`,
+					backgroundImage: `linear-gradient(0deg,rgba(234, 29, 37, 0),rgba(234, 29, 37, 0.5),
+					rgba(234, 29, 37, 0.80)),url("${backgroundImage?.sourceUrl}")`,
 				}}
 			>
 				<div className={styles.content}>

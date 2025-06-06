@@ -8,10 +8,14 @@
             @apply relative overflow-hidden;
 
             .slide {
-                @apply w-full p-0;
+                @apply relative w-full h-full p-0 bg-cover bg-center bg-no-repeat;
 
-                .contentWrapper {
-                    @apply pt-24 pb-44 sm:pb-20 w-full h-[87vh] flex flex-col items-center lg:items-baseline justify-center relative bg-center bg-no-repeat bg-cover;
+                .video {
+                    @apply absolute top-0 left-0 w-full h-full object-cover overflow-hidden pointer-events-none #{!important};
+                }
+
+                .heroCard {
+                    @apply relative z-10 overflow-x-hidden pt-24 pb-44 sm:pb-20 w-full h-[87vh] flex flex-col items-center lg:items-baseline justify-center bg-pureBlack/50 hover:bg-pureBlack/60 transition-all duration-1000 ease-in-out;
 
                     .content {
                         @apply relative z-10 flex flex-col items-center lg:items-start gap-4 px-8 sm:px-4 lg:px-24;

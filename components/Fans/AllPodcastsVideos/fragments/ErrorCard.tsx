@@ -1,5 +1,5 @@
 // Imports
-import {FC} from "react";
+import { FC } from "react";
 import {motion} from "framer-motion";
 import {stagger, initial, fadeInUp} from "@/animations/animations";
 
@@ -38,5 +38,7 @@ const ErrorCard: FC = () => {
 		</div>
     );
 }
+
+ErrorCard.displayName = 'ErrorCard';
 
 export default ErrorCard;

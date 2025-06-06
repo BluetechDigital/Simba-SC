@@ -1,8 +1,7 @@
 // Imports
-import { FC } from "react";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import fadeInUp, {initial} from "@/animations/animations";
+import { FC, memo, useMemo } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import fadeInUp, { initial } from "@/animations/animations";
 import {IClubCardMembershipCTA} from "@/components/ClubCardMembershipCTA/types/index";
 
 // Styling
@@ -10,11 +9,13 @@ import styles from "@/components/ClubCardMembershipCTA/styles/ClubCardMembership
 
 // Components
 import Title from "@/components/Elements/Title";
+import Button from "@/components/Elements/Button/Button";
 import VideoCard from "@/components/ClubCardMembershipCTA/fragments/VideoCard";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
+import SlideUpDivMaskReveal from "@/components/Animations/SlideUpDivMaskReveal/SlideUpDivMaskReveal";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
-const ClubCardMembershipCTA: FC<IClubCardMembershipCTA.IProps> = ({
+const ClubCardMembershipCTA: FC<IClubCardMembershipCTA.IProps> = memo(({
 	title,
 	video,
 	buttonLink,
@@ -23,9 +24,14 @@ const ClubCardMembershipCTA: FC<IClubCardMembershipCTA.IProps> = ({
 	clubCardMembershipText,
 }) => {
 
+	// Optimize inline styles:
+	const backgroundImageStyle = useMemo(() => ({
+		backgroundImage: backgroundImage?.sourceUrl ? `linear-gradient(0deg,rgba(45, 90, 49, 0),
+		rgba(45, 90, 49, 0.5), rgba(45, 90, 49, 0.80)), url("${backgroundImage.sourceUrl}")` : 'none',
+	}), [backgroundImage?.sourceUrl]);
+
 	return (
-		<div
-			className={styles.clubCardMembershipCta}
+		<div className={styles.clubCardMembershipCta}
 			style={{
 				backgroundImage: `url("/svg/background/layered-peaks-haikei-red.svg")`,
 			}}
@@ -37,42 +43,35 @@ const ClubCardMembershipCTA: FC<IClubCardMembershipCTA.IProps> = ({
 					</ContentSliceRevealMaskAnimation>
 				</div>
 				<div className={styles.content}>
-					<motion.div
-						className={styles.cardWrapper}
-						style={{
-							backgroundImage: `linear-gradient(0deg,rgba(234, 29, 37, 0),
-							rgba(234, 29, 37, 0.5),rgba(234, 29, 37, 0.80)),url("${backgroundImage?.sourceUrl}")`,
-						}}
-					>
-						<VideoCard video={video} displayVideo={displayVideo} />
-						<ScrollYProgressReveal className={styles.card}>
-							<motion.h4
-								initial={initial}
-								whileInView={fadeInUp}
-								viewport={{once: true}}
-								className={styles.title}
-							>
-								{clubCardMembershipText}
-							</motion.h4>
-							<ScrollYProgressReveal className={styles.buttonLink}>
-								<Link
-									href={`${buttonLink?.url}`}
-									target={buttonLink?.target}
-									className={`${
-										buttonLink?.url
-											? styles.link + " buttonStyling-alt"
-											: "hidden"
-									}`}
+					<AnimatePresence mode="wait">
+						<SlideUpDivMaskReveal
+							triggerOnce={true}
+							style={backgroundImageStyle}
+							className={styles.cardWrapper}
+							backgroundColor={"bg-lightGreyTwo"}
+						>
+							<VideoCard video={video} displayVideo={displayVideo} />
+							<ScrollYProgressReveal className={styles.card}>
+								<motion.h4
+									initial={initial}
+									whileInView={fadeInUp}
+									viewport={{once: true}}
+									className={styles.title}
 								>
-									{buttonLink?.title}
-								</Link>
+									{clubCardMembershipText}
+								</motion.h4>
+								<ScrollYProgressReveal className={styles.buttonLink}>
+									<Button styleNumber={1} link={buttonLink}/>
+								</ScrollYProgressReveal>
 							</ScrollYProgressReveal>
-						</ScrollYProgressReveal>
-					</motion.div>
+						</SlideUpDivMaskReveal>
+					</AnimatePresence>
 				</div>
 			</div>
 		</div>
 	);
-};
+});
+
+ClubCardMembershipCTA.displayName = 'ClubCardMembershipCTA';
 
 export default ClubCardMembershipCTA;

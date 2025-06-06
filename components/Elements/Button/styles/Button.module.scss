@@ -1,0 +1,40 @@
+.linkWrapper {
+    .buttonStyling {
+        @apply pt-3 pb-2 px-10 w-fit font-secondaryBlack cursor-pointer rounded-full uppercase text-lightGrey text-paragraph lg:text-lg text-center border-2 border-solid border-white hover:border-primary-default bg-transparent hover:bg-primary-default transition-all ease-in-out duration-500;
+    }
+
+    .buttonStylingAlt {
+        @extend .buttonStyling;
+        @apply border-primary-default bg-primary-default hover:border-accent-default hover:bg-accent-default;
+    }
+
+    .buttonStylingAltTwo {
+        @extend .buttonStyling;
+        @apply border-primary-default bg-primary-default hover:border-primary-dark hover:bg-primary-dark;
+    }
+
+    .buttonStylingAltTwoSlim {
+        @extend .buttonStylingAltTwo;
+        @apply py-1 px-6 text-tiny lg:text-base;
+    }
+
+    .buttonStylingAltThree {
+        @extend .buttonStyling;
+        @apply hover:border-accent-default hover:bg-accent-default;
+    }
+
+    .buttonStylingAltFour {
+        @extend .buttonStyling;
+        @apply hover:text-primary-default hover:border-tertiary-default hover:bg-tertiary-default;
+    }
+
+    .buttonStylingAltFive {
+        @extend .buttonStyling;
+        @apply pt-2 pb-1 text-paragraph lg:text-medium hover:border-accent-default hover:bg-accent-default;
+    }
+
+    .buttonStylingAltFiveActive {
+        @extend .buttonStylingAltFive;
+        @apply text-primary-default border-tertiary-default bg-tertiary-default hover:border-tertiary-default hover:bg-tertiary-default;
+    }
+}

@@ -1,5 +1,5 @@
 // Imports
-import {FC} from "react";
+import { FC, memo, useMemo } from "react";
 import {IHeroFour} from "@/components/HeroFour/types/index";
 
 // Styling
@@ -8,7 +8,7 @@ import styles from "@/components/HeroFour/styles/HeroFour.module.scss";
 // Components
 import Card from "@/components/HeroFour/fragments/Card";
 
-const HeroFour: FC<IHeroFour.IProps> = ({
+const HeroFour: FC<IHeroFour.IProps> = memo(({
 	title,
 	video,
 	paragraph,
@@ -18,16 +18,18 @@ const HeroFour: FC<IHeroFour.IProps> = ({
 	backgroundImage,
 	displayFullHeight,
 }) => {
+
+	// Optimize inline styles:
+	const backgroundImageStyle = useMemo(() => ({
+		backgroundImage: backgroundImage?.sourceUrl ? `linear-gradient(0deg,rgba(0, 0, 0, 0.5),
+		rgba(0, 0, 0, 0.5)), url("${backgroundImage.sourceUrl}")` : 'none',
+	}), [backgroundImage?.sourceUrl]);
+	
 	return (
 		<div className={styles.heroFour}>
 			<div
-				className={
-					styles.container + ` ${displayFullHeight ? "h-[87vh]" : "h-[50vh]"}`
-				}
-				style={{
-					backgroundImage: `linear-gradient(0deg,rgba(0, 0, 0, 0.5),
-					rgba(0, 0, 0, 0.5)),url("${backgroundImage?.sourceUrl}")`,
-				}}
+				style={backgroundImageStyle}
+				className={styles.container + ` ${displayFullHeight ? "h-[87vh]" : "h-[50vh]"}`}
 			>
 				<div className={styles.relativeWrapper}>
 					<div className={styles.stickyWrapper}>
@@ -46,6 +48,8 @@ const HeroFour: FC<IHeroFour.IProps> = ({
 			</div>
 		</div>
 	);
-};
+});
+
+HeroFour.displayName = 'HeroFour';
 
 export default HeroFour;

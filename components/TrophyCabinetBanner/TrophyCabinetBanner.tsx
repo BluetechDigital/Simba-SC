@@ -1,7 +1,7 @@
 // Imports
-import Link from "next/link";
 import Image from "next/image";
-import {FC, Fragment} from "react";
+import { FC, memo, Fragment } from "react";
+import { AnimatePresence } from "framer-motion";
 import {ITrophyCabinetBanner} from "@/components/TrophyCabinetBanner/types/index";
 
 // Styling
@@ -9,13 +9,15 @@ import styles from "@/components/TrophyCabinetBanner/styles/TrophyCabinetBanner.
 
 // Components
 import Title from "@/components/Elements/Title";
+import Button from "@/components/Elements/Button/Button";
 import Paragraph from "@/components/Elements/Paragraph/Paragraph";
 import Card from "@/components/TrophyCabinetBanner/fragments/Card";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import SlideInXRightAnimation from "@/components/Animations/SlideInXRightAnimation";
+import SlideUpDivMaskReveal from "@/components/Animations/SlideUpDivMaskReveal/SlideUpDivMaskReveal";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
-const TrophyCabinetBanner: FC<ITrophyCabinetBanner.IProps> = ({
+const TrophyCabinetBanner: FC<ITrophyCabinetBanner.IProps> = memo(({
 	title,
 	paragraph,
 	buttonLink,
@@ -38,49 +40,47 @@ const TrophyCabinetBanner: FC<ITrophyCabinetBanner.IProps> = ({
 				</div>
 				<div className={styles.content}>
 					<div className={styles.cardWrapper}>
-						<ScrollYProgressReveal className={styles.trophyCabinetWrapper}>
-							{trophyCabinet?.length > 0 ? (
-								trophyCabinet?.map((item: any, index: number) => (
-									<Fragment key={index}>
-										<Card
-											index={index}
-											name={item?.name}
-											image={item?.image}
-											totalAmount={item?.totalAmount}
-										/>
-									</Fragment>
-								))
-							) : (
-								<></>
-							)}
-						</ScrollYProgressReveal>
-						<ScrollYProgressReveal className={styles.buttonLink}>
-							<Link
-								href={`${buttonLink?.url}`}
-								target={buttonLink?.target}
-								className={`${
-									buttonLink?.url
-										? styles.link + " buttonStyling-alt"
-										: "hidden"
-								}`}
-							>
-								{buttonLink?.title}
-							</Link>
-						</ScrollYProgressReveal>
+						<AnimatePresence mode="wait">
+							<ScrollYProgressReveal className={styles.trophyCabinetWrapper}>
+								{trophyCabinet?.length > 0 ? (
+									trophyCabinet?.map((item: any, index: number) => (
+										<Fragment key={index}>
+											<Card
+												index={index}
+												name={item?.name}
+												image={item?.image}
+												totalAmount={item?.totalAmount}
+											/>
+										</Fragment>
+									))
+								) : (
+									<></>
+								)}
+							</ScrollYProgressReveal>
+							<ScrollYProgressReveal className={styles.buttonLink}>
+								<Button styleNumber={2} link={buttonLink}/>
+							</ScrollYProgressReveal>
+						</AnimatePresence>
 					</div>
-					<SlideInXRightAnimation className={styles.imageWrapper}>
-						<Image
-							src={backgroundImage?.sourceUrl}
-							alt={`${backgroundImage?.altText}`}
-							width={backgroundImage?.mediaDetails?.width || 1000}
-							height={backgroundImage?.mediaDetails?.height || 1000}
-							className={backgroundImage?.sourceUrl ? styles.image : `hidden`}
-						/>
-					</SlideInXRightAnimation>
+					<AnimatePresence mode="wait">
+						<SlideInXRightAnimation className={styles.imageWrapper}>
+							<SlideUpDivMaskReveal triggerOnce={true} backgroundColor={"bg-lightGreyTwo"}>
+								<Image
+									alt={backgroundImage?.altText}
+									src={backgroundImage?.sourceUrl}
+									width={backgroundImage?.mediaDetails?.width || 1000}
+									height={backgroundImage?.mediaDetails?.height || 1000}
+									className={backgroundImage?.sourceUrl ? styles.image : `hidden`}
+								/>
+							</SlideUpDivMaskReveal>
+						</SlideInXRightAnimation>
+					</AnimatePresence>
 				</div>
 			</div>
 		</div>
 	);
-};
+});
+
+TrophyCabinetBanner.displayName = 'TrophyCabinetBanner';
 
 export default TrophyCabinetBanner;

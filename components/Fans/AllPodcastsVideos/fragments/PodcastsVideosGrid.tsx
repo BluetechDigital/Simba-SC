@@ -8,8 +8,8 @@ import {
 	arrayLoopStaggerChildren,
 } from "@/animations/animations";
 import {motion} from "framer-motion";
-import {FC, Fragment, useState} from "react";
 import {useGlobalContext} from "@/context/global";
+import {FC, memo, Fragment, useState} from "react";
 import {IAllPodcastsVideos} from "@/components/Fans/AllPodcastsVideos/types/index";
 
 // Styling
@@ -94,5 +94,7 @@ const PodcastsVideosGrid: FC<IAllPodcastsVideos.IPodcastsVideosGrid> = ({
 		</div>
 	);
 };
+
+PodcastsVideosGrid.displayName = 'PodcastsVideosGrid';
 
 export default PodcastsVideosGrid;

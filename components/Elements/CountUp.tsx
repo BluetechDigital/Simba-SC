@@ -1,7 +1,7 @@
 "use client";
 
 // Imports
-import React, {FC, useEffect, useRef} from "react";
+import { FC, memo, useEffect, useRef} from "react";
 import {motion, animate, useInView} from "framer-motion";
 import { initialTwo, fadeIn } from "@/animations/animations";
 
@@ -12,11 +12,11 @@ type ICountUp = {
 	className: string;
 };
 	
-const CountUp: FC<ICountUp> = ({
+const CountUp: FC<ICountUp> = memo(({
 	number,
 	suffix,
-	decimals = 0,
 	className,
+	decimals = 0,
 }) => {
 	const ref: any = useRef(null);
 	const isInView = useInView(ref);
@@ -58,11 +58,11 @@ const CountUp: FC<ICountUp> = ({
 			<span ref={ref}></span>
 			{suffix ? (
 				<span className="pl-1">{suffix}</span>
-			) : (
-				<></>
-			)}
+			) : null}
 		</motion.h4>
 	);
-};
+});
+
+CountUp.displayName = 'CountUp';
 
 export default CountUp;

@@ -1,7 +1,7 @@
 "use client";
 
 // Imports
-import {FC} from "react";
+import { FC } from "react";
 import {client} from "@/config/apollo";
 import {ApolloProvider} from "@apollo/client";
 import {IApollo} from "@/context/types/context";
