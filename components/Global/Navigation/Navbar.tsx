@@ -42,14 +42,24 @@ const Navbar: FC<INavbar.IProps> = () => {
 	};
 
 	const [menuActive, setMenuActive] = useState(false);
+	const [revealGoogleTranslateOptions, setRevealGoogleTranslateOptions] =
+	useState(false);
 
 	const handleClick = () => {
 		setMenuActive(!menuActive);
 	};
 
+	// Hides or Displays Google Translate Options
+	const handleRevealGoogleTranslateOptions = () => {
+		setRevealGoogleTranslateOptions(!revealGoogleTranslateOptions);
+	};
+
     return (
         <nav className={styles.navbar + " group"}>
-			<TopNavigation />
+			<TopNavigation
+				 revealGoogleTranslateOptions={revealGoogleTranslateOptions}
+				 handleRevealGoogleTranslateOptions={handleRevealGoogleTranslateOptions}
+			/>
 			<div className={styles.mainNavigation}>
 				<motion.div
 					initial={initialTwo}

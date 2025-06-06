@@ -66,6 +66,7 @@ import GlobalContextProvider from "@/context/providers/GlobalContextProvider";
 import ApolloContextProvider from "@/context/providers/ApolloContextProvider";
 import BackToTopButton from "@/components/Elements/BackToTopButton/BackToTopButton";
 import BlurryCursorMouse from "@/components/Global/BlurryCursorMouse/BlurryCursorMouse";
+import GoogleTranslateContextProvider from "@/context/providers/GoogleTranslateContextProvider";
 
 const RootLayout = async ({children}: AppProps | any) => {
 	/// PUBLIC PAGES //
@@ -224,15 +225,17 @@ const RootLayout = async ({children}: AppProps | any) => {
 		<html lang="en">
 			<body>
 				<ApolloContextProvider>
-					<GlobalContextProvider globalProps={globalProps}>
-						<SmoothScrolling>
-							<Navbar />
-							<main>{children}</main>
-							<Footer />
-							<BlurryCursorMouse />
-							<BackToTopButton link={`#`} />
-						</SmoothScrolling>
-					</GlobalContextProvider>
+					<GoogleTranslateContextProvider>
+						<GlobalContextProvider globalProps={globalProps}>
+							<SmoothScrolling>
+								<Navbar />
+								<main>{children}</main>
+								<Footer />
+								<BlurryCursorMouse />
+								<BackToTopButton link={`#`} />
+							</SmoothScrolling>
+						</GlobalContextProvider>
+					</GoogleTranslateContextProvider>
 				</ApolloContextProvider>
 			</body>
 		</html>

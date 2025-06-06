@@ -32,7 +32,10 @@ export namespace INavbar {
 		displaySublinks: () => void;
 	};
 	export namespace ITopNavigation {
-		export type IProps = {};
+		export type IProps = {
+			revealGoogleTranslateOptions: boolean;
+			handleRevealGoogleTranslateOptions: () => void;
+		};
 		export type ISocialLinksWrapper = {
 			socialLinks: {
 				url: string;

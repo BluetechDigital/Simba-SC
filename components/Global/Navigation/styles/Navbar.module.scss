@@ -4,8 +4,8 @@
 	.topNavigation {
 		@apply py-0 bg-white flex items-center justify-between gap-4 px-4;
 
-		.top,
-		.bottom {
+		.leftSide,
+		.rightSide {
 			@apply flex items-center justify-between gap-4;
 
 			.image {
@@ -13,7 +13,7 @@
 			}
 		}
 
-		.bottom {
+		.rightSide {
 			@apply flex items-center justify-between gap-4;
 
 			.simbaLogin,
@@ -21,8 +21,37 @@
 				@apply hidden lg:block font-secondaryBold tracking-[-0.02rem] uppercase text-pureBlack hover:hover:text-accent-two text-base text-center transition-all ease-in-out duration-500;
 			}
 
+			// Google Translate Navigation SVG
+			.googleTranslate {
+				@apply relative hidden xl:flex items-center justify-center gap-6 sm:gap-8;
+
+				.googleTranslate {
+					@apply relative hidden xl:flex items-center justify-center gap-6 sm:gap-8;
+				}
+
+				.revealGoogleTranslateOptions {
+					@apply p-0 text-pureBlack transition duration-200 rounded-sm flex flex-row items-center justify-center gap-3;
+
+					.svg {
+						@apply block w-full max-w-[30px] h-[30px] object-contain object-center;
+					}
+				}
+
+				.closeGoogleTranslateSVG {
+					@apply block ml-2;
+
+					.svg {
+						@apply w-[22.5px] h-[22.5px] object-contain object-center;
+					}
+				}
+
+				.translateOptions {
+					@apply absolute p-4 pb-0 bg-grey w-fit top-[32px] right-[-30px];
+				}
+			}
+
 			.divider {
-				@apply hidden sm:flex mx-6 h-[25px] w-[1px] bg-grey;
+				@apply hidden sm:flex mx-3 h-[25px] w-[1px] bg-grey;
 			}
 
 			.socialLinks {

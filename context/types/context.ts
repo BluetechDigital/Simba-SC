@@ -129,6 +129,11 @@ export namespace IApollo {
 		children: React.ReactNode;
 	};
 }
+export namespace IGoogleTranslate {
+	export type IContextProvider = {
+		children: React.ReactNode;
+	};
+}
 export namespace IFlexibleContentType {
 	export type ITypes = {
 		pages: string;
