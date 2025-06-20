@@ -24,7 +24,7 @@ namespace ITypes {
 }
 
 //  Mask Animation
-const AnimationProps: ITypes.IAnimation = {
+const AnimationProps: ITypes.IAnimation | any = {
 	initial: {
 		y: "100%",
 	},

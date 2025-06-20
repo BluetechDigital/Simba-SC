@@ -37,7 +37,7 @@ export const fadeInTwo: IAnimation.IFadeInTwo | any = {
 		ease: "easeOut",
 	},
 };
-export const fadeInUp: IAnimation.IFadeInUp = {
+export const fadeInUp: IAnimation.IFadeInUp | any = {
 	y: 0,
 	opacity: 1,
 	transition: {
@@ -46,7 +46,7 @@ export const fadeInUp: IAnimation.IFadeInUp = {
 		ease: "easeInOut",
 	},
 };
-export const stagger: IAnimation.IStagger = {
+export const stagger: IAnimation.IStagger | any = {
 	initial: {
 		opacity: 0,
 		y: 0,
@@ -61,7 +61,7 @@ export const stagger: IAnimation.IStagger = {
 		},
 	},
 };
-export const arrayLoopStaggerChildren: IAnimation.IArrayLoopStaggerChildren = {
+export const arrayLoopStaggerChildren: IAnimation.IArrayLoopStaggerChildren | any = {
 	initial: {
 		opacity: 0,
 		y: 0,
@@ -76,7 +76,7 @@ export const arrayLoopStaggerChildren: IAnimation.IArrayLoopStaggerChildren = {
 		},
 	}),
 };
-export const navigationMenuStaggerChildren: IAnimation.IArrayLoopStaggerChildren = {
+export const navigationMenuStaggerChildren: IAnimation.IArrayLoopStaggerChildren | any = {
 	initial: {
 		opacity: 0,
 		y: 0,
@@ -103,7 +103,7 @@ export const slideInLeftInitial: IAnimation.ISlideInLeftInitial | any = {
 	x: -200,
 	opacity: 0,
 };
-export const slideInRightFinish: IAnimation.ISlideInRightFinish = {
+export const slideInRightFinish: IAnimation.ISlideInRightFinish | any = {
 	y: 0,
 	x: 0,
 	opacity: 1,

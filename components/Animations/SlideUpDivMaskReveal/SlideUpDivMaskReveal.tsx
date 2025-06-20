@@ -1,6 +1,6 @@
 // Imports
 import { FC, memo, useRef, useEffect, RefObject, useMemo } from 'react';
-import { motion, useInView, useAnimation, AnimationControls } from 'framer-motion';
+import { motion, useInView, useAnimation } from 'framer-motion';
 
 // Assume you have some CSS modules for styling, e.g., 'Reveal.module.css'
 import styles from '@/components/Animations/SlideUpDivMaskReveal/styles/SlideUpDivMaskReveal.module.scss';
@@ -36,10 +36,10 @@ const SlideUpDivMaskReveal: FC<ISlideUpDivMaskReveal.IProps> = memo(({
 }) => {
   const ref: RefObject<HTMLDivElement | null> = useRef<HTMLDivElement>(null);
   const isInView: boolean = useInView(ref, { amount: 0.5 });
-  const controls: AnimationControls = useAnimation();
+  const controls: any = useAnimation();
 
   // Memoize revealVariants to ensure stable object reference
-  const revealVariants: ISlideUpDivMaskReveal.IRevealVariants = useMemo(() => ({
+  const revealVariants: ISlideUpDivMaskReveal.IRevealVariants | any = useMemo(() => ({
     hidden: {
       height: '100%',
     },
