@@ -7,7 +7,7 @@ type IContentMaskAnimation = {
 	children: React.ReactNode;
 };
 
-export const TextSlicedSlantMaskAnimation: IAnimation.ITextSlicedSlantMaskAnimation =
+export const TextSlicedSlantMaskAnimation: IAnimation.ITextSlicedSlantMaskAnimation | any =
 	{
 		initial: {
 			y: "100%",
