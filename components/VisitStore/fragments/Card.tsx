@@ -42,7 +42,8 @@ const Card: FC = () => {
 											target="_blank"
 											className={styles.link}
 											aria-label={`${item?.title}`}
-											href={`store.simbasc.co.tz/${item?.slug}`}
+											// href={`store.simbasc.co.tz/${item?.slug}`}
+											href={`https://simba-sc-store.vercel.app/search`}
 										>
 											<Image
 												src={item?.image?.sourceUrl}
