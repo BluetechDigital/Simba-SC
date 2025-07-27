@@ -2,30 +2,43 @@
 	@apply px-4 py-2 bg-white;
 
 	.topContent {
-		@apply flex flex-col lg:flex-row lg:items-center justify-between gap-8;
+		@apply flex flex-col lg:flex-row items-center lg:justify-between gap-8;
 
 		.logo {
-			@apply w-fit h-[60px] mx-auto lg:mx-0 object-contain object-center;
+			@apply w-[65px] md:w-fit h-[45px] 2xl:h-[60px] object-contain object-center;
 		}
 
 		.socialLinks {
-			@apply hidden sm:flex items-center justify-center gap-6 text-center;
+			@apply flex items-center justify-center gap-6 text-center;
 
 			.link {
-				@apply inline-block text-primary-default;
+				@apply w-full h-full inline-block;
 
 				.svg,
 				.svgAlt,
 				.svgAltTwo {
-					@apply w-[22.5px] h-[22.5px] fill-primary-default hover:fill-primary-dark transition-all duration-500 ease-in-out;
+					@apply w-[20px] h-[20px] 2xl:w-[22px] 2xl:h-[22px] fill-primary-default hover:fill-primary-dark transition-all duration-500 ease-in-out;
+
+					path {
+						@apply w-full h-full;
+					}
+				}
+
+				.svgAlt,
+				.svgAltTwo {
+					@apply w-[30px] h-[30px] 2xl:w-[30px] 2xl:h-[30px];
 				}
 
 				.svgAlt {
-					@apply w-[30px] h-[30px];
+					@apply mt-[2px];
 				}
 
 				.svgAltTwo {
-					@apply w-[28px] h-[28px];
+					@apply w-[25px] h-[25px] 2xl:w-[30px] 2xl:h-[30px];
+
+					g {
+						@apply fill-primary-default hover:fill-primary-dark transition-all duration-500 ease-in-out;
+					}
 				}
 			}
 		}
