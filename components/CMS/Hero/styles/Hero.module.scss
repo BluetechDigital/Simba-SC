@@ -1,5 +1,5 @@
 .hero {
-    @apply relative z-50 flex flex-col h-fit pt-[138px] bg-white;
+    @apply relative z-50 flex flex-col h-fit pt-[7.5vh] 2xl:pt-[113px] bg-white;
 
     .container {
         @apply lg:relative flex flex-col;
@@ -15,7 +15,7 @@
                 }
 
                 .heroCard {
-                    @apply relative z-10 overflow-x-hidden pt-24 pb-44 sm:pb-20 w-full h-[87vh] flex flex-col items-center lg:items-baseline justify-center bg-pureBlack/50 hover:bg-pureBlack/60 transition-all duration-1000 ease-in-out;
+                    @apply relative z-10 overflow-x-hidden pt-24 pb-44 sm:pb-20 w-full h-[60vh] flex flex-col items-center lg:items-baseline justify-center bg-pureBlack/50 hover:bg-pureBlack/60 transition-all duration-1000 ease-in-out;
 
                     .content {
                         @apply relative z-10 flex flex-col items-center lg:items-start gap-4 px-8 sm:px-4 lg:px-24;
@@ -24,16 +24,20 @@
                             @apply max-w-full lg:max-w-xl 2xl:max-w-5xl mx-auto lg:mx-0;
 
                             .title {
-                                @apply font-secondaryBlack text-center lg:text-left uppercase text-5xl sm:text-6xl md:text-7xl 2xl:text-8xl tracking-[-0.02rem] text-white font-semibold leading-[0.90];
+                                @apply flex flex-col sm:block font-primary uppercase text-white text-left text-5xl md:text-6xl 2xl:text-7xl leading-[2.25rem] md:leading-tight;
                             }
 
                             .paragraph {
-                                @apply max-w-xl mx-auto lg:mx-0 py-2 font-secondary leading-tight text-white text-lg text-center lg:text-left;
+                                @apply text-white text-tiny md:text-paragraph 2xl:text-medium text-left leading-normal md:leading-tight;
+
+                                p {
+                                    @apply p-0 font-secondary;
+                                }
                             }
                         }
 
-                        .bottom {
-                            @apply flex flex-col lg:flex-row items-center lg:items-baseline gap-2 sm:gap-4 max-w-sm lg:max-w-4xl mx-auto lg:mx-0;
+                        .buttonSection {
+                            @apply flex flex-col md:flex-row items-baseline justify-start gap-4 md:gap-6 lg:gap-4;
                         }
                     }
                 }

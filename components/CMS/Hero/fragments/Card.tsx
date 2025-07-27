@@ -48,7 +48,7 @@ const Card: FC<IHero.ICard> = memo(({
                         initial={initialTwo}
                         whileInView={fadeIn}
                         viewport={{once: true}}
-                        className={styles.bottom}
+                        className={styles.buttonSection}
                     >
                         <Button styleNumber={0} link={buttonLink}/>
                         <Button styleNumber={0} link={buttonLinkTwo}/>
