@@ -42,7 +42,7 @@
 			@apply hidden lg:flex w-full flex-col lg:flex-row items-center justify-center lg:justify-start;
 
 			.text {
-				@apply hidden lg:block font-secondaryRegular max-w-lg mx-auto lg:mx-0 text-pureBlack text-xs text-center lg:text-left;
+				@apply hidden lg:block font-secondary max-w-lg mx-auto lg:mx-0 text-pureBlack text-xs text-center lg:text-left;
 			}
 		}
 
@@ -50,7 +50,7 @@
 			@apply w-full flex flex-col sm:flex-row items-center justify-center gap-4;
 
 			.link {
-				@apply font-secondaryRegular text-pureBlack transition-all duration-200 ease-in-out text-tiny hover:text-primary-default;
+				@apply font-secondary text-pureBlack transition-all duration-200 ease-in-out text-tiny hover:text-primary-default;
 
 				.image,
 				.imageTwo {
@@ -71,14 +71,14 @@
 			@apply w-full flex flex-col lg:flex-row items-center justify-center lg:justify-end gap-4 xl:gap-6;
 
 			.paragraph {
-				@apply block lg:hidden font-secondaryRegular max-w-lg mx-auto lg:mx-0 text-pureBlack text-xs text-center lg:text-left;
+				@apply block lg:hidden font-secondary max-w-lg mx-auto lg:mx-0 text-pureBlack text-xs text-center lg:text-left;
 			}
 
 			.ul {
 				@apply w-fit flex flex-col sm:flex-row items-center justify-center 2xl:-m-5 2xl:px-6 lg:py-2 gap-2 sm:gap-4;
 
 				.link {
-					@apply font-secondaryRegular text-pureBlack transition-all duration-200 ease-in-out text-center lg:text-right text-xs hover:text-primary-default;
+					@apply font-secondary text-pureBlack transition-all duration-200 ease-in-out text-center lg:text-right text-xs hover:text-primary-default;
 				}
 			}
 
@@ -93,7 +93,7 @@
 					}
 
 					.text {
-						@apply flex lg:hidden xl:flex font-secondaryRegular max-w-lg mx-auto lg:mx-0 text-xs text-center lg:text-left;
+						@apply flex lg:hidden xl:flex font-secondary max-w-lg mx-auto lg:mx-0 text-xs text-center lg:text-left;
 					}
 				}
 			}

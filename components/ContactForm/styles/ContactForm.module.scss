@@ -12,7 +12,7 @@
 			}
 
 			.paragraph {
-				@apply max-w-2xl mx-auto lg:mx-0 font-secondaryRegular leading-tight text-pureBlack text-lg text-center lg:text-left;
+				@apply max-w-2xl mx-auto lg:mx-0 font-secondary leading-tight text-pureBlack text-lg text-center lg:text-left;
 			}
 
 			.contactDetails {
@@ -26,11 +26,11 @@
 					}
 
 					.link {
-						@apply block font-secondaryRegular text-lg text-pureBlack text-center sm:text-left hover:text-primary-default;
+						@apply block font-secondary text-lg text-pureBlack text-center sm:text-left hover:text-primary-default;
 					}
 
 					.paragraph {
-						@apply font-secondaryRegular max-w-xl mx-auto xl:mx-0 text-lg text-pureBlack text-center sm:text-left;
+						@apply font-secondary max-w-xl mx-auto xl:mx-0 text-lg text-pureBlack text-center sm:text-left;
 					}
 				}
 
@@ -54,16 +54,16 @@
 					@apply w-full px-6 pt-10 pb-6 border-t-2 border-solid border-t-grey;
 
 					.errorMessage {
-						@apply py-1 font-secondaryRegular text-left text-tiny text-primary-default;
+						@apply py-1 font-secondary text-left text-tiny text-primary-default;
 					}
 
 					.fieldText {
-						@apply w-full mb-8 font-secondaryRegular text-left text-pureBlack text-medium lg:text-lg tracking-[-0.05rem] leading-tight;
+						@apply w-full mb-8 font-secondary text-left text-pureBlack text-medium lg:text-lg tracking-[-0.05rem] leading-tight;
 					}
 
 					.field,
 					.textarea {
-						@apply w-full font-secondaryRegular text-pureBlack text-paragraph lg:text-medium tracking-[-0.05rem] placeholder-darkGrey bg-transparent outline-none border-none focus:ring-[1px] focus:ring-transparent focus:bg-transparent active:bg-transparent;
+						@apply w-full font-secondary text-pureBlack text-paragraph lg:text-medium tracking-[-0.05rem] placeholder-darkGrey bg-transparent outline-none border-none focus:ring-[1px] focus:ring-transparent focus:bg-transparent active:bg-transparent;
 					}
 
 					.textarea {

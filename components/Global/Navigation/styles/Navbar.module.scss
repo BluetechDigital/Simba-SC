@@ -176,7 +176,7 @@
 								@apply grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-2 my-6 p-4 border-l-2 border-tertiary-two;
 
 								.link {
-									@apply font-secondaryRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center;
+									@apply font-secondary font-normal leading-none text-white hover:text-pureBlack text-lg text-center;
 								}
 							}
 						}
@@ -189,7 +189,7 @@
 							@apply grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-2 my-6 p-4 border-l-2 border-tertiary-two;
 
 							.link {
-								@apply font-secondaryRegular font-normal leading-none text-white hover:text-pureBlack text-lg text-center;
+								@apply font-secondary font-normal leading-none text-white hover:text-pureBlack text-lg text-center;
 							}
 						}
 					}

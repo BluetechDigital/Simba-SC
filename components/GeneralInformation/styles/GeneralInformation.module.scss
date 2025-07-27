@@ -12,11 +12,11 @@
 			}
 
 			.paragraph {
-				@apply max-w-2xl mx-auto lg:mx-0 font-secondaryRegular leading-tight text-white text-lg text-center lg:text-left;
+				@apply max-w-2xl mx-auto lg:mx-0 font-secondary leading-tight text-white text-lg text-center lg:text-left;
 
 				span {
 					a {
-						@apply font-secondaryRegular text-lg underline tracking-[0.02rem] text-primary-default hover:text-accent-default transition-all duration-500 ease-in-out;
+						@apply font-secondary text-lg underline tracking-[0.02rem] text-primary-default hover:text-accent-default transition-all duration-500 ease-in-out;
 					}
 				}
 			}
@@ -33,11 +33,11 @@
 				}
 
 				.paragraph {
-					@apply mb-0 lg:max-w-lg mx-auto lg:mx-0 font-secondaryRegular leading-normal text-pureBlack text-paragraph text-center lg:text-left;
+					@apply mb-0 lg:max-w-lg mx-auto lg:mx-0 font-secondary leading-normal text-pureBlack text-paragraph text-center lg:text-left;
 
 					span {
 						a {
-							@apply font-thin font-secondaryRegular text-lg underline tracking-[0.02rem] text-primary-default hover:text-accent-default transition-all duration-500 ease-in-out;
+							@apply font-thin font-secondary text-lg underline tracking-[0.02rem] text-primary-default hover:text-accent-default transition-all duration-500 ease-in-out;
 						}
 					}
 				}

@@ -16,7 +16,7 @@
             }
 
             .paragraph {
-                @apply max-w-2xl mx-auto lg:mx-0 font-secondaryRegular leading-normal text-white text-lg text-center lg:text-left;
+                @apply max-w-2xl mx-auto lg:mx-0 font-secondary leading-normal text-white text-lg text-center lg:text-left;
             }
 
             .contactDetails {
@@ -30,11 +30,11 @@
                     }
 
                     .link {
-                        @apply block font-secondaryRegular text-lg text-pureBlack text-center sm:text-left hover:text-primary-default;
+                        @apply block font-secondary text-lg text-pureBlack text-center sm:text-left hover:text-primary-default;
                     }
 
                     .paragraph {
-                        @apply font-secondaryRegular max-w-xl mx-auto xl:mx-0 text-lg text-pureBlack text-center sm:text-left;
+                        @apply font-secondary max-w-xl mx-auto xl:mx-0 text-lg text-pureBlack text-center sm:text-left;
                     }
                 }
 
