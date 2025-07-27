@@ -3,43 +3,43 @@ import {client} from "@/config/apollo";
 import {DocumentNode, gql} from "@apollo/client";
 
 // Components: ACF Flexible Content Post Types
-import { CTA } from "@/components/CTA/graphql/index";
-import { Hero } from "@/components/Hero/graphql/index";
-import { CTATwo } from "@/components/CTATwo/graphql/index";
-import { HeroTwo } from "@/components/HeroTwo/graphql/index";
-import { HeroFour } from "@/components/HeroFour/graphql/index";
-import { HeroThree } from "@/components/HeroThree/graphql/index";
-import { VideoBlock } from "@/components/VideoBlock/graphql/index";
-import { AboutSimba } from "@/components/AboutSimba/graphql/index";
-import { VisitStore } from "@/components/VisitStore/graphql/index";
-import { ContactForm } from "@/components/ContactForm/graphql/index";
-import { SimbaTVBanner } from "@/components/SimbaTVBanner/graphql/index";
-import { SponsorsLogos } from "@/components/SponsorsLogos/graphql/index";
-import { LatestNewsGrid } from "@/components/LatestNewsGrid/graphql/index";
-import { TitleParagraph } from "@/components/TitleParagraph/graphql/index";
-import { SocialMediaGrid } from "@/components/SocialMediaGrid/graphql/index";
-import { AboutTheClubGrid } from "@/components/AboutTheClubGrid/graphql/index";
-import { NewsletterBanner } from "@/components/NewsletterBanner/graphql/index";
-import { NewOfficialKitCta } from "@/components/NewOfficialKitCta/graphql/index";
-import { TitleContentImage } from "@/components/TitleContentImage/graphql/index";
-import { GeneralInformation } from "@/components/GeneralInformation/graphql/index";
-import { TrophyCabinetBanner } from "@/components/TrophyCabinetBanner/graphql/index";
-import { ClubCardMembershipCTA } from "@/components/ClubCardMembershipCTA/graphql/index";
-import { OfficialMembershipsCta } from "@/components/OfficialMembershipsCta/graphql/index";
-import { TitleParagraphDynamicColour } from "@/components/TitleParagraphDynamicColour/graphql/index";
+import { CTA } from "@/components/CMS/CTA/graphql/index";
+import { Hero } from "@/components/CMS/Hero/graphql/index";
+import { CTATwo } from "@/components/CMS/CTATwo/graphql/index";
+import { HeroTwo } from "@/components/CMS/HeroTwo/graphql/index";
+import { HeroFour } from "@/components/CMS/HeroFour/graphql/index";
+import { HeroThree } from "@/components/CMS/HeroThree/graphql/index";
+import { VideoBlock } from "@/components/CMS/VideoBlock/graphql/index";
+import { AboutSimba } from "@/components/CMS/AboutSimba/graphql/index";
+import { VisitStore } from "@/components/CMS/VisitStore/graphql/index";
+import { ContactForm } from "@/components/CMS/ContactForm/graphql/index";
+import { SimbaTVBanner } from "@/components/CMS/SimbaTVBanner/graphql/index";
+import { SponsorsLogos } from "@/components/CMS/SponsorsLogos/graphql/index";
+import { LatestNewsGrid } from "@/components/CMS/LatestNewsGrid/graphql/index";
+import { TitleParagraph } from "@/components/CMS/TitleParagraph/graphql/index";
+import { SocialMediaGrid } from "@/components/CMS/SocialMediaGrid/graphql/index";
+import { AboutTheClubGrid } from "@/components/CMS/AboutTheClubGrid/graphql/index";
+import { NewsletterBanner } from "@/components/CMS/NewsletterBanner/graphql/index";
+import { NewOfficialKitCta } from "@/components/CMS/NewOfficialKitCta/graphql/index";
+import { TitleContentImage } from "@/components/CMS/TitleContentImage/graphql/index";
+import { GeneralInformation } from "@/components/CMS/GeneralInformation/graphql/index";
+import { TrophyCabinetBanner } from "@/components/CMS/TrophyCabinetBanner/graphql/index";
+import { ClubCardMembershipCTA } from "@/components/CMS/ClubCardMembershipCTA/graphql/index";
+import { OfficialMembershipsCta } from "@/components/CMS/OfficialMembershipsCta/graphql/index";
+import { TitleParagraphDynamicColour } from "@/components/CMS/TitleParagraphDynamicColour/graphql/index";
 
 // Components: Fixtures
-import { LastThreeFixtures } from "@/components/Fixtures/LastThreeFixtures/graphql/index";
+import { LastThreeFixtures } from "@/components/CMS/Fixtures/LastThreeFixtures/graphql/index";
 
 // Components: Fans
-import { LatestVideoBlock } from "@/components/Fans/LatestVideoBlock/graphql/index";
-import { AllYouTubeVideos } from "@/components/Fans/AllYouTubeVideos/graphql/index";
-import { AllPodcastsVideos } from "@/components/Fans/AllPodcastsVideos/graphql/index";
+import { LatestVideoBlock } from "@/components/CMS/Fans/LatestVideoBlock/graphql/index";
+import { AllYouTubeVideos } from "@/components/CMS/Fans/AllYouTubeVideos/graphql/index";
+import { AllPodcastsVideos } from "@/components/CMS/Fans/AllPodcastsVideos/graphql/index";
 
 // Components: Club Partners Flexible Content Post Types
-import { ImageSlider } from "@/components/ClubPartners/ImageSlider/graphql/index";
-import { ClubPartnersGrid } from "@/components/ClubPartners/ClubPartnersGrid/graphql/index";
-import { ClubPartnersTitleContentImage } from "@/components/ClubPartners/TitleContentImage/graphql/index";
+import { ImageSlider } from "@/components/CMS/ClubPartners/ImageSlider/graphql/index";
+import { ClubPartnersGrid } from "@/components/CMS/ClubPartners/ClubPartnersGrid/graphql/index";
+import { ClubPartnersTitleContentImage } from "@/components/CMS/ClubPartners/TitleContentImage/graphql/index";
 
 /* PAGES & BLOGS POSTS*/
 /* Fetch all Flexible Content Components 

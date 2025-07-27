@@ -5,8 +5,8 @@ import React, { FC, memo, useMemo, Fragment} from "react";
 import {usePageContext} from "@/context/providers/PageContextProvider";
 
 // Components
-import ImageSlider from "@/components/ClubPartners/ImageSlider/ImageSlider";
-import TitleContentImage from "@/components/ClubPartners/TitleContentImage/TitleContentImage";
+import ImageSlider from "@/components/CMS/ClubPartners/ImageSlider/ImageSlider";
+import TitleContentImage from "@/components/CMS/ClubPartners/TitleContentImage/TitleContentImage";
 
 const RenderClubPartnersFlexibleContent: FC = memo(() => {
 	const { memoizedValues } = usePageContext();
