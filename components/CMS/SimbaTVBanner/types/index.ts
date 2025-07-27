@@ -42,6 +42,7 @@ export namespace ISimbaTVBanner {
 		suffix?: string;
 		decimals?: number;
 		paragraph: string;
+		triggerOnce?: boolean;
 	};
 	export namespace IVideosSlider {
 		export type IProps = {

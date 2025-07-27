@@ -8,7 +8,7 @@
 			@apply flex flex-col w-full xl:w-1/3 mx-0;
 
 			.title {
-				@apply my-2 max-w-3xl mx-auto lg:mx-0 font-primary text-white lg:text-pureBlack text-center lg:text-left uppercase text-7xl sm:text-8xl lg:text-12xl tracking-[-0.05rem] leading-tight xl:leading-[5.5rem];
+				@apply my-2 max-w-3xl mx-auto lg:mx-0 font-primary text-white lg:text-pureBlack text-center lg:text-left uppercase text-5xl md:text-6xl 2xl:text-7xl lg:text-12xl tracking-[-0.05rem] leading-[2.25rem] md:leading-tight;
 
 				span {
 					@apply text-tertiary-default;
@@ -90,7 +90,7 @@
 					@apply flex flex-col gap-4 p-10;
 
 					.title {
-						@apply mb-2 font-secondaryBold text-center text-lg leading-tight tracking-[0.05rem] uppercase font-extrabold text-white transition-all ease-in-out duration-200 hover:text-white;
+						@apply mb-2 font-secondaryBold text-center text-lg leading-tight  uppercase font-extrabold text-white transition-all ease-in-out duration-200 hover:text-white;
 					}
 
 					.paragraph {
@@ -106,7 +106,7 @@
 					@apply mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 lg:gap-6;
 
 					.pageNumber {
-						@apply font-secondaryBlack m-auto text-pureBlack text-center text-paragraph lg:text-lg uppercase tracking-[0.05rem] leading-tight;
+						@apply font-secondaryBlack m-auto text-pureBlack text-center text-paragraph lg:text-lg uppercase  leading-tight;
 					}
 
 					.buttonStyling {

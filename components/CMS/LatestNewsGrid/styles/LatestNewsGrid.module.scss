@@ -2,7 +2,7 @@
 	@apply bg-pureBlack px-4 py-14 lg:px-10 mx-auto flex flex-col gap-8;
 
 	.title {
-		@apply font-primary text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-white leading-tight;
+		@apply font-primary text-left uppercase text-white text-5xl md:text-6xl 2xl:text-7xl leading-[2.25rem] md:leading-tight;
 	}
 
 	.buttonLink {

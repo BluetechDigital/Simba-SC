@@ -20,7 +20,7 @@
 				}
 
 				.paragraph {
-					@apply my-6 lg:mt-14 lg:max-w-lg mx-auto lg:mx-0 font-secondary leading-normal text-pureBlack text-lg text-center lg:text-left;
+					@apply my-6 lg:mt-14 lg:max-w-lg mx-auto lg:mx-0 font-secondary leading-normal text-pureBlack text-tiny md:text-paragraph 2xl:text-medium text-left;
 
 					span {
 						a {

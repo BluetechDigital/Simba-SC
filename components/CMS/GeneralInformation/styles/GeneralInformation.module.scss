@@ -8,11 +8,11 @@
 			@apply pt-24 pb-4 px-8 w-full h-[450px] flex flex-col items-baseline justify-center bg-no-repeat bg-cover bg-center;
 
 			.title {
-				@apply max-w-sm md:max-w-xl lg:max-w-2xl font-primary text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-white leading-tight;
+				@apply max-w-sm md:max-w-xl lg:max-w-2xl font-primary text-left uppercase text-white text-5xl md:text-6xl 2xl:text-7xl leading-[2.25rem] md:leading-tight;
 			}
 
 			.paragraph {
-				@apply max-w-2xl mx-auto lg:mx-0 font-secondary leading-tight text-white text-lg text-center lg:text-left;
+				@apply max-w-2xl mx-auto lg:mx-0 font-secondary leading-tight text-white text-tiny md:text-paragraph 2xl:text-medium text-left;
 
 				span {
 					a {
@@ -29,7 +29,7 @@
 				@apply bg-lightGreyTwo p-10 h-full;
 
 				.title {
-					@apply mb-4 font-secondaryBold text-pureBlack text-lg text-center lg:text-left tracking-[-0.05rem] leading-tight;
+					@apply mb-4 font-secondaryBold text-pureBlack text-tiny md:text-paragraph 2xl:text-medium text-left tracking-[-0.05rem] leading-tight;
 				}
 
 				.paragraph {

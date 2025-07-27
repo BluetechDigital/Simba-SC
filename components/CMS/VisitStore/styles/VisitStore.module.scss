@@ -1,11 +1,11 @@
 .visitStore {
-	@apply bg-white px-4 py-32 min-h-[50vh] lg:px-10 bg-no-repeat bg-cover bg-center;
+	@apply bg-white px-4 py-32 lg:px-10 bg-no-repeat bg-cover bg-center;
 
 	.container {
 		@apply px-0 flex flex-col gap-8;
 
 		.title {
-			@apply mb-2 font-primary text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-white leading-tight;
+			@apply mb-2 font-primary text-left uppercase text-white text-5xl md:text-6xl 2xl:text-7xl leading-[2.25rem] md:leading-tight;
 		}
 
 		.buttonLink {

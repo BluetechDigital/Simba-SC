@@ -12,7 +12,7 @@
 			}
 
 			.title {
-				@apply lg:max-w-3xl font-primary text-center lg:text-left uppercase text-7xl sm:text-8xl lg:text-12xl tracking-[-0.05rem] leading-tight xl:leading-[5.5rem];
+				@apply lg:max-w-3xl font-primary text-left uppercase text-5xl md:text-6xl 2xl:text-7xl lg:text-12xl tracking-[-0.05rem] leading-[2.25rem] md:leading-tight;
 			}
 		}
 
@@ -34,7 +34,7 @@
 					}
 
 					.paragraph {
-						@apply max-w-xl mx-auto lg:mx-0 font-secondary leading-loose text-lg text-center lg:text-left;
+						@apply max-w-xl mx-auto lg:mx-0 font-secondary leading-loose text-tiny md:text-paragraph 2xl:text-medium text-left;
 					}
 
 					.buttonLink {
