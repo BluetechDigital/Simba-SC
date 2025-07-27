@@ -11,7 +11,7 @@ import {IAllPodcastsVideos} from "@/components/CMS/Fans/AllPodcastsVideos/types/
 import styles from "@/components/CMS/Fans/AllPodcastsVideos/styles/AllPodcastsVideos.module.scss";
 
 // Components
-import CountUp from "@/components/Elements/CountUp";
+import CountUp from "@/components/Global/Elements/CountUp";
 import UseFormatNumber from "@/hooks/useFormatNumber";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 

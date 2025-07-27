@@ -4,7 +4,7 @@ import { FC, memo, useRef, useMemo } from "react";
 import { motion, useScroll, MotionValue} from "framer-motion";
 
 // Styling
-import styles from "@/components/Elements/Paragraph/styles/Paragraph.module.scss";
+import styles from "@/components/Global/Elements/Paragraph/styles/Paragraph.module.scss";
 
 type IParagraph = {
 	fadeIn?: boolean;

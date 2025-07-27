@@ -111,45 +111,6 @@ img.no-drag {
 	}
 }
 
-.buttonStyling {
-	@apply pt-3 pb-2 px-10 w-fit font-secondaryBlack cursor-pointer rounded-full uppercase text-lightGrey text-paragraph lg:text-lg text-center border-2 border-solid border-white hover:border-primary-default bg-transparent hover:bg-primary-default transition-all ease-in-out duration-500;
-}
-
-.buttonStyling-alt {
-	@extend .buttonStyling;
-	@apply border-primary-default bg-primary-default hover:border-accent-default hover:bg-accent-default;
-}
-
-.buttonStyling-alt-two {
-	@extend .buttonStyling;
-	@apply border-primary-default bg-primary-default hover:border-primary-dark hover:bg-primary-dark;
-}
-
-.buttonStyling-alt-two-slim {
-	@extend .buttonStyling-alt-two;
-	@apply py-1 px-6 text-tiny lg:text-base;
-}
-
-.buttonStyling-alt-three {
-	@extend .buttonStyling;
-	@apply hover:border-accent-default hover:bg-accent-default;
-}
-
-.buttonStyling-alt-four {
-	@extend .buttonStyling;
-	@apply hover:text-primary-default hover:border-tertiary-default hover:bg-tertiary-default;
-}
-
-.buttonStyling-alt-five {
-	@extend .buttonStyling;
-	@apply pt-2 pb-1 text-paragraph lg:text-medium hover:border-accent-default hover:bg-accent-default;
-}
-
-.buttonStyling-alt-five-active {
-	@extend .buttonStyling-alt-five;
-	@apply text-primary-default border-tertiary-default bg-tertiary-default hover:border-tertiary-default hover:bg-tertiary-default;
-}
-
 /* Testimonials Swiper.js Slider */
 .swiper {
 	width: 100%;

@@ -7,7 +7,7 @@ import {stagger, initial, fadeInUp} from "@/animations/animations";
 import styles from "@/components/CMS/Fans/AllPodcastsVideos/styles/AllPodcastsVideos.module.scss";
 
 // Components
-import Paragraph from "@/components/Elements/Paragraph/Paragraph";
+import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";
 
 const ErrorCard: FC = () => {
     

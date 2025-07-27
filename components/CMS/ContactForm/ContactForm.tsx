@@ -18,7 +18,7 @@ import { IContactForm } from "@/components/CMS/ContactForm/types/index";
 import styles from "@/components/CMS/ContactForm/styles/ContactForm.module.scss";
 
 // Components
-import Paragraph from "@/components/Elements/Paragraph/Paragraph";
+import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";
 import FormikForm from "@/components/CMS/ContactForm/fragments/FormikForm";
 import SlideInXLeftAnimation from "@/components/Animations/SlideInXLeftAnimation";
 import SlideInXRightAnimation from "@/components/Animations/SlideInXRightAnimation";

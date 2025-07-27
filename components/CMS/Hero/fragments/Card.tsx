@@ -10,9 +10,9 @@ import { fadeIn, initialTwo } from "@/animations/animations";
 import styles from "@/components/CMS/Hero/styles/Hero.module.scss";
 
 // Components
-import Button from "@/components/Elements/Button/Button";
+import Button from "@/components/Global/Elements/Button/Button";
 import VideoCard from "@/components/CMS/Hero/fragments/VideoCard";
-import Paragraph from "@/components/Elements/Paragraph/Paragraph";
+import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
 const Card: FC<IHero.ICard> = memo(({

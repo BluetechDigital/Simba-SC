@@ -13,7 +13,7 @@ import {INewsSingle} from "@/components/CMS/Achieve/NewsSingle/types/index";
 import styles from "@/components/CMS/Achieve/NewsSingle/styles/NewsSingle.module.scss";
 
 // Components
-import Paragraph from "@/components/Elements/Paragraph/Paragraph";
+import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";
 import NewsletterElement from "@/components/CMS/Achieve/NewsSingle/fragments/NewsletterElement";
 import NewsLatestArticles from "@/components/CMS/Achieve/NewsSingle/fragments/NewsLatestArticles";
 

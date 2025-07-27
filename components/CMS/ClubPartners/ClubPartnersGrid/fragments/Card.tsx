@@ -10,7 +10,8 @@ import {IClubPartnersGrid} from "@/components/CMS/ClubPartners/ClubPartnersGrid/
 import styles from "@/components/CMS/ClubPartners/ClubPartnersGrid/styles/ClubPartnersGrid.module.scss";
 
 // Components
-import Paragraph from "@/components/Elements/Paragraph/Paragraph";
+import Button from "@/components/Global/Elements/Button/Button";
+import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";
 
 const VideoCard: FC<IClubPartnersGrid.ICard> = ({
 	slug,
@@ -18,6 +19,19 @@ const VideoCard: FC<IClubPartnersGrid.ICard> = ({
 	excerpt,
 	featuredImage,
 }) => {
+
+	type IButton = {
+		url: string;
+		title: string;
+		target: string;
+	};
+
+	const buttonLink: IButton= {
+		url: `/club-partners/${slug}`,
+		title: "Learn More",
+		target: "_self",
+	};
+
     return (
         <Link
 			target={"_self"}
@@ -41,19 +55,8 @@ const VideoCard: FC<IClubPartnersGrid.ICard> = ({
 					>
 						{title}
 					</motion.h5>
-					<Paragraph content={excerpt} className={styles.paragraph} />
-					<Link
-						target={"_self"}
-						href={`/club-partners/${slug}`}
-						aria-label={`${title} link ${slug}`}
-						className={`${
-							slug
-								? "buttonStyling-alt-two-slim mt-2 mx-auto lg:mx-0"
-								: "hidden"
-						}`}
-					>
-						Learn More
-					</Link>
+					<Paragraph content={excerpt} className={styles.paragraph}/>
+					<Button styleNumber={2.5} link={buttonLink}/>
 				</div>
 			</div>
 		</Link>

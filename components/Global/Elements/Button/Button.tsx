@@ -3,7 +3,7 @@ import { FC } from "react";
 import Link from "next/link";
 
 // Styling
-import styles from "@/components/Elements/Button/styles/Button.module.scss";
+import styles from "@/components/Global/Elements/Button/styles/Button.module.scss";
 
 type IButton = {
     styleNumber: number;
@@ -49,16 +49,20 @@ const Button: FC<IButton> = ({ link, styleNumber }) => {
 	}
 	
     return (
-		<Link
-			href={`${link?.url}`}
-			aria-label={`${link?.title}`}
-			target={link?.target || "_self"}
-			className={link?.url ? styles.linkWrapper : `hidden`}
-		>
-			<span className={buttonStyle}>
-				{link?.title}
-			</span>
-		</Link>
+		<>
+			{link?.url ?
+				<Link
+					href={link.url}
+					aria-label={`${link.title}`}
+					target={link.target || "_self"}
+					className={link.url ? styles.linkWrapper : `hidden`}
+				>
+					<span className={buttonStyle}>
+						{link.title}
+					</span>
+				</Link>
+			: null}
+		</>
     );
 }
 

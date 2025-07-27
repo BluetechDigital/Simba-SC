@@ -13,7 +13,7 @@ import {ILatestNewsGrid} from "@/components/CMS/LatestNewsGrid/types/index";
 import styles from "@/components/CMS/LatestNewsGrid//styles/LatestNewsGrid.module.scss";
 
 // Components
-import Button from "@/components/Elements/Button/Button";
+import Button from "@/components/Global/Elements/Button/Button";
 import Card from "@/components/CMS/LatestNewsGrid/fragments/Card";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";

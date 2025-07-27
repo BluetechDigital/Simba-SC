@@ -10,7 +10,7 @@ import {fadeInUp, initial, stagger} from "@/animations/animations";
 import styles from "@/components/Global/CookiePolicy/styles/CookiePolicyCard.module.scss";
 
 // Components
-import Paragraph from "@/components/Elements/Paragraph/Paragraph";
+import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";
 
 const CookiePolicyCard: FC = () => {
 	const [showCookiePolicyCard, setShowCookiePolicyCard] = useState(true);

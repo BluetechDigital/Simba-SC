@@ -71,7 +71,7 @@ const Card: FC = () => {
 													className={`${
 														item?.slug
 															? styles.slugLink +
-															  " buttonStyling-alt-two-slim"
+															  " buttonStylingAltTwoSlim"
 															: "hidden"
 													}`}
 												>

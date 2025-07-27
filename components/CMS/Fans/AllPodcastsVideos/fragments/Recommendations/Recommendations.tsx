@@ -16,7 +16,7 @@ import {IAllPodcastsVideos} from "@/components/CMS/Fans/AllPodcastsVideos/types/
 import styles from "@/components/CMS/Fans/AllPodcastsVideos/styles/AllPodcastsVideos.module.scss";
 
 // Components
-import Title from "@/components/Elements/Title";
+import Title from "@/components/Global/Elements/Title";
 import Card from "@/components/CMS/Fans/AllPodcastsVideos/fragments/Recommendations/fragments/Card";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 

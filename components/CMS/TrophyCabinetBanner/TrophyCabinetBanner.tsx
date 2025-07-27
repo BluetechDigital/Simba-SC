@@ -8,9 +8,9 @@ import {ITrophyCabinetBanner} from "@/components/CMS/TrophyCabinetBanner/types/i
 import styles from "@/components/CMS/TrophyCabinetBanner/styles/TrophyCabinetBanner.module.scss";
 
 // Components
-import Title from "@/components/Elements/Title";
-import Button from "@/components/Elements/Button/Button";
-import Paragraph from "@/components/Elements/Paragraph/Paragraph";
+import Title from "@/components/Global/Elements/Title";
+import Button from "@/components/Global/Elements/Button/Button";
+import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";
 import Card from "@/components/CMS/TrophyCabinetBanner/fragments/Card";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import SlideInXRightAnimation from "@/components/Animations/SlideInXRightAnimation";

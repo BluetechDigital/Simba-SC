@@ -9,7 +9,7 @@ import { fadeIn, initial, initialTwo, arrayLoopStaggerChildren  } from "@/animat
 import styles from "@/components/CMS/TrophyCabinetBanner/styles/TrophyCabinetBanner.module.scss";
 
 // Components
-import CountUp from "@/components/Elements/CountUp";
+import CountUp from "@/components/Global/Elements/CountUp";
 
 const Card: FC<ITrophyCabinetBanner.ICard> = memo(({
 	name,

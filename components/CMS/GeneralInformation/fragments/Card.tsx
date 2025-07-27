@@ -8,7 +8,7 @@ import {IGeneralInformation} from "@/components/CMS/GeneralInformation/types/ind
 import styles from "@/components/CMS/GeneralInformation/styles/GeneralInformation.module.scss";
 
 // Components
-import Paragraph from "@/components/Elements/Paragraph/Paragraph";
+import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";
 
 const Card: FC<IGeneralInformation.ICard> = memo(({
 	title,

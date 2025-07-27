@@ -9,7 +9,7 @@ import { fadeIn, initial, stagger, initialTwo  } from "@/animations/animations";
 import styles from "@/components/CMS/TitleContentImage/styles/TitleContentImage.module.scss";
 
 // Components
-import Paragraph from "@/components/Elements/Paragraph/Paragraph";
+import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";
 
 const Card: FC<ITitleContentImage.ICard> = memo(({
 	title,
@@ -46,7 +46,7 @@ const Card: FC<ITitleContentImage.ICard> = memo(({
 					target={buttonLink?.target}
 					aria-label={`${buttonLink?.title}`}
 				>
-					<span className={styles.text + ` buttonStyling-alt-two`}>
+					<span className={styles.text + ` buttonStylingAltTwo`}>
 						{buttonLink?.title}
 					</span>
 				</Link>

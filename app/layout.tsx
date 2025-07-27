@@ -64,7 +64,7 @@ import Navbar from "@/components/Global/Navigation/Navbar";
 import SmoothScrolling from "@/components/Global/SmoothScrolling";
 import GlobalContextProvider from "@/context/providers/GlobalContextProvider";
 import ApolloContextProvider from "@/context/providers/ApolloContextProvider";
-import BackToTopButton from "@/components/Elements/BackToTopButton/BackToTopButton";
+import BackToTopButton from "@/components/Global/Elements/BackToTopButton/BackToTopButton";
 import BlurryCursorMouse from "@/components/Global/BlurryCursorMouse/BlurryCursorMouse";
 import GoogleTranslateContextProvider from "@/context/providers/GoogleTranslateContextProvider";
 

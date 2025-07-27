@@ -7,7 +7,7 @@ import {initialTwo, fadeIn} from "@/animations/animations";
 import { ISimbaTVBanner } from "@/components/CMS/SimbaTVBanner/types/index";
 
 // Components
-import Paragraph from "@/components/Elements/Paragraph/Paragraph";
+import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";
 
 const CountUpStats: FC<ISimbaTVBanner.ICountUpStats> = ({
 	number,

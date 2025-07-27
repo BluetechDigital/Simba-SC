@@ -11,7 +11,7 @@ import {IAllYouTubeVideos} from "@/components/CMS/Fans/AllYouTubeVideos/types/in
 import styles from "@/components/CMS/Fans/AllYouTubeVideos/styles/AllYouTubeVideos.module.scss";
 
 // Components
-import CountUp from "@/components/Elements/CountUp";
+import CountUp from "@/components/Global/Elements/CountUp";
 import UseFormatNumber from "@/hooks/useFormatNumber";
 
 const VideosGrid: FC<IAllYouTubeVideos.ICard> = ({

@@ -15,7 +15,7 @@ import styles from "@/components/CMS/GeneralInformation/styles/GeneralInformatio
 
 // Components
 import Card from "@/components/CMS/GeneralInformation/fragments/Card";
-import Paragraph from "@/components/Elements/Paragraph/Paragraph";
+import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";
 import SlideInXLeftAnimation from "@/components/Animations/SlideInXLeftAnimation";
 
 const GeneralInformation: FC<IGeneralInformation.IProps> = memo(({

@@ -15,7 +15,7 @@ import {IVideoBlock} from "@/components/CMS/VideoBlock/types/index";
 import styles from "@/components/CMS/VideoBlock/styles/VideoBlock.module.scss";
 
 // Components
-import Paragraph from "@/components/Elements/Paragraph/Paragraph";
+import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";
 import VideoCard from "@/components/CMS/VideoBlock/fragments/VideoCard";
 import SlideInXLeftAnimation from "@/components/Animations/SlideInXLeftAnimation";
 import SlideInXRightAnimation from "@/components/Animations/SlideInXRightAnimation";

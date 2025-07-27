@@ -1,5 +1,4 @@
 // Imports
-import Link from "next/link";
 import { FC, memo, } from "react";
 import { motion } from "framer-motion";
 import {ICTATwo} from "@/components/CMS/CTATwo/types/index";
@@ -9,8 +8,9 @@ import {initialTwo, fadeIn } from "@/animations/animations";
 import styles from "@/components/CMS/CTATwo/styles/CTATwo.module.scss";
 
 // Components
-import Title from "@/components/Elements/Title";
-import Paragraph from "@/components/Elements/Paragraph/Paragraph";
+import Title from "@/components/Global/Elements/Title";
+import Button from "@/components/Global/Elements/Button/Button";
+import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
@@ -37,16 +37,7 @@ const CTATwo: FC<ICTATwo.IProps> = memo(({
 						whileInView={fadeIn}
 						viewport={{once: true}}
 					>
-						<Link
-							href={`${buttonLink?.url}`}
-							target={buttonLink?.target}
-							aria-label={`${buttonLink?.title}`}
-							className={`${
-								buttonLink?.url ? "buttonStyling-alt-three" : "hidden"
-							}`}
-						>
-							{buttonLink?.title}
-						</Link>
+						<Button styleNumber={3} link={buttonLink}/>
 					</motion.div>
 				</ScrollYProgressReveal>
 			</div>

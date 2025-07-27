@@ -5,7 +5,7 @@ import Link from "next/link";
 import { FC, memo, useEffect, useState} from "react";
 
 // Styling
-import styles from "@/components/Elements/BackToTopButton/styles/BackToTopButton.module.scss";
+import styles from "@/components/Global/Elements/BackToTopButton/styles/BackToTopButton.module.scss";
 
 type IBackHoverButton = {
 	link: string;

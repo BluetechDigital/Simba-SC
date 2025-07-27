@@ -61,16 +61,8 @@ const TopNavigation: FC<INavbar.ITopNavigation.IProps> = memo(({
                                         alt={item?.altText}
                                         src={item?.sourceUrl}
                                         className={styles.image}
-                                        width={
-                                            item?.mediaDetails?.width
-                                                ? item?.mediaDetails?.width
-                                                : 1000
-                                        }
-                                        height={
-                                            item?.mediaDetails?.height
-                                                ? item?.mediaDetails?.height
-                                                : 1000
-                                        }
+                                        width={item?.mediaDetails?.width || 1000}
+                                        height={item?.mediaDetails?.height || 1000}
                                     />
                                 </motion.div>
                             </Fragment>
