@@ -85,7 +85,7 @@
 			@apply w-auto;
 
 			.image {
-				@apply object-contain object-center w-[65px] md:w-[75px] h-[60px] sm:h-[65px] lg:h-[75px];
+				@apply px-0 py-[2px] md:py-[1px] object-contain object-center w-fit h-[45px] md:w-fit 2xl:h-[55px];
 			}
 		}
 
@@ -102,7 +102,7 @@
 						@apply hidden lg:block;
 
 						.link {
-							@apply font-secondaryBold font-extrabold text-pureBlack hover:text-primary-default tracking-[-0.02rem] text-lg text-center uppercase transition-all ease-in-out duration-500;
+							@apply font-secondaryBold uppercase text-pureBlack text-sm 2xl:text-tiny text-center tracking-[-0.02rem] hover:text-primary-default transition-all ease-in-out duration-500;
 						}
 					}
 				}
@@ -110,20 +110,20 @@
 		}
 
 		.megaNavigationMenuButton {
-			@apply relative z-20 w-1/4 md:w-1/6 lg:w-1/12 h-full px-8 py-4 lg:p-4 flex flex-col items-center justify-center cursor-pointer bg-no-repeat bg-center hover:bg-primary-dark transition-all ease-in-out duration-500;
+			@apply relative z-20 w-1/4 md:w-1/6 lg:w-[8%] h-full px-3 py-2 flex flex-col items-center justify-center cursor-pointer bg-no-repeat bg-center hover:bg-primary-dark transition-all ease-in-out duration-500;
 
 			.button {
 				.text {
-					@apply text-white uppercase font-secondaryBold;
+					@apply hidden md:flex w-full ml-[4px] text-white text-center text-xs uppercase font-secondaryBold;
 				}
 
 				.hamburgerIcon {
-					@apply relative py-4 ml-[2px] h-full w-full mx-auto flex items-center justify-center;
+					@apply relative py-4 mr-8 md:ml-[2px] h-full w-full mx-auto flex items-center justify-center;
 
 					.iconOne,
 					.iconTwo,
 					.iconThree {
-						@apply absolute left-0 top-1/2 w-[40px] h-[4px] bg-white;
+						@apply absolute lg:left-0 lg:top-1/2 w-[40px] h-[3px] bg-white;
 						transition: all 400ms cubic-bezier(0.84, 0.06, 0.52, 1.8);
 					}
 
@@ -135,6 +135,7 @@
 						@apply delay-300 opacity-100 translate-y-[8px];
 					}
 
+					// Active state
 					.iconOneActive {
 						@apply absolute left-0 top-1/2 w-[40px] h-[4px] ml-[0.40rem] bg-white opacity-100 rotate-[40deg] transition-all ease-in-out duration-500;
 					}
