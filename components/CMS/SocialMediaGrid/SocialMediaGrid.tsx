@@ -11,7 +11,7 @@ import {ISocialMediaGrid} from "@/components/CMS/SocialMediaGrid/types/index";
 import styles from "@/components/CMS/SocialMediaGrid/styles/SocialMediaGrid.module.scss";
 
 // Components
-import Title from "../../Elements/Title";
+import Title from "../../Global/Elements/Title";
 import Card from "@/components/CMS/SocialMediaGrid/fragments/Card";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";

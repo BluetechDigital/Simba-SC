@@ -16,8 +16,8 @@ import {ILatestVideoBlock} from "@/components/CMS/Fans/LatestVideoBlock/types/in
 import styles from "@/components/CMS/Fans/LatestVideoBlock/styles/LatestVideoBlock.module.scss";
 
 // Components
-import Title from "@/components/Elements/Title";
-import Paragraph from "@/components/Elements/Paragraph/Paragraph";
+import Title from "@/components/Global/Elements/Title";
+import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";
 import Card from "@/components/CMS/Fans/LatestVideoBlock/fragments/Card";
 import VideoCard from "@/components/CMS/Fans/LatestVideoBlock/fragments/VideoCard";
 

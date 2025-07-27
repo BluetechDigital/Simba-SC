@@ -11,7 +11,7 @@ import {motion} from "framer-motion";
 import styles from "@/components/CMS/Fans/AllYouTubeVideos/styles/AllYouTubeVideos.module.scss";
 
 // Components
-import Paragraph from "@/components/Elements/Paragraph/Paragraph";
+import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";
 
 const ErrorCard: FC = () => {
     

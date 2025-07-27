@@ -16,7 +16,7 @@ import {INewOfficialKitCta} from "@/components/CMS/NewOfficialKitCta/types/index
 import styles from "@/components/CMS/NewOfficialKitCta/styles/NewOfficialKitCta.module.scss";
 
 // Components
-import Button from "@/components/Elements/Button/Button";
+import Button from "@/components/Global/Elements/Button/Button";
 import SlideUpDivMaskReveal from "@/components/Animations/SlideUpDivMaskReveal/SlideUpDivMaskReveal";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 

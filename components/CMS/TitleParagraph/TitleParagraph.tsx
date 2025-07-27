@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 import styles from "@/components/CMS/TitleParagraph/styles/TitleParagraph.module.scss";
 
 // Components
-import Paragraph from "@/components/Elements/Paragraph/Paragraph";
+import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 
 type ITitleParagraph = {

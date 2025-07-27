@@ -7,7 +7,7 @@ import styles from "@/components/CMS/Fans/AllPodcastsVideos/styles/AllPodcastsVi
 
 
 // Components
-import Title from "@/components/Elements/Title";
+import Title from "@/components/Global/Elements/Title";
 import PodcastsVideosGrid from "@/components/CMS/Fans/AllPodcastsVideos/fragments/PodcastsVideosGrid";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 

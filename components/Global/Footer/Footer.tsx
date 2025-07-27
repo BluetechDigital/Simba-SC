@@ -17,7 +17,7 @@ import { useGlobalContext } from "@/context/global";
 import styles from "@/components/Global/Footer/styles/Footer.module.scss";
 
 // Components
-import Paragraph from "@/components/Elements/Paragraph/Paragraph";
+import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";
 import SocialLinksWrapper from "@/components/Global/Footer/fragments/SocialLinksWrapper";
 import FooterLinksWrapper from "@/components/Global/Footer/fragments/FooterLinksWrapper";
 

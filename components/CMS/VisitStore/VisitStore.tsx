@@ -8,7 +8,7 @@ import {IVisitStore} from "@/components/CMS/VisitStore/types/index";
 import styles from "@/components/CMS/VisitStore/styles/VisitStore.module.scss";
 
 // Components
-import Button from "@/components/Elements/Button/Button";
+import Button from "@/components/Global/Elements/Button/Button";
 import Card from "@/components/CMS/VisitStore/fragments/Card";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";

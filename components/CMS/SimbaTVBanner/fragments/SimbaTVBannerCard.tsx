@@ -16,7 +16,7 @@ import {ISimbaTVBanner} from "@/components/CMS/SimbaTVBanner/types/index";
 import styles from "@/components/CMS/SimbaTVBanner/styles/SimbaTVBanner.module.scss";
 
 // Components
-import Paragraph from "@/components/Elements/Paragraph/Paragraph";
+import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import VideosSlider from "@/components/CMS/SimbaTVBanner/Elements/VideosSlider/VideosSlider";
 import SimbaTVBannerVideos from "@/components/CMS/SimbaTVBanner/Elements/SimbaTVBannerVideos";
@@ -48,8 +48,8 @@ const SimbaTVBannerCard: FC<ISimbaTVBanner.ICard> = memo(({
 						onClick={() => setActiveIndex(index)}
 						className={`${
 							activeIndex === index
-								? "buttonStyling-alt-five-active"
-								: "buttonStyling-alt-five"
+								? styles.buttonStylingAltFiveActive
+								: styles.buttonStylingAltFive
 						}`}
 					>
 						{item.buttonTitle}

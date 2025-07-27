@@ -1,6 +1,6 @@
 .linkWrapper {
     .buttonStyling {
-        @apply pt-3 pb-2 px-10 w-fit font-secondaryBlack cursor-pointer rounded-full uppercase text-lightGrey text-paragraph lg:text-lg text-center border-2 border-solid border-white hover:border-primary-default bg-transparent hover:bg-primary-default transition-all ease-in-out duration-500;
+        @apply py-[5px] px-4 md:px-8 2xl:px-6 w-full md:w-fit font-secondaryBlack cursor-pointer rounded-full uppercase text-lightGrey text-xs md:text-sm text-center border-2 border-solid border-white hover:border-primary-default bg-transparent hover:bg-primary-default transition-all ease-in-out duration-500;
     }
 
     .buttonStylingAlt {
@@ -30,7 +30,7 @@
 
     .buttonStylingAltFive {
         @extend .buttonStyling;
-        @apply pt-2 pb-1 text-paragraph lg:text-medium hover:border-accent-default hover:bg-accent-default;
+        @apply pt-2 pb-1 text-paragraph lg:text-medium hover:border-primary-two hover:bg-accent-default;
     }
 
     .buttonStylingAltFiveActive {

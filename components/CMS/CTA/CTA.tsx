@@ -8,9 +8,9 @@ import fadeInUp, {initial } from "@/animations/animations";
 import styles from "@/components/CMS/CTA/styles/CTA.module.scss";
 
 // Components
-import Button from "@/components/Elements/Button/Button";
+import Button from "@/components/Global/Elements/Button/Button";
 import VideoCard from "@/components/CMS/CTA/fragments/VideoCard";
-import Paragraph from "@/components/Elements/Paragraph/Paragraph";
+import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 
 const CTA: FC<ICTA.IProps> = memo(({

@@ -8,9 +8,9 @@ import { fadeIn, initialTwo } from "@/animations/animations";
 import styles from "@/components/CMS/NewsletterBanner/styles/NewsletterBanner.module.scss";
 
 // Components
-import Title from "@/components/Elements/Title";
-import Button from "@/components/Elements/Button/Button";
-import Paragraph from "@/components/Elements/Paragraph/Paragraph";
+import Title from "@/components/Global/Elements/Title";
+import Button from "@/components/Global/Elements/Button/Button";
+import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 

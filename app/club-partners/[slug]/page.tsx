@@ -8,8 +8,8 @@ import {getAllClubPartnersFlexibleContentComponents} from "@/graphql/GetAllFlexi
 
 // Components
 import PageContextProvider from "@/context/providers/PageContextProvider";
-import BackPageButton from "@/components/Elements/BackPageButton/BackPageButton";
-import BackToTopButton from "@/components/Elements/BackToTopButton/BackToTopButton";
+import BackPageButton from "@/components/Global/Elements/BackPageButton/BackPageButton";
+import BackToTopButton from "@/components/Global/Elements/BackToTopButton/BackToTopButton";
 import RenderClubPartnersFlexibleContent from "@/components/FlexibleContent/RenderClubPartnersFlexibleContent";
 
 // Dynamic Pages Generated Metadata

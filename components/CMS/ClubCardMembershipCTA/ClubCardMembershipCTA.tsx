@@ -8,8 +8,8 @@ import {IClubCardMembershipCTA} from "@/components/CMS/ClubCardMembershipCTA/typ
 import styles from "@/components/CMS/ClubCardMembershipCTA/styles/ClubCardMembershipCTA.module.scss";
 
 // Components
-import Title from "@/components/Elements/Title";
-import Button from "@/components/Elements/Button/Button";
+import Title from "@/components/Global/Elements/Title";
+import Button from "@/components/Global/Elements/Button/Button";
 import VideoCard from "@/components/CMS/ClubCardMembershipCTA/fragments/VideoCard";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import SlideUpDivMaskReveal from "@/components/Animations/SlideUpDivMaskReveal/SlideUpDivMaskReveal";

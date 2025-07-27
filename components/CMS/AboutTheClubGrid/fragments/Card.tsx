@@ -12,7 +12,8 @@ import {IAboutTheClubGrid} from "@/components/CMS/AboutTheClubGrid/types/index";
 import styles from "@/components/CMS/AboutTheClubGrid/styles/AboutTheClubGrid.module.scss";
 
 // Components
-import Paragraph from "@/components/Elements/Paragraph/Paragraph";
+import Button from "@/components/Global/Elements/Button/Button";
+import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";
 
 const Card: FC<IAboutTheClubGrid.ICard> = memo(({
     image,
@@ -30,13 +31,9 @@ const Card: FC<IAboutTheClubGrid.ICard> = memo(({
                 <Image
                     alt={image?.altText}
                     src={image?.sourceUrl}
+                    width={image?.mediaDetails?.width || 1000}
+                    height={image?.mediaDetails?.height || 1000}
                     className={image?.sourceUrl ? styles.image : "hidden"}
-                    width={
-                        image?.mediaDetails?.width ? image?.mediaDetails?.width : 1000
-                    }
-                    height={
-                        image?.mediaDetails?.height ? image?.mediaDetails?.height : 1000
-                    }
                 />
                 <div className={styles.details}>
                     <motion.h5
@@ -60,12 +57,13 @@ const Card: FC<IAboutTheClubGrid.ICard> = memo(({
                         target={buttonLink?.target}
                         className={`${
                             buttonLink?.url
-                                ? "buttonStyling-alt-two-slim mt-2 mx-auto lg:mx-0"
+                                ? "buttonStylingAltTwoSlim mt-2 mx-auto lg:mx-0"
                                 : "hidden"
                         }`}
                     >
                         {buttonLink?.title}
                     </Link>
+                    <Button styleNumber={2.5} link={buttonLink}/>
                 </div>
             </div>
         </Link>

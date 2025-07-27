@@ -6,7 +6,7 @@ import {IAllYouTubeVideos} from "@/components/CMS/Fans/AllYouTubeVideos/types/in
 import styles from "@/components/CMS/Fans/AllYouTubeVideos/styles/AllYouTubeVideos.module.scss";
 
 // Components
-import Title from "@/components/Elements/Title";
+import Title from "@/components/Global/Elements/Title";
 import VideosGrid from "@/components/CMS/Fans/AllYouTubeVideos/fragments/VideosGrid";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 

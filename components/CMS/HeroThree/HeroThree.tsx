@@ -6,8 +6,8 @@ import {IHeroThree} from "@/components/CMS/HeroThree/types/index";
 import styles from "@/components/CMS/HeroThree/styles/HeroThree.module.scss";
 
 // Components
-import Title from "@/components/Elements/Title";
-import Paragraph from "@/components/Elements/Paragraph/Paragraph";
+import Title from "@/components/Global/Elements/Title";
+import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";
 
 const HeroThree: FC<IHeroThree.IProps> = memo(({
 	title,
