@@ -5,7 +5,7 @@
 		@apply w-full mx-auto px-4 pt-10 pb-10 lg:px-10 min-h-[25vh] flex flex-col;
 
 		.title {
-			@apply mb-8 font-primary text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-005rem] text-pureBlack leading-tight;
+			@apply mb-8 font-primary text-left uppercase text-5xl md:text-6xl 2xl:text-7xl tracking-[-005rem] text-pureBlack leading-tight;
 		}
 
 		.fixturesGrid {

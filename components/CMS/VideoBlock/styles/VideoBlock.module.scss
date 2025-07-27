@@ -16,7 +16,7 @@
             }
 
             .paragraph {
-                @apply max-w-2xl mx-auto lg:mx-0 font-secondary leading-normal text-white text-lg text-center lg:text-left;
+                @apply max-w-2xl mx-auto lg:mx-0 font-secondary leading-normal text-white text-tiny md:text-paragraph 2xl:text-medium text-left;
             }
 
             .contactDetails {

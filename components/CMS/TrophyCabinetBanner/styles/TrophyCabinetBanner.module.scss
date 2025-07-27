@@ -5,7 +5,7 @@
 		@apply lg:max-w-[1700px] mx-auto py-14 px-4 flex flex-col gap-8;
 
 		.title {
-			@apply max-w-2xl mx-auto lg:mx-0 font-primary text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-pureBlack leading-tight;
+			@apply max-w-2xl mx-auto lg:mx-0 font-primary text-left uppercase text-5xl md:text-6xl 2xl:text-7xl text-pureBlack leading-tight;
 
 			span {
 				@apply text-primary-default;
@@ -13,7 +13,7 @@
 		}
 
 		.paragraph {
-			@apply mb-12 lg:mb-8 lg:max-w-lg mx-auto lg:mx-0 font-secondary leading-normal text-pureBlack text-lg text-center lg:text-left;
+			@apply mb-12 lg:mb-8 lg:max-w-lg mx-auto lg:mx-0 font-secondary leading-normal text-pureBlack text-tiny md:text-paragraph 2xl:text-medium text-left;
 		}
 
 		.content {
@@ -23,22 +23,22 @@
 				@apply w-full lg:w-[60%] flex flex-col gap-16 px-6;
 
 				.trophyCabinetWrapper {
-					@apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6;
+					@apply grid grid-cols-2 sm:grid-cols-3 lg:sm:grid-cols-4 gap-6;
 
 					.content {
-						@apply flex items-center justify-center lg:justify-start gap-4;
+						@apply flex flex-row items-center justify-center lg:justify-start gap-4;
 
 						.image {
-							@apply w-[70px] h-[70px] object-contain object-center;
+							@apply w-[40px] lg:w-[50px] h-[40px] lg:h-[50px] object-contain object-center;
 						}
 
 						.totalAmount {
-							@apply mt-4 font-primary text-center uppercase text-8xl tracking-[-0.05rem] text-pureBlack leading-tight;
+							@apply mt-4 font-primary text-center uppercase text-2xl lg:text-4xl tracking-[-0.05rem] text-pureBlack leading-tight;
 						}
 					}
 
 					.name {
-						@apply mt-2 font-secondary text-center lg:text-left text-paragraph tracking-[-0.05rem] text-pureBlack leading-tight;
+						@apply mt-2 font-secondary text-center lg:text-left text-sm text-pureBlack leading-tight;
 					}
 				}
 
@@ -55,7 +55,7 @@
 				@apply w-full lg:w-[40%];
 
 				.image {
-					@apply block w-full h-full min-h-[350px] lg:min-h-[550px] object-cover object-center;
+					@apply block w-full h-full min-h-[250px] lg:min-h-[350px] object-cover object-center;
 				}
 			}
 		}

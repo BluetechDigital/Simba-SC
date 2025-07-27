@@ -15,10 +15,10 @@
                 }
 
                 .heroCard {
-                    @apply relative z-10 overflow-x-hidden pt-24 pb-44 sm:pb-20 w-full h-[60vh] flex flex-col items-center lg:items-baseline justify-center bg-pureBlack/50 hover:bg-pureBlack/60 transition-all duration-1000 ease-in-out;
+                    @apply relative z-10 overflow-x-hidden pt-24 pb-44 sm:pb-20 w-full h-[60vh] flex flex-col items-baseline justify-center bg-pureBlack/50 hover:bg-pureBlack/60 transition-all duration-1000 ease-in-out;
 
                     .content {
-                        @apply relative z-10 flex flex-col items-center lg:items-start gap-4 px-8 sm:px-4 lg:px-24;
+                        @apply relative z-10 flex flex-col items-start gap-4 px-8 sm:px-4 lg:px-24;
 
                         .top {
                             @apply max-w-full lg:max-w-xl 2xl:max-w-5xl mx-auto lg:mx-0;
@@ -28,7 +28,7 @@
                             }
 
                             .paragraph {
-                                @apply text-white text-tiny md:text-paragraph 2xl:text-medium text-left leading-normal md:leading-tight;
+                                @apply text-white text-tiny md:text-paragraph 2xl:text-medium text-left leading-normal;
 
                                 p {
                                     @apply p-0 font-secondary;
@@ -54,22 +54,16 @@
 
     .swiper-button-prev,
     .swiper-button-next {
-        @apply mt-64 lg:mt-0 w-16 h-16 p-8 border-2 border-primary-default hover:border-primary-dark text-primary-default hover:text-primary-dark;
-
-        top: 85% !important;
-
-        @media screen and (min-width: 1024px) {
-            top: 50% !important;
-        }
+        @apply top-[90%] md:top-[85%] lg:top-[50%] mt-64 lg:mt-0 w-8 h-8 2xl:w-8 2xl:h-12 p-4 2xl:py-4 2xl:px-6 border-[1px] border-primary-default hover:border-primary-dark bg-transparent hover:bg-primary-default transition-all duration-500 ease-in-out #{!important};
     }
 
     .swiper-button-prev::after {
         content: "next";
-        @apply w-[15px] h-[15px] text-[15px] text-white font-extrabold rotate-180 #{!important};
+        @apply w-[10px] h-[10px] 2xl:w-[12px] 2xl:h-[12px] text-[10px] 2xl:text-[12px] text-white rotate-180 font-extrabold #{!important};
     }
 
     .swiper-button-next::after {
         content: "next";
-        @apply w-[15px] h-[15px] text-[15px] text-white font-extrabold #{!important};
+        @apply w-[10px] h-[10px] 2xl:w-[12px] 2xl:h-[12px] text-[10px] 2xl:text-[12px] text-white font-extrabold #{!important};
     }
 }

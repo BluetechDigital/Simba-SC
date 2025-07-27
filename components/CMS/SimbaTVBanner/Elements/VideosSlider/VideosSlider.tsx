@@ -30,7 +30,7 @@ const VideosSlider: FC<ISimbaTVBanner.IVideosSlider.IProps> = ({
 	const onDesktop = useOnDesktopView();
 
 	return (
-		<ScrollYProgressReveal className={styles.videosSlider}>
+		<ScrollYProgressReveal className={styles.videosSlider + " SimbaTVBannerVideosSlider"}>
 			<AnimatePresence
 				initial={false}
 				mode="popLayout"

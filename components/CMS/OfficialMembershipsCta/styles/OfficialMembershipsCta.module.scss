@@ -2,7 +2,7 @@
 	@apply bg-primary-default bg-no-repeat bg-cover bg-center;
 
 	.container {
-		@apply lg:max-w-[1700px] mx-auto py-14 px-4;
+		@apply lg:max-w-[1700px] mx-auto p-4 lg:py-14;
 
 		.content {
 			@apply p-8 bg-no-repeat bg-cover bg-center overflow-hidden;
@@ -11,10 +11,10 @@
 				@apply py-11 px-9 max-w-xl bg-white;
 
 				.wrapper {
-					@apply flex flex-col items-center lg:items-baseline;
+					@apply flex flex-col items-baseline;
 
 					.title {
-						@apply mb-6 font-primary text-center lg:text-left uppercase text-7xl sm:text-8xl tracking-[-0.05rem] text-pureBlack leading-tight;
+						@apply mb-2 font-primary text-left uppercase text-5xl md:text-6xl 2xl:text-7xl text-pureBlack leading-tight;
 
 						span {
 							@apply text-primary-default;
@@ -22,7 +22,7 @@
 					}
 
 					.paragraph {
-						@apply mb-4 font-secondary leading-normal text-pureBlack text-lg text-center lg:text-left;
+						@apply mb-4 font-secondary leading-normal text-pureBlack text-tiny md:text-paragraph 2xl:text-medium text-left;
 					}
 
 					.buttonLink {

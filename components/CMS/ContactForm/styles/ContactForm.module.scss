@@ -12,7 +12,7 @@
 			}
 
 			.paragraph {
-				@apply max-w-2xl mx-auto lg:mx-0 font-secondary leading-tight text-pureBlack text-lg text-center lg:text-left;
+				@apply max-w-2xl mx-auto lg:mx-0 font-secondary leading-tight text-pureBlack text-tiny md:text-paragraph 2xl:text-medium text-left;
 			}
 
 			.contactDetails {
@@ -78,7 +78,7 @@
 .submitButton,
 .messageSent {
 	.text {
-		@apply font-secondaryBlack uppercase text-tiny sm:text-base lg:text-paragraph tracking-[0.05rem] text-white;
+		@apply font-secondaryBlack uppercase text-tiny sm:text-base lg:text-paragraph  text-white;
 	}
 }
 

@@ -5,10 +5,10 @@
 		@apply lg:max-w-[1200px] mx-auto px-0 flex flex-col items-center justify-center gap-4 max-w-6xl;
 
 		.content {
-			@apply grid items-center justify-center grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-y-2 gap-x-8 lg:justify-between;
+			@apply grid items-center justify-center grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-y-6 gap-x-8 lg:justify-between;
 
 			.image {
-				@apply block w-full h-full object-contain object-center;
+				@apply block w-full h-full max-h-[50px] lg:max-h-[75px] object-contain object-center;
 			}
 		}
 	}

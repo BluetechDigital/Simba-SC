@@ -24,10 +24,11 @@ const SimbaTVStatsCard: FC<ISimbaTVBanner.IStatsCard> = () => {
 				variants={stagger}
 				whileInView="animate"
 				viewport={{once: true}}
-				className={styles.content}
+				className={styles.contentWrapper}
 			>
 				<CountUpStats
 					decimals={0}
+					triggerOnce={true}
 					paragraph="Subscribers"
 					number={globalContext?.youtubeChannelInfo?.subscriberCount}
 				/>
@@ -35,12 +36,14 @@ const SimbaTVStatsCard: FC<ISimbaTVBanner.IStatsCard> = () => {
 				<CountUpStats
 					decimals={2}
 					paragraph="Views"
+					triggerOnce={true}
 					number={globalContext?.youtubeChannelInfo?.viewCount}
 				/>
 				<div className={styles.divider} />
 				<CountUpStats
 					decimals={1}
 					paragraph="Videos"
+					triggerOnce={true}
 					number={globalContext?.youtubeChannelInfo?.videoCount}
 				/>
 			</motion.div>

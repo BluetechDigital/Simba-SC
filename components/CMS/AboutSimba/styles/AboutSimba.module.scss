@@ -1,14 +1,14 @@
 .about {
-    @apply py-14 px-4 lg:px-10 xl:px-24 flex flex-wrap gap-12 lg:gap-0 -m-4 bg-no-repeat bg-cover bg-center;
+    @apply py-14 px-4 lg:px-10 xl:px-12 flex flex-wrap gap-2 lg:gap-0 -m-4 bg-no-repeat bg-cover bg-center;
 
     .topContent {
         @apply w-full lg:w-5/12 p-4;
 
         .content {
-            @apply flex flex-col items-center lg:items-start justify-center lg:justify-end h-full;
+            @apply h-full flex flex-col items-start justify-center lg:justify-end;
 
             .title {
-                @apply max-w-xs md:max-w-lg mx-auto lg:mx-0 mb-6 font-primary text-center lg:text-left uppercase text-7xl sm:text-8xl lg:text-12xl tracking-[-0.05rem] text-pureBlack leading-tight xl:leading-[5.5rem];
+                @apply max-w-xs md:max-w-lg mb-3 font-primary text-pureBlack text-left uppercase text-5xl md:text-6xl 2xl:text-7xl leading-[2.25rem] md:leading-tight;
 
                 span {
                     @apply text-primary-default;
@@ -16,10 +16,10 @@
             }
 
             .wrapper {
-                @apply flex flex-col items-center lg:items-baseline;
+                @apply flex flex-col items-baseline;
 
                 .paragraph {
-                    @apply mb-12 lg:mb-8 lg:max-w-lg mx-auto lg:mx-0 font-secondary leading-normal text-pureBlack text-lg text-center lg:text-left;
+                    @apply mb-4 lg:max-w-lg mx-auto lg:mx-0 font-secondary text-pureBlack text-tiny md:text-paragraph 2xl:text-medium text-left leading-normal;
                 }
 
                 .buttonLink {
@@ -33,18 +33,18 @@
         @apply w-full lg:w-7/12 px-4 lg:p-4 relative flex flex-col-reverse lg:flex-col;
 
         .image {
-            @apply bg-white object-cover object-center w-full h-[500px] md:h-[552px] lg:h-[752px];
+            @apply bg-white object-cover object-center w-full h-[400px] md:h-[552px];
         }
 
         .wrapper {
             @apply bg-white md:absolute bottom-0 right-0 z-10 w-fit max-w-[500px] p-10 mx-auto md:mx-0;
 
             .titleTwo {
-                @apply mb-6 font-primary text-center uppercase text-7xl tracking-[-0.05rem] text-tertiary-default xl:leading-tight;
+                @apply mb-6 font-primary text-center uppercase text-5xl text-tertiary-default xl:leading-tight;
             }
 
             .paragraph {
-                @apply font-secondary leading-normal text-pureBlack text-lg lg:text-paragraph text-center md:text-left;
+                @apply max-w-xs font-secondary leading-normal text-pureBlack text-sm lg:text-tiny text-center md:text-left;
             }
         }
     }

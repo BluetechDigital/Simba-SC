@@ -16,7 +16,7 @@
 					@apply bg-lightGreyTwo p-10 h-full flex flex-col items-center lg:items-baseline justify-between gap-3 py-6;
 
 					.title {
-						@apply mb-4 font-secondaryBold text-pureBlack text-lg text-center lg:text-left tracking-[-0.05rem] leading-tight;
+						@apply mb-4 font-secondaryBold text-pureBlack text-tiny md:text-paragraph 2xl:text-medium text-left tracking-[-0.05rem] leading-tight;
 					}
 
 					.paragraph {

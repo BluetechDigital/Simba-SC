@@ -5,10 +5,10 @@
         @apply lg:max-w-6xl px-4 mx-auto;
 
         .content {
-            @apply w-full flex flex-col items-center justify-center gap-8;
+            @apply w-full flex flex-col items-center justify-center gap-4;
 
             .title {
-                @apply max-w-2xl font-primary text-center uppercase text-7xl sm:text-8xl md:text-[5vw] tracking-[-0.05rem] text-white leading-tight xl:leading-[5.5rem];
+                @apply max-w-lg font-primary text-center uppercase text-5xl md:text-6xl 2xl:text-7xl text-white leading-[2.25rem] md:leading-tight;
 
                 span {
                     @apply text-tertiary-default;
@@ -16,7 +16,7 @@
             }
 
             .paragraph {
-                @apply max-w-xl mx-auto lg:mx-0 font-secondary leading-tight text-white text-lg text-center lg:text-left;
+                @apply max-w-xl mx-auto lg:mx-0 font-secondary leading-tight text-white text-tiny md:text-paragraph 2xl:text-medium text-left;
             }
         }
     }
