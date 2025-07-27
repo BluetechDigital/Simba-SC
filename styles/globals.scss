@@ -42,6 +42,27 @@ h5 {
 	font-family: "Kanit";
 }
 
+/* Preventing Content Copying */
+
+// Disabling Text Selection:
+* {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+// Disabling Image Dragging
+img.no-drag {
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
+	user-drag: none;
+}
+
 // Google Translate Navigation SVG
 .openGoogleTranslateSVG,
 .closeGoogleTranslateSVG:hover {
@@ -147,25 +168,26 @@ h5 {
 	align-items: center;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-	@apply mt-64 lg:mt-0 w-16 h-16 p-8 border-2 border-primary-default hover:border-primary-dark text-primary-default hover:text-primary-dark;
-
-	top: 85% !important;
-
-	@media screen and (min-width: 1024px) {
-		top: 50% !important;
+// Hero & Collections Swiper Slider
+.HeroSwiperSlider {
+	.externalLink {
+		@apply font-primary;
 	}
-}
 
-.swiper-button-prev::after {
-	content: "next";
-	@apply w-[15px] h-[15px] text-[15px] text-white font-extrabold rotate-180 #{!important};
-}
+	.swiper-button-prev,
+	.swiper-button-next {
+		@apply top-[90%] md:top-[85%] lg:top-[50%] mt-64 lg:mt-0 w-8 h-8 2xl:w-8 2xl:h-12 p-4 2xl:py-4 2xl:px-6 border-[1px] border-primary-default hover:border-primary-dark bg-transparent hover:bg-primary-default transition-all duration-500 ease-in-out #{!important};
+	}
 
-.swiper-button-next::after {
-	content: "next";
-	@apply w-[15px] h-[15px] text-[15px] text-white font-extrabold #{!important};
+	.swiper-button-prev::after {
+		content: "next";
+		@apply w-[10px] h-[10px] 2xl:w-[12px] 2xl:h-[12px] text-[10px] 2xl:text-[12px] text-white rotate-180 font-extrabold #{!important};
+	}
+
+	.swiper-button-next::after {
+		content: "next";
+		@apply w-[10px] h-[10px] 2xl:w-[12px] 2xl:h-[12px] text-[10px] 2xl:text-[12px] text-white font-extrabold #{!important};
+	}
 }
 
 /* SQUARE BOX CUBES

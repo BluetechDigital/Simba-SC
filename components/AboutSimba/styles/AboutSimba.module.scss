@@ -19,7 +19,7 @@
                 @apply flex flex-col items-center lg:items-baseline;
 
                 .paragraph {
-                    @apply mb-12 lg:mb-8 lg:max-w-lg mx-auto lg:mx-0 font-secondaryRegular leading-normal text-pureBlack text-lg text-center lg:text-left;
+                    @apply mb-12 lg:mb-8 lg:max-w-lg mx-auto lg:mx-0 font-secondary leading-normal text-pureBlack text-lg text-center lg:text-left;
                 }
 
                 .buttonLink {
@@ -44,7 +44,7 @@
             }
 
             .paragraph {
-                @apply font-secondaryRegular leading-normal text-pureBlack text-lg lg:text-paragraph text-center md:text-left;
+                @apply font-secondary leading-normal text-pureBlack text-lg lg:text-paragraph text-center md:text-left;
             }
         }
     }

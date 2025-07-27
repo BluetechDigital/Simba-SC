@@ -19,7 +19,7 @@
                 }
 
                 .paragraph {
-                    @apply max-w-xl mx-auto lg:mx-0 font-secondaryRegular leading-tight text-white text-lg text-center lg:text-left;
+                    @apply max-w-xl mx-auto lg:mx-0 font-secondary leading-tight text-white text-lg text-center lg:text-left;
                 }
             }
 
@@ -48,7 +48,7 @@
                             }
 
                             .paragraph {
-                                @apply font-secondaryRegular leading-tight text-white text-lg lg:text-xl text-center md:text-left;
+                                @apply font-secondary leading-tight text-white text-lg lg:text-xl text-center md:text-left;
                             }
                         }
                     }
@@ -67,7 +67,7 @@
                                         @apply max-w-xs mx-0 flex flex-col gap-2;
 
                                         .date {
-                                            @apply font-secondaryRegular font-normal text-white text-tiny text-left;
+                                            @apply font-secondary font-normal text-white text-tiny text-left;
                                         }
 
                                         .div {
@@ -85,7 +85,7 @@
                                                 @apply flex gap-2;
 
                                                 .likeCount {
-                                                    @apply font-secondaryRegular text-left text-base sm:text-paragraph tracking-[-0.05rem] leading-tight;
+                                                    @apply font-secondary text-left text-base sm:text-paragraph tracking-[-0.05rem] leading-tight;
                                                 }
 
                                                 .likeCountSvg,

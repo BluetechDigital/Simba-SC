@@ -18,6 +18,7 @@ const config: Config = {
 				xl: "1280px",
 			},
 			fontSize: {
+				xxs: ".5rem",
 				xs: ".75rem",
 				sm: ".8rem",
 				tiny: ".9rem",
@@ -55,6 +56,8 @@ const config: Config = {
 					two: "#ea1d25",
 					three: "#c90a12",
 					dark: "#99070e",
+					darker: "#5a0105",
+					darkerTwo: "#350003",
 				},
 				accent: {
 					default: "#2563eb",
@@ -91,14 +94,11 @@ const config: Config = {
 				".font-secondaryThin": {
 					fontFamily: '"secondaryThin"',
 				},
-				".font-secondaryRegular": {
+				".font-secondary": {
 					fontFamily: '"secondaryRegular"',
 				},
 				".font-secondaryBold": {
 					fontFamily: '"secondaryBold"',
-				},
-				".font-secondarBlack": {
-					fontFamily: '"secondaryBlack"',
 				},
 			} as CSSRuleObject);
 		},

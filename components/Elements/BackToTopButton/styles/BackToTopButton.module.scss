@@ -5,7 +5,7 @@
 		@apply fixed right-6 z-20 bottom-[2.5rem] flex justify-center;
 
 		.content {
-			@apply font-secondaryRegular bg-primary-default py-2 px-3 hover:bg-primary-dark transition-all ease-in-out duration-500;
+			@apply font-secondary bg-primary-default py-2 px-3 hover:bg-primary-dark transition-all ease-in-out duration-500;
 
 			&:focus {
 				outline: none;

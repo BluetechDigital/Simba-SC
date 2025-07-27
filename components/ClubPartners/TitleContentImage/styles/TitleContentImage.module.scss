@@ -20,11 +20,11 @@
 				}
 
 				.paragraph {
-					@apply my-6 lg:mt-14 lg:max-w-lg mx-auto lg:mx-0 font-secondaryRegular leading-normal text-pureBlack text-lg text-center lg:text-left;
+					@apply my-6 lg:mt-14 lg:max-w-lg mx-auto lg:mx-0 font-secondary leading-normal text-pureBlack text-lg text-center lg:text-left;
 
 					span {
 						a {
-							@apply font-thin font-secondaryRegular text-lg underline tracking-[0.02rem] text-primary-default hover:text-accent-default transition-all duration-500 ease-in-out;
+							@apply font-thin font-secondary text-lg underline tracking-[0.02rem] text-primary-default hover:text-accent-default transition-all duration-500 ease-in-out;
 						}
 					}
 				}

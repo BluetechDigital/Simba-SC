@@ -49,7 +49,7 @@
 								.date,
 								.views,
 								.likeCount {
-									@apply font-secondaryRegular text-left text-sm sm:text-tiny tracking-[-0.05rem] leading-tight;
+									@apply font-secondary text-left text-sm sm:text-tiny tracking-[-0.05rem] leading-tight;
 								}
 
 								.date {
@@ -94,7 +94,7 @@
 					}
 
 					.paragraph {
-						@apply px-0 font-secondaryRegular leading-normal text-lg text-white text-center;
+						@apply px-0 font-secondary leading-normal text-lg text-white text-center;
 					}
 				}
 			}
