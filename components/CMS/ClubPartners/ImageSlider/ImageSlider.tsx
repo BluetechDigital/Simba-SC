@@ -47,9 +47,7 @@ const ImageSlider: FC<IImageSlider.IProps> = ({ imageSlider }) => {
 								</SwiperSlide>
 							</Fragment>
 						))
-					) : (
-						<></>
-					)}
+					) : null}
 				</Swiper>
 			</div>
 		</div>

@@ -43,9 +43,7 @@ const ClubPartnersGrid: FC = () => {
 								</motion.div>
 							</Fragment>
 						))
-					) : (
-						<></>
-					)}
+					) : null}
 				</motion.div>
 			</div>
 		</div>

@@ -33,32 +33,56 @@ const LatestNewsGrid: FC<ILatestNewsGrid.IProps> = memo(({
 			</ContentSliceRevealMaskAnimation>
 			<div className={styles.gridsWrapper}>
 				<div className={styles.gridOne}>
-					{globalContext?.news?.length > 0 ? (
-						globalContext?.news
-							?.slice(1, 3)
-							?.map((item: any, index: number) => (
-								<Fragment key={index}>
-									<motion.div
-										custom={index}
-										initial={initial}
-										className="w-full"
-										whileInView="animate"
-										viewport={{once: true}}
-										variants={arrayLoopStaggerChildren}
-									>
-										<Card
-											className={styles.card}
-											slug={item?.node?.slug}
-											date={item?.node?.date}
-											title={item?.node?.title}
-											featuredImage={item?.node?.featuredImage}
-										/>
-									</motion.div>
-								</Fragment>
-							))
-					) : (
-						<></>
-					)}
+					<div className={styles.desktopNewsGrid}>
+						{globalContext?.news?.length > 0 ? (
+							globalContext?.news
+								?.slice(1, 3)
+								?.map((item: any, index: number) => (
+									<Fragment key={index}>
+										<motion.div
+											custom={index}
+											initial={initial}
+											className="w-full"
+											whileInView="animate"
+											viewport={{once: true}}
+											variants={arrayLoopStaggerChildren}
+										>
+											<Card
+												slug={item?.node?.slug}
+												date={item?.node?.date}
+												className={styles.card}
+												title={item?.node?.title}
+												featuredImage={item?.node?.featuredImage}
+											/>
+										</motion.div>
+									</Fragment>
+						))) : null}
+					</div>
+					<div className={styles.newsGrid}>
+						{globalContext?.news?.length > 0 ? (
+							globalContext?.news
+								?.slice(0, 4)
+								?.map((item: any, index: number) => (
+									<Fragment key={index}>
+										<motion.div
+											custom={index}
+											initial={initial}
+											className="w-full"
+											whileInView="animate"
+											viewport={{once: true}}
+											variants={arrayLoopStaggerChildren}
+										>
+											<Card
+												slug={item?.node?.slug}
+												date={item?.node?.date}
+												className={styles.card}
+												title={item?.node?.title}
+												featuredImage={item?.node?.featuredImage}
+											/>
+										</motion.div>
+									</Fragment>
+						))) : null}
+					</div>
 					<Link
 						href={`${ctaLink?.url}`}
 						target={ctaLink?.target}
@@ -98,9 +122,7 @@ const LatestNewsGrid: FC<ILatestNewsGrid.IProps> = memo(({
 									</motion.div>
 								</Fragment>
 							))
-					) : (
-						<></>
-					)}
+					) : null}
 				</div>
 				<div className={styles.gridThree}>
 					<Link
@@ -139,10 +161,7 @@ const LatestNewsGrid: FC<ILatestNewsGrid.IProps> = memo(({
 											/>
 										</motion.div>
 									</Fragment>
-								))
-						) : (
-							<></>
-						)}
+						))) : null}
 					</div>
 				</div>
 			</div>
