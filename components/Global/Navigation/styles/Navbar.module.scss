@@ -330,12 +330,12 @@
 
 .megaMenu {
 	@apply bg-primary-dark absolute z-10 top-0 right-0 overflow-y-visible overflow-x-hidden h-screen w-full opacity-100 bg-cover bg-no-repeat bg-center;
-	animation: hideMegaMenu 1.25s ease forwards;
+	animation: hideMegaMenu 0.75s ease forwards;
 }
 
 .megaMenuActive {
 	@apply absolute z-10 top-0 right-0 overflow-y-visible overflow-x-hidden min-h-screen h-full w-full opacity-100 bg-primary-dark;
-	animation: showMegaMenu 1.25s ease forwards;
+	animation: showMegaMenu 0.75s ease forwards;
 
 	.megaMenuContent {
 		&::-webkit-scrollbar {
