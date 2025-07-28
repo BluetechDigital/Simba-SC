@@ -1,5 +1,5 @@
 .heroThree {
-    @apply relative z-50 w-full h-fit pt-[7.5vh] 2xl:pt-[113px] bg-white;
+    @apply relative z-50 w-full h-fit pt-[6.25vh] lg:pt-[10.45vh] 2xl:pt-[113px] bg-white;
 
     .container {
         @apply py-20 w-full h-[50vh] flex flex-col items-center lg:items-baseline justify-center relative bg-primary-dark bg-center bg-no-repeat bg-cover;

@@ -114,11 +114,11 @@
 
 			.button {
 				.text {
-					@apply hidden md:flex w-full ml-[4px] text-white text-center text-xs uppercase font-secondaryBold;
+					@apply mt-1 md:mt-0 flex w-full ml-[4px] text-white text-center text-xs uppercase font-secondaryBold;
 				}
 
 				.hamburgerIcon {
-					@apply relative py-4 mr-8 md:ml-[2px] h-full w-full mx-auto flex items-center justify-center;
+					@apply relative py-3 md:py-4 mr-8 md:ml-[2px] h-full w-full mx-auto flex items-center justify-center;
 
 					.iconOne,
 					.iconTwo,
