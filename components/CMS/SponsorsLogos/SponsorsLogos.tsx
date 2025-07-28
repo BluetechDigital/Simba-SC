@@ -45,9 +45,7 @@ const SponsorsLogos: FC<ISponsorsLogos.IProps> = memo(({
 								</motion.div>
 							</Fragment>
 						))
-					) : (
-						<></>
-					)}
+					) : null}
 				</motion.div>
 			</div>
 		</div>

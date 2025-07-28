@@ -20,17 +20,17 @@
 		.gridTwo,
 		.gridThree {
 			.image {
-				@apply bg-white block w-full h-full max-h-[375px] object-cover object-center;
+				@apply bg-white block w-full h-full max-h-[250px] lg:max-h-[375px] object-cover object-center;
 			}
 
 			.card {
-				@apply w-full h-full min-h-[375px] py-8 px-4 xl:p-8 bg-no-repeat bg-cover bg-center flex flex-col items-baseline justify-end;
+				@apply w-full h-full min-h-[375px] py-8 px-4 xl:p-6 bg-no-repeat bg-cover bg-center flex flex-col items-baseline justify-end;
 
 				.container {
 					@apply max-w-xs mx-0 flex flex-col gap-2;
 
 					.date {
-						@apply font-secondary font-normal text-white text-tiny;
+						@apply font-secondary font-normal text-white text-xs;
 					}
 
 					.divider {
@@ -38,18 +38,38 @@
 					}
 
 					.title {
-						@apply font-secondaryBlack text-left uppercase text-base tracking-[-0.02rem] text-white font-semibold leading-4;
+						@apply font-secondaryBold text-left text-base tracking-[-0.02rem] text-white leading-4;
 					}
 				}
 			}
 		}
 
 		.gridOne {
-			@apply flex flex-col gap-2 w-full lg:w-1/4;
+			@apply w-full lg:w-1/4 flex flex-col gap-2;
+
+			.desktopNewsGrid {
+				@apply hidden lg:flex flex-col gap-2;
+			}
+
+			.newsGrid {
+				@apply grid lg:hidden grid-cols-2 gap-2;
+
+				.card {
+					@apply w-full h-full min-h-[250px] lg:min-h-[300px] 2xl:min-h-[375px] py-6 px-4;
+
+					.date {
+						@apply text-xs;
+					}
+
+					.title {
+						@apply text-sm;
+					}
+				}
+			}
 		}
 
 		.gridTwo {
-			@apply flex flex-col w-full lg:w-1/2;
+			@apply hidden lg:flex flex-col w-full lg:w-1/2;
 
 			.card {
 				@apply lg:min-h-[758px];

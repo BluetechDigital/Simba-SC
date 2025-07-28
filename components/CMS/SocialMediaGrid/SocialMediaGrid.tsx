@@ -54,9 +54,7 @@ const SocialMediaGrid: FC<ISocialMediaGrid.IProps> = memo(({
 										/>
 								</Fragment>
 							))
-					) : (
-						<></>
-					)}
+					) : null}
 				</div>
 			</ScrollYProgressReveal>
 		</motion.div>

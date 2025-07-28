@@ -47,9 +47,7 @@ const AboutTheClubGrid: FC<IAboutTheClubGrid.IProps> = memo(({
 								</motion.div>
 							</Fragment>
 						))
-					) : (
-						<></>
-					)}
+					) : null}
 				</motion.div>
 			</div>
 		</div>

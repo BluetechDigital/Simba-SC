@@ -72,9 +72,7 @@ const VideosSlider: FC<ISimbaTVBanner.IVideosSlider.IProps> = ({
 									</SwiperSlide>
 								</Fragment>
 							))
-						) : (
-							<></>
-						)}
+						) : null}
 					</Swiper>
 				</motion.div>
 			</AnimatePresence>

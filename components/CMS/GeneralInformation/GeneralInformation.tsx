@@ -68,9 +68,7 @@ const GeneralInformation: FC<IGeneralInformation.IProps> = memo(({
 								</motion.div>
 							</Fragment>
 						))
-					) : (
-						<></>
-					)}
+					) : null}
 				</motion.div>
 			</div>
 		</div>

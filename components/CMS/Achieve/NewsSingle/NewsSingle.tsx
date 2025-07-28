@@ -290,9 +290,7 @@ const NewsSingle: FC<INewsSingle.IProps> = ({
 										/>
 									</Fragment>
 								))
-						) : (
-							<></>
-						)}
+						) : null}
 					</div>
 				</div>
 			</motion.div>
