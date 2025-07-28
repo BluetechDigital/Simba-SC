@@ -33,11 +33,13 @@ const SimbaTVBanner: FC<ISimbaTVBanner.IProps> = memo(({
 			<div className={styles.containerWrapper}>
 				<div className={styles.contentWrapper}>
 					<ScrollYProgressReveal className={styles.content}>
-						<ContentSliceRevealMaskAnimation>
+						<ContentSliceRevealMaskAnimation className={styles.titleSection}>
 							<Title content={title} className={styles.title} />
 							<Paragraph content={paragraph} className={styles.paragraph} />
 						</ContentSliceRevealMaskAnimation>
-						<Button styleNumber={0} link={buttonLink}/>
+						<div className={styles.buttonSection}>
+							<Button styleNumber={0} link={buttonLink}/>
+						</div>
 					</ScrollYProgressReveal>
 					<SimbaTVBannerCard contentOptions={contentOptions} />
 					<SimbaTVStatsCard />
