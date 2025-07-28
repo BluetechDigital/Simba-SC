@@ -41,7 +41,7 @@ const TopNavigation: FC<INavbar.ITopNavigation.IProps> = memo(({
 	}), []);
 
     return (
-        <motion.div className={styles.topNavigation + ` ${scrollPosition > 50 ? "hidden lg:flex" : "flex"}`}>
+        <motion.div className={styles.topNavigation + ` ${scrollPosition > 50 ? "hidden lg:flex" : "hidden lg:flex"}`}>
             <div className={styles.leftSide}>
                 {globalContext?.themesOptionsContent?.topNavigation?.sponsorsIcons
                     ?.length > 0 ? (
