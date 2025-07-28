@@ -18,10 +18,10 @@
                     @apply relative z-10 overflow-x-hidden pt-24 pb-44 sm:pb-20 w-full h-[60vh] flex flex-col items-baseline justify-center bg-pureBlack/50 hover:bg-pureBlack/60 transition-all duration-1000 ease-in-out;
 
                     .content {
-                        @apply relative z-10 flex flex-col items-start gap-4 px-8 sm:px-4 lg:px-24;
+                        @apply relative z-10 flex flex-col items-start gap-2 px-8 sm:px-4 lg:px-24;
 
                         .top {
-                            @apply max-w-full lg:max-w-xl 2xl:max-w-5xl mx-auto lg:mx-0;
+                            @apply max-w-full lg:max-w-xl 2xl:max-w-5xl mx-auto lg:mx-0 flex flex-col gap-2;
 
                             .title {
                                 @apply flex flex-col sm:block font-primary uppercase text-white text-left text-5xl md:text-6xl 2xl:text-7xl leading-[2.25rem] md:leading-tight;
@@ -37,7 +37,7 @@
                         }
 
                         .buttonSection {
-                            @apply flex flex-col md:flex-row items-baseline justify-start gap-4 md:gap-6 lg:gap-4;
+                            @apply flex flex-col md:flex-row items-baseline justify-start gap-2 md:gap-4;
                         }
                     }
                 }
