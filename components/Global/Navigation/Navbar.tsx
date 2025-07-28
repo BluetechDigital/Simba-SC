@@ -126,7 +126,7 @@ const Navbar: FC<INavbar.IProps> = () => {
 					viewport={{once: false}}
 					className={
 						styles.megaNavigationMenuButton +
-						` ${menuActive ? "bg-tertiary-two" : "bg-primary-default"}`
+						` ${menuActive ? "bg-primary-dark hover:bg-primary-darker" : "bg-primary-default hover:bg-primary-dark"}`
 					}
 					style={{
 						backgroundImage: `url(${

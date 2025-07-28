@@ -11,7 +11,11 @@ import styles from "@/components/Global/Navigation/styles/Navbar.module.scss";
 // Components
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
-const MegaNavLinksWrapper: FC<INavbar.IMegaNavLinksWrapper> = ({sublinks, resetMenu, menuActive}) => {
+const MegaNavLinksWrapper: FC<INavbar.IMegaNavigation.IMegaNavLinksWrapper> = ({
+    sublinks,
+    resetMenu,
+    menuActive
+}) => {
     return (
         <motion.ul
             initial={initial}
@@ -26,11 +30,11 @@ const MegaNavLinksWrapper: FC<INavbar.IMegaNavLinksWrapper> = ({sublinks, resetM
                             <motion.li
                                 custom={index}
                                 initial={initial}
-                                className="self-end"
                                 whileInView="animate"
+                                className={styles.li + " self-end"}
                                 variants={navigationMenuStaggerChildren}
                             >
-                                <ContentSliceRevealMaskAnimation>
+                                <ContentSliceRevealMaskAnimation className="p-0">
                                     <Link
                                         onClick={resetMenu}
                                         className={styles.link}

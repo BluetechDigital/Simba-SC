@@ -110,11 +110,11 @@
 		}
 
 		.megaNavigationMenuButton {
-			@apply relative z-20 w-1/4 md:w-1/6 lg:w-[8%] h-full px-3 py-2 flex flex-col items-center justify-center cursor-pointer bg-no-repeat bg-center hover:bg-primary-dark transition-all ease-in-out duration-500;
+			@apply relative z-20 w-1/4 md:w-1/6 lg:w-[8%] h-full px-3 py-2 flex flex-col items-center justify-center cursor-pointer bg-no-repeat bg-center transition-all ease-in-out duration-500;
 
 			.button {
 				.text {
-					@apply mt-1 md:mt-0 flex w-full ml-[4px] text-white text-center text-xs uppercase font-secondaryBold;
+					@apply mt-1 md:mt-0 flex w-full ml-[4px] font-secondaryBold uppercase text-white text-center text-xs;
 				}
 
 				.hamburgerIcon {
@@ -155,10 +155,10 @@
 	.megaMenuActive,
 	.megaNavigation {
 		.megaMenuContent {
-			@apply relative z-10 overflow-y-visible overflow-x-hidden min-h-screen h-full w-full py-20 px-10 flex flex-col bg-cover bg-no-repeat bg-center;
+			@apply relative z-10 overflow-y-visible overflow-x-hidden min-h-screen h-full w-full px-10 pb-32 pt-20 lg:pt-32 flex flex-col bg-primary-default bg-cover bg-no-repeat bg-center;
 
 			.wrapper {
-				@apply max-w-[1900px] mx-auto h-full w-full px-0 lg:px-10 pb-32 pt-32 lg:pt-20 lg:pb-0 flex flex-col justify-between gap-20 lg:gap-10;
+				@apply max-w-[1900px] mx-auto h-full w-full px-0 lg:px-10 lg:pb-0 flex flex-col justify-between gap-10;
 
 				.mainMegaNavLinksWrapper {
 					@apply flex flex-col lg:flex-row items-start lg:gap-10 xl:gap-24;
@@ -167,7 +167,7 @@
 						@apply w-full lg:w-1/2 flex flex-col items-baseline justify-end gap-2;
 
 						.text {
-							@apply font-secondaryBlack cursor-pointer font-extrabold tracking-[-0.05rem] leading-none hover:text-pureBlack text-xl sm:text-5xl lg:text-7xl xl:text-9xl text-left uppercase;
+							@apply font-primary cursor-pointer uppercase text-white hover:text-primary-dark text-left md:text-center text-3xl md:text-5xl tracking-wide leading-[2.25rem] md:leading-tight;
 						}
 
 						.ulWrapper {
@@ -177,7 +177,7 @@
 								@apply grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-2 my-6 p-4 border-l-2 border-tertiary-two;
 
 								.link {
-									@apply font-secondary font-normal leading-none text-white hover:text-pureBlack text-lg text-center;
+									@apply font-secondary font-normal leading-none text-white hover:text-primary-dark text-lg text-center;
 								}
 							}
 						}
@@ -190,7 +190,7 @@
 							@apply grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-2 my-6 p-4 border-l-2 border-tertiary-two;
 
 							.link {
-								@apply font-secondary font-normal leading-none text-white hover:text-pureBlack text-lg text-center;
+								@apply font-secondary text-white hover:text-primary-dark text-medium text-center;
 							}
 						}
 					}
@@ -200,7 +200,7 @@
 					@apply flex flex-col items-baseline justify-center gap-6;
 
 					.text {
-						@apply font-secondaryThin font-semibold text-paragraph tracking-[0.02rem] text-white text-center;
+						@apply font-secondary text-white hover:text-primary-dark text-medium text-left;
 					}
 
 					.ul {
@@ -210,31 +210,115 @@
 							@apply self-start;
 
 							.link {
-								@apply font-secondaryBlack font-extrabold tracking-normal leading-none text-tertiary-two hover:text-pureBlack text-5xl text-center uppercase;
+								@apply font-primary uppercase text-white hover:text-primary-dark text-left md:text-center text-3xl md:text-5xl tracking-wide leading-[2.25rem] md:leading-tight;
 							}
 						}
 					}
 				}
 
-				.usefulLinksWrapper {
-					@apply flex items-center justify-between gap-10;
+				.additionalLinks {
+					@apply w-full px-0 py-4 lg:py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-20;
 
-					.divider {
-						@apply hidden lg:block w-full lg:w-1/4;
-					}
-
-					.content {
-						@apply w-full flex flex-col items-end justify-center gap-6 py-10 pb-20 lg:pb-10;
+					.column {
+						@apply p-0 flex flex-col items-end lg:items-baseline gap-6;
 
 						.text {
-							@apply font-secondaryThin font-semibold text-paragraph tracking-[0.02rem] text-white text-center;
+							@apply font-primary text-white uppercase text-left text-3xl md:text-2xl tracking-wide leading-tight;
 						}
 
 						.ul {
-							@apply w-full lg:w-1/2 flex flex-col items-center justify-end gap-0;
+							@apply w-full flex flex-col items-end lg:items-baseline justify-center gap-0;
+
+							.li {
+								@apply w-full p-0 flex flex-col items-end lg:items-baseline;
+
+								.link {
+									@apply w-full font-secondary text-white hover:text-pureBlack text-medium text-right lg:text-left;
+								}
+							}
+						}
+					}
+
+					.downloadApps {
+						@apply p-0 w-full h-full flex flex-col items-end md:items-center gap-4;
+
+						.title {
+							@apply w-full mb-5 font-primary text-white uppercase text-left md:text-center text-3xl md:text-2xl tracking-wide leading-[2.25rem] md:leading-tight;
+						}
+
+						.appsOptions {
+							@apply w-full flex flex-col sm:flex-row items-center justify-end lg:justify-center gap-4;
 
 							.link {
-								@apply font-secondaryBold leading-none text-white hover:text-pureBlack text-xl lg:text-xl text-center;
+								@apply font-secondary text-pureBlack transition-all duration-200 ease-in-out text-tiny hover:text-primary-default;
+
+								.image,
+								.imageTwo {
+									@apply object-contain object-center;
+								}
+
+								.image {
+									@apply w-[100px] h-[40px];
+								}
+
+								.imageTwo {
+									@apply w-[135px] h-[40px];
+								}
+							}
+						}
+					}
+				}
+
+				.socialLinks {
+					@apply w-full p-0 flex items-center justify-end lg:justify-center gap-6 text-center;
+
+					.link {
+						@apply w-full h-full inline-block;
+
+						.svg,
+						.svgAlt,
+						.svgAltTwo {
+							@apply w-[20px] h-[20px] fill-white hover:fill-primary-default transition-all duration-500 ease-in-out;
+
+							path {
+								@apply w-full h-full;
+							}
+						}
+
+						.svgAlt,
+						.svgAltTwo {
+							@apply w-[30px] h-[30px];
+						}
+
+						.svgAlt {
+							@apply mt-[2px];
+						}
+
+						.svgAltTwo {
+							@apply w-[25px] h-[25px];
+
+							g {
+								@apply fill-white hover:fill-primary-default transition-all duration-500 ease-in-out;
+							}
+						}
+					}
+				}
+
+				.bluetechDigital {
+					@apply w-full mb-8 pt-0 pb-10 lg:pb-5 px-4 flex flex-col items-end md:items-center justify-center;
+
+					.link {
+						@apply inline-block items-center justify-center text-white hover:text-accent-two hover:underline;
+
+						.span {
+							@apply flex items-center justify-center lg:justify-end gap-2;
+
+							.image {
+								@apply object-contain object-center w-[25px] h-[25px];
+							}
+
+							.text {
+								@apply flex font-secondary max-w-lg mx-auto lg:mx-0 text-sm text-center lg:text-left;
 							}
 						}
 					}
@@ -259,11 +343,11 @@
 		}
 
 		&::-webkit-scrollbar-track {
-			@apply bg-primary-dark;
+			@apply bg-primary-darker;
 		}
 
 		&::-webkit-scrollbar-thumb {
-			@apply rounded-[2px] bg-tertiary-two transition-all duration-500 hover:bg-primary-default;
+			@apply rounded-[2px] bg-primary-dark transition-all duration-500 hover:bg-pureBlack;
 		}
 	}
 }
