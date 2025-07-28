@@ -4,7 +4,7 @@ import parse from "html-react-parser";
 import styled from "styled-components";
 import {INavbar} from "@/components/Global/Navigation/types/index";
 
-const MegaNavVideoWrapper: FC<INavbar.IVideoWrapper> = ({children}) => {
+const MegaNavVideoWrapper: FC<INavbar.IMegaNavigation.IVideoWrapper> = ({children}) => {
 	const YoutubeVideo = styled.div`
 		height: 100%;
 		max-width: 100%;

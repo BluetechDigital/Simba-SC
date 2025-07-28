@@ -7,6 +7,8 @@ import {
     slideInRightFinish,
     slideInRightInitial,
 } from "@/animations/animations";
+import Link from "next/link";
+import Image from "next/image";
 import {motion} from "framer-motion";
 import {FC, memo, Fragment, useState} from "react";
 import {useGlobalContext} from "@/context/global";
@@ -16,11 +18,15 @@ import {INavbar} from "@/components/Global/Navigation/types/index";
 import styles from "@/components/Global/Navigation/styles/Navbar.module.scss";
 
 // Components
+import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";
+import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 import MegaNavVideoWrapper from "@/components/Global/Navigation/fragments/MegaNavigation/Elements/VideoWrapper";
+import SocialLinksWrapper from "@/components/Global/Navigation/fragments/MegaNavigation/Elements/SocialLinksWrapper";
 import MobileLinksWrapper from "@/components/Global/Navigation/fragments/MegaNavigation/Elements/MobileLinksWrapper";
 import MegaNavLinksWrapper from "@/components/Global/Navigation/fragments/MegaNavigation/Elements/MegaNavLinksWrapper";
+import SideMenuColumnLinks from "@/components/Global/Navigation/fragments/MegaNavigation/Elements/SideMenuColumnLinks";
 
-const MegaNavigation: FC<INavbar.IMegaNavigation> = memo(({
+const MegaNavigation: FC<INavbar.IMegaNavigation.IProps> = memo(({
     menuActive,
     setMenuActive
 }) => {
@@ -142,7 +148,7 @@ const MegaNavigation: FC<INavbar.IMegaNavigation> = memo(({
                     backgroundImage: `linear-gradient(
                         0deg,rgba(234, 29, 37, 0), rgba(234, 29, 37, 0), rgba(234, 29, 37, 0),
                         rgba(234, 29, 37, 0.10),rgba(234, 29, 37, 0.10),rgba(234, 29, 37, 0.45),rgba(234, 29, 37, 0.50)),
-                        url("/img/background/red-background-dots.png")`,
+                        url("/img/background/grey-arrows-up.png")`,
                     }}
                 >
                 <div className={styles.wrapper}>
@@ -314,15 +320,9 @@ const MegaNavigation: FC<INavbar.IMegaNavigation> = memo(({
                             sublinks={globalContext?.navbarMenuLinks}
                         />
                     </motion.div>
-                    <motion.div
-                        initial={initial}
-                        variants={stagger}
-                        whileInView="animate"
-                        viewport={{ once: false }}
-                        className={styles.usefulLinksWrapper}
-                    >
-                        <div className={styles.divider} />
-                        <div className={menuActive ? styles.content : "hidden" }>
+                    
+                    <div className={styles.additionalLinks}>
+                        <div className={menuActive ? styles.column : "hidden" }>
                             <span className={styles.text}>
                                 Useful Links
                             </span>
@@ -332,7 +332,91 @@ const MegaNavigation: FC<INavbar.IMegaNavigation> = memo(({
                                 sublinks={globalContext?.megaNavigationUsefulSublinks}
                             />
                         </div>
+                        <SideMenuColumnLinks
+                            resetMenu={resetMenu}
+                            menuActive={menuActive}
+                            columnTitle="Help Center"
+                            columnOneLinks={globalContext?.megaNavigationUsefulSublinks}
+                        />
+                        <SideMenuColumnLinks
+                            resetMenu={resetMenu}
+                            menuActive={menuActive}
+                            columnTitle="Information"
+                            columnOneLinks={globalContext?.megaNavigationUsefulSublinks}
+                        />
+                        <div className={styles.downloadApps}>
+                            <ContentSliceRevealMaskAnimation>
+                                <h4 className={styles.title}>
+                                    Download our apps now
+                                </h4>
+                            </ContentSliceRevealMaskAnimation>
+                            <div className={styles.appsOptions}>
+                                <Link
+                                    target="_Blank"
+                                    className={styles.link}
+                                    aria-label="Apple App Store Link"
+                                    href="https://apps.apple.com/us/app/simba-sc/id1564389213"
+                                >
+                                    <Image
+                                        width={500}
+                                        height={500}
+                                        className={styles.image}
+                                        alt="Apple App Store Logo"
+                                        src="/svg/apple-app-store.svg"
+                                    />
+                                </Link>
+                                <Link
+                                    target="_Blank"
+                                    className={styles.link}
+                                    aria-label="Google Play App Store Link"
+                                    href="https://play.google.com/store/apps/details?id=com.simbasc"
+                                >
+                                    <Image
+                                        width={500}
+                                        height={500}
+                                        className={styles.imageTwo}
+                                        alt="Google Play App Store Logo"
+                                        src="/svg/google-play-app-store.svg"
+                                    />
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                    <motion.div
+                        initial={initial}
+                        variants={stagger}
+                        whileInView="animate"
+                        viewport={{once: true}}
+                        className={styles.socialLinks}
+                    >
+                        <SocialLinksWrapper
+                            tiktokLink={globalContext.themesOptionsContent.tiktokLink}
+                            twitterLink={globalContext.themesOptionsContent.twitterLink}
+                            youtubeLink={globalContext.themesOptionsContent.youtubeLink}
+                            facebookLink={globalContext.themesOptionsContent.facebookLink}
+                            linkedinLink={globalContext.themesOptionsContent.linkedinLink}
+                            instagramLink={globalContext.themesOptionsContent.instagramLink}
+                        />
                     </motion.div>
+                    <div className={styles.bluetechDigital}>
+						<Link
+							target="_blank"
+							className={styles.link}
+							href={`https://bluetech-digital.co.uk`}
+						>
+							<span className={styles.span}>
+								<Image
+									priority
+									width={1000}
+									height={1000}
+									className={styles.image}
+									alt="BluetechDigital Logo"
+									src="/img/logos/BluetechDigital-Logo-color.png"
+								/>
+								<Paragraph className={styles.text} content={`Powered By BluetechDigital`} />
+							</span>
+						</Link>
+					</div>
                 </div>
             </div>
         </div>

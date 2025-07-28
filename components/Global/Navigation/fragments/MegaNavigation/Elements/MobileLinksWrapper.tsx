@@ -10,7 +10,7 @@ import styles from "@/components/Global/Navigation/styles/Navbar.module.scss";
 // Components
 import MegaNavLinksWrapper from "@/components/Global/Navigation/fragments/MegaNavigation/Elements/MegaNavLinksWrapper";
 
-const MobileLinksWrapper: FC<INavbar.IMobileLinksWrapper> = ({
+const MobileLinksWrapper: FC<INavbar.IMegaNavigation.IMobileLinksWrapper> = ({
     sublinks,
     resetMenu,
     menuActive,
