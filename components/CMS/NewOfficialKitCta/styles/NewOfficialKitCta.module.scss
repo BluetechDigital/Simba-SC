@@ -12,78 +12,74 @@
 			@apply relative p-6 bg-pureBlack overflow-hidden;
 
 			.content {
-				@apply flex flex-wrap p-8 -m-7;
+				@apply flex flex-col lg:flex-row lg:px-4 lg:-m-7 items-start justify-start gap-10 lg:gap-4;
 
 				.leftSection {
-					@apply w-full lg:w-3/12 p-7;
+					@apply w-full lg:w-3/12 p-0 lg:p-7 flex items-baseline justify-start;
 
 					.section {
-						@apply lg:pt-7 max-w-full lg:max-w-md;
+						@apply max-w-xs lg:max-w-md;
 
 						.ctaTitle {
-							@apply font-secondaryBlack text-center lg:text-left uppercase text-3xl lg:text-5xl tracking-[-0.02rem] text-white font-semibold leading-tight mb-6 lg:mb-12;
+							@apply mb-4 lg:mb-3 font-secondaryBlack uppercase text-white text-left text-lg md:text-xl 2xl:text-2xl leading-tight;
 						}
 
 						.buttonLink {
-							@apply flex flex-wrap items-start justify-center lg:justify-start gap-4;
+							@apply flex flex-wrap items-start justify-start gap-4;
 						}
 					}
 				}
 
 				.rightSection {
-					@apply w-full lg:w-9/12 lg:p-7;
+					@apply w-full lg:w-9/12 p-0 lg:p-7;
 
 					.section {
-						@apply flex flex-col md:flex-row -m-3;
+						@apply flex flex-col sm:flex-row gap-4;
 
 						.top,
 						.bottom {
-							@apply w-full md:w-1/2 lg:w-9/12 p-3;
+							@apply w-full md:w-1/2 lg:w-9/12;
 
 							.wrapper {
-								@apply relative overflow-hidden w-full h-[550px];
+								@apply relative overflow-hidden w-full h-[250px] lg:h-[350px];
 
 								.image {
-									@apply object-cover w-full h-full transform group-hover:scale-105 transition-all duration-1000 ease-in-out;
+									@apply object-cover object-center w-full h-full transform group-hover:scale-105 transition-all duration-1000 ease-in-out;
 								}
 
 								.text {
-									@apply font-secondaryBlack text-center lg:text-left uppercase text-3xl tracking-[-0.02rem] text-white font-semibold;
+									@apply font-secondaryBold text-white text-left uppercase text-base lg:text-lg tracking-[-0.02rem] leading-[2.25rem] md:leading-tight;
 								}
 							}
 						}
 
 						.top {
-							@apply w-full md:w-1/2 lg:w-9/12 p-3;
+							@apply w-full md:w-1/2 lg:w-9/12;
 
 							.wrapper {
 								.content {
-									@apply absolute w-full h-full m-auto p-6 top-0 bg-pureBlack/20 group-hover:bg-pureBlack/30 flex flex-col items-center lg:items-baseline justify-end transition-all duration-1000 ease-in-out;
+									@apply absolute w-full h-full m-auto px-4 py-2 lg:p-6 top-0 bg-pureBlack/20 group-hover:bg-pureBlack/30 flex flex-col items-baseline justify-end gap-[1px] lg:gap-2 transition-all duration-1000 ease-in-out;
 
 									.divider {
-										@apply h-[2.5px] bg-primary-default w-full max-w-xs;
-									}
-
-									.text {
-										@apply lg:text-lg;
+										@apply h-[1px] lg:h-[2.5px] bg-primary-default w-full lg:max-w-[10rem];
 									}
 								}
 							}
 						}
 
 						.bottom {
-							@apply w-full md:w-1/2 lg:w-3/12 p-3;
+							@apply w-full md:w-1/2 lg:w-3/12;
 
 							.wrapper {
 								.content {
-									@apply m-auto lg:mx-0 absolute left-1/2 bottom-2 flex flex-col gap-2 transform -translate-x-1/2;
+									@apply w-full m-auto lg:mx-0 absolute left-1/2 bottom-2 flex flex-col gap-[1px] lg:gap-2 transform -translate-x-1/2;
 
 									.divider {
-										@apply h-[2.5px] bg-primary-default w-full;
+										@apply h-[1px] lg:h-[2.5px] bg-primary-default w-full;
 									}
 
 									.text {
-										@apply lg:text-lg whitespace-nowrap;
+										@apply whitespace-nowrap;
 									}
 								}
 							}

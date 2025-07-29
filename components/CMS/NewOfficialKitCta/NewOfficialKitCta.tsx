@@ -114,32 +114,30 @@ const NewOfficialKitCta: FC<INewOfficialKitCta.IProps> = memo(({
 										aria-label={`${link?.title}`}
 										className="group"
 									>
-										<AnimatePresence mode="wait">
-											<SlideUpDivMaskReveal
-												triggerOnce={true}
-												className={styles.wrapper}
-												backgroundColor={"bg-pureBlack"}
-											>
-												<Image
-													src={imageTwo?.sourceUrl}
-													className={styles.image}
-													alt={`${imageTwo?.altText}`}
-													width={imageTwo?.mediaDetails?.width || 1000}
-													height={imageTwo?.mediaDetails?.height || 1000}
-												/>
-												<div className={styles.content}>
-													<span className={styles.divider}></span>
-													<motion.h3
-														initial={initialTwo}
-														whileInView={fadeIn}
-														viewport={{once: true}}
-														className={styles.text}
-													>
-														Away Kit 24/25
-													</motion.h3>
-												</div>
-											</SlideUpDivMaskReveal>
-										</AnimatePresence>
+										<SlideUpDivMaskReveal
+											triggerOnce={true}
+											className={styles.wrapper}
+											backgroundColor={"bg-pureBlack"}
+										>
+											<Image
+												src={imageTwo?.sourceUrl}
+												className={styles.image}
+												alt={`${imageTwo?.altText}`}
+												width={imageTwo?.mediaDetails?.width || 1000}
+												height={imageTwo?.mediaDetails?.height || 1000}
+											/>
+											<div className={styles.content}>
+												<span className={styles.divider}></span>
+												<motion.h3
+													initial={initialTwo}
+													whileInView={fadeIn}
+													viewport={{once: true}}
+													className={styles.text}
+												>
+													Away Kit 24/25
+												</motion.h3>
+											</div>
+										</SlideUpDivMaskReveal>
 									</Link>
 								</div>
 							</motion.div>
