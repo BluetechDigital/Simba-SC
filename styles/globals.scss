@@ -131,7 +131,8 @@ img.no-drag {
 
 // Hero & Collections Swiper Slider
 .HeroSwiperSlider,
-.SimbaTVBannerVideosSlider {
+.SimbaTVBannerVideosSlider,
+.NewProductsCarouselSwiperSlider {
 	.externalLink {
 		@apply font-primary;
 	}
@@ -149,6 +150,23 @@ img.no-drag {
 	.swiper-button-next::after {
 		content: "next";
 		@apply w-[10px] h-[10px] 2xl:w-[12px] 2xl:h-[12px] text-[10px] 2xl:text-[12px] text-white font-extrabold #{!important};
+	}
+}
+
+.NewProductsCarouselSwiperSlider {
+	.swiper-button-prev,
+	.swiper-button-next {
+		@apply hidden lg:flex top-[50%] bg-primary-default hover:bg-primary-dark transition-all duration-500 ease-in-out #{!important};
+	}
+
+	.swiper-button-prev::after {
+		content: "next";
+		@apply 2xl:text-[15px] #{!important};
+	}
+
+	.swiper-button-next::after {
+		content: "next";
+		@apply 2xl:text-[15px] #{!important};
 	}
 }
 

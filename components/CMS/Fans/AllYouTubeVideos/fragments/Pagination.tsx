@@ -71,9 +71,7 @@ const Pagination: FC<IAllYouTubeVideos.IPagination> = ({
 						Next
 					</motion.button>
 				</div>
-			) : (
-				<></>
-			)}
+			) : null}
 		</div>
     );
 }

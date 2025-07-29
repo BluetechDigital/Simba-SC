@@ -130,6 +130,13 @@ const nextConfig = {
 				port: "",
 				pathname: `${process.env.IMAGE_REMOTE_PATHNAME_FIVE}/**`,
 			},
+			// Shopify
+			{
+				protocol: "https",
+				hostname: `${process.env.IMAGE_REMOTE_PATTERNS_HOSTNAME_SHOPIFY}`,
+				port: "",
+				pathname: `${process.env.IMAGE_REMOTE_PATHNAME_SHOPIFY}/**`,
+			},
 		],
 	},
 };

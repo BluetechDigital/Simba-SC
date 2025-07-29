@@ -66,9 +66,7 @@ const TopNavigation: FC<INavbar.ITopNavigation.IProps> = memo(({
                             </Fragment>
                         )
                     )
-                ) : (
-                    <></>
-                )}
+                ) : null}
             </div>
             <div className={styles.rightSide}>
                 <Link

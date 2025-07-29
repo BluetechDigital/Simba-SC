@@ -10,26 +10,26 @@ import {
 	getAllOurHistoryPagesSlugs,
 	getAllAboutTheClubPagesSlugs,
 	getAllPartnershipsAdvertisingPagesSlugs,
-} from "@/graphql/GetAllPagesSlugs";
+} from "@/graphql/CMS/GetAllPagesSlugs";
 
 // Get All News, Blogs & Case Studies
 import {
 	getAllNewsPostsSlugs,
 	getAllBlogsPostsSlugs,
 	getAllCaseStudiesSlugs,
-} from "@/graphql/GetAllNewsBlogsCaseStudies";
+} from "@/graphql/CMS/GetAllNewsBlogsCaseStudies";
 
 // Get All Stakeholders
 import {
 	getAllBoardOfDirectorsPostsSlugs,
 	getAllExecutiveLeadershipsPostsSlugs,
-} from "@/graphql/GetAllStakeholders";
+} from "@/graphql/CMS/GetAllStakeholders";
 
 // Get All Jobs Positions
-import {getAllJobsPositionsSlugs} from "@/graphql/GetAllJobsPositions";
+import {getAllJobsPositionsSlugs} from "@/graphql/CMS/GetAllJobsPositions";
 
 // Club Partners
-import {getAllClubPartnersSlugs} from "@/graphql/GetAllClubPartners";
+import {getAllClubPartnersSlugs} from "@/graphql/CMS/GetAllClubPartners";
 
 const sitemap = async () => {
 	const [

@@ -71,9 +71,7 @@ const Pagination: FC<IAllPodcastsVideos.IPagination> = memo(({
 						Next
 					</motion.button>
 				</div>
-			) : (
-				<></>
-			)}
+			) : null}
 		</div>
     );
 });

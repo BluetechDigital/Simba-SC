@@ -3,8 +3,8 @@ import type {Metadata, NextPage} from "next";
 import {flexibleContentType, postType} from "@/context/pages";
 
 // Queries Functions
-import {getAllSeoContent} from "@/graphql/GetAllSeoContent";
-import {getAllClubPartnersFlexibleContentComponents} from "@/graphql/GetAllFlexibleContentComponents";
+import {getAllSeoContent} from "@/graphql/CMS/GetAllSeoContent";
+import {getAllClubPartnersFlexibleContentComponents} from "@/graphql/CMS/GetAllFlexibleContentComponents";
 
 // Components
 import PageContextProvider from "@/context/providers/PageContextProvider";

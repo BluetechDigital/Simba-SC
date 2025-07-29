@@ -53,9 +53,7 @@ const TrophyCabinetBanner: FC<ITrophyCabinetBanner.IProps> = memo(({
 											/>
 										</Fragment>
 									))
-								) : (
-									<></>
-								)}
+								) : null}
 							</ScrollYProgressReveal>
 							<ScrollYProgressReveal className={styles.buttonLink}>
 								<Button styleNumber={2} link={buttonLink}/>

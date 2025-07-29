@@ -5,6 +5,7 @@ import {
 	IMegaMenuLinks,
 	ICustomPostTypes,
 } from "@/types/index";
+import { IShopify } from "@/lib/shopify/types/types";
 
 // API
 import {IOnlineStore} from "@/api/Store/GetAllStoreItems";
@@ -120,6 +121,21 @@ export namespace IGlobal {
 	export type IContext = IProps;
 	export type IContextProvider = {
 		globalProps: IProps;
+		children: React.ReactNode;
+	};  
+}
+
+/* SHOPIFY: Project Props, Content 
+& Content Provider Interface */
+export namespace IShopifyCollection {
+    export type IProps = {
+        // Custom Post Types
+		businessWebsiteShopifyCollectionContent: IShopify.IShopifyProductGridItem[];
+
+	};
+	export type IContext = IProps;
+	export type IContextProvider = {
+		shopifyCollectionGlobalProps: IProps;
 		children: React.ReactNode;
 	};  
 }

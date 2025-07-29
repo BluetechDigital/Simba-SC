@@ -2,7 +2,7 @@ import {render} from "@react-email/components";
 import {emailTransporter} from "@/config/nodemailer";
 // Types
 import {INewsletterEmail} from "@/components/Emails/types/index";
-import {getThemesOptionsContent} from "@/graphql/GetAllThemesOptions";
+import {getThemesOptionsContent} from "@/graphql/CMS/GetAllThemesOptions";
 
 // Components
 import NewsletterEnquiryConfirmationEmail from "@/components/Emails/NewsletterEnquiryConfirmationEmail";

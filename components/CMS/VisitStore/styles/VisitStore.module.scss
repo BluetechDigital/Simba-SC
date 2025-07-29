@@ -1,51 +1,51 @@
 .visitStore {
-	@apply bg-white px-4 py-32 lg:px-10 bg-no-repeat bg-cover bg-center;
+	@apply bg-white px-4 py-16 lg:px-10 bg-no-repeat bg-cover bg-center;
 
 	.container {
 		@apply px-0 flex flex-col gap-8;
 
-		.title {
-			@apply mb-2 font-primary text-left uppercase text-white text-5xl md:text-6xl 2xl:text-7xl leading-[2.25rem] md:leading-tight;
-		}
+		.topSection {
+			@apply w-full flex flex-col sm:flex-row items-baseline sm:items-center justify-between gap-2;
 
-		.buttonLink {
-			@apply flex flex-col items-center;
+			.title {
+				@apply mb-2 font-primary text-left uppercase text-white text-5xl md:text-6xl 2xl:text-7xl leading-[2.25rem] md:leading-tight;
+			}
 
-			.link {
-				@apply mx-auto;
+			.buttonLink {
+				@apply w-full lg:w-1/2 flex flex-col items-baseline sm:items-end;
+
+				.link {
+					@apply mx-auto;
+				}
 			}
 		}
 
 		.visitStoreCard {
-			@apply py-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-center justify-center lg:gap-4;
+			@apply 2xl:px-8;
 
-			.content {
+			.slide {
 				@apply w-full h-full;
 
-				.li {
-					@apply w-full h-full px-5 py-6 bg-white;
+				.newProductsCarouselSliderCard {
+					@apply w-full h-full min-h-[325px] sm:min-h-[355px] md:min-h-[410px] flex flex-col items-center justify-between gap-0;
 
-					.link {
-						@apply h-full flex flex-col justify-between gap-6;
+					.imageContainer {
+						@apply w-full h-[200px] sm:h-[225px] md:h-[250px] lg:h-[300px] 2xl:h-[350px] overflow-hidden;
 
 						.image {
-							@apply block w-full h-[300px] object-cover object-center;
+							@apply w-full h-full object-cover object-center hover:scale-105 transition-all duration-500 ease-in-out;
+						}
+					}
+
+					.priceTitleContent {
+						@apply w-full h-1/4 p-4 sm:p-6 flex flex-col gap-2 items-baseline justify-center;
+
+						.price {
+							@apply flex gap-1 items-center justify-center font-secondaryBold text-pureBlack text-sm md:text-tiny 2xl:text-base text-left tracking-tighter leading-tight;
 						}
 
-						.wrapper {
-							@apply flex flex-col justify-start gap-2 py-4;
-
-							.title {
-								@apply font-secondaryBold text-pureBlack text-lg text-center tracking-tighter hover:text-primary-default transition-all duration-200 ease-in-out;
-							}
-
-							.currencyPriceWrapper {
-								@apply flex items-center justify-center gap-[1px] font-secondary text-pureBlack text-paragraph;
-							}
-
-							.slugLink {
-								@apply mt-2 mx-auto;
-							}
+						.title {
+							@apply font-secondary capitalize text-pureBlack text-sm md:text-tiny 2xl:text-base text-left leading-tight hover:text-primary-default transition-all duration-500 ease-in-out;
 						}
 					}
 				}
