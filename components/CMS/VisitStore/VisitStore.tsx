@@ -1,6 +1,6 @@
 // Imports
 import { motion } from "framer-motion";
-import { FC, memo, useMemo } from "react";
+import { FC, memo, useMemo, Suspense } from "react";
 import { fadeIn, initialTwo } from "@/animations/animations";
 import {IVisitStore} from "@/components/CMS/VisitStore/types/index";
 
@@ -9,7 +9,7 @@ import styles from "@/components/CMS/VisitStore/styles/VisitStore.module.scss";
 
 // Components
 import Button from "@/components/Global/Elements/Button/Button";
-import Card from "@/components/CMS/VisitStore/fragments/Card";
+import SwiperSlider from "@/components/CMS/VisitStore/fragments/SwiperSlider";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import ContentSliceRevealMaskAnimation from "@/components/Animations/ContentSliceRevealMaskAnimation";
 
@@ -28,20 +28,25 @@ const VisitStore: FC<IVisitStore.IProps> = memo(({
 	return (
 		<div className={styles.visitStore} style={backgroundImageStyle}>
 			<div className={styles.container}>
-				<ContentSliceRevealMaskAnimation>
-					<motion.h2
-						initial={initialTwo}
-						whileInView={fadeIn}
-						viewport={{once: true}}
-						className={styles.title}
-					>
-						{title}
-					</motion.h2>
-				</ContentSliceRevealMaskAnimation>
-				<Card />
-				<ScrollYProgressReveal className={styles.buttonLink}>
-					<Button styleNumber={1} link={buttonLink}/>
-				</ScrollYProgressReveal>
+				<div className={styles.topSection}>
+					<ContentSliceRevealMaskAnimation>
+						<motion.h2
+							initial={initialTwo}
+							whileInView={fadeIn}
+							viewport={{once: true}}
+							className={styles.title}
+						>
+							{title}
+						</motion.h2>
+					</ContentSliceRevealMaskAnimation>
+					<ScrollYProgressReveal className={styles.buttonLink}>
+						<Button styleNumber={1} link={buttonLink}/>
+					</ScrollYProgressReveal>
+				</div>
+				<Suspense fallback={<></>}>
+					<SwiperSlider />
+				</Suspense>
+				
 			</div>
 		</div>
 	);

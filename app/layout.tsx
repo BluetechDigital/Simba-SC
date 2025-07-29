@@ -1,11 +1,12 @@
 // Imports
 import type {AppProps} from "next/app";
+import { defaultSort } from "@/lib/Constants/constants";
 
 // Styling
 import "@/styles/globals.scss";
 
 // Global Context Provider
-import {IGlobal} from "@/context/types/context";
+import {IGlobal, IShopifyCollection} from "@/context/types/context";
 
 // GraphQL Query Functions - Grouped for cleaner imports
 import {
@@ -23,10 +24,14 @@ import {
 	getAllMegaNavigationUsefulSublinks,
 	getAllBenjaminMkapaStadiumSublinks,
 	getAllPartnershipsAdvertisingSublinks,
-} from "@/graphql/GetAllMenuLinks";
-import {getThemesOptionsContent} from "@/graphql/GetAllThemesOptions";
-import {getAllTestimonialsContent} from "@/graphql/GetAllTestimonials";
-import {getAllJobsPositionsContent} from "@/graphql/GetAllJobsPositions";
+} from "@/graphql/CMS/GetAllMenuLinks";
+
+import {getThemesOptionsContent} from "@/graphql/CMS/GetAllThemesOptions";
+import {getAllTestimonialsContent} from "@/graphql/CMS/GetAllTestimonials";
+import {getAllJobsPositionsContent} from "@/graphql/CMS/GetAllJobsPositions";
+
+// Shopify GraphQL Query Functions
+import { getAllShopifyCollectionSearchPageGridView } from "@/graphql/Shopify/queries/GetAllShopifyCollections";
 
 // API Call for Instagram Feed
 import {getAllInstagramFeedContent} from "@/api/SocialMedia/InstagramFeed";
@@ -43,7 +48,7 @@ import {
 	getAllNewsContent,
 	getAllBlogsContent,
 	getAllCaseStudiesContent,
-} from "@/graphql/GetAllNewsBlogsCaseStudies";
+} from "@/graphql/CMS/GetAllNewsBlogsCaseStudies";
 
 // Get All Football Fixtures
 import {getLastThreeFixturesContent} from "@/api/Football/GetLastThreeFixtures";
@@ -52,23 +57,29 @@ import {getLastThreeFixturesContent} from "@/api/Football/GetLastThreeFixtures";
 import {getAllOnlineStoreShirts} from "@/api/Store/GetAllStoreItems";
 
 // Get All Stakeholders
-import {getAllBoardOfDirectorsContent} from "@/graphql/GetAllStakeholders";
-import {getAllExecutiveLeadershipsContent} from "@/graphql/GetAllStakeholders";
+import {getAllBoardOfDirectorsContent} from "@/graphql/CMS/GetAllStakeholders";
+import {getAllExecutiveLeadershipsContent} from "@/graphql/CMS/GetAllStakeholders";
 
 // Get All Club Partners
-import {getAllClubPartnersExcerpt} from "@/graphql/GetAllClubPartners";
+import {getAllClubPartnersExcerpt} from "@/graphql/CMS/GetAllClubPartners";
+
+// Context Providers Components
+import GlobalContextProvider from "@/context/providers/GlobalContextProvider";
+import ApolloContextProvider from "@/context/providers/ApolloContextProvider";
+import GoogleTranslateContextProvider from "@/context/providers/GoogleTranslateContextProvider";
+import ShopifyCollectionGlobalContextProvider from "@/context/providers/ShopifyCollectionGlobalContextProvider";
 
 // Components
 import Footer from "@/components/Global/Footer/Footer";
 import Navbar from "@/components/Global/Navigation/Navbar";
 import SmoothScrolling from "@/components/Global/SmoothScrolling";
-import GlobalContextProvider from "@/context/providers/GlobalContextProvider";
-import ApolloContextProvider from "@/context/providers/ApolloContextProvider";
 import BackToTopButton from "@/components/Global/Elements/BackToTopButton/BackToTopButton";
 import BlurryCursorMouse from "@/components/Global/BlurryCursorMouse/BlurryCursorMouse";
-import GoogleTranslateContextProvider from "@/context/providers/GoogleTranslateContextProvider";
 
-const RootLayout = async ({children}: AppProps | any) => {
+const RootLayout = async ({ children }: AppProps | any) => {
+	
+	const { sortKey, reverse } = defaultSort;
+
 	/// PUBLIC PAGES //
 	// Fetch all global content simultaneously using Promise.all
     // Ensure all functions being awaited are indeed Promise-returning functions.
@@ -119,6 +130,9 @@ const RootLayout = async ({children}: AppProps | any) => {
 		getAllAboutTheClubSublinks(),
 		getAllBenjaminMkapaStadiumSublinks(),
 		getAllPartnershipsAdvertisingSublinks(),
+
+		// Shopify Collections
+		getAllShopifyCollectionSearchPageGridView({ collection: "business-website-cta", sortKey, reverse }),
 	];
 
 	const [
@@ -168,6 +182,10 @@ const RootLayout = async ({children}: AppProps | any) => {
 		aboutTheClubSublinks,
 		benjaminMkapaStadiumSublinks,
 		partnershipsAdvertisingSublinks,
+		
+		// Shopify Collections
+		businessWebsiteShopifyCollectionContent,
+
 	] = await Promise.all(promises);
 
 	// Construct the globalProps object, ensuring it matches IGlobal.IProps structure.
@@ -221,21 +239,31 @@ const RootLayout = async ({children}: AppProps | any) => {
 		partnershipsAdvertisingSublinks: partnershipsAdvertisingSublinks,
 	};
 
+	// SHOPIFY GLOBAL PROPS //
+	// Construct the shopify globalProps object, ensuring it matches IShopify.IGlobal.IProps structure.
+	// TypeScript will help validate this.
+	const shopifyCollectionGlobalProps: IShopifyCollection.IProps = {
+		// Custom Post Types
+		businessWebsiteShopifyCollectionContent: businessWebsiteShopifyCollectionContent,
+	};
+
 	return (
 		<html lang="en">
 			<body>
 				<ApolloContextProvider>
-					<GoogleTranslateContextProvider>
-						<GlobalContextProvider globalProps={globalProps}>
-							<SmoothScrolling>
-								<Navbar />
-								<main>{children}</main>
-								<Footer />
-								<BlurryCursorMouse />
-								<BackToTopButton link={`#`} />
-							</SmoothScrolling>
-						</GlobalContextProvider>
-					</GoogleTranslateContextProvider>
+					<GlobalContextProvider globalProps={globalProps}>
+						<ShopifyCollectionGlobalContextProvider shopifyCollectionGlobalProps={shopifyCollectionGlobalProps}>
+							<GoogleTranslateContextProvider>
+								<SmoothScrolling>
+									<Navbar />
+									<main>{children}</main>
+									<Footer />
+									<BlurryCursorMouse />
+									<BackToTopButton link={`#`} />
+								</SmoothScrolling>
+							</GoogleTranslateContextProvider>
+						</ShopifyCollectionGlobalContextProvider>
+					</GlobalContextProvider>
 				</ApolloContextProvider>
 			</body>
 		</html>

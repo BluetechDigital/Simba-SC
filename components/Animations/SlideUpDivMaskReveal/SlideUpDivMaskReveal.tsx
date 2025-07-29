@@ -1,6 +1,8 @@
+"use client"
+
 // Imports
-import { FC, memo, useRef, useEffect, RefObject, useMemo } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
+import { FC, memo, useRef, useEffect, RefObject, useMemo } from 'react';
 
 // Assume you have some CSS modules for styling, e.g., 'Reveal.module.css'
 import styles from '@/components/Animations/SlideUpDivMaskReveal/styles/SlideUpDivMaskReveal.module.scss';
@@ -12,7 +14,11 @@ export namespace ISlideUpDivMaskReveal {
     backgroundColor: string;
     children: React.ReactNode;
     style?: React.CSSProperties;
-};
+    revealEase?: RevealEaseMode;
+  };
+
+  export type RevealEaseMode = 'normal' | 'medium' | 'fast';
+
 	export type IRevealVariants = {
     hidden: {
         height: string;
@@ -32,11 +38,19 @@ const SlideUpDivMaskReveal: FC<ISlideUpDivMaskReveal.IProps> = memo(({
   children,
   className,
   triggerOnce = false,
-  backgroundColor
+  backgroundColor,
+  revealEase = 'normal' // <-- Destructure the new prop and set its default
 }) => {
   const ref: RefObject<HTMLDivElement | null> = useRef<HTMLDivElement>(null);
   const isInView: boolean = useInView(ref, { amount: 0.5 });
   const controls: any = useAnimation();
+
+  // Define the ease values for each mode
+  const easeMap: Record<ISlideUpDivMaskReveal.RevealEaseMode, number[]> = useMemo(() => ({
+    normal: [0.2, 0.6, 0.4, 0.95], // Original ease
+    medium: [0.35, 0.8, 0.9, 1.25], // Slightly faster start, less dramatic middle
+    fast: [0.2, 0.6, 0.9, 2],   // Even faster start, more direct to end
+  }), []);
 
   // Memoize revealVariants to ensure stable object reference
   const revealVariants: ISlideUpDivMaskReveal.IRevealVariants | any = useMemo(() => ({
@@ -47,10 +61,10 @@ const SlideUpDivMaskReveal: FC<ISlideUpDivMaskReveal.IProps> = memo(({
       height: '0%',
       transition: {
         duration: 1.5,
-        ease: [0.2, 0.6, 0.4, 0.95],
+        ease: easeMap[revealEase], // <-- Use the selected ease based on the prop
       },
     },
-  }), []); // Dependencies array is empty because variants are static
+  }), [easeMap, revealEase]); // Dependencies array now includes easeMap and revealEase
 
   useEffect(() => {
     if (isInView) {
@@ -62,18 +76,15 @@ const SlideUpDivMaskReveal: FC<ISlideUpDivMaskReveal.IProps> = memo(({
 
   // Combine outer class names dynamically
   const outerContainerClasses = className
-    ? `${className} ${styles.revealOuterContainer || ''}` // Use revealOuterContainer if needed
-    : styles.revealOuterContainer; // Default class for outer container
+    ? `${className} ${styles.revealOuterContainer || ''}`
+    : styles.revealOuterContainer;
 
   // Determine the background class for the mask
-  // Ensure 'bg-pureBlack' and 'bg-white' are actual CSS classes defined
-  // in your global CSS or Tailwind config.
   const maskBackgroundClass = backgroundColor || "bg-pureBlack";
 
   return (
-    // Single outer div, handle class logic more efficiently
     <div
-      className={outerContainerClasses} // Use computed class for the outer div
+      className={outerContainerClasses}
       style={style}
     >
       <div ref={ref} className={styles.revealContainer}>
@@ -84,11 +95,13 @@ const SlideUpDivMaskReveal: FC<ISlideUpDivMaskReveal.IProps> = memo(({
           initial="hidden"
           animate={controls}
           variants={revealVariants}
-          className={`${styles.revealMask} ${maskBackgroundClass}`} // Combine mask styles and background color
+          className={`${styles.revealMask} ${maskBackgroundClass}`}
         />
       </div>
     </div>
   );
 });
+
+SlideUpDivMaskReveal.displayName = 'SlideUpDivMaskReveal';
 
 export default SlideUpDivMaskReveal;

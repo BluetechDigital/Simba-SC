@@ -47,11 +47,7 @@ const MegaNavLinksWrapper: FC<INavbar.IMegaNavigation.IMegaNavLinksWrapper> = ({
                                 </ContentSliceRevealMaskAnimation>
                             </motion.li>
                         </Fragment>
-                    )
-                )
-            ) : (
-                <></>
-            )}
+                ))) : null}
         </motion.ul>
     );
 }

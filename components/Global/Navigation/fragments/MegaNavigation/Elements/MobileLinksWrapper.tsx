@@ -36,9 +36,7 @@ const MobileLinksWrapper: FC<INavbar.IMegaNavigation.IMobileLinksWrapper> = ({
                         resetMenu={resetMenu}
                         menuActive={menuActive}
                     />
-                ) : (
-                    <></>
-                )}
+                ) : null}
             </div>
         </>
     );

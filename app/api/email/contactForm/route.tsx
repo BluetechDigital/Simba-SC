@@ -1,7 +1,7 @@
 import {render} from "@react-email/components";
 import {emailTransporter} from "@/config/nodemailer";
 // Types
-import {getThemesOptionsContent} from "@/graphql/GetAllThemesOptions";
+import {getThemesOptionsContent} from "@/graphql/CMS/GetAllThemesOptions";
 import {IBusinessEmail, ICustomerEmail} from "@/components/Emails/types/index";
 
 // Components

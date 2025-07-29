@@ -113,9 +113,7 @@ const Navbar: FC<INavbar.IProps> = () => {
 										</Fragment>
 									)
 								)
-							) : (
-								<></>
-							)}
+							) : null}
 						</motion.ul>
 					</div>
 				</div>

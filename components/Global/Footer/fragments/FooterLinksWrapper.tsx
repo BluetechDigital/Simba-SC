@@ -41,9 +41,7 @@ const FooterLinksWrapper: FC<IFooter.IFooterLinksWrapper> = memo(({
                         </Fragment>
                     )
                 )
-            ) : (
-                <></>
-            )}
+            ) : null}
         </motion.ul>
     );
 });

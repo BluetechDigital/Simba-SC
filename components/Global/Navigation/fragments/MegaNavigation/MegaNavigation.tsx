@@ -221,15 +221,11 @@ const MegaNavigation: FC<INavbar.IMegaNavigation.IProps> = memo(({
                                                     displaySublinks={displayPartnershipsAdvertisingSublinks}
                                                     sublinks={globalContext?.partnershipsAdvertisingSublinks}
                                                 />
-                                            ) : (
-                                                <></>
-                                            )}
+                                            ) : null}
                                         </Fragment>
                                     )
                                 )
-                            ) : (
-                                <></>
-                            )}
+                            ) : null}
                         </motion.ul>
                         {/* Desktop */}
                         <div className={styles.desktop}>
@@ -270,9 +266,7 @@ const MegaNavigation: FC<INavbar.IMegaNavigation.IProps> = memo(({
                                                         ?.fansVideoElement
                                                 }
                                             </MegaNavVideoWrapper>
-                                        ) : (
-                                            <></>
-                                        )}
+                                        ) : null}
                                     </motion.div>
                                 </>
                             ) : communitySublinksOpen ? (
@@ -299,9 +293,7 @@ const MegaNavigation: FC<INavbar.IMegaNavigation.IProps> = memo(({
                                     menuActive={menuActive}
                                     sublinks={globalContext?.partnershipsAdvertisingSublinks}
                                 />
-                            ) : (
-                                <></>
-                            )}
+                            ) : null}
                         </div>
                     </div>
                     <motion.div

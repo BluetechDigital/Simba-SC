@@ -85,9 +85,7 @@ const Recommendations: FC<IAllPodcastsVideos.IRecommendations.IProps> = memo(({
 							</motion.div>
 						</Fragment>
 					))
-				) : (
-					<></>
-				)}
+				) : null}
 			</div>
 		</motion.div>
 	);

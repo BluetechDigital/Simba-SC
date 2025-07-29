@@ -1,5 +1,3 @@
-"use client";
-
 // Imports
 import {
 	fadeIn,
@@ -9,88 +7,132 @@ import {
 } from "@/animations/animations";
 import Link from "next/link";
 import Image from "next/image";
+import { FC, memo } from "react";
 import {motion} from "framer-motion";
-import {FC, Fragment, Suspense} from "react";
-import {useGlobalContext} from "@/context/global";
+import { IVisitStore } from "@/components/CMS/VisitStore/types/index";
+
 
 // Styling
 import styles from "@/components/CMS/VisitStore/styles/VisitStore.module.scss";
 
 // Components
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
+import SlideUpDivMaskReveal from "@/components/Animations/SlideUpDivMaskReveal/SlideUpDivMaskReveal";
 
-const Card: FC = () => {
-	const globalContext = useGlobalContext();
-	return (
-		<ul className={styles.visitStoreCard}>
-			<Suspense fallback={"Loading..."}>
-				{globalContext?.onlineStoreShirts?.length > 0 ? (
-					globalContext?.onlineStoreShirts
-						?.slice(0, 4)
-						?.map((item: any, index: number) => (
-							<Fragment key={item?.id || index}>
-								<ScrollYProgressReveal className={styles.content}>
-									<motion.li
-										initial={initial}
-										whileInView="animate"
-										className={styles.li}
-										viewport={{once: true}}
-										custom={item?.id || index}
-										variants={arrayLoopStaggerChildren}
-									>
-										<Link
-											target="_blank"
-											className={styles.link}
-											aria-label={`${item?.title}`}
-											// href={`store.simbasc.co.tz/${item?.slug}`}
-											href={`https://simba-sc-store.vercel.app/search`}
-										>
-											<Image
-												src={item?.image?.sourceUrl}
-												alt={`${item?.image?.altText}`}
-												width={item?.image?.mediaDetails?.width || 1000}
-												height={item?.image?.mediaDetails?.height || 1000}
-												className={item?.image?.sourceUrl ? styles.image : `hidden`}
-											/>
-											<div className={styles.wrapper}>
-												<motion.h5
-													initial={initialTwo}
-													whileInView={fadeIn}
-													viewport={{once: true}}
-													className={styles.title}
-												>
-													{item?.title}
-												</motion.h5>
-												<div className={styles.currencyPriceWrapper}>
-													<span className="font-Inter">
-														{item?.currency === "USD" ? "$" : "£"}
-													</span>
-													<span>{item?.price}</span>
-												</div>
-												<span
-													className={`${
-														item?.slug
-															? styles.slugLink +
-															  " buttonStylingAltTwoSlim"
-															: "hidden"
-													}`}
-												>
-													Buy Now
-												</span>
-											</div>
-										</Link>
-									</motion.li>
-								</ScrollYProgressReveal>
-							</Fragment>
-						))
-				) : (
-					<></>
-				)}
-			</Suspense>
-		</ul>
-	);
-};
+// IMPORTANT: Environment variables accessible on the client-side must be prefixed with NEXT_PUBLIC_
+// Ensure NEXT_PUBLIC_STORE_WEBSITE_URL is defined in your .env file
+const storeWebsiteUrl: any = process.env.NEXT_PUBLIC_STORE_WEBSITE_URL;
+  
+const Card: FC<IVisitStore.ICard> = memo(({
+    id,
+    index,
+    title,
+    handle,
+    priceRange,
+    featuredImage,
+}) => {
 
-Card.displayName = 'VisitStoreCard';
+
+	// Determine image dimensions with fallbacks for Next.js Image
+    const imageWidth = featuredImage?.width || 1000;
+    const imageHeight = featuredImage?.height || 1000;
+    const imageAltText = featuredImage.altText || `Product: ${title}`;
+	
+    // Format Price
+    const formatPrice = (currencyCode: any, amount: any) => {
+        if (amount === null || amount === undefined) {
+          return '';
+        }
+      
+        const numericAmount = parseFloat(amount);
+      
+        if (isNaN(numericAmount)) {
+          return '';
+        }
+      
+        // Define a threshold for when to start using K/M notation
+        // Let's say we use K/M for numbers 10,000 and above for better readability
+        // For numbers below 10,000, we'll use standard comma formatting.
+        const KM_THRESHOLD = 10000;
+      
+        if (numericAmount >= 1000000) {
+          // For millions: M
+          // Example: 1,550,000 -> 1.55M
+          const formattedAmount = (numericAmount / 1000000).toFixed(2);
+          return `${currencyCode} ${formattedAmount}M`;
+        } else if (numericAmount >= KM_THRESHOLD) {
+          // For thousands: K (if above threshold)
+          // Example: 50,000 -> 50K, 105,000 -> 105K
+          const formattedAmount = Math.round(numericAmount / 1000);
+          return `${currencyCode} ${formattedAmount}K`;
+        } else {
+          // For smaller numbers, use standard comma formatting with no decimals
+          // Example: 5,000 -> 5,000, 9,999 -> 9,999
+          return `${currencyCode} ${new Intl.NumberFormat('en-TZ', {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0,
+          }).format(numericAmount)}`;
+        }
+    };
+    
+    // This prevents rendering an incomplete card and potential errors.
+    if (!id || !handle) {
+        return null;
+    }
+	
+  return (
+    <ScrollYProgressReveal>
+      <motion.li
+				initial={initial}
+				custom={id || index}
+				whileInView="animate"
+				className={styles.li}
+				viewport={{once: true}}
+				variants={arrayLoopStaggerChildren}
+			>
+          <Link
+            target="_blank"
+            className={styles.slide}
+            aria-label={`Product: ${handle}`}
+            href={`${storeWebsiteUrl}/product/${handle}`}
+          >
+            <div className={styles.newProductsCarouselSliderCard}>
+              <SlideUpDivMaskReveal
+                revealEase="fast"
+                triggerOnce={true}
+                backgroundColor={"bg-white"}
+                className={styles.imageContainer}
+            >
+                <Image
+                  width={imageWidth}
+                  alt={imageAltText}
+                  placeholder="empty"
+                  height={imageHeight}
+                  src={featuredImage.url}
+                  className={styles.image}
+                />
+              </SlideUpDivMaskReveal>
+              <div className={styles.priceTitleContent}>
+                <h4 className={styles.title}>
+                  {title}
+                </h4>
+                <h4 className={styles.price}>
+                  <span>{priceRange?.maxVariantPrice?.currencyCode}</span>
+                  <span>
+                      {new Intl.NumberFormat('en-TZ', {
+                      minimumFractionDigits: 0,
+                      maximumFractionDigits: 0,
+                      }).format(priceRange?.maxVariantPrice?.amount)}
+                  </span>
+                </h4>
+              </div>
+            </div>
+          </Link>
+        </motion.li>
+      </ScrollYProgressReveal>
+    );
+});
+
+Card.displayName = 'NewProductsCarouselCard';
 
 export default Card;
