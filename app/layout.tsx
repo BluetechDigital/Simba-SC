@@ -9,7 +9,7 @@ import "@/styles/globals.scss";
 import {IGlobal, IShopifyCollection} from "@/context/types/context";
 
 // GraphQL Query Functions - Grouped for cleaner imports
-import {
+import { 
 	getAllMobileLinks,
 	getAllFansSublinks,
 	getAllNewsSublinks,
@@ -73,8 +73,9 @@ import ShopifyCollectionGlobalContextProvider from "@/context/providers/ShopifyC
 import Footer from "@/components/Global/Footer/Footer";
 import Navbar from "@/components/Global/Navigation/Navbar";
 import SmoothScrolling from "@/components/Global/SmoothScrolling";
-import BackToTopButton from "@/components/Global/Elements/BackToTopButton/BackToTopButton";
 import BlurryCursorMouse from "@/components/Global/BlurryCursorMouse/BlurryCursorMouse";
+import BackToTopButton from "@/components/Global/Elements/BackToTopButton/BackToTopButton";
+import GoogleTagManager, { GoogleTagManagerNoScript } from "@/components/Global/Analytics/GoogleTagManager";
 
 const RootLayout = async ({ children }: AppProps | any) => {
 	
@@ -249,6 +250,10 @@ const RootLayout = async ({ children }: AppProps | any) => {
 
 	return (
 		<html lang="en">
+			<head>
+				<GoogleTagManager />
+			</head>
+			<GoogleTagManagerNoScript />
 			<body>
 				<ApolloContextProvider>
 					<GlobalContextProvider globalProps={globalProps}>
