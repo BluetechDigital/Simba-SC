@@ -1,4 +1,5 @@
 // Imports
+import { Suspense } from 'react';
 import type {AppProps} from "next/app";
 import { defaultSort } from "@/lib/Constants/constants";
 
@@ -251,7 +252,9 @@ const RootLayout = async ({ children }: AppProps | any) => {
 	return (
 		<html lang="en">
 			<head>
-				<GoogleTagManager />
+				<Suspense fallback={null}>
+					<GoogleTagManager />
+				</Suspense>
 			</head>
 			<GoogleTagManagerNoScript />
 			<body>

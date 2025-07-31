@@ -1,4 +1,8 @@
+'use client';
+
 import Script from 'next/script';
+import { useEffect } from 'react';
+import { usePathname, useSearchParams } from 'next/navigation';
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 
@@ -14,16 +18,30 @@ declare global {
 }
 
 const GoogleTagManager = () => {
+    const pathname = usePathname();
+    const searchParams = useSearchParams();
+
+    // This useEffect is good for tracking route changes in a headless setup.
+    // It pushes a 'page_view' event to the dataLayer.
+    useEffect(() => {
+      if (GTM_ID && window.dataLayer) {
+        const url = pathname + searchParams.toString();
+        window.dataLayer.push({
+          event: 'page_view',
+          page_path: url,
+        });
+      }
+    }, [pathname, searchParams]);
+
     if (!GTM_ID) {
       console.warn("Google Tag Manager ID is not set. GTM will not function.");
       return null;
     }
 
-    // This component is a Server Component. It only renders the script tag.
     return (
       <Script
         id="gtm-script"
-        strategy="beforeInteractive"
+        strategy="beforeInteractive" // Load this script as early as possible.
         dangerouslySetInnerHTML={{
           __html: `
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
