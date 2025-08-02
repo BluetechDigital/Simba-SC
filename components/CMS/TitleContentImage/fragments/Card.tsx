@@ -9,6 +9,7 @@ import { fadeIn, initial, stagger, initialTwo  } from "@/animations/animations";
 import styles from "@/components/CMS/TitleContentImage/styles/TitleContentImage.module.scss";
 
 // Components
+import Button from "@/components/Global/Elements/Button/Button";
 import Paragraph from "@/components/Global/Elements/Paragraph/Paragraph";
 
 const Card: FC<ITitleContentImage.ICard> = memo(({
@@ -39,17 +40,8 @@ const Card: FC<ITitleContentImage.ICard> = memo(({
 				content={paragraph}
 				className={styles.paragraph + ` ${paragraphColor}`}
 			/>
-			<div className={buttonLink?.url ? styles.buttonLink : "hidden"}>
-				<Link
-					className={styles.link}
-					href={`${buttonLink?.url}`}
-					target={buttonLink?.target}
-					aria-label={`${buttonLink?.title}`}
-				>
-					<span className={styles.text + ` buttonStylingAltTwo`}>
-						{buttonLink?.title}
-					</span>
-				</Link>
+			<div className={buttonLink?.url ? styles.buttonSection : "hidden"}>
+				<Button styleNumber={2} link={buttonLink}/>
 			</div>
 		</motion.div>
 	);

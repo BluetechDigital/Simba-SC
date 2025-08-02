@@ -40,12 +40,16 @@
 					.priceTitleContent {
 						@apply w-full h-1/4 p-4 sm:p-6 flex flex-col gap-2 items-baseline justify-center;
 
+						.title {
+							@apply font-secondary capitalize text-pureBlack text-sm md:text-tiny 2xl:text-base text-left leading-tight hover:text-primary-default transition-all duration-500 ease-in-out;
+						}
+
 						.price {
 							@apply flex gap-1 items-center justify-center font-secondaryBold text-pureBlack text-sm md:text-tiny 2xl:text-base text-left tracking-tighter leading-tight;
 						}
 
-						.title {
-							@apply font-secondary capitalize text-pureBlack text-sm md:text-tiny 2xl:text-base text-left leading-tight hover:text-primary-default transition-all duration-500 ease-in-out;
+						.buttonSection {
+							@apply flex flex-col md:flex-row items-baseline justify-start gap-2;
 						}
 					}
 				}

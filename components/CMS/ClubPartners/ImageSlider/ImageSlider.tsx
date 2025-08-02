@@ -19,7 +19,7 @@ const ImageSlider: FC<IImageSlider.IProps> = ({ imageSlider }) => {
 	const onDesktop = useOnDesktopView();
 
 	return (
-		<div className={styles.imageSlider}>
+		<div className={styles.imageSlider + " ImageSlider"}>
 			<div className={styles.container}>
 				<Swiper
 					loop={true}

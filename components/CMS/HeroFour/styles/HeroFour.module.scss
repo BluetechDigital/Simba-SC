@@ -22,7 +22,7 @@
 						@apply w-full h-full overflow-x-hidden max-w-full lg:max-w-[1700px] m-auto relative z-10 flex flex-col justify-center;
 
 						.title {
-							@apply max-w-3xl font-primary text-left uppercase text-5xl md:text-6xl 2xl:text-7xl lg:text-12xl tracking-[-0.05rem] text-white leading-[2.25rem] md:leading-tight;
+							@apply max-w-3xl font-primary uppercase text-white text-left text-5xl md:text-6xl 2xl:text-7xl leading-[2.25rem] md:leading-tight;
 
 							span {
 								@apply text-tertiary-default;
@@ -38,7 +38,11 @@
 						}
 
 						.paragraph {
-							@apply max-w-2xl mx-auto lg:mx-0 font-secondary leading-tight text-white text-tiny md:text-paragraph 2xl:text-medium text-left;
+							@apply text-white text-tiny md:text-paragraph 2xl:text-medium text-left leading-normal;
+
+							p {
+								@apply p-0 font-secondary;
+							}
 						}
 
 						.buttonSection {

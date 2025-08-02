@@ -25,7 +25,7 @@ const Card: FC<IAboutTheClubGrid.ICard> = memo(({
         <Link
             href={`${buttonLink?.url}`}
             aria-label={`${buttonLink?.title}`}
-            target={`${buttonLink?.target ? buttonLink?.target : "_self"}`}
+            target={`${buttonLink?.target || "_self"}`}
         >
             <div className={styles.aboutTheClubCard}>
                 <Image
@@ -52,17 +52,6 @@ const Card: FC<IAboutTheClubGrid.ICard> = memo(({
                         }
                         className={styles.paragraph}
                     />
-                    <Link
-                        href={`${buttonLink?.url}`}
-                        target={buttonLink?.target}
-                        className={`${
-                            buttonLink?.url
-                                ? "buttonStylingAltTwoSlim mt-2 mx-auto lg:mx-0"
-                                : "hidden"
-                        }`}
-                    >
-                        {buttonLink?.title}
-                    </Link>
                     <Button styleNumber={2.5} link={buttonLink}/>
                 </div>
             </div>
