@@ -5,7 +5,7 @@
         @apply lg:max-w-[1700px] mx-auto px-0;
 
         .gridContent {
-            @apply w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-14 xl:gap-x-16 xl:gap-y-36;
+            @apply w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-14 xl:gap-x-16 xl:gap-y-24;
 
             .aboutTheClubCard {
                 .image {
@@ -13,20 +13,24 @@
                 }
 
                 .details {
-                    @apply w-full h-full flex flex-col items-center lg:items-baseline justify-between gap-3 py-6;
+                    @apply w-full h-full flex flex-col items-baseline justify-between gap-3 py-6;
 
                     .title {
-                        @apply pl-5 font-secondaryBold text-pureBlack text-lg uppercase tracking-tighter border-solid border-l-4 border-tertiary-default hover:text-primary-default transition-all duration-200 ease-in-out;
+                        @apply pl-5 font-secondaryBold text-pureBlack text-left text-medium uppercase tracking-tighter border-solid border-l-4 border-tertiary-default hover:text-primary-default transition-all duration-200 ease-in-out;
                     }
 
                     .paragraph {
-                        @apply mb-0 lg:max-w-lg mx-auto lg:mx-0 font-secondary leading-normal text-pureBlack text-paragraph text-center lg:text-left;
+                        @apply mb-0 lg:max-w-lg mx-auto lg:mx-0 font-secondary text-pureBlack text-tiny md:text-paragraph 2xl:text-medium text-left leading-normal;
 
                         span {
                             a {
                                 @apply font-secondary text-lg underline tracking-[0.02rem] text-primary-default hover:text-accent-default transition-all duration-500 ease-in-out;
                             }
                         }
+                    }
+
+                    .buttonSection {
+                        @apply flex flex-col md:flex-row items-baseline justify-start gap-2;
                     }
                 }
             }

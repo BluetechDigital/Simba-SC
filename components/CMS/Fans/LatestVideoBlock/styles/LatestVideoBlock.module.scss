@@ -8,7 +8,7 @@
 			@apply flex flex-col xl:flex-row items-center xl:items-start justify-between gap-8 w-full;
 
 			.subtitle {
-				@apply mb-2 font-secondaryBold text-center lg:text-left uppercase text-medium lg:text-lg tracking-[-0.05rem] text-tertiary-default font-semibold leading-tight;
+				@apply mb-2 font-secondary text-center lg:text-left uppercase text-tiny lg:text-base text-tertiary-default font-semibold leading-tight;
 			}
 
 			.title {
@@ -24,7 +24,7 @@
 			}
 
 			.buttonStyling {
-				@apply mt-5 mx-auto lg:mx-0 pt-3 pb-2 px-10 w-fit font-secondaryBlack cursor-pointer rounded-full uppercase text-paragraph lg:text-lg text-center border-2 border-solid  hover:text-white hover:border-primary-default hover:bg-primary-default transition-all duration-500 ease-in-out #{!important};
+				@apply mt-5 mx-auto lg:mx-0 py-[5px] px-4 md:px-8 2xl:px-6 w-fit font-secondaryBlack cursor-pointer rounded-full uppercase text-xs md:text-sm text-center border-2 border-solid  hover:text-white hover:border-primary-default hover:bg-primary-default transition-all duration-500 ease-in-out #{!important};
 			}
 
 			.contactDetails {

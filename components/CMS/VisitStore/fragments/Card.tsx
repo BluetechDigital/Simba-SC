@@ -16,6 +16,7 @@ import { IVisitStore } from "@/components/CMS/VisitStore/types/index";
 import styles from "@/components/CMS/VisitStore/styles/VisitStore.module.scss";
 
 // Components
+import Button from "@/components/Global/Elements/Button/Button";
 import ScrollYProgressReveal from "@/components/Animations/ScrollYProgressReveal";
 import SlideUpDivMaskReveal from "@/components/Animations/SlideUpDivMaskReveal/SlideUpDivMaskReveal";
 
@@ -31,6 +32,18 @@ const Card: FC<IVisitStore.ICard> = memo(({
     priceRange,
     featuredImage,
 }) => {
+
+  type IButton = {
+    url: string;
+	  title: string;
+	  target: string;
+  };
+
+  const buttonLink: IButton = {
+    url: `${storeWebsiteUrl}/product/${handle}`,
+    title: `Buy Now`,
+    target: "_blank",
+  }
 
 
 	// Determine image dimensions with fallbacks for Next.js Image
@@ -125,6 +138,14 @@ const Card: FC<IVisitStore.ICard> = memo(({
                       }).format(priceRange?.maxVariantPrice?.amount)}
                   </span>
                 </h4>
+                <motion.div
+                    initial={initialTwo}
+                    whileInView={fadeIn}
+                    viewport={{once: true}}
+                    className={styles.buttonSection}
+                >
+                    <Button styleNumber={1} link={buttonLink}/>
+                </motion.div>
               </div>
             </div>
           </Link>

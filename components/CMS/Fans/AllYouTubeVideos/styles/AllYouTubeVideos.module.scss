@@ -103,14 +103,14 @@
 				@apply flex flex-col;
 
 				.wrapper {
-					@apply mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 lg:gap-6;
+					@apply mt-8 flex items-center justify-center lg:justify-start gap-2 sm:gap-4 2xl:gap-6;
 
 					.pageNumber {
-						@apply font-secondaryBlack m-auto text-pureBlack text-center text-paragraph lg:text-lg uppercase  leading-tight;
+						@apply font-secondaryBlack m-auto text-pureBlack text-center text-xs md:text-sm uppercase tracking-[0.05rem] leading-tight;
 					}
 
 					.buttonStyling {
-						@apply relative mx-auto lg:mx-0 pt-3 pb-2 px-10 w-fit font-secondaryBlack cursor-pointer rounded-full uppercase text-paragraph lg:text-lg text-pureBlack text-center border-2 border-solid border-pureBlack hover:text-white hover:border-primary-default hover:bg-primary-default transition-all duration-500 ease-in-out #{!important};
+						@apply relative mx-auto lg:mx-0 py-[3px] 2xl:py-[5px] px-4 md:px-6 w-fit font-secondaryBlack cursor-pointer rounded-full uppercase text-xs md:text-sm text-pureBlack text-center border-2 border-solid border-pureBlack hover:text-white hover:border-primary-default hover:bg-primary-default transition-all duration-500 ease-in-out #{!important};
 					}
 				}
 			}

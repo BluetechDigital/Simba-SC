@@ -15,7 +15,7 @@
 
     .buttonStylingAltTwoSlim {
         @extend .buttonStylingAltTwo;
-        @apply py-1 px-6 text-tiny lg:text-base;
+        @apply py-1 px-6;
     }
 
     .buttonStylingAltThree {
@@ -30,7 +30,7 @@
 
     .buttonStylingAltFive {
         @extend .buttonStyling;
-        @apply pt-2 pb-1 text-paragraph lg:text-medium hover:border-primary-two hover:bg-accent-default;
+        @apply pt-2 pb-1 hover:border-primary-two hover:bg-accent-default;
     }
 
     .buttonStylingAltFiveActive {
