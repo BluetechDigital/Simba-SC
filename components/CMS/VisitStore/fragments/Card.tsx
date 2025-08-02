@@ -138,14 +138,25 @@ const Card: FC<IVisitStore.ICard> = memo(({
                       }).format(priceRange?.maxVariantPrice?.amount)}
                   </span>
                 </h4>
-                <motion.div
-                    initial={initialTwo}
-                    whileInView={fadeIn}
-                    viewport={{once: true}}
-                    className={styles.buttonSection}
-                >
-                    <Button styleNumber={1} link={buttonLink}/>
-                </motion.div>
+                {buttonLink?.url ?
+                  <motion.div
+                      initial={initialTwo}
+                      whileInView={fadeIn}
+                      viewport={{once: true}}
+                      className={styles.buttonSection}
+                  >
+                    <Link
+                      href={buttonLink.url}
+                      aria-label={`${buttonLink.title}`}
+                      target={buttonLink.target || "_self"}
+                      className={buttonLink.url ? styles.linkWrapper : `hidden`}
+                    >
+                      <span className={styles.buttonStyling}>
+                        {buttonLink.title}
+                      </span>
+                    </Link>
+                  </motion.div>
+                : null}
               </div>
             </div>
           </Link>
