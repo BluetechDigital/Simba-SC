@@ -36,7 +36,7 @@ const Card: FC<ILatestNewsGrid.ICard> = memo(({
 					</span>
 					<span className={styles.divider}></span>
 					<ContentSliceRevealMaskAnimation>
-						<h4 className={styles.title}>{title}</h4>
+						<h3 className={styles.title}>{title}</h3>
 					</ContentSliceRevealMaskAnimation>
 				</div>
 			</div>
