@@ -72,34 +72,38 @@ const Footer: FC = () => {
 					viewport={{once: true}}
 					className={styles.ul}
 				>
-					<Link
-						target="_Blank"
-						className={styles.link}
-						aria-label="Apple App Store Link"
-						href="https://apps.apple.com/us/app/simba-sc/id1564389213"
-					>
-						<Image
-							width={500}
-							height={500}
-							className={styles.image}
-							alt="Apple App Store Logo"
-							src="/svg/apple-app-store.svg"
-						/>
-					</Link>
-					<Link
-						target="_Blank"
-						className={styles.link}
-						aria-label="Google Play App Store Link"
-						href="https://play.google.com/store/apps/details?id=com.simbasc"
-					>
-						<Image
-							width={500}
-							height={500}
-							className={styles.imageTwo}
-							alt="Google Play App Store Logo"
-							src="/svg/google-play-app-store.svg"
-						/>
-					</Link>
+					<li>
+						<Link
+							target="_Blank"
+							className={styles.link}
+							aria-label="Apple App Store Link"
+							href="https://apps.apple.com/us/app/simba-sc/id1564389213"
+						>
+							<Image
+								width={500}
+								height={500}
+								className={styles.image}
+								alt="Apple App Store Logo"
+								src="/svg/apple-app-store.svg"
+							/>
+						</Link>
+					</li>
+					<li>
+						<Link
+							target="_Blank"
+							className={styles.link}
+							aria-label="Google Play App Store Link"
+							href="https://play.google.com/store/apps/details?id=com.simbasc"
+						>
+							<Image
+								width={500}
+								height={500}
+								className={styles.imageTwo}
+								alt="Google Play App Store Logo"
+								src="/svg/google-play-app-store.svg"
+							/>
+						</Link>
+					</li>
 				</motion.ul>
 				<div className={styles.rightSideContent}>
                     <FooterLinksWrapper sublinks={globalContext?.copyrightLinks} />
