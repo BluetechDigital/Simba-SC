@@ -23,38 +23,34 @@
 		.visitStoreCard {
 			@apply 2xl:px-8;
 
-			.slide {
-				@apply w-full h-full;
+			.newProductsCarouselSliderCard {
+				@apply w-full h-full min-h-[325px] sm:min-h-[355px] md:min-h-[410px] flex flex-col items-center justify-between gap-0;
 
-				.newProductsCarouselSliderCard {
-					@apply w-full h-full min-h-[325px] sm:min-h-[355px] md:min-h-[410px] flex flex-col items-center justify-between gap-0;
+				.imageContainer {
+					@apply w-full h-[200px] sm:h-[225px] md:h-[250px] lg:h-[300px] 2xl:h-[350px] overflow-hidden;
 
-					.imageContainer {
-						@apply w-full h-[200px] sm:h-[225px] md:h-[250px] lg:h-[300px] 2xl:h-[350px] overflow-hidden;
+					.image {
+						@apply w-full h-full object-cover object-center transition-all duration-500 ease-in-out;
+					}
+				}
 
-						.image {
-							@apply w-full h-full object-cover object-center hover:scale-105 transition-all duration-500 ease-in-out;
-						}
+				.priceTitleContent {
+					@apply w-full h-1/4 p-4 sm:p-6 flex flex-col gap-2 items-baseline justify-center;
+
+					.title {
+						@apply font-secondary text-sm md:text-tiny 2xl:text-base text-left leading-tight transition-all duration-500 ease-in-out;
 					}
 
-					.priceTitleContent {
-						@apply w-full h-1/4 p-4 sm:p-6 flex flex-col gap-2 items-baseline justify-center;
+					.price {
+						@apply flex gap-1 items-center justify-center font-secondaryBold text-pureBlack text-sm md:text-tiny 2xl:text-base text-left tracking-tighter leading-tight;
+					}
 
-						.title {
-							@apply font-secondary capitalize text-pureBlack text-sm md:text-tiny 2xl:text-base text-left leading-tight hover:text-primary-default transition-all duration-500 ease-in-out;
-						}
+					.buttonSection {
+						@apply flex flex-col md:flex-row items-baseline justify-start gap-2;
 
-						.price {
-							@apply flex gap-1 items-center justify-center font-secondaryBold text-pureBlack text-sm md:text-tiny 2xl:text-base text-left tracking-tighter leading-tight;
-						}
-
-						.buttonSection {
-							@apply flex flex-col md:flex-row items-baseline justify-start gap-2;
-
-							.linkWrapper {
-								.buttonStyling {
-									@apply py-[3.5px] px-4 w-full md:w-fit font-secondaryBlack cursor-pointer rounded-full uppercase text-primary-default text-xs md:text-sm text-center border-2 border-solid border-primary-default hover:text-white bg-transparent hover:bg-primary-default transition-all ease-in-out duration-500;
-								}
+						.linkWrapper {
+							.buttonStyling {
+								@apply py-[3.5px] px-4 w-full md:w-fit font-secondaryBlack cursor-pointer rounded-full uppercase text-xs md:text-sm text-center border-2 border-solid border-primary-default transition-all ease-in-out duration-500;
 							}
 						}
 					}
