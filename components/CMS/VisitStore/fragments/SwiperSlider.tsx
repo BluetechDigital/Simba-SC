@@ -26,7 +26,7 @@ const SwiperSlider: FC<IVisitStore.ISwiperSlider> = () => {
 	const onDesktop = useOnDesktopView();
 
 	return (
-		<ul className={styles.visitStoreCard + " NewProductsCarouselSwiperSlider"}>
+		<div className={styles.visitStoreCard + " NewProductsCarouselSwiperSlider"}>
 			<Swiper
 				loop={true}
 				navigation={true}
@@ -55,7 +55,7 @@ const SwiperSlider: FC<IVisitStore.ISwiperSlider> = () => {
 						</Fragment>
 				))) : null}
 			</Swiper>
-		</ul>
+		</div>
 	);
 };
 

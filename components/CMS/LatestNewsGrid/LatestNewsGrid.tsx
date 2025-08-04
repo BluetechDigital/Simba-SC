@@ -86,8 +86,8 @@ const LatestNewsGrid: FC<ILatestNewsGrid.IProps> = memo(({
 					<Link
 						href={`${ctaLink?.url}`}
 						target={ctaLink?.target}
-						aria-label={`${ctaLink?.title}`}
 						className="block lg:hidden"
+						aria-label={`Image Link Text: ${image?.altText}`}
 					>
 						<Image
 							src={image?.sourceUrl}
@@ -128,7 +128,7 @@ const LatestNewsGrid: FC<ILatestNewsGrid.IProps> = memo(({
 					<Link
 						href={`${ctaLink?.url}`}
 						target={ctaLink?.target}
-						aria-label={`${ctaLink?.title}`}
+						aria-label={`Image Link Text: ${image?.altText}`}
 					>
 						<Image
 							src={image?.sourceUrl}

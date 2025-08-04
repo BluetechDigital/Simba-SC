@@ -93,7 +93,7 @@ const Card: FC<IVisitStore.ICard> = memo(({
     }
 	
   return (
-    <motion.li
+    <motion.div
 	  	initial={initial}
 	  	custom={id || index}
 	  	whileInView="animate"
@@ -166,7 +166,7 @@ const Card: FC<IVisitStore.ICard> = memo(({
           </motion.div>
         : null}
       </div>
-    </motion.li>
+    </motion.div>
   );
 });
 
