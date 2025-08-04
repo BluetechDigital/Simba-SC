@@ -45,7 +45,6 @@ const Card: FC<IVisitStore.ICard> = memo(({
     target: "_blank",
   }
 
-
 	// Determine image dimensions with fallbacks for Next.js Image
     const imageWidth = featuredImage?.width || 1000;
     const imageHeight = featuredImage?.height || 1000;
@@ -94,75 +93,81 @@ const Card: FC<IVisitStore.ICard> = memo(({
     }
 	
   return (
-    <ScrollYProgressReveal>
-      <motion.li
-				initial={initial}
-				custom={id || index}
-				whileInView="animate"
-				className={styles.li}
-				viewport={{once: true}}
-				variants={arrayLoopStaggerChildren}
-			>
-          <Link
-            target="_blank"
-            className={styles.slide}
-            aria-label={`Product: ${handle}`}
-            href={`${storeWebsiteUrl}/product/${handle}`}
+    <motion.li
+	  	initial={initial}
+	  	custom={id || index}
+	  	whileInView="animate"
+	  	viewport={{once: true}}
+	  	variants={arrayLoopStaggerChildren}
+	  	className={styles.newProductsCarouselSliderCard + " group"}
+	  >
+      <Link
+        target="_self"
+        className="w-full h-full"
+        aria-label={`Product: ${handle}`}
+        href={`${storeWebsiteUrl}/product/${handle}`}
+      >
+        <SlideUpDivMaskReveal
+          revealEase="fast"
+          triggerOnce={true}
+          backgroundColor={"bg-white"}
+          className={styles.imageContainer}
+        >
+          <Image
+            width={imageWidth}
+            alt={imageAltText}
+            placeholder="empty"
+            height={imageHeight}
+            src={featuredImage.url}
+            className={styles.image + " group-hover:scale-105"}
+          />
+        </SlideUpDivMaskReveal>
+      </Link>
+      <div className={styles.priceTitleContent}>
+        <Link
+          target="_self"
+          className={styles.slide}
+          href={`${storeWebsiteUrl}/product/${handle}`}
+          aria-label={`Product: ${handle}`}
+        >
+          <h4 className={styles.title + " text-pureBlack group-hover:text-primary-default"}>
+            {title}
+          </h4>
+        </Link>
+        <h4 className={styles.price}>
+          <span>{priceRange?.maxVariantPrice?.currencyCode}</span>
+          <span>
+              {new Intl.NumberFormat('en-TZ', {
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 0,
+              }).format(priceRange?.maxVariantPrice?.amount)}
+          </span>
+          {/* <h4 className={styles.price}>
+              {formatPrice(priceRange?.maxVariantPrice.currencyCode, priceRange?.maxVariantPrice.amount)}
+          </h4> */}
+        </h4>
+        {buttonLink?.url ?
+          <motion.div
+              initial={initialTwo}
+              whileInView={fadeIn}
+              viewport={{once: true}}
+              className={styles.buttonSection}
           >
-            <div className={styles.newProductsCarouselSliderCard}>
-              <SlideUpDivMaskReveal
-                revealEase="fast"
-                triggerOnce={true}
-                backgroundColor={"bg-white"}
-                className={styles.imageContainer}
+            <Link
+              href={buttonLink.url}
+              aria-label={`${buttonLink.title}`}
+              target={buttonLink.target || "_self"}
+              className={buttonLink.url ? styles.linkWrapper : `hidden`}
             >
-                <Image
-                  width={imageWidth}
-                  alt={imageAltText}
-                  placeholder="empty"
-                  height={imageHeight}
-                  src={featuredImage.url}
-                  className={styles.image}
-                />
-              </SlideUpDivMaskReveal>
-              <div className={styles.priceTitleContent}>
-                <h4 className={styles.title}>
-                  {title}
-                </h4>
-                <h4 className={styles.price}>
-                  <span>{priceRange?.maxVariantPrice?.currencyCode}</span>
-                  <span>
-                      {new Intl.NumberFormat('en-TZ', {
-                      minimumFractionDigits: 0,
-                      maximumFractionDigits: 0,
-                      }).format(priceRange?.maxVariantPrice?.amount)}
-                  </span>
-                </h4>
-                {buttonLink?.url ?
-                  <motion.div
-                      initial={initialTwo}
-                      whileInView={fadeIn}
-                      viewport={{once: true}}
-                      className={styles.buttonSection}
-                  >
-                    <Link
-                      href={buttonLink.url}
-                      aria-label={`${buttonLink.title}`}
-                      target={buttonLink.target || "_self"}
-                      className={buttonLink.url ? styles.linkWrapper : `hidden`}
-                    >
-                      <span className={styles.buttonStyling}>
-                        {buttonLink.title}
-                      </span>
-                    </Link>
-                  </motion.div>
-                : null}
-              </div>
-            </div>
-          </Link>
-        </motion.li>
-      </ScrollYProgressReveal>
-    );
+              <span className={styles.buttonStyling + " text-primary-default bg-transparent group-hover:text-white group-hover:bg-primary-default"}>
+                {buttonLink.title}
+              </span>
+            </Link>
+          </motion.div>
+        : null}
+      </div>
+    </motion.li>
+  );
 });
 
 Card.displayName = 'NewProductsCarouselCard';
