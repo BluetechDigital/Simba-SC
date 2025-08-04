@@ -37,7 +37,6 @@ const TopNavigation: FC<INavbar.ITopNavigation.IProps> = memo(({
         initial: initialTwo,
         whileInView: fadeIn,
         viewport: { once: true },
-        ariaLabel: "Google Translate Options Button",
 	}), []);
 
     return (
@@ -98,6 +97,7 @@ const TopNavigation: FC<INavbar.ITopNavigation.IProps> = memo(({
                 <div className={styles.googleTranslate}>
 					<motion.button
 						{...commonMotionProps}
+                        aria-label="Google Translate Options Button"
 						onClick={handleRevealGoogleTranslateOptions}
 						className={revealGoogleTranslateOptions ? "hidden" : styles.revealGoogleTranslateOptions}
 					>
@@ -115,7 +115,8 @@ const TopNavigation: FC<INavbar.ITopNavigation.IProps> = memo(({
 						</svg>
 					</motion.button>
 					<motion.button
-						{...commonMotionProps}
+                        {...commonMotionProps}
+                        aria-label="Google Translate Options Button"
 						onClick={handleRevealGoogleTranslateOptions}
 						className={revealGoogleTranslateOptions ? styles.closeGoogleTranslateSVG : "hidden"}
 					>
@@ -138,7 +139,8 @@ const TopNavigation: FC<INavbar.ITopNavigation.IProps> = memo(({
 					</motion.button>
 					<motion.button
 						{...commonMotionProps}
-						id="google_translate_element"
+                        id="google_translate_element"
+                        aria-label="Google Translate Options Button"
 						className={revealGoogleTranslateOptions ? styles.translateOptions : "hidden"}
 					/>
 				</div>
