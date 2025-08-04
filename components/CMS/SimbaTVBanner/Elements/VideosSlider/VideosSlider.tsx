@@ -36,7 +36,7 @@ const VideosSlider: FC<ISimbaTVBanner.IVideosSlider.IProps> = ({
 				mode="popLayout"
 				custom={motionProps?.custom}
 			>
-				<motion.ul
+				<motion.div
 					exit="exit"
 					initial="enter"
 					animate="center"
@@ -74,7 +74,7 @@ const VideosSlider: FC<ISimbaTVBanner.IVideosSlider.IProps> = ({
 							))
 						) : null}
 					</Swiper>
-				</motion.ul>
+				</motion.div>
 			</AnimatePresence>
 		</ScrollYProgressReveal>
 	);
