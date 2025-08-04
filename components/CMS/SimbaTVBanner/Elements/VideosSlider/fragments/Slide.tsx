@@ -28,7 +28,7 @@ const Slide: FC<ISimbaTVBanner.IVideosSlider.ISlide> = ({
     statistics,
 }) => {
     return (
-        <motion.li
+        <motion.div
 			custom={index}
 			initial={initial}
 			whileInView="animate"
@@ -151,7 +151,7 @@ const Slide: FC<ISimbaTVBanner.IVideosSlider.ISlide> = ({
 					</div>
 				</div>
 			</Link>
-		</motion.li>
+		</motion.div>
     );
 }
 

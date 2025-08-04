@@ -130,9 +130,9 @@ const Card: FC<IVisitStore.ICard> = memo(({
           href={`${storeWebsiteUrl}/product/${handle}`}
           aria-label={`Product: ${handle}`}
         >
-          <h4 className={styles.title + " text-pureBlack group-hover:text-primary-default"}>
+          <h5 className={styles.title + " text-pureBlack group-hover:text-primary-default"}>
             {title}
-          </h4>
+          </h5>
         </Link>
         <h4 className={styles.price}>
           <span>{priceRange?.maxVariantPrice?.currencyCode}</span>
