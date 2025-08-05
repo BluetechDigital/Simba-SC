@@ -6,10 +6,10 @@
 
 		.leftSide,
 		.rightSide {
-			@apply flex items-center justify-between gap-4;
+			@apply w-full flex items-center justify-start gap-4;
 
 			.image {
-				@apply hidden lg:block object-contain object-center w-full h-[30px] 2xl:h-[40px];
+				@apply hidden lg:block object-contain object-center w-full max-w-[50px] h-[30px] 2xl:h-[40px];
 			}
 		}
 
@@ -18,12 +18,12 @@
 
 			.simbaLogin,
 			.simbaFoundation {
-				@apply hidden md:block font-secondary capitalize tracking-[-0.02rem] text-pureBlack text-sm 2xl:text-tiny text-center hover:underline hover:text-primary-default transition-all ease-in-out duration-500;
+				@apply w-full hidden md:flex items-center justify-end font-secondary capitalize tracking-[-0.02rem] text-pureBlack text-sm 2xl:text-tiny text-center hover:underline hover:text-primary-default transition-all ease-in-out duration-500;
 			}
 
 			// Google Translate Navigation SVG
 			.googleTranslate {
-				@apply relative hidden md:flex items-center justify-center gap-6 sm:gap-8;
+				@apply relative min-w-[20px] hidden md:flex items-center justify-center gap-6 sm:gap-8;
 
 				.revealGoogleTranslateOptions {
 					@apply p-0 text-pureBlack transition duration-200 rounded-sm flex flex-row items-center justify-center gap-3;
