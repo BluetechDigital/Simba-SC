@@ -19,7 +19,7 @@ const SimbaTVBanner: FC<ISimbaTVBanner.IProps> = memo(({
 	paragraph,
 	buttonLink,
 	contentOptions,
-	backgroundImage,_
+	backgroundImage,
 }) => {
 
 	// Optimize inline styles:
