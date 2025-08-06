@@ -42,9 +42,9 @@ const TopNavigation: FC<INavbar.ITopNavigation.IProps> = memo(({
     return (
         <motion.div className={styles.topNavigation + ` ${scrollPosition > 50 ? "hidden lg:flex" : "hidden lg:flex"}`}>
             <div className={styles.leftSide}>
-                {globalContext?.themesOptionsContent?.topNavigation?.sponsorsIcons
-                    ?.length > 0 ? (
-                    globalContext?.themesOptionsContent?.topNavigation?.sponsorsIcons?.map(
+                {globalContext.themesOptionsContent.topNavigation.sponsorsIcons
+                    .length > 0 ? (
+                    globalContext.themesOptionsContent.topNavigation.sponsorsIcons.map(
                         (item: any, index: number) => (
                             <Fragment key={index}>
                                 <motion.div
@@ -55,11 +55,11 @@ const TopNavigation: FC<INavbar.ITopNavigation.IProps> = memo(({
                                     variants={arrayLoopStaggerChildren}
                                 >
                                     <Image
-                                        alt={item?.altText}
-                                        src={item?.sourceUrl}
+                                        alt={item.altText}
+                                        src={item.sourceUrl}
                                         className={styles.image}
-                                        width={item?.mediaDetails?.width || 1000}
-                                        height={item?.mediaDetails?.height || 1000}
+                                        width={item.mediaDetails.width || 1000}
+                                        height={item.mediaDetails.height || 1000}
                                     />
                                 </motion.div>
                             </Fragment>
@@ -68,31 +68,16 @@ const TopNavigation: FC<INavbar.ITopNavigation.IProps> = memo(({
                 ) : null}
             </div>
             <div className={styles.rightSide}>
-                <Link
-                    target="_blank"
-                    aria-label={`Simba Login`}
-                    className={styles.simbaLogin}
-                    href={`https://account.simbasc.com`}
-                >
-                    Login
-                </Link>
-                <Link
-                    aria-label={`Simba Foundation`}
-                    className={styles.simbaFoundation}
-                    href={`${globalContext?.themesOptionsContent?.topNavigation?.foundationPageLink?.url}`}
-                    target={`${
-                        globalContext?.themesOptionsContent?.topNavigation
-                            ?.foundationPageLink?.target
-                            ? globalContext?.themesOptionsContent?.topNavigation
-                                    ?.foundationPageLink?.target
-                            : "_self"
-                    }`}
-                >
-                    {
-                        globalContext?.themesOptionsContent?.topNavigation
-                            ?.foundationPageLink?.title
-                    }
-                </Link>
+                <div className={styles.navigationLinks}>
+                    <Link
+                        className={styles.link}
+                        href={`${globalContext.themesOptionsContent.topNavigation.foundationPageLink.url}`}
+                        aria-label={`${globalContext.themesOptionsContent.topNavigation.foundationPageLink.title}`}
+                        target={`${globalContext.themesOptionsContent.topNavigation.foundationPageLink.target || "_self"}`}
+                    >
+                        {globalContext.themesOptionsContent.topNavigation.foundationPageLink.title}
+                    </Link>
+                </div>
                 <div className={styles.divider} />
                 <div className={styles.googleTranslate}>
 					<motion.button
@@ -152,12 +137,12 @@ const TopNavigation: FC<INavbar.ITopNavigation.IProps> = memo(({
                     viewport={{once: true}}
                     className={styles.socialLinks}
                 >
-                    <SocialLinksWrapper socialLinks={globalContext?.themesOptionsContent?.facebookLink}/>
-                    <SocialLinksWrapper socialLinks={globalContext?.themesOptionsContent?.twitterLink}/>
-                    <SocialLinksWrapper socialLinks={globalContext?.themesOptionsContent?.linkedinLink}/>
-                    <SocialLinksWrapper socialLinks={globalContext?.themesOptionsContent?.instagramLink}/>
-                    <SocialLinksWrapper socialLinks={globalContext?.themesOptionsContent?.tiktokLink}/>
-                    <SocialLinksWrapper socialLinks={globalContext?.themesOptionsContent?.youtubeLink}/>
+                    <SocialLinksWrapper socialLinks={globalContext.themesOptionsContent.facebookLink}/>
+                    <SocialLinksWrapper socialLinks={globalContext.themesOptionsContent.twitterLink}/>
+                    <SocialLinksWrapper socialLinks={globalContext.themesOptionsContent.linkedinLink}/>
+                    <SocialLinksWrapper socialLinks={globalContext.themesOptionsContent.instagramLink}/>
+                    <SocialLinksWrapper socialLinks={globalContext.themesOptionsContent.tiktokLink}/>
+                    <SocialLinksWrapper socialLinks={globalContext.themesOptionsContent.youtubeLink}/>
                 </motion.div>
             </div>
         </motion.div>

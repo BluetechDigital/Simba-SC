@@ -164,4 +164,6 @@ const Navbar: FC<INavbar.IProps> = () => {
     );
 }
 
+Navbar.displayName = 'Navbar';
+
 export default Navbar;

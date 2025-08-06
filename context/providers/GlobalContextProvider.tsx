@@ -6,12 +6,6 @@ import {motion} from "framer-motion";
 import {GlobalContext} from "@/context/global";
 import {IGlobal} from "@/context/types/context";
 
-// Components
-import {Analytics} from "@vercel/analytics/react";
-import {SpeedInsights} from "@vercel/speed-insights/next";
-// import PageLoadingSquares from "@/components/Global/PageLoadingSquares";
-import PostHogContextProvider from "@/context/providers/PostHogProviderContext";
-
 const GlobalContextProvider: FC<IGlobal.IContextProvider> = ({
 	children,
 	globalProps,
@@ -68,9 +62,6 @@ const GlobalContextProvider: FC<IGlobal.IContextProvider> = ({
 					globalProps?.partnershipsAdvertisingSublinks,
 			}}
 		>
-			{/* <PageLoadingSquares /> */}
-			{/* Cookie Policy Pop Up */}
-			{/* <PostHogContextProvider /> */}
 			<motion.div
 				exit={{
 					opacity: 0,
@@ -80,12 +71,10 @@ const GlobalContextProvider: FC<IGlobal.IContextProvider> = ({
 			>
 				{children}
 			</motion.div>
-			{/* Vercel Analytics */}
-			<Analytics />
-			{/* Vercel Speed Insights */}
-			<SpeedInsights />
 		</GlobalContext.Provider>
 	);
 };
+
+GlobalContextProvider.displayName = 'GlobalContextProvider';
 
 export default GlobalContextProvider;

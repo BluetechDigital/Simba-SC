@@ -16,9 +16,12 @@
 		.rightSide {
 			@apply w-fit flex items-center justify-end gap-4;
 
-			.simbaLogin,
-			.simbaFoundation {
-				@apply w-full hidden md:flex items-center justify-center font-secondary capitalize tracking-[-0.02rem] text-pureBlack text-sm 2xl:text-tiny text-center hover:underline hover:text-primary-default transition-all ease-in-out duration-500;
+			.navigationLinks {
+				@apply w-full hidden md:flex items-center justify-end gap-6 text-center;
+
+				.link {
+					@apply whitespace-nowrap font-secondary capitalize tracking-[-0.02rem] text-pureBlack text-sm 2xl:text-tiny text-center hover:underline hover:text-primary-default transition-all ease-in-out duration-500;
+				}
 			}
 
 			// Google Translate Navigation SVG
