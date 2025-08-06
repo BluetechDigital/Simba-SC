@@ -1,6 +1,6 @@
 .linkWrapper {
     .buttonStyling {
-        @apply py-[5px] px-4 md:px-8 2xl:px-6 w-full md:w-fit font-secondaryBlack cursor-pointer rounded-full uppercase text-lightGrey text-xs md:text-sm text-center border-2 border-solid border-white hover:border-primary-default bg-transparent hover:bg-primary-default transition-all ease-in-out duration-500;
+        @apply py-[5px] px-4 md:px-8 2xl:px-6 w-full md:w-fit font-secondaryBold md:font-secondaryBlack cursor-pointer rounded-full uppercase text-lightGrey text-xxs md:text-sm text-center border-[1px] md:border-2 border-solid border-white hover:border-primary-default bg-transparent hover:bg-primary-default transition-all ease-in-out duration-500;
     }
 
     .buttonStylingAlt {

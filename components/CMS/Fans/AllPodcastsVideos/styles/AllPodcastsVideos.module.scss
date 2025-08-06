@@ -128,7 +128,7 @@
 					}
 
 					.buttonStyling {
-						@apply py-[3px] 2xl:py-[5px] px-4 md:px-6 w-fit font-secondaryBlack cursor-pointer rounded-full uppercase text-lightGrey text-xs md:text-sm text-center border-2 border-solid border-white bg-transparent hover:border-accent-default hover:bg-accent-default transition-all ease-in-out duration-500;
+						@apply py-[3px] 2xl:py-[5px] px-4 md:px-6 w-fit font-secondaryBold md:font-secondaryBlack cursor-pointer rounded-full uppercase text-lightGrey text-xxs md:text-sm text-center border-[1px] md:border-2 border-solid border-white bg-transparent hover:border-accent-default hover:bg-accent-default transition-all ease-in-out duration-500;
 					}
 				}
 
