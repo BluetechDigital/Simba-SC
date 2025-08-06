@@ -8,7 +8,7 @@
 			@apply flex flex-col items-baseline justify-center gap-1;
 
 			.title {
-				@apply font-secondaryBold uppercase text-sm text-pureBlack;
+				@apply font-secondaryBold uppercase text-xs md:text-sm text-pureBlack;
 			}
 
 			.paragraph {
@@ -21,11 +21,11 @@
 		}
 
 		.buttonSection {
-			@apply flex items-center justify-start gap-2;
+			@apply w-full flex items-center justify-start gap-2;
 
 			.acceptButton,
 			.refuseButton {
-				@apply inline-block py-[5px] px-4 md:px-8 2xl:px-6 w-full md:w-fit font-secondaryBold cursor-pointer rounded-full uppercase text-xxs text-center border-2 border-solid transition-all ease-in-out duration-500;
+				@apply inline-block py-[5px] px-4 md:px-8 2xl:px-6 w-full md:w-fit font-secondaryBold cursor-pointer rounded-full uppercase text-xxs text-center border-[1px] md:border-2 border-solid transition-all ease-in-out duration-500;
 			}
 
 			.acceptButton {
