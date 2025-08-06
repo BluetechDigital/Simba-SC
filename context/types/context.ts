@@ -140,16 +140,33 @@ export namespace IShopifyCollection {
 	};  
 }
 
+/* APOLLO CLIENT: Content Provider Interface */
 export namespace IApollo {
 	export type IContextProvider = {
 		children: React.ReactNode;
 	};
 }
 
+/* GOOGLE TRANSLATE: Content 
+& Content Provider Interface */
 export namespace IGoogleTranslate {
 	export type IContext = {
         isGoogleTranslateScriptLoaded: boolean;
         initializeGoogleTranslateWidget: () => void;
+	};
+	export type IContextProvider = {
+		children: React.ReactNode;
+	};
+    
+}
+
+/* COOKIE POLICY: Content 
+& Content Provider Interface */
+export namespace ICookiePolicy {
+	export type IContext = {
+		acceptCookies: () => void;
+		refuseCookies: () => void;
+		hasConsent: boolean | null;
 	};
 	export type IContextProvider = {
 		children: React.ReactNode;

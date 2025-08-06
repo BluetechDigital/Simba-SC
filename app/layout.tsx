@@ -67,13 +67,17 @@ import {getAllClubPartnersExcerpt} from "@/graphql/CMS/GetAllClubPartners";
 // Context Providers Components
 import GlobalContextProvider from "@/context/providers/GlobalContextProvider";
 import ApolloContextProvider from "@/context/providers/ApolloContextProvider";
+import CookiePolicyContextProvider from "@/context/providers/CookiePolicyContextProvider";
 import GoogleTranslateContextProvider from "@/context/providers/GoogleTranslateContextProvider";
 import ShopifyCollectionGlobalContextProvider from "@/context/providers/ShopifyCollectionGlobalContextProvider";
 
-// Components
+// Components#
+import {Analytics} from "@vercel/analytics/react";
 import Footer from "@/components/Global/Footer/Footer";
+import {SpeedInsights} from "@vercel/speed-insights/next";
 import Navbar from "@/components/Global/Navigation/Navbar";
 import SmoothScrolling from "@/components/Global/SmoothScrolling";
+import CookiePolicy from "@/components/Global/CookiePolicy/CookiePolicy";
 import BlurryCursorMouse from "@/components/Global/BlurryCursorMouse/BlurryCursorMouse";
 import BackToTopButton from "@/components/Global/Elements/BackToTopButton/BackToTopButton";
 import GoogleTagManager, { GoogleTagManagerNoScript } from "@/components/Global/Analytics/GoogleTagManager";
@@ -257,21 +261,28 @@ const RootLayout = async ({ children }: AppProps | any) => {
 				</Suspense>
 			</head>
 			<GoogleTagManagerNoScript />
+			{/* Vercel Analytics */}
+			<Analytics />
+			{/* Vercel Speed Insights */}
+			<SpeedInsights />
 			<body>
 				<ApolloContextProvider>
-					<GlobalContextProvider globalProps={globalProps}>
-						<ShopifyCollectionGlobalContextProvider shopifyCollectionGlobalProps={shopifyCollectionGlobalProps}>
-							<GoogleTranslateContextProvider>
-								<SmoothScrolling>
-									<Navbar />
-									<main>{children}</main>
-									<Footer />
-									<BlurryCursorMouse />
-									<BackToTopButton link={`#`} />
-								</SmoothScrolling>
-							</GoogleTranslateContextProvider>
-						</ShopifyCollectionGlobalContextProvider>
-					</GlobalContextProvider>
+					<CookiePolicyContextProvider>
+						<GlobalContextProvider globalProps={globalProps}>
+							<ShopifyCollectionGlobalContextProvider shopifyCollectionGlobalProps={shopifyCollectionGlobalProps}>
+								<GoogleTranslateContextProvider>
+									<SmoothScrolling>
+										<Navbar />
+										<main>{children}</main>
+										<Footer />
+										<BlurryCursorMouse />
+										<BackToTopButton link={`#`} />
+										<CookiePolicy />
+									</SmoothScrolling>
+								</GoogleTranslateContextProvider>
+							</ShopifyCollectionGlobalContextProvider>
+						</GlobalContextProvider>
+					</CookiePolicyContextProvider>
 				</ApolloContextProvider>
 			</body>
 		</html>

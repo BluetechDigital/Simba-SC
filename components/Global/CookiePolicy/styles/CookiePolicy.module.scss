@@ -1,0 +1,40 @@
+.cookiePolicy {
+	@apply fixed bottom-0 right-0 mx-4 max-w-6xl px-0 md:max-w-md z-[999];
+
+	.content {
+		@apply p-4 mb-3 bg-white rounded-lg flex flex-col items-baseline justify-center gap-2;
+
+		.titleSection {
+			@apply flex flex-col items-baseline justify-center gap-1;
+
+			.title {
+				@apply font-secondaryBold uppercase text-sm text-pureBlack;
+			}
+
+			.paragraph {
+				@apply text-pureBlack text-xxs md:text-xs text-left leading-normal;
+
+				p {
+					@apply p-0 font-secondary;
+				}
+			}
+		}
+
+		.buttonSection {
+			@apply flex items-center justify-start gap-2;
+
+			.acceptButton,
+			.refuseButton {
+				@apply inline-block py-[5px] px-4 md:px-8 2xl:px-6 w-full md:w-fit font-secondaryBold cursor-pointer rounded-full uppercase text-xxs text-center border-2 border-solid transition-all ease-in-out duration-500;
+			}
+
+			.acceptButton {
+				@apply text-lightGrey border-primary-default bg-primary-default hover:border-accent-default hover:bg-accent-default;
+			}
+
+			.refuseButton {
+				@apply text-primary-default border-primary-default bg-transparent hover:text-white hover:border-primary-darkerTwo hover:bg-primary-darkerTwo;
+			}
+		}
+	}
+}
