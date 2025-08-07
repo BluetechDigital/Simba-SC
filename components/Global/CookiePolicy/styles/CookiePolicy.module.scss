@@ -1,18 +1,18 @@
 .cookiePolicy {
-	@apply fixed bottom-0 right-0 mx-4 max-w-6xl px-0 md:max-w-md z-[999];
+	@apply fixed bottom-0 right-0 p-0 mx-4 max-w-6xl px-0 md:max-w-sm z-[999];
 
 	.content {
-		@apply p-4 mb-3 bg-white rounded-lg flex flex-col items-baseline justify-center gap-2;
+		@apply p-4 mb-3 bg-white rounded-md flex flex-col items-baseline justify-center gap-2;
 
 		.titleSection {
 			@apply flex flex-col items-baseline justify-center gap-1;
 
 			.title {
-				@apply font-secondaryBold uppercase text-xs md:text-sm text-pureBlack;
+				@apply font-secondaryBold uppercase text-xs 2xl:text-sm text-pureBlack;
 			}
 
 			.paragraph {
-				@apply text-pureBlack text-xxs md:text-xs text-left leading-normal;
+				@apply text-pureBlack text-xxs 2xl:text-xs text-left leading-normal;
 
 				p {
 					@apply p-0 font-secondary;
@@ -25,7 +25,7 @@
 
 			.acceptButton,
 			.refuseButton {
-				@apply inline-block py-[5px] px-4 md:px-8 2xl:px-6 w-full md:w-fit font-secondaryBold cursor-pointer rounded-full uppercase text-xxxs text-center border-[1px] md:border-2 border-solid transition-all ease-in-out duration-500;
+				@apply inline-block py-[3px] 2xl:py-[5px] px-4 xl:px-6 w-full md:w-fit font-secondaryBold cursor-pointer rounded-full uppercase text-xxxs text-center border-[1px] 2xl:border-2 border-solid transition-all ease-in-out duration-500;
 			}
 
 			.acceptButton {
