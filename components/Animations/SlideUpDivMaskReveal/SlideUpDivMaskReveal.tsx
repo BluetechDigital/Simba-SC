@@ -15,9 +15,11 @@ export namespace ISlideUpDivMaskReveal {
     children: React.ReactNode;
     style?: React.CSSProperties;
     revealEase?: RevealEaseMode;
+    direction?: RevealDirection;
   };
 
   export type RevealEaseMode = 'normal' | 'medium' | 'fast';
+  export type RevealDirection = 'up' | 'down' | 'left' | 'right';
 
 	export type IRevealVariants = {
     hidden: {
@@ -39,7 +41,8 @@ const SlideUpDivMaskReveal: FC<ISlideUpDivMaskReveal.IProps> = memo(({
   className,
   triggerOnce = false,
   backgroundColor,
-  revealEase = 'normal' // <-- Destructure the new prop and set its default
+  revealEase = 'normal',
+  direction = 'up'
 }) => {
   const ref: RefObject<HTMLDivElement | null> = useRef<HTMLDivElement>(null);
   const isInView: boolean = useInView(ref, { amount: 0.5 });
@@ -53,18 +56,30 @@ const SlideUpDivMaskReveal: FC<ISlideUpDivMaskReveal.IProps> = memo(({
   }), []);
 
   // Memoize revealVariants to ensure stable object reference
-  const revealVariants: ISlideUpDivMaskReveal.IRevealVariants | any = useMemo(() => ({
-    hidden: {
-      height: '100%',
-    },
-    visible: {
-      height: '0%',
-      transition: {
-        duration: 1.5,
-        ease: easeMap[revealEase], // <-- Use the selected ease based on the prop
+  const revealVariants: ISlideUpDivMaskReveal.IRevealVariants | any = useMemo(() => {
+    const isHorizontal = direction === 'left' || direction === 'right';
+    const sizeProperty = isHorizontal ? 'width' : 'height';
+    const startPosition =
+      direction === 'up' ? 'bottom' :
+      direction === 'down' ? 'top' :
+      direction === 'left' ? 'right' :
+      'left';
+    
+    return {
+      hidden: {
+        [sizeProperty]: '100%',
+        [startPosition]: '0%',
       },
-    },
-  }), [easeMap, revealEase]); // Dependencies array now includes easeMap and revealEase
+      visible: {
+        [sizeProperty]: '0%',
+        [startPosition]: '0%',
+        transition: {
+          duration: 1.5,
+          ease: easeMap[revealEase],
+        },
+      },
+    };
+  }, [easeMap, revealEase, direction]);
 
   useEffect(() => {
     if (isInView) {
@@ -81,6 +96,14 @@ const SlideUpDivMaskReveal: FC<ISlideUpDivMaskReveal.IProps> = memo(({
 
   // Determine the background class for the mask
   const maskBackgroundClass = backgroundColor || "bg-pureBlack";
+
+  // Use a class to handle the positioning based on direction
+  const maskDirectionClass = useMemo(() => {
+    if (direction === 'left') return styles.revealMaskLeft;
+    if (direction === 'right') return styles.revealMaskRight;
+    if (direction === 'down') return styles.revealMaskDown;
+    return styles.revealMaskUp; // Default
+  }, [direction]);
 
   return (
     <div
