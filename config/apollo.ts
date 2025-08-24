@@ -1,5 +1,6 @@
 // Add Apollo Client
-import {ApolloClient, InMemoryCache} from "@apollo/client";
+import { HttpLink } from "@apollo/client";
+import { ApolloClient, InMemoryCache } from "@apollo/client";
 
 // Define a custom merge function for Query.post field
 const customMergeFunction = (existing: any, incoming: any) => {
@@ -41,7 +42,8 @@ const cache = new InMemoryCache({
 	},
 });
 
+
 export const client: any = new ApolloClient({
-	uri: `${process.env.CMS_API_URL}`,
+	link: new HttpLink({ uri: `${process.env.CMS_API_URL}` }),
 	cache: cache,
 });
